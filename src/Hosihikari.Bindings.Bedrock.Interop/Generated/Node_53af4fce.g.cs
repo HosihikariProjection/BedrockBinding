@@ -40,12 +40,12 @@ public sealed unsafe partial class Node : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Node Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Node arg0)
+    public static Node? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Node arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_dee2fdae((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Node((nint)handle);

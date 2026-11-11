@@ -40,12 +40,12 @@ public sealed unsafe partial class CombatRegenerationDefinition : global::System
         return __hs_handle;
     }
 
-    public static CombatRegenerationDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationDefinition arg0)
+    public static CombatRegenerationDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_03976dd9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CombatRegenerationDefinition((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class ITreeTrunk : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ITreeTrunk Create(global::Hosihikari.Bindings.Bedrock.Interop.ITreeTrunk arg0)
+    public static ITreeTrunk? Create(global::Hosihikari.Bindings.Bedrock.Interop.ITreeTrunk arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4d899c3c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ITreeTrunk((nint)handle);

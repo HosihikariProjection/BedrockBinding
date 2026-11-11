@@ -69,12 +69,12 @@ public sealed unsafe partial class TaskQueueBase : global::System.IDisposable
     public void PostTaskImpl(nint task, nint traits, nint location) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: parameter type 'absl::AnyInvocable<void () &&>' is not supported.");
 
-    public static TaskQueueBase Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase arg0)
+    public static TaskQueueBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_de109cd4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TaskQueueBase((nint)handle);

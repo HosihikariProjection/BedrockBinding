@@ -54,34 +54,34 @@ public sealed unsafe partial class SerializedAbilitiesData : global::System.IDis
     public static nint ABILITIES_LAYER_MAP() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SerializedAbilitiesData Create()
+    public static SerializedAbilitiesData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e409778f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SerializedAbilitiesData((nint)handle);
     }
 
-    public static SerializedAbilitiesData Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID targetPlayer, global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities layeredAbilities)
+    public static SerializedAbilitiesData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID targetPlayer, global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities layeredAbilities)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c48669fa((void*)targetPlayer.Handle, (void*)layeredAbilities.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SerializedAbilitiesData((nint)handle);
     }
 
-    public static SerializedAbilitiesData Create(global::Hosihikari.Bindings.Bedrock.Interop.SerializedAbilitiesData arg0)
+    public static SerializedAbilitiesData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SerializedAbilitiesData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ccbba311((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SerializedAbilitiesData((nint)handle);

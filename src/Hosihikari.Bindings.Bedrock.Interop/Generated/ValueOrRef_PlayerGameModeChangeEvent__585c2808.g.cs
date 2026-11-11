@@ -48,14 +48,16 @@ public sealed unsafe partial class ValueOrRef_PlayerGameModeChangeEvent_ : globa
     public static ValueOrRef_PlayerGameModeChangeEvent_ Create_11adf2a2(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<PlayerGameModeChangeEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameModeChangeEvent value_94aa382f()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameModeChangeEvent? value_94aa382f()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameModeChangeEvent((nint)NativeMethods.TablePtr->C1.hs_method_94aa382f((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_94aa382f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameModeChangeEvent((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameModeChangeEvent value_8a0924f5()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameModeChangeEvent? value_8a0924f5()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameModeChangeEvent((nint)NativeMethods.TablePtr->C1.hs_method_8a0924f5((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8a0924f5((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameModeChangeEvent((nint)__hs_handle, false) : null;
     }
 
 

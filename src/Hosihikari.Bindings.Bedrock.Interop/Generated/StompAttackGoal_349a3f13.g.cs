@@ -208,12 +208,12 @@ public sealed unsafe partial class StompAttackGoal : global::System.IDisposable
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StompAttackGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.StompAttackGoal arg0)
+    public static StompAttackGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.StompAttackGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9ef63ad6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StompAttackGoal((nint)handle);

@@ -73,12 +73,12 @@ public sealed unsafe partial class SpreadPlayersCommand : global::System.IDispos
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpreadPlayersCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.SpreadPlayersCommand arg0)
+    public static SpreadPlayersCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpreadPlayersCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f10c98a3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpreadPlayersCommand((nint)handle);

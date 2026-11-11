@@ -40,23 +40,23 @@ public sealed unsafe partial class ComposedAssertMessage : global::System.IDispo
         return __hs_handle;
     }
 
-    public static ComposedAssertMessage Create()
+    public static ComposedAssertMessage? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4bc28fcf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComposedAssertMessage((nint)handle);
     }
 
-    public static ComposedAssertMessage Create(global::Hosihikari.Bindings.Bedrock.Interop.DebugUtils.ComposedAssertMessage arg0)
+    public static ComposedAssertMessage? Create(global::Hosihikari.Bindings.Bedrock.Interop.DebugUtils.ComposedAssertMessage arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_916c38ea((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComposedAssertMessage((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class ComposedAssertMessage : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C1.hs_get_c9f7142a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DebugUtils.ComposedAssertMessage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DebugUtils.ComposedAssertMessage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DebugUtils.ComposedAssertMessage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DebugUtils.ComposedAssertMessage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DebugUtils.ComposedAssertMessage((nint)NativeMethods.TablePtr->C1.hs_method_b0b435a2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b0b435a2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DebugUtils.ComposedAssertMessage((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

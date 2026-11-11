@@ -91,9 +91,10 @@ public sealed unsafe partial class EncryptedNetworkPeer : global::System.IDispos
     public void enableEncryption(nint symmetricKey) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus getNetworkStatus()
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus? getNetworkStatus()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)NativeMethods.TablePtr->C1.hs_method_86254086((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_86254086((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)__hs_handle) : null;
     }
 
     public bool isEncrypted()

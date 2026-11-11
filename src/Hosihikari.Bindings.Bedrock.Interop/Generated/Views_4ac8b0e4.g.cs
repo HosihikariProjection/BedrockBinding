@@ -40,12 +40,12 @@ public sealed unsafe partial class Views : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Views Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientRewind.ApplySystem_Nested.Views arg0)
+    public static Views? Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientRewind.ApplySystem_Nested.Views arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_797da66e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Views((nint)handle);

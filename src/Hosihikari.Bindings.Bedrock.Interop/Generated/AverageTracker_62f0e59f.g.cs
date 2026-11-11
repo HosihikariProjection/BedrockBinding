@@ -44,12 +44,12 @@ public sealed unsafe partial class AverageTracker : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AverageTracker Create(global::Hosihikari.Bindings.Bedrock.Interop.AverageTracker arg0)
+    public static AverageTracker? Create(global::Hosihikari.Bindings.Bedrock.Interop.AverageTracker arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_46db4abf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AverageTracker((nint)handle);

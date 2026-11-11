@@ -46,12 +46,12 @@ public sealed unsafe partial class CraftingContainerScreenValidator : global::Sy
         get => (nint)NativeMethods.TablePtr->C1.hs_get_f4708f19((void*)__hosihikari_shim_handle);
     }
 
-    public static CraftingContainerScreenValidator Create(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainerScreenValidator arg0)
+    public static CraftingContainerScreenValidator? Create(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainerScreenValidator arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_38af8ab5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CraftingContainerScreenValidator((nint)handle);

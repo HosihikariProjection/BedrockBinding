@@ -44,23 +44,23 @@ public sealed unsafe partial class GlobalBinding : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GlobalBinding Create()
+    public static GlobalBinding? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0767d32b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GlobalBinding((nint)handle);
     }
 
-    public static GlobalBinding Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GlobalBinding arg0)
+    public static GlobalBinding? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GlobalBinding arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_06f3a600((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GlobalBinding((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class GlobalBinding : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_8b56ecfb((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GlobalBinding operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GlobalBinding arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GlobalBinding? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GlobalBinding arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GlobalBinding((nint)NativeMethods.TablePtr->C3.hs_method_5df6db2e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5df6db2e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GlobalBinding((nint)__hs_handle, false) : null;
     }
 
 

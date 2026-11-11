@@ -72,12 +72,12 @@ public sealed unsafe partial class ScriptBlockCustomComponentsRegistry : global:
     public nint _tryGetCustomComponentParametersForBlock(nint block, nint componentName, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptBlockCustomComponentsRegistry Create()
+    public static ScriptBlockCustomComponentsRegistry? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f0c114f0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockCustomComponentsRegistry((nint)handle);
@@ -87,12 +87,12 @@ public sealed unsafe partial class ScriptBlockCustomComponentsRegistry : global:
     public static ScriptBlockCustomComponentsRegistry Create(nint events, nint deferredEventCoordinator, nint parameterCache) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptBlockCustomComponentsRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry arg0)
+    public static ScriptBlockCustomComponentsRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6e266ba8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockCustomComponentsRegistry((nint)handle);
@@ -269,9 +269,10 @@ public sealed unsafe partial class ScriptBlockCustomComponentsRegistry : global:
     public void onStepOn(nint eventData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry((nint)NativeMethods.TablePtr->C3.hs_method_7b886af0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7b886af0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry((nint)__hs_handle, false) : null;
     }
 
     public nint tryGetCustomComponentParametersForBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block, string componentName, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope)

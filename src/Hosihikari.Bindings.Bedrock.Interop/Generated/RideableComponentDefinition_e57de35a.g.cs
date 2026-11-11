@@ -52,12 +52,12 @@ public sealed unsafe partial class RideableComponentDefinition : global::System.
     public static nint NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RideableComponentDefinition Create()
+    public static RideableComponentDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_25c5396d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RideableComponentDefinition((nint)handle);

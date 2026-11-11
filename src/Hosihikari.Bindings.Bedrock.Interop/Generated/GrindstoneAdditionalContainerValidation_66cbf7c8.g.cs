@@ -48,12 +48,12 @@ public sealed unsafe partial class GrindstoneAdditionalContainerValidation : glo
     public bool _isItemAllowedInSlot(nint arg0, nint arg1, nint item, nint arg3, bool arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GrindstoneAdditionalContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.GrindstoneAdditionalContainerValidation arg0)
+    public static GrindstoneAdditionalContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.GrindstoneAdditionalContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_aafa5d0b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GrindstoneAdditionalContainerValidation((nint)handle);

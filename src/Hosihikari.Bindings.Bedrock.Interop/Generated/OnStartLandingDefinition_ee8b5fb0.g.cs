@@ -62,12 +62,12 @@ public sealed unsafe partial class OnStartLandingDefinition : global::System.IDi
     public static nint NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OnStartLandingDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.OnStartLandingDefinition arg0)
+    public static OnStartLandingDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.OnStartLandingDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_bdea8799((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OnStartLandingDefinition((nint)handle);

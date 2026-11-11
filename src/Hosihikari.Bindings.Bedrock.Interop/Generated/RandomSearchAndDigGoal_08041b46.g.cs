@@ -86,12 +86,12 @@ public sealed unsafe partial class RandomSearchAndDigGoal : global::System.IDisp
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RandomSearchAndDigGoal Create()
+    public static RandomSearchAndDigGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f4bc9f41();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RandomSearchAndDigGoal((nint)handle);
@@ -101,12 +101,12 @@ public sealed unsafe partial class RandomSearchAndDigGoal : global::System.IDisp
     public static RandomSearchAndDigGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RandomSearchAndDigGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomSearchAndDigGoal arg0)
+    public static RandomSearchAndDigGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomSearchAndDigGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_db475afa((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RandomSearchAndDigGoal((nint)handle);
@@ -324,9 +324,10 @@ public sealed unsafe partial class RandomSearchAndDigGoal : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C3.hs_get_b690f36a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RandomSearchAndDigGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RandomSearchAndDigGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RandomSearchAndDigGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RandomSearchAndDigGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RandomSearchAndDigGoal((nint)NativeMethods.TablePtr->C3.hs_method_eb60168f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_eb60168f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RandomSearchAndDigGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

@@ -40,23 +40,23 @@ public sealed unsafe partial class RakNetStatistics : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static RakNetStatistics Create()
+    public static RakNetStatistics? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_51f72dff();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakNetStatistics((nint)handle);
     }
 
-    public static RakNetStatistics Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetStatistics arg0)
+    public static RakNetStatistics? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetStatistics arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_78df77bb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakNetStatistics((nint)handle);
@@ -140,9 +140,10 @@ public sealed unsafe partial class RakNetStatistics : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_0dc03316((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetStatistics operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetStatistics arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetStatistics? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetStatistics arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetStatistics((nint)NativeMethods.TablePtr->C2.hs_method_f97de42c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f97de42c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetStatistics((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

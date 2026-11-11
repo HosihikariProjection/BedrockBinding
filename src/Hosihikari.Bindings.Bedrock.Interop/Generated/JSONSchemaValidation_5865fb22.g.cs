@@ -44,23 +44,23 @@ public sealed unsafe partial class JSONSchemaValidation : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JSONSchemaValidation Create()
+    public static JSONSchemaValidation? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c75a71de();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JSONSchemaValidation((nint)handle);
     }
 
-    public static JSONSchemaValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ext.@internal.JSONSchemaValidation arg0)
+    public static JSONSchemaValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ext.@internal.JSONSchemaValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f0ce987a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JSONSchemaValidation((nint)handle);

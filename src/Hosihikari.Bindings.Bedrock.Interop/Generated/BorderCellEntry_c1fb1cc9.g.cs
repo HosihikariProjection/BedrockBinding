@@ -40,23 +40,23 @@ public sealed unsafe partial class BorderCellEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static BorderCellEntry Create()
+    public static BorderCellEntry? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_42dee88a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BorderCellEntry((nint)handle);
     }
 
-    public static BorderCellEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.BlendingDataFactoryUtil.BorderCellEntry arg0)
+    public static BorderCellEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlendingDataFactoryUtil.BorderCellEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_31a2cc8f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BorderCellEntry((nint)handle);
@@ -104,9 +104,10 @@ public sealed unsafe partial class BorderCellEntry : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_6fb55ee1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlendingDataFactoryUtil.BorderCellEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlendingDataFactoryUtil.BorderCellEntry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlendingDataFactoryUtil.BorderCellEntry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlendingDataFactoryUtil.BorderCellEntry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlendingDataFactoryUtil.BorderCellEntry((nint)NativeMethods.TablePtr->C0.hs_method_3941f8a3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3941f8a3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlendingDataFactoryUtil.BorderCellEntry((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

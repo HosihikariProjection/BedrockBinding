@@ -87,12 +87,12 @@ public sealed unsafe partial class OfferFlowerGoal : global::System.IDisposable
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OfferFlowerGoal Create()
+    public static OfferFlowerGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_893451f2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OfferFlowerGoal((nint)handle);
@@ -102,12 +102,12 @@ public sealed unsafe partial class OfferFlowerGoal : global::System.IDisposable
     public static OfferFlowerGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OfferFlowerGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.OfferFlowerGoal arg0)
+    public static OfferFlowerGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.OfferFlowerGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0de6a7e8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OfferFlowerGoal((nint)handle);
@@ -197,9 +197,10 @@ public sealed unsafe partial class OfferFlowerGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_e659b312((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OfferFlowerGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OfferFlowerGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OfferFlowerGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OfferFlowerGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OfferFlowerGoal((nint)NativeMethods.TablePtr->C2.hs_method_0ff5b4d4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0ff5b4d4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OfferFlowerGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

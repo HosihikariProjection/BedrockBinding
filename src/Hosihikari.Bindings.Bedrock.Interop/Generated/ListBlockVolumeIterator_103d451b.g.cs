@@ -80,23 +80,23 @@ public sealed unsafe partial class ListBlockVolumeIterator : global::System.IDis
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ListBlockVolumeIterator Create()
+    public static ListBlockVolumeIterator? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_288b224f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ListBlockVolumeIterator((nint)handle);
     }
 
-    public static ListBlockVolumeIterator Create(global::Hosihikari.Bindings.Bedrock.Interop.ListBlockVolumeIterator arg0)
+    public static ListBlockVolumeIterator? Create(global::Hosihikari.Bindings.Bedrock.Interop.ListBlockVolumeIterator arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c9f8ca29((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ListBlockVolumeIterator((nint)handle);
@@ -141,14 +141,16 @@ public sealed unsafe partial class ListBlockVolumeIterator : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C2.hs_get_ccfabcf9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator operator_operator__()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator? operator_operator__()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator((nint)NativeMethods.TablePtr->C2.hs_method_86222099((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_86222099((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ListBlockVolumeIterator operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ListBlockVolumeIterator arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ListBlockVolumeIterator? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ListBlockVolumeIterator arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ListBlockVolumeIterator((nint)NativeMethods.TablePtr->C2.hs_method_6c2f2d01((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6c2f2d01((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ListBlockVolumeIterator((nint)__hs_handle, false) : null;
     }
 
 

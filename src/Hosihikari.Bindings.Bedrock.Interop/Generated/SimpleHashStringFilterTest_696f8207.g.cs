@@ -70,31 +70,32 @@ public sealed unsafe partial class SimpleHashStringFilterTest : global::System.I
     public bool _setup(nint definition, nint inputs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SimpleHashStringFilterTest Create()
+    public static SimpleHashStringFilterTest? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7efe5fec();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimpleHashStringFilterTest((nint)handle);
     }
 
-    public static SimpleHashStringFilterTest Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleHashStringFilterTest arg0)
+    public static SimpleHashStringFilterTest? Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleHashStringFilterTest arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_57e8251c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimpleHashStringFilterTest((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _serializeValue()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C3.hs_method_ca8ee8eb((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ca8ee8eb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.", false)]
@@ -107,9 +108,10 @@ public sealed unsafe partial class SimpleHashStringFilterTest : global::System.I
         get => (nint)NativeMethods.TablePtr->C3.hs_get_646b574f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SimpleHashStringFilterTest operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimpleHashStringFilterTest arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SimpleHashStringFilterTest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimpleHashStringFilterTest arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SimpleHashStringFilterTest((nint)NativeMethods.TablePtr->C3.hs_method_ab31d489((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ab31d489((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SimpleHashStringFilterTest((nint)__hs_handle, false) : null;
     }
 
     public bool setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)

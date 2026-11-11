@@ -44,12 +44,12 @@ public sealed unsafe partial class POIInstance : global::System.IDisposable
     public nint _ctor(nint pos, bool useBoundingBox, nint name, nint type, float radius, ulong maxCapacity, ulong weight, nint soundEvent, nint initEvent, nint endEvent) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static POIInstance Create()
+    public static POIInstance? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c5c4b36e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new POIInstance((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class POIInstance : global::System.IDisposable
     public static POIInstance Create(nint pos, bool useBoundingBox, nint name, nint type, float radius, ulong maxCapacity, ulong weight, nint soundEvent, nint initEvent, nint endEvent) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static POIInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.POIInstance arg0)
+    public static POIInstance? Create(global::Hosihikari.Bindings.Bedrock.Interop.POIInstance arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e305f4d1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new POIInstance((nint)handle);

@@ -48,12 +48,12 @@ public sealed unsafe partial class ActorUndergroundTest : global::System.IDispos
     public nint _getName() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorUndergroundTest Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorUndergroundTest arg0)
+    public static ActorUndergroundTest? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorUndergroundTest arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3dd82252((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorUndergroundTest((nint)handle);

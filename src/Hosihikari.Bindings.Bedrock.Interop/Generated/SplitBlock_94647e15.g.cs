@@ -40,12 +40,12 @@ public sealed unsafe partial class SplitBlock : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static SplitBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockType_Nested.RemovedStateCollection_Nested.SplitBlock arg0)
+    public static SplitBlock? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockType_Nested.RemovedStateCollection_Nested.SplitBlock arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_881fbe65((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SplitBlock((nint)handle);

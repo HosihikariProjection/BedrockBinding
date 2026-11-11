@@ -40,12 +40,12 @@ public sealed unsafe partial class IGameTestFunctionRunResult : global::System.I
         return __hs_handle;
     }
 
-    public static IGameTestFunctionRunResult Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.IGameTestFunctionRunResult arg0)
+    public static IGameTestFunctionRunResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.IGameTestFunctionRunResult arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_884e9dce((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IGameTestFunctionRunResult((nint)handle);

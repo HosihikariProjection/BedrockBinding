@@ -437,12 +437,12 @@ public sealed unsafe partial class ComposterBlock : global::System.IDisposable
     public static nint COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ComposterBlock Create()
+    public static ComposterBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0cc1ac8f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComposterBlock((nint)handle);
@@ -508,9 +508,10 @@ public sealed unsafe partial class ComposterBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_63fa57e4((void*)__hosihikari_shim_handle, (void*)arg0.Handle, face, type) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HitResult clip(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 A, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 B, byte shapeType, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity)
+    public global::Hosihikari.Bindings.Bedrock.Interop.HitResult? clip(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 A, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 B, byte shapeType, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HitResult((nint)NativeMethods.TablePtr->C0.hs_method_10bdc76c((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)A.Handle, (void*)B.Handle, shapeType, (void*)(entity?.Handle ?? 0), entity is not null));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_10bdc76c((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)A.Handle, (void*)B.Handle, shapeType, (void*)(entity?.Handle ?? 0), entity is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HitResult((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

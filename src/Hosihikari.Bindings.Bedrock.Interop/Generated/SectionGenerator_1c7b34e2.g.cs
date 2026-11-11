@@ -40,12 +40,12 @@ public sealed unsafe partial class SectionGenerator : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static SectionGenerator Create(global::Hosihikari.Bindings.Bedrock.Interop.EndCityPieces_Nested.SectionGenerator arg0)
+    public static SectionGenerator? Create(global::Hosihikari.Bindings.Bedrock.Interop.EndCityPieces_Nested.SectionGenerator arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fd49d5d4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SectionGenerator((nint)handle);

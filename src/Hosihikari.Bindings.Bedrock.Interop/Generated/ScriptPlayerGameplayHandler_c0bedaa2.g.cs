@@ -52,14 +52,16 @@ public sealed unsafe partial class ScriptPlayerGameplayHandler
     public nint _handleEvent_6827f930(nint playerDisconnectEvent) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.MutablePlayerGameplayEvent_CoordinatorResult_ @event)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.MutablePlayerGameplayEvent_CoordinatorResult_ @event)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C3.hs_method_eeb7fcfc((void*)__hosihikari_shim_handle, (void*)@event.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_eeb7fcfc((void*)__hosihikari_shim_handle, (void*)@event.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameplayEvent_CoordinatorResult_ @event)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameplayEvent_CoordinatorResult_ @event)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C3.hs_method_c0b45509((void*)__hosihikari_shim_handle, (void*)@event.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c0b45509((void*)__hosihikari_shim_handle, (void*)@event.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 
     public int handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDisconnectEvent playerDisconnectEvent)

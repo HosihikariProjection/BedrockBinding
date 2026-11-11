@@ -40,23 +40,23 @@ public sealed unsafe partial class CreateServerLevelOps : global::System.IDispos
         return __hs_handle;
     }
 
-    public static CreateServerLevelOps Create()
+    public static CreateServerLevelOps? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_01746f9d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreateServerLevelOps((nint)handle);
     }
 
-    public static CreateServerLevelOps Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance_Nested.CreateServerLevelOps arg0)
+    public static CreateServerLevelOps? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance_Nested.CreateServerLevelOps arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_933e2f1c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreateServerLevelOps((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class CreateServerLevelOps : global::System.IDispos
         set => NativeMethods.TablePtr->C3.hs_set_e4657648((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance_Nested.CreateServerLevelOps operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance_Nested.CreateServerLevelOps arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance_Nested.CreateServerLevelOps? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance_Nested.CreateServerLevelOps arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance_Nested.CreateServerLevelOps((nint)NativeMethods.TablePtr->C3.hs_method_8ce104f5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8ce104f5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance_Nested.CreateServerLevelOps((nint)__hs_handle, false) : null;
     }
 
 

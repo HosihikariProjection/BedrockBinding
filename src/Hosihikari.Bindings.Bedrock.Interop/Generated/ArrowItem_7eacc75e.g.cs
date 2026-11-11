@@ -76,12 +76,12 @@ public sealed unsafe partial class ArrowItem : global::System.IDisposable
     public nint _setIconInfo(nint name, int id) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ArrowItem Create()
+    public static ArrowItem? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_53200fec();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ArrowItem((nint)handle);
@@ -123,9 +123,10 @@ public sealed unsafe partial class ArrowItem : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_63628b34((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)container.Handle, slot, (void*)pos.Handle, face) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int newAnimationFrame, bool inInventoryPane)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo? getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int newAnimationFrame, bool inInventoryPane)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)NativeMethods.TablePtr->C0.hs_method_a16719f8((void*)__hosihikari_shim_handle, (void*)item.Handle, newAnimationFrame, inInventoryPane));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a16719f8((void*)__hosihikari_shim_handle, (void*)item.Handle, newAnimationFrame, inInventoryPane);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)__hs_handle) : null;
     }
 
     public bool isValidAuxValue(int auxValue)
@@ -133,7 +134,7 @@ public sealed unsafe partial class ArrowItem : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_3f1e5481((void*)__hosihikari_shim_handle, auxValue) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Item setIconInfo(string name, int id)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Item? setIconInfo(string name, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -148,7 +149,8 @@ public sealed unsafe partial class ArrowItem : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)NativeMethods.TablePtr->C0.hs_method_15fd3477((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id), false);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_15fd3477((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
         }
     }
 

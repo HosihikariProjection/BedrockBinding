@@ -87,12 +87,12 @@ public sealed unsafe partial class MoveNode : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveNode Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveNode arg0)
+    public static MoveNode? Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveNode arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1bd620f7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveNode((nint)handle);

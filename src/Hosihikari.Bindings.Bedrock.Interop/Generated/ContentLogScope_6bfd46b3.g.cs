@@ -52,23 +52,23 @@ public sealed unsafe partial class ContentLogScope : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ContentLogScope Create()
+    public static ContentLogScope? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b42473d1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContentLogScope((nint)handle);
     }
 
-    public static ContentLogScope Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLog_Nested.ContentLogScope arg0)
+    public static ContentLogScope? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLog_Nested.ContentLogScope arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d4616acd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContentLogScope((nint)handle);

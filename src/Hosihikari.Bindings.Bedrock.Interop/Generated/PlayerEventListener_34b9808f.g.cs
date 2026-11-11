@@ -299,12 +299,12 @@ public sealed unsafe partial class PlayerEventListener : global::System.IDisposa
         return NativeMethods.TablePtr->C2.hs_method_6b116661((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)pos.Handle, (void*)face);
     }
 
-    public static PlayerEventListener Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventListener arg0)
+    public static PlayerEventListener? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventListener arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_46f24dc9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerEventListener((nint)handle);

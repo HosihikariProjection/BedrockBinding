@@ -48,12 +48,12 @@ public sealed unsafe partial class NetherFortressStart : global::System.IDisposa
     public bool _requiresNeighborAwareBlockUpgrade() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetherFortressStart Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressStart arg0)
+    public static NetherFortressStart? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressStart arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7fc69435((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetherFortressStart((nint)handle);

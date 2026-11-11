@@ -40,12 +40,12 @@ public sealed unsafe partial class ItemMenuCategory : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ItemMenuCategory Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_110.ItemMenuCategory arg0)
+    public static ItemMenuCategory? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_110.ItemMenuCategory arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_981510d4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemMenuCategory((nint)handle);

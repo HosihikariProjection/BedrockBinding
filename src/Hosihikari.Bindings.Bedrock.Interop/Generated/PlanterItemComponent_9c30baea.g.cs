@@ -48,23 +48,23 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
     public static nint NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlanterItemComponent Create()
+    public static PlanterItemComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b2a026e1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlanterItemComponent((nint)handle);
     }
 
-    public static PlanterItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.PlanterItemComponent arg0)
+    public static PlanterItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.PlanterItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0edaecec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlanterItemComponent((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.PlanterItemComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.PlanterItemComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.PlanterItemComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.PlanterItemComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.PlanterItemComponent((nint)NativeMethods.TablePtr->C3.hs_method_0dc6e015((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0dc6e015((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.PlanterItemComponent((nint)__hs_handle, false) : null;
     }
 
 

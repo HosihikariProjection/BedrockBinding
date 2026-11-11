@@ -57,12 +57,12 @@ public sealed unsafe partial class storage : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_2174b977((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    public static storage Create()
+    public static storage? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_333945af();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new storage((nint)handle);

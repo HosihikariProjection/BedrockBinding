@@ -136,12 +136,12 @@ public sealed unsafe partial class TCPInterface : global::System.IDisposable
     public static TCPInterface Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TCPInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface arg0)
+    public static TCPInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_95e69570((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TCPInterface((nint)handle);
@@ -291,9 +291,10 @@ public sealed unsafe partial class TCPInterface : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_90ce6a7e((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface((nint)NativeMethods.TablePtr->C3.hs_method_058baf28((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_058baf28((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface((nint)__hs_handle, false) : null;
     }
 
 

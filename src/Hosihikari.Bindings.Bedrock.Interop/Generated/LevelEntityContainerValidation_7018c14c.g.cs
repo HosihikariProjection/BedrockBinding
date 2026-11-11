@@ -48,12 +48,12 @@ public sealed unsafe partial class LevelEntityContainerValidation : global::Syst
     public int _getContainerSize(nint screenContext, nint container) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelEntityContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelEntityContainerValidation arg0)
+    public static LevelEntityContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelEntityContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e287bc29((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelEntityContainerValidation((nint)handle);

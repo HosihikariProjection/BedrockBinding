@@ -44,23 +44,23 @@ public sealed unsafe partial class PauseScreenCapabilities : global::System.IDis
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PauseScreenCapabilities Create()
+    public static PauseScreenCapabilities? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5e2b680d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PauseScreenCapabilities((nint)handle);
     }
 
-    public static PauseScreenCapabilities Create(global::Hosihikari.Bindings.Bedrock.Interop.PauseScreenCapabilities arg0)
+    public static PauseScreenCapabilities? Create(global::Hosihikari.Bindings.Bedrock.Interop.PauseScreenCapabilities arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9c9dd141((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PauseScreenCapabilities((nint)handle);
@@ -108,9 +108,10 @@ public sealed unsafe partial class PauseScreenCapabilities : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C2.hs_get_db1c34c5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PauseScreenCapabilities operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PauseScreenCapabilities arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PauseScreenCapabilities? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PauseScreenCapabilities arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PauseScreenCapabilities((nint)NativeMethods.TablePtr->C2.hs_method_36c9ed58((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_36c9ed58((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PauseScreenCapabilities((nint)__hs_handle, false) : null;
     }
 
 

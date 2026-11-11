@@ -48,8 +48,9 @@ public sealed unsafe partial class Constraint
     public static nint InvalidVanillaGeometryForBoneVis() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription doDescription(byte arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription? doDescription(byte arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription((nint)NativeMethods.TablePtr->C0.hs_method_bcbf477a((void*)__hosihikari_shim_handle, arg0));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_bcbf477a((void*)__hosihikari_shim_handle, arg0);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription((nint)__hs_handle) : null;
     }
 }

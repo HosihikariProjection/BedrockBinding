@@ -40,23 +40,23 @@ public sealed unsafe partial class ExternalServerPing : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static ExternalServerPing Create()
+    public static ExternalServerPing? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ced94183();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExternalServerPing((nint)handle);
     }
 
-    public static ExternalServerPing Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.ExternalServerPing arg0)
+    public static ExternalServerPing? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.ExternalServerPing arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0c3672d2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExternalServerPing((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class ExternalServerPing : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C2.hs_get_2693f73a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.ExternalServerPing operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.ExternalServerPing arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.ExternalServerPing? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.ExternalServerPing arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.ExternalServerPing((nint)NativeMethods.TablePtr->C2.hs_method_286d0fe5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_286d0fe5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.ExternalServerPing((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

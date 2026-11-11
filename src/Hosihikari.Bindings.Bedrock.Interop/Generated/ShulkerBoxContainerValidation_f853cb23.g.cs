@@ -49,12 +49,12 @@ public sealed unsafe partial class ShulkerBoxContainerValidation : global::Syste
         return NativeMethods.TablePtr->C3.hs_method_f7b808b7((void*)__hosihikari_shim_handle, (void*)arg0.Handle, slot, (void*)item.Handle, amount, arg4) != 0;
     }
 
-    public static ShulkerBoxContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.ShulkerBoxContainerValidation arg0)
+    public static ShulkerBoxContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShulkerBoxContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_26473501((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShulkerBoxContainerValidation((nint)handle);

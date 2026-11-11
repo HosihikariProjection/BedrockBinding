@@ -40,12 +40,12 @@ public sealed unsafe partial class NetworkAddress : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static NetworkAddress Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkAddress arg0)
+    public static NetworkAddress? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkAddress arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_07de310d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkAddress((nint)handle);

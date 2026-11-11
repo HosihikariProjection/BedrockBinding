@@ -52,18 +52,21 @@ public sealed unsafe partial class ScriptScriptingEventHandler
     public nint _handleEvent_f830e773(nint moduleStartupEvent) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.BeforeWatchdogTerminateEvent beforeWatchdogTerminateEvent)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.BeforeWatchdogTerminateEvent beforeWatchdogTerminateEvent)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C3.hs_method_d954648f((void*)__hosihikari_shim_handle, (void*)beforeWatchdogTerminateEvent.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d954648f((void*)__hosihikari_shim_handle, (void*)beforeWatchdogTerminateEvent.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleShutdownEvent moduleShutdownEvent)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleShutdownEvent moduleShutdownEvent)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C3.hs_method_3750fc8f((void*)__hosihikari_shim_handle, (void*)moduleShutdownEvent.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3750fc8f((void*)__hosihikari_shim_handle, (void*)moduleShutdownEvent.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleStartupEvent moduleStartupEvent)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleStartupEvent moduleStartupEvent)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C3.hs_method_26b66fce((void*)__hosihikari_shim_handle, (void*)moduleStartupEvent.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_26b66fce((void*)__hosihikari_shim_handle, (void*)moduleStartupEvent.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 }

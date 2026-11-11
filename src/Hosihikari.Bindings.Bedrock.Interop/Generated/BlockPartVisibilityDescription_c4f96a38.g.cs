@@ -46,12 +46,12 @@ public sealed unsafe partial class BlockPartVisibilityDescription : global::Syst
         set => NativeMethods.TablePtr->C0.hs_set_f216d8e7((void*)__hosihikari_shim_handle, value);
     }
 
-    public static BlockPartVisibilityDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPartVisibilityDescription arg0)
+    public static BlockPartVisibilityDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPartVisibilityDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5821126b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockPartVisibilityDescription((nint)handle);

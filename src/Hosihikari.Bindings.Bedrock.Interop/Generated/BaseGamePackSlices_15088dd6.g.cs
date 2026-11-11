@@ -40,23 +40,23 @@ public sealed unsafe partial class BaseGamePackSlices : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static BaseGamePackSlices Create()
+    public static BaseGamePackSlices? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_eaf880ce();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseGamePackSlices((nint)handle);
     }
 
-    public static BaseGamePackSlices Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseGamePackSlices arg0)
+    public static BaseGamePackSlices? Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseGamePackSlices arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_cea2e732((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseGamePackSlices((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class BaseGamePackSlices : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C0.hs_get_412e4e47((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BaseGamePackSlices operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BaseGamePackSlices arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BaseGamePackSlices? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BaseGamePackSlices arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseGamePackSlices((nint)NativeMethods.TablePtr->C0.hs_method_46905743((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_46905743((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseGamePackSlices((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

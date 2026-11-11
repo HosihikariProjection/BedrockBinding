@@ -40,23 +40,23 @@ public sealed unsafe partial class Xoroshiro128PlusPlus : global::System.IDispos
         return __hs_handle;
     }
 
-    public static Xoroshiro128PlusPlus Create()
+    public static Xoroshiro128PlusPlus? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_dcfd2c02();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Xoroshiro128PlusPlus((nint)handle);
     }
 
-    public static Xoroshiro128PlusPlus Create(global::Hosihikari.Bindings.Bedrock.Interop.Xoroshiro128PlusPlus arg0)
+    public static Xoroshiro128PlusPlus? Create(global::Hosihikari.Bindings.Bedrock.Interop.Xoroshiro128PlusPlus arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_57fc2a4e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Xoroshiro128PlusPlus((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class Xoroshiro128PlusPlus : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C4.hs_get_9402043a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Xoroshiro128PlusPlus operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Xoroshiro128PlusPlus arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Xoroshiro128PlusPlus? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Xoroshiro128PlusPlus arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Xoroshiro128PlusPlus((nint)NativeMethods.TablePtr->C4.hs_method_d73d5b03((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d73d5b03((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Xoroshiro128PlusPlus((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

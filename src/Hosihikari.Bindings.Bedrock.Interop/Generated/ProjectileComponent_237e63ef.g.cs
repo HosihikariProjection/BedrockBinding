@@ -579,9 +579,10 @@ public sealed unsafe partial class ProjectileComponent : global::System.IDisposa
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent((nint)NativeMethods.TablePtr->C2.hs_method_3483d395((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3483d395((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

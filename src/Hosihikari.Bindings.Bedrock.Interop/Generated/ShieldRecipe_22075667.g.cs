@@ -142,12 +142,12 @@ public sealed unsafe partial class ShieldRecipe : global::System.IDisposable
     public static nint ID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ShieldRecipe Create(global::Hosihikari.Bindings.Bedrock.Interop.ShieldRecipe arg0)
+    public static ShieldRecipe? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShieldRecipe arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_eb9b90af((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShieldRecipe((nint)handle);
@@ -163,9 +163,10 @@ public sealed unsafe partial class ShieldRecipe : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_8b15d87e((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient getIngredient(int arg0, int arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? getIngredient(int arg0, int arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)NativeMethods.TablePtr->C3.hs_method_48606bab((void*)__hosihikari_shim_handle, arg0, arg1), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_48606bab((void*)__hosihikari_shim_handle, arg0, arg1);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
     }
 
     public nint getResultItems()

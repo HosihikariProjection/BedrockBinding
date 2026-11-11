@@ -40,12 +40,12 @@ public sealed unsafe partial class ArmorItemComponent : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static ArmorItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ArmorItemComponent arg0)
+    public static ArmorItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ArmorItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_24f6ea39((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ArmorItemComponent((nint)handle);

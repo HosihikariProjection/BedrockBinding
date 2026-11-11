@@ -44,23 +44,23 @@ public sealed unsafe partial class MobEvent : global::System.IDisposable
     public nint _ctor(nint name, nint localizableName, bool val) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MobEvent Create()
+    public static MobEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cc888e24();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEvent((nint)handle);
     }
 
-    public static MobEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEvent arg0)
+    public static MobEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f3722c55((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEvent((nint)handle);

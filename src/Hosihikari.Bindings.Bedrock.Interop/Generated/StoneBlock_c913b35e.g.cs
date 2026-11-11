@@ -410,9 +410,10 @@ public sealed unsafe partial class StoneBlock : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_aa36ddf0((void*)__hosihikari_shim_handle, (void*)experiments.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C3.hs_method_2d4950fc((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)(arg1?.Handle ?? 0)));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2d4950fc((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)(arg1?.Handle ?? 0));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
     }
 
     public bool canBeOriginalSurface(bool arg0)
@@ -420,9 +421,10 @@ public sealed unsafe partial class StoneBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_b85668dd((void*)__hosihikari_shim_handle, arg0) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getMapColor(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getMapColor(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C3.hs_method_95020268((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_95020268((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? tryGetInfested(global::Hosihikari.Bindings.Bedrock.Interop.Block block)

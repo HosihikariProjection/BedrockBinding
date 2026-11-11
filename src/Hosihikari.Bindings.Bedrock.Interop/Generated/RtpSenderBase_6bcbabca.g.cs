@@ -223,9 +223,10 @@ public sealed unsafe partial class RtpSenderBase : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_e2c8c840((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError CheckCodecParameters(nint parameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? CheckCodecParameters(nint parameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_5791ef11((void*)__hosihikari_shim_handle, (void*)parameters));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5791ef11((void*)__hosihikari_shim_handle, (void*)parameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -242,7 +243,7 @@ public sealed unsafe partial class RtpSenderBase : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_03eea3bf((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError DisableEncodingLayers(string[] rids)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? DisableEncodingLayers(string[] rids)
     {
         var __hs_vectorItems0 = rids ?? global::System.Array.Empty<string>();
         var __hs_vectorCount0 = __hs_vectorItems0.Length;
@@ -264,11 +265,12 @@ public sealed unsafe partial class RtpSenderBase : global::System.IDisposable
                 __hs_vectorData0[__hs_i0] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr0 + __hs_vectorOffset0, Size = (nuint)__hs_length0 };
                 __hs_vectorOffset0 += __hs_length0;
             }
-            return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_5b36e886((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(rids?.Length ?? 0)));
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5b36e886((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(rids?.Length ?? 0));
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError GenerateKeyFrame(string[] rids)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? GenerateKeyFrame(string[] rids)
     {
         var __hs_vectorItems0 = rids ?? global::System.Array.Empty<string>();
         var __hs_vectorCount0 = __hs_vectorItems0.Length;
@@ -290,7 +292,8 @@ public sealed unsafe partial class RtpSenderBase : global::System.IDisposable
                 __hs_vectorData0[__hs_i0] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr0 + __hs_vectorOffset0, Size = (nuint)__hs_length0 };
                 __hs_vectorOffset0 += __hs_length0;
             }
-            return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_2ed09bc6((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(rids?.Length ?? 0)));
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2ed09bc6((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(rids?.Length ?? 0));
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
         }
     }
 
@@ -324,12 +327,12 @@ public sealed unsafe partial class RtpSenderBase : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_a96cc3eb((void*)__hosihikari_shim_handle);
     }
 
-    public static RtpSenderBase Create()
+    public static RtpSenderBase? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_61e6eb8e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RtpSenderBase((nint)handle);
@@ -339,12 +342,12 @@ public sealed unsafe partial class RtpSenderBase : global::System.IDisposable
     public static RtpSenderBase Create(nint env, nint worker_thread, nint id, nint set_streams_observer) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RtpSenderBase Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderBase arg0)
+    public static RtpSenderBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderBase arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0cf75561((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RtpSenderBase((nint)handle);
@@ -376,9 +379,10 @@ public sealed unsafe partial class RtpSenderBase : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_84f1d236((void*)__hosihikari_shim_handle, (void*)observer);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError SetParameters(nint parameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? SetParameters(nint parameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_f8a0bc5f((void*)__hosihikari_shim_handle, (void*)parameters));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f8a0bc5f((void*)__hosihikari_shim_handle, (void*)parameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: parameter type 'absl::AnyInvocable<void (webrtc::RTCError) &&>' is not supported.", false)]
@@ -389,9 +393,10 @@ public sealed unsafe partial class RtpSenderBase : global::System.IDisposable
     public void SetParametersInternal(nint parameters, nint callback, bool blocking) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: parameter type 'absl::AnyInvocable<void (webrtc::RTCError) &&>' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError SetParametersInternalWithAllLayers(nint parameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? SetParametersInternalWithAllLayers(nint parameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_738ef72d((void*)__hosihikari_shim_handle, (void*)parameters));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_738ef72d((void*)__hosihikari_shim_handle, (void*)parameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
     }
 
     public void SetSend()
@@ -595,9 +600,10 @@ public sealed unsafe partial class RtpSenderBase : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_8fe01fbe((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderBase operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderBase arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderBase arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderBase((nint)NativeMethods.TablePtr->C4.hs_method_b7f398dc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b7f398dc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderBase((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::RtpEncodingParameters' is not supported.", false)]

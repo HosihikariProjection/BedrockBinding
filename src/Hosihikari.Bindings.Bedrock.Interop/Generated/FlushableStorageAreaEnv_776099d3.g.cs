@@ -44,23 +44,23 @@ public sealed unsafe partial class FlushableStorageAreaEnv : global::System.IDis
     public void _flushToPermanentStorage() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FlushableStorageAreaEnv Create()
+    public static FlushableStorageAreaEnv? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_75bd10a7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FlushableStorageAreaEnv((nint)handle);
     }
 
-    public static FlushableStorageAreaEnv Create(global::Hosihikari.Bindings.Bedrock.Interop.FlushableStorageAreaEnv arg0)
+    public static FlushableStorageAreaEnv? Create(global::Hosihikari.Bindings.Bedrock.Interop.FlushableStorageAreaEnv arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_deb01e80((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FlushableStorageAreaEnv((nint)handle);
@@ -77,9 +77,10 @@ public sealed unsafe partial class FlushableStorageAreaEnv : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C1.hs_get_ea42abdd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FlushableStorageAreaEnv operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FlushableStorageAreaEnv arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FlushableStorageAreaEnv? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FlushableStorageAreaEnv arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FlushableStorageAreaEnv((nint)NativeMethods.TablePtr->C1.hs_method_237af682((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_237af682((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FlushableStorageAreaEnv((nint)__hs_handle, false) : null;
     }
 
 

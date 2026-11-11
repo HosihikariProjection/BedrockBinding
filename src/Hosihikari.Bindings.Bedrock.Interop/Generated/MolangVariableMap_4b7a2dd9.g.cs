@@ -45,23 +45,23 @@ public sealed unsafe partial class MolangVariableMap : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_bc9b2f0e((void*)__hosihikari_shim_handle);
     }
 
-    public static MolangVariableMap Create()
+    public static MolangVariableMap? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6c09e373();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangVariableMap((nint)handle);
     }
 
-    public static MolangVariableMap Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap rhs)
+    public static MolangVariableMap? Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap rhs)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6fdfb2b4((void*)rhs.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangVariableMap((nint)handle);
@@ -77,9 +77,10 @@ public sealed unsafe partial class MolangVariableMap : global::System.IDisposabl
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangVariable((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap clear()
+    public global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap? clear()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap((nint)NativeMethods.TablePtr->C2.hs_method_a782edfd((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a782edfd((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap((nint)__hs_handle, false) : null;
     }
 
     public bool mHasPublicVariables

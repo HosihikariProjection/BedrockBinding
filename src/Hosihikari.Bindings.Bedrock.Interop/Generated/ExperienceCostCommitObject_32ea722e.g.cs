@@ -58,23 +58,23 @@ public sealed unsafe partial class ExperienceCostCommitObject : global::System.I
     public void _commit(nint screenContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExperienceCostCommitObject Create()
+    public static ExperienceCostCommitObject? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_79d9da31();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExperienceCostCommitObject((nint)handle);
     }
 
-    public static ExperienceCostCommitObject Create(global::Hosihikari.Bindings.Bedrock.Interop.ExperienceCostCommitObject arg0)
+    public static ExperienceCostCommitObject? Create(global::Hosihikari.Bindings.Bedrock.Interop.ExperienceCostCommitObject arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_12737c82((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExperienceCostCommitObject((nint)handle);
@@ -101,9 +101,10 @@ public sealed unsafe partial class ExperienceCostCommitObject : global::System.I
         get => (nint)NativeMethods.TablePtr->C1.hs_get_7736346b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ExperienceCostCommitObject operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExperienceCostCommitObject arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ExperienceCostCommitObject? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExperienceCostCommitObject arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ExperienceCostCommitObject((nint)NativeMethods.TablePtr->C1.hs_method_65655cb1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_65655cb1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ExperienceCostCommitObject((nint)__hs_handle, false) : null;
     }
 
 

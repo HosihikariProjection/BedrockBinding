@@ -52,12 +52,12 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExpressionNode Create()
+    public static ExpressionNode? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_067ae486();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExpressionNode((nint)handle);
@@ -177,9 +177,10 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
     public nint operator_assign(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.ExpressionNode operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.ExpressionNode arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.ExpressionNode? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.ExpressionNode arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.ExpressionNode((nint)NativeMethods.TablePtr->C2.hs_method_f825c48e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f825c48e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.ExpressionNode((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

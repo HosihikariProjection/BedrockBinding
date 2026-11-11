@@ -73,12 +73,12 @@ public sealed unsafe partial class TeleportCommand : global::System.IDisposable
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TeleportCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.TeleportCommand arg0)
+    public static TeleportCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.TeleportCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0efe1175((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TeleportCommand((nint)handle);
@@ -88,9 +88,10 @@ public sealed unsafe partial class TeleportCommand : global::System.IDisposable
     public static void applyTarget(nint victim, nint target, int commandVersion, bool keepVelocity) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'TeleportTarget' is not copy-constructible.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TeleportTarget computeTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor victim, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 destination, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? facePosition, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType destinationDimension, global::Hosihikari.Bindings.Bedrock.Interop.RotationCommandUtils.RotationData? rotationData, int commandVersion)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TeleportTarget? computeTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor victim, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 destination, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? facePosition, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType destinationDimension, global::Hosihikari.Bindings.Bedrock.Interop.RotationCommandUtils.RotationData? rotationData, int commandVersion)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TeleportTarget((nint)NativeMethods.TablePtr->C3.hs_method_6a3bf30b((void*)victim.Handle, (void*)destination.Handle, (void*)(facePosition?.Handle ?? 0), (void*)destinationDimension.Handle, (void*)(rotationData?.Handle ?? 0), commandVersion, rotationData is not null));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6a3bf30b((void*)victim.Handle, (void*)destination.Handle, (void*)(facePosition?.Handle ?? 0), (void*)destinationDimension.Handle, (void*)(rotationData?.Handle ?? 0), commandVersion, rotationData is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TeleportTarget((nint)__hs_handle) : null;
     }
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)

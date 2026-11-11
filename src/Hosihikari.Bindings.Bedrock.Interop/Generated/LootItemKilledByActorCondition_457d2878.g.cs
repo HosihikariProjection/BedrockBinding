@@ -54,23 +54,23 @@ public sealed unsafe partial class LootItemKilledByActorCondition : global::Syst
     public nint _getConditionType() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LootItemKilledByActorCondition Create()
+    public static LootItemKilledByActorCondition? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f2bc7a70();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LootItemKilledByActorCondition((nint)handle);
     }
 
-    public static LootItemKilledByActorCondition Create(global::Hosihikari.Bindings.Bedrock.Interop.LootItemKilledByActorCondition arg0)
+    public static LootItemKilledByActorCondition? Create(global::Hosihikari.Bindings.Bedrock.Interop.LootItemKilledByActorCondition arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_eb5433bf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LootItemKilledByActorCondition((nint)handle);
@@ -96,9 +96,10 @@ public sealed unsafe partial class LootItemKilledByActorCondition : global::Syst
         get => (nint)NativeMethods.TablePtr->C2.hs_get_1ce0a027((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LootItemKilledByActorCondition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemKilledByActorCondition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LootItemKilledByActorCondition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemKilledByActorCondition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LootItemKilledByActorCondition((nint)NativeMethods.TablePtr->C2.hs_method_0a3a7cb3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0a3a7cb3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LootItemKilledByActorCondition((nint)__hs_handle, false) : null;
     }
 
 

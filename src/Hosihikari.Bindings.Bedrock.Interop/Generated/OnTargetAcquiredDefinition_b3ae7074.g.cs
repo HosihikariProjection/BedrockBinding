@@ -62,12 +62,12 @@ public sealed unsafe partial class OnTargetAcquiredDefinition : global::System.I
     public static nint NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OnTargetAcquiredDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.OnTargetAcquiredDefinition arg0)
+    public static OnTargetAcquiredDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.OnTargetAcquiredDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_aab4843f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OnTargetAcquiredDefinition((nint)handle);

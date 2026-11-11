@@ -52,12 +52,12 @@ public sealed unsafe partial class FilterTestData : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FilterTestData Create()
+    public static FilterTestData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_be1922ab();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilterTestData((nint)handle);
@@ -109,9 +109,10 @@ public sealed unsafe partial class FilterTestData : global::System.IDisposable
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterTestData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterTestData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterTestData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterTestData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterTestData((nint)NativeMethods.TablePtr->C3.hs_method_2f0c9d59((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2f0c9d59((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterTestData((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

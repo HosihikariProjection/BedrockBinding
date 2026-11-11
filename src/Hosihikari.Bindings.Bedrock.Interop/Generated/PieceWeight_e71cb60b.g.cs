@@ -40,12 +40,12 @@ public sealed unsafe partial class PieceWeight : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PieceWeight Create(global::Hosihikari.Bindings.Bedrock.Interop.PieceWeight arg0)
+    public static PieceWeight? Create(global::Hosihikari.Bindings.Bedrock.Interop.PieceWeight arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c519c19c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PieceWeight((nint)handle);

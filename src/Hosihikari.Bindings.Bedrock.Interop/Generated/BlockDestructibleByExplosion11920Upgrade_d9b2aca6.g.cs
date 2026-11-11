@@ -48,12 +48,12 @@ public sealed unsafe partial class BlockDestructibleByExplosion11920Upgrade : gl
     public void _upgradeToNext(nint document, nint arg1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockDestructibleByExplosion11920Upgrade Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockExplosionResistanceVersioning.BlockDestructibleByExplosion11920Upgrade arg0)
+    public static BlockDestructibleByExplosion11920Upgrade? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockExplosionResistanceVersioning.BlockDestructibleByExplosion11920Upgrade arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ea52be3e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockDestructibleByExplosion11920Upgrade((nint)handle);

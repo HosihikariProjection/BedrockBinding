@@ -80,23 +80,23 @@ public sealed unsafe partial class Symmetric : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Symmetric Create()
+    public static Symmetric? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_037e9576();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Symmetric((nint)handle);
     }
 
-    public static Symmetric Create(global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Symmetric.Symmetric arg0)
+    public static Symmetric? Create(global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Symmetric.Symmetric arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d473066d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Symmetric((nint)handle);
@@ -251,9 +251,10 @@ public sealed unsafe partial class Symmetric : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_d1f83c52((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Symmetric.Symmetric operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Symmetric.Symmetric arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Symmetric.Symmetric? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Symmetric.Symmetric arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Symmetric.Symmetric((nint)NativeMethods.TablePtr->C1.hs_method_8e7f7bfe((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8e7f7bfe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Symmetric.Symmetric((nint)__hs_handle, false) : null;
     }
 
 

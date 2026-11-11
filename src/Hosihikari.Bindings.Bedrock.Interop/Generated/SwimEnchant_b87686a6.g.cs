@@ -110,12 +110,12 @@ public sealed unsafe partial class SwimEnchant : global::System.IDisposable
     public int _getMinCost(int level) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SwimEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.SwimEnchant arg0)
+    public static SwimEnchant? Create(global::Hosihikari.Bindings.Bedrock.Interop.SwimEnchant arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0c2213bc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SwimEnchant((nint)handle);

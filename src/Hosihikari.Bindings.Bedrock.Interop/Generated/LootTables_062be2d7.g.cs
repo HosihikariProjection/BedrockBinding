@@ -44,12 +44,12 @@ public sealed unsafe partial class LootTables : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LootTables Create(global::Hosihikari.Bindings.Bedrock.Interop.LootTables arg0)
+    public static LootTables? Create(global::Hosihikari.Bindings.Bedrock.Interop.LootTables arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6a1336d6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LootTables((nint)handle);

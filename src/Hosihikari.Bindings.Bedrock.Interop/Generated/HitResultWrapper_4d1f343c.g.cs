@@ -40,12 +40,12 @@ public sealed unsafe partial class HitResultWrapper : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static HitResultWrapper Create(global::Hosihikari.Bindings.Bedrock.Interop.HitResultWrapper arg0)
+    public static HitResultWrapper? Create(global::Hosihikari.Bindings.Bedrock.Interop.HitResultWrapper arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_937e8213((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HitResultWrapper((nint)handle);

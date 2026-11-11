@@ -70,12 +70,12 @@ public sealed unsafe partial class FileArchiver : global::System.IDisposable
     public static nint EXTENSION_VANILLA() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileArchiver Create()
+    public static FileArchiver? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_70f500ca();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileArchiver((nint)handle);
@@ -85,12 +85,12 @@ public sealed unsafe partial class FileArchiver : global::System.IDisposable
     public static FileArchiver Create(nint scheduler, nint levelListCache, nint levelStorageSource, nint pathManager, nint resourcePackRepository, bool isEditorModeEnabled, nint worldConverter, nint keyProvider, nint levelDbEnv, nint displayMessageFunction) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileArchiver Create(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver arg0)
+    public static FileArchiver? Create(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2a36c3d0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileArchiver((nint)handle);
@@ -257,9 +257,10 @@ public sealed unsafe partial class FileArchiver : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_1b3c5874((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver((nint)NativeMethods.TablePtr->C1.hs_method_d0bac816((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d0bac816((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver((nint)__hs_handle, false) : null;
     }
 
 

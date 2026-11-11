@@ -49,23 +49,23 @@ public sealed unsafe partial class CommandBlockNameResult : global::System.IDisp
         NativeMethods.TablePtr->C0.hs_method_b3651adb((void*)__hosihikari_shim_handle);
     }
 
-    public static CommandBlockNameResult Create()
+    public static CommandBlockNameResult? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ebc3b542();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandBlockNameResult((nint)handle);
     }
 
-    public static CommandBlockNameResult Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockNameResult arg0)
+    public static CommandBlockNameResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockNameResult arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5fc84902((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandBlockNameResult((nint)handle);

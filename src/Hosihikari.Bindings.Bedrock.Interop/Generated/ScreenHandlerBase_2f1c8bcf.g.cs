@@ -52,23 +52,23 @@ public sealed unsafe partial class ScreenHandlerBase : global::System.IDisposabl
     public void _postRequest(nint wasSuccess) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScreenHandlerBase Create()
+    public static ScreenHandlerBase? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_41da7a51();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScreenHandlerBase((nint)handle);
     }
 
-    public static ScreenHandlerBase Create(global::Hosihikari.Bindings.Bedrock.Interop.ScreenHandlerBase arg0)
+    public static ScreenHandlerBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScreenHandlerBase arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b53f7ed0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScreenHandlerBase((nint)handle);
@@ -95,9 +95,10 @@ public sealed unsafe partial class ScreenHandlerBase : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C3.hs_get_8b6dc50f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScreenHandlerBase operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScreenHandlerBase arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScreenHandlerBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScreenHandlerBase arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScreenHandlerBase((nint)NativeMethods.TablePtr->C3.hs_method_2feb29e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2feb29e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScreenHandlerBase((nint)__hs_handle, false) : null;
     }
 
     public void postRequest(bool wasSuccess)

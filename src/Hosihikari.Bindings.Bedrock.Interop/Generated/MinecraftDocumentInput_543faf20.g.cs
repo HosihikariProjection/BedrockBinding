@@ -72,12 +72,12 @@ public sealed unsafe partial class MinecraftDocumentInput : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinecraftDocumentInput Create()
+    public static MinecraftDocumentInput? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_820af747();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftDocumentInput((nint)handle);
@@ -87,12 +87,12 @@ public sealed unsafe partial class MinecraftDocumentInput : global::System.IDisp
     public static MinecraftDocumentInput Create_d83d1017(nint arg0, nint minModernVersion, nint data) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinecraftDocumentInput Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Resources.MinecraftDocumentInput arg0)
+    public static MinecraftDocumentInput? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Resources.MinecraftDocumentInput arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_bc3fc4ff((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftDocumentInput((nint)handle);
@@ -110,14 +110,16 @@ public sealed unsafe partial class MinecraftDocumentInput : global::System.IDisp
     public void checkPayloadKey(nint payloadKey) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input_Nested.Data data()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input_Nested.Data? data()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input_Nested.Data((nint)NativeMethods.TablePtr->C0.hs_method_09092337((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_09092337((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input_Nested.Data((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger getErrors()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger? getErrors()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger((nint)NativeMethods.TablePtr->C0.hs_method_8ebd3143((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8ebd3143((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -154,14 +156,16 @@ public sealed unsafe partial class MinecraftDocumentInput : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C0.hs_get_2c277710((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Resources.MinecraftDocumentInput operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Resources.MinecraftDocumentInput arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Resources.MinecraftDocumentInput? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Resources.MinecraftDocumentInput arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Resources.MinecraftDocumentInput((nint)NativeMethods.TablePtr->C0.hs_method_d5fdb0dd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d5fdb0dd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Resources.MinecraftDocumentInput((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SemVersion version()
+    public global::Hosihikari.Bindings.Bedrock.Interop.SemVersion? version()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SemVersion((nint)NativeMethods.TablePtr->C0.hs_method_7ba86fbb((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7ba86fbb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SemVersion((nint)__hs_handle) : null;
     }
 
 

@@ -50,12 +50,12 @@ public sealed unsafe partial class CreativeGroupInfo : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CreativeGroupInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.CreativeGroupInfo arg0)
+    public static CreativeGroupInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.CreativeGroupInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_36a6f4d9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreativeGroupInfo((nint)handle);

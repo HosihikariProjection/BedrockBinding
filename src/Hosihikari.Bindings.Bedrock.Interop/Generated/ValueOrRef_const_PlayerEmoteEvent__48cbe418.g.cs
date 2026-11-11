@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerEmoteEvent_ : global::
     public static ValueOrRef_const_PlayerEmoteEvent_ Create_d724fe35(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerEmoteEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerEmoteEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerEmoteEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerEmoteEvent((nint)NativeMethods.TablePtr->C1.hs_method_7cd168b1((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7cd168b1((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerEmoteEvent((nint)__hs_handle, false) : null;
     }
 
 

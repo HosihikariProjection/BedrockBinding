@@ -40,12 +40,12 @@ public sealed unsafe partial class FecControllerOverride : global::System.IDispo
         return __hs_handle;
     }
 
-    public static FecControllerOverride Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FecControllerOverride arg0)
+    public static FecControllerOverride? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FecControllerOverride arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c87b3445((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FecControllerOverride((nint)handle);

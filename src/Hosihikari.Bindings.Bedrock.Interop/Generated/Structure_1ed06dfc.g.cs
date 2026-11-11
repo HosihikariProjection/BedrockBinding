@@ -52,12 +52,12 @@ public sealed unsafe partial class Structure : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Structure Create()
+    public static Structure? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_00402b6b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Structure((nint)handle);
@@ -125,9 +125,10 @@ public sealed unsafe partial class Structure : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_0b89da52((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.Structure operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.Structure arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.Structure? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.Structure arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.Structure((nint)NativeMethods.TablePtr->C4.hs_method_b935c19e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b935c19e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.Structure((nint)__hs_handle, false) : null;
     }
 
 

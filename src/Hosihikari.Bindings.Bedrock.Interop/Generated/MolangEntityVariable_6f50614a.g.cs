@@ -44,12 +44,12 @@ public sealed unsafe partial class MolangEntityVariable : global::System.IDispos
     public nint _ctor(nint value) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MolangEntityVariable Create()
+    public static MolangEntityVariable? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_59b16b03();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangEntityVariable((nint)handle);

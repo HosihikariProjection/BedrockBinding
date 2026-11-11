@@ -40,23 +40,23 @@ public sealed unsafe partial class FlatFileManifestTracker : global::System.IDis
         return __hs_handle;
     }
 
-    public static FlatFileManifestTracker Create()
+    public static FlatFileManifestTracker? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3bb3f4e7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FlatFileManifestTracker((nint)handle);
     }
 
-    public static FlatFileManifestTracker Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileManifestTracker arg0)
+    public static FlatFileManifestTracker? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileManifestTracker arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f3c7c277((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FlatFileManifestTracker((nint)handle);
@@ -88,9 +88,10 @@ public sealed unsafe partial class FlatFileManifestTracker : global::System.IDis
     public bool manifestExists(nint manifestPath) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileManifestTracker operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileManifestTracker arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileManifestTracker? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileManifestTracker arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileManifestTracker((nint)NativeMethods.TablePtr->C1.hs_method_8d1986e2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8d1986e2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileManifestTracker((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

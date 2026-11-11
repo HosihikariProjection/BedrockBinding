@@ -618,12 +618,12 @@ public sealed unsafe partial class ShulkerBullet : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ShulkerBullet Create()
+    public static ShulkerBullet? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5075dc8c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShulkerBullet((nint)handle);
@@ -638,9 +638,10 @@ public sealed unsafe partial class ShulkerBullet : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_f9ad3164((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getSourceUniqueID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getSourceUniqueID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C3.hs_method_f65cf857((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f65cf857((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     public bool isOnFire()

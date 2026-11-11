@@ -92,12 +92,12 @@ public sealed unsafe partial class PathNavigation : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PathNavigation Create(global::Hosihikari.Bindings.Bedrock.Interop.PathNavigation arg0)
+    public static PathNavigation? Create(global::Hosihikari.Bindings.Bedrock.Interop.PathNavigation arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e896e06d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PathNavigation((nint)handle);
@@ -124,9 +124,10 @@ public sealed unsafe partial class PathNavigation : global::System.IDisposable
     public nint createPath_28f3209d(nint parent, nint mob, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getTempMobPos(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getTempMobPos(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_baba6472((void*)__hosihikari_shim_handle, (void*)mob.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_baba6472((void*)__hosihikari_shim_handle, (void*)mob.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.NavigationDescription? description)

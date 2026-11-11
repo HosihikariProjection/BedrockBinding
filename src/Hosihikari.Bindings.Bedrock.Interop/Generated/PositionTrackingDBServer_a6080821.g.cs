@@ -48,12 +48,12 @@ public sealed unsafe partial class PositionTrackingDBServer : global::System.IDi
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PositionTrackingDBServer Create()
+    public static PositionTrackingDBServer? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7e9f3f8d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PositionTrackingDBServer((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class PositionTrackingDBServer : global::System.IDi
     public static PositionTrackingDBServer Create(nint level, nint callbackContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PositionTrackingDBServer Create(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBServer arg0)
+    public static PositionTrackingDBServer? Create(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBServer arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d7ff99f3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PositionTrackingDBServer((nint)handle);
@@ -134,9 +134,10 @@ public sealed unsafe partial class PositionTrackingDBServer : global::System.IDi
     public void onReceivePacket(nint packet) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBServer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBServer arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBServer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBServer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBServer((nint)NativeMethods.TablePtr->C2.hs_method_7781374d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7781374d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBServer((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

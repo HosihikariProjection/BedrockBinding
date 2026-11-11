@@ -40,12 +40,12 @@ public sealed unsafe partial class Result_short__std__error_code_ : global::Syst
         return __hs_handle;
     }
 
-    public static Result_short__std__error_code_ Create(nint arg0)
+    public static Result_short__std__error_code_? Create(nint arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_09bd5e88((void*)arg0);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Result_short__std__error_code_((nint)handle);

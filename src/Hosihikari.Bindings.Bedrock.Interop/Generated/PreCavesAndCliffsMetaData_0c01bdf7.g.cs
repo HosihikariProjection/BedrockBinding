@@ -40,23 +40,23 @@ public sealed unsafe partial class PreCavesAndCliffsMetaData : global::System.ID
         return __hs_handle;
     }
 
-    public static PreCavesAndCliffsMetaData Create()
+    public static PreCavesAndCliffsMetaData? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_745c94cc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PreCavesAndCliffsMetaData((nint)handle);
     }
 
-    public static PreCavesAndCliffsMetaData Create(global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage_Nested.PreCavesAndCliffsMetaData arg0)
+    public static PreCavesAndCliffsMetaData? Create(global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage_Nested.PreCavesAndCliffsMetaData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e22197d8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PreCavesAndCliffsMetaData((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class PreCavesAndCliffsMetaData : global::System.ID
         get => (nint)NativeMethods.TablePtr->C1.hs_get_6d68a867((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage_Nested.PreCavesAndCliffsMetaData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage_Nested.PreCavesAndCliffsMetaData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage_Nested.PreCavesAndCliffsMetaData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage_Nested.PreCavesAndCliffsMetaData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage_Nested.PreCavesAndCliffsMetaData((nint)NativeMethods.TablePtr->C1.hs_method_39f8c5ba((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_39f8c5ba((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage_Nested.PreCavesAndCliffsMetaData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

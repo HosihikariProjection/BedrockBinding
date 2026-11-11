@@ -72,12 +72,12 @@ public sealed unsafe partial class PeerConnectionFactoryInterface : global::Syst
     public nint GetRtpSenderCapabilities(nint kind) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'webrtc::RtpCapabilities' requires --link-carrier or --virtual-dispatch.");
 
-    public static PeerConnectionFactoryInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface arg0)
+    public static PeerConnectionFactoryInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_de278c41((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PeerConnectionFactoryInterface((nint)handle);

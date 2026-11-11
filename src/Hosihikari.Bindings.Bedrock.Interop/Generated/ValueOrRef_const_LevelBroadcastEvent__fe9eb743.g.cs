@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_LevelBroadcastEvent_ : globa
     public static ValueOrRef_const_LevelBroadcastEvent_ Create_0c770f65(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const LevelBroadcastEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelBroadcastEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelBroadcastEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelBroadcastEvent((nint)NativeMethods.TablePtr->C1.hs_method_18eefcc3((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_18eefcc3((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelBroadcastEvent((nint)__hs_handle, false) : null;
     }
 
 

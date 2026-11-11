@@ -40,23 +40,23 @@ public sealed unsafe partial class LevelChunkBiomes : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static LevelChunkBiomes Create()
+    public static LevelChunkBiomes? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_aff9ca41();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunkBiomes((nint)handle);
     }
 
-    public static LevelChunkBiomes Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes arg0)
+    public static LevelChunkBiomes? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e97d6b09((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunkBiomes((nint)handle);
@@ -94,9 +94,10 @@ public sealed unsafe partial class LevelChunkBiomes : global::System.IDisposable
     public void makeUniformBiomes(nint biome) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes((nint)NativeMethods.TablePtr->C2.hs_method_5280a2fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5280a2fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -82,23 +82,23 @@ public sealed unsafe partial class StayNearNoteblockGoal : global::System.IDispo
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StayNearNoteblockGoal Create()
+    public static StayNearNoteblockGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f3e9f960();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StayNearNoteblockGoal((nint)handle);
     }
 
-    public static StayNearNoteblockGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.StayNearNoteblockGoal arg0)
+    public static StayNearNoteblockGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.StayNearNoteblockGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_933b9221((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StayNearNoteblockGoal((nint)handle);
@@ -174,9 +174,10 @@ public sealed unsafe partial class StayNearNoteblockGoal : global::System.IDispo
         set => NativeMethods.TablePtr->C3.hs_set_47687375((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StayNearNoteblockGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StayNearNoteblockGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.StayNearNoteblockGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StayNearNoteblockGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StayNearNoteblockGoal((nint)NativeMethods.TablePtr->C3.hs_method_523bf812((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_523bf812((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StayNearNoteblockGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

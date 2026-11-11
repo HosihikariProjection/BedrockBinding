@@ -56,12 +56,12 @@ public sealed unsafe partial class StickInGroundSubcomponent : global::System.ID
     public void _writetoJSON(nint component) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StickInGroundSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.StickInGroundSubcomponent arg0)
+    public static StickInGroundSubcomponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.StickInGroundSubcomponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c50cd68b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StickInGroundSubcomponent((nint)handle);

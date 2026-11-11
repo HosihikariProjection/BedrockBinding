@@ -86,23 +86,23 @@ public sealed unsafe partial class ScaredGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScaredGoal Create()
+    public static ScaredGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_567bbc4e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScaredGoal((nint)handle);
     }
 
-    public static ScaredGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.ScaredGoal arg0)
+    public static ScaredGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScaredGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7b733a72((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScaredGoal((nint)handle);
@@ -150,9 +150,10 @@ public sealed unsafe partial class ScaredGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_868d4df5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScaredGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScaredGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScaredGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScaredGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScaredGoal((nint)NativeMethods.TablePtr->C3.hs_method_ff50a447((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ff50a447((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScaredGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

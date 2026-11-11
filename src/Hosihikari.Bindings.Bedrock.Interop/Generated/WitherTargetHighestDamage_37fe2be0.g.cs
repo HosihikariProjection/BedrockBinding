@@ -182,12 +182,12 @@ public sealed unsafe partial class WitherTargetHighestDamage : global::System.ID
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WitherTargetHighestDamage Create()
+    public static WitherTargetHighestDamage? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a28ff051();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WitherTargetHighestDamage((nint)handle);
@@ -197,12 +197,12 @@ public sealed unsafe partial class WitherTargetHighestDamage : global::System.ID
     public static WitherTargetHighestDamage Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WitherTargetHighestDamage Create(global::Hosihikari.Bindings.Bedrock.Interop.WitherTargetHighestDamage arg0)
+    public static WitherTargetHighestDamage? Create(global::Hosihikari.Bindings.Bedrock.Interop.WitherTargetHighestDamage arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_8c6dffad((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WitherTargetHighestDamage((nint)handle);
@@ -258,9 +258,10 @@ public sealed unsafe partial class WitherTargetHighestDamage : global::System.ID
         get => (nint)NativeMethods.TablePtr->C4.hs_get_5aa46adb((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WitherTargetHighestDamage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WitherTargetHighestDamage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WitherTargetHighestDamage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WitherTargetHighestDamage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WitherTargetHighestDamage((nint)NativeMethods.TablePtr->C4.hs_method_cd016280((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_cd016280((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WitherTargetHighestDamage((nint)__hs_handle, false) : null;
     }
 
     public void start()

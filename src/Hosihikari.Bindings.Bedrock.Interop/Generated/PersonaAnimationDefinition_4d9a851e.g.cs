@@ -40,23 +40,23 @@ public sealed unsafe partial class PersonaAnimationDefinition : global::System.I
         return __hs_handle;
     }
 
-    public static PersonaAnimationDefinition Create()
+    public static PersonaAnimationDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_aa6e5e64();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PersonaAnimationDefinition((nint)handle);
     }
 
-    public static PersonaAnimationDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition arg0)
+    public static PersonaAnimationDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8a75aa20((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PersonaAnimationDefinition((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class PersonaAnimationDefinition : global::System.I
         get => (nint)NativeMethods.TablePtr->C2.hs_get_03c6ff58((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition((nint)NativeMethods.TablePtr->C2.hs_method_437e8fd3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_437e8fd3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

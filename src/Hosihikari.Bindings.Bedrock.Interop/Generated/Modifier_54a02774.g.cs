@@ -56,12 +56,12 @@ public sealed unsafe partial class Modifier : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Modifier Create()
+    public static Modifier? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b95e5ccf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Modifier((nint)handle);
@@ -71,12 +71,12 @@ public sealed unsafe partial class Modifier : global::System.IDisposable
     public static Modifier Create(nint match) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Modifier Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockEntity.Modifier arg0)
+    public static Modifier? Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockEntity.Modifier arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6be6b0f5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Modifier((nint)handle);

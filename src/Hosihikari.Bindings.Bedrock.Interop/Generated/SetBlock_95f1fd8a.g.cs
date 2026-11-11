@@ -56,12 +56,12 @@ public sealed unsafe partial class SetBlock : global::System.IDisposable
     public static nint NameID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SetBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SetBlock arg0)
+    public static SetBlock? Create(global::Hosihikari.Bindings.Bedrock.Interop.SetBlock arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a1c7169e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetBlock((nint)handle);

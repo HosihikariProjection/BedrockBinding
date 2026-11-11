@@ -45,12 +45,12 @@ public sealed unsafe partial class AudioDeviceModule : global::System.IDisposabl
         return NativeMethods.TablePtr->C4.hs_method_dbcb5fb1((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
-    public static AudioDeviceModule Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule arg0)
+    public static AudioDeviceModule? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_663f5cb2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AudioDeviceModule((nint)handle);

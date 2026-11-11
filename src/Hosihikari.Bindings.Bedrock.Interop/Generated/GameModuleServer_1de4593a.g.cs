@@ -46,12 +46,12 @@ public sealed unsafe partial class GameModuleServer : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_03bb54d2((void*)__hosihikari_shim_handle);
     }
 
-    public static GameModuleServer Create(global::Hosihikari.Bindings.Bedrock.Interop.GameModuleServer arg0)
+    public static GameModuleServer? Create(global::Hosihikari.Bindings.Bedrock.Interop.GameModuleServer arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5438cb4d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameModuleServer((nint)handle);

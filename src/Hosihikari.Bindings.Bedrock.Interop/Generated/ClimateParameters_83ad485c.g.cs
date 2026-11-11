@@ -45,34 +45,34 @@ public sealed unsafe partial class ClimateParameters : global::System.IDisposabl
         return (nint)NativeMethods.TablePtr->C0.hs_method_bc77fc87((void*)__hosihikari_shim_handle, (void*)temperature.Handle, (void*)humidity.Handle, (void*)continentalness.Handle, (void*)erosion.Handle, (void*)depth.Handle, (void*)weirdness.Handle, offset);
     }
 
-    public static ClimateParameters Create()
+    public static ClimateParameters? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0e4ea8e0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClimateParameters((nint)handle);
     }
 
-    public static ClimateParameters Create(global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter temperature, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter humidity, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter continentalness, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter erosion, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter depth, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter weirdness, float offset)
+    public static ClimateParameters? Create(global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter temperature, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter humidity, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter continentalness, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter erosion, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter depth, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter weirdness, float offset)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5cefcad3((void*)temperature.Handle, (void*)humidity.Handle, (void*)continentalness.Handle, (void*)erosion.Handle, (void*)depth.Handle, (void*)weirdness.Handle, offset);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClimateParameters((nint)handle);
     }
 
-    public static ClimateParameters Create(global::Hosihikari.Bindings.Bedrock.Interop.ClimateParameters arg0)
+    public static ClimateParameters? Create(global::Hosihikari.Bindings.Bedrock.Interop.ClimateParameters arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f3de6dde((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClimateParameters((nint)handle);

@@ -44,23 +44,23 @@ public sealed unsafe partial class ShareableData : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ShareableData Create()
+    public static ShareableData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_43f4429c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShareableData((nint)handle);
     }
 
-    public static ShareableData Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.ShareableComponentDefinition_Nested.ShareableData arg0)
+    public static ShareableData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.ShareableComponentDefinition_Nested.ShareableData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_85d8b376((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShareableData((nint)handle);

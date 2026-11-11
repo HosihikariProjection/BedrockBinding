@@ -40,12 +40,12 @@ public sealed unsafe partial class IReplayStatePolicy : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static IReplayStatePolicy Create(global::Hosihikari.Bindings.Bedrock.Interop.IReplayStatePolicy arg0)
+    public static IReplayStatePolicy? Create(global::Hosihikari.Bindings.Bedrock.Interop.IReplayStatePolicy arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_556ecbc0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IReplayStatePolicy((nint)handle);
@@ -61,9 +61,10 @@ public sealed unsafe partial class IReplayStatePolicy : global::System.IDisposab
         NativeMethods.TablePtr->C1.hs_method_df4e85e1((void*)__hosihikari_shim_handle, frame);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection shouldCorrectMovement(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacket arg1, ulong arg2, byte arg3, bool arg4)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection? shouldCorrectMovement(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacket arg1, ulong arg2, byte arg3, bool arg4)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)NativeMethods.TablePtr->C1.hs_method_d5425b62((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2, arg3, arg4));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d5425b62((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2, arg3, arg4);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)__hs_handle) : null;
     }
 
 

@@ -40,12 +40,12 @@ public sealed unsafe partial class StateVectorComponent : global::System.IDispos
         return __hs_handle;
     }
 
-    public static StateVectorComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent arg0)
+    public static StateVectorComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c7a27b0d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StateVectorComponent((nint)handle);

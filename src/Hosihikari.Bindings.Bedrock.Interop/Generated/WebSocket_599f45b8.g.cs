@@ -72,12 +72,12 @@ public sealed unsafe partial class WebSocket : global::System.IDisposable
     public static WebSocket Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WebSocket Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocket arg0)
+    public static WebSocket? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocket arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fcbc58a0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WebSocket((nint)handle);
@@ -147,9 +147,10 @@ public sealed unsafe partial class WebSocket : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocket operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocket arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocket? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocket arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocket((nint)NativeMethods.TablePtr->C0.hs_method_64caa227((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_64caa227((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocket((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<std::error_code>' requires --link-carrier or --virtual-dispatch.", false)]

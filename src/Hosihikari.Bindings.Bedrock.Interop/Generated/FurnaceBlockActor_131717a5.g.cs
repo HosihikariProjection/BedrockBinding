@@ -282,12 +282,12 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
     public static nint FILTERED_CUSTOM_NAME_KEY() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FurnaceBlockActor Create()
+    public static FurnaceBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8487f436();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FurnaceBlockActor((nint)handle);
@@ -301,12 +301,12 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
     public static FurnaceBlockActor Create(nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FurnaceBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlockActor arg0)
+    public static FurnaceBlockActor? Create(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlockActor arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_08a0ff58((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FurnaceBlockActor((nint)handle);
@@ -390,9 +390,10 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
         return NativeMethods.TablePtr->C1.hs_method_2cfcd67a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_cb1f249f((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cb1f249f((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public static float getItemBurnDuration(global::Hosihikari.Bindings.Bedrock.Interop.Item item, float burnInterval)
@@ -565,9 +566,10 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
         NativeMethods.TablePtr->C1.hs_method_6976a9a5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlockActor operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlockActor arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlockActor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlockActor arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlockActor((nint)NativeMethods.TablePtr->C1.hs_method_1dd5a93e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1dd5a93e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlockActor((nint)__hs_handle, false) : null;
     }
 
     public bool save(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, nint saveContext)

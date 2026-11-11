@@ -135,23 +135,23 @@ public sealed unsafe partial class PlayerUIContainerModelBase : global::System.I
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerUIContainerModelBase Create()
+    public static PlayerUIContainerModelBase? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_49fdad7b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerUIContainerModelBase((nint)handle);
     }
 
-    public static PlayerUIContainerModelBase Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerUIContainerModelBase arg0)
+    public static PlayerUIContainerModelBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerUIContainerModelBase arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_023edf72((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerUIContainerModelBase((nint)handle);
@@ -178,9 +178,10 @@ public sealed unsafe partial class PlayerUIContainerModelBase : global::System.I
         NativeMethods.TablePtr->C2.hs_method_ce9c34ac((void*)__hosihikari_shim_handle, slot);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef getContainerWeakRef()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef? getContainerWeakRef()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)NativeMethods.TablePtr->C2.hs_method_ca6da512((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ca6da512((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)__hs_handle) : null;
     }
 
     public bool isValid()
@@ -194,9 +195,10 @@ public sealed unsafe partial class PlayerUIContainerModelBase : global::System.I
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d1d0794b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerUIContainerModelBase operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerUIContainerModelBase arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerUIContainerModelBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerUIContainerModelBase arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerUIContainerModelBase((nint)NativeMethods.TablePtr->C2.hs_method_68cdd57e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_68cdd57e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerUIContainerModelBase((nint)__hs_handle, false) : null;
     }
 
     public void postInit()

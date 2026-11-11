@@ -40,23 +40,23 @@ public sealed unsafe partial class CommandCooldown : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CommandCooldown Create()
+    public static CommandCooldown? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e7a78ebe();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandCooldown((nint)handle);
     }
 
-    public static CommandCooldown Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.CommandCooldown arg0)
+    public static CommandCooldown? Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.CommandCooldown arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_51f8c2e6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandCooldown((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class CommandCooldown : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_4e1fac70((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.CommandCooldown operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.CommandCooldown arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.CommandCooldown? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.CommandCooldown arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.CommandCooldown((nint)NativeMethods.TablePtr->C0.hs_method_a53837e5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a53837e5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.CommandCooldown((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

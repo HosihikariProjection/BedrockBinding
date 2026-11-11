@@ -44,12 +44,12 @@ public sealed unsafe partial class PeekSystem : global::System.IDisposable
     public void _tick(nint registry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PeekSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.PeekSystem arg0)
+    public static PeekSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.PeekSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1dd7c8b4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PeekSystem((nint)handle);

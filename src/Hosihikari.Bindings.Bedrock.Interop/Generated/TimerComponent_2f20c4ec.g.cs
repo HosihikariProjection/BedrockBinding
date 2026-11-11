@@ -40,12 +40,12 @@ public sealed unsafe partial class TimerComponent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TimerComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.TimerComponent arg0)
+    public static TimerComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.TimerComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6c05520c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TimerComponent((nint)handle);

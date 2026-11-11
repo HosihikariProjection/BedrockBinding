@@ -48,23 +48,23 @@ public sealed unsafe partial class LockGuard : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LockGuard Create()
+    public static LockGuard? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d980aa77();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LockGuard((nint)handle);
     }
 
-    public static LockGuard Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef_Nested.LockGuard arg0)
+    public static LockGuard? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef_Nested.LockGuard arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8e360b17((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LockGuard((nint)handle);

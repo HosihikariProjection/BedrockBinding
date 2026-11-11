@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerStartItemCooldownPacketPayload : global
         return __hs_handle;
     }
 
-    public static PlayerStartItemCooldownPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerStartItemCooldownPacketPayload arg0)
+    public static PlayerStartItemCooldownPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerStartItemCooldownPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cf5b91e6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerStartItemCooldownPacketPayload((nint)handle);

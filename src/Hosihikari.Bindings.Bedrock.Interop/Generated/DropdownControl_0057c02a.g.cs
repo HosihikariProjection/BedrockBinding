@@ -48,23 +48,23 @@ public sealed unsafe partial class DropdownControl : global::System.IDisposable
     public nint _ctor(nint label, nint options, nint defaultValueIndex, nint tooltip) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DropdownControl Create()
+    public static DropdownControl? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_73d73876();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DropdownControl((nint)handle);
     }
 
-    public static DropdownControl Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.DropdownControl arg0)
+    public static DropdownControl? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.DropdownControl arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2cdc5fef((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DropdownControl((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class DropdownControl : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_eb315e3f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.DropdownControl operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.DropdownControl arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.DropdownControl? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.DropdownControl arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.DropdownControl((nint)NativeMethods.TablePtr->C3.hs_method_1babe505((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1babe505((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.DropdownControl((nint)__hs_handle, false) : null;
     }
 
 

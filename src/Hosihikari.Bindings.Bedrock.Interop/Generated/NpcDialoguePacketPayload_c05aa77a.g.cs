@@ -52,12 +52,12 @@ public sealed unsafe partial class NpcDialoguePacketPayload : global::System.IDi
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NpcDialoguePacketPayload Create()
+    public static NpcDialoguePacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_567eff1d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NpcDialoguePacketPayload((nint)handle);
@@ -71,12 +71,12 @@ public sealed unsafe partial class NpcDialoguePacketPayload : global::System.IDi
     public static NpcDialoguePacketPayload Create(nint npcID, nint dialogueActionType, nint dialogueText, nint sceneName, nint npcName, nint actionJSON) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NpcDialoguePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.NpcDialoguePacketPayload arg0)
+    public static NpcDialoguePacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.NpcDialoguePacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c9bb1345((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NpcDialoguePacketPayload((nint)handle);

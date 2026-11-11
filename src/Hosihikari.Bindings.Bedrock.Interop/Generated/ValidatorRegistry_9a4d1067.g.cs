@@ -50,12 +50,12 @@ public sealed unsafe partial class ValidatorRegistry : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ValidatorRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.ValidatorRegistry arg0)
+    public static ValidatorRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.ValidatorRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f39eeaac((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ValidatorRegistry((nint)handle);
@@ -67,9 +67,10 @@ public sealed unsafe partial class ValidatorRegistry : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C4.hs_get_4df0f1c0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ValidatorRegistry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ValidatorRegistry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ValidatorRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ValidatorRegistry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ValidatorRegistry((nint)NativeMethods.TablePtr->C4.hs_method_9dd3d742((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_9dd3d742((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ValidatorRegistry((nint)__hs_handle, false) : null;
     }
 
 

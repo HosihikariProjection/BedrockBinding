@@ -653,12 +653,12 @@ public sealed unsafe partial class ThrownTrident : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ThrownTrident Create()
+    public static ThrownTrident? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e11dc8b2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ThrownTrident((nint)handle);
@@ -668,14 +668,16 @@ public sealed unsafe partial class ThrownTrident : global::System.IDisposable
     public static ThrownTrident Create(nint definitions, nint definitionName, nint entityContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack _getPickupItem()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? _getPickupItem()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C4.hs_method_c8ce25dc((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c8ce25dc((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C4.hs_method_71682dcc((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_71682dcc((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)

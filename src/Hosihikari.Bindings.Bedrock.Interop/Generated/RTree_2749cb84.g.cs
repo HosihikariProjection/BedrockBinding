@@ -40,12 +40,12 @@ public sealed unsafe partial class RTree : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static RTree Create(global::Hosihikari.Bindings.Bedrock.Interop.RTree arg0)
+    public static RTree? Create(global::Hosihikari.Bindings.Bedrock.Interop.RTree arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3364f58c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RTree((nint)handle);

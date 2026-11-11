@@ -52,12 +52,12 @@ public sealed unsafe partial class NBCastleSmallCorridorLeftTurnPiece : global::
     public bool _postProcess(nint region, nint random, nint chunkBB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NBCastleSmallCorridorLeftTurnPiece Create(global::Hosihikari.Bindings.Bedrock.Interop.NBCastleSmallCorridorLeftTurnPiece arg0)
+    public static NBCastleSmallCorridorLeftTurnPiece? Create(global::Hosihikari.Bindings.Bedrock.Interop.NBCastleSmallCorridorLeftTurnPiece arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1cedc6ec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NBCastleSmallCorridorLeftTurnPiece((nint)handle);

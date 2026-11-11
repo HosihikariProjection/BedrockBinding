@@ -40,12 +40,12 @@ public sealed unsafe partial class DataItem2_signed_char_ : global::System.IDisp
         return __hs_handle;
     }
 
-    public static DataItem2_signed_char_ Create(global::Hosihikari.Bindings.Bedrock.Interop.DataItem2_signed_char_ arg0)
+    public static DataItem2_signed_char_? Create(global::Hosihikari.Bindings.Bedrock.Interop.DataItem2_signed_char_ arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e9646016((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DataItem2_signed_char_((nint)handle);

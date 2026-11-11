@@ -40,23 +40,23 @@ public sealed unsafe partial class MediaConfig : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static MediaConfig Create()
+    public static MediaConfig? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e1ad53e9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MediaConfig((nint)handle);
     }
 
-    public static MediaConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig arg0)
+    public static MediaConfig? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_46857f10((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MediaConfig((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class MediaConfig : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_d2dd4173((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig((nint)NativeMethods.TablePtr->C4.hs_method_4a3c547d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4a3c547d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -56,12 +56,12 @@ public sealed unsafe partial class VinesSingleFaceFeature : global::System.IDisp
     public nint _place(nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VinesSingleFaceFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.VinesSingleFaceFeature arg0)
+    public static VinesSingleFaceFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.VinesSingleFaceFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ec9b7595((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VinesSingleFaceFeature((nint)handle);

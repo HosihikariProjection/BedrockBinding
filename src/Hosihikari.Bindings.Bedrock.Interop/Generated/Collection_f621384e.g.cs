@@ -40,23 +40,23 @@ public sealed unsafe partial class Collection : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Collection Create()
+    public static Collection? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_872111ab();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Collection((nint)handle);
     }
 
-    public static Collection Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Collection arg0)
+    public static Collection? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Collection arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6c128b86((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Collection((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class Collection : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_4e353404((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Collection operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Collection arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Collection? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Collection arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Collection((nint)NativeMethods.TablePtr->C0.hs_method_b4dcef5c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b4dcef5c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Collection((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

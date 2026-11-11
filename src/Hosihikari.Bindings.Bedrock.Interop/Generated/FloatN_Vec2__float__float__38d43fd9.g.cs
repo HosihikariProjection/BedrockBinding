@@ -45,14 +45,16 @@ public sealed unsafe partial class FloatN_Vec2__float__float_ : global::System.I
         return NativeMethods.TablePtr->C4.hs_method_03162a4e((void*)__hosihikari_shim_handle, (void*)b.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 cross(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2? cross(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_d72f52ee((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d72f52ee((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 normalize()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2? normalize()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_bf417285((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_bf417285((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
     }
 
     public void Dispose()

@@ -40,12 +40,12 @@ public sealed unsafe partial class ItemSpecificSpeed : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static ItemSpecificSpeed Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemSpecificSpeed arg0)
+    public static ItemSpecificSpeed? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemSpecificSpeed arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a332ef53((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemSpecificSpeed((nint)handle);

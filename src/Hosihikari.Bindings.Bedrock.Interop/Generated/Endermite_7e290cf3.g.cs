@@ -614,12 +614,12 @@ public sealed unsafe partial class Endermite : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Endermite Create()
+    public static Endermite? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fe299932();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Endermite((nint)handle);

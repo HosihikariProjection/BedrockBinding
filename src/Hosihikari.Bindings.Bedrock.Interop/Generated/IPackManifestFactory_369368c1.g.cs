@@ -46,12 +46,12 @@ public sealed unsafe partial class IPackManifestFactory : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_9d0e637d((void*)__hosihikari_shim_handle);
     }
 
-    public static IPackManifestFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.IPackManifestFactory arg0)
+    public static IPackManifestFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.IPackManifestFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6e3278d8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IPackManifestFactory((nint)handle);

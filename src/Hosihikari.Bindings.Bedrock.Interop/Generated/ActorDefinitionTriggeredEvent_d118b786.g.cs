@@ -40,23 +40,23 @@ public sealed unsafe partial class ActorDefinitionTriggeredEvent : global::Syste
         return __hs_handle;
     }
 
-    public static ActorDefinitionTriggeredEvent Create()
+    public static ActorDefinitionTriggeredEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_430ee5eb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionTriggeredEvent((nint)handle);
     }
 
-    public static ActorDefinitionTriggeredEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTriggeredEvent arg0)
+    public static ActorDefinitionTriggeredEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTriggeredEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_818a5601((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionTriggeredEvent((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class ActorDefinitionTriggeredEvent : global::Syste
         get => (nint)NativeMethods.TablePtr->C0.hs_get_1b472a82((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTriggeredEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTriggeredEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTriggeredEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTriggeredEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTriggeredEvent((nint)NativeMethods.TablePtr->C0.hs_method_e3016f60((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e3016f60((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTriggeredEvent((nint)__hs_handle, false) : null;
     }
 
 

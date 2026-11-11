@@ -40,23 +40,23 @@ public sealed unsafe partial class ScriptModuleStartupEvent : global::System.IDi
         return __hs_handle;
     }
 
-    public static ScriptModuleStartupEvent Create()
+    public static ScriptModuleStartupEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_50acbf4d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptModuleStartupEvent((nint)handle);
     }
 
-    public static ScriptModuleStartupEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleStartupEvent arg0)
+    public static ScriptModuleStartupEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleStartupEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b40c641f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptModuleStartupEvent((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class ScriptModuleStartupEvent : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C3.hs_get_242a074f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleStartupEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleStartupEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleStartupEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleStartupEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleStartupEvent((nint)NativeMethods.TablePtr->C3.hs_method_523bf191((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_523bf191((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleStartupEvent((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

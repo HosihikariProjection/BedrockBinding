@@ -44,12 +44,12 @@ public sealed unsafe partial class SkinData : global::System.IDisposable
     public nint _ctor(nint skinDataJson) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SkinData Create()
+    public static SkinData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_990da051();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SkinData((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class SkinData : global::System.IDisposable
     public static SkinData Create(nint skinDataJson) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SkinData Create(global::Hosihikari.Bindings.Bedrock.Interop.SkinData arg0)
+    public static SkinData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SkinData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cff2023b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SkinData((nint)handle);

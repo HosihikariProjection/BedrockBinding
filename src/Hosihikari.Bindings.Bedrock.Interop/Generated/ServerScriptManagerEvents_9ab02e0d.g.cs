@@ -40,12 +40,12 @@ public sealed unsafe partial class ServerScriptManagerEvents : global::System.ID
         return __hs_handle;
     }
 
-    public static ServerScriptManagerEvents Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManagerEvents arg0)
+    public static ServerScriptManagerEvents? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManagerEvents arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_18d34f47((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerScriptManagerEvents((nint)handle);

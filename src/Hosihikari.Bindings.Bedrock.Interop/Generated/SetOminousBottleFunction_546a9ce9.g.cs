@@ -62,12 +62,12 @@ public sealed unsafe partial class SetOminousBottleFunction : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SetOminousBottleFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetOminousBottleFunction arg0)
+    public static SetOminousBottleFunction? Create(global::Hosihikari.Bindings.Bedrock.Interop.SetOminousBottleFunction arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_df37a821((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetOminousBottleFunction((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class LerpedInterval : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static LerpedInterval Create()
+    public static LerpedInterval? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6493c622();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LerpedInterval((nint)handle);
     }
 
-    public static LerpedInterval Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData_Nested.LerpedInterval arg0)
+    public static LerpedInterval? Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData_Nested.LerpedInterval arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f4c705ae((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LerpedInterval((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class LerpedInterval : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_81e3932f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData_Nested.LerpedInterval operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData_Nested.LerpedInterval arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData_Nested.LerpedInterval? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData_Nested.LerpedInterval arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData_Nested.LerpedInterval((nint)NativeMethods.TablePtr->C2.hs_method_b7320aad((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b7320aad((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData_Nested.LerpedInterval((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

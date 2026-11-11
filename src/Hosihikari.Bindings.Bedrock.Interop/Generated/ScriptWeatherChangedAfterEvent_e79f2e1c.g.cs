@@ -44,23 +44,23 @@ public sealed unsafe partial class ScriptWeatherChangedAfterEvent : global::Syst
     public nint _ctor(nint eventData, nint arg1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptWeatherChangedAfterEvent Create()
+    public static ScriptWeatherChangedAfterEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_78fb1a8e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptWeatherChangedAfterEvent((nint)handle);
     }
 
-    public static ScriptWeatherChangedAfterEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptWeatherChangedAfterEvent arg0)
+    public static ScriptWeatherChangedAfterEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptWeatherChangedAfterEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7f3b4e30((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptWeatherChangedAfterEvent((nint)handle);

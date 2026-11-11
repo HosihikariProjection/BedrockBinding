@@ -40,23 +40,23 @@ public sealed unsafe partial class ContentTierIncompatibleReason : global::Syste
         return __hs_handle;
     }
 
-    public static ContentTierIncompatibleReason Create()
+    public static ContentTierIncompatibleReason? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b42d6f17();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContentTierIncompatibleReason((nint)handle);
     }
 
-    public static ContentTierIncompatibleReason Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason arg0)
+    public static ContentTierIncompatibleReason? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6715cc27((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContentTierIncompatibleReason((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class ContentTierIncompatibleReason : global::Syste
         get => (nint)NativeMethods.TablePtr->C1.hs_get_596070a0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason((nint)NativeMethods.TablePtr->C1.hs_method_f912b00f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f912b00f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

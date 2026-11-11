@@ -53,31 +53,32 @@ public sealed unsafe partial class StringNode : global::System.IDisposable
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
     }
 
-    public static StringNode Create()
+    public static StringNode? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_34f04f29();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StringNode((nint)handle);
     }
 
-    public static StringNode Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.StringNode arg0)
+    public static StringNode? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.StringNode arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ae1232fd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StringNode((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.StringNode operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.StringNode arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.StringNode? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.StringNode arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.StringNode((nint)NativeMethods.TablePtr->C0.hs_method_45f09f5f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_45f09f5f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.StringNode((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

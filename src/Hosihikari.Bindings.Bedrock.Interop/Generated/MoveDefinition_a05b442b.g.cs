@@ -56,12 +56,12 @@ public sealed unsafe partial class MoveDefinition : global::System.IDisposable
     public void _load(nint value, nint factory) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveDefinition arg0)
+    public static MoveDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_eccb62c9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveDefinition((nint)handle);

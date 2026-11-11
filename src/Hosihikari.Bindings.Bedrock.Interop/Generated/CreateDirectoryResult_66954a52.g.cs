@@ -40,23 +40,23 @@ public sealed unsafe partial class CreateDirectoryResult : global::System.IDispo
         return __hs_handle;
     }
 
-    public static CreateDirectoryResult Create()
+    public static CreateDirectoryResult? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_63f771cb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreateDirectoryResult((nint)handle);
     }
 
-    public static CreateDirectoryResult Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.CreateDirectoryResult arg0)
+    public static CreateDirectoryResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.CreateDirectoryResult arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4a799e82((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreateDirectoryResult((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class CreateDirectoryResult : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_e1d166a3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.CreateDirectoryResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.CreateDirectoryResult arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.CreateDirectoryResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.CreateDirectoryResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.CreateDirectoryResult((nint)NativeMethods.TablePtr->C0.hs_method_ec329099((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ec329099((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.CreateDirectoryResult((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

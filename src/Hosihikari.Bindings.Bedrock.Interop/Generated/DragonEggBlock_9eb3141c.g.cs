@@ -405,12 +405,12 @@ public sealed unsafe partial class DragonEggBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DragonEggBlock Create()
+    public static DragonEggBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5720acc4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DragonEggBlock((nint)handle);
@@ -435,9 +435,10 @@ public sealed unsafe partial class DragonEggBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_9f63160a((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)version.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getDustColor(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getDustColor(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C1.hs_method_e44bf0bf((void*)__hosihikari_shim_handle, (void*)arg0.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e44bf0bf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public string getDustParticleName(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)

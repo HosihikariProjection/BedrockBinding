@@ -44,12 +44,12 @@ public sealed unsafe partial class ClearCommand : global::System.IDisposable
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ClearCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.ClearCommand arg0)
+    public static ClearCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.ClearCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8f6fa5bc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClearCommand((nint)handle);

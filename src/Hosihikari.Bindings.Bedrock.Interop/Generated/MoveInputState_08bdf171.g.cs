@@ -40,12 +40,12 @@ public sealed unsafe partial class MoveInputState : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static MoveInputState Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveInputState arg0)
+    public static MoveInputState? Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveInputState arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_17420a74((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveInputState((nint)handle);

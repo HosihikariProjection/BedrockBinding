@@ -48,12 +48,12 @@ public sealed unsafe partial class CombatRegenerationListener : global::System.I
     public nint _onEvent(nint @event) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CombatRegenerationListener Create()
+    public static CombatRegenerationListener? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_030398e8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CombatRegenerationListener((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class CombatRegenerationListener : global::System.I
     public static CombatRegenerationListener Create(nint coordinator) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CombatRegenerationListener Create(global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationListener arg0)
+    public static CombatRegenerationListener? Create(global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationListener arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5f610e81((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CombatRegenerationListener((nint)handle);
@@ -103,9 +103,10 @@ public sealed unsafe partial class CombatRegenerationListener : global::System.I
         return NativeMethods.TablePtr->C0.hs_method_932fe17b((void*)__hosihikari_shim_handle, (void*)@event.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationListener operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationListener arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationListener? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationListener arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationListener((nint)NativeMethods.TablePtr->C0.hs_method_74d883a6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_74d883a6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationListener((nint)__hs_handle, false) : null;
     }
 
 

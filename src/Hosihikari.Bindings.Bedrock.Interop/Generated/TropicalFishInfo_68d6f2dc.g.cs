@@ -44,23 +44,23 @@ public sealed unsafe partial class TropicalFishInfo : global::System.IDisposable
     public nint _ctor(int color, int color2, int variant, int markVariant, nint name) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TropicalFishInfo Create()
+    public static TropicalFishInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_d3e9fc95();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TropicalFishInfo((nint)handle);
     }
 
-    public static TropicalFishInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.TropicalFishInfo arg0)
+    public static TropicalFishInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.TropicalFishInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_deeb5796((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TropicalFishInfo((nint)handle);

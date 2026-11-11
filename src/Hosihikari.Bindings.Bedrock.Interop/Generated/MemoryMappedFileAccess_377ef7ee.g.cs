@@ -86,23 +86,23 @@ public sealed unsafe partial class MemoryMappedFileAccess : global::System.IDisp
     public static nint EMPTY_TRANSFORMS() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MemoryMappedFileAccess Create()
+    public static MemoryMappedFileAccess? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_eb144e2b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MemoryMappedFileAccess((nint)handle);
     }
 
-    public static MemoryMappedFileAccess Create(global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess arg0)
+    public static MemoryMappedFileAccess? Create(global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fe9411b1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MemoryMappedFileAccess((nint)handle);
@@ -206,9 +206,10 @@ public sealed unsafe partial class MemoryMappedFileAccess : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C2.hs_get_ed580a77((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess((nint)NativeMethods.TablePtr->C2.hs_method_421e4567((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_421e4567((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess((nint)__hs_handle, false) : null;
     }
 
     public void unload()

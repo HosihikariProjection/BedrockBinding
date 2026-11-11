@@ -40,12 +40,12 @@ public sealed unsafe partial class ParseTable : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ParseTable Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseTable arg0)
+    public static ParseTable? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseTable arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_feb3b4f5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ParseTable((nint)handle);

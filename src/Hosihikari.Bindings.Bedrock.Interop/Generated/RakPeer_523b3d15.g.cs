@@ -557,19 +557,22 @@ public sealed unsafe partial class RakPeer : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_28fc2627((void*)__hosihikari_shim_handle, (void*)systemIdentifier.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress GetExternalID(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress target)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress? GetExternalID(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress target)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C2.hs_method_0e278d2b((void*)__hosihikari_shim_handle, (void*)target.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0e278d2b((void*)__hosihikari_shim_handle, (void*)target.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID GetGUIDFromIndex(uint index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID? GetGUIDFromIndex(uint index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID((nint)NativeMethods.TablePtr->C2.hs_method_b7d91b54((void*)__hosihikari_shim_handle, index));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b7d91b54((void*)__hosihikari_shim_handle, index);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID GetGuidFromSystemAddress(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress input)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID? GetGuidFromSystemAddress(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress input)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID((nint)NativeMethods.TablePtr->C2.hs_method_a0ad6454((void*)__hosihikari_shim_handle, (void*)input.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a0ad6454((void*)__hosihikari_shim_handle, (void*)input.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID((nint)__hs_handle, false) : null;
     }
 
     public void GetIncomingPassword(nint passwordData, nint passwordDataLength)
@@ -586,9 +589,10 @@ public sealed unsafe partial class RakPeer : global::System.IDisposable
     public int GetIndexFromSystemAddress(nint systemAddress, bool calledFromNetworkThread) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress GetInternalID(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress systemAddress, int index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress? GetInternalID(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress systemAddress, int index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C2.hs_method_084052c3((void*)__hosihikari_shim_handle, (void*)systemAddress.Handle, index));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_084052c3((void*)__hosihikari_shim_handle, (void*)systemAddress.Handle, index);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle) : null;
     }
 
     public int GetLastPing(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.AddressOrGUID systemIdentifier)
@@ -596,9 +600,10 @@ public sealed unsafe partial class RakPeer : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_cb0d4179((void*)__hosihikari_shim_handle, (void*)systemIdentifier.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter GetLocalAdapter(uint index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter? GetLocalAdapter(uint index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter((nint)NativeMethods.TablePtr->C2.hs_method_7043fd12((void*)__hosihikari_shim_handle, index), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7043fd12((void*)__hosihikari_shim_handle, index);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter((nint)__hs_handle, false) : null;
     }
 
     public nint GetLocalIP(uint index)
@@ -626,14 +631,16 @@ public sealed unsafe partial class RakPeer : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_1479b9ef((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress GetMyBoundAddress(int socketIndex)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress? GetMyBoundAddress(int socketIndex)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C2.hs_method_cd59821c((void*)__hosihikari_shim_handle, socketIndex));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cd59821c((void*)__hosihikari_shim_handle, socketIndex);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID GetMyGUID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID? GetMyGUID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID((nint)NativeMethods.TablePtr->C2.hs_method_42c0baa0((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_42c0baa0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID((nint)__hs_handle) : null;
     }
 
     public uint GetNextSendReceipt()
@@ -696,9 +703,10 @@ public sealed unsafe partial class RakPeer : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_1bcb6b4f((void*)__hosihikari_shim_handle, (void*)addresses, (void*)guids, (void*)statistics);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress GetSystemAddressFromGuid(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID input)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress? GetSystemAddressFromGuid(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID input)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C2.hs_method_2296745f((void*)__hosihikari_shim_handle, (void*)input.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2296745f((void*)__hosihikari_shim_handle, (void*)input.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle) : null;
     }
 
     public void GetSystemList(nint addresses, nint guids)
@@ -795,12 +803,12 @@ public sealed unsafe partial class RakPeer : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_66fc7531((void*)__hosihikari_shim_handle, (void*)packet, pushAtHead);
     }
 
-    public static RakPeer Create()
+    public static RakPeer? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_2389a894();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakPeer((nint)handle);

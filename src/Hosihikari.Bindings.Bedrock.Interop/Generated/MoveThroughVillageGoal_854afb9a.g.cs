@@ -78,23 +78,23 @@ public sealed unsafe partial class MoveThroughVillageGoal : global::System.IDisp
     public void _stop() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveThroughVillageGoal Create()
+    public static MoveThroughVillageGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b6849f7b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveThroughVillageGoal((nint)handle);
     }
 
-    public static MoveThroughVillageGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveThroughVillageGoal arg0)
+    public static MoveThroughVillageGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveThroughVillageGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_2956d9b4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveThroughVillageGoal((nint)handle);
@@ -148,9 +148,10 @@ public sealed unsafe partial class MoveThroughVillageGoal : global::System.IDisp
         set => NativeMethods.TablePtr->C2.hs_set_a658e702((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MoveThroughVillageGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MoveThroughVillageGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MoveThroughVillageGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MoveThroughVillageGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MoveThroughVillageGoal((nint)NativeMethods.TablePtr->C2.hs_method_4b311c57((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4b311c57((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MoveThroughVillageGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

@@ -106,23 +106,23 @@ public sealed unsafe partial class OverworldBiomeBuilder : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C2.hs_get_8ba0b5d8((void*)__hosihikari_shim_handle);
     }
 
-    public static OverworldBiomeBuilder Create()
+    public static OverworldBiomeBuilder? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9e1a1801();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OverworldBiomeBuilder((nint)handle);
     }
 
-    public static OverworldBiomeBuilder Create(global::Hosihikari.Bindings.Bedrock.Interop.OverworldBiomeBuilder arg0)
+    public static OverworldBiomeBuilder? Create(global::Hosihikari.Bindings.Bedrock.Interop.OverworldBiomeBuilder arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fa8b2e01((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OverworldBiomeBuilder((nint)handle);
@@ -270,9 +270,10 @@ public sealed unsafe partial class OverworldBiomeBuilder : global::System.IDispo
     public static nint oceanContinentalness() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OverworldBiomeBuilder operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OverworldBiomeBuilder arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OverworldBiomeBuilder? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OverworldBiomeBuilder arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OverworldBiomeBuilder((nint)NativeMethods.TablePtr->C2.hs_method_d3713731((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d3713731((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OverworldBiomeBuilder((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

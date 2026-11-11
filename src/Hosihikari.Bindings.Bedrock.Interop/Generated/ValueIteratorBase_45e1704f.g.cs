@@ -55,12 +55,12 @@ public sealed unsafe partial class ValueIteratorBase : global::System.IDisposabl
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
     }
 
-    public static ValueIteratorBase Create()
+    public static ValueIteratorBase? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4ba7f998();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ValueIteratorBase((nint)handle);
@@ -70,9 +70,10 @@ public sealed unsafe partial class ValueIteratorBase : global::System.IDisposabl
     public static ValueIteratorBase Create(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value deref()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? deref()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C2.hs_method_e127568e((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e127568e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle, false) : null;
     }
 
     public void increment()
@@ -100,9 +101,10 @@ public sealed unsafe partial class ValueIteratorBase : global::System.IDisposabl
         return NativeMethods.TablePtr->C2.hs_method_120bd364((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueIteratorBase operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueIteratorBase arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueIteratorBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueIteratorBase arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueIteratorBase((nint)NativeMethods.TablePtr->C2.hs_method_6a192f59((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6a192f59((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueIteratorBase((nint)__hs_handle, false) : null;
     }
 
 

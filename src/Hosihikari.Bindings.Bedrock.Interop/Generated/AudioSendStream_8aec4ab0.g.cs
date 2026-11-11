@@ -40,30 +40,33 @@ public sealed unsafe partial class AudioSendStream : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static AudioSendStream Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream arg0)
+    public static AudioSendStream? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_fefe72f2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AudioSendStream((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config GetConfig()
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config? GetConfig()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config((nint)NativeMethods.TablePtr->C4.hs_method_fb10b3ef((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fb10b3ef((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats GetStats()
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats? GetStats()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_25b79029((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_25b79029((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats GetStats(bool arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats? GetStats(bool arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_14cd0b66((void*)__hosihikari_shim_handle, arg0));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_14cd0b66((void*)__hosihikari_shim_handle, arg0);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: parameter type 'absl::AnyInvocable<void (webrtc::RTCError) &&>' is not supported.", false)]

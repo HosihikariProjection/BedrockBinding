@@ -56,12 +56,12 @@ public sealed unsafe partial class ScriptMinecraftModuleFactory : global::System
     public static nint ModuleUUID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptMinecraftModuleFactory Create()
+    public static ScriptMinecraftModuleFactory? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1d055812();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptMinecraftModuleFactory((nint)handle);
@@ -71,12 +71,12 @@ public sealed unsafe partial class ScriptMinecraftModuleFactory : global::System
     public static ScriptMinecraftModuleFactory Create(nint level) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptMinecraftModuleFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftModuleFactory arg0)
+    public static ScriptMinecraftModuleFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftModuleFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_821aa6cc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptMinecraftModuleFactory((nint)handle);
@@ -120,9 +120,10 @@ public sealed unsafe partial class ScriptMinecraftModuleFactory : global::System
     public static nint makeModuleDescriptorFor(nint version) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftModuleFactory operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftModuleFactory arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftModuleFactory? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftModuleFactory arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftModuleFactory((nint)NativeMethods.TablePtr->C3.hs_method_73b571b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_73b571b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftModuleFactory((nint)__hs_handle, false) : null;
     }
 
 

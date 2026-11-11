@@ -40,12 +40,12 @@ public sealed unsafe partial class TempEPtrManager : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TempEPtrManager Create(global::Hosihikari.Bindings.Bedrock.Interop.TempEPtrManager arg0)
+    public static TempEPtrManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.TempEPtrManager arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_dbdbff60((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TempEPtrManager((nint)handle);

@@ -44,12 +44,12 @@ public sealed unsafe partial class DesertWellFeature : global::System.IDisposabl
     public bool _place(nint region, nint pos, nint random) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DesertWellFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.DesertWellFeature arg0)
+    public static DesertWellFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.DesertWellFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9b7cd16e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DesertWellFeature((nint)handle);

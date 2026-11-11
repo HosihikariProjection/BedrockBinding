@@ -65,9 +65,10 @@ public sealed unsafe partial class HumanoidArmorItem : global::System.IDisposabl
         return NativeMethods.TablePtr->C1.hs_method_b91fa2b0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color _getColor(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? userData, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? _getColor(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? userData, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C1.hs_method_1c3d36d2((void*)__hosihikari_shim_handle, (void*)(userData?.Handle ?? 0), (void*)arg1.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1c3d36d2((void*)__hosihikari_shim_handle, (void*)(userData?.Handle ?? 0), (void*)arg1.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public int _getDamageChance(int unbreaking)
@@ -95,9 +96,10 @@ public sealed unsafe partial class HumanoidArmorItem : global::System.IDisposabl
         return NativeMethods.TablePtr->C1.hs_method_328586e1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo _getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int newAnimationFrame, bool inInventoryPane)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo? _getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int newAnimationFrame, bool inInventoryPane)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)NativeMethods.TablePtr->C1.hs_method_da0cbf6a((void*)__hosihikari_shim_handle, (void*)item.Handle, newAnimationFrame, inInventoryPane));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_da0cbf6a((void*)__hosihikari_shim_handle, (void*)item.Handle, newAnimationFrame, inInventoryPane);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)__hs_handle) : null;
     }
 
     public float _getKnockbackResistanceValue()
@@ -145,67 +147,73 @@ public sealed unsafe partial class HumanoidArmorItem : global::System.IDisposabl
         NativeMethods.TablePtr->C1.hs_method_5d0b69bb((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)color.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack _use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? _use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_3f33ea3b((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3f33ea3b((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial CHAIN()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial? CHAIN()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)NativeMethods.TablePtr->C1.hs_method_1fcb374d(), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1fcb374d();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)__hs_handle, false) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial COPPER()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial? COPPER()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)NativeMethods.TablePtr->C1.hs_method_7a585d0d(), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7a585d0d();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint DEFAULT_LEATHER_COLOR() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial DIAMOND()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial? DIAMOND()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)NativeMethods.TablePtr->C1.hs_method_48a5cefd(), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_48a5cefd();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)__hs_handle, false) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial ELYTRA()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial? ELYTRA()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)NativeMethods.TablePtr->C1.hs_method_7626040d(), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7626040d();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)__hs_handle, false) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial GOLD()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial? GOLD()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)NativeMethods.TablePtr->C1.hs_method_5d061944(), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5d061944();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)__hs_handle, false) : null;
     }
 
-    public static HumanoidArmorItem Create()
+    public static HumanoidArmorItem? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f2ccfaf2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HumanoidArmorItem((nint)handle);
     }
 
-    public static HumanoidArmorItem Create(global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem arg0)
+    public static HumanoidArmorItem? Create(global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8d1b1b4b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HumanoidArmorItem((nint)handle);
     }
 
-    public static HumanoidArmorItem Create(string nameId, short id, int slot, int defense, int modelIndex, global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial armorType, bool allowTrim)
+    public static HumanoidArmorItem? Create(string nameId, short id, int slot, int defense, int modelIndex, global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial armorType, bool allowTrim)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -223,31 +231,35 @@ public sealed unsafe partial class HumanoidArmorItem : global::System.IDisposabl
             var handle = NativeMethods.TablePtr->C1.hs_create_687f893a(__hs_stringData0, (nuint)__hs_stringByteCount0, id, slot, defense, modelIndex, (void*)armorType.Handle, allowTrim);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new HumanoidArmorItem((nint)handle);
         }
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial IRON()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial? IRON()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)NativeMethods.TablePtr->C1.hs_method_cf9c52dd(), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cf9c52dd();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)__hs_handle, false) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial LEATHER()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial? LEATHER()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)NativeMethods.TablePtr->C1.hs_method_50e652fc(), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_50e652fc();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)__hs_handle, false) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial NETHERITE()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial? NETHERITE()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)NativeMethods.TablePtr->C1.hs_method_dc95b173(), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_dc95b173();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)__hs_handle, false) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial TURTLE()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial? TURTLE()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)NativeMethods.TablePtr->C1.hs_method_5a2f8c6a(), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5a2f8c6a();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem_Nested.ArmorMaterial((nint)__hs_handle, false) : null;
     }
 
     public void appendFormattedHovertext(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack, global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString hovertext, bool showCategory)
@@ -275,9 +287,10 @@ public sealed unsafe partial class HumanoidArmorItem : global::System.IDisposabl
         return NativeMethods.TablePtr->C1.hs_method_46b10bcb((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getColor(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? userData, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getColor(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? userData, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C1.hs_method_3aff5a2c((void*)__hosihikari_shim_handle, (void*)(userData?.Handle ?? 0), (void*)arg1.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3aff5a2c((void*)__hosihikari_shim_handle, (void*)(userData?.Handle ?? 0), (void*)arg1.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public int getDamageChance(int unbreaking)
@@ -305,9 +318,10 @@ public sealed unsafe partial class HumanoidArmorItem : global::System.IDisposabl
         return NativeMethods.TablePtr->C1.hs_method_1f5680fe((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int newAnimationFrame, bool inInventoryPane)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo? getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int newAnimationFrame, bool inInventoryPane)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)NativeMethods.TablePtr->C1.hs_method_5bf10cb6((void*)__hosihikari_shim_handle, (void*)item.Handle, newAnimationFrame, inInventoryPane));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5bf10cb6((void*)__hosihikari_shim_handle, (void*)item.Handle, newAnimationFrame, inInventoryPane);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)__hs_handle) : null;
     }
 
     public float getKnockbackResistanceValue()
@@ -377,9 +391,10 @@ public sealed unsafe partial class HumanoidArmorItem : global::System.IDisposabl
         get => NativeMethods.TablePtr->C1.hs_get_09edc3e7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem((nint)NativeMethods.TablePtr->C1.hs_method_83b7881d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_83b7881d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HumanoidArmorItem((nint)__hs_handle, false) : null;
     }
 
     public void setColor(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.mce.Color color)
@@ -387,9 +402,10 @@ public sealed unsafe partial class HumanoidArmorItem : global::System.IDisposabl
         NativeMethods.TablePtr->C1.hs_method_d06a45c0((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)color.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_9490d5c2((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9490d5c2((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
 

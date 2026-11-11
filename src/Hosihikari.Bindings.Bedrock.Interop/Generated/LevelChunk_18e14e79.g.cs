@@ -50,34 +50,34 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_5e593d81((void*)__hosihikari_shim_handle);
     }
 
-    public static LevelChunk Create()
+    public static LevelChunk? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d382c003();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunk((nint)handle);
     }
 
-    public static LevelChunk Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp, bool readOnly, int initBlocks, bool initializeMetaData, int blockActorTrackingMode)
+    public static LevelChunk? Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp, bool readOnly, int initBlocks, bool initializeMetaData, int blockActorTrackingMode)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_50a78fed((void*)dimension.Handle, (void*)cp.Handle, readOnly, initBlocks, initializeMetaData, blockActorTrackingMode);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunk((nint)handle);
     }
 
-    public static LevelChunk Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk arg0)
+    public static LevelChunk? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a250d436((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunk((nint)handle);
@@ -212,14 +212,16 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
     public void getActors(nint actorDefinitionId, nint bb, nint actors) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Biome getBiome(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos pos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Biome? getBiome(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos pos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)NativeMethods.TablePtr->C2.hs_method_b3c3d4e8((void*)__hosihikari_shim_handle, (void*)pos.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b3c3d4e8((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getBlock(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos pos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlock(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos pos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C2.hs_method_5d99aaf4((void*)__hosihikari_shim_handle, (void*)pos.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5d99aaf4((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? getBlockEntity(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos localPos)
@@ -240,14 +242,16 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
     public nint getMetaDataCopy() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue getTickQueue_58feba36()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue? getTickQueue_58feba36()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue((nint)NativeMethods.TablePtr->C2.hs_method_58feba36((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_58feba36((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue getTickQueue_a72689c4()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue? getTickQueue_a72689c4()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue((nint)NativeMethods.TablePtr->C2.hs_method_a72689c4((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a72689c4((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -808,9 +812,10 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
     public void onDiscarded() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk((nint)NativeMethods.TablePtr->C2.hs_method_15879856((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_15879856((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -901,9 +906,10 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
     public void setBiomeStorages(nint biomeStorages) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block setBlock(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? issuingSource, global::Hosihikari.Bindings.Abi.SharedHandle? blockEntity, nint changeSourceContext)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? setBlock(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? issuingSource, global::Hosihikari.Bindings.Abi.SharedHandle? blockEntity, nint changeSourceContext)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C2.hs_method_fb7ba09d((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle, (void*)(issuingSource?.Handle ?? 0), blockEntity?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)changeSourceContext), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_fb7ba09d((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle, (void*)(issuingSource?.Handle ?? 0), blockEntity?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)changeSourceContext);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public void setBlockSimple(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
@@ -920,9 +926,10 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
     public void setBorder(nint pos, bool val) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block setExtraBlock(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos localPos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? issuingSource)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? setExtraBlock(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos localPos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? issuingSource)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C2.hs_method_4a4a315a((void*)__hosihikari_shim_handle, (void*)localPos.Handle, (void*)block.Handle, (void*)(issuingSource?.Handle ?? 0)), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4a4a315a((void*)__hosihikari_shim_handle, (void*)localPos.Handle, (void*)block.Handle, (void*)(issuingSource?.Handle ?? 0));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -40,12 +40,12 @@ public sealed unsafe partial class IMemoryAllocator : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IMemoryAllocator Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Memory.IMemoryAllocator arg0)
+    public static IMemoryAllocator? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Memory.IMemoryAllocator arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5af2baab((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IMemoryAllocator((nint)handle);

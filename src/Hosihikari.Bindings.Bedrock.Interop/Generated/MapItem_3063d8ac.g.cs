@@ -403,9 +403,10 @@ public sealed unsafe partial class MapItem : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_6a145209((void*)__hosihikari_shim_handle, (void*)stack.Handle, (void*)level.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int arg1, bool arg2)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo? getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int arg1, bool arg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)NativeMethods.TablePtr->C2.hs_method_3b422bf0((void*)__hosihikari_shim_handle, (void*)item.Handle, arg1, arg2));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3b422bf0((void*)__hosihikari_shim_handle, (void*)item.Handle, arg1, arg2);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -448,7 +449,7 @@ public sealed unsafe partial class MapItem : global::System.IDisposable
     public static void serializeMapData(nint mapSamples, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Item setIconInfo(string name, int id)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Item? setIconInfo(string name, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -463,7 +464,8 @@ public sealed unsafe partial class MapItem : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)NativeMethods.TablePtr->C2.hs_method_a8aec2e6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id), false);
+            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a8aec2e6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
         }
     }
 

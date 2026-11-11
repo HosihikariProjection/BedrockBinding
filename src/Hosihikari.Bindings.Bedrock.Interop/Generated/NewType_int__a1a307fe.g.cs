@@ -40,34 +40,34 @@ public sealed unsafe partial class NewType_int_ : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static NewType_int_ Create()
+    public static NewType_int_? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_db993af2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NewType_int_((nint)handle);
     }
 
-    public static NewType_int_ Create(global::Hosihikari.Bindings.Bedrock.Interop.NewType_int_ other)
+    public static NewType_int_? Create(global::Hosihikari.Bindings.Bedrock.Interop.NewType_int_ other)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_98185ce6((void*)other.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NewType_int_((nint)handle);
     }
 
-    public static NewType_int_ Create(nint t)
+    public static NewType_int_? Create(nint t)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_05e317b6((void*)t);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NewType_int_((nint)handle);
@@ -79,9 +79,10 @@ public sealed unsafe partial class NewType_int_ : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_ed0c82ad((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NewType_int_ operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NewType_int_ other)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NewType_int_? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NewType_int_ other)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NewType_int_((nint)NativeMethods.TablePtr->C2.hs_method_9e22bd5b((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9e22bd5b((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NewType_int_((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.NewType_int_ other)

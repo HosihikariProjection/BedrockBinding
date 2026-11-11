@@ -40,12 +40,12 @@ public sealed unsafe partial class Result_void__ActorValidationError_ : global::
         return __hs_handle;
     }
 
-    public static Result_void__ActorValidationError_ Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__ActorValidationError_ arg0)
+    public static Result_void__ActorValidationError_? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__ActorValidationError_ arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fa4fe74b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Result_void__ActorValidationError_((nint)handle);

@@ -52,12 +52,12 @@ public sealed unsafe partial class ScriptActorFilter : global::System.IDisposabl
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptActorFilter Create()
+    public static ScriptActorFilter? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_25c21bb6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptActorFilter((nint)handle);

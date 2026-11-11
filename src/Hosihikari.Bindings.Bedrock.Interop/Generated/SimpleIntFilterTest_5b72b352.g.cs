@@ -70,31 +70,32 @@ public sealed unsafe partial class SimpleIntFilterTest : global::System.IDisposa
     public bool _setup(nint definition, nint inputs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SimpleIntFilterTest Create()
+    public static SimpleIntFilterTest? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2966deaa();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimpleIntFilterTest((nint)handle);
     }
 
-    public static SimpleIntFilterTest Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleIntFilterTest arg0)
+    public static SimpleIntFilterTest? Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleIntFilterTest arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_304743cb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimpleIntFilterTest((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _serializeValue()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C3.hs_method_54e470dd((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_54e470dd((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.", false)]
@@ -107,9 +108,10 @@ public sealed unsafe partial class SimpleIntFilterTest : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_47242471((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SimpleIntFilterTest operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimpleIntFilterTest arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SimpleIntFilterTest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimpleIntFilterTest arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SimpleIntFilterTest((nint)NativeMethods.TablePtr->C3.hs_method_d6e085b9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d6e085b9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SimpleIntFilterTest((nint)__hs_handle, false) : null;
     }
 
     public bool setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)

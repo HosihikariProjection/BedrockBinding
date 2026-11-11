@@ -40,12 +40,12 @@ public sealed unsafe partial class TransferBuilderBatcher : global::System.IDisp
         return __hs_handle;
     }
 
-    public static TransferBuilderBatcher Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler_Nested.TransferBuilderBatcher arg0)
+    public static TransferBuilderBatcher? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler_Nested.TransferBuilderBatcher arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1dc97b37((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TransferBuilderBatcher((nint)handle);

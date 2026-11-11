@@ -40,23 +40,23 @@ public sealed unsafe partial class RealmsTelemetryBox : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static RealmsTelemetryBox Create()
+    public static RealmsTelemetryBox? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1bb29839();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RealmsTelemetryBox((nint)handle);
     }
 
-    public static RealmsTelemetryBox Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftEventing_Nested.RealmsTelemetryBox arg0)
+    public static RealmsTelemetryBox? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftEventing_Nested.RealmsTelemetryBox arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d612645b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RealmsTelemetryBox((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class RealmsTelemetryBox : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d70995d9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftEventing_Nested.RealmsTelemetryBox operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftEventing_Nested.RealmsTelemetryBox arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftEventing_Nested.RealmsTelemetryBox? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftEventing_Nested.RealmsTelemetryBox arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftEventing_Nested.RealmsTelemetryBox((nint)NativeMethods.TablePtr->C2.hs_method_a6e39fed((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a6e39fed((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftEventing_Nested.RealmsTelemetryBox((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

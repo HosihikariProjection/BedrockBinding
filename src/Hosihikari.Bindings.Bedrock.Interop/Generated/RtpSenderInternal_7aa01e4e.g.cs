@@ -49,12 +49,13 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
         return NativeMethods.TablePtr->C4.hs_method_d5a178b7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError CheckCodecParameters(nint parameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? CheckCodecParameters(nint parameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_f8b3e8aa((void*)__hosihikari_shim_handle, (void*)parameters));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f8b3e8aa((void*)__hosihikari_shim_handle, (void*)parameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError DisableEncodingLayers(string[] rids)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? DisableEncodingLayers(string[] rids)
     {
         var __hs_vectorItems0 = rids ?? global::System.Array.Empty<string>();
         var __hs_vectorCount0 = __hs_vectorItems0.Length;
@@ -76,7 +77,8 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
                 __hs_vectorData0[__hs_i0] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr0 + __hs_vectorOffset0, Size = (nuint)__hs_length0 };
                 __hs_vectorOffset0 += __hs_length0;
             }
-            return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_3cd4fde9((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(rids?.Length ?? 0)));
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3cd4fde9((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(rids?.Length ?? 0));
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
         }
     }
 
@@ -97,12 +99,12 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
         NativeMethods.TablePtr->C4.hs_method_e720bcbf((void*)__hosihikari_shim_handle);
     }
 
-    public static RtpSenderInternal Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderInternal arg0)
+    public static RtpSenderInternal? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderInternal arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b2c0fd8f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RtpSenderInternal((nint)handle);
@@ -117,9 +119,10 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
     public void SetParametersInternal(nint parameters, nint callback, bool blocking) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: parameter type 'absl::AnyInvocable<void (webrtc::RTCError) &&>' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError SetParametersInternalWithAllLayers(nint parameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? SetParametersInternalWithAllLayers(nint parameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_a942f0de((void*)__hosihikari_shim_handle, (void*)parameters));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a942f0de((void*)__hosihikari_shim_handle, (void*)parameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::Codec' is not supported.", false)]

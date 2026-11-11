@@ -45,34 +45,34 @@ public sealed unsafe partial class CommandSelectorBase : global::System.IDisposa
         NativeMethods.TablePtr->C0.hs_method_51af72cf((void*)__hosihikari_shim_handle);
     }
 
-    public static CommandSelectorBase Create()
+    public static CommandSelectorBase? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0d63a469();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandSelectorBase((nint)handle);
     }
 
-    public static CommandSelectorBase Create(bool forcePlayer)
+    public static CommandSelectorBase? Create(bool forcePlayer)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3a8321c0(forcePlayer);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandSelectorBase((nint)handle);
     }
 
-    public static CommandSelectorBase Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandSelectorBase arg0)
+    public static CommandSelectorBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandSelectorBase arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fe1fbf34((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandSelectorBase((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class CommandSelectorBase : global::System.IDisposa
     public bool filter(nint origin, nint actor) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getFeetPos(int version, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getFeetPos(int version, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C0.hs_method_37fccfbd(version, (void*)entity.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_37fccfbd(version, (void*)entity.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

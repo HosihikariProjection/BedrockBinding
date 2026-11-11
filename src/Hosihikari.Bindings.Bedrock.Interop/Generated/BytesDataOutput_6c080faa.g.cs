@@ -108,12 +108,12 @@ public sealed unsafe partial class BytesDataOutput : global::System.IDisposable
         }
     }
 
-    public static BytesDataOutput Create(global::Hosihikari.Bindings.Bedrock.Interop.BytesDataOutput arg0)
+    public static BytesDataOutput? Create(global::Hosihikari.Bindings.Bedrock.Interop.BytesDataOutput arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b46ff499((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BytesDataOutput((nint)handle);

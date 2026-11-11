@@ -58,12 +58,12 @@ public sealed unsafe partial class RenderOffsetsItemComponent : global::System.I
     public static nint Off_Hand_Defaults() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RenderOffsetsItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.RenderOffsetsItemComponent arg0)
+    public static RenderOffsetsItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.RenderOffsetsItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_276160a2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RenderOffsetsItemComponent((nint)handle);

@@ -44,12 +44,12 @@ public sealed unsafe partial class VersionRequestedBy : global::System.IDisposab
     public nint _ctor(nint version_, nint originalVersion, nint by_, bool supported_, bool missing_, bool explicitRequest_, bool promotion_) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VersionRequestedBy Create()
+    public static VersionRequestedBy? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_171713d8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VersionRequestedBy((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class VersionRequestedBy : global::System.IDisposab
     public static VersionRequestedBy Create(nint version_, nint originalVersion, nint by_, bool supported_, bool missing_, bool explicitRequest_, bool promotion_) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VersionRequestedBy Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.VersionRequestedBy arg0)
+    public static VersionRequestedBy? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.VersionRequestedBy arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ef29e531((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VersionRequestedBy((nint)handle);
@@ -112,9 +112,10 @@ public sealed unsafe partial class VersionRequestedBy : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C3.hs_get_ae875b86((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.VersionRequestedBy operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.VersionRequestedBy arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.VersionRequestedBy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.VersionRequestedBy arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.VersionRequestedBy((nint)NativeMethods.TablePtr->C3.hs_method_ba46e7f3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ba46e7f3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.VersionRequestedBy((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

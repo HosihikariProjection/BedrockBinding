@@ -639,12 +639,12 @@ public sealed unsafe partial class ThrownPotion : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ThrownPotion Create()
+    public static ThrownPotion? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b8887de5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ThrownPotion((nint)handle);
@@ -664,9 +664,10 @@ public sealed unsafe partial class ThrownPotion : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_e621cdcc((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString queryEntityRenderer()
+    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? queryEntityRenderer()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C3.hs_method_753d7a56((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_753d7a56((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false) : null;
     }
 
     public void readAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper dataLoadHelper)

@@ -40,12 +40,12 @@ public sealed unsafe partial class InvertableFilter_ActorDefinitionIdentifier_ :
         return __hs_handle;
     }
 
-    public static InvertableFilter_ActorDefinitionIdentifier_ Create(global::Hosihikari.Bindings.Bedrock.Interop.InvertableFilter_ActorDefinitionIdentifier_ arg0)
+    public static InvertableFilter_ActorDefinitionIdentifier_? Create(global::Hosihikari.Bindings.Bedrock.Interop.InvertableFilter_ActorDefinitionIdentifier_ arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f7cb8bc3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InvertableFilter_ActorDefinitionIdentifier_((nint)handle);

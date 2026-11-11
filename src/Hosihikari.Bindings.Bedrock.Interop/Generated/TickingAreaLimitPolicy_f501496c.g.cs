@@ -40,12 +40,12 @@ public sealed unsafe partial class TickingAreaLimitPolicy : global::System.IDisp
         return __hs_handle;
     }
 
-    public static TickingAreaLimitPolicy Create(global::Hosihikari.Bindings.Bedrock.Interop.TickingAreaLimitPolicy arg0)
+    public static TickingAreaLimitPolicy? Create(global::Hosihikari.Bindings.Bedrock.Interop.TickingAreaLimitPolicy arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_d9583f68((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TickingAreaLimitPolicy((nint)handle);

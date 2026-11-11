@@ -115,12 +115,12 @@ public sealed unsafe partial class SculkSensorBlockActor : global::System.IDispo
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SculkSensorBlockActor Create()
+    public static SculkSensorBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8c78e578();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SculkSensorBlockActor((nint)handle);

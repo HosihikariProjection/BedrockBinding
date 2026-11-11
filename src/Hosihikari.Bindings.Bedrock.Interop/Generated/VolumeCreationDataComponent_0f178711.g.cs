@@ -40,23 +40,23 @@ public sealed unsafe partial class VolumeCreationDataComponent : global::System.
         return __hs_handle;
     }
 
-    public static VolumeCreationDataComponent Create()
+    public static VolumeCreationDataComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4161cc95();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VolumeCreationDataComponent((nint)handle);
     }
 
-    public static VolumeCreationDataComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.VolumeCreationDataComponent arg0)
+    public static VolumeCreationDataComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.VolumeCreationDataComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0fb3c331((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VolumeCreationDataComponent((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class VolumeCreationDataComponent : global::System.
         get => (nint)NativeMethods.TablePtr->C4.hs_get_75ba20ee((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.VolumeCreationDataComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VolumeCreationDataComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.VolumeCreationDataComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VolumeCreationDataComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.VolumeCreationDataComponent((nint)NativeMethods.TablePtr->C4.hs_method_cf95596b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_cf95596b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VolumeCreationDataComponent((nint)__hs_handle, false) : null;
     }
 
 

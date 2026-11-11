@@ -52,12 +52,12 @@ public sealed unsafe partial class CombinedHotbarAndInventoryContainerValidation
     public bool _isItemAllowedToRemove(nint screenContext, nint item) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CombinedHotbarAndInventoryContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.CombinedHotbarAndInventoryContainerValidation arg0)
+    public static CombinedHotbarAndInventoryContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.CombinedHotbarAndInventoryContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_731a6349((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CombinedHotbarAndInventoryContainerValidation((nint)handle);

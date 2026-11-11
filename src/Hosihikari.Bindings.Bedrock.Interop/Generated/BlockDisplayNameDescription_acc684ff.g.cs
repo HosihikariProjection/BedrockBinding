@@ -70,12 +70,12 @@ public sealed unsafe partial class BlockDisplayNameDescription : global::System.
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockDisplayNameDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockDisplayNameDescription arg0)
+    public static BlockDisplayNameDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockDisplayNameDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c40de543((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockDisplayNameDescription((nint)handle);

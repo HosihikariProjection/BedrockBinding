@@ -40,36 +40,38 @@ public sealed unsafe partial class ChunkBlockPos : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ChunkBlockPos Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, short minDimensionHeight)
+    public static ChunkBlockPos? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, short minDimensionHeight)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ce1a60bc((void*)pos.Handle, minDimensionHeight);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkBlockPos((nint)handle);
     }
 
-    public static ChunkBlockPos Create(byte x, global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalHeight y, byte z)
+    public static ChunkBlockPos? Create(byte x, global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalHeight y, byte z)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_00082a92(x, (void*)y.Handle, z);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkBlockPos((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos from2D(byte x, byte z)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos? from2D(byte x, byte z)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos((nint)NativeMethods.TablePtr->C0.hs_method_b5e85b4c(x, z));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b5e85b4c(x, z);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos((nint)__hs_handle) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos fromLegacyIndex(ushort idx)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos? fromLegacyIndex(ushort idx)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos((nint)NativeMethods.TablePtr->C0.hs_method_465ce045(idx));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_465ce045(idx);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos((nint)__hs_handle) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos other)

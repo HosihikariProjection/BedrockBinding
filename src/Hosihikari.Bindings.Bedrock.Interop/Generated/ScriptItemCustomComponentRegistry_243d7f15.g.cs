@@ -76,12 +76,12 @@ public sealed unsafe partial class ScriptItemCustomComponentRegistry : global::S
     public nint _tryRegisterComponentV1(nint componentName, nint closures) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptItemCustomComponentRegistry Create()
+    public static ScriptItemCustomComponentRegistry? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b40766e3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemCustomComponentRegistry((nint)handle);
@@ -91,12 +91,12 @@ public sealed unsafe partial class ScriptItemCustomComponentRegistry : global::S
     public static ScriptItemCustomComponentRegistry Create(nint events, nint deferredEventCoordinator, nint itemRegistry, nint signals, nint parameterCache) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptItemCustomComponentRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentRegistry arg0)
+    public static ScriptItemCustomComponentRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7feaf4b8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemCustomComponentRegistry((nint)handle);
@@ -120,9 +120,10 @@ public sealed unsafe partial class ScriptItemCustomComponentRegistry : global::S
     public nint _tryRegisterComponent_9952f6cb(nint componentName, nint closures) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener getEventListener()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener? getEventListener()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener((nint)NativeMethods.TablePtr->C3.hs_method_fbc6aba0((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fbc6aba0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Scripting::WeakTypedObjectHandle<ScriptModuleMinecraft::ScriptItemStack>' is not a known bindable declaration.", false)]
@@ -171,9 +172,10 @@ public sealed unsafe partial class ScriptItemCustomComponentRegistry : global::S
         get => (nint)NativeMethods.TablePtr->C3.hs_get_19233023((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentRegistry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentRegistry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentRegistry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentRegistry((nint)NativeMethods.TablePtr->C3.hs_method_7db71479((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7db71479((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentRegistry((nint)__hs_handle, false) : null;
     }
 
     public void setCerealContext(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)

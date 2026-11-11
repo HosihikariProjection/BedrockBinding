@@ -40,23 +40,23 @@ public sealed unsafe partial class Expressions : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Expressions Create()
+    public static Expressions? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1e48e72c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Expressions((nint)handle);
     }
 
-    public static Expressions Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorSkeletalAnimation_Nested.Expressions arg0)
+    public static Expressions? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorSkeletalAnimation_Nested.Expressions arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_835cada1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Expressions((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class Expressions : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_e034386e((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorSkeletalAnimation_Nested.Expressions operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorSkeletalAnimation_Nested.Expressions arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorSkeletalAnimation_Nested.Expressions? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorSkeletalAnimation_Nested.Expressions arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorSkeletalAnimation_Nested.Expressions((nint)NativeMethods.TablePtr->C0.hs_method_afa8db9d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_afa8db9d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorSkeletalAnimation_Nested.Expressions((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

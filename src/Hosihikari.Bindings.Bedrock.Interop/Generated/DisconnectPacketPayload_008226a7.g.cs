@@ -73,18 +73,18 @@ public sealed unsafe partial class DisconnectPacketPayload : global::System.IDis
         }
     }
 
-    public static DisconnectPacketPayload Create()
+    public static DisconnectPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_805b518a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DisconnectPacketPayload((nint)handle);
     }
 
-    public static DisconnectPacketPayload Create(int reason, string? message, string? filteredMessage)
+    public static DisconnectPacketPayload? Create(int reason, string? message, string? filteredMessage)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(message ?? string.Empty);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -115,7 +115,7 @@ public sealed unsafe partial class DisconnectPacketPayload : global::System.IDis
                 var handle = NativeMethods.TablePtr->C1.hs_create_7b5a26d4(reason, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, message is not null, filteredMessage is not null);
                 if (handle == null)
                 {
-                    throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                    return null;
                 }
 
                 return new DisconnectPacketPayload((nint)handle);
@@ -123,12 +123,12 @@ public sealed unsafe partial class DisconnectPacketPayload : global::System.IDis
         }
     }
 
-    public static DisconnectPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.DisconnectPacketPayload arg0)
+    public static DisconnectPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.DisconnectPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1229312d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DisconnectPacketPayload((nint)handle);

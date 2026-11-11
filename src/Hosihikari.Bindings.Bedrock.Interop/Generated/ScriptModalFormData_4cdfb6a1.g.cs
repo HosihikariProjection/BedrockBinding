@@ -44,12 +44,12 @@ public sealed unsafe partial class ScriptModalFormData : global::System.IDisposa
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptModalFormData Create()
+    public static ScriptModalFormData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b7ee5b1a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptModalFormData((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class ScriptModalFormData : global::System.IDisposa
     public static ScriptModalFormData Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptModalFormData Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptModalFormData arg0)
+    public static ScriptModalFormData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptModalFormData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0569c820((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptModalFormData((nint)handle);
@@ -118,9 +118,10 @@ public sealed unsafe partial class ScriptModalFormData : global::System.IDisposa
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptModalFormData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptModalFormData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptModalFormData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptModalFormData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptModalFormData((nint)NativeMethods.TablePtr->C3.hs_method_a44fc3d0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a44fc3d0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptModalFormData((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

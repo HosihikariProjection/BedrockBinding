@@ -78,12 +78,12 @@ public sealed unsafe partial class FloatWanderGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FloatWanderGoal Create()
+    public static FloatWanderGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_29a4f428();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FloatWanderGoal((nint)handle);
@@ -93,12 +93,12 @@ public sealed unsafe partial class FloatWanderGoal : global::System.IDisposable
     public static FloatWanderGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FloatWanderGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.FloatWanderGoal arg0)
+    public static FloatWanderGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.FloatWanderGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_af7aabfe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FloatWanderGoal((nint)handle);
@@ -227,9 +227,10 @@ public sealed unsafe partial class FloatWanderGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_a594078c((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FloatWanderGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FloatWanderGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FloatWanderGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FloatWanderGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FloatWanderGoal((nint)NativeMethods.TablePtr->C1.hs_method_ff21fdd2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ff21fdd2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FloatWanderGoal((nint)__hs_handle, false) : null;
     }
 
     public void tick()

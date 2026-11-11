@@ -134,9 +134,10 @@ public sealed unsafe partial class AbstractCandleBlock : global::System.IDisposa
         NativeMethods.TablePtr->C0.hs_method_67f1e9b1((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Brightness getLightEmission(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Brightness? getLightEmission(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)NativeMethods.TablePtr->C0.hs_method_3746176f((void*)__hosihikari_shim_handle, (void*)block.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3746176f((void*)__hosihikari_shim_handle, (void*)block.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)__hs_handle) : null;
     }
 
     public bool isInteractiveBlock()

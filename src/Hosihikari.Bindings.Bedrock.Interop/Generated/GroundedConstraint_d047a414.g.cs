@@ -48,12 +48,12 @@ public sealed unsafe partial class GroundedConstraint : global::System.IDisposab
     public bool _isSatisfied(nint target, nint structurePos, nint structureRot, nint centeringOffset) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GroundedConstraint Create()
+    public static GroundedConstraint? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d73538ea();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GroundedConstraint((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class GroundedConstraint : global::System.IDisposab
     public static GroundedConstraint Create(nint structure, int groundLevel) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GroundedConstraint Create(global::Hosihikari.Bindings.Bedrock.Interop.GroundedConstraint arg0)
+    public static GroundedConstraint? Create(global::Hosihikari.Bindings.Bedrock.Interop.GroundedConstraint arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f9c74337((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GroundedConstraint((nint)handle);

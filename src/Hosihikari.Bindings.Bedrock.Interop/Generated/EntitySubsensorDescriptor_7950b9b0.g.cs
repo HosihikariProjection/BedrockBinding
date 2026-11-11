@@ -40,12 +40,12 @@ public sealed unsafe partial class EntitySubsensorDescriptor : global::System.ID
         return __hs_handle;
     }
 
-    public static EntitySubsensorDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.EntitySubsensorDescriptor arg0)
+    public static EntitySubsensorDescriptor? Create(global::Hosihikari.Bindings.Bedrock.Interop.EntitySubsensorDescriptor arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_052a3ae2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntitySubsensorDescriptor((nint)handle);

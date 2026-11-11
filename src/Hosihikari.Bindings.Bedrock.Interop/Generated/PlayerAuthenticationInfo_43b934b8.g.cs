@@ -110,23 +110,23 @@ public sealed unsafe partial class PlayerAuthenticationInfo : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C2.hs_get_10d8e90d((void*)__hosihikari_shim_handle);
     }
 
-    public static PlayerAuthenticationInfo Create()
+    public static PlayerAuthenticationInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_dc396060();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerAuthenticationInfo((nint)handle);
     }
 
-    public static PlayerAuthenticationInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo arg0)
+    public static PlayerAuthenticationInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1df0c1b4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerAuthenticationInfo((nint)handle);
@@ -166,9 +166,10 @@ public sealed unsafe partial class PlayerAuthenticationInfo : global::System.IDi
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo((nint)NativeMethods.TablePtr->C2.hs_method_d8f9e245((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d8f9e245((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo((nint)__hs_handle, false) : null;
     }
 
 

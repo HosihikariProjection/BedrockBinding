@@ -40,7 +40,7 @@ public sealed unsafe partial class MessageAndParams : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static MessageAndParams Create(byte type, string message, string[] @params)
+    public static MessageAndParams? Create(byte type, string message, string[] @params)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(message);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -78,7 +78,7 @@ public sealed unsafe partial class MessageAndParams : global::System.IDisposable
                 var handle = NativeMethods.TablePtr->C3.hs_create_15291218(type, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_vectorData2, (nuint)(@params?.Length ?? 0));
                 if (handle == null)
                 {
-                    throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                    return null;
                 }
 
                 return new MessageAndParams((nint)handle);
@@ -86,12 +86,12 @@ public sealed unsafe partial class MessageAndParams : global::System.IDisposable
         }
     }
 
-    public static MessageAndParams Create(global::Hosihikari.Bindings.Bedrock.Interop.TextPacketPayload_Nested.MessageAndParams arg0)
+    public static MessageAndParams? Create(global::Hosihikari.Bindings.Bedrock.Interop.TextPacketPayload_Nested.MessageAndParams arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ab56ee8d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MessageAndParams((nint)handle);

@@ -44,23 +44,23 @@ public sealed unsafe partial class SpawnParticleEffectPacketPayload : global::Sy
     public nint _ctor(nint pos, nint name, byte vanillaDimensionId, nint molangVariables) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public static SpawnParticleEffectPacketPayload Create()
+    public static SpawnParticleEffectPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_59407b81();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnParticleEffectPacketPayload((nint)handle);
     }
 
-    public static SpawnParticleEffectPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnParticleEffectPacketPayload arg0)
+    public static SpawnParticleEffectPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnParticleEffectPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4ed817fe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnParticleEffectPacketPayload((nint)handle);

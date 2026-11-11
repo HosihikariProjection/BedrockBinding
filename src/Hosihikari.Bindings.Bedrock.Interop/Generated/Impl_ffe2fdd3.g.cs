@@ -40,23 +40,23 @@ public sealed unsafe partial class Impl : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Impl Create()
+    public static Impl? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_97f35fff();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Impl((nint)handle);
     }
 
-    public static Impl Create(global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport_Nested.Impl arg0)
+    public static Impl? Create(global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport_Nested.Impl arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9af896ea((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Impl((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class Impl : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_a94098a7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport_Nested.Impl operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport_Nested.Impl arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport_Nested.Impl? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport_Nested.Impl arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport_Nested.Impl((nint)NativeMethods.TablePtr->C2.hs_method_781e76f5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_781e76f5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport_Nested.Impl((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -40,12 +40,12 @@ public sealed unsafe partial class AutomaticFeatureRule : global::System.IDispos
         return __hs_handle;
     }
 
-    public static AutomaticFeatureRule Create(global::Hosihikari.Bindings.Bedrock.Interop.AutomaticFeatureRules_Nested.AutomaticFeatureRule arg0)
+    public static AutomaticFeatureRule? Create(global::Hosihikari.Bindings.Bedrock.Interop.AutomaticFeatureRules_Nested.AutomaticFeatureRule arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f7a02071((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutomaticFeatureRule((nint)handle);

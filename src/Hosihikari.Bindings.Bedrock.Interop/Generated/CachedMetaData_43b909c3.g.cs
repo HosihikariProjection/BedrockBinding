@@ -40,12 +40,12 @@ public sealed unsafe partial class CachedMetaData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CachedMetaData Create(global::Hosihikari.Bindings.Bedrock.Interop.CaveFeature_Nested.CachedMetaData arg0)
+    public static CachedMetaData? Create(global::Hosihikari.Bindings.Bedrock.Interop.CaveFeature_Nested.CachedMetaData arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_84909d18((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CachedMetaData((nint)handle);

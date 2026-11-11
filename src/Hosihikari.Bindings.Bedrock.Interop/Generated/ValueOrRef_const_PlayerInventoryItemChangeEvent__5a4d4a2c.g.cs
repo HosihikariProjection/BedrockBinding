@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerInventoryItemChangeEve
     public static ValueOrRef_const_PlayerInventoryItemChangeEvent_ Create_8f8d1491(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerInventoryItemChangeEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerInventoryItemChangeEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerInventoryItemChangeEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerInventoryItemChangeEvent((nint)NativeMethods.TablePtr->C1.hs_method_60d127b4((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_60d127b4((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerInventoryItemChangeEvent((nint)__hs_handle, false) : null;
     }
 
 

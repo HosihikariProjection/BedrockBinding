@@ -48,12 +48,12 @@ public sealed unsafe partial class MinecraftCommands : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinecraftCommands Create()
+    public static MinecraftCommands? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cdc31f8d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftCommands((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class MinecraftCommands : global::System.IDisposabl
     public static MinecraftCommands Create(nint args) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinecraftCommands Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands arg0)
+    public static MinecraftCommands? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_70d513ad((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftCommands((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class MinecraftCommands : global::System.IDisposabl
     public void enqueueDeferredCompiledCommand(nint command, nint origin) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MCRESULT executeCommand(global::Hosihikari.Bindings.Bedrock.Interop.CommandContext context, bool suppressOutput)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MCRESULT? executeCommand(global::Hosihikari.Bindings.Bedrock.Interop.CommandContext context, bool suppressOutput)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MCRESULT((nint)NativeMethods.TablePtr->C2.hs_method_f83d3c65((void*)__hosihikari_shim_handle, (void*)context.Handle, suppressOutput));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f83d3c65((void*)__hosihikari_shim_handle, (void*)context.Handle, suppressOutput);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MCRESULT((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -156,9 +157,10 @@ public sealed unsafe partial class MinecraftCommands : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_c6f73483((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands((nint)NativeMethods.TablePtr->C2.hs_method_1ee03317((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1ee03317((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

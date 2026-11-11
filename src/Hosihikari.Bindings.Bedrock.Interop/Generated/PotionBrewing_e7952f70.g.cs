@@ -112,9 +112,10 @@ public sealed unsafe partial class PotionBrewing : global::System.IDisposable
     public static nint mValidRecipeInputs() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance mix(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor ingredient, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance source)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? mix(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor ingredient, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance source)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C2.hs_method_4fb20991((void*)ingredient.Handle, (void*)source.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4fb20991((void*)ingredient.Handle, (void*)source.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -40,12 +40,12 @@ public sealed unsafe partial class ReplayStateTrackerComponent : global::System.
         return __hs_handle;
     }
 
-    public static ReplayStateTrackerComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ReplayStateTrackerComponent arg0)
+    public static ReplayStateTrackerComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ReplayStateTrackerComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a804de00((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReplayStateTrackerComponent((nint)handle);

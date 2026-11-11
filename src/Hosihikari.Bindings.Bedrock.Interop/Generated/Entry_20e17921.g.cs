@@ -48,23 +48,23 @@ public sealed unsafe partial class Entry : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Entry Create()
+    public static Entry? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8690a585();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Entry((nint)handle);
     }
 
-    public static Entry Create(global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry arg0)
+    public static Entry? Create(global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_48129f91((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Entry((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class Entry : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_447d48cd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry((nint)NativeMethods.TablePtr->C1.hs_method_464a2e52((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_464a2e52((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry((nint)__hs_handle, false) : null;
     }
 
 

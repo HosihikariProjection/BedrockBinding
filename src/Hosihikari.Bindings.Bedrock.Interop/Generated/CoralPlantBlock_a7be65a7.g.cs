@@ -413,12 +413,12 @@ public sealed unsafe partial class CoralPlantBlock : global::System.IDisposable
     public void _neighborChanged(nint region, nint pos, nint neighborPos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CoralPlantBlock Create()
+    public static CoralPlantBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_11d96441();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CoralPlantBlock((nint)handle);
@@ -438,9 +438,10 @@ public sealed unsafe partial class CoralPlantBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_9d97fd1d((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)lastPathPos.Handle, (void*)pathPos.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg2, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg2, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C1.hs_method_dab1d6bb((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_dab1d6bb((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
     public bool isLavaBlocking()

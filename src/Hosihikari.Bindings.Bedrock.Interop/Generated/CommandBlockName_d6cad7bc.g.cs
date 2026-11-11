@@ -62,9 +62,10 @@ public sealed unsafe partial class CommandBlockName : global::System.IDisposable
     public nint resolveBlock(nint states, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockNameResult resolveBlock(int data)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockNameResult? resolveBlock(int data)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockNameResult((nint)NativeMethods.TablePtr->C0.hs_method_36e6caf8((void*)__hosihikari_shim_handle, data));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_36e6caf8((void*)__hosihikari_shim_handle, data);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockNameResult((nint)__hs_handle) : null;
     }
 
     public void Dispose()

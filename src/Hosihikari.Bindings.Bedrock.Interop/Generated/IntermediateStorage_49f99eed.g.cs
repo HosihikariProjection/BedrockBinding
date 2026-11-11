@@ -40,12 +40,12 @@ public sealed unsafe partial class IntermediateStorage : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static IntermediateStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentConsumeEvent_Nested.IntermediateStorage arg0)
+    public static IntermediateStorage? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentConsumeEvent_Nested.IntermediateStorage arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fe8f1bf5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IntermediateStorage((nint)handle);

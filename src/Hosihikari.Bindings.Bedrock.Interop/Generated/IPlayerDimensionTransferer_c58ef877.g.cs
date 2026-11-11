@@ -40,12 +40,12 @@ public sealed unsafe partial class IPlayerDimensionTransferer : global::System.I
         return __hs_handle;
     }
 
-    public static IPlayerDimensionTransferer Create(global::Hosihikari.Bindings.Bedrock.Interop.IPlayerDimensionTransferer arg0)
+    public static IPlayerDimensionTransferer? Create(global::Hosihikari.Bindings.Bedrock.Interop.IPlayerDimensionTransferer arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6e48f8d8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IPlayerDimensionTransferer((nint)handle);

@@ -95,18 +95,18 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
     public void _taskRegister(nint task) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TaskGroup Create()
+    public static TaskGroup? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_998ee4a7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TaskGroup((nint)handle);
     }
 
-    public static TaskGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.WorkerPool workers, global::Hosihikari.Bindings.Bedrock.Interop.Scheduler context, string name)
+    public static TaskGroup? Create(global::Hosihikari.Bindings.Bedrock.Interop.WorkerPool workers, global::Hosihikari.Bindings.Bedrock.Interop.Scheduler context, string name)
     {
         var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes2;
@@ -124,19 +124,19 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C3.hs_create_79af4f8d((void*)workers.Handle, (void*)context.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new TaskGroup((nint)handle);
         }
     }
 
-    public static TaskGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.TaskGroup arg0)
+    public static TaskGroup? Create(global::Hosihikari.Bindings.Bedrock.Interop.TaskGroup arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e7ab74b8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TaskGroup((nint)handle);

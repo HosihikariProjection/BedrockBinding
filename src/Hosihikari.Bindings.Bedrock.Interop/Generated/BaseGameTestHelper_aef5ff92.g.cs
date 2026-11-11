@@ -46,23 +46,23 @@ public sealed unsafe partial class BaseGameTestHelper : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_5f956165((void*)__hosihikari_shim_handle);
     }
 
-    public static BaseGameTestHelper Create()
+    public static BaseGameTestHelper? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4c22d114();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseGameTestHelper((nint)handle);
     }
 
-    public static BaseGameTestHelper Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestHelper arg0)
+    public static BaseGameTestHelper? Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestHelper arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c9dc7c29((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseGameTestHelper((nint)handle);
@@ -336,9 +336,10 @@ public sealed unsafe partial class BaseGameTestHelper : global::System.IDisposab
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestHelper operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestHelper arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestHelper? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestHelper arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestHelper((nint)NativeMethods.TablePtr->C4.hs_method_a3f0d039((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a3f0d039((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestHelper((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? pressButton(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos buttonPos)

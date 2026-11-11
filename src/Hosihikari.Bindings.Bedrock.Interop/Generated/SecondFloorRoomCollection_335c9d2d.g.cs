@@ -68,12 +68,12 @@ public sealed unsafe partial class SecondFloorRoomCollection : global::System.ID
     public nint _get2x2Secret(nint random) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SecondFloorRoomCollection Create(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.SecondFloorRoomCollection arg0)
+    public static SecondFloorRoomCollection? Create(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.SecondFloorRoomCollection arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c65a2876((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SecondFloorRoomCollection((nint)handle);

@@ -622,12 +622,12 @@ public sealed unsafe partial class Throwable : global::System.IDisposable
     public void _readAdditionalSaveData(nint tag, nint dataLoadHelper) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Throwable Create()
+    public static Throwable? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_47a0f811();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Throwable((nint)handle);
@@ -647,9 +647,10 @@ public sealed unsafe partial class Throwable : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_8f72eb69((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getSourceUniqueID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getSourceUniqueID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C3.hs_method_89945d99((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_89945d99((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     public float getThrowPower()

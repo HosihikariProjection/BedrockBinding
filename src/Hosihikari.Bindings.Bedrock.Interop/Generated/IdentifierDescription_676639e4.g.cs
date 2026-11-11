@@ -48,12 +48,12 @@ public sealed unsafe partial class IdentifierDescription : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IdentifierDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.IdentifierDescription arg0)
+    public static IdentifierDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.IdentifierDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b0b43647((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IdentifierDescription((nint)handle);

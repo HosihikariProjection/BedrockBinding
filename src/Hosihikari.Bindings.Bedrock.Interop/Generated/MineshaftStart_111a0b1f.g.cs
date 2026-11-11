@@ -48,12 +48,12 @@ public sealed unsafe partial class MineshaftStart : global::System.IDisposable
     public bool _requiresNeighborAwareBlockUpgrade() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MineshaftStart Create(global::Hosihikari.Bindings.Bedrock.Interop.MineshaftStart arg0)
+    public static MineshaftStart? Create(global::Hosihikari.Bindings.Bedrock.Interop.MineshaftStart arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_555dab3d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MineshaftStart((nint)handle);

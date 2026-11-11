@@ -40,12 +40,12 @@ public sealed unsafe partial class ActorStopRidingEvent : global::System.IDispos
         return __hs_handle;
     }
 
-    public static ActorStopRidingEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorStopRidingEvent arg0)
+    public static ActorStopRidingEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorStopRidingEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_629f3dfc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorStopRidingEvent((nint)handle);

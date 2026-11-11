@@ -44,23 +44,23 @@ public sealed unsafe partial class ScriptItemStopUseOnAfterEvent : global::Syste
     public nint _ctor(nint evtData, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptItemStopUseOnAfterEvent Create()
+    public static ScriptItemStopUseOnAfterEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a67aae58();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemStopUseOnAfterEvent((nint)handle);
     }
 
-    public static ScriptItemStopUseOnAfterEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemStopUseOnAfterEvent arg0)
+    public static ScriptItemStopUseOnAfterEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemStopUseOnAfterEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b96bf10e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemStopUseOnAfterEvent((nint)handle);

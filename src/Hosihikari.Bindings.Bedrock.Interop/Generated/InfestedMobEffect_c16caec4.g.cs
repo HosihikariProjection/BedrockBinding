@@ -45,12 +45,12 @@ public sealed unsafe partial class InfestedMobEffect : global::System.IDisposabl
         NativeMethods.TablePtr->C1.hs_method_bc762fae((void*)__hosihikari_shim_handle, (void*)target.Handle, amplifier, (void*)source.Handle, damage);
     }
 
-    public static InfestedMobEffect Create(global::Hosihikari.Bindings.Bedrock.Interop.InfestedMobEffect arg0)
+    public static InfestedMobEffect? Create(global::Hosihikari.Bindings.Bedrock.Interop.InfestedMobEffect arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3e9019a5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InfestedMobEffect((nint)handle);

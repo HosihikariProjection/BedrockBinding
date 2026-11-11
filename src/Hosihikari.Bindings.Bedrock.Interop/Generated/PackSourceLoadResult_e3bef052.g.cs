@@ -44,23 +44,23 @@ public sealed unsafe partial class PackSourceLoadResult : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PackSourceLoadResult Create()
+    public static PackSourceLoadResult? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9b18809d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackSourceLoadResult((nint)handle);
     }
 
-    public static PackSourceLoadResult Create(global::Hosihikari.Bindings.Bedrock.Interop.PackSourceLoadResult arg0)
+    public static PackSourceLoadResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.PackSourceLoadResult arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3008a5a5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackSourceLoadResult((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class PackSourceLoadResult : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C2.hs_get_38dc7a3d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PackSourceLoadResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackSourceLoadResult arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PackSourceLoadResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackSourceLoadResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackSourceLoadResult((nint)NativeMethods.TablePtr->C2.hs_method_eeccba28((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_eeccba28((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackSourceLoadResult((nint)__hs_handle, false) : null;
     }
 
 

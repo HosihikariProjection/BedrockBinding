@@ -40,23 +40,23 @@ public sealed unsafe partial class SocketDescriptor : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static SocketDescriptor Create()
+    public static SocketDescriptor? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_bbb78dd2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SocketDescriptor((nint)handle);
     }
 
-    public static SocketDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor arg0)
+    public static SocketDescriptor? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ab9387b7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SocketDescriptor((nint)handle);
@@ -104,9 +104,10 @@ public sealed unsafe partial class SocketDescriptor : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_dc1f38fc((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor((nint)NativeMethods.TablePtr->C3.hs_method_1f7c22e4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1f7c22e4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

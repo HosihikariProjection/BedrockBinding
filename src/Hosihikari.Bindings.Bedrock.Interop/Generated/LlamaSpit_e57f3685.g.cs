@@ -607,9 +607,10 @@ public sealed unsafe partial class LlamaSpit : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_4dd09496((void*)__hosihikari_shim_handle, a, (void*)region.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getSourceUniqueID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getSourceUniqueID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C2.hs_method_1761c5de((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1761c5de((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     public void normalTick()

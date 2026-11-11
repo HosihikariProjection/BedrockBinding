@@ -81,14 +81,16 @@ public sealed unsafe partial class SpawnParticleEffectPacket : global::System.ID
         set => NativeMethods.TablePtr->C3.hs_set_5ff8e7a1((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ __read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? __read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_8681100c((void*)__hosihikari_shim_handle, (void*)stream.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8681100c((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ __read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? __read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_3917a63a((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3917a63a((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SpawnParticleEffectPacketPayload payload)
@@ -132,9 +134,10 @@ public sealed unsafe partial class SpawnParticleEffectPacket : global::System.ID
         return NativeMethods.TablePtr->C3.hs_method_cb02a72a((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read_03a09abf(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream bitStream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _read_03a09abf(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream bitStream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_03a09abf((void*)__hosihikari_shim_handle, (void*)bitStream.Handle, (void*)reflectionCtx.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_03a09abf((void*)__hosihikari_shim_handle, (void*)bitStream.Handle, (void*)reflectionCtx.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     public void _setSerializationMode(int mode)
@@ -167,47 +170,49 @@ public sealed unsafe partial class SpawnParticleEffectPacket : global::System.ID
         NativeMethods.TablePtr->C3.hs_method_264de7bc((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle, overrideMode ?? default(int), overrideMode.HasValue);
     }
 
-    public static SpawnParticleEffectPacket Create()
+    public static SpawnParticleEffectPacket? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7c5b52d6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnParticleEffectPacket((nint)handle);
     }
 
-    public static SpawnParticleEffectPacket Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnParticleEffectPacketPayload payload)
+    public static SpawnParticleEffectPacket? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnParticleEffectPacketPayload payload)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2b5a47c2((void*)payload.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnParticleEffectPacket((nint)handle);
     }
 
-    public static SpawnParticleEffectPacket Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnParticleEffectPacket arg0)
+    public static SpawnParticleEffectPacket? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnParticleEffectPacket arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6edd8bc3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnParticleEffectPacket((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_278ee104((void*)__hosihikari_shim_handle, (void*)stream.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_278ee104((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read_c3847d54(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _read_c3847d54(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_c3847d54((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c3847d54((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     public bool disallowBatching()
@@ -247,9 +252,10 @@ public sealed unsafe partial class SpawnParticleEffectPacket : global::System.ID
         set => NativeMethods.TablePtr->C3.hs_set_d5d4f8e6((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream bitStream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream bitStream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_a85f0826((void*)__hosihikari_shim_handle, (void*)bitStream.Handle, (void*)reflectionCtx.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a85f0826((void*)__hosihikari_shim_handle, (void*)bitStream.Handle, (void*)reflectionCtx.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     public void setSerializationMode(int mode)

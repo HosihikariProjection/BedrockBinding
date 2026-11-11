@@ -56,12 +56,12 @@ public sealed unsafe partial class ScriptChatSendAfterEvent : global::System.IDi
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptChatSendAfterEvent Create()
+    public static ScriptChatSendAfterEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_15ce7164();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptChatSendAfterEvent((nint)handle);
@@ -113,9 +113,10 @@ public sealed unsafe partial class ScriptChatSendAfterEvent : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C3.hs_get_4dfcf30f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptChatSendAfterEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptChatSendAfterEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptChatSendAfterEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptChatSendAfterEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptChatSendAfterEvent((nint)NativeMethods.TablePtr->C3.hs_method_04e34c3d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_04e34c3d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptChatSendAfterEvent((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

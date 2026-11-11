@@ -40,12 +40,12 @@ public sealed unsafe partial class UnzipFile : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static UnzipFile Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.UnzipFile arg0)
+    public static UnzipFile? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.UnzipFile arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_0cc03ec0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UnzipFile((nint)handle);

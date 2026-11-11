@@ -44,23 +44,23 @@ public sealed unsafe partial class LevelChunkBlockActorStorage : global::System.
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelChunkBlockActorStorage Create()
+    public static LevelChunkBlockActorStorage? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f244d3f9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunkBlockActorStorage((nint)handle);
     }
 
-    public static LevelChunkBlockActorStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage arg0)
+    public static LevelChunkBlockActorStorage? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_583977b6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunkBlockActorStorage((nint)handle);
@@ -111,9 +111,10 @@ public sealed unsafe partial class LevelChunkBlockActorStorage : global::System.
     public nint operator_assign(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage((nint)NativeMethods.TablePtr->C2.hs_method_2d37c2eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2d37c2eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage((nint)__hs_handle, false) : null;
     }
 
 

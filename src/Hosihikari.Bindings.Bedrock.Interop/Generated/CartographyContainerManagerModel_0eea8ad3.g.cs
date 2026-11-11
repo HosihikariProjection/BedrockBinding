@@ -72,20 +72,21 @@ public sealed unsafe partial class CartographyContainerManagerModel : global::Sy
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CartographyContainerManagerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.CartographyContainerManagerModel arg0)
+    public static CartographyContainerManagerModel? Create(global::Hosihikari.Bindings.Bedrock.Interop.CartographyContainerManagerModel arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d2e7eb46((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CartographyContainerManagerModel((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext _postInit()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext? _postInit()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C0.hs_method_a3142b28((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a3142b28((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle) : null;
     }
 
     public void broadcastChanges()
@@ -97,9 +98,10 @@ public sealed unsafe partial class CartographyContainerManagerModel : global::Sy
     public nint getItemCopies() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getSlot(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getSlot(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C0.hs_method_874dc935((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_874dc935((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public bool isValid(float pickRange)

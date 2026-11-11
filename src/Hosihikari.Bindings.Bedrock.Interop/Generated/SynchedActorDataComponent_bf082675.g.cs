@@ -40,12 +40,12 @@ public sealed unsafe partial class SynchedActorDataComponent : global::System.ID
         return __hs_handle;
     }
 
-    public static SynchedActorDataComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorDataComponent arg0)
+    public static SynchedActorDataComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorDataComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d8aff9cd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SynchedActorDataComponent((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class HitResult : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static HitResult Create()
+    public static HitResult? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f035c4a8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HitResult((nint)handle);
@@ -55,23 +55,23 @@ public sealed unsafe partial class HitResult : global::System.IDisposable
     public static HitResult Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static HitResult Create(global::Hosihikari.Bindings.Bedrock.Interop.HitResult arg0)
+    public static HitResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.HitResult arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e6ad7c0c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HitResult((nint)handle);
     }
 
-    public static HitResult Create(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 startPos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 rayDir, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB entityAABB)
+    public static HitResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 startPos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 rayDir, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB entityAABB)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d053126d((void*)startPos.Handle, (void*)rayDir.Handle, (void*)entity.Handle, (void*)pos.Handle, (void*)entityAABB.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HitResult((nint)handle);
@@ -166,9 +166,10 @@ public sealed unsafe partial class HitResult : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_33e509c3((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HitResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HitResult arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.HitResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HitResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HitResult((nint)NativeMethods.TablePtr->C1.hs_method_163ca77b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_163ca77b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HitResult((nint)__hs_handle, false) : null;
     }
 
 

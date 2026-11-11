@@ -102,34 +102,34 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         NativeMethods.TablePtr->C0.hs_method_f20b47d1((void*)__hosihikari_shim_handle);
     }
 
-    public static CommandOutputParameter Create()
+    public static CommandOutputParameter? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_dd09a74f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandOutputParameter((nint)handle);
     }
 
-    public static CommandOutputParameter Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter rhs)
+    public static CommandOutputParameter? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter rhs)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f2d3b159((void*)rhs.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandOutputParameter((nint)handle);
     }
 
-    public static CommandOutputParameter Create_a93bd541(nint entities)
+    public static CommandOutputParameter? Create_a93bd541(nint entities)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a93bd541((void*)entities);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandOutputParameter((nint)handle);
@@ -143,7 +143,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
     public static CommandOutputParameter Create_19021bf7(nint text) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CommandOutputParameter Create(string text)
+    public static CommandOutputParameter? Create(string text)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(text);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -161,7 +161,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
             var handle = NativeMethods.TablePtr->C0.hs_create_f8975370(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new CommandOutputParameter((nint)handle);
@@ -206,9 +206,10 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter((nint)NativeMethods.TablePtr->C0.hs_method_416c1ec0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_416c1ec0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter((nint)__hs_handle, false) : null;
     }
 
 

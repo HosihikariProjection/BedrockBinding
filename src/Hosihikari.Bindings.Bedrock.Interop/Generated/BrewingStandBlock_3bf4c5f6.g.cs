@@ -480,9 +480,10 @@ public sealed unsafe partial class BrewingStandBlock : global::System.IDisposabl
         NativeMethods.TablePtr->C0.hs_method_330931bf((void*)__hosihikari_shim_handle, (void*)tickData);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C0.hs_method_34a3c177((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(arg1?.Handle ?? 0)));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_34a3c177((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(arg1?.Handle ?? 0));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
     }
 
     public string buildDescriptionId(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
@@ -501,9 +502,10 @@ public sealed unsafe partial class BrewingStandBlock : global::System.IDisposabl
         return NativeMethods.TablePtr->C0.hs_method_6c8f8c8b((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)lastPathPos.Handle, (void*)pathPos.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_aa498ca9((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_aa498ca9((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
     public int getComparatorSignal(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte dir)
@@ -511,9 +513,10 @@ public sealed unsafe partial class BrewingStandBlock : global::System.IDisposabl
         return NativeMethods.TablePtr->C0.hs_method_6cb4d0ff((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, dir);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getOutline(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferValue)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getOutline(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferValue)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_5fdf30b3((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)bufferValue.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5fdf30b3((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)bufferValue.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
     public bool hasComparatorSignal()

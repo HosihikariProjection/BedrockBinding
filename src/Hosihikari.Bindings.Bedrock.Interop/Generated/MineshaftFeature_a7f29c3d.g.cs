@@ -54,12 +54,12 @@ public sealed unsafe partial class MineshaftFeature : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_8549dbc6((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public static MineshaftFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.MineshaftFeature arg0)
+    public static MineshaftFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.MineshaftFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7868809d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MineshaftFeature((nint)handle);

@@ -441,14 +441,16 @@ public sealed unsafe partial class CrystalClusterBlock : global::System.IDisposa
         return NativeMethods.TablePtr->C1.hs_method_178964b7((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)lastPathPos.Handle, (void*)pathPos.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getInitialDefaultState()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getInitialDefaultState()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C1.hs_method_457ba1c6((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_457ba1c6((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getVisualShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferAABB)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getVisualShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferAABB)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C1.hs_method_63ffc14a((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)bufferAABB.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_63ffc14a((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)bufferAABB.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
     public int mAabbOffset

@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_BlockTryPlaceByPlayerEvent_ 
     public static ValueOrRef_const_BlockTryPlaceByPlayerEvent_ Create_7ff6a618(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const BlockTryPlaceByPlayerEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTryPlaceByPlayerEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTryPlaceByPlayerEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTryPlaceByPlayerEvent((nint)NativeMethods.TablePtr->C1.hs_method_9b232c8d((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9b232c8d((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTryPlaceByPlayerEvent((nint)__hs_handle, false) : null;
     }
 
 

@@ -64,12 +64,12 @@ public sealed unsafe partial class PortalForcer : global::System.IDisposable
     public static nint PORTAL_FILE_ID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PortalForcer Create()
+    public static PortalForcer? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d05fbdbc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PortalForcer((nint)handle);
@@ -79,12 +79,12 @@ public sealed unsafe partial class PortalForcer : global::System.IDisposable
     public static PortalForcer Create(nint level) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PortalForcer Create(global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer arg0)
+    public static PortalForcer? Create(global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_daff5cfe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PortalForcer((nint)handle);
@@ -121,9 +121,10 @@ public sealed unsafe partial class PortalForcer : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_471943dc((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer((nint)NativeMethods.TablePtr->C2.hs_method_e24be56b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e24be56b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

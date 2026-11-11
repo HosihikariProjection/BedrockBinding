@@ -50,14 +50,16 @@ public sealed unsafe partial class VideoReceiveStreamInterface : global::System.
         return NativeMethods.TablePtr->C4.hs_method_06195dc0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Stats GetStats()
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Stats? GetStats()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_2f0f1a59((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2f0f1a59((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Stats((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState SetAndGetRecordingState(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState arg0, bool arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState? SetAndGetRecordingState(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState arg0, bool arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState((nint)NativeMethods.TablePtr->C4.hs_method_95c3f0ef((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_95c3f0ef((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::map<int, int>' is not a known bindable declaration.", false)]
@@ -99,12 +101,12 @@ public sealed unsafe partial class VideoReceiveStreamInterface : global::System.
         NativeMethods.TablePtr->C4.hs_method_b5e56d55((void*)__hosihikari_shim_handle, arg0);
     }
 
-    public static VideoReceiveStreamInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface arg0)
+    public static VideoReceiveStreamInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_dff3a5d7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VideoReceiveStreamInterface((nint)handle);

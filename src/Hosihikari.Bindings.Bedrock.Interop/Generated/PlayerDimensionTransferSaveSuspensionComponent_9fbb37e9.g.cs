@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerDimensionTransferSaveSuspensionComponen
         return __hs_handle;
     }
 
-    public static PlayerDimensionTransferSaveSuspensionComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDimensionTransferSaveSuspensionComponent arg0)
+    public static PlayerDimensionTransferSaveSuspensionComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDimensionTransferSaveSuspensionComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9d12dd9e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerDimensionTransferSaveSuspensionComponent((nint)handle);

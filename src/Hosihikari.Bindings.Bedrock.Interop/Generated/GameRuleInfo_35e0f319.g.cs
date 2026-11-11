@@ -40,23 +40,23 @@ public sealed unsafe partial class GameRuleInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static GameRuleInfo Create()
+    public static GameRuleInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_eabf32c3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameRuleInfo((nint)handle);
     }
 
-    public static GameRuleInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestRuleHelper_Nested.GameRuleInfo arg0)
+    public static GameRuleInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestRuleHelper_Nested.GameRuleInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0238100a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameRuleInfo((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class GameRuleInfo : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_4a8ae277((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestRuleHelper_Nested.GameRuleInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestRuleHelper_Nested.GameRuleInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestRuleHelper_Nested.GameRuleInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestRuleHelper_Nested.GameRuleInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestRuleHelper_Nested.GameRuleInfo((nint)NativeMethods.TablePtr->C4.hs_method_f62b4a8d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f62b4a8d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestRuleHelper_Nested.GameRuleInfo((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

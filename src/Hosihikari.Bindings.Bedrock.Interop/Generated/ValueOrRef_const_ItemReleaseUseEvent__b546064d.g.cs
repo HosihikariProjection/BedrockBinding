@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ItemReleaseUseEvent_ : globa
     public static ValueOrRef_const_ItemReleaseUseEvent_ Create_35594145(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ItemReleaseUseEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemReleaseUseEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemReleaseUseEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemReleaseUseEvent((nint)NativeMethods.TablePtr->C1.hs_method_175a4c79((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_175a4c79((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemReleaseUseEvent((nint)__hs_handle, false) : null;
     }
 
 

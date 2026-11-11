@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerListPacketPayload : global::System.IDis
         return __hs_handle;
     }
 
-    public static PlayerListPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListPacketPayload arg0)
+    public static PlayerListPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_58dc0440((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerListPacketPayload((nint)handle);

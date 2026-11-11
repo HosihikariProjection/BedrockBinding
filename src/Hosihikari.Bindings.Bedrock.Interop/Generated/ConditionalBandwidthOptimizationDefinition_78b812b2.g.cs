@@ -40,12 +40,12 @@ public sealed unsafe partial class ConditionalBandwidthOptimizationDefinition : 
         return __hs_handle;
     }
 
-    public static ConditionalBandwidthOptimizationDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimizationDefinition arg0)
+    public static ConditionalBandwidthOptimizationDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimizationDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0651d799((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ConditionalBandwidthOptimizationDefinition((nint)handle);

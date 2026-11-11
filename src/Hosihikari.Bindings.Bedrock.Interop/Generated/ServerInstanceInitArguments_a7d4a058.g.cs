@@ -40,23 +40,23 @@ public sealed unsafe partial class ServerInstanceInitArguments : global::System.
         return __hs_handle;
     }
 
-    public static ServerInstanceInitArguments Create()
+    public static ServerInstanceInitArguments? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0da96364();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerInstanceInitArguments((nint)handle);
     }
 
-    public static ServerInstanceInitArguments Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments arg0)
+    public static ServerInstanceInitArguments? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e25825d5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerInstanceInitArguments((nint)handle);
@@ -338,9 +338,10 @@ public sealed unsafe partial class ServerInstanceInitArguments : global::System.
         get => (nint)NativeMethods.TablePtr->C3.hs_get_bced6c4c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments((nint)NativeMethods.TablePtr->C3.hs_method_f37ebfe2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f37ebfe2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

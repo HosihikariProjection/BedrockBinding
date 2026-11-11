@@ -44,12 +44,12 @@ public sealed unsafe partial class TerrainBurstReactionComponent : global::Syste
     public void __onEnd(nint owner, nint region) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TerrainBurstReactionComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.TerrainBurstReactionComponent arg0)
+    public static TerrainBurstReactionComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.TerrainBurstReactionComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e4489b91((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TerrainBurstReactionComponent((nint)handle);

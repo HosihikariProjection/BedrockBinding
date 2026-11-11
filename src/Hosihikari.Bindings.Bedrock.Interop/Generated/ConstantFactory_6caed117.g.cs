@@ -52,12 +52,12 @@ public sealed unsafe partial class ConstantFactory : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ConstantFactory Create()
+    public static ConstantFactory? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_af497268();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ConstantFactory((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class VolumeStorageDefinition : global::System.IDis
         return __hs_handle;
     }
 
-    public static VolumeStorageDefinition Create()
+    public static VolumeStorageDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a1dc0f3f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VolumeStorageDefinition((nint)handle);
     }
 
-    public static VolumeStorageDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.VolumeInstanceData.VolumeStorageDefinition arg0)
+    public static VolumeStorageDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.VolumeInstanceData.VolumeStorageDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2e553488((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VolumeStorageDefinition((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class VolumeStorageDefinition : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C4.hs_get_e3617bfd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.VolumeInstanceData.VolumeStorageDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VolumeInstanceData.VolumeStorageDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.VolumeInstanceData.VolumeStorageDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VolumeInstanceData.VolumeStorageDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.VolumeInstanceData.VolumeStorageDefinition((nint)NativeMethods.TablePtr->C4.hs_method_4d415b1c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4d415b1c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VolumeInstanceData.VolumeStorageDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

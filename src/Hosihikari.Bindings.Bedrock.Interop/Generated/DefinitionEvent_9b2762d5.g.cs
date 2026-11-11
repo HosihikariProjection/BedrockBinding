@@ -50,23 +50,23 @@ public sealed unsafe partial class DefinitionEvent : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_7a5196a5((void*)__hosihikari_shim_handle);
     }
 
-    public static DefinitionEvent Create()
+    public static DefinitionEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b14c408d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DefinitionEvent((nint)handle);
     }
 
-    public static DefinitionEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.DefinitionEvent arg0)
+    public static DefinitionEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.DefinitionEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1bbf32d3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DefinitionEvent((nint)handle);

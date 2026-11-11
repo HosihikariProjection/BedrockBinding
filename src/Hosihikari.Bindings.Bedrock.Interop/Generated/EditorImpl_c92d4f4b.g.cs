@@ -60,23 +60,23 @@ public sealed unsafe partial class EditorImpl : global::System.IDisposable
     public nint _setValueForKey(nint key, nint value) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EditorImpl Create()
+    public static EditorImpl? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3d2ab3cd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EditorImpl((nint)handle);
     }
 
-    public static EditorImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.EditorImpl arg0)
+    public static EditorImpl? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.EditorImpl arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7b420faa((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EditorImpl((nint)handle);
@@ -142,9 +142,10 @@ public sealed unsafe partial class EditorImpl : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_ce5c0110((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.EditorImpl operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.EditorImpl arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.EditorImpl? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.EditorImpl arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.EditorImpl((nint)NativeMethods.TablePtr->C0.hs_method_583a838d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_583a838d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.EditorImpl((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Node? setValueForKey(string key, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper value)

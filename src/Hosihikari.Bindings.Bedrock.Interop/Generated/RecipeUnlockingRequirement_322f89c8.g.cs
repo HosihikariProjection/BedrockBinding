@@ -45,12 +45,12 @@ public sealed unsafe partial class RecipeUnlockingRequirement : global::System.I
         NativeMethods.TablePtr->C3.hs_method_25248031((void*)__hosihikari_shim_handle);
     }
 
-    public static RecipeUnlockingRequirement Create(global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingRequirement arg0)
+    public static RecipeUnlockingRequirement? Create(global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingRequirement arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a851c2de((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RecipeUnlockingRequirement((nint)handle);

@@ -52,12 +52,12 @@ public sealed unsafe partial class SubChunk : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SubChunk Create()
+    public static SubChunk? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_bd7e1343();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SubChunk((nint)handle);
@@ -71,12 +71,12 @@ public sealed unsafe partial class SubChunk : global::System.IDisposable
     public static SubChunk Create(nint initBlock, bool maxSkyLight, bool maxLight, byte absoluteIndex) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SubChunk Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunk arg0)
+    public static SubChunk? Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunk arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_563fc14d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SubChunk((nint)handle);
@@ -203,9 +203,10 @@ public sealed unsafe partial class SubChunk : global::System.IDisposable
     public nint operator_assign(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunk operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SubChunk arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunk? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SubChunk arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunk((nint)NativeMethods.TablePtr->C3.hs_method_99e83f92((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_99e83f92((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunk((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

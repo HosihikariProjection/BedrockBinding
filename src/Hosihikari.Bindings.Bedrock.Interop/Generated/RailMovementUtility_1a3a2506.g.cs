@@ -44,9 +44,10 @@ public sealed unsafe partial class RailMovementUtility : global::System.IDisposa
     public static nint RAIL_EXITS() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3 calculateGoldenRailSpeedIncrease(global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int direction, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 posDelta)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3? calculateGoldenRailSpeedIncrease(global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int direction, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 posDelta)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_7093dc8f((void*)region.Handle, (void*)pos.Handle, direction, (void*)posDelta.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7093dc8f((void*)region.Handle, (void*)pos.Handle, direction, (void*)posDelta.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

@@ -40,12 +40,12 @@ public sealed unsafe partial class WeightedStructureTemplateRegistration : globa
         return __hs_handle;
     }
 
-    public static WeightedStructureTemplateRegistration Create(global::Hosihikari.Bindings.Bedrock.Interop.WeightedStructureTemplateRegistration arg0)
+    public static WeightedStructureTemplateRegistration? Create(global::Hosihikari.Bindings.Bedrock.Interop.WeightedStructureTemplateRegistration arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5c9dc319((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeightedStructureTemplateRegistration((nint)handle);

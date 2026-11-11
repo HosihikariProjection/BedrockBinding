@@ -44,23 +44,23 @@ public sealed unsafe partial class DiskAccessDiagnostics : global::System.IDispo
     public nint _ctor(nint logInterval) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DiskAccessDiagnostics Create()
+    public static DiskAccessDiagnostics? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8fe7248d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DiskAccessDiagnostics((nint)handle);
     }
 
-    public static DiskAccessDiagnostics Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics arg0)
+    public static DiskAccessDiagnostics? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_08aedfa2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DiskAccessDiagnostics((nint)handle);
@@ -142,9 +142,10 @@ public sealed unsafe partial class DiskAccessDiagnostics : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C1.hs_get_cd35e846((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics((nint)NativeMethods.TablePtr->C1.hs_method_8e8e3a9c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8e8e3a9c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -40,23 +40,23 @@ public sealed unsafe partial class SuspendStateData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static SuspendStateData Create()
+    public static SuspendStateData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7550ae4e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SuspendStateData((nint)handle);
     }
 
-    public static SuspendStateData Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.SuspendStateData arg0)
+    public static SuspendStateData? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.SuspendStateData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2dc23fd9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SuspendStateData((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class SuspendStateData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_117efbf1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.SuspendStateData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.SuspendStateData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.SuspendStateData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.SuspendStateData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.SuspendStateData((nint)NativeMethods.TablePtr->C3.hs_method_57f87c57((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_57f87c57((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.SuspendStateData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

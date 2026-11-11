@@ -40,25 +40,27 @@ public sealed unsafe partial class ActorGameplayHandler : global::System.IDispos
         return __hs_handle;
     }
 
-    public static ActorGameplayHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorGameplayHandler arg0)
+    public static ActorGameplayHandler? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorGameplayHandler arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_027cc939((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorGameplayHandler((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.MutableActorGameplayEvent_CoordinatorResult_ @event)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.MutableActorGameplayEvent_CoordinatorResult_ @event)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C0.hs_method_a3cad182((void*)__hosihikari_shim_handle, (void*)@event.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a3cad182((void*)__hosihikari_shim_handle, (void*)@event.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ActorGameplayEvent_CoordinatorResult_ arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ActorGameplayEvent_CoordinatorResult_ arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C0.hs_method_a40389bd((void*)__hosihikari_shim_handle, (void*)arg0.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a40389bd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 
     public int handleEvent(nint @event)

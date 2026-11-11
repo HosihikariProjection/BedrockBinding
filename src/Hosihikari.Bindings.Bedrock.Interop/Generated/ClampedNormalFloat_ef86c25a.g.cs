@@ -40,23 +40,23 @@ public sealed unsafe partial class ClampedNormalFloat : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static ClampedNormalFloat Create()
+    public static ClampedNormalFloat? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_cc053f0c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClampedNormalFloat((nint)handle);
     }
 
-    public static ClampedNormalFloat Create(global::Hosihikari.Bindings.Bedrock.Interop.ValueProviders.ClampedNormalFloat arg0)
+    public static ClampedNormalFloat? Create(global::Hosihikari.Bindings.Bedrock.Interop.ValueProviders.ClampedNormalFloat arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2fd8e8dc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClampedNormalFloat((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class ClampedNormalFloat : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_8869fed5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ValueProviders.ClampedNormalFloat operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ValueProviders.ClampedNormalFloat arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ValueProviders.ClampedNormalFloat? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ValueProviders.ClampedNormalFloat arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ValueProviders.ClampedNormalFloat((nint)NativeMethods.TablePtr->C4.hs_method_98797af8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_98797af8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ValueProviders.ClampedNormalFloat((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

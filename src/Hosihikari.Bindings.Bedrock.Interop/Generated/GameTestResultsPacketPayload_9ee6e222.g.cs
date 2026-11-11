@@ -44,23 +44,23 @@ public sealed unsafe partial class GameTestResultsPacketPayload : global::System
     public nint _ctor(nint testName, nint error, bool succeeded) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GameTestResultsPacketPayload Create()
+    public static GameTestResultsPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_82e845b6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameTestResultsPacketPayload((nint)handle);
     }
 
-    public static GameTestResultsPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.GameTestResultsPacketPayload arg0)
+    public static GameTestResultsPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.GameTestResultsPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_16f3feba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameTestResultsPacketPayload((nint)handle);

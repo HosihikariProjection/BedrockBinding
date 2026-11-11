@@ -116,12 +116,12 @@ public sealed unsafe partial class InstantaneousAttributeBuff : global::System.I
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static InstantaneousAttributeBuff Create(global::Hosihikari.Bindings.Bedrock.Interop.InstantaneousAttributeBuff arg0)
+    public static InstantaneousAttributeBuff? Create(global::Hosihikari.Bindings.Bedrock.Interop.InstantaneousAttributeBuff arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5dffb294((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InstantaneousAttributeBuff((nint)handle);

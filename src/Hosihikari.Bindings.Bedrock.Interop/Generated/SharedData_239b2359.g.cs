@@ -52,23 +52,23 @@ public sealed unsafe partial class SharedData : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SharedData Create()
+    public static SharedData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_829f840e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SharedData((nint)handle);
     }
 
-    public static SharedData Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.SharedData arg0)
+    public static SharedData? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.SharedData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a8c6509f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SharedData((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class SharedData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d9533fa7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.SharedData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.SharedData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.SharedData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.SharedData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.SharedData((nint)NativeMethods.TablePtr->C2.hs_method_078d9549((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_078d9549((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.SharedData((nint)__hs_handle, false) : null;
     }
 
 

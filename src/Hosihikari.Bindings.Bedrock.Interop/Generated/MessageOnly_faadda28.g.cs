@@ -40,12 +40,12 @@ public sealed unsafe partial class MessageOnly : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static MessageOnly Create(global::Hosihikari.Bindings.Bedrock.Interop.TextPacketPayload_Nested.MessageOnly arg0)
+    public static MessageOnly? Create(global::Hosihikari.Bindings.Bedrock.Interop.TextPacketPayload_Nested.MessageOnly arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5c98e7ae((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MessageOnly((nint)handle);

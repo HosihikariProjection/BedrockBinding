@@ -44,12 +44,12 @@ public sealed unsafe partial class ActorDefinitionModifier : global::System.IDis
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorDefinitionModifier Create()
+    public static ActorDefinitionModifier? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e803bd2a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionModifier((nint)handle);
@@ -87,9 +87,10 @@ public sealed unsafe partial class ActorDefinitionModifier : global::System.IDis
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionModifier operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionModifier arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionModifier? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionModifier arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionModifier((nint)NativeMethods.TablePtr->C0.hs_method_c6bd146b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c6bd146b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionModifier((nint)__hs_handle, false) : null;
     }
 
 

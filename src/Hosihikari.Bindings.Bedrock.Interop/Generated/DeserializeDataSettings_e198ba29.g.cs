@@ -52,12 +52,12 @@ public sealed unsafe partial class DeserializeDataSettings : global::System.IDis
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DeserializeDataSettings Create()
+    public static DeserializeDataSettings? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9f5eeff5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DeserializeDataSettings((nint)handle);
@@ -89,9 +89,10 @@ public sealed unsafe partial class DeserializeDataSettings : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C1.hs_get_b6b1af7c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataSettings operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataSettings arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataSettings? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataSettings arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataSettings((nint)NativeMethods.TablePtr->C1.hs_method_a6c6827c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a6c6827c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataSettings((nint)__hs_handle, false) : null;
     }
 
 

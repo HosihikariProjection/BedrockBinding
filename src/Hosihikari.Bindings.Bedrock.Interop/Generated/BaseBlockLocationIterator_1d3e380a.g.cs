@@ -48,12 +48,12 @@ public sealed unsafe partial class BaseBlockLocationIterator : global::System.ID
     public void __end() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BaseBlockLocationIterator Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator arg0)
+    public static BaseBlockLocationIterator? Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_cb2611af((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseBlockLocationIterator((nint)handle);
@@ -103,9 +103,10 @@ public sealed unsafe partial class BaseBlockLocationIterator : global::System.ID
         return NativeMethods.TablePtr->C0.hs_method_a78300a1((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator operator_operator__()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator? operator_operator__()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator((nint)NativeMethods.TablePtr->C0.hs_method_e3e05252((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e3e05252((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator arg0)

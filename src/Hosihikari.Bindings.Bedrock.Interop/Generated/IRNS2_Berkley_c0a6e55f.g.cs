@@ -45,12 +45,12 @@ public sealed unsafe partial class IRNS2_Berkley : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_0ab60e51((void*)__hosihikari_shim_handle, (void*)bindParameters, (void*)file, line);
     }
 
-    public static IRNS2_Berkley Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.IRNS2_Berkley arg0)
+    public static IRNS2_Berkley? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.IRNS2_Berkley arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4ea9bcf8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IRNS2_Berkley((nint)handle);

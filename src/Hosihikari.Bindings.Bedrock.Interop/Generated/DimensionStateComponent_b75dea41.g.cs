@@ -40,12 +40,12 @@ public sealed unsafe partial class DimensionStateComponent : global::System.IDis
         return __hs_handle;
     }
 
-    public static DimensionStateComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.DimensionStateComponent arg0)
+    public static DimensionStateComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.DimensionStateComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_de521750((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DimensionStateComponent((nint)handle);

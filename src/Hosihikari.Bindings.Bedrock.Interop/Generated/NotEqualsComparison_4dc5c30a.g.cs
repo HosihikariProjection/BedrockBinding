@@ -40,12 +40,12 @@ public sealed unsafe partial class NotEqualsComparison : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static NotEqualsComparison Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.NotEqualsComparison arg0)
+    public static NotEqualsComparison? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.NotEqualsComparison arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a1724ba1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NotEqualsComparison((nint)handle);

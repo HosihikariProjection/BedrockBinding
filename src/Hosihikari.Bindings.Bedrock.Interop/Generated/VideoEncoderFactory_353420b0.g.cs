@@ -56,7 +56,7 @@ public sealed unsafe partial class VideoEncoderFactory : global::System.IDisposa
     public nint GetSupportedFormats() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'webrtc::SdpVideoFormat' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory_Nested.CodecSupport QueryCodecSupport(nint arg0, string? arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory_Nested.CodecSupport? QueryCodecSupport(nint arg0, string? arg1)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(arg1 ?? string.Empty);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -71,16 +71,17 @@ public sealed unsafe partial class VideoEncoderFactory : global::System.IDisposa
         global::System.Text.Encoding.UTF8.GetBytes(arg1 ?? string.Empty, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory_Nested.CodecSupport((nint)NativeMethods.TablePtr->C4.hs_method_daf4b134((void*)__hosihikari_shim_handle, (void*)arg0, __hs_stringData1, (nuint)__hs_stringByteCount1, arg1 is not null));
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_daf4b134((void*)__hosihikari_shim_handle, (void*)arg0, __hs_stringData1, (nuint)__hs_stringByteCount1, arg1 is not null);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory_Nested.CodecSupport((nint)__hs_handle) : null;
         }
     }
 
-    public static VideoEncoderFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory arg0)
+    public static VideoEncoderFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_95f28e22((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VideoEncoderFactory((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class AnyAndJSValue : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static AnyAndJSValue Create()
+    public static AnyAndJSValue? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_08a533c7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AnyAndJSValue((nint)handle);
     }
 
-    public static AnyAndJSValue Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.AnyAndJSValue arg0)
+    public static AnyAndJSValue? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.AnyAndJSValue arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_15082dc6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AnyAndJSValue((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class AnyAndJSValue : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_f00868c1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.AnyAndJSValue operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.AnyAndJSValue arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.AnyAndJSValue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.AnyAndJSValue arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.AnyAndJSValue((nint)NativeMethods.TablePtr->C3.hs_method_1ef517b9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1ef517b9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.AnyAndJSValue((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

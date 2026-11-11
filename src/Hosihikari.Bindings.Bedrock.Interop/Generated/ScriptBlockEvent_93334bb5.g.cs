@@ -44,12 +44,12 @@ public sealed unsafe partial class ScriptBlockEvent : global::System.IDisposable
     public nint _ctor(nint dimension, nint location, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptBlockEvent Create()
+    public static ScriptBlockEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fd1ed04b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockEvent((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class ScriptBlockEvent : global::System.IDisposable
     public static ScriptBlockEvent Create(nint dimension, nint location, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptBlockEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockEvent arg0)
+    public static ScriptBlockEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7d3d2a4a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockEvent((nint)handle);

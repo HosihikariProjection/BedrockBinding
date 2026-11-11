@@ -86,23 +86,23 @@ public sealed unsafe partial class SquidOutOfWaterGoal : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SquidOutOfWaterGoal Create()
+    public static SquidOutOfWaterGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9ab660b6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SquidOutOfWaterGoal((nint)handle);
     }
 
-    public static SquidOutOfWaterGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SquidOutOfWaterGoal arg0)
+    public static SquidOutOfWaterGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.SquidOutOfWaterGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e1393ba6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SquidOutOfWaterGoal((nint)handle);
@@ -144,9 +144,10 @@ public sealed unsafe partial class SquidOutOfWaterGoal : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_3ddbaac9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SquidOutOfWaterGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SquidOutOfWaterGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SquidOutOfWaterGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SquidOutOfWaterGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SquidOutOfWaterGoal((nint)NativeMethods.TablePtr->C3.hs_method_3a22d87c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3a22d87c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SquidOutOfWaterGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

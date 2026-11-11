@@ -40,12 +40,12 @@ public sealed unsafe partial class WeightedBlockReference : global::System.IDisp
         return __hs_handle;
     }
 
-    public static WeightedBlockReference Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomSpreadTreeCanopy_Nested.WeightedBlockReference arg0)
+    public static WeightedBlockReference? Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomSpreadTreeCanopy_Nested.WeightedBlockReference arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_77774244((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeightedBlockReference((nint)handle);

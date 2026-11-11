@@ -45,12 +45,12 @@ public sealed unsafe partial class ConstructionContext : global::System.IDisposa
         NativeMethods.TablePtr->C3.hs_method_30d68ab1((void*)__hosihikari_shim_handle);
     }
 
-    public static ConstructionContext Create(global::Hosihikari.Bindings.Bedrock.Interop.Recipe_Nested.ConstructionContext arg0)
+    public static ConstructionContext? Create(global::Hosihikari.Bindings.Bedrock.Interop.Recipe_Nested.ConstructionContext arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6de6934b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ConstructionContext((nint)handle);

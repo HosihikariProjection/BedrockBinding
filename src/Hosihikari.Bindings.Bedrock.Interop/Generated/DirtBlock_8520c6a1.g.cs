@@ -418,9 +418,10 @@ public sealed unsafe partial class DirtBlock : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color _getMapColor(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? _getMapColor(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C1.hs_method_01058af6((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_01058af6((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -439,18 +440,18 @@ public sealed unsafe partial class DirtBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DirtBlock Create()
+    public static DirtBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a1f01aab();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DirtBlock((nint)handle);
     }
 
-    public static DirtBlock Create(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor blockToTillInto)
+    public static DirtBlock? Create(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor blockToTillInto)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -468,7 +469,7 @@ public sealed unsafe partial class DirtBlock : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_14d4fd72(__hs_stringData0, (nuint)__hs_stringByteCount0, id, (void*)blockToTillInto.Handle);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new DirtBlock((nint)handle);
@@ -480,9 +481,10 @@ public sealed unsafe partial class DirtBlock : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_391f01a3((void*)__hosihikari_shim_handle, (void*)experiments.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C1.hs_method_6048a3cd((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)(arg1?.Handle ?? 0)));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6048a3cd((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)(arg1?.Handle ?? 0));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
     }
 
     public bool canBeFertilized(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block aboveBlock)
@@ -495,9 +497,10 @@ public sealed unsafe partial class DirtBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_aa598d14((void*)__hosihikari_shim_handle, arg0) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getMapColor(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getMapColor(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C1.hs_method_c40bc844((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c40bc844((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

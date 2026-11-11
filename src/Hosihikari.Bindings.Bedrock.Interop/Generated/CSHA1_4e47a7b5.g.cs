@@ -40,23 +40,23 @@ public sealed unsafe partial class CSHA1 : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CSHA1 Create()
+    public static CSHA1? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a7a46f98();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CSHA1((nint)handle);
     }
 
-    public static CSHA1 Create(global::Hosihikari.Bindings.Bedrock.Interop.CSHA1 arg0)
+    public static CSHA1? Create(global::Hosihikari.Bindings.Bedrock.Interop.CSHA1 arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c0c27006((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CSHA1((nint)handle);
@@ -118,9 +118,10 @@ public sealed unsafe partial class CSHA1 : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_cf4b4dfb((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CSHA1 operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CSHA1 arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CSHA1? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CSHA1 arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CSHA1((nint)NativeMethods.TablePtr->C0.hs_method_e378cc34((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e378cc34((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CSHA1((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

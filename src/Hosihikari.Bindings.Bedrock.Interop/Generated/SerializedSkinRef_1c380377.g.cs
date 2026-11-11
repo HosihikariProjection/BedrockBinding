@@ -64,45 +64,45 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
         NativeMethods.TablePtr->C3.hs_method_f474b390((void*)__hosihikari_shim_handle);
     }
 
-    public static SerializedSkinRef Create()
+    public static SerializedSkinRef? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cd5e7fa2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SerializedSkinRef((nint)handle);
     }
 
-    public static SerializedSkinRef Create(global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest connectionRequest)
+    public static SerializedSkinRef? Create(global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest connectionRequest)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_570c57cd((void*)connectionRequest.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SerializedSkinRef((nint)handle);
     }
 
-    public static SerializedSkinRef Create(global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef arg0)
+    public static SerializedSkinRef? Create(global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ffae8ced((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SerializedSkinRef((nint)handle);
     }
 
-    public static SerializedSkinRef Create(global::Hosihikari.Bindings.Bedrock.Interop.SubClientConnectionRequest request)
+    public static SerializedSkinRef? Create(global::Hosihikari.Bindings.Bedrock.Interop.SubClientConnectionRequest request)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_328c8d5a((void*)request.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SerializedSkinRef((nint)handle);
@@ -112,9 +112,10 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
     public static SerializedSkinRef Create(nint name, nint resourcePatch, nint skinImage, nint skinImageWidth, nint skinImageHeight, nint capeImage, nint capeImageWidth, nint capeImageHeight, nint geometryData, nint geometryDataMinEngineVersion, nint animationData, nint capeId, bool isTrustedSkin, bool isPremium, bool isPersona, bool isPersonaCapeOnClassicSkin, bool isPrimaryUser, bool overridesPlayerAppearance) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef createTrustedDefaultSerializedSkin()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef? createTrustedDefaultSerializedSkin()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef((nint)NativeMethods.TablePtr->C3.hs_method_b9e81b42());
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b9e81b42();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef((nint)__hs_handle) : null;
     }
 
     public bool isValid()
@@ -132,9 +133,10 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
     public nint operator_assign(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef rhs)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef((nint)NativeMethods.TablePtr->C3.hs_method_413c44ab((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_413c44ab((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]

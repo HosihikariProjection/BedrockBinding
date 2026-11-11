@@ -40,45 +40,45 @@ public sealed unsafe partial class NonOwnerPointer_Core__FilePathManager_ : glob
         return __hs_handle;
     }
 
-    public static NonOwnerPointer_Core__FilePathManager_ Create()
+    public static NonOwnerPointer_Core__FilePathManager_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b6f4fda8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_Core__FilePathManager_((nint)handle);
     }
 
-    public static NonOwnerPointer_Core__FilePathManager_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    public static NonOwnerPointer_Core__FilePathManager_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9cb3dff1(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_Core__FilePathManager_((nint)handle);
     }
 
-    public static NonOwnerPointer_Core__FilePathManager_ Create_0949def9()
+    public static NonOwnerPointer_Core__FilePathManager_? Create_0949def9()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0949def9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_Core__FilePathManager_((nint)handle);
     }
 
-    public static NonOwnerPointer_Core__FilePathManager_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager? p)
+    public static NonOwnerPointer_Core__FilePathManager_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager? p)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c62071bc(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_Core__FilePathManager_((nint)handle);
@@ -113,9 +113,10 @@ public sealed unsafe partial class NonOwnerPointer_Core__FilePathManager_ : glob
         return NativeMethods.TablePtr->C0.hs_method_1bf3d233((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager((nint)NativeMethods.TablePtr->C0.hs_method_d20b1103((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d20b1103((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager? operator_operator__()

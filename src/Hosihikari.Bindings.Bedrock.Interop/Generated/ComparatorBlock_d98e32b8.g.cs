@@ -445,12 +445,12 @@ public sealed unsafe partial class ComparatorBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ComparatorBlock Create()
+    public static ComparatorBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_da926bcb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComparatorBlock((nint)handle);
@@ -477,9 +477,10 @@ public sealed unsafe partial class ComparatorBlock : global::System.IDisposable
     public static void _refreshOutputState(nint region, nint pos, int strength) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C0.hs_method_087722dd((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(arg1?.Handle ?? 0)));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_087722dd((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(arg1?.Handle ?? 0));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
     }
 
     public bool canSpawnOn(global::Hosihikari.Bindings.Bedrock.Interop.Actor? arg0)

@@ -40,12 +40,12 @@ public sealed unsafe partial class StructureTempOwner : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static StructureTempOwner Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureCache_Nested.StructureTempOwner arg0)
+    public static StructureTempOwner? Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureCache_Nested.StructureTempOwner arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_225f6477((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureTempOwner((nint)handle);

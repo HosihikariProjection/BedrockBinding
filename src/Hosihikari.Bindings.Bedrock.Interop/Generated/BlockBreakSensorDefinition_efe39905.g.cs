@@ -40,12 +40,12 @@ public sealed unsafe partial class BlockBreakSensorDefinition : global::System.I
         return __hs_handle;
     }
 
-    public static BlockBreakSensorDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockBreakSensorDefinition arg0)
+    public static BlockBreakSensorDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockBreakSensorDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5aa1eb8e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockBreakSensorDefinition((nint)handle);

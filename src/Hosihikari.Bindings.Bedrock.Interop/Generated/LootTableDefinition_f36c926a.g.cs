@@ -40,23 +40,23 @@ public sealed unsafe partial class LootTableDefinition : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static LootTableDefinition Create()
+    public static LootTableDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_96503c87();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LootTableDefinition((nint)handle);
     }
 
-    public static LootTableDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.LootTableDefinition arg0)
+    public static LootTableDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.LootTableDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6cb7574b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LootTableDefinition((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class LootTableDefinition : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C2.hs_get_aa46f28d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LootTableDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootTableDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LootTableDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootTableDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LootTableDefinition((nint)NativeMethods.TablePtr->C2.hs_method_dfccc5ad((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_dfccc5ad((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LootTableDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

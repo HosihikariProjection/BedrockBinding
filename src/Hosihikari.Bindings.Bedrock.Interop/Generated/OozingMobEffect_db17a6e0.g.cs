@@ -158,12 +158,12 @@ public sealed unsafe partial class OozingMobEffect : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_c7216a7f((void*)__hosihikari_shim_handle, (void*)target.Handle, amplifier);
     }
 
-    public static OozingMobEffect Create(global::Hosihikari.Bindings.Bedrock.Interop.OozingMobEffect arg0)
+    public static OozingMobEffect? Create(global::Hosihikari.Bindings.Bedrock.Interop.OozingMobEffect arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cbb9bf83((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OozingMobEffect((nint)handle);

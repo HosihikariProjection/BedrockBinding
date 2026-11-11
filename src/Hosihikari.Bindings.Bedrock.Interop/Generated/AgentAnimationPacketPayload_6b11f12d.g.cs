@@ -40,12 +40,12 @@ public sealed unsafe partial class AgentAnimationPacketPayload : global::System.
         return __hs_handle;
     }
 
-    public static AgentAnimationPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentAnimationPacketPayload arg0)
+    public static AgentAnimationPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentAnimationPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6f9e552b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AgentAnimationPacketPayload((nint)handle);

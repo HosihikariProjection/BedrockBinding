@@ -68,12 +68,12 @@ public sealed unsafe partial class ReedsFeature : global::System.IDisposable
     public bool _place(nint region, nint pos, nint random) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ReedsFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.ReedsFeature arg0)
+    public static ReedsFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.ReedsFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_eef6e892((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReedsFeature((nint)handle);

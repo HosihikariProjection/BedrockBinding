@@ -44,23 +44,23 @@ public sealed unsafe partial class Type : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Type Create()
+    public static Type? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_58219d4f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Type((nint)handle);
     }
 
-    public static Type Create(global::Hosihikari.Bindings.Bedrock.Interop.Poi.Type arg0)
+    public static Type? Create(global::Hosihikari.Bindings.Bedrock.Interop.Poi.Type arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_15f38d3f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Type((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class Type : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_8654001c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Poi.Type operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Poi.Type arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Poi.Type? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Poi.Type arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Poi.Type((nint)NativeMethods.TablePtr->C2.hs_method_35176aea((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_35176aea((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Poi.Type((nint)__hs_handle, false) : null;
     }
 
 

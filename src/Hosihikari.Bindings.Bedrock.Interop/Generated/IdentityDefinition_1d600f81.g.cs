@@ -44,12 +44,12 @@ public sealed unsafe partial class IdentityDefinition : global::System.IDisposab
     public nint _ctor(nint o) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IdentityDefinition Create()
+    public static IdentityDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_06a752ff();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IdentityDefinition((nint)handle);
@@ -107,9 +107,10 @@ public sealed unsafe partial class IdentityDefinition : global::System.IDisposab
     public nint operator_assign(nint o) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition((nint)NativeMethods.TablePtr->C1.hs_method_cd5e036f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cd5e036f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition((nint)__hs_handle, false) : null;
     }
 
 

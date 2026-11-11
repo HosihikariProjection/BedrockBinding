@@ -48,12 +48,12 @@ public sealed unsafe partial class AddItemActorPacketPayload : global::System.ID
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AddItemActorPacketPayload Create()
+    public static AddItemActorPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ad06d481();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddItemActorPacketPayload((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class AddItemActorPacketPayload : global::System.ID
     public static AddItemActorPacketPayload Create(nint itemEntity) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AddItemActorPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload arg0)
+    public static AddItemActorPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_012b31e0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddItemActorPacketPayload((nint)handle);
@@ -120,9 +120,10 @@ public sealed unsafe partial class AddItemActorPacketPayload : global::System.ID
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload((nint)NativeMethods.TablePtr->C0.hs_method_993e1a3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_993e1a3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload((nint)__hs_handle, false) : null;
     }
 
 

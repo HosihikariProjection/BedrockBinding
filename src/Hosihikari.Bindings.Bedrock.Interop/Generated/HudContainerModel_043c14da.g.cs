@@ -119,23 +119,23 @@ public sealed unsafe partial class HudContainerModel : global::System.IDisposabl
     public bool _isValid() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static HudContainerModel Create()
+    public static HudContainerModel? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_98b18f78();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HudContainerModel((nint)handle);
     }
 
-    public static HudContainerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.HudContainerModel arg0)
+    public static HudContainerModel? Create(global::Hosihikari.Bindings.Bedrock.Interop.HudContainerModel arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8421e016((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HudContainerModel((nint)handle);
@@ -157,9 +157,10 @@ public sealed unsafe partial class HudContainerModel : global::System.IDisposabl
         NativeMethods.TablePtr->C1.hs_method_1ceeb532((void*)__hosihikari_shim_handle, slot);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef getContainerWeakRef()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef? getContainerWeakRef()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)NativeMethods.TablePtr->C1.hs_method_5ab1a2fe((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5ab1a2fe((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)__hs_handle) : null;
     }
 
     public bool isValid()
@@ -173,9 +174,10 @@ public sealed unsafe partial class HudContainerModel : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C1.hs_get_7170697d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HudContainerModel operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HudContainerModel arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.HudContainerModel? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HudContainerModel arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HudContainerModel((nint)NativeMethods.TablePtr->C1.hs_method_b8131019((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b8131019((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HudContainerModel((nint)__hs_handle, false) : null;
     }
 
 

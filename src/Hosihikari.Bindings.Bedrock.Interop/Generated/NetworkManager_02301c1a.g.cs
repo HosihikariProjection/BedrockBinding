@@ -126,12 +126,12 @@ public sealed unsafe partial class NetworkManager : global::System.IDisposable
     public static NetworkManager Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetworkManager Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManager arg0)
+    public static NetworkManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManager arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f84f72b7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkManager((nint)handle);
@@ -176,9 +176,10 @@ public sealed unsafe partial class NetworkManager : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_80b7c3ff((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManager((nint)NativeMethods.TablePtr->C4.hs_method_46b6a882((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_46b6a882((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManager((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::NetworkMask' is not supported.", false)]

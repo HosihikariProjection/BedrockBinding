@@ -40,12 +40,12 @@ public sealed unsafe partial class LevelInitArgs : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static LevelInitArgs Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance_Nested.LevelInitArgs arg0)
+    public static LevelInitArgs? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance_Nested.LevelInitArgs arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a9b6f756((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelInitArgs((nint)handle);

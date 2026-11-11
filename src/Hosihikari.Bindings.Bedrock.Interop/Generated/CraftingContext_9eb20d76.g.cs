@@ -50,23 +50,23 @@ public sealed unsafe partial class CraftingContext : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_4152a4ae((void*)__hosihikari_shim_handle);
     }
 
-    public static CraftingContext Create()
+    public static CraftingContext? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4f205694();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CraftingContext((nint)handle);
     }
 
-    public static CraftingContext Create(global::Hosihikari.Bindings.Abi.SharedHandle? level)
+    public static CraftingContext? Create(global::Hosihikari.Bindings.Abi.SharedHandle? level)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d7802167(level?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CraftingContext((nint)handle);

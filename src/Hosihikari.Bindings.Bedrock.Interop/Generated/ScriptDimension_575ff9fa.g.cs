@@ -44,23 +44,23 @@ public sealed unsafe partial class ScriptDimension : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptDimension Create()
+    public static ScriptDimension? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1c8c4a03();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptDimension((nint)handle);
     }
 
-    public static ScriptDimension Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimension arg0)
+    public static ScriptDimension? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimension arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_02d8e89c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptDimension((nint)handle);
@@ -140,9 +140,10 @@ public sealed unsafe partial class ScriptDimension : global::System.IDisposable
     public nint operator_assign(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimension operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimension arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimension? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimension arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimension((nint)NativeMethods.TablePtr->C3.hs_method_a6576d3c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a6576d3c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimension((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

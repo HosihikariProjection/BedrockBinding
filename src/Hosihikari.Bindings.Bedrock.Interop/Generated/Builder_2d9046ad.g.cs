@@ -56,23 +56,23 @@ public sealed unsafe partial class Builder : global::System.IDisposable
     public nint Build(bool write_checksum) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Builder Create()
+    public static Builder? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_bd321d1a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Builder((nint)handle);
     }
 
-    public static Builder Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder arg0)
+    public static Builder? Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2a786428((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Builder((nint)handle);
@@ -116,9 +116,10 @@ public sealed unsafe partial class Builder : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_b72f0bcf((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder((nint)NativeMethods.TablePtr->C4.hs_method_ba3d4261((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ba3d4261((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder((nint)__hs_handle, false) : null;
     }
 
 

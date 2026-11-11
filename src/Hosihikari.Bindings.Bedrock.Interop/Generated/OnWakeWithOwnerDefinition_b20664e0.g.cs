@@ -62,12 +62,12 @@ public sealed unsafe partial class OnWakeWithOwnerDefinition : global::System.ID
     public static nint NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OnWakeWithOwnerDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.OnWakeWithOwnerDefinition arg0)
+    public static OnWakeWithOwnerDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.OnWakeWithOwnerDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_71684dd8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OnWakeWithOwnerDefinition((nint)handle);

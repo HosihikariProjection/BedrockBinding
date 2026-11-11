@@ -766,12 +766,12 @@ public sealed unsafe partial class VillagerV2 : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VillagerV2 Create()
+    public static VillagerV2? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4a0bd158();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VillagerV2((nint)handle);
@@ -815,9 +815,10 @@ public sealed unsafe partial class VillagerV2 : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_d611b343((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction? getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C4.hs_method_075e3757((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_075e3757((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)__hs_handle) : null;
     }
 
     public void newServerAiStep()

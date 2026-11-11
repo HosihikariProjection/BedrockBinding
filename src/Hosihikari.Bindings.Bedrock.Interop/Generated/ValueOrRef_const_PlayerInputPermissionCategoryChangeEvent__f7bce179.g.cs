@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerInputPermissionCategor
     public static ValueOrRef_const_PlayerInputPermissionCategoryChangeEvent_ Create_0c6a7e7e(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerInputPermissionCategoryChangeEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerInputPermissionCategoryChangeEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerInputPermissionCategoryChangeEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerInputPermissionCategoryChangeEvent((nint)NativeMethods.TablePtr->C1.hs_method_ad04a2b9((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ad04a2b9((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerInputPermissionCategoryChangeEvent((nint)__hs_handle, false) : null;
     }
 
 

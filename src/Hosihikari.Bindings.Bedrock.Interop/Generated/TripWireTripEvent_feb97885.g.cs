@@ -40,12 +40,12 @@ public sealed unsafe partial class TripWireTripEvent : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static TripWireTripEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.TripWireTripEvent arg0)
+    public static TripWireTripEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.TripWireTripEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e5bac498((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TripWireTripEvent((nint)handle);

@@ -50,34 +50,34 @@ public sealed unsafe partial class AddEntry : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_38fe0686((void*)__hosihikari_shim_handle);
     }
 
-    public static AddEntry Create()
+    public static AddEntry? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_28c7a65a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddEntry((nint)handle);
     }
 
-    public static AddEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry entry)
+    public static AddEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry entry)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_13550683((void*)entry.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddEntry((nint)handle);
     }
 
-    public static AddEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListPacketPayload_Nested.AddEntry arg0)
+    public static AddEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListPacketPayload_Nested.AddEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_76f1c326((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddEntry((nint)handle);

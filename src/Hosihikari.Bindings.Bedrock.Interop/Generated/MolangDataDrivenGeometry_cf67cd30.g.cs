@@ -40,23 +40,23 @@ public sealed unsafe partial class MolangDataDrivenGeometry : global::System.IDi
         return __hs_handle;
     }
 
-    public static MolangDataDrivenGeometry Create()
+    public static MolangDataDrivenGeometry? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_49eb49e9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangDataDrivenGeometry((nint)handle);
     }
 
-    public static MolangDataDrivenGeometry Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangDataDrivenGeometry arg0)
+    public static MolangDataDrivenGeometry? Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangDataDrivenGeometry arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fc24e44b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangDataDrivenGeometry((nint)handle);

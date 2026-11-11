@@ -48,12 +48,12 @@ public sealed unsafe partial class SpawnData : global::System.IDisposable
     public nint _ctor_5b966cf4(nint tag) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpawnData Create()
+    public static SpawnData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_df3f38a8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnData((nint)handle);
@@ -67,12 +67,12 @@ public sealed unsafe partial class SpawnData : global::System.IDisposable
     public static SpawnData Create_172c9b08(nint tag) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpawnData Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnData arg0)
+    public static SpawnData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_42fd83cd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnData((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class SpawnData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_1dedd836((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SpawnData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpawnData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SpawnData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpawnData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnData((nint)NativeMethods.TablePtr->C3.hs_method_cb09855b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cb09855b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SpawnData((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

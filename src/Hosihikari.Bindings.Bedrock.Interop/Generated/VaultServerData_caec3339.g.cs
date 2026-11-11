@@ -40,12 +40,12 @@ public sealed unsafe partial class VaultServerData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static VaultServerData Create(global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultServerData arg0)
+    public static VaultServerData? Create(global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultServerData arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b4dc56bc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VaultServerData((nint)handle);

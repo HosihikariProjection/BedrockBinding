@@ -48,12 +48,12 @@ public sealed unsafe partial class IOperation : global::System.IDisposable
     public nint __getProcessingState() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IOperation Create(global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation arg0)
+    public static IOperation? Create(global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_023e3fa9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IOperation((nint)handle);
@@ -68,14 +68,16 @@ public sealed unsafe partial class IOperation : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_e68b86ba((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult _processRedo(nint services)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult? _processRedo(nint services)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)NativeMethods.TablePtr->C1.hs_method_8e863313((void*)__hosihikari_shim_handle, (void*)services));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8e863313((void*)__hosihikari_shim_handle, (void*)services);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult _processUndo(nint services)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult? _processUndo(nint services)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)NativeMethods.TablePtr->C1.hs_method_cfde9b10((void*)__hosihikari_shim_handle, (void*)services));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cfde9b10((void*)__hosihikari_shim_handle, (void*)services);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)__hs_handle) : null;
     }
 
     public string getName()

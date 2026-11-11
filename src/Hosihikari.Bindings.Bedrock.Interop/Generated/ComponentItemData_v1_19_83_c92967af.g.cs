@@ -40,12 +40,12 @@ public sealed unsafe partial class ComponentItemData_v1_19_83 : global::System.I
         return __hs_handle;
     }
 
-    public static ComponentItemData_v1_19_83 Create(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemData_v1_19_83 arg0)
+    public static ComponentItemData_v1_19_83? Create(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemData_v1_19_83 arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_323ef1aa((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComponentItemData_v1_19_83((nint)handle);

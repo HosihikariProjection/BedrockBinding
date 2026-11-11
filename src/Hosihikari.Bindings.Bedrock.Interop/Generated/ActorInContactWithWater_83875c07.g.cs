@@ -48,12 +48,12 @@ public sealed unsafe partial class ActorInContactWithWater : global::System.IDis
     public nint _getName() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorInContactWithWater Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorInContactWithWater arg0)
+    public static ActorInContactWithWater? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorInContactWithWater arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_00c95121((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorInContactWithWater((nint)handle);

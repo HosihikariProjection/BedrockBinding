@@ -40,12 +40,12 @@ public sealed unsafe partial class ErrorInfo_ActorValidationError_ : global::Sys
         return __hs_handle;
     }
 
-    public static ErrorInfo_ActorValidationError_ Create()
+    public static ErrorInfo_ActorValidationError_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d65ad54c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ErrorInfo_ActorValidationError_((nint)handle);
@@ -55,23 +55,23 @@ public sealed unsafe partial class ErrorInfo_ActorValidationError_ : global::Sys
     public static ErrorInfo_ActorValidationError_ Create_298dd30e(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static ErrorInfo_ActorValidationError_ Create_7aee5b33(nint error)
+    public static ErrorInfo_ActorValidationError_? Create_7aee5b33(nint error)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7aee5b33((void*)error);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ErrorInfo_ActorValidationError_((nint)handle);
     }
 
-    public static ErrorInfo_ActorValidationError_ Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ErrorInfo_ActorValidationError_ arg0)
+    public static ErrorInfo_ActorValidationError_? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ErrorInfo_ActorValidationError_ arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1dddaaf7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ErrorInfo_ActorValidationError_((nint)handle);
@@ -109,9 +109,10 @@ public sealed unsafe partial class ErrorInfo_ActorValidationError_ : global::Sys
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ErrorInfo_ActorValidationError_ operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ErrorInfo_ActorValidationError_ arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ErrorInfo_ActorValidationError_? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ErrorInfo_ActorValidationError_ arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ErrorInfo_ActorValidationError_((nint)NativeMethods.TablePtr->C0.hs_method_c95530e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c95530e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ErrorInfo_ActorValidationError_((nint)__hs_handle, false) : null;
     }
 
 

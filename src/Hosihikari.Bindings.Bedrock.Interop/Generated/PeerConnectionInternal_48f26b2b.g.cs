@@ -51,9 +51,10 @@ public sealed unsafe partial class PeerConnectionInternal : global::System.IDisp
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule_Nested.Stats((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats GetCallStats()
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats? GetCallStats()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_b7cc00d0((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b7cc00d0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'webrtc::DataChannelStats' is not supported.", false)]
@@ -143,12 +144,12 @@ public sealed unsafe partial class PeerConnectionInternal : global::System.IDisp
         NativeMethods.TablePtr->C4.hs_method_ed1f31aa((void*)__hosihikari_shim_handle, channel_id, state);
     }
 
-    public static PeerConnectionInternal Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInternal arg0)
+    public static PeerConnectionInternal? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInternal arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a490f8b6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PeerConnectionInternal((nint)handle);

@@ -114,12 +114,12 @@ public sealed unsafe partial class SwiftSneakEnchant : global::System.IDisposabl
     public bool _isTreasureOnly() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SwiftSneakEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.SwiftSneakEnchant arg0)
+    public static SwiftSneakEnchant? Create(global::Hosihikari.Bindings.Bedrock.Interop.SwiftSneakEnchant arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ed8bb171((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SwiftSneakEnchant((nint)handle);

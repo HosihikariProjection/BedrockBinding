@@ -49,9 +49,10 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_39926c05((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID _getId()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? _getId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C3.hs_method_cce68082((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cce68082((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false) : null;
     }
 
     public ulong _getIngredientsHash()
@@ -93,12 +94,12 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Recipe Create()
+    public static Recipe? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7aa0280c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Recipe((nint)handle);
@@ -108,12 +109,12 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
     public static Recipe Create(nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static Recipe Create(global::Hosihikari.Bindings.Bedrock.Interop.Recipe arg0)
+    public static Recipe? Create(global::Hosihikari.Bindings.Bedrock.Interop.Recipe arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8b38a3ec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Recipe((nint)handle);
@@ -133,14 +134,16 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_c99e2cd7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID getId()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? getId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C3.hs_method_19d612b1((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_19d612b1((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient getIngredient(int x, int y)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? getIngredient(int x, int y)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)NativeMethods.TablePtr->C3.hs_method_e4154c1a((void*)__hosihikari_shim_handle, x, y), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e4154c1a((void*)__hosihikari_shim_handle, x, y);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
     }
 
     public ulong getIngredientsHash()

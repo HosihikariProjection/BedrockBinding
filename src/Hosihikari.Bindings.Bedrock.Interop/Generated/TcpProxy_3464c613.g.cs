@@ -40,12 +40,12 @@ public sealed unsafe partial class TcpProxy : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TcpProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.TcpProxy arg0)
+    public static TcpProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.TcpProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1b7011b5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TcpProxy((nint)handle);
@@ -56,7 +56,7 @@ public sealed unsafe partial class TcpProxy : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_400c2283((void*)__hosihikari_shim_handle, (void*)address.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress connect(string host, ushort port)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress? connect(string host, ushort port)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(host);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -71,7 +71,8 @@ public sealed unsafe partial class TcpProxy : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(host, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_3ce8fdad((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, port));
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3ce8fdad((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, port);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle) : null;
         }
     }
 
@@ -80,19 +81,22 @@ public sealed unsafe partial class TcpProxy : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_0325b3aa((void*)__hosihikari_shim_handle, (void*)packet);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress nextCompletedConnectionAttempt()
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress? nextCompletedConnectionAttempt()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_3379b145((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3379b145((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress nextFailedConnectionAttempt()
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress? nextFailedConnectionAttempt()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_94cf9996((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_94cf9996((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress nextLostConnection()
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress? nextLostConnection()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_0de06ef9((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0de06ef9((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle) : null;
     }
 
     public nint nextPacket()

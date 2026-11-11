@@ -48,12 +48,12 @@ public sealed unsafe partial class NetheriteArmorEquippedListener : global::Syst
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetheriteArmorEquippedListener Create(global::Hosihikari.Bindings.Bedrock.Interop.NetheriteArmorEquippedListener arg0)
+    public static NetheriteArmorEquippedListener? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetheriteArmorEquippedListener arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4d25af81((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetheriteArmorEquippedListener((nint)handle);

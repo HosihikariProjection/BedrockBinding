@@ -52,23 +52,23 @@ public sealed unsafe partial class boolN_3ULL_ : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_1e22d3e8((void*)__hosihikari_shim_handle, value);
     }
 
-    public static boolN_3ULL_ Create(bool all)
+    public static boolN_3ULL_? Create(bool all)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ec979a77(all);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new boolN_3ULL_((nint)handle);
     }
 
-    public static boolN_3ULL_ Create_2998b91c(nint arg0)
+    public static boolN_3ULL_? Create_2998b91c(nint arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2998b91c((void*)arg0);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new boolN_3ULL_((nint)handle);

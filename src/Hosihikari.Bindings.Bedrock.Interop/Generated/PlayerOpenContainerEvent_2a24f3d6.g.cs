@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerOpenContainerEvent : global::System.IDi
         return __hs_handle;
     }
 
-    public static PlayerOpenContainerEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerOpenContainerEvent arg0)
+    public static PlayerOpenContainerEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerOpenContainerEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_be331f27((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerOpenContainerEvent((nint)handle);

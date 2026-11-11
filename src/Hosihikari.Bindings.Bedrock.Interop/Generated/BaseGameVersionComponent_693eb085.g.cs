@@ -40,12 +40,12 @@ public sealed unsafe partial class BaseGameVersionComponent : global::System.IDi
         return __hs_handle;
     }
 
-    public static BaseGameVersionComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersionComponent arg0)
+    public static BaseGameVersionComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersionComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5b64a259((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseGameVersionComponent((nint)handle);

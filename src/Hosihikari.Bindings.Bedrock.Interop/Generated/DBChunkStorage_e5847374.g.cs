@@ -201,23 +201,23 @@ public sealed unsafe partial class DBChunkStorage : global::System.IDisposable
     public void _writeEntityChunkTransfersToUnloadedChunk(nint chunkKey, nint transfers) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DBChunkStorage Create()
+    public static DBChunkStorage? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b9bd3548();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DBChunkStorage((nint)handle);
     }
 
-    public static DBChunkStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage arg0)
+    public static DBChunkStorage? Create(global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_af0186c5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DBChunkStorage((nint)handle);
@@ -450,9 +450,10 @@ public sealed unsafe partial class DBChunkStorage : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_0c1644bb((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle, (void*)neighborhood.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage((nint)NativeMethods.TablePtr->C1.hs_method_0162f16a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0162f16a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorage((nint)__hs_handle, false) : null;
     }
 
     public bool saveLiveChunk(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc)

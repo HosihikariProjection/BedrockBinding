@@ -84,12 +84,12 @@ public sealed unsafe partial class RemoteConnector : global::System.IDisposable
     public static nint _vftableForNetworkEnableDisableListener() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RemoteConnector Create()
+    public static RemoteConnector? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_44712b13();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RemoteConnector((nint)handle);
@@ -99,12 +99,12 @@ public sealed unsafe partial class RemoteConnector : global::System.IDisposable
     public static RemoteConnector Create(nint callbacks, nint isNetworkAllowed) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RemoteConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.RemoteConnector arg0)
+    public static RemoteConnector? Create(global::Hosihikari.Bindings.Bedrock.Interop.RemoteConnector arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_93c376ed((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RemoteConnector((nint)handle);
@@ -125,9 +125,10 @@ public sealed unsafe partial class RemoteConnector : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_f2878f20((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier getNetworkIdentifier()
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier? getNetworkIdentifier()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)NativeMethods.TablePtr->C3.hs_method_8164ffee((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8164ffee((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle) : null;
     }
 
     public bool host(global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition definition, global::Hosihikari.Bindings.Bedrock.Interop.PrivateKeyManager keys)

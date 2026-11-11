@@ -40,23 +40,23 @@ public sealed unsafe partial class ResourcePackChunkRequestPacketPayload : globa
         return __hs_handle;
     }
 
-    public static ResourcePackChunkRequestPacketPayload Create()
+    public static ResourcePackChunkRequestPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_345d8a8e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePackChunkRequestPacketPayload((nint)handle);
     }
 
-    public static ResourcePackChunkRequestPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackChunkRequestPacketPayload arg0)
+    public static ResourcePackChunkRequestPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackChunkRequestPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9eb461be((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePackChunkRequestPacketPayload((nint)handle);

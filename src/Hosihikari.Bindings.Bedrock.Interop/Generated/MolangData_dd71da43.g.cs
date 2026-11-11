@@ -40,23 +40,23 @@ public sealed unsafe partial class MolangData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static MolangData Create()
+    public static MolangData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ef488bc5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangData((nint)handle);
     }
 
-    public static MolangData Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.MolangData arg0)
+    public static MolangData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.MolangData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_52bacae6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangData((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class MolangData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_6a6fa28a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.MolangData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.MolangData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.MolangData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.MolangData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.MolangData((nint)NativeMethods.TablePtr->C2.hs_method_8f63760e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8f63760e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.MolangData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

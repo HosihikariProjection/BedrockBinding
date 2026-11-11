@@ -44,23 +44,23 @@ public sealed unsafe partial class PropertyBag : global::System.IDisposable
     public static nint EMPTY() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PropertyBag Create()
+    public static PropertyBag? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ea719a2c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PropertyBag((nint)handle);
     }
 
-    public static PropertyBag Create(global::Hosihikari.Bindings.Bedrock.Interop.PropertyBag arg0)
+    public static PropertyBag? Create(global::Hosihikari.Bindings.Bedrock.Interop.PropertyBag arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1b7dca20((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PropertyBag((nint)handle);

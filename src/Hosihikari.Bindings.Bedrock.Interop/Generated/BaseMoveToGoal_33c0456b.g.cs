@@ -110,12 +110,12 @@ public sealed unsafe partial class BaseMoveToGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BaseMoveToGoal Create()
+    public static BaseMoveToGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ad9cfc68();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseMoveToGoal((nint)handle);
@@ -125,12 +125,12 @@ public sealed unsafe partial class BaseMoveToGoal : global::System.IDisposable
     public static BaseMoveToGoal Create(nint mob, nint name, nint goalId, float speedMultiplier, float cooldownTimeout, float goalRadius) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BaseMoveToGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToGoal arg0)
+    public static BaseMoveToGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1c6fa92c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseMoveToGoal((nint)handle);
@@ -146,9 +146,10 @@ public sealed unsafe partial class BaseMoveToGoal : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_0b55fc12((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 _getTargetPosition()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? _getTargetPosition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C0.hs_method_9df31497((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9df31497((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public void _moveToBlock()
@@ -277,9 +278,10 @@ public sealed unsafe partial class BaseMoveToGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_14b21612((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToGoal((nint)NativeMethods.TablePtr->C0.hs_method_d0ff94ad((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d0ff94ad((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToGoal((nint)__hs_handle, false) : null;
     }
 
     public void setInterval(int interval)

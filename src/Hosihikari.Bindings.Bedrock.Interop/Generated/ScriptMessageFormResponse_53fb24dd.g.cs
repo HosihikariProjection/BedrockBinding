@@ -52,23 +52,23 @@ public sealed unsafe partial class ScriptMessageFormResponse : global::System.ID
         get => (nint)NativeMethods.TablePtr->C3.hs_get_de72a8f8((void*)__hosihikari_shim_handle);
     }
 
-    public static ScriptMessageFormResponse Create()
+    public static ScriptMessageFormResponse? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4c051eb3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptMessageFormResponse((nint)handle);
     }
 
-    public static ScriptMessageFormResponse Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptMessageFormResponse arg0)
+    public static ScriptMessageFormResponse? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptMessageFormResponse arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1756ecdf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptMessageFormResponse((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class ScriptMessageFormResponse : global::System.ID
         get => (nint)NativeMethods.TablePtr->C3.hs_get_047b4368((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptMessageFormResponse operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptMessageFormResponse arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptMessageFormResponse? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptMessageFormResponse arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptMessageFormResponse((nint)NativeMethods.TablePtr->C3.hs_method_63da5aa4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_63da5aa4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptMessageFormResponse((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

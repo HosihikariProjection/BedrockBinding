@@ -78,20 +78,21 @@ public sealed unsafe partial class FilterTestDimensionWeather : global::System.I
     public bool _setup(nint definition, nint inputs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FilterTestDimensionWeather Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterTestDimensionWeather arg0)
+    public static FilterTestDimensionWeather? Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterTestDimensionWeather arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a2013bfb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilterTestDimensionWeather((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _serializeValue()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_e276a064((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e276a064((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
     public bool evaluate(nint context)

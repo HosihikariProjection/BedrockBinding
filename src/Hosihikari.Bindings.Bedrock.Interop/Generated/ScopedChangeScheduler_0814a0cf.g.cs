@@ -40,23 +40,23 @@ public sealed unsafe partial class ScopedChangeScheduler : global::System.IDispo
         return __hs_handle;
     }
 
-    public static ScopedChangeScheduler Create()
+    public static ScopedChangeScheduler? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0ba5c102();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScopedChangeScheduler((nint)handle);
     }
 
-    public static ScopedChangeScheduler Create(global::Hosihikari.Bindings.Bedrock.Interop.Scheduler_Nested.ScopedChangeScheduler arg0)
+    public static ScopedChangeScheduler? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scheduler_Nested.ScopedChangeScheduler arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ba7b6bf8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScopedChangeScheduler((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class ScopedChangeScheduler : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C3.hs_get_44b6ce90((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scheduler_Nested.ScopedChangeScheduler operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scheduler_Nested.ScopedChangeScheduler arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scheduler_Nested.ScopedChangeScheduler? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scheduler_Nested.ScopedChangeScheduler arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scheduler_Nested.ScopedChangeScheduler((nint)NativeMethods.TablePtr->C3.hs_method_797d11ab((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_797d11ab((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scheduler_Nested.ScopedChangeScheduler((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

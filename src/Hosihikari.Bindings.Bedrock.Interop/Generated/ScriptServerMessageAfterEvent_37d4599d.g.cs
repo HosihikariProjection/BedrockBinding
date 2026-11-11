@@ -52,12 +52,12 @@ public sealed unsafe partial class ScriptServerMessageAfterEvent : global::Syste
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptServerMessageAfterEvent Create()
+    public static ScriptServerMessageAfterEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8677e754();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptServerMessageAfterEvent((nint)handle);
@@ -97,9 +97,10 @@ public sealed unsafe partial class ScriptServerMessageAfterEvent : global::Syste
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptServerMessageAfterEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptServerMessageAfterEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptServerMessageAfterEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptServerMessageAfterEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptServerMessageAfterEvent((nint)NativeMethods.TablePtr->C3.hs_method_b08ee066((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b08ee066((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptServerMessageAfterEvent((nint)__hs_handle, false) : null;
     }
 
 

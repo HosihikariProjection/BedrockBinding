@@ -58,12 +58,12 @@ public sealed unsafe partial class ProjectileItemComponent : global::System.IDis
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ProjectileItemComponent Create()
+    public static ProjectileItemComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4e7c8f7b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ProjectileItemComponent((nint)handle);
@@ -77,12 +77,12 @@ public sealed unsafe partial class ProjectileItemComponent : global::System.IDis
     public static ProjectileItemComponent Create(nint component) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ProjectileItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ProjectileItemComponent arg0)
+    public static ProjectileItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ProjectileItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fac933f4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ProjectileItemComponent((nint)handle);

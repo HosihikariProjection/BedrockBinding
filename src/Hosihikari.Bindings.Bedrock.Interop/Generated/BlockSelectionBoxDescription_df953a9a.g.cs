@@ -74,12 +74,12 @@ public sealed unsafe partial class BlockSelectionBoxDescription : global::System
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockSelectionBoxDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSelectionBoxDescription arg0)
+    public static BlockSelectionBoxDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSelectionBoxDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a44a4f5a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockSelectionBoxDescription((nint)handle);

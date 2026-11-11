@@ -76,12 +76,12 @@ public sealed unsafe partial class BaseDescriptor : global::System.IDisposable
     public nint _toString() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BaseDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.BaseDescriptor arg0)
+    public static BaseDescriptor? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.BaseDescriptor arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_15045ed4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseDescriptor((nint)handle);
@@ -106,9 +106,10 @@ public sealed unsafe partial class BaseDescriptor : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_e58e571b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry getItem()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry? getItem()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry((nint)NativeMethods.TablePtr->C1.hs_method_d2f81ce6((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d2f81ce6((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry((nint)__hs_handle) : null;
     }
 
     public string getNameAndAux()

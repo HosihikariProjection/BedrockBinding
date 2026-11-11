@@ -86,23 +86,23 @@ public sealed unsafe partial class DragonTakeoffGoal : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DragonTakeoffGoal Create()
+    public static DragonTakeoffGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f498b3e7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DragonTakeoffGoal((nint)handle);
     }
 
-    public static DragonTakeoffGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.DragonTakeoffGoal arg0)
+    public static DragonTakeoffGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.DragonTakeoffGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a6e53378((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DragonTakeoffGoal((nint)handle);
@@ -156,9 +156,10 @@ public sealed unsafe partial class DragonTakeoffGoal : global::System.IDisposabl
         set => NativeMethods.TablePtr->C1.hs_set_ba02a749((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DragonTakeoffGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DragonTakeoffGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DragonTakeoffGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DragonTakeoffGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DragonTakeoffGoal((nint)NativeMethods.TablePtr->C1.hs_method_3521453b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3521453b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DragonTakeoffGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

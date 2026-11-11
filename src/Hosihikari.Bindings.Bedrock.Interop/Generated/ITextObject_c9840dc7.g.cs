@@ -40,12 +40,12 @@ public sealed unsafe partial class ITextObject : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ITextObject Create(global::Hosihikari.Bindings.Bedrock.Interop.ITextObject arg0)
+    public static ITextObject? Create(global::Hosihikari.Bindings.Bedrock.Interop.ITextObject arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2b613306((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ITextObject((nint)handle);
@@ -67,9 +67,10 @@ public sealed unsafe partial class ITextObject : global::System.IDisposable
     public static nint RAW_TEXT_WITH_KEY() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value asJsonValue()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? asJsonValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_1406481f((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1406481f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
     public string asString()
@@ -78,9 +79,10 @@ public sealed unsafe partial class ITextObject : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value resolve(nint resolveData)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? resolve(nint resolveData)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_b3f7e50f((void*)__hosihikari_shim_handle, (void*)resolveData));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b3f7e50f((void*)__hosihikari_shim_handle, (void*)resolveData);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
 

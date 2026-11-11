@@ -40,45 +40,45 @@ public sealed unsafe partial class NonOwnerPointer_LevelDbEnv_ : global::System.
         return __hs_handle;
     }
 
-    public static NonOwnerPointer_LevelDbEnv_ Create()
+    public static NonOwnerPointer_LevelDbEnv_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_88219b06();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_LevelDbEnv_((nint)handle);
     }
 
-    public static NonOwnerPointer_LevelDbEnv_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    public static NonOwnerPointer_LevelDbEnv_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4f68708a(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_LevelDbEnv_((nint)handle);
     }
 
-    public static NonOwnerPointer_LevelDbEnv_ Create_3787acd2()
+    public static NonOwnerPointer_LevelDbEnv_? Create_3787acd2()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3787acd2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_LevelDbEnv_((nint)handle);
     }
 
-    public static NonOwnerPointer_LevelDbEnv_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv? p)
+    public static NonOwnerPointer_LevelDbEnv_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv? p)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_dd7f944b(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_LevelDbEnv_((nint)handle);
@@ -113,9 +113,10 @@ public sealed unsafe partial class NonOwnerPointer_LevelDbEnv_ : global::System.
         return NativeMethods.TablePtr->C0.hs_method_eb482457((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)NativeMethods.TablePtr->C0.hs_method_488df311((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_488df311((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv? operator_operator__()

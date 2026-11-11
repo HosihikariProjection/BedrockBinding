@@ -66,12 +66,12 @@ public sealed unsafe partial class FilterTestHasTradeSupply : global::System.IDi
     public nint _getName() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FilterTestHasTradeSupply Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHasTradeSupply arg0)
+    public static FilterTestHasTradeSupply? Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHasTradeSupply arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_90f3d5f4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilterTestHasTradeSupply((nint)handle);

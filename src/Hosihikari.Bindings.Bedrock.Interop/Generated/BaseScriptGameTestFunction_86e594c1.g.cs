@@ -48,12 +48,12 @@ public sealed unsafe partial class BaseScriptGameTestFunction : global::System.I
     public nint _ctor(nint scope, nint testName) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BaseScriptGameTestFunction Create()
+    public static BaseScriptGameTestFunction? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_69cc22d4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseScriptGameTestFunction((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class BaseScriptGameTestFunction : global::System.I
     public static BaseScriptGameTestFunction Create(nint scope, nint testName) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BaseScriptGameTestFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.BaseScriptGameTestFunction arg0)
+    public static BaseScriptGameTestFunction? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.BaseScriptGameTestFunction arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f0edee1b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseScriptGameTestFunction((nint)handle);

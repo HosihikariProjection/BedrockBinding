@@ -92,12 +92,12 @@ public sealed unsafe partial class AnvilBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AnvilBlock Create()
+    public static AnvilBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ca268de7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AnvilBlock((nint)handle);
@@ -131,18 +131,20 @@ public sealed unsafe partial class AnvilBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_499c3b7a((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_c6c0da12((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c6c0da12((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static int getDamageForName(nint name) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getDustColor(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getDustColor(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C0.hs_method_ddeb85d7((void*)__hosihikari_shim_handle, (void*)arg0.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ddeb85d7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public string getDustParticleName(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
@@ -151,9 +153,10 @@ public sealed unsafe partial class AnvilBlock : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getOutline(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferValue)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getOutline(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferValue)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_2cc27b2e((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)bufferValue.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2cc27b2e((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)bufferValue.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
     public bool isCraftingBlock()

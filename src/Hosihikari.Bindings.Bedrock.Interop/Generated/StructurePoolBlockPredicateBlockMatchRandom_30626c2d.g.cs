@@ -60,34 +60,34 @@ public sealed unsafe partial class StructurePoolBlockPredicateBlockMatchRandom :
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StructurePoolBlockPredicateBlockMatchRandom Create()
+    public static StructurePoolBlockPredicateBlockMatchRandom? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_97e99ff6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructurePoolBlockPredicateBlockMatchRandom((nint)handle);
     }
 
-    public static StructurePoolBlockPredicateBlockMatchRandom Create(global::Hosihikari.Bindings.Bedrock.Interop.Block block, float probability)
+    public static StructurePoolBlockPredicateBlockMatchRandom? Create(global::Hosihikari.Bindings.Bedrock.Interop.Block block, float probability)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6415100b((void*)block.Handle, probability);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructurePoolBlockPredicateBlockMatchRandom((nint)handle);
     }
 
-    public static StructurePoolBlockPredicateBlockMatchRandom Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatchRandom arg0)
+    public static StructurePoolBlockPredicateBlockMatchRandom? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatchRandom arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_95a20ffa((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructurePoolBlockPredicateBlockMatchRandom((nint)handle);
@@ -114,9 +114,10 @@ public sealed unsafe partial class StructurePoolBlockPredicateBlockMatchRandom :
         get => NativeMethods.TablePtr->C3.hs_get_252ddf86((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatchRandom operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatchRandom arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatchRandom? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatchRandom arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatchRandom((nint)NativeMethods.TablePtr->C3.hs_method_deddb570((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_deddb570((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatchRandom((nint)__hs_handle, false) : null;
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)

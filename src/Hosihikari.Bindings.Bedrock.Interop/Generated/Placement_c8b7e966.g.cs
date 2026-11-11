@@ -48,12 +48,12 @@ public sealed unsafe partial class Placement : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Placement Create()
+    public static Placement? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7e26635f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Placement((nint)handle);

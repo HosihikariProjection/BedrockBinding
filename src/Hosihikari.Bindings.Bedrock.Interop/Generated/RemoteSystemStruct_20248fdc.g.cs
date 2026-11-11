@@ -46,12 +46,12 @@ public sealed unsafe partial class RemoteSystemStruct : global::System.IDisposab
         set => NativeMethods.TablePtr->C3.hs_set_c4faed5b((void*)__hosihikari_shim_handle, value);
     }
 
-    public static RemoteSystemStruct Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakPeer_Nested.RemoteSystemStruct arg0)
+    public static RemoteSystemStruct? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakPeer_Nested.RemoteSystemStruct arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5e1e2e89((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RemoteSystemStruct((nint)handle);

@@ -54,12 +54,12 @@ public sealed unsafe partial class AddPlayerPacketPayload : global::System.IDisp
         NativeMethods.TablePtr->C0.hs_method_a0bd1096((void*)__hosihikari_shim_handle);
     }
 
-    public static AddPlayerPacketPayload Create()
+    public static AddPlayerPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8e4c263c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddPlayerPacketPayload((nint)handle);
@@ -69,23 +69,23 @@ public sealed unsafe partial class AddPlayerPacketPayload : global::System.IDisp
     public static AddPlayerPacketPayload Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AddPlayerPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.Player p)
+    public static AddPlayerPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.Player p)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b9e9f86e((void*)p.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddPlayerPacketPayload((nint)handle);
     }
 
-    public static AddPlayerPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.AddPlayerPacketPayload arg0)
+    public static AddPlayerPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.AddPlayerPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_408c3d75((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddPlayerPacketPayload((nint)handle);
@@ -193,9 +193,10 @@ public sealed unsafe partial class AddPlayerPacketPayload : global::System.IDisp
         set => NativeMethods.TablePtr->C0.hs_set_aef3babb((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AddPlayerPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AddPlayerPacketPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AddPlayerPacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AddPlayerPacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AddPlayerPacketPayload((nint)NativeMethods.TablePtr->C0.hs_method_54b08e0b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_54b08e0b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AddPlayerPacketPayload((nint)__hs_handle, false) : null;
     }
 
 

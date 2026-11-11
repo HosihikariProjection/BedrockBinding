@@ -48,12 +48,12 @@ public sealed unsafe partial class Version : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Version Create()
+    public static Version? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f7f99548();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Version((nint)handle);
@@ -91,9 +91,10 @@ public sealed unsafe partial class Version : global::System.IDisposable
     public bool operator_less(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version((nint)NativeMethods.TablePtr->C3.hs_method_491a520c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_491a520c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

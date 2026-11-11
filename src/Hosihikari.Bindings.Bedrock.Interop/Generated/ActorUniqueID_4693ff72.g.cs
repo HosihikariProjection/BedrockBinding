@@ -40,9 +40,10 @@ public sealed unsafe partial class ActorUniqueID : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID INVALID_ID()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? INVALID_ID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C0.hs_method_43bd84a4(), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_43bd84a4();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

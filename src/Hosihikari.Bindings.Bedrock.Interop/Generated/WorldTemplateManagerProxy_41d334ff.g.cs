@@ -40,23 +40,23 @@ public sealed unsafe partial class WorldTemplateManagerProxy : global::System.ID
         return __hs_handle;
     }
 
-    public static WorldTemplateManagerProxy Create()
+    public static WorldTemplateManagerProxy? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4cdbff12();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldTemplateManagerProxy((nint)handle);
     }
 
-    public static WorldTemplateManagerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxy arg0)
+    public static WorldTemplateManagerProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0e3ec623((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldTemplateManagerProxy((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class WorldTemplateManagerProxy : global::System.ID
         get => (nint)NativeMethods.TablePtr->C4.hs_get_0778397c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxy operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxy arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxy arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxy((nint)NativeMethods.TablePtr->C4.hs_method_e2e272eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e2e272eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxy((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

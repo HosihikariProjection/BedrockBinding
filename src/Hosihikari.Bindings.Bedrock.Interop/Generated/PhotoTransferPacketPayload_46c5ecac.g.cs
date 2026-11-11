@@ -44,23 +44,23 @@ public sealed unsafe partial class PhotoTransferPacketPayload : global::System.I
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PhotoTransferPacketPayload Create()
+    public static PhotoTransferPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3af1a92a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PhotoTransferPacketPayload((nint)handle);
     }
 
-    public static PhotoTransferPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.PhotoTransferPacketPayload arg0)
+    public static PhotoTransferPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.PhotoTransferPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_164004e4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PhotoTransferPacketPayload((nint)handle);

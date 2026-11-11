@@ -46,12 +46,12 @@ public sealed unsafe partial class TextFilteringProcessor : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C3.hs_get_2a24a070((void*)__hosihikari_shim_handle);
     }
 
-    public static TextFilteringProcessor Create(global::Hosihikari.Bindings.Bedrock.Interop.TextFilteringProcessor arg0)
+    public static TextFilteringProcessor? Create(global::Hosihikari.Bindings.Bedrock.Interop.TextFilteringProcessor arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_72e82f8b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TextFilteringProcessor((nint)handle);

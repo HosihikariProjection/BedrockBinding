@@ -65,12 +65,12 @@ public sealed unsafe partial class BaseMobSpawner : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BaseMobSpawner Create()
+    public static BaseMobSpawner? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f90ceb41();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseMobSpawner((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class BaseMobSpawner : global::System.IDisposable
     public void _delay(nint source) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getPos()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getPos()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C0.hs_method_24ecceff((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_24ecceff((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
     }
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag data)

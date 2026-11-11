@@ -44,12 +44,12 @@ public sealed unsafe partial class SliderSetting : global::System.IDisposable
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SliderSetting Create()
+    public static SliderSetting? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f5f0c8f0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SliderSetting((nint)handle);
@@ -105,9 +105,10 @@ public sealed unsafe partial class SliderSetting : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_1c89342c((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.SliderSetting operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.SliderSetting arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.SliderSetting? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.SliderSetting arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.SliderSetting((nint)NativeMethods.TablePtr->C3.hs_method_edb40e17((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_edb40e17((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.SliderSetting((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

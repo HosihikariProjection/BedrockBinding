@@ -40,23 +40,23 @@ public sealed unsafe partial class CacheManager : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CacheManager Create()
+    public static CacheManager? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_de31f150();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CacheManager((nint)handle);
     }
 
-    public static CacheManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.CacheManager arg0)
+    public static CacheManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.CacheManager arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b44827fc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CacheManager((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class CacheManager : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_c815c20d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.CacheManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.CacheManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.CacheManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.CacheManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.CacheManager((nint)NativeMethods.TablePtr->C2.hs_method_f39c46c3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f39c46c3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.CacheManager((nint)__hs_handle, false) : null;
     }
 
 

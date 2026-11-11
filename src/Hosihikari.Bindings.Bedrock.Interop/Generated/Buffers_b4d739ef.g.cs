@@ -40,12 +40,12 @@ public sealed unsafe partial class Buffers : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Buffers Create(global::Hosihikari.Bindings.Bedrock.Interop.Recipes_Nested.Buffers arg0)
+    public static Buffers? Create(global::Hosihikari.Bindings.Bedrock.Interop.Recipes_Nested.Buffers arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f9236b72((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Buffers((nint)handle);

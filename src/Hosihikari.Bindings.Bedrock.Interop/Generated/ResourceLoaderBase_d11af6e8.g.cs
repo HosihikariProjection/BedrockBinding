@@ -52,12 +52,12 @@ public sealed unsafe partial class ResourceLoaderBase : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C3.hs_get_cb07902e((void*)__hosihikari_shim_handle);
     }
 
-    public static ResourceLoaderBase Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoaderBase arg0)
+    public static ResourceLoaderBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoaderBase arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d9f73df2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourceLoaderBase((nint)handle);
@@ -67,12 +67,13 @@ public sealed unsafe partial class ResourceLoaderBase : global::System.IDisposab
     public nint getPackStackIndexOfResource(nint resourceLocation, nint extensionList) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::pair<int, std::basic_string_view<char>>' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_de7764fc((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_de7764fc((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, string[] extensionList)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, string[] extensionList)
     {
         var __hs_vectorItems1 = extensionList ?? global::System.Array.Empty<string>();
         var __hs_vectorCount1 = __hs_vectorItems1.Length;
@@ -94,13 +95,15 @@ public sealed unsafe partial class ResourceLoaderBase : global::System.IDisposab
                 __hs_vectorData1[__hs_i1] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr1 + __hs_vectorOffset1, Size = (nuint)__hs_length1 };
                 __hs_vectorOffset1 += __hs_length1;
             }
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_85dd8c02((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_vectorData1, (nuint)(extensionList?.Length ?? 0)));
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_85dd8c02((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_vectorData1, (nuint)(extensionList?.Length ?? 0));
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPathContainingResource(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getPathContainingResource(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_f2a8b37c((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f2a8b37c((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public bool load(nint resourceLocationPair, ref string resourceStream, string[] extensionList)

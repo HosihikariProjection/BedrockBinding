@@ -40,12 +40,12 @@ public sealed unsafe partial class TRS : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TRS Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.RenderOffsetsItemComponent_Nested.TRS arg0)
+    public static TRS? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.RenderOffsetsItemComponent_Nested.TRS arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b7ab3d49((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TRS((nint)handle);

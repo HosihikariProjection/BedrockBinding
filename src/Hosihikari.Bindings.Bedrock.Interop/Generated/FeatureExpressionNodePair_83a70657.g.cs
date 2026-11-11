@@ -40,12 +40,12 @@ public sealed unsafe partial class FeatureExpressionNodePair : global::System.ID
         return __hs_handle;
     }
 
-    public static FeatureExpressionNodePair Create(global::Hosihikari.Bindings.Bedrock.Interop.ConditionalListFeature_Nested.FeatureExpressionNodePair arg0)
+    public static FeatureExpressionNodePair? Create(global::Hosihikari.Bindings.Bedrock.Interop.ConditionalListFeature_Nested.FeatureExpressionNodePair arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f9d88dbd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FeatureExpressionNodePair((nint)handle);

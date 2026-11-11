@@ -52,23 +52,23 @@ public sealed unsafe partial class AppExtensionsNonOwner : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AppExtensionsNonOwner Create()
+    public static AppExtensionsNonOwner? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0d953261();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AppExtensionsNonOwner((nint)handle);
     }
 
-    public static AppExtensionsNonOwner Create(global::Hosihikari.Bindings.Bedrock.Interop.AppExtensions.AppExtensionsNonOwner arg0)
+    public static AppExtensionsNonOwner? Create(global::Hosihikari.Bindings.Bedrock.Interop.AppExtensions.AppExtensionsNonOwner arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_db1c644c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AppExtensionsNonOwner((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class AppExtensionsNonOwner : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_3cdd9239((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AppExtensions.AppExtensionsNonOwner operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AppExtensions.AppExtensionsNonOwner arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AppExtensions.AppExtensionsNonOwner? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AppExtensions.AppExtensionsNonOwner arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AppExtensions.AppExtensionsNonOwner((nint)NativeMethods.TablePtr->C0.hs_method_f7709d11((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f7709d11((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AppExtensions.AppExtensionsNonOwner((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? tryGetExtensions()

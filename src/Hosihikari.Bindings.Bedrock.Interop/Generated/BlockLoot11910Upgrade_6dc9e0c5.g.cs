@@ -48,12 +48,12 @@ public sealed unsafe partial class BlockLoot11910Upgrade : global::System.IDispo
     public void _upgradeToNext(nint document, nint arg1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockLoot11910Upgrade Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockLootVersioning.BlockLoot11910Upgrade arg0)
+    public static BlockLoot11910Upgrade? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockLootVersioning.BlockLoot11910Upgrade arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8047e673((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockLoot11910Upgrade((nint)handle);

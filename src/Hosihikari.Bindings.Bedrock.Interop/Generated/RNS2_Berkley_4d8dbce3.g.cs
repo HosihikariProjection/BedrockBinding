@@ -52,23 +52,23 @@ public sealed unsafe partial class RNS2_Berkley : global::System.IDisposable
     public static void GetSystemAddressIPV4And6(int rns2Socket, nint systemAddressOut) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RNS2_Berkley Create()
+    public static RNS2_Berkley? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5f9116c4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RNS2_Berkley((nint)handle);
     }
 
-    public static RNS2_Berkley Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Berkley arg0)
+    public static RNS2_Berkley? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Berkley arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e979e776((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RNS2_Berkley((nint)handle);
@@ -107,9 +107,10 @@ public sealed unsafe partial class RNS2_Berkley : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_493abf17((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Berkley operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Berkley arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Berkley? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Berkley arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Berkley((nint)NativeMethods.TablePtr->C2.hs_method_d909f061((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d909f061((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Berkley((nint)__hs_handle, false) : null;
     }
 
 

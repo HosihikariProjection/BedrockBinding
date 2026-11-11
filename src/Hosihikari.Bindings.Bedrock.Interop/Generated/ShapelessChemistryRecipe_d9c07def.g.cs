@@ -114,12 +114,12 @@ public sealed unsafe partial class ShapelessChemistryRecipe : global::System.IDi
     public static nint ID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ShapelessChemistryRecipe Create(global::Hosihikari.Bindings.Bedrock.Interop.ShapelessChemistryRecipe arg0)
+    public static ShapelessChemistryRecipe? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShapelessChemistryRecipe arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_08af09fb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShapelessChemistryRecipe((nint)handle);

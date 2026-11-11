@@ -58,12 +58,12 @@ public sealed unsafe partial class TimerActorFlag3Goal : global::System.IDisposa
         set => NativeMethods.TablePtr->C4.hs_set_c8f66a2e((void*)__hosihikari_shim_handle, value);
     }
 
-    public static TimerActorFlag3Goal Create(global::Hosihikari.Bindings.Bedrock.Interop.TimerActorFlag3Goal arg0)
+    public static TimerActorFlag3Goal? Create(global::Hosihikari.Bindings.Bedrock.Interop.TimerActorFlag3Goal arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_414c3959((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TimerActorFlag3Goal((nint)handle);

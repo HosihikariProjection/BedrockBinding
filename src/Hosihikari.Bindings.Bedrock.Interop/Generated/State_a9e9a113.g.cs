@@ -40,23 +40,23 @@ public sealed unsafe partial class State : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static State Create()
+    public static State? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_379d266e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new State((nint)handle);
     }
 
-    public static State Create(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash_Nested.State arg0)
+    public static State? Create(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash_Nested.State arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_14623181((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new State((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class State : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_6ca74609((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash_Nested.State operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash_Nested.State arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash_Nested.State? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash_Nested.State arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash_Nested.State((nint)NativeMethods.TablePtr->C4.hs_method_4eafd6d2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4eafd6d2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash_Nested.State((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

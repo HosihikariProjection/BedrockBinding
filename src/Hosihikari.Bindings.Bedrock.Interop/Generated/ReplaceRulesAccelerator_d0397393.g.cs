@@ -40,12 +40,12 @@ public sealed unsafe partial class ReplaceRulesAccelerator : global::System.IDis
         return __hs_handle;
     }
 
-    public static ReplaceRulesAccelerator Create(global::Hosihikari.Bindings.Bedrock.Interop.OreFeature_Nested.ReplaceRulesAccelerator arg0)
+    public static ReplaceRulesAccelerator? Create(global::Hosihikari.Bindings.Bedrock.Interop.OreFeature_Nested.ReplaceRulesAccelerator arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ca3f129d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReplaceRulesAccelerator((nint)handle);

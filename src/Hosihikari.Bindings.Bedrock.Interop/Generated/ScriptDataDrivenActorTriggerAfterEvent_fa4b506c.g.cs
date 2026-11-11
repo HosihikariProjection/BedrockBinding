@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptDataDrivenActorTriggerAfterEvent : glob
     public nint _ctor(nint actorDefinitionEvent, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptDataDrivenActorTriggerAfterEvent Create()
+    public static ScriptDataDrivenActorTriggerAfterEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f6680178();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptDataDrivenActorTriggerAfterEvent((nint)handle);
@@ -93,9 +93,10 @@ public sealed unsafe partial class ScriptDataDrivenActorTriggerAfterEvent : glob
         get => (nint)NativeMethods.TablePtr->C3.hs_get_f3a10093((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDataDrivenActorTriggerAfterEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDataDrivenActorTriggerAfterEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDataDrivenActorTriggerAfterEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDataDrivenActorTriggerAfterEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDataDrivenActorTriggerAfterEvent((nint)NativeMethods.TablePtr->C3.hs_method_8dec830e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8dec830e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDataDrivenActorTriggerAfterEvent((nint)__hs_handle, false) : null;
     }
 
 

@@ -40,12 +40,12 @@ public sealed unsafe partial class DeathInfoPacketPayload : global::System.IDisp
         return __hs_handle;
     }
 
-    public static DeathInfoPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.DeathInfoPacketPayload arg0)
+    public static DeathInfoPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.DeathInfoPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4796e9b9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DeathInfoPacketPayload((nint)handle);

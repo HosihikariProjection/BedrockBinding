@@ -598,12 +598,12 @@ public sealed unsafe partial class Armadillo : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Armadillo Create()
+    public static Armadillo? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_adca5796();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Armadillo((nint)handle);

@@ -391,9 +391,10 @@ public sealed unsafe partial class FoliageBlock : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_fe4e254d((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB _getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? _getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C1.hs_method_6abf9237((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)(entity?.Handle ?? 0), entity is not null));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6abf9237((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)(entity?.Handle ?? 0), entity is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
     public bool _mayPlaceOn(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
@@ -406,9 +407,10 @@ public sealed unsafe partial class FoliageBlock : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_e47b30a3((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)neighborPos.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block _setGrowth(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block baseBlock, ushort newGrowth, int updateFlags)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? _setGrowth(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block baseBlock, ushort newGrowth, int updateFlags)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C1.hs_method_453f8ed7((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)baseBlock.Handle, newGrowth, updateFlags), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_453f8ed7((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)baseBlock.Handle, newGrowth, updateFlags);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public void _tick(nint eventData)
@@ -420,7 +422,7 @@ public sealed unsafe partial class FoliageBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FoliageBlock Create(string nameId, int id)
+    public static FoliageBlock? Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -438,7 +440,7 @@ public sealed unsafe partial class FoliageBlock : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_d2eb0753(__hs_stringData0, (nuint)__hs_stringByteCount0, id);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new FoliageBlock((nint)handle);
@@ -455,9 +457,10 @@ public sealed unsafe partial class FoliageBlock : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_99f7fb9b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C1.hs_method_58e77c31((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)(entity?.Handle ?? 0), entity is not null));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_58e77c31((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)(entity?.Handle ?? 0), entity is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -474,9 +477,10 @@ public sealed unsafe partial class FoliageBlock : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_bfe1739a((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)neighborPos.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block setGrowth(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block baseBlock, ushort newGrowth, int updateFlags)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? setGrowth(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block baseBlock, ushort newGrowth, int updateFlags)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C1.hs_method_708921b4((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)baseBlock.Handle, newGrowth, updateFlags), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_708921b4((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)baseBlock.Handle, newGrowth, updateFlags);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public void tick(nint eventData)

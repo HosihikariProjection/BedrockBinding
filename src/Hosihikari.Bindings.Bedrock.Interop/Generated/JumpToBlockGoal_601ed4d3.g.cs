@@ -90,12 +90,12 @@ public sealed unsafe partial class JumpToBlockGoal : global::System.IDisposable
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JumpToBlockGoal Create()
+    public static JumpToBlockGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d47b03b8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JumpToBlockGoal((nint)handle);
@@ -105,12 +105,12 @@ public sealed unsafe partial class JumpToBlockGoal : global::System.IDisposable
     public static JumpToBlockGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JumpToBlockGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.JumpToBlockGoal arg0)
+    public static JumpToBlockGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.JumpToBlockGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bee66f4c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JumpToBlockGoal((nint)handle);
@@ -315,9 +315,10 @@ public sealed unsafe partial class JumpToBlockGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_ca27284c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.JumpToBlockGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JumpToBlockGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.JumpToBlockGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JumpToBlockGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JumpToBlockGoal((nint)NativeMethods.TablePtr->C2.hs_method_7cb4e39d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7cb4e39d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.JumpToBlockGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

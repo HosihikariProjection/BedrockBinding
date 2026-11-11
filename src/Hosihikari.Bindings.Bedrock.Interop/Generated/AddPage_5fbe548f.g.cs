@@ -44,12 +44,12 @@ public sealed unsafe partial class AddPage : global::System.IDisposable
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AddPage Create()
+    public static AddPage? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8ae85e1a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddPage((nint)handle);
@@ -77,9 +77,10 @@ public sealed unsafe partial class AddPage : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_3aa574c6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.AddPage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.AddPage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.AddPage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.AddPage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.AddPage((nint)NativeMethods.TablePtr->C0.hs_method_fab349cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_fab349cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.AddPage((nint)__hs_handle, false) : null;
     }
 
 

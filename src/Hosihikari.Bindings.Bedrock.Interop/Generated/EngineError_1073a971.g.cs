@@ -86,23 +86,23 @@ public sealed unsafe partial class EngineError : global::System.IDisposable
     public nint _ctor(nint message) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EngineError Create()
+    public static EngineError? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e151233d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EngineError((nint)handle);
     }
 
-    public static EngineError Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.EngineError arg0)
+    public static EngineError? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.EngineError arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3e8e8db1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EngineError((nint)handle);

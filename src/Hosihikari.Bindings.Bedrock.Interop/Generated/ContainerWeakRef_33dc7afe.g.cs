@@ -40,12 +40,12 @@ public sealed unsafe partial class ContainerWeakRef : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ContainerWeakRef Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef arg0)
+    public static ContainerWeakRef? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_98de5fba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContainerWeakRef((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class SynchedActorDataWriter : global::System.IDisp
         return __hs_handle;
     }
 
-    public static SynchedActorDataWriter Create(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorDataWriter arg0)
+    public static SynchedActorDataWriter? Create(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorDataWriter arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_355d1a0e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SynchedActorDataWriter((nint)handle);

@@ -59,12 +59,12 @@ public sealed unsafe partial class longlongN_2ULL_ : global::System.IDisposable
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
     }
 
-    public static longlongN_2ULL_ Create_3a591a55(nint arg0)
+    public static longlongN_2ULL_? Create_3a591a55(nint arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3a591a55((void*)arg0);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new longlongN_2ULL_((nint)handle);
@@ -74,12 +74,12 @@ public sealed unsafe partial class longlongN_2ULL_ : global::System.IDisposable
     public static longlongN_2ULL_ Create_ff75a53d(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static longlongN_2ULL_ Create(long all)
+    public static longlongN_2ULL_? Create(long all)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c48c8e25(all);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new longlongN_2ULL_((nint)handle);

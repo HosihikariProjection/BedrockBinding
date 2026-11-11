@@ -175,9 +175,10 @@ public sealed unsafe partial class DispenserBlockActor : global::System.IDisposa
         return NativeMethods.TablePtr->C1.hs_method_6818a6d7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack _getItem(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? _getItem(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_0c441134((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0c441134((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -227,23 +228,23 @@ public sealed unsafe partial class DispenserBlockActor : global::System.IDisposa
         NativeMethods.TablePtr->C1.hs_method_28232d3d((void*)__hosihikari_shim_handle, (void*)actor.Handle);
     }
 
-    public static DispenserBlockActor Create()
+    public static DispenserBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2fe46ec3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DispenserBlockActor((nint)handle);
     }
 
-    public static DispenserBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    public static DispenserBlockActor? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d4e7b9bc((void*)pos.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DispenserBlockActor((nint)handle);
@@ -279,9 +280,10 @@ public sealed unsafe partial class DispenserBlockActor : global::System.IDisposa
         return NativeMethods.TablePtr->C1.hs_method_9f557795((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_31d9693d((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_31d9693d((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int getMaxStackSize()

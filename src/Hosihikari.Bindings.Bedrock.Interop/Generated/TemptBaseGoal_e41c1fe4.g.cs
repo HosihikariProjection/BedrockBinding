@@ -95,12 +95,12 @@ public sealed unsafe partial class TemptBaseGoal : global::System.IDisposable
         get => NativeMethods.TablePtr->C3.hs_get_5b9bd807((void*)__hosihikari_shim_handle);
     }
 
-    public static TemptBaseGoal Create()
+    public static TemptBaseGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_689ae82a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TemptBaseGoal((nint)handle);
@@ -110,12 +110,12 @@ public sealed unsafe partial class TemptBaseGoal : global::System.IDisposable
     public static TemptBaseGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TemptBaseGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.TemptBaseGoal arg0)
+    public static TemptBaseGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.TemptBaseGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9a189820((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TemptBaseGoal((nint)handle);
@@ -251,9 +251,10 @@ public sealed unsafe partial class TemptBaseGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_e638baa9((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TemptBaseGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TemptBaseGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.TemptBaseGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TemptBaseGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TemptBaseGoal((nint)NativeMethods.TablePtr->C3.hs_method_82c5ae89((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_82c5ae89((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TemptBaseGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

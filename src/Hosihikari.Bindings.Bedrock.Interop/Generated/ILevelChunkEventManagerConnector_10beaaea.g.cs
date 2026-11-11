@@ -40,12 +40,12 @@ public sealed unsafe partial class ILevelChunkEventManagerConnector : global::Sy
         return __hs_handle;
     }
 
-    public static ILevelChunkEventManagerConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevelChunkEventManagerConnector arg0)
+    public static ILevelChunkEventManagerConnector? Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevelChunkEventManagerConnector arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3e31db0b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ILevelChunkEventManagerConnector((nint)handle);

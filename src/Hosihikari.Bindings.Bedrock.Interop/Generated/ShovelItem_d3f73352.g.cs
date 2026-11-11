@@ -341,23 +341,23 @@ public sealed unsafe partial class ShovelItem : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static ShovelItem Create()
+    public static ShovelItem? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_22d81068();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShovelItem((nint)handle);
     }
 
-    public static ShovelItem Create(global::Hosihikari.Bindings.Bedrock.Interop.ShovelItem arg0)
+    public static ShovelItem? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShovelItem arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e99f365f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShovelItem((nint)handle);
@@ -367,9 +367,10 @@ public sealed unsafe partial class ShovelItem : global::System.IDisposable
     public static ShovelItem Create(nint name, int id, nint tier) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult? _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)NativeMethods.TablePtr->C3.hs_method_2d0d3909((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)pos.Handle, face, handSlot, (void*)clickPos.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2d0d3909((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)pos.Handle, face, handSlot, (void*)clickPos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle) : null;
     }
 
     public string getEfficiencyLocalization()

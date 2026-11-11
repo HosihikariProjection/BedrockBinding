@@ -64,23 +64,23 @@ public sealed unsafe partial class BinaryRequestBody : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BinaryRequestBody Create()
+    public static BinaryRequestBody? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_bd5f42d3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BinaryRequestBody((nint)handle);
     }
 
-    public static BinaryRequestBody Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.BinaryRequestBody arg0)
+    public static BinaryRequestBody? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.BinaryRequestBody arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_bba681a8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BinaryRequestBody((nint)handle);
@@ -125,16 +125,18 @@ public sealed unsafe partial class BinaryRequestBody : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_963b1b01((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.BinaryRequestBody operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.BinaryRequestBody arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.BinaryRequestBody? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.BinaryRequestBody arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.BinaryRequestBody((nint)NativeMethods.TablePtr->C0.hs_method_d3d7b5be((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d3d7b5be((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.BinaryRequestBody((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody_Nested.ReadResult read(byte[] destination)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody_Nested.ReadResult? read(byte[] destination)
     {
         fixed (byte* __hs_vectorData0 = destination)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody_Nested.ReadResult((nint)NativeMethods.TablePtr->C0.hs_method_c2c056ec((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(destination?.Length ?? 0)));
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c2c056ec((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(destination?.Length ?? 0));
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody_Nested.ReadResult((nint)__hs_handle) : null;
         }
     }
 

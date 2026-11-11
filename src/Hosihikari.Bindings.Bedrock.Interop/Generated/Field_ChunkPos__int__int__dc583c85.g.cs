@@ -50,9 +50,10 @@ public sealed unsafe partial class Field_ChunkPos__int__int_ : global::System.ID
         return NativeMethods.TablePtr->C4.hs_method_8479db11((void*)__hosihikari_shim_handle, (void*)b.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos div(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos? div(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)NativeMethods.TablePtr->C4.hs_method_96970f97((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_96970f97((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)__hs_handle) : null;
     }
 
     public double dot(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)
@@ -90,29 +91,34 @@ public sealed unsafe partial class Field_ChunkPos__int__int_ : global::System.ID
     public nint lt(nint b) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<2>' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos mul(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos? mul(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)NativeMethods.TablePtr->C4.hs_method_97b26451((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_97b26451((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos operator_multiply(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos? operator_multiply(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)NativeMethods.TablePtr->C4.hs_method_acb0f7c6((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_acb0f7c6((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos operator_operator___a07fa3e4(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos? operator_operator___a07fa3e4(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)NativeMethods.TablePtr->C4.hs_method_a07fa3e4((void*)__hosihikari_shim_handle, (void*)b.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a07fa3e4((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos operator_divide(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos? operator_divide(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)NativeMethods.TablePtr->C4.hs_method_e495f763((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e495f763((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos operator_operator___17766951(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos? operator_operator___17766951(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)NativeMethods.TablePtr->C4.hs_method_17766951((void*)__hosihikari_shim_handle, (void*)b.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_17766951((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)__hs_handle, false) : null;
     }
 
     public bool operator_less(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos b)

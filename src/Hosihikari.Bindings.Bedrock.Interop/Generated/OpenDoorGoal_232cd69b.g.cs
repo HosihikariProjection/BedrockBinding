@@ -145,23 +145,23 @@ public sealed unsafe partial class OpenDoorGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OpenDoorGoal Create()
+    public static OpenDoorGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c6ff57b3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OpenDoorGoal((nint)handle);
     }
 
-    public static OpenDoorGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.OpenDoorGoal arg0)
+    public static OpenDoorGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.OpenDoorGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ed5e6ec7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OpenDoorGoal((nint)handle);
@@ -215,9 +215,10 @@ public sealed unsafe partial class OpenDoorGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_f3a5e860((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OpenDoorGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OpenDoorGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OpenDoorGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OpenDoorGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OpenDoorGoal((nint)NativeMethods.TablePtr->C2.hs_method_d79e8445((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d79e8445((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OpenDoorGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

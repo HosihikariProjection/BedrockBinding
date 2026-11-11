@@ -40,23 +40,23 @@ public sealed unsafe partial class StringInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static StringInfo Create()
+    public static StringInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_54a61b3c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StringInfo((nint)handle);
     }
 
-    public static StringInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper_Nested.StringInfo arg0)
+    public static StringInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper_Nested.StringInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_eb8f225b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StringInfo((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class StringInfo : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_b633a64b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper_Nested.StringInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper_Nested.StringInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper_Nested.StringInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper_Nested.StringInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper_Nested.StringInfo((nint)NativeMethods.TablePtr->C0.hs_method_cf3c45ed((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_cf3c45ed((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper_Nested.StringInfo((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

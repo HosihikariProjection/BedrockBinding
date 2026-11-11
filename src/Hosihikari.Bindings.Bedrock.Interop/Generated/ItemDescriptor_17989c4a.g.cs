@@ -99,12 +99,12 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemDescriptor Create()
+    public static ItemDescriptor? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_97982d55();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemDescriptor((nint)handle);
@@ -122,23 +122,23 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
     public static ItemDescriptor Create_ee2a2c66(nint block) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.Item item, int auxValue)
+    public static ItemDescriptor? Create(global::Hosihikari.Bindings.Bedrock.Interop.Item item, int auxValue)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_83373faf((void*)item.Handle, auxValue);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemDescriptor((nint)handle);
     }
 
-    public static ItemDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemTag itemTag)
+    public static ItemDescriptor? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemTag itemTag)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_05648c85((void*)itemTag.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemDescriptor((nint)handle);
@@ -148,7 +148,7 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
     public static ItemDescriptor Create(nint val, nint molangVersion) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemDescriptor Create(string fullName, int itemAux)
+    public static ItemDescriptor? Create(string fullName, int itemAux)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fullName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -166,7 +166,7 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_43476881(__hs_stringData0, (nuint)__hs_stringByteCount0, itemAux);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new ItemDescriptor((nint)handle);
@@ -244,9 +244,10 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
     public nint operator_ItemInstance() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor rhs)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor((nint)NativeMethods.TablePtr->C1.hs_method_0fab631b((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0fab631b((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor((nint)__hs_handle, false) : null;
     }
 
     public bool sameItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor otherItemDescriptor, bool compareAux)

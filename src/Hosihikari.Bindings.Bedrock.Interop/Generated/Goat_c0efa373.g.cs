@@ -618,12 +618,12 @@ public sealed unsafe partial class Goat : global::System.IDisposable
     public static nint DEFAULT_HORN_COUNT() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Goat Create()
+    public static Goat? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_bb0ac67d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Goat((nint)handle);

@@ -185,12 +185,12 @@ public sealed unsafe partial class FishingRodItem : global::System.IDisposable
     public nint _use(nint item, nint player, nint handSlot) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FishingRodItem Create()
+    public static FishingRodItem? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f5ce5e2d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FishingRodItem((nint)handle);
@@ -221,9 +221,10 @@ public sealed unsafe partial class FishingRodItem : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_aef2ee8b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int newAnimationFrame, bool inInventoryPane)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo? getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int newAnimationFrame, bool inInventoryPane)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)NativeMethods.TablePtr->C1.hs_method_0097f30a((void*)__hosihikari_shim_handle, (void*)item.Handle, newAnimationFrame, inInventoryPane));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0097f30a((void*)__hosihikari_shim_handle, (void*)item.Handle, newAnimationFrame, inInventoryPane);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)__hs_handle) : null;
     }
 
     public string getInteractText(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
@@ -247,7 +248,7 @@ public sealed unsafe partial class FishingRodItem : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_c071309d((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Item setIconInfo(string name, int id)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Item? setIconInfo(string name, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -262,7 +263,8 @@ public sealed unsafe partial class FishingRodItem : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)NativeMethods.TablePtr->C1.hs_method_ffe77b15((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id), false);
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ffe77b15((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
         }
     }
 
@@ -276,9 +278,10 @@ public sealed unsafe partial class FishingRodItem : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_b14a7a5b((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_9d86f8a5((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9d86f8a5((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
 

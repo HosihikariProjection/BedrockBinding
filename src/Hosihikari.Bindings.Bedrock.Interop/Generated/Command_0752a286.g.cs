@@ -52,23 +52,23 @@ public sealed unsafe partial class Command : global::System.IDisposable
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Command Create()
+    public static Command? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_902ea5c3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Command((nint)handle);
     }
 
-    public static Command Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.Command arg0)
+    public static Command? Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.Command arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1556b78b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Command((nint)handle);
@@ -119,9 +119,10 @@ public sealed unsafe partial class Command : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_757f7145((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.Command operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.Command arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.Command? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.Command arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.Command((nint)NativeMethods.TablePtr->C0.hs_method_ec0ee30d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ec0ee30d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.Command((nint)__hs_handle, false) : null;
     }
 
     public void tick()

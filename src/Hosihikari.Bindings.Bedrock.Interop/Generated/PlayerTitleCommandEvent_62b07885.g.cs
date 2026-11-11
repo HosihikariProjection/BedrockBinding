@@ -45,12 +45,12 @@ public sealed unsafe partial class PlayerTitleCommandEvent : global::System.IDis
         NativeMethods.TablePtr->C2.hs_method_7c2ba33a((void*)__hosihikari_shim_handle);
     }
 
-    public static PlayerTitleCommandEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerTitleCommandEvent arg0)
+    public static PlayerTitleCommandEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerTitleCommandEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_463052ff((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerTitleCommandEvent((nint)handle);

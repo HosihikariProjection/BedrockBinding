@@ -52,12 +52,12 @@ public sealed unsafe partial class PlaceBlockDefinition : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C2.hs_get_bd0c1d53((void*)__hosihikari_shim_handle);
     }
 
-    public static PlaceBlockDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.PlaceBlockDefinition arg0)
+    public static PlaceBlockDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlaceBlockDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8d2f62ed((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlaceBlockDefinition((nint)handle);

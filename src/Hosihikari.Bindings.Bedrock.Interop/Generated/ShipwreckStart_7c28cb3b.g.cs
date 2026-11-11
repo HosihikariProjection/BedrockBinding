@@ -44,12 +44,12 @@ public sealed unsafe partial class ShipwreckStart : global::System.IDisposable
     public nint _getStructureName() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ShipwreckStart Create(global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckStart arg0)
+    public static ShipwreckStart? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckStart arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a527b5d9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShipwreckStart((nint)handle);

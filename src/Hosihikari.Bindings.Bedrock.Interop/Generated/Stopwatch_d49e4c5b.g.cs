@@ -56,23 +56,23 @@ public sealed unsafe partial class Stopwatch : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Stopwatch Create()
+    public static Stopwatch? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_eae1dfd3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Stopwatch((nint)handle);
     }
 
-    public static Stopwatch Create(global::Hosihikari.Bindings.Bedrock.Interop.Stopwatch arg0)
+    public static Stopwatch? Create(global::Hosihikari.Bindings.Bedrock.Interop.Stopwatch arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f6797ce6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Stopwatch((nint)handle);
@@ -108,9 +108,10 @@ public sealed unsafe partial class Stopwatch : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_778a374b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Stopwatch operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Stopwatch arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Stopwatch? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Stopwatch arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Stopwatch((nint)NativeMethods.TablePtr->C3.hs_method_c274c909((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c274c909((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Stopwatch((nint)__hs_handle, false) : null;
     }
 
     public void print(string prepend)

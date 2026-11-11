@@ -418,9 +418,10 @@ public sealed unsafe partial class VaultBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_896ea2a3((void*)__hosihikari_shim_handle, face, (void*)block.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Brightness getLightEmission(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Brightness? getLightEmission(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)NativeMethods.TablePtr->C4.hs_method_902a91b9((void*)__hosihikari_shim_handle, (void*)block.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_902a91b9((void*)__hosihikari_shim_handle, (void*)block.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)__hs_handle) : null;
     }
 
     public byte getMappedFace(byte face, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
@@ -428,14 +429,16 @@ public sealed unsafe partial class VaultBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_6f0b7e41((void*)__hosihikari_shim_handle, face, (void*)block.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_86eb40ab((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, face, (void*)clickPos.Handle, itemValue), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_86eb40ab((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, face, (void*)clickPos.Handle, itemValue);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getRenderBlock()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getRenderBlock()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_16e545e0((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_16e545e0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public int getVariant(global::Hosihikari.Bindings.Bedrock.Interop.Block block)

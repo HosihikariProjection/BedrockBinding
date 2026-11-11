@@ -72,12 +72,12 @@ public sealed unsafe partial class ScriptProjectileComponent : global::System.ID
     public static nint ComponentId() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptProjectileComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptProjectileComponent arg0)
+    public static ScriptProjectileComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptProjectileComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8bab8b82((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptProjectileComponent((nint)handle);

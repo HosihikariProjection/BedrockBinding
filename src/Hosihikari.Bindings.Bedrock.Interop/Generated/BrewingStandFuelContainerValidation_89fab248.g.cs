@@ -48,12 +48,12 @@ public sealed unsafe partial class BrewingStandFuelContainerValidation : global:
     public bool _isItemAllowedInSlot(nint arg0, nint arg1, nint item, nint arg3, bool arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BrewingStandFuelContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.BrewingStandFuelContainerValidation arg0)
+    public static BrewingStandFuelContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.BrewingStandFuelContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1a5a6f91((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BrewingStandFuelContainerValidation((nint)handle);

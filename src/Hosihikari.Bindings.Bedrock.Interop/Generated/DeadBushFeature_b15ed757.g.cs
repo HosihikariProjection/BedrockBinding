@@ -44,12 +44,12 @@ public sealed unsafe partial class DeadBushFeature : global::System.IDisposable
     public bool _place(nint region, nint pos, nint random) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DeadBushFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.DeadBushFeature arg0)
+    public static DeadBushFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.DeadBushFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_18751521((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DeadBushFeature((nint)handle);

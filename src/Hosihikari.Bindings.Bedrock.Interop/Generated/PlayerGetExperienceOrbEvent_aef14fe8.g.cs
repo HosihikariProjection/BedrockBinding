@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerGetExperienceOrbEvent : global::System.
         return __hs_handle;
     }
 
-    public static PlayerGetExperienceOrbEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerGetExperienceOrbEvent arg0)
+    public static PlayerGetExperienceOrbEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerGetExperienceOrbEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_94d6c529((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerGetExperienceOrbEvent((nint)handle);

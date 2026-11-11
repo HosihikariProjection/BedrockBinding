@@ -76,29 +76,29 @@ public sealed unsafe partial class AttributeModifier : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AttributeModifier Create()
+    public static AttributeModifier? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e4b96758();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AttributeModifier((nint)handle);
     }
 
-    public static AttributeModifier Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeModifier arg0)
+    public static AttributeModifier? Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeModifier arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a639cdff((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AttributeModifier((nint)handle);
     }
 
-    public static AttributeModifier Create(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID id, string name, float amount, int operation, int operand, bool serializable)
+    public static AttributeModifier? Create(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID id, string name, float amount, int operation, int operand, bool serializable)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -116,7 +116,7 @@ public sealed unsafe partial class AttributeModifier : global::System.IDisposabl
             var handle = NativeMethods.TablePtr->C0.hs_create_86c24632((void*)id.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, amount, operation, operand, serializable);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new AttributeModifier((nint)handle);

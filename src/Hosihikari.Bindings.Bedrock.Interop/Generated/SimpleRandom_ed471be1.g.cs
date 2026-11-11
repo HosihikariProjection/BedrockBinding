@@ -88,12 +88,12 @@ public sealed unsafe partial class SimpleRandom : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SimpleRandom Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleRandom arg0)
+    public static SimpleRandom? Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleRandom arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_07184d8d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimpleRandom((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class UniqueOwnerPointer_TickDeltaTimeManager_ : gl
         return __hs_handle;
     }
 
-    public static UniqueOwnerPointer_TickDeltaTimeManager_ Create()
+    public static UniqueOwnerPointer_TickDeltaTimeManager_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3dcf5378();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_TickDeltaTimeManager_((nint)handle);
@@ -55,12 +55,12 @@ public sealed unsafe partial class UniqueOwnerPointer_TickDeltaTimeManager_ : gl
     public static UniqueOwnerPointer_TickDeltaTimeManager_ Create_3e3eac4b(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static UniqueOwnerPointer_TickDeltaTimeManager_ Create_c6e02e3e()
+    public static UniqueOwnerPointer_TickDeltaTimeManager_? Create_c6e02e3e()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c6e02e3e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_TickDeltaTimeManager_((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class UniqueOwnerPointer_TickDeltaTimeManager_ : gl
         return NativeMethods.TablePtr->C0.hs_method_b6d10ac8((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager((nint)NativeMethods.TablePtr->C0.hs_method_08ec3494((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_08ec3494((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager? operator_operator__()
@@ -113,9 +114,10 @@ public sealed unsafe partial class UniqueOwnerPointer_TickDeltaTimeManager_ : gl
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_TickDeltaTimeManager_ operator_assign()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_TickDeltaTimeManager_? operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_TickDeltaTimeManager_((nint)NativeMethods.TablePtr->C0.hs_method_67dfd13e((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_67dfd13e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_TickDeltaTimeManager_((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_TickDeltaTimeManager_ other)

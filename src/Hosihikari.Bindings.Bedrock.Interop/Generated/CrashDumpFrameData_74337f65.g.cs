@@ -40,23 +40,23 @@ public sealed unsafe partial class CrashDumpFrameData : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static CrashDumpFrameData Create()
+    public static CrashDumpFrameData? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2b3ba036();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CrashDumpFrameData((nint)handle);
     }
 
-    public static CrashDumpFrameData Create(global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpFrameData arg0)
+    public static CrashDumpFrameData? Create(global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpFrameData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ab2791d8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CrashDumpFrameData((nint)handle);
@@ -108,9 +108,10 @@ public sealed unsafe partial class CrashDumpFrameData : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C1.hs_get_3d36226b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpFrameData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpFrameData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpFrameData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpFrameData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpFrameData((nint)NativeMethods.TablePtr->C1.hs_method_c4abedaf((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c4abedaf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpFrameData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

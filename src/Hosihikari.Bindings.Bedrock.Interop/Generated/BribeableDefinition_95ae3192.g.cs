@@ -40,12 +40,12 @@ public sealed unsafe partial class BribeableDefinition : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static BribeableDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.BribeableDefinition arg0)
+    public static BribeableDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.BribeableDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_79aa5bf6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BribeableDefinition((nint)handle);

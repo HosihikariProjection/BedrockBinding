@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_BlockPatternPostEvent_ : glo
     public static ValueOrRef_const_BlockPatternPostEvent_ Create_5f3c0c1c(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const BlockPatternPostEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPatternPostEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPatternPostEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPatternPostEvent((nint)NativeMethods.TablePtr->C1.hs_method_d22a27f0((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d22a27f0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPatternPostEvent((nint)__hs_handle, false) : null;
     }
 
 

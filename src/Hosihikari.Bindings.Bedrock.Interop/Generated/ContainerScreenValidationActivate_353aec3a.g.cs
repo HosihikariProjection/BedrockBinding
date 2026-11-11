@@ -96,9 +96,10 @@ public sealed unsafe partial class ContainerScreenValidationActivate : global::S
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult tryActivate()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult? tryActivate()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult((nint)NativeMethods.TablePtr->C1.hs_method_98505b4b((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_98505b4b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult((nint)__hs_handle) : null;
     }
 
 

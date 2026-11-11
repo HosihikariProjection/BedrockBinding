@@ -40,12 +40,12 @@ public sealed unsafe partial class VillageManagerComponent : global::System.IDis
         return __hs_handle;
     }
 
-    public static VillageManagerComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.VillageManagerComponent arg0)
+    public static VillageManagerComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.VillageManagerComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b39ebe35((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VillageManagerComponent((nint)handle);

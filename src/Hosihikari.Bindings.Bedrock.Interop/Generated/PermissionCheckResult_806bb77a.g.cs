@@ -40,23 +40,23 @@ public sealed unsafe partial class PermissionCheckResult : global::System.IDispo
         return __hs_handle;
     }
 
-    public static PermissionCheckResult Create()
+    public static PermissionCheckResult? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cacd5434();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PermissionCheckResult((nint)handle);
     }
 
-    public static PermissionCheckResult Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult arg0)
+    public static PermissionCheckResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8abc189d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PermissionCheckResult((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class PermissionCheckResult : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C3.hs_get_dc0ac926((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult((nint)NativeMethods.TablePtr->C3.hs_method_e1fce843((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e1fce843((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

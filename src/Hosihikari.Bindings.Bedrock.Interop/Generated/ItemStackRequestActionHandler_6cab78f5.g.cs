@@ -48,12 +48,12 @@ public sealed unsafe partial class ItemStackRequestActionHandler : global::Syste
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemStackRequestActionHandler Create()
+    public static ItemStackRequestActionHandler? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_54c205b6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackRequestActionHandler((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class ItemStackRequestActionHandler : global::Syste
     public static ItemStackRequestActionHandler Create(nint itemStackNetManager, nint player) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemStackRequestActionHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionHandler arg0)
+    public static ItemStackRequestActionHandler? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionHandler arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_661c745d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackRequestActionHandler((nint)handle);
@@ -130,9 +130,10 @@ public sealed unsafe partial class ItemStackRequestActionHandler : global::Syste
     public void addStrings(nint requestId, nint strings) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext getScreenContext()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext? getScreenContext()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C1.hs_method_2bde7be3((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2bde7be3((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -229,9 +230,10 @@ public sealed unsafe partial class ItemStackRequestActionHandler : global::Syste
     public void normalTick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionHandler operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionHandler arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionHandler? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionHandler arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionHandler((nint)NativeMethods.TablePtr->C1.hs_method_c5c8de6b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c5c8de6b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionHandler((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

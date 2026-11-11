@@ -40,23 +40,23 @@ public sealed unsafe partial class AddMushroomIsland : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static AddMushroomIsland Create()
+    public static AddMushroomIsland? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_694f587a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddMushroomIsland((nint)handle);
     }
 
-    public static AddMushroomIsland Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.AddMushroomIsland arg0)
+    public static AddMushroomIsland? Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.AddMushroomIsland arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_43220be2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddMushroomIsland((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class AddMushroomIsland : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_82a5250a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.AddMushroomIsland operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.AddMushroomIsland arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.AddMushroomIsland? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.AddMushroomIsland arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.AddMushroomIsland((nint)NativeMethods.TablePtr->C2.hs_method_d33660c6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d33660c6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.AddMushroomIsland((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

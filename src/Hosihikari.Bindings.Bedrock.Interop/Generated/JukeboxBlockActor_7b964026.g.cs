@@ -271,9 +271,10 @@ public sealed unsafe partial class JukeboxBlockActor : global::System.IDisposabl
         return NativeMethods.TablePtr->C2.hs_method_3658a503((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_15dd76c8((void*)__hosihikari_shim_handle, arg0), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_15dd76c8((void*)__hosihikari_shim_handle, arg0);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int getMaxStackSize()

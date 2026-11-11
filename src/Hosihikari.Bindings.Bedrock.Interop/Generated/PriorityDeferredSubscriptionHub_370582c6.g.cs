@@ -70,12 +70,12 @@ public sealed unsafe partial class PriorityDeferredSubscriptionHub : global::Sys
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PriorityDeferredSubscriptionHub Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.PriorityDeferredSubscriptionHub arg0)
+    public static PriorityDeferredSubscriptionHub? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.PriorityDeferredSubscriptionHub arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ea98c595((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PriorityDeferredSubscriptionHub((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class EventResponseCollection : global::System.IDis
         return __hs_handle;
     }
 
-    public static EventResponseCollection Create(global::Hosihikari.Bindings.Bedrock.Interop.EventResponseCollection arg0)
+    public static EventResponseCollection? Create(global::Hosihikari.Bindings.Bedrock.Interop.EventResponseCollection arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ea7e1129((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EventResponseCollection((nint)handle);

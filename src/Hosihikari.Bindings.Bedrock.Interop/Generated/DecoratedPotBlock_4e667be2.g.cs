@@ -421,9 +421,10 @@ public sealed unsafe partial class DecoratedPotBlock : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? blockActor)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? blockActor)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C1.hs_method_7311ce67((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(blockActor?.Handle ?? 0)));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7311ce67((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(blockActor?.Handle ?? 0));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
     }
 
     public bool canProvideSupport(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, byte face, int type)

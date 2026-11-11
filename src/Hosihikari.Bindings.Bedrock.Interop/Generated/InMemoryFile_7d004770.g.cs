@@ -40,23 +40,23 @@ public sealed unsafe partial class InMemoryFile : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static InMemoryFile Create()
+    public static InMemoryFile? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_70a3f34a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InMemoryFile((nint)handle);
     }
 
-    public static InMemoryFile Create(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFile arg0)
+    public static InMemoryFile? Create(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFile arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ab0e4ec6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InMemoryFile((nint)handle);
@@ -108,9 +108,10 @@ public sealed unsafe partial class InMemoryFile : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_03b6c443((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFile operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFile arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFile? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFile arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFile((nint)NativeMethods.TablePtr->C1.hs_method_90b2b35b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_90b2b35b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFile((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

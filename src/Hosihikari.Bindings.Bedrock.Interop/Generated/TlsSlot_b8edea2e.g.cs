@@ -50,23 +50,23 @@ public sealed unsafe partial class TlsSlot : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_5dfe384c((void*)__hosihikari_shim_handle);
     }
 
-    public static TlsSlot Create()
+    public static TlsSlot? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1c78f455();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TlsSlot((nint)handle);
     }
 
-    public static TlsSlot Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.TlsSlot arg0)
+    public static TlsSlot? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.TlsSlot arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6d5e38b7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TlsSlot((nint)handle);

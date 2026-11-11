@@ -82,12 +82,12 @@ public sealed unsafe partial class FileSystemFileAccess : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileSystemFileAccess Create()
+    public static FileSystemFileAccess? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9cec308f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileSystemFileAccess((nint)handle);
@@ -97,12 +97,12 @@ public sealed unsafe partial class FileSystemFileAccess : global::System.IDispos
     public static FileSystemFileAccess Create(nint mode) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileSystemFileAccess Create(global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess arg0)
+    public static FileSystemFileAccess? Create(global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_83a85897((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileSystemFileAccess((nint)handle);
@@ -172,9 +172,10 @@ public sealed unsafe partial class FileSystemFileAccess : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_ef0683cf((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess((nint)NativeMethods.TablePtr->C1.hs_method_906361f0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_906361f0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess((nint)__hs_handle, false) : null;
     }
 
     public void unload()

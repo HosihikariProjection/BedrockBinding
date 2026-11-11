@@ -48,12 +48,12 @@ public sealed unsafe partial class Observer : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Observer Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController_Nested.Observer arg0)
+    public static Observer? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController_Nested.Observer arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_bf5fe7ab((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Observer((nint)handle);

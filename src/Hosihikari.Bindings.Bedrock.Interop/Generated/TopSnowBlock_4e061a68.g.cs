@@ -489,12 +489,12 @@ public sealed unsafe partial class TopSnowBlock : global::System.IDisposable
     public static nint TOP_SNOW_JAVA_PARITY_VERSION() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TopSnowBlock Create()
+    public static TopSnowBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5cbe8588();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TopSnowBlock((nint)handle);
@@ -543,9 +543,10 @@ public sealed unsafe partial class TopSnowBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_4a571af7((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)lastPathPos.Handle, (void*)pathPos.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C4.hs_method_a7977b57((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)(entity?.Handle ?? 0), entity is not null));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a7977b57((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)(entity?.Handle ?? 0), entity is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
     public bool getCollisionShapeForCamera(global::Hosihikari.Bindings.Bedrock.Interop.AABB outAABB, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
@@ -553,9 +554,10 @@ public sealed unsafe partial class TopSnowBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_3a6d6716((void*)__hosihikari_shim_handle, (void*)outAABB.Handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getDustColor(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getDustColor(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_f88e053e((void*)__hosihikari_shim_handle, (void*)arg0.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f88e053e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public string getDustParticleName(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
@@ -564,18 +566,20 @@ public sealed unsafe partial class TopSnowBlock : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_f99157fa((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, face, (void*)clickPos.Handle, itemValue), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f99157fa((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, face, (void*)clickPos.Handle, itemValue);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint getSnowBlockToBuild(nint region, nint pos, int height, bool additive) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getVisualShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferAABB)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getVisualShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferAABB)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C4.hs_method_4a85b424((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)bufferAABB.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4a85b424((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)bufferAABB.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
     public bool isFreeToFall(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

@@ -62,23 +62,23 @@ public sealed unsafe partial class FileSizePresetManagerImpl : global::System.ID
     public static nint _vftableForFileSizePresetManager() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileSizePresetManagerImpl Create()
+    public static FileSizePresetManagerImpl? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d31e52f5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileSizePresetManagerImpl((nint)handle);
     }
 
-    public static FileSizePresetManagerImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSizePresetManagerImpl arg0)
+    public static FileSizePresetManagerImpl? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSizePresetManagerImpl arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6295124d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileSizePresetManagerImpl((nint)handle);
@@ -103,9 +103,10 @@ public sealed unsafe partial class FileSizePresetManagerImpl : global::System.ID
         get => (nint)NativeMethods.TablePtr->C1.hs_get_a3e091ff((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSizePresetManagerImpl operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSizePresetManagerImpl arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSizePresetManagerImpl? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSizePresetManagerImpl arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSizePresetManagerImpl((nint)NativeMethods.TablePtr->C1.hs_method_bd241dd4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_bd241dd4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSizePresetManagerImpl((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Core::FileSizePresetToken' has no accessible destructor.", false)]

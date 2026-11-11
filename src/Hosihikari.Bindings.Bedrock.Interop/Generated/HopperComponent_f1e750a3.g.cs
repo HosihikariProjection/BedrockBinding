@@ -76,12 +76,12 @@ public sealed unsafe partial class HopperComponent : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_f95873ef((void*)__hosihikari_shim_handle, value);
     }
 
-    public static HopperComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.HopperComponent arg0)
+    public static HopperComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.HopperComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_57bf2ad0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HopperComponent((nint)handle);

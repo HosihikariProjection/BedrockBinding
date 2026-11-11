@@ -66,20 +66,21 @@ public sealed unsafe partial class SctpTransportInternal : global::System.IDispo
         return NativeMethods.TablePtr->C4.hs_method_a7f61e6a((void*)__hosihikari_shim_handle, sid) != 0;
     }
 
-    public static SctpTransportInternal Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.SctpTransportInternal arg0)
+    public static SctpTransportInternal? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.SctpTransportInternal arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0ff79170((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SctpTransportInternal((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError SendData(int sid, nint @params, nint payload)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? SendData(int sid, nint @params, nint payload)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_195e2a18((void*)__hosihikari_shim_handle, sid, (void*)@params, (void*)payload));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_195e2a18((void*)__hosihikari_shim_handle, sid, (void*)@params, (void*)payload);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
     }
 
     public void SetBufferedAmountLowThreshold(int sid, ulong bytes)

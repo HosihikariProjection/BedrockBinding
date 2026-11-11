@@ -44,12 +44,12 @@ public sealed unsafe partial class SetActorMotionPacketPayload : global::System.
     public nint _ctor(nint entity) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SetActorMotionPacketPayload Create()
+    public static SetActorMotionPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_54cb3d83();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetActorMotionPacketPayload((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class SetActorMotionPacketPayload : global::System.
     public static SetActorMotionPacketPayload Create(nint entity) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SetActorMotionPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SetActorMotionPacketPayload arg0)
+    public static SetActorMotionPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.SetActorMotionPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3d17af72((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetActorMotionPacketPayload((nint)handle);

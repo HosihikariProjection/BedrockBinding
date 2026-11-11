@@ -40,12 +40,12 @@ public sealed unsafe partial class IContentSourceRepository : global::System.IDi
         return __hs_handle;
     }
 
-    public static IContentSourceRepository Create(global::Hosihikari.Bindings.Bedrock.Interop.IContentSourceRepository arg0)
+    public static IContentSourceRepository? Create(global::Hosihikari.Bindings.Bedrock.Interop.IContentSourceRepository arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_59a9b1dc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IContentSourceRepository((nint)handle);

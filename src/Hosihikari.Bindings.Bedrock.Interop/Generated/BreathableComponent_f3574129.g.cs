@@ -44,23 +44,23 @@ public sealed unsafe partial class BreathableComponent : global::System.IDisposa
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BreathableComponent Create()
+    public static BreathableComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_16149cd8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BreathableComponent((nint)handle);
     }
 
-    public static BreathableComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent arg0)
+    public static BreathableComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_00a24362((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BreathableComponent((nint)handle);
@@ -152,9 +152,10 @@ public sealed unsafe partial class BreathableComponent : global::System.IDisposa
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent((nint)NativeMethods.TablePtr->C0.hs_method_b225b491((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b225b491((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

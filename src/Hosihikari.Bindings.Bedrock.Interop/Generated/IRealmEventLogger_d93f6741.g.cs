@@ -40,12 +40,12 @@ public sealed unsafe partial class IRealmEventLogger : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static IRealmEventLogger Create(global::Hosihikari.Bindings.Bedrock.Interop.IRealmEventLogger arg0)
+    public static IRealmEventLogger? Create(global::Hosihikari.Bindings.Bedrock.Interop.IRealmEventLogger arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5945d0f4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IRealmEventLogger((nint)handle);

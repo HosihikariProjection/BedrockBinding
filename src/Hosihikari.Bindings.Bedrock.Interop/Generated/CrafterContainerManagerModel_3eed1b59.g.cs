@@ -124,20 +124,21 @@ public sealed unsafe partial class CrafterContainerManagerModel : global::System
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CrafterContainerManagerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.CrafterContainerManagerModel arg0)
+    public static CrafterContainerManagerModel? Create(global::Hosihikari.Bindings.Bedrock.Interop.CrafterContainerManagerModel arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b289f1b5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CrafterContainerManagerModel((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext _postInit()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext? _postInit()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C1.hs_method_ce8813e6((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ce8813e6((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

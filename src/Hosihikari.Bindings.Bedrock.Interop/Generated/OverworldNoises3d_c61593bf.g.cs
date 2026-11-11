@@ -44,23 +44,23 @@ public sealed unsafe partial class OverworldNoises3d : global::System.IDisposabl
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OverworldNoises3d Create()
+    public static OverworldNoises3d? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_dd024bfa();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OverworldNoises3d((nint)handle);
     }
 
-    public static OverworldNoises3d Create(global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d arg0)
+    public static OverworldNoises3d? Create(global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_46f7fe01((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OverworldNoises3d((nint)handle);
@@ -126,14 +126,16 @@ public sealed unsafe partial class OverworldNoises3d : global::System.IDisposabl
     public static nint make(nint randomFactory) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d((nint)NativeMethods.TablePtr->C2.hs_method_0cdc4ebd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0cdc4ebd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TargetPoint sample(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position)
+    public global::Hosihikari.Bindings.Bedrock.Interop.TargetPoint? sample(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TargetPoint((nint)NativeMethods.TablePtr->C2.hs_method_ed2ca240((void*)__hosihikari_shim_handle, (void*)position.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ed2ca240((void*)__hosihikari_shim_handle, (void*)position.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TargetPoint((nint)__hs_handle) : null;
     }
 
 

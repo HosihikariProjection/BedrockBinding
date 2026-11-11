@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerSelectedItemChangedEve
     public static ValueOrRef_const_PlayerSelectedItemChangedEvent_ Create_7614389d(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerSelectedItemChangedEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerSelectedItemChangedEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerSelectedItemChangedEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSelectedItemChangedEvent((nint)NativeMethods.TablePtr->C1.hs_method_3547d913((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3547d913((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSelectedItemChangedEvent((nint)__hs_handle, false) : null;
     }
 
 

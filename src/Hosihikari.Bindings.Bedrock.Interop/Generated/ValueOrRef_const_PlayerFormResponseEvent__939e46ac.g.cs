@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerFormResponseEvent_ : g
     public static ValueOrRef_const_PlayerFormResponseEvent_ Create_a340361f(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerFormResponseEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerFormResponseEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerFormResponseEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerFormResponseEvent((nint)NativeMethods.TablePtr->C1.hs_method_63040e91((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_63040e91((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerFormResponseEvent((nint)__hs_handle, false) : null;
     }
 
 

@@ -40,12 +40,12 @@ public sealed unsafe partial class IPathBlockSource : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IPathBlockSource Create(global::Hosihikari.Bindings.Bedrock.Interop.IPathBlockSource arg0)
+    public static IPathBlockSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.IPathBlockSource arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e33cc729((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IPathBlockSource((nint)handle);

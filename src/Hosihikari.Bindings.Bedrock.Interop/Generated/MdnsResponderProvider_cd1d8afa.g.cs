@@ -45,12 +45,12 @@ public sealed unsafe partial class MdnsResponderProvider : global::System.IDispo
         return (nint)NativeMethods.TablePtr->C4.hs_method_e7b5ee4f((void*)__hosihikari_shim_handle);
     }
 
-    public static MdnsResponderProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MdnsResponderProvider arg0)
+    public static MdnsResponderProvider? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MdnsResponderProvider arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1e1d3e73((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MdnsResponderProvider((nint)handle);

@@ -50,34 +50,34 @@ public sealed unsafe partial class CommandRequestPacketPayload : global::System.
         NativeMethods.TablePtr->C0.hs_method_751dd88f((void*)__hosihikari_shim_handle);
     }
 
-    public static CommandRequestPacketPayload Create()
+    public static CommandRequestPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f4e99039();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandRequestPacketPayload((nint)handle);
     }
 
-    public static CommandRequestPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandContext context, bool internalSource)
+    public static CommandRequestPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandContext context, bool internalSource)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b3ef3119((void*)context.Handle, internalSource);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandRequestPacketPayload((nint)handle);
     }
 
-    public static CommandRequestPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRequestPacketPayload arg0)
+    public static CommandRequestPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRequestPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_54713c75((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandRequestPacketPayload((nint)handle);

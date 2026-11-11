@@ -68,12 +68,12 @@ public sealed unsafe partial class LegacyEmeraldOreFeature : global::System.IDis
     public bool _place(nint region, nint origin, nint random) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacyEmeraldOreFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyEmeraldOreFeature arg0)
+    public static LegacyEmeraldOreFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyEmeraldOreFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f414cbb9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyEmeraldOreFeature((nint)handle);

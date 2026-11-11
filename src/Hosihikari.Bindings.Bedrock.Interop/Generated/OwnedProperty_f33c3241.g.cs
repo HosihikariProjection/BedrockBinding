@@ -40,23 +40,23 @@ public sealed unsafe partial class OwnedProperty : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static OwnedProperty Create()
+    public static OwnedProperty? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4fc5144f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OwnedProperty((nint)handle);
     }
 
-    public static OwnedProperty Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.OwnedProperty arg0)
+    public static OwnedProperty? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.OwnedProperty arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4e2ac76f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OwnedProperty((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class OwnedProperty : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_4d27cf91((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.OwnedProperty operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.OwnedProperty arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.OwnedProperty? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.OwnedProperty arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.OwnedProperty((nint)NativeMethods.TablePtr->C3.hs_method_1c6ebd22((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1c6ebd22((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.OwnedProperty((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

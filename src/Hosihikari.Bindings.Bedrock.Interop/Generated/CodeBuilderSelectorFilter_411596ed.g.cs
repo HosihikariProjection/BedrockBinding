@@ -40,12 +40,12 @@ public sealed unsafe partial class CodeBuilderSelectorFilter : global::System.ID
         return __hs_handle;
     }
 
-    public static CodeBuilderSelectorFilter Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilderSelectorFilter arg0)
+    public static CodeBuilderSelectorFilter? Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilderSelectorFilter arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f5b3a70f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CodeBuilderSelectorFilter((nint)handle);

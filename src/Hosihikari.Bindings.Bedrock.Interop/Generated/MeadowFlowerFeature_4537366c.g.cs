@@ -80,12 +80,12 @@ public sealed unsafe partial class MeadowFlowerFeature : global::System.IDisposa
     public static MeadowFlowerFeature Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MeadowFlowerFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.MeadowFlowerFeature arg0)
+    public static MeadowFlowerFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.MeadowFlowerFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_64cee835((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MeadowFlowerFeature((nint)handle);

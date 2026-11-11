@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptItemEnchantmentType : global::System.ID
         return __hs_handle;
     }
 
-    public static ScriptItemEnchantmentType Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentType arg0)
+    public static ScriptItemEnchantmentType? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentType arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1824d8ba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemEnchantmentType((nint)handle);

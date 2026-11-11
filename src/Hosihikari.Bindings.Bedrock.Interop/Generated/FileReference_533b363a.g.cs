@@ -40,23 +40,23 @@ public sealed unsafe partial class FileReference : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static FileReference Create()
+    public static FileReference? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_004ce94a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileReference((nint)handle);
     }
 
-    public static FileReference Create(global::Hosihikari.Bindings.Bedrock.Interop.CerealHelpers.FileReference arg0)
+    public static FileReference? Create(global::Hosihikari.Bindings.Bedrock.Interop.CerealHelpers.FileReference arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4ea6f2eb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileReference((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class FileReference : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_03e48b3f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CerealHelpers.FileReference operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealHelpers.FileReference arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CerealHelpers.FileReference? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealHelpers.FileReference arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CerealHelpers.FileReference((nint)NativeMethods.TablePtr->C0.hs_method_e533877e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e533877e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CerealHelpers.FileReference((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

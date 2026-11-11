@@ -50,34 +50,34 @@ public sealed unsafe partial class Parser : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_191e3845((void*)__hosihikari_shim_handle);
     }
 
-    public static Parser Create()
+    public static Parser? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_831b8ea5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Parser((nint)handle);
     }
 
-    public static Parser Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry, int version)
+    public static Parser? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry, int version)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_209f0fcf((void*)registry.Handle, version);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Parser((nint)handle);
     }
 
-    public static Parser Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Parser arg0)
+    public static Parser? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Parser arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_cdfc1bc7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Parser((nint)handle);
@@ -160,9 +160,10 @@ public sealed unsafe partial class Parser : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_37d5a38e((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Parser operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Parser arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Parser? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Parser arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Parser((nint)NativeMethods.TablePtr->C0.hs_method_6755c3ce((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6755c3ce((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Parser((nint)__hs_handle, false) : null;
     }
 
     public bool parseCommand(string @in)

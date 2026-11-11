@@ -86,23 +86,23 @@ public sealed unsafe partial class LayDownGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LayDownGoal Create()
+    public static LayDownGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a0c9f38b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LayDownGoal((nint)handle);
     }
 
-    public static LayDownGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.LayDownGoal arg0)
+    public static LayDownGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.LayDownGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_edbe1c41((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LayDownGoal((nint)handle);
@@ -156,9 +156,10 @@ public sealed unsafe partial class LayDownGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_77d3e497((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LayDownGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LayDownGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LayDownGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LayDownGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LayDownGoal((nint)NativeMethods.TablePtr->C2.hs_method_0a41b361((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0a41b361((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LayDownGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

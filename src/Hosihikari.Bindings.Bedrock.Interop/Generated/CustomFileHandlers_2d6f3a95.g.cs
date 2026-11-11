@@ -40,23 +40,23 @@ public sealed unsafe partial class CustomFileHandlers : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static CustomFileHandlers Create()
+    public static CustomFileHandlers? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b9915da8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CustomFileHandlers((nint)handle);
     }
 
-    public static CustomFileHandlers Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.CustomFileHandlers arg0)
+    public static CustomFileHandlers? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.CustomFileHandlers arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_26a471ff((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CustomFileHandlers((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class CustomFileHandlers : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C0.hs_get_7720814c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.CustomFileHandlers operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.CustomFileHandlers arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.CustomFileHandlers? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.CustomFileHandlers arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.CustomFileHandlers((nint)NativeMethods.TablePtr->C0.hs_method_aa351faa((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_aa351faa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.CustomFileHandlers((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

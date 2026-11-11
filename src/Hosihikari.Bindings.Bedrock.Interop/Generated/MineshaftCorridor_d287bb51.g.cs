@@ -56,12 +56,12 @@ public sealed unsafe partial class MineshaftCorridor : global::System.IDisposabl
     public void _postProcessMobsAt(nint region, nint random, nint chunkBB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MineshaftCorridor Create(global::Hosihikari.Bindings.Bedrock.Interop.MineshaftCorridor arg0)
+    public static MineshaftCorridor? Create(global::Hosihikari.Bindings.Bedrock.Interop.MineshaftCorridor arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ddd2507c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MineshaftCorridor((nint)handle);

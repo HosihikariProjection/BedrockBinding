@@ -46,23 +46,23 @@ public sealed unsafe partial class EditorBootstrapper : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C1.hs_get_f1e6c2d8((void*)__hosihikari_shim_handle);
     }
 
-    public static EditorBootstrapper Create()
+    public static EditorBootstrapper? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_25a49bf5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EditorBootstrapper((nint)handle);
     }
 
-    public static EditorBootstrapper Create(global::Hosihikari.Bindings.Bedrock.Interop.EditorBootstrapper arg0)
+    public static EditorBootstrapper? Create(global::Hosihikari.Bindings.Bedrock.Interop.EditorBootstrapper arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_cc5a09ec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EditorBootstrapper((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class EditorBootstrapper : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C1.hs_get_86d079db((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EditorBootstrapper operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EditorBootstrapper arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EditorBootstrapper? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EditorBootstrapper arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EditorBootstrapper((nint)NativeMethods.TablePtr->C1.hs_method_e7ea9948((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e7ea9948((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EditorBootstrapper((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

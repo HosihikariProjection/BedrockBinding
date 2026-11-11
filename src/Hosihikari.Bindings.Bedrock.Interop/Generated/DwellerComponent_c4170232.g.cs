@@ -48,12 +48,12 @@ public sealed unsafe partial class DwellerComponent : global::System.IDisposable
     public static nint DWELLING_TYPES() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DwellerComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.DwellerComponent arg0)
+    public static DwellerComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.DwellerComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_865c90b1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DwellerComponent((nint)handle);

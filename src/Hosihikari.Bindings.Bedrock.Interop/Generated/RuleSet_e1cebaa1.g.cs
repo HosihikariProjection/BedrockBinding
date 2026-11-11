@@ -48,12 +48,12 @@ public sealed unsafe partial class RuleSet : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RuleSet Create()
+    public static RuleSet? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2813b75e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RuleSet((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class RuleSet : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_bdc2c447((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet((nint)NativeMethods.TablePtr->C4.hs_method_b5a0e3cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b5a0e3cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -40,23 +40,23 @@ public sealed unsafe partial class NoodleCavifier : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static NoodleCavifier Create()
+    public static NoodleCavifier? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8014e39e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NoodleCavifier((nint)handle);
     }
 
-    public static NoodleCavifier Create(global::Hosihikari.Bindings.Bedrock.Interop.NoodleCavifier arg0)
+    public static NoodleCavifier? Create(global::Hosihikari.Bindings.Bedrock.Interop.NoodleCavifier arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0d28e2e1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NoodleCavifier((nint)handle);
@@ -121,9 +121,10 @@ public sealed unsafe partial class NoodleCavifier : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_9e670bc1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NoodleCavifier operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NoodleCavifier arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NoodleCavifier? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NoodleCavifier arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NoodleCavifier((nint)NativeMethods.TablePtr->C2.hs_method_c9a13415((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c9a13415((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NoodleCavifier((nint)__hs_handle, false) : null;
     }
 
 

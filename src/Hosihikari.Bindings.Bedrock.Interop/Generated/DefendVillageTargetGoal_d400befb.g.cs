@@ -82,12 +82,12 @@ public sealed unsafe partial class DefendVillageTargetGoal : global::System.IDis
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DefendVillageTargetGoal Create()
+    public static DefendVillageTargetGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_48844604();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DefendVillageTargetGoal((nint)handle);
@@ -97,12 +97,12 @@ public sealed unsafe partial class DefendVillageTargetGoal : global::System.IDis
     public static DefendVillageTargetGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DefendVillageTargetGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.DefendVillageTargetGoal arg0)
+    public static DefendVillageTargetGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.DefendVillageTargetGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_36baebeb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DefendVillageTargetGoal((nint)handle);

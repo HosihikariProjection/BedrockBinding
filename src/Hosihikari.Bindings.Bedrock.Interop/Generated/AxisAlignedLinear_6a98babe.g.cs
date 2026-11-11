@@ -52,12 +52,12 @@ public sealed unsafe partial class AxisAlignedLinear : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AxisAlignedLinear Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.PosRules.AxisAlignedLinear arg0)
+    public static AxisAlignedLinear? Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.PosRules.AxisAlignedLinear arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_be500cff((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AxisAlignedLinear((nint)handle);

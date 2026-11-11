@@ -40,23 +40,23 @@ public sealed unsafe partial class ClientSubChunkCache : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static ClientSubChunkCache Create()
+    public static ClientSubChunkCache? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5e82d73d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClientSubChunkCache((nint)handle);
     }
 
-    public static ClientSubChunkCache Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkLoadTelemetryData_Nested.ClientSubChunkCache arg0)
+    public static ClientSubChunkCache? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkLoadTelemetryData_Nested.ClientSubChunkCache arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d50e9426((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClientSubChunkCache((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class ClientSubChunkCache : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c63b4e70((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkLoadTelemetryData_Nested.ClientSubChunkCache operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ChunkLoadTelemetryData_Nested.ClientSubChunkCache arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkLoadTelemetryData_Nested.ClientSubChunkCache? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ChunkLoadTelemetryData_Nested.ClientSubChunkCache arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkLoadTelemetryData_Nested.ClientSubChunkCache((nint)NativeMethods.TablePtr->C0.hs_method_675cacd1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_675cacd1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkLoadTelemetryData_Nested.ClientSubChunkCache((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

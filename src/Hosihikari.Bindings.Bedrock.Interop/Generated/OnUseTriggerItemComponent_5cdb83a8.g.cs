@@ -40,12 +40,12 @@ public sealed unsafe partial class OnUseTriggerItemComponent : global::System.ID
         return __hs_handle;
     }
 
-    public static OnUseTriggerItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.OnUseTriggerItemComponent arg0)
+    public static OnUseTriggerItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.OnUseTriggerItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_402c61a1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OnUseTriggerItemComponent((nint)handle);

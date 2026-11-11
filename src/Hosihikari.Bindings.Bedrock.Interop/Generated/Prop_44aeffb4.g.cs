@@ -40,12 +40,12 @@ public sealed unsafe partial class Prop : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Prop Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.JigsawReplacementHelpers.Prop arg0)
+    public static Prop? Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.JigsawReplacementHelpers.Prop arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_50be2d4f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Prop((nint)handle);

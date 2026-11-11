@@ -40,12 +40,12 @@ public sealed unsafe partial class QueueEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static QueueEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.PriorityDeferredSubscriptionHub_Nested.QueueEntry arg0)
+    public static QueueEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.PriorityDeferredSubscriptionHub_Nested.QueueEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2f1463ca((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new QueueEntry((nint)handle);

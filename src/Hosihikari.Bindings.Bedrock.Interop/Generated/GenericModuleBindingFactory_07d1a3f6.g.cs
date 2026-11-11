@@ -72,23 +72,23 @@ public sealed unsafe partial class GenericModuleBindingFactory : global::System.
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GenericModuleBindingFactory Create()
+    public static GenericModuleBindingFactory? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_dfa15ed1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GenericModuleBindingFactory((nint)handle);
     }
 
-    public static GenericModuleBindingFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory arg0)
+    public static GenericModuleBindingFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f1658aad((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GenericModuleBindingFactory((nint)handle);
@@ -124,9 +124,10 @@ public sealed unsafe partial class GenericModuleBindingFactory : global::System.
     public nint getSupportedVersions() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'Scripting::Version' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID getUUID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? getUUID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C3.hs_method_a45fc3ef((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a45fc3ef((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle) : null;
     }
 
     public bool hasAlias(string alias)
@@ -166,9 +167,10 @@ public sealed unsafe partial class GenericModuleBindingFactory : global::System.
         get => (nint)NativeMethods.TablePtr->C3.hs_get_435656fd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory((nint)NativeMethods.TablePtr->C3.hs_method_5a842867((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5a842867((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory((nint)__hs_handle, false) : null;
     }
 
 

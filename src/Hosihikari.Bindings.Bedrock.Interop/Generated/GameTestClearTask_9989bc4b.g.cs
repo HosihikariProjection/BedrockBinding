@@ -44,12 +44,12 @@ public sealed unsafe partial class GameTestClearTask : global::System.IDisposabl
     public nint _ctor(nint dimension, nint bounds) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GameTestClearTask Create()
+    public static GameTestClearTask? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_80934b61();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameTestClearTask((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class GameTestClearTask : global::System.IDisposabl
     public static GameTestClearTask Create(nint dimension, nint bounds) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GameTestClearTask Create(global::Hosihikari.Bindings.Bedrock.Interop.GameTestClearTask arg0)
+    public static GameTestClearTask? Create(global::Hosihikari.Bindings.Bedrock.Interop.GameTestClearTask arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_13ce2191((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameTestClearTask((nint)handle);
@@ -100,9 +100,10 @@ public sealed unsafe partial class GameTestClearTask : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C1.hs_get_d384cd61((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameTestClearTask operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GameTestClearTask arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameTestClearTask? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GameTestClearTask arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameTestClearTask((nint)NativeMethods.TablePtr->C1.hs_method_4c04543d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4c04543d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameTestClearTask((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

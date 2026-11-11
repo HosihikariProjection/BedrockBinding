@@ -40,23 +40,23 @@ public sealed unsafe partial class EquipmentTableDefinition : global::System.IDi
         return __hs_handle;
     }
 
-    public static EquipmentTableDefinition Create()
+    public static EquipmentTableDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e7b18009();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EquipmentTableDefinition((nint)handle);
     }
 
-    public static EquipmentTableDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.EquipmentTableDefinition arg0)
+    public static EquipmentTableDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.EquipmentTableDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_789fcc4f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EquipmentTableDefinition((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class EquipmentTableDefinition : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C1.hs_get_6d4fd946((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EquipmentTableDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EquipmentTableDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EquipmentTableDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EquipmentTableDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EquipmentTableDefinition((nint)NativeMethods.TablePtr->C1.hs_method_de5e3fec((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_de5e3fec((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EquipmentTableDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

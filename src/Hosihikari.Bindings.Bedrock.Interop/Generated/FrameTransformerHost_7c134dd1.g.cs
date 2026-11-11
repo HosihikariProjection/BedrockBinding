@@ -44,12 +44,12 @@ public sealed unsafe partial class FrameTransformerHost : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FrameTransformerHost Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FrameTransformerHost arg0)
+    public static FrameTransformerHost? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FrameTransformerHost arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_bdf725f5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FrameTransformerHost((nint)handle);

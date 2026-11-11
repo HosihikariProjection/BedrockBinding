@@ -92,12 +92,12 @@ public sealed unsafe partial class CameraItemComponentLegacy : global::System.ID
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CameraItemComponentLegacy Create(global::Hosihikari.Bindings.Bedrock.Interop.CameraItemComponentLegacy arg0)
+    public static CameraItemComponentLegacy? Create(global::Hosihikari.Bindings.Bedrock.Interop.CameraItemComponentLegacy arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_462f003e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CameraItemComponentLegacy((nint)handle);

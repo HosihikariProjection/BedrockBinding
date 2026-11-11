@@ -40,12 +40,12 @@ public sealed unsafe partial class NormalTransactionData : global::System.IDispo
         return __hs_handle;
     }
 
-    public static NormalTransactionData Create(global::Hosihikari.Bindings.Bedrock.Interop.NormalTransactionData arg0)
+    public static NormalTransactionData? Create(global::Hosihikari.Bindings.Bedrock.Interop.NormalTransactionData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7faa0a64((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NormalTransactionData((nint)handle);

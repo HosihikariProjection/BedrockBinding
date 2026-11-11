@@ -40,23 +40,23 @@ public sealed unsafe partial class BeardAndShaverDescription : global::System.ID
         return __hs_handle;
     }
 
-    public static BeardAndShaverDescription Create()
+    public static BeardAndShaverDescription? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b0b8344f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BeardAndShaverDescription((nint)handle);
     }
 
-    public static BeardAndShaverDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.BeardAndShaverDescription arg0)
+    public static BeardAndShaverDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.BeardAndShaverDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_42de40cf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BeardAndShaverDescription((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class BeardAndShaverDescription : global::System.ID
         get => NativeMethods.TablePtr->C0.hs_get_43e5ebcb((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BeardAndShaverDescription operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BeardAndShaverDescription arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BeardAndShaverDescription? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BeardAndShaverDescription arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BeardAndShaverDescription((nint)NativeMethods.TablePtr->C0.hs_method_c3a51522((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c3a51522((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BeardAndShaverDescription((nint)__hs_handle, false) : null;
     }
 
 

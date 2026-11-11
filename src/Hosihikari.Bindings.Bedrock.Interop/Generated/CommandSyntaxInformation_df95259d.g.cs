@@ -45,12 +45,12 @@ public sealed unsafe partial class CommandSyntaxInformation : global::System.IDi
         NativeMethods.TablePtr->C0.hs_method_313d4f6f((void*)__hosihikari_shim_handle);
     }
 
-    public static CommandSyntaxInformation Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandSyntaxInformation arg0)
+    public static CommandSyntaxInformation? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandSyntaxInformation arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1b24475e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandSyntaxInformation((nint)handle);

@@ -418,23 +418,23 @@ public sealed unsafe partial class StemBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StemBlock Create()
+    public static StemBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_90384501();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StemBlock((nint)handle);
     }
 
-    public static StemBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.StemBlock arg0)
+    public static StemBlock? Create(global::Hosihikari.Bindings.Bedrock.Interop.StemBlock arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e240160c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StemBlock((nint)handle);
@@ -444,9 +444,10 @@ public sealed unsafe partial class StemBlock : global::System.IDisposable
     public static StemBlock Create(nint nameId, int id, nint fruit) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C3.hs_method_e4755da3((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(arg1?.Handle ?? 0)));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e4755da3((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(arg1?.Handle ?? 0));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
     }
 
     public bool canBeFertilized(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block aboveBlock)
@@ -454,9 +455,10 @@ public sealed unsafe partial class StemBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_8d5ffba0((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)aboveBlock.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getVisualShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferAABB)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getVisualShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferAABB)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C3.hs_method_ca27e382((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)bufferAABB.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ca27e382((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)bufferAABB.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
     public bool isStemBlock()
@@ -485,9 +487,10 @@ public sealed unsafe partial class StemBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_2ca63a81((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)(actor?.Handle ?? 0), fType) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StemBlock operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StemBlock arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.StemBlock? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StemBlock arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StemBlock((nint)NativeMethods.TablePtr->C3.hs_method_a150140c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a150140c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StemBlock((nint)__hs_handle, false) : null;
     }
 
     public void randomTick(global::Hosihikari.Bindings.Bedrock.Interop.BlockEvents.BlockRandomTickEvent eventData)

@@ -44,12 +44,12 @@ public sealed unsafe partial class PlaySoundReactionComponent : global::System.I
     public void __onEnd(nint owner, nint region) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlaySoundReactionComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundReactionComponent arg0)
+    public static PlaySoundReactionComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundReactionComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b8b011e4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlaySoundReactionComponent((nint)handle);

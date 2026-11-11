@@ -40,12 +40,12 @@ public sealed unsafe partial class NetworkStatus : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static NetworkStatus Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus arg0)
+    public static NetworkStatus? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_744696bf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkStatus((nint)handle);

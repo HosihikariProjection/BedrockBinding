@@ -604,9 +604,10 @@ public sealed unsafe partial class Arrow : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_2c492594((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack __getPickupItem()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? __getPickupItem()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C0.hs_method_dbaa8dc7((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dbaa8dc7((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -646,12 +647,12 @@ public sealed unsafe partial class Arrow : global::System.IDisposable
     public void _shoot(nint dir, float pow, float uncertainty, nint baseSpeed) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Arrow Create()
+    public static Arrow? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_05e452c0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Arrow((nint)handle);
@@ -661,9 +662,10 @@ public sealed unsafe partial class Arrow : global::System.IDisposable
     public static Arrow Create(nint definitions, nint definitionName, nint entityContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack _getPickupItem()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? _getPickupItem()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C0.hs_method_09a60d3c((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_09a60d3c((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle) : null;
     }
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
@@ -675,9 +677,10 @@ public sealed unsafe partial class Arrow : global::System.IDisposable
     public void addMobEffect(nint effect) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getEffectColor()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getEffectColor()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C0.hs_method_81adb929((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_81adb929((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public int mEnchantFlame

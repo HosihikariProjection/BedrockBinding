@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptBlockVolumeIterable : global::System.ID
         return __hs_handle;
     }
 
-    public static ScriptBlockVolumeIterable Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockVolumeIterable arg0)
+    public static ScriptBlockVolumeIterable? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockVolumeIterable arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b5ec9cbb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockVolumeIterable((nint)handle);

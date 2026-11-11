@@ -52,12 +52,12 @@ public sealed unsafe partial class SHLeftTurn : global::System.IDisposable
     public bool _postProcess(nint region, nint random, nint chunkBB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SHLeftTurn Create(global::Hosihikari.Bindings.Bedrock.Interop.SHLeftTurn arg0)
+    public static SHLeftTurn? Create(global::Hosihikari.Bindings.Bedrock.Interop.SHLeftTurn arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fb50b899((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SHLeftTurn((nint)handle);

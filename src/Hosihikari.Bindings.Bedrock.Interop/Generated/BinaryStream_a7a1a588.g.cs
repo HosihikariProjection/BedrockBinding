@@ -218,9 +218,10 @@ public sealed unsafe partial class BinaryStream : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_acc5ed24((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream((nint)NativeMethods.TablePtr->C0.hs_method_38b07c01((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_38b07c01((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream((nint)__hs_handle, false) : null;
     }
 
     public void write(nint origin, ulong num)

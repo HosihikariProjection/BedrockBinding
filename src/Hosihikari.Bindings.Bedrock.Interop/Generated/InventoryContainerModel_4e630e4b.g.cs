@@ -135,23 +135,23 @@ public sealed unsafe partial class InventoryContainerModel : global::System.IDis
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static InventoryContainerModel Create()
+    public static InventoryContainerModel? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a0af3d04();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventoryContainerModel((nint)handle);
     }
 
-    public static InventoryContainerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel arg0)
+    public static InventoryContainerModel? Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9564f195((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventoryContainerModel((nint)handle);
@@ -178,9 +178,10 @@ public sealed unsafe partial class InventoryContainerModel : global::System.IDis
         NativeMethods.TablePtr->C1.hs_method_5befaa77((void*)__hosihikari_shim_handle, slot);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef getContainerWeakRef()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef? getContainerWeakRef()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)NativeMethods.TablePtr->C1.hs_method_12df71f7((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_12df71f7((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)__hs_handle) : null;
     }
 
     public bool isValid()
@@ -194,9 +195,10 @@ public sealed unsafe partial class InventoryContainerModel : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C1.hs_get_8f9baa04((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel((nint)NativeMethods.TablePtr->C1.hs_method_1eacbfee((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1eacbfee((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel((nint)__hs_handle, false) : null;
     }
 
     public void postInit()

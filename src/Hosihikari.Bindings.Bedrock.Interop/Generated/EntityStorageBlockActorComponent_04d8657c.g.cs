@@ -52,12 +52,12 @@ public sealed unsafe partial class EntityStorageBlockActorComponent : global::Sy
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EntityStorageBlockActorComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityStorageBlockActorComponent arg0)
+    public static EntityStorageBlockActorComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityStorageBlockActorComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f0fa37cb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityStorageBlockActorComponent((nint)handle);

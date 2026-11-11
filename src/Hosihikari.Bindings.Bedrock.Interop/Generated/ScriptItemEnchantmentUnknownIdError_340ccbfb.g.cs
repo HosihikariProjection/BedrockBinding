@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptItemEnchantmentUnknownIdError : global:
     public static ScriptItemEnchantmentUnknownIdError Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptItemEnchantmentUnknownIdError Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentUnknownIdError arg0)
+    public static ScriptItemEnchantmentUnknownIdError? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentUnknownIdError arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a3261ed5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemEnchantmentUnknownIdError((nint)handle);

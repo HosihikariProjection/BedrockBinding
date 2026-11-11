@@ -68,12 +68,12 @@ public sealed unsafe partial class LevelStorageManager : global::System.IDisposa
     public nint _getOnStartLeaveGameConnector() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelStorageManager Create()
+    public static LevelStorageManager? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c05e854b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelStorageManager((nint)handle);
@@ -83,12 +83,12 @@ public sealed unsafe partial class LevelStorageManager : global::System.IDisposa
     public static LevelStorageManager Create(nint levelStorage, nint gameDataSaveTimer, nint userStorageChecker, nint eventing) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelStorageManager Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageManager arg0)
+    public static LevelStorageManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageManager arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4158878e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelStorageManager((nint)handle);
@@ -228,9 +228,10 @@ public sealed unsafe partial class LevelStorageManager : global::System.IDisposa
     public void onStartLeaveGame() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageManager((nint)NativeMethods.TablePtr->C2.hs_method_4757e6fc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4757e6fc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageManager((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

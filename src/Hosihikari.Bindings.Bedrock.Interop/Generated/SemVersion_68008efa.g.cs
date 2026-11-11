@@ -49,34 +49,34 @@ public sealed unsafe partial class SemVersion : global::System.IDisposable
     public static nint SemVerRegexStr() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SemVersion Create()
+    public static SemVersion? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b35e5d02();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SemVersion((nint)handle);
     }
 
-    public static SemVersion Create(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion arg0)
+    public static SemVersion? Create(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_69cf407f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SemVersion((nint)handle);
     }
 
-    public static SemVersion Create(nint other)
+    public static SemVersion? Create(nint other)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f1299293((void*)other);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SemVersion((nint)handle);

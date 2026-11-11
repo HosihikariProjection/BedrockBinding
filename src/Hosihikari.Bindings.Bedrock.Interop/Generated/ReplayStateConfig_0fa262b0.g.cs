@@ -40,12 +40,12 @@ public sealed unsafe partial class ReplayStateConfig : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static ReplayStateConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.ReplayStateConfig arg0)
+    public static ReplayStateConfig? Create(global::Hosihikari.Bindings.Bedrock.Interop.ReplayStateConfig arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a5e5bc96((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReplayStateConfig((nint)handle);

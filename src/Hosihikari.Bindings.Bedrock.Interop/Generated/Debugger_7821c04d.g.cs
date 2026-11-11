@@ -64,23 +64,23 @@ public sealed unsafe partial class Debugger : global::System.IDisposable
     public static nint ContextToModuleUuidLowerCase(nint ctx, nint arg1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Debugger Create()
+    public static Debugger? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0affd98c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Debugger((nint)handle);
     }
 
-    public static Debugger Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.Debugger arg0)
+    public static Debugger? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.Debugger arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_67c6f6e8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Debugger((nint)handle);
@@ -168,9 +168,10 @@ public sealed unsafe partial class Debugger : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_30b6ad18((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.Debugger operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.Debugger arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.Debugger? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.Debugger arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.Debugger((nint)NativeMethods.TablePtr->C3.hs_method_0c0f3865((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0c0f3865((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.Debugger((nint)__hs_handle, false) : null;
     }
 
     public void pumpMessages()

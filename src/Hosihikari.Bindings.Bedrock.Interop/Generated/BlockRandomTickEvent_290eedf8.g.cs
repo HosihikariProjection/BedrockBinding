@@ -40,12 +40,12 @@ public sealed unsafe partial class BlockRandomTickEvent : global::System.IDispos
         return __hs_handle;
     }
 
-    public static BlockRandomTickEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockRandomTickEvent arg0)
+    public static BlockRandomTickEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockRandomTickEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8bbbfd28((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockRandomTickEvent((nint)handle);

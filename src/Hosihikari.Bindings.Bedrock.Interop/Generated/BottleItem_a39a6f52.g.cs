@@ -64,9 +64,10 @@ public sealed unsafe partial class BottleItem : global::System.IDisposable
     public void _fillBottleViaDispenser(nint region, nint bottledItem, nint container, int slot, nint pos, byte face) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult? _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)NativeMethods.TablePtr->C0.hs_method_82993168((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)pos.Handle, face, handSlot, (void*)clickPos.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_82993168((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)pos.Handle, face, handSlot, (void*)clickPos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle) : null;
     }
 
     public bool dispense(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Container container, int slot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, byte face)

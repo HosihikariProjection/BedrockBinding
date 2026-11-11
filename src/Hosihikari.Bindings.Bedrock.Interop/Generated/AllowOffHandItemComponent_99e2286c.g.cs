@@ -44,12 +44,12 @@ public sealed unsafe partial class AllowOffHandItemComponent : global::System.ID
     public void __initializeComponent(nint owner) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AllowOffHandItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.AllowOffHandItemComponent arg0)
+    public static AllowOffHandItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.AllowOffHandItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f54958b5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AllowOffHandItemComponent((nint)handle);

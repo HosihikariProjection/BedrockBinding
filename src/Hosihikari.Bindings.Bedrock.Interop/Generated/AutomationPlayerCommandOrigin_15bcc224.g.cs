@@ -91,29 +91,29 @@ public sealed unsafe partial class AutomationPlayerCommandOrigin : global::Syste
     public nint _toCommandOriginData() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AutomationPlayerCommandOrigin Create()
+    public static AutomationPlayerCommandOrigin? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c08d9d2f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutomationPlayerCommandOrigin((nint)handle);
     }
 
-    public static AutomationPlayerCommandOrigin Create(global::Hosihikari.Bindings.Bedrock.Interop.AutomationPlayerCommandOrigin arg0)
+    public static AutomationPlayerCommandOrigin? Create(global::Hosihikari.Bindings.Bedrock.Interop.AutomationPlayerCommandOrigin arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_92e08f3c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutomationPlayerCommandOrigin((nint)handle);
     }
 
-    public static AutomationPlayerCommandOrigin Create(string requestId, global::Hosihikari.Bindings.Bedrock.Interop.Player origin)
+    public static AutomationPlayerCommandOrigin? Create(string requestId, global::Hosihikari.Bindings.Bedrock.Interop.Player origin)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(requestId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -131,7 +131,7 @@ public sealed unsafe partial class AutomationPlayerCommandOrigin : global::Syste
             var handle = NativeMethods.TablePtr->C0.hs_create_3e6121ce(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)origin.Handle);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new AutomationPlayerCommandOrigin((nint)handle);
@@ -159,9 +159,10 @@ public sealed unsafe partial class AutomationPlayerCommandOrigin : global::Syste
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier getSourceId()
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier? getSourceId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)NativeMethods.TablePtr->C0.hs_method_7789f86f((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7789f86f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle, false) : null;
     }
 
     public bool isValid()
@@ -181,14 +182,16 @@ public sealed unsafe partial class AutomationPlayerCommandOrigin : global::Syste
         get => (nint)NativeMethods.TablePtr->C0.hs_get_6d8ddacd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag serialize()
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? serialize()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)NativeMethods.TablePtr->C0.hs_method_d588b31b((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d588b31b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginData toCommandOriginData()
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginData? toCommandOriginData()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginData((nint)NativeMethods.TablePtr->C0.hs_method_233d5e4d((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_233d5e4d((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginData((nint)__hs_handle) : null;
     }
 
 

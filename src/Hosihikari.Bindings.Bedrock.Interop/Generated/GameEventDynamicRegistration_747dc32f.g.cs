@@ -44,23 +44,23 @@ public sealed unsafe partial class GameEventDynamicRegistration : global::System
     public nint _ctor(nint listener) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GameEventDynamicRegistration Create()
+    public static GameEventDynamicRegistration? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b42136cb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameEventDynamicRegistration((nint)handle);
     }
 
-    public static GameEventDynamicRegistration Create(global::Hosihikari.Bindings.Bedrock.Interop.GameEventDynamicRegistration arg0)
+    public static GameEventDynamicRegistration? Create(global::Hosihikari.Bindings.Bedrock.Interop.GameEventDynamicRegistration arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c3c5d613((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameEventDynamicRegistration((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class AddBuffModifier : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static AddBuffModifier Create()
+    public static AddBuffModifier? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fc761d5d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddBuffModifier((nint)handle);
     }
 
-    public static AddBuffModifier Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent_Nested.AddBuffModifier arg0)
+    public static AddBuffModifier? Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent_Nested.AddBuffModifier arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d024e3c1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddBuffModifier((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class AddBuffModifier : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_b8f081a0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent_Nested.AddBuffModifier operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent_Nested.AddBuffModifier arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent_Nested.AddBuffModifier? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent_Nested.AddBuffModifier arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent_Nested.AddBuffModifier((nint)NativeMethods.TablePtr->C0.hs_method_d9c66869((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d9c66869((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent_Nested.AddBuffModifier((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

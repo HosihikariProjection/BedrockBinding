@@ -87,12 +87,12 @@ public sealed unsafe partial class GetInteractionPositionForBlockNode : global::
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GetInteractionPositionForBlockNode Create(global::Hosihikari.Bindings.Bedrock.Interop.GetInteractionPositionForBlockNode arg0)
+    public static GetInteractionPositionForBlockNode? Create(global::Hosihikari.Bindings.Bedrock.Interop.GetInteractionPositionForBlockNode arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c3f384e2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GetInteractionPositionForBlockNode((nint)handle);

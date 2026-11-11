@@ -754,12 +754,12 @@ public sealed unsafe partial class Parrot : global::System.IDisposable
     public void _setSitting(bool value) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Parrot Create()
+    public static Parrot? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c825d2b3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Parrot((nint)handle);

@@ -52,12 +52,12 @@ public sealed unsafe partial class ScriptFoodComponent : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_64373e8b((void*)__hosihikari_shim_handle);
     }
 
-    public static ScriptFoodComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptFoodComponent arg0)
+    public static ScriptFoodComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptFoodComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3a1a95da((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptFoodComponent((nint)handle);

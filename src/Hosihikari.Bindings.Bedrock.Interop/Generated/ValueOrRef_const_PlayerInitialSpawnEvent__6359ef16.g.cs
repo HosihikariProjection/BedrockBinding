@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerInitialSpawnEvent_ : g
     public static ValueOrRef_const_PlayerInitialSpawnEvent_ Create_2314cd69(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerInitialSpawnEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerInitialSpawnEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerInitialSpawnEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerInitialSpawnEvent((nint)NativeMethods.TablePtr->C1.hs_method_c7693894((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c7693894((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerInitialSpawnEvent((nint)__hs_handle, false) : null;
     }
 
 

@@ -44,23 +44,23 @@ public sealed unsafe partial class CategoryLogFile : global::System.IDisposable
     public void AddChannel(nint channel) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CategoryLogFile Create()
+    public static CategoryLogFile? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d8d7b236();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CategoryLogFile((nint)handle);
     }
 
-    public static CategoryLogFile Create(global::Hosihikari.Bindings.Bedrock.Interop.BedrockLog.CategoryLogFile arg0)
+    public static CategoryLogFile? Create(global::Hosihikari.Bindings.Bedrock.Interop.BedrockLog.CategoryLogFile arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f5392b87((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CategoryLogFile((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class CategoryLogFile : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_acdd8791((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BedrockLog.CategoryLogFile operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BedrockLog.CategoryLogFile arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BedrockLog.CategoryLogFile? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BedrockLog.CategoryLogFile arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BedrockLog.CategoryLogFile((nint)NativeMethods.TablePtr->C0.hs_method_1e2c96df((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1e2c96df((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BedrockLog.CategoryLogFile((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

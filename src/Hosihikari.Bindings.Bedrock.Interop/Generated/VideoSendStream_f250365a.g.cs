@@ -74,9 +74,10 @@ public sealed unsafe partial class VideoSendStream : global::System.IDisposable
     public nint GetAdaptationResources() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'webrtc::scoped_refptr<webrtc::Resource>' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.Stats GetStats()
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.Stats? GetStats()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_b4a78b12((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b4a78b12((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.Stats((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::VideoEncoderConfig' is not a known bindable declaration.", false)]
@@ -111,12 +112,12 @@ public sealed unsafe partial class VideoSendStream : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_4f0346f6((void*)__hosihikari_shim_handle);
     }
 
-    public static VideoSendStream Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream arg0)
+    public static VideoSendStream? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e3fe86c7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VideoSendStream((nint)handle);

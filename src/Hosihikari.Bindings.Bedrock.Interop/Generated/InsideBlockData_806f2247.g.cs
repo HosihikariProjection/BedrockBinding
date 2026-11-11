@@ -40,23 +40,23 @@ public sealed unsafe partial class InsideBlockData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static InsideBlockData Create()
+    public static InsideBlockData? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b3be897a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InsideBlockData((nint)handle);
     }
 
-    public static InsideBlockData Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockData arg0)
+    public static InsideBlockData? Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f9340253((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InsideBlockData((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class InsideBlockData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_293c865c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockData((nint)NativeMethods.TablePtr->C1.hs_method_a27d1834((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a27d1834((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

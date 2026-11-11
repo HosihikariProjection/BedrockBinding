@@ -40,12 +40,12 @@ public sealed unsafe partial class MovementAbilitiesComponent : global::System.I
         return __hs_handle;
     }
 
-    public static MovementAbilitiesComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.MovementAbilitiesComponent arg0)
+    public static MovementAbilitiesComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.MovementAbilitiesComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0fe5fbc2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MovementAbilitiesComponent((nint)handle);

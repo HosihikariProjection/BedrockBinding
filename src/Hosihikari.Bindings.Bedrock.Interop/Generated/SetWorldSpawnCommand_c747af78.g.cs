@@ -73,12 +73,12 @@ public sealed unsafe partial class SetWorldSpawnCommand : global::System.IDispos
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SetWorldSpawnCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.SetWorldSpawnCommand arg0)
+    public static SetWorldSpawnCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.SetWorldSpawnCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_168020b1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetWorldSpawnCommand((nint)handle);

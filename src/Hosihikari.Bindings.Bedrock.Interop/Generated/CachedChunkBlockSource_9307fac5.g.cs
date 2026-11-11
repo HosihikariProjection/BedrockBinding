@@ -40,23 +40,23 @@ public sealed unsafe partial class CachedChunkBlockSource : global::System.IDisp
         return __hs_handle;
     }
 
-    public static CachedChunkBlockSource Create()
+    public static CachedChunkBlockSource? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_13b99b3a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CachedChunkBlockSource((nint)handle);
     }
 
-    public static CachedChunkBlockSource Create(global::Hosihikari.Bindings.Bedrock.Interop.CachedChunkBlockSource arg0)
+    public static CachedChunkBlockSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.CachedChunkBlockSource arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b8841100((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CachedChunkBlockSource((nint)handle);
@@ -108,9 +108,10 @@ public sealed unsafe partial class CachedChunkBlockSource : global::System.IDisp
         set => NativeMethods.TablePtr->C0.hs_set_ea32eb41((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CachedChunkBlockSource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CachedChunkBlockSource arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CachedChunkBlockSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CachedChunkBlockSource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CachedChunkBlockSource((nint)NativeMethods.TablePtr->C0.hs_method_e27afc60((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e27afc60((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CachedChunkBlockSource((nint)__hs_handle, false) : null;
     }
 
 

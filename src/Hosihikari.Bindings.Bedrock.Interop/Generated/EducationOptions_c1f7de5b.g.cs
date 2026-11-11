@@ -58,12 +58,12 @@ public sealed unsafe partial class EducationOptions : global::System.IDisposable
     public static EducationOptions Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EducationOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.EducationOptions arg0)
+    public static EducationOptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.EducationOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_22153602((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EducationOptions((nint)handle);
@@ -85,9 +85,10 @@ public sealed unsafe partial class EducationOptions : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_66b11cce((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EducationOptions operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EducationOptions arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EducationOptions? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EducationOptions arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EducationOptions((nint)NativeMethods.TablePtr->C1.hs_method_d77ed87a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d77ed87a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EducationOptions((nint)__hs_handle, false) : null;
     }
 
 

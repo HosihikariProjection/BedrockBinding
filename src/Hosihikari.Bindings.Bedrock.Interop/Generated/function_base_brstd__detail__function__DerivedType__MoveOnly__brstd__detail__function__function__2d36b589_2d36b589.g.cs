@@ -40,8 +40,9 @@ public sealed unsafe partial class function_base_brstd__detail__function__Derive
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function.function_base_brstd__detail__function__DerivedType__MoveOnly__brstd__detail__function__function__2d36b589 operator_assign()
+    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function.function_base_brstd__detail__function__DerivedType__MoveOnly__brstd__detail__function__function__2d36b589? operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function.function_base_brstd__detail__function__DerivedType__MoveOnly__brstd__detail__function__function__2d36b589((nint)NativeMethods.TablePtr->C4.hs_method_b3ddbfab((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b3ddbfab((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function.function_base_brstd__detail__function__DerivedType__MoveOnly__brstd__detail__function__function__2d36b589((nint)__hs_handle, false) : null;
     }
 }

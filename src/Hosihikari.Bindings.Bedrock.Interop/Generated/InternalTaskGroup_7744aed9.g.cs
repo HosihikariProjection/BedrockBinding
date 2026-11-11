@@ -68,12 +68,12 @@ public sealed unsafe partial class InternalTaskGroup : global::System.IDisposabl
     public void _taskRegister(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static InternalTaskGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.InternalTaskGroup arg0)
+    public static InternalTaskGroup? Create(global::Hosihikari.Bindings.Bedrock.Interop.InternalTaskGroup arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2b9ee290((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InternalTaskGroup((nint)handle);

@@ -70,12 +70,12 @@ public sealed unsafe partial class CommandPositionFloat : global::System.IDispos
         set => NativeMethods.TablePtr->C0.hs_set_3ee4ad57((void*)__hosihikari_shim_handle, value);
     }
 
-    public static CommandPositionFloat Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandPositionFloat arg0)
+    public static CommandPositionFloat? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandPositionFloat arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_bcbbb7e5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandPositionFloat((nint)handle);

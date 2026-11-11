@@ -40,12 +40,12 @@ public sealed unsafe partial class ChunkBlenderFactory : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static ChunkBlenderFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlenderFactory arg0)
+    public static ChunkBlenderFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlenderFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ca6a9d31((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkBlenderFactory((nint)handle);

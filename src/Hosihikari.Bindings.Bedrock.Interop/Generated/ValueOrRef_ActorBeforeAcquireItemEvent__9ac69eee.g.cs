@@ -48,14 +48,16 @@ public sealed unsafe partial class ValueOrRef_ActorBeforeAcquireItemEvent_ : glo
     public static ValueOrRef_ActorBeforeAcquireItemEvent_ Create_11d4aea2(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<ActorBeforeAcquireItemEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent value_5ad10b5f()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent? value_5ad10b5f()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent((nint)NativeMethods.TablePtr->C1.hs_method_5ad10b5f((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5ad10b5f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent value_cb48b67a()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent? value_cb48b67a()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent((nint)NativeMethods.TablePtr->C1.hs_method_cb48b67a((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cb48b67a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent((nint)__hs_handle, false) : null;
     }
 
 

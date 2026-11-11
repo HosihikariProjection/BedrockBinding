@@ -40,12 +40,12 @@ public sealed unsafe partial class IMinecraftApp : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IMinecraftApp Create(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftApp arg0)
+    public static IMinecraftApp? Create(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftApp arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_90e133c9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IMinecraftApp((nint)handle);

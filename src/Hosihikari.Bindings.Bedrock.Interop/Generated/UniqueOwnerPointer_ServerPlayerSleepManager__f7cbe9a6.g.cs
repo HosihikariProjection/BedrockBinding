@@ -40,12 +40,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ServerPlayerSleepManager_ 
         return __hs_handle;
     }
 
-    public static UniqueOwnerPointer_ServerPlayerSleepManager_ Create()
+    public static UniqueOwnerPointer_ServerPlayerSleepManager_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3be24693();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_ServerPlayerSleepManager_((nint)handle);
@@ -55,12 +55,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ServerPlayerSleepManager_ 
     public static UniqueOwnerPointer_ServerPlayerSleepManager_ Create_a651bb8b(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static UniqueOwnerPointer_ServerPlayerSleepManager_ Create_ce85c23e()
+    public static UniqueOwnerPointer_ServerPlayerSleepManager_? Create_ce85c23e()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ce85c23e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_ServerPlayerSleepManager_((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class UniqueOwnerPointer_ServerPlayerSleepManager_ 
         return NativeMethods.TablePtr->C0.hs_method_582bc399((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerSleepManager operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerSleepManager? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerSleepManager((nint)NativeMethods.TablePtr->C0.hs_method_a7e1a3b6((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a7e1a3b6((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerSleepManager((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerSleepManager? operator_operator__()
@@ -113,9 +114,10 @@ public sealed unsafe partial class UniqueOwnerPointer_ServerPlayerSleepManager_ 
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerPlayerSleepManager_ operator_assign()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerPlayerSleepManager_? operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerPlayerSleepManager_((nint)NativeMethods.TablePtr->C0.hs_method_3f16cac2((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3f16cac2((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerPlayerSleepManager_((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerPlayerSleepManager_ other)

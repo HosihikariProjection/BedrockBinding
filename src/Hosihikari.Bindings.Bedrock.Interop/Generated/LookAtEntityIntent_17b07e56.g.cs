@@ -40,12 +40,12 @@ public sealed unsafe partial class LookAtEntityIntent : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static LookAtEntityIntent Create(global::Hosihikari.Bindings.Bedrock.Interop.sim.LookAtEntityIntent arg0)
+    public static LookAtEntityIntent? Create(global::Hosihikari.Bindings.Bedrock.Interop.sim.LookAtEntityIntent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_968905c2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LookAtEntityIntent((nint)handle);

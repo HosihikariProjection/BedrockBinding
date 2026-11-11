@@ -48,12 +48,12 @@ public sealed unsafe partial class AddActorPacketPayload : global::System.IDispo
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AddActorPacketPayload Create()
+    public static AddActorPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_56fb5610();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddActorPacketPayload((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class AddActorPacketPayload : global::System.IDispo
     public static AddActorPacketPayload Create(nint e) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AddActorPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.AddActorPacketPayload arg0)
+    public static AddActorPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.AddActorPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_909c1612((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddActorPacketPayload((nint)handle);

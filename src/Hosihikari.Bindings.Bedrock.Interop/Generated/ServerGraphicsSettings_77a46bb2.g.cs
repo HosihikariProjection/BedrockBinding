@@ -40,23 +40,23 @@ public sealed unsafe partial class ServerGraphicsSettings : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ServerGraphicsSettings Create()
+    public static ServerGraphicsSettings? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8345c931();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerGraphicsSettings((nint)handle);
     }
 
-    public static ServerGraphicsSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerGraphicsSettings arg0)
+    public static ServerGraphicsSettings? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerGraphicsSettings arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b7301a1c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerGraphicsSettings((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class ServerGraphicsSettings : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C3.hs_get_e4ab1263((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerGraphicsSettings operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerGraphicsSettings arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerGraphicsSettings? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerGraphicsSettings arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerGraphicsSettings((nint)NativeMethods.TablePtr->C3.hs_method_a88a212a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a88a212a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerGraphicsSettings((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

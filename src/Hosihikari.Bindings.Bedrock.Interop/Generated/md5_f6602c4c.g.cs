@@ -117,12 +117,12 @@ public sealed unsafe partial class md5 : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_9923924a((void*)__hosihikari_shim_handle, (void*)result);
     }
 
-    public static md5 Create(global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Hash.md5 arg0)
+    public static md5? Create(global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Hash.md5 arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d0c7454a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new md5((nint)handle);

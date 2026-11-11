@@ -48,12 +48,12 @@ public sealed unsafe partial class CraftingInputContainerValidation : global::Sy
     public int _getContainerSize(nint screenContext, nint container) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CraftingInputContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.CraftingInputContainerValidation arg0)
+    public static CraftingInputContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.CraftingInputContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_829c68b1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CraftingInputContainerValidation((nint)handle);

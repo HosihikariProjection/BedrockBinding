@@ -48,12 +48,12 @@ public sealed unsafe partial class EconomyTradeableComponentDefinition : global:
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EconomyTradeableComponentDefinition Create()
+    public static EconomyTradeableComponentDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1cc040d9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EconomyTradeableComponentDefinition((nint)handle);
@@ -147,9 +147,10 @@ public sealed unsafe partial class EconomyTradeableComponentDefinition : global:
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.EconomyTradeableComponentDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.EconomyTradeableComponentDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.EconomyTradeableComponentDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.EconomyTradeableComponentDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.EconomyTradeableComponentDefinition((nint)NativeMethods.TablePtr->C3.hs_method_656c0d3a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_656c0d3a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.EconomyTradeableComponentDefinition((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

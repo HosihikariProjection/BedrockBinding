@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptAfterEventList : global::System.IDispos
         return __hs_handle;
     }
 
-    public static ScriptAfterEventList Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptAfterEventList arg0)
+    public static ScriptAfterEventList? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptAfterEventList arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4af8b4bd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptAfterEventList((nint)handle);

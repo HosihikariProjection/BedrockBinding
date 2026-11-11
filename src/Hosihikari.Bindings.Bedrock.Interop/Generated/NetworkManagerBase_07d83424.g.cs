@@ -127,23 +127,23 @@ public sealed unsafe partial class NetworkManagerBase : global::System.IDisposab
     public void MergeNetworkList(nint new_networks, nint changed, nint stats) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetworkManagerBase Create()
+    public static NetworkManagerBase? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_53bdfc54();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkManagerBase((nint)handle);
     }
 
-    public static NetworkManagerBase Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManagerBase arg0)
+    public static NetworkManagerBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManagerBase arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2a417885((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkManagerBase((nint)handle);
@@ -202,9 +202,10 @@ public sealed unsafe partial class NetworkManagerBase : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_20d506b0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManagerBase operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManagerBase arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManagerBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManagerBase arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManagerBase((nint)NativeMethods.TablePtr->C4.hs_method_501de7b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_501de7b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkManagerBase((nint)__hs_handle, false) : null;
     }
 
 

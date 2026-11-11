@@ -40,12 +40,12 @@ public sealed unsafe partial class PropertyCollection : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static PropertyCollection Create(global::Hosihikari.Bindings.Bedrock.Interop.DynamicProperties_Nested.PropertyCollection arg0)
+    public static PropertyCollection? Create(global::Hosihikari.Bindings.Bedrock.Interop.DynamicProperties_Nested.PropertyCollection arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d48a9fc4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PropertyCollection((nint)handle);

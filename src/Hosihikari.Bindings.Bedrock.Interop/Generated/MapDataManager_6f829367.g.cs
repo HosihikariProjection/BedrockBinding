@@ -64,12 +64,12 @@ public sealed unsafe partial class MapDataManager : global::System.IDisposable
     public void _requestMapInfo(nint uuid, bool forceUpdate) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MapDataManager Create()
+    public static MapDataManager? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cc67ea95();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MapDataManager((nint)handle);
@@ -79,12 +79,12 @@ public sealed unsafe partial class MapDataManager : global::System.IDisposable
     public static MapDataManager Create(nint dimensionManager, nint levelStorage, nint mapDataManagerOptions, nint getNewUniqueID) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MapDataManager Create(global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager arg0)
+    public static MapDataManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ecad2ea8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MapDataManager((nint)handle);
@@ -111,9 +111,10 @@ public sealed unsafe partial class MapDataManager : global::System.IDisposable
     public bool copyAndLockMap(nint originalMapUuid, nint newMapUuid) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData createMapSavedData(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID uuid)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData? createMapSavedData(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID uuid)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData((nint)NativeMethods.TablePtr->C2.hs_method_a44a09ac((void*)__hosihikari_shim_handle, (void*)uuid.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a44a09ac((void*)__hosihikari_shim_handle, (void*)uuid.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -192,9 +193,10 @@ public sealed unsafe partial class MapDataManager : global::System.IDisposable
     public void onStartLeaveGame() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager((nint)NativeMethods.TablePtr->C2.hs_method_c918436d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c918436d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -44,23 +44,23 @@ public sealed unsafe partial class ResourcePackManagerArgs : global::System.IDis
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ResourcePackManagerArgs Create()
+    public static ResourcePackManagerArgs? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_04b81576();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePackManagerArgs((nint)handle);
     }
 
-    public static ResourcePackManagerArgs Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs arg0)
+    public static ResourcePackManagerArgs? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_87a93f7b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePackManagerArgs((nint)handle);
@@ -96,9 +96,10 @@ public sealed unsafe partial class ResourcePackManagerArgs : global::System.IDis
         set => NativeMethods.TablePtr->C3.hs_set_17b6fdb1((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs((nint)NativeMethods.TablePtr->C3.hs_method_0c4c7496((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0c4c7496((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs((nint)__hs_handle, false) : null;
     }
 
 

@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerRespawnRandomizer : global::System.IDis
         return __hs_handle;
     }
 
-    public static PlayerRespawnRandomizer Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerRespawnRandomizer arg0)
+    public static PlayerRespawnRandomizer? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerRespawnRandomizer arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bbe11eb6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerRespawnRandomizer((nint)handle);

@@ -44,12 +44,12 @@ public sealed unsafe partial class CrashDumpEventData : global::System.IDisposab
     public nint _ctor(nint tag0, nint tag1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CrashDumpEventData Create()
+    public static CrashDumpEventData? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d1562216();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CrashDumpEventData((nint)handle);

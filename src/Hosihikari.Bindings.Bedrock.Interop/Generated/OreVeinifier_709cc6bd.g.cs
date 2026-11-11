@@ -44,23 +44,23 @@ public sealed unsafe partial class OreVeinifier : global::System.IDisposable
     public nint _ctor(nint noiseSource) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OreVeinifier Create()
+    public static OreVeinifier? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_55ef6af7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OreVeinifier((nint)handle);
     }
 
-    public static OreVeinifier Create(global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifier arg0)
+    public static OreVeinifier? Create(global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifier arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6031bcc0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OreVeinifier((nint)handle);
@@ -124,9 +124,10 @@ public sealed unsafe partial class OreVeinifier : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_b77d4e88((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifier operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifier arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifier? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifier arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifier((nint)NativeMethods.TablePtr->C2.hs_method_f9c3bdf8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f9c3bdf8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifier((nint)__hs_handle, false) : null;
     }
 
 

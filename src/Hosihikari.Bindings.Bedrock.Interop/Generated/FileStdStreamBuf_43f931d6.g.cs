@@ -64,23 +64,23 @@ public sealed unsafe partial class FileStdStreamBuf : global::System.IDisposable
     public int _underflow() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileStdStreamBuf Create()
+    public static FileStdStreamBuf? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5c4535c1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileStdStreamBuf((nint)handle);
     }
 
-    public static FileStdStreamBuf Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStdStreamBuf arg0)
+    public static FileStdStreamBuf? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStdStreamBuf arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5e97b9d6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileStdStreamBuf((nint)handle);
@@ -114,9 +114,10 @@ public sealed unsafe partial class FileStdStreamBuf : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_648a27e8((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStdStreamBuf operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStdStreamBuf arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStdStreamBuf? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStdStreamBuf arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStdStreamBuf((nint)NativeMethods.TablePtr->C1.hs_method_b8acc4ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b8acc4ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStdStreamBuf((nint)__hs_handle, false) : null;
     }
 
     public int overflow(int c)

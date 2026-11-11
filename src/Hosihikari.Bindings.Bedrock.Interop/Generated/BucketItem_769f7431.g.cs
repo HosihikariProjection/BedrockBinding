@@ -40,9 +40,10 @@ public sealed unsafe partial class BucketItem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult __useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult? __useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)NativeMethods.TablePtr->C0.hs_method_5a1f9da5((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)pos.Handle, face, handSlot, (void*)clickPos.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5a1f9da5((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)pos.Handle, face, handSlot, (void*)clickPos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -127,9 +128,10 @@ public sealed unsafe partial class BucketItem : global::System.IDisposable
     public static void _replaceWithEmptyBucket(nint instance, nint entity) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult? _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)NativeMethods.TablePtr->C0.hs_method_d41f2e4b((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)pos.Handle, face, handSlot, (void*)clickPos.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d41f2e4b((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)pos.Handle, face, handSlot, (void*)clickPos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle) : null;
     }
 
     public void appendFormattedHovertext(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack, global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString hovertext, bool showCategory)
@@ -153,9 +155,10 @@ public sealed unsafe partial class BucketItem : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_0166e806((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)container.Handle, slot, (void*)pos.Handle, face) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Brightness getLightEmission(int arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Brightness? getLightEmission(int arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)NativeMethods.TablePtr->C0.hs_method_ea6ba9ec((void*)__hosihikari_shim_handle, arg0));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ea6ba9ec((void*)__hosihikari_shim_handle, arg0);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)__hs_handle) : null;
     }
 
     public byte getMaxStackSize(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor arg0)
@@ -198,7 +201,7 @@ public sealed unsafe partial class BucketItem : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_43e0b859((void*)__hosihikari_shim_handle, (void*)inoutInstance.Handle, (void*)(player?.Handle ?? 0), durationLeft);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Item setIconInfo(string name, int id)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Item? setIconInfo(string name, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -213,7 +216,8 @@ public sealed unsafe partial class BucketItem : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)NativeMethods.TablePtr->C0.hs_method_b253cf71((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id), false);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b253cf71((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
         }
     }
 
@@ -222,9 +226,10 @@ public sealed unsafe partial class BucketItem : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_8ae51658((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C0.hs_method_c9bd02b5((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c9bd02b5((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int useTimeDepleted(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack inoutInstance, global::Hosihikari.Bindings.Bedrock.Interop.Level? level, global::Hosihikari.Bindings.Bedrock.Interop.Player? player)

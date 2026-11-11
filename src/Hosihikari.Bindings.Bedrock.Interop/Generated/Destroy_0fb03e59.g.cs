@@ -44,12 +44,12 @@ public sealed unsafe partial class Destroy : global::System.IDisposable
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Destroy Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.Destroy arg0)
+    public static Destroy? Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.Destroy arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7748ab0a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Destroy((nint)handle);

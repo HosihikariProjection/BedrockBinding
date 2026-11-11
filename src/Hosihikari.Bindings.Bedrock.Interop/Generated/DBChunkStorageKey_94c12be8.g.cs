@@ -52,12 +52,12 @@ public sealed unsafe partial class DBChunkStorageKey : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C1.hs_get_ebb9497e((void*)__hosihikari_shim_handle);
     }
 
-    public static DBChunkStorageKey Create(global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorageKey arg0)
+    public static DBChunkStorageKey? Create(global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorageKey arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c4ce7fbc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DBChunkStorageKey((nint)handle);

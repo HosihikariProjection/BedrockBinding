@@ -40,23 +40,23 @@ public sealed unsafe partial class Observer_LevelListCacheObserver__Core__Single
         return __hs_handle;
     }
 
-    public static Observer_LevelListCacheObserver__Core__SingleThreadedLock_ Create()
+    public static Observer_LevelListCacheObserver__Core__SingleThreadedLock_? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9254d936();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Observer_LevelListCacheObserver__Core__SingleThreadedLock_((nint)handle);
     }
 
-    public static Observer_LevelListCacheObserver__Core__SingleThreadedLock_ Create(nint subject)
+    public static Observer_LevelListCacheObserver__Core__SingleThreadedLock_? Create(nint subject)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_02ee2a92((void*)subject);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Observer_LevelListCacheObserver__Core__SingleThreadedLock_((nint)handle);

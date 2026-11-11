@@ -48,12 +48,12 @@ public sealed unsafe partial class FileSystemFileReadAccess : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileSystemFileReadAccess Create(global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess_Nested.FileSystemFileReadAccess arg0)
+    public static FileSystemFileReadAccess? Create(global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess_Nested.FileSystemFileReadAccess arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ecd18317((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileSystemFileReadAccess((nint)handle);

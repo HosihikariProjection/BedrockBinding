@@ -104,66 +104,68 @@ public sealed unsafe partial class optional_ref_unsigned_long_long_ : global::Sy
         return (nint)NativeMethods.TablePtr->C4.hs_method_4fb59797((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_ operator_assign_99d2c22e(nint? arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_? operator_assign_99d2c22e(nint? arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_((nint)NativeMethods.TablePtr->C4.hs_method_99d2c22e((void*)__hosihikari_shim_handle, (void*)(arg0 ?? 0), arg0 is not null), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_99d2c22e((void*)__hosihikari_shim_handle, (void*)(arg0 ?? 0), arg0 is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_ operator_assign_c34bc040(nint? arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_? operator_assign_c34bc040(nint? arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_((nint)NativeMethods.TablePtr->C4.hs_method_c34bc040((void*)__hosihikari_shim_handle, (void*)(arg0 ?? 0), arg0 is not null), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c34bc040((void*)__hosihikari_shim_handle, (void*)(arg0 ?? 0), arg0 is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_((nint)__hs_handle, false) : null;
     }
 
-    public static optional_ref_unsigned_long_long_ Create()
+    public static optional_ref_unsigned_long_long_? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ec1a9bf2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_unsigned_long_long_((nint)handle);
     }
 
-    public static optional_ref_unsigned_long_long_ Create_ae82d274(nint? arg0)
+    public static optional_ref_unsigned_long_long_? Create_ae82d274(nint? arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ae82d274((void*)(arg0 ?? 0), arg0 is not null);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_unsigned_long_long_((nint)handle);
     }
 
-    public static optional_ref_unsigned_long_long_ Create_13f980b9(nint? arg0)
+    public static optional_ref_unsigned_long_long_? Create_13f980b9(nint? arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_13f980b9((void*)(arg0 ?? 0), arg0 is not null);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_unsigned_long_long_((nint)handle);
     }
 
-    public static optional_ref_unsigned_long_long_ Create_45267f06()
+    public static optional_ref_unsigned_long_long_? Create_45267f06()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_45267f06();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_unsigned_long_long_((nint)handle);
     }
 
-    public static optional_ref_unsigned_long_long_ Create_9ccea44a()
+    public static optional_ref_unsigned_long_long_? Create_9ccea44a()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_9ccea44a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_unsigned_long_long_((nint)handle);

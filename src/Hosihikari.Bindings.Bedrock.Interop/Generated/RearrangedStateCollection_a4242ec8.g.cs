@@ -54,12 +54,12 @@ public sealed unsafe partial class RearrangedStateCollection : global::System.ID
     public nint _setState(nint blockType, int blockData, int stateData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RearrangedStateCollection Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockType_Nested.RearrangedStateCollection arg0)
+    public static RearrangedStateCollection? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockType_Nested.RearrangedStateCollection arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4cc9ac40((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RearrangedStateCollection((nint)handle);

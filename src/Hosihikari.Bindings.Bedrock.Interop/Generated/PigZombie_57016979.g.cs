@@ -752,12 +752,12 @@ public sealed unsafe partial class PigZombie : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PigZombie Create()
+    public static PigZombie? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_19deee46();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PigZombie((nint)handle);
@@ -767,9 +767,10 @@ public sealed unsafe partial class PigZombie : global::System.IDisposable
     public static PigZombie Create(nint definitions, nint definitionName, nint entityContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C2.hs_method_dba3a2cc((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_dba3a2cc((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag entityTag)

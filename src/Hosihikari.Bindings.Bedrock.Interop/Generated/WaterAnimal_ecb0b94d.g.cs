@@ -730,12 +730,12 @@ public sealed unsafe partial class WaterAnimal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WaterAnimal Create()
+    public static WaterAnimal? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_df6465ad();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WaterAnimal((nint)handle);

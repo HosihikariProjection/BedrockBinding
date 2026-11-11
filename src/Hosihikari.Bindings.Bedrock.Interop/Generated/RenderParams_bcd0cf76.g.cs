@@ -49,12 +49,12 @@ public sealed unsafe partial class RenderParams : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_a283c966((void*)__hosihikari_shim_handle);
     }
 
-    public static RenderParams Create()
+    public static RenderParams? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e730fa1e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RenderParams((nint)handle);
@@ -64,9 +64,10 @@ public sealed unsafe partial class RenderParams : global::System.IDisposable
     public static RenderParams Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RenderParams init(nint baseActorRenderContext, global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent? animationComponent, global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap? variableMap, global::Hosihikari.Bindings.Abi.SharedHandle? model, float frameAlpha, float modelScale, bool isDitheringEnabled)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RenderParams? init(nint baseActorRenderContext, global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent? animationComponent, global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap? variableMap, global::Hosihikari.Bindings.Abi.SharedHandle? model, float frameAlpha, float modelScale, bool isDitheringEnabled)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RenderParams((nint)NativeMethods.TablePtr->C3.hs_method_845cde5c((void*)__hosihikari_shim_handle, (void*)baseActorRenderContext, (void*)(actor?.Handle ?? 0), (void*)(animationComponent?.Handle ?? 0), (void*)(variableMap?.Handle ?? 0), model?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), frameAlpha, modelScale, isDitheringEnabled), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_845cde5c((void*)__hosihikari_shim_handle, (void*)baseActorRenderContext, (void*)(actor?.Handle ?? 0), (void*)(animationComponent?.Handle ?? 0), (void*)(variableMap?.Handle ?? 0), model?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), frameAlpha, modelScale, isDitheringEnabled);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RenderParams((nint)__hs_handle, false) : null;
     }
 
     public nint mActor

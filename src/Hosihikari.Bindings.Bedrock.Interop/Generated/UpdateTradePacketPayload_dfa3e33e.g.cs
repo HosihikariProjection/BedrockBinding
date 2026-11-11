@@ -44,12 +44,12 @@ public sealed unsafe partial class UpdateTradePacketPayload : global::System.IDi
     public nint _ctor(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UpdateTradePacketPayload Create()
+    public static UpdateTradePacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c68a9c62();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UpdateTradePacketPayload((nint)handle);
@@ -119,9 +119,10 @@ public sealed unsafe partial class UpdateTradePacketPayload : global::System.IDi
         set => NativeMethods.TablePtr->C4.hs_set_ac4e23b9((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.UpdateTradePacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.UpdateTradePacketPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.UpdateTradePacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.UpdateTradePacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UpdateTradePacketPayload((nint)NativeMethods.TablePtr->C4.hs_method_8660dba7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8660dba7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.UpdateTradePacketPayload((nint)__hs_handle, false) : null;
     }
 
 

@@ -40,12 +40,12 @@ public sealed unsafe partial class PathBuffer_std__basic_string_char__ : global:
         return __hs_handle;
     }
 
-    public static PathBuffer_std__basic_string_char__ Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ arg0)
+    public static PathBuffer_std__basic_string_char__? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_952f7a5b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PathBuffer_std__basic_string_char__((nint)handle);

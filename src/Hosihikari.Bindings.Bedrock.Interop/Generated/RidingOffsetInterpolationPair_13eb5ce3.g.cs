@@ -40,23 +40,23 @@ public sealed unsafe partial class RidingOffsetInterpolationPair : global::Syste
         return __hs_handle;
     }
 
-    public static RidingOffsetInterpolationPair Create()
+    public static RidingOffsetInterpolationPair? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2ebe8e45();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RidingOffsetInterpolationPair((nint)handle);
     }
 
-    public static RidingOffsetInterpolationPair Create(global::Hosihikari.Bindings.Bedrock.Interop.RidingOffsetInterpolationPair arg0)
+    public static RidingOffsetInterpolationPair? Create(global::Hosihikari.Bindings.Bedrock.Interop.RidingOffsetInterpolationPair arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d8109f32((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RidingOffsetInterpolationPair((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class RidingOffsetInterpolationPair : global::Syste
         get => (nint)NativeMethods.TablePtr->C3.hs_get_a1a493e8((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RidingOffsetInterpolationPair operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RidingOffsetInterpolationPair arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RidingOffsetInterpolationPair? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RidingOffsetInterpolationPair arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RidingOffsetInterpolationPair((nint)NativeMethods.TablePtr->C3.hs_method_937f26ec((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_937f26ec((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RidingOffsetInterpolationPair((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

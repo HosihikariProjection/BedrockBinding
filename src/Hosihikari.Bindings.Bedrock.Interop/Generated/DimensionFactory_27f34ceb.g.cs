@@ -56,18 +56,18 @@ public sealed unsafe partial class DimensionFactory : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DimensionFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.DimensionFactory arg0)
+    public static DimensionFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.DimensionFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3a303bcf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DimensionFactory((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_ create(string dimensionName)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_? create(string dimensionName)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(dimensionName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -82,13 +82,15 @@ public sealed unsafe partial class DimensionFactory : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(dimensionName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_((nint)NativeMethods.TablePtr->C1.hs_method_60ea0653((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_60ea0653((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_((nint)__hs_handle) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtrFactory_Dimension__DerivedDimensionArguments____ getDimensionOwnerPtrFactory()
+    public global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtrFactory_Dimension__DerivedDimensionArguments____? getDimensionOwnerPtrFactory()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtrFactory_Dimension__DerivedDimensionArguments____((nint)NativeMethods.TablePtr->C1.hs_method_3ca3ddd0((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3ca3ddd0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtrFactory_Dimension__DerivedDimensionArguments____((nint)__hs_handle, false) : null;
     }
 
     public void initializeDimension(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)

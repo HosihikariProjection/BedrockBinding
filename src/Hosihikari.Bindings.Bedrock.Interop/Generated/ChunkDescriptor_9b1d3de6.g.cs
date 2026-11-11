@@ -40,23 +40,23 @@ public sealed unsafe partial class ChunkDescriptor : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ChunkDescriptor Create()
+    public static ChunkDescriptor? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_747aa211();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkDescriptor((nint)handle);
     }
 
-    public static ChunkDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.ChunkDescriptor arg0)
+    public static ChunkDescriptor? Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.ChunkDescriptor arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_043c0ce4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkDescriptor((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class ChunkDescriptor : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_04b4b548((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.ChunkDescriptor operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.ChunkDescriptor arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.ChunkDescriptor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.ChunkDescriptor arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.ChunkDescriptor((nint)NativeMethods.TablePtr->C4.hs_method_b91cc15a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b91cc15a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.ChunkDescriptor((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

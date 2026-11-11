@@ -44,23 +44,23 @@ public sealed unsafe partial class ComponentMetadata : global::System.IDisposabl
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ComponentMetadata Create()
+    public static ComponentMetadata? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_736b036d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComponentMetadata((nint)handle);
     }
 
-    public static ComponentMetadata Create(global::Hosihikari.Bindings.Bedrock.Interop.CerealItemComponentFactory_Nested.ComponentMetadata arg0)
+    public static ComponentMetadata? Create(global::Hosihikari.Bindings.Bedrock.Interop.CerealItemComponentFactory_Nested.ComponentMetadata arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_23cd31b2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComponentMetadata((nint)handle);
@@ -88,9 +88,10 @@ public sealed unsafe partial class ComponentMetadata : global::System.IDisposabl
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CerealItemComponentFactory_Nested.ComponentMetadata operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealItemComponentFactory_Nested.ComponentMetadata arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CerealItemComponentFactory_Nested.ComponentMetadata? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealItemComponentFactory_Nested.ComponentMetadata arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CerealItemComponentFactory_Nested.ComponentMetadata((nint)NativeMethods.TablePtr->C0.hs_method_e930d8c1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e930d8c1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CerealItemComponentFactory_Nested.ComponentMetadata((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

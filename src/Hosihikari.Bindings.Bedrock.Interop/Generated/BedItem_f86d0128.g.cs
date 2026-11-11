@@ -69,9 +69,10 @@ public sealed unsafe partial class BedItem : global::System.IDisposable
     public nint _tryUseOn(nint instance, nint actor, nint pos, byte face, nint clickPos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult? _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)NativeMethods.TablePtr->C0.hs_method_e47761dd((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)pos.Handle, face, handSlot, (void*)clickPos.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e47761dd((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)pos.Handle, face, handSlot, (void*)clickPos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle) : null;
     }
 
     public string buildDescriptionId(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemDescriptor, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? userData)
@@ -80,9 +81,10 @@ public sealed unsafe partial class BedItem : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int arg1, bool arg2)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo? getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int arg1, bool arg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)NativeMethods.TablePtr->C0.hs_method_c1782945((void*)__hosihikari_shim_handle, (void*)item.Handle, arg1, arg2));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c1782945((void*)__hosihikari_shim_handle, (void*)item.Handle, arg1, arg2);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)__hs_handle) : null;
     }
 
     public bool isValidAuxValue(int value)

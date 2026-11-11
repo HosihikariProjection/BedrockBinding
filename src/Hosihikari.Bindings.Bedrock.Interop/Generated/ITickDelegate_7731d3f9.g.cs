@@ -40,12 +40,12 @@ public sealed unsafe partial class ITickDelegate : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ITickDelegate Create(global::Hosihikari.Bindings.Bedrock.Interop.ITickDelegate arg0)
+    public static ITickDelegate? Create(global::Hosihikari.Bindings.Bedrock.Interop.ITickDelegate arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a21858d1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ITickDelegate((nint)handle);

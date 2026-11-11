@@ -44,12 +44,12 @@ public sealed unsafe partial class ResourcePacksInfoPacketPayload : global::Syst
     public nint _ctor(bool resourcePackRequired, nint resourcePacks, bool hasAddonPacks, nint worldTemplateIdVersion, bool forceDisableVibrantVisuals) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ResourcePacksInfoPacketPayload Create()
+    public static ResourcePacksInfoPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_80d28d27();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePacksInfoPacketPayload((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class ResourcePacksInfoPacketPayload : global::Syst
     public static ResourcePacksInfoPacketPayload Create(bool resourcePackRequired, nint resourcePacks, bool hasAddonPacks, nint worldTemplateIdVersion, bool forceDisableVibrantVisuals) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ResourcePacksInfoPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePacksInfoPacketPayload arg0)
+    public static ResourcePacksInfoPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePacksInfoPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e4df7388((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePacksInfoPacketPayload((nint)handle);

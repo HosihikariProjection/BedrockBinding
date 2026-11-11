@@ -40,12 +40,12 @@ public sealed unsafe partial class BlockPlacementFilterComponent : global::Syste
         return __hs_handle;
     }
 
-    public static BlockPlacementFilterComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPlacementFilterComponent arg0)
+    public static BlockPlacementFilterComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPlacementFilterComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e76238e2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockPlacementFilterComponent((nint)handle);

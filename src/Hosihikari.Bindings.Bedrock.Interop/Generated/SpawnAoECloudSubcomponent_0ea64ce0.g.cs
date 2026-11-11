@@ -56,12 +56,12 @@ public sealed unsafe partial class SpawnAoECloudSubcomponent : global::System.ID
     public void _writetoJSON(nint component) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpawnAoECloudSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnAoECloudSubcomponent arg0)
+    public static SpawnAoECloudSubcomponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnAoECloudSubcomponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0ec2a9ed((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnAoECloudSubcomponent((nint)handle);

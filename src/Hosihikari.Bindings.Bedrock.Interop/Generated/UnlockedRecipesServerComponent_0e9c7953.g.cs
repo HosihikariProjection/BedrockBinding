@@ -56,12 +56,12 @@ public sealed unsafe partial class UnlockedRecipesServerComponent : global::Syst
     public static nint USED_CONTEXTS_TAG() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UnlockedRecipesServerComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.UnlockedRecipesServerComponent arg0)
+    public static UnlockedRecipesServerComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.UnlockedRecipesServerComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_fbd5d61a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UnlockedRecipesServerComponent((nint)handle);

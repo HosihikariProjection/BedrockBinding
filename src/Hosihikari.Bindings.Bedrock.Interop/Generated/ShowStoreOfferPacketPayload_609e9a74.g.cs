@@ -40,12 +40,12 @@ public sealed unsafe partial class ShowStoreOfferPacketPayload : global::System.
         return __hs_handle;
     }
 
-    public static ShowStoreOfferPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ShowStoreOfferPacketPayload arg0)
+    public static ShowStoreOfferPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShowStoreOfferPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_dcc18a05((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShowStoreOfferPacketPayload((nint)handle);

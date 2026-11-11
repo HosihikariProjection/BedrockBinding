@@ -40,12 +40,12 @@ public sealed unsafe partial class LessonProgressPacketPayload : global::System.
         return __hs_handle;
     }
 
-    public static LessonProgressPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.LessonProgressPacketPayload arg0)
+    public static LessonProgressPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.LessonProgressPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b8ba84ba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LessonProgressPacketPayload((nint)handle);

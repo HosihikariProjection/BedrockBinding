@@ -40,12 +40,12 @@ public sealed unsafe partial class BlockEventPacketPayload : global::System.IDis
         return __hs_handle;
     }
 
-    public static BlockEventPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockEventPacketPayload arg0)
+    public static BlockEventPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockEventPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0b62eda2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockEventPacketPayload((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptSoundOptions : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static ScriptSoundOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptSoundOptions arg0)
+    public static ScriptSoundOptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptSoundOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c614af79((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptSoundOptions((nint)handle);

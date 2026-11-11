@@ -40,23 +40,23 @@ public sealed unsafe partial class LevelChunkVolumeData : global::System.IDispos
         return __hs_handle;
     }
 
-    public static LevelChunkVolumeData Create()
+    public static LevelChunkVolumeData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f64f1780();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunkVolumeData((nint)handle);
     }
 
-    public static LevelChunkVolumeData Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkVolumeData arg0)
+    public static LevelChunkVolumeData? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkVolumeData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6d7fb1c0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunkVolumeData((nint)handle);
@@ -124,9 +124,10 @@ public sealed unsafe partial class LevelChunkVolumeData : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C2.hs_get_4946127d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkVolumeData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkVolumeData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkVolumeData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkVolumeData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkVolumeData((nint)NativeMethods.TablePtr->C2.hs_method_2ff97fbe((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2ff97fbe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkVolumeData((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos[] structureSpawnPos()

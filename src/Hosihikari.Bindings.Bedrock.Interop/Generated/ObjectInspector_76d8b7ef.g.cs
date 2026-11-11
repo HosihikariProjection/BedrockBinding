@@ -64,23 +64,23 @@ public sealed unsafe partial class ObjectInspector : global::System.IDisposable
     public bool _isSameObject(nint handleA, nint handleB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ObjectInspector Create()
+    public static ObjectInspector? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_72966f46();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ObjectInspector((nint)handle);
     }
 
-    public static ObjectInspector Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectInspector arg0)
+    public static ObjectInspector? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectInspector arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4e6c20af((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ObjectInspector((nint)handle);
@@ -134,9 +134,10 @@ public sealed unsafe partial class ObjectInspector : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_a23fb18c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectInspector operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectInspector arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectInspector? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectInspector arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectInspector((nint)NativeMethods.TablePtr->C3.hs_method_ab0734c7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ab0734c7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectInspector((nint)__hs_handle, false) : null;
     }
 
 

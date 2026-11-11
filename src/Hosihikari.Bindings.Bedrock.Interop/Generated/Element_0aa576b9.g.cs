@@ -40,12 +40,12 @@ public sealed unsafe partial class Element : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Element Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceMaterialAdjustmentAttributes_Nested.Element arg0)
+    public static Element? Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceMaterialAdjustmentAttributes_Nested.Element arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_34723a3c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Element((nint)handle);

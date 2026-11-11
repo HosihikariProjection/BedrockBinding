@@ -56,12 +56,12 @@ public sealed unsafe partial class InventoryContainerValidation : global::System
     public bool _isItemAllowedToRemove(nint screenContext, nint item) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static InventoryContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerValidation arg0)
+    public static InventoryContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_95d87112((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventoryContainerValidation((nint)handle);

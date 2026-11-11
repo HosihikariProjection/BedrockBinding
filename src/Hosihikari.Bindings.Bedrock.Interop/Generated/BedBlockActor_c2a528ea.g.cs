@@ -100,23 +100,23 @@ public sealed unsafe partial class BedBlockActor : global::System.IDisposable
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BedBlockActor Create()
+    public static BedBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3865945e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BedBlockActor((nint)handle);
     }
 
-    public static BedBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BedBlockActor arg0)
+    public static BedBlockActor? Create(global::Hosihikari.Bindings.Bedrock.Interop.BedBlockActor arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ebd6f365((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BedBlockActor((nint)handle);
@@ -186,9 +186,10 @@ public sealed unsafe partial class BedBlockActor : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_48ecefb0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BedBlockActor operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BedBlockActor arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BedBlockActor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BedBlockActor arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BedBlockActor((nint)NativeMethods.TablePtr->C0.hs_method_fbbb5395((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_fbbb5395((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BedBlockActor((nint)__hs_handle, false) : null;
     }
 
     public bool save(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, nint saveContext)

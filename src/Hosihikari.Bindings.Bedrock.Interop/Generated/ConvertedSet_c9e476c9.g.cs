@@ -40,12 +40,12 @@ public sealed unsafe partial class ConvertedSet : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ConvertedSet Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTraitConversionUtils.ConvertedSet arg0)
+    public static ConvertedSet? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTraitConversionUtils.ConvertedSet arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5b6692b6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ConvertedSet((nint)handle);

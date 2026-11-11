@@ -44,12 +44,12 @@ public sealed unsafe partial class ActorDroppedItemEvent : global::System.IDispo
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorDroppedItemEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDroppedItemEvent arg0)
+    public static ActorDroppedItemEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDroppedItemEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_13deb0ab((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDroppedItemEvent((nint)handle);

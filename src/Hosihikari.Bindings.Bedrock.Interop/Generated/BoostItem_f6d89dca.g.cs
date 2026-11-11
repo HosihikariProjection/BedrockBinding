@@ -40,12 +40,12 @@ public sealed unsafe partial class BoostItem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static BoostItem Create(global::Hosihikari.Bindings.Bedrock.Interop.BoostItem arg0)
+    public static BoostItem? Create(global::Hosihikari.Bindings.Bedrock.Interop.BoostItem arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_595c8719((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BoostItem((nint)handle);

@@ -82,12 +82,12 @@ public sealed unsafe partial class ScoreboardEventCoordinator : global::System.I
         set => NativeMethods.TablePtr->C3.hs_set_3e12ed62((void*)__hosihikari_shim_handle, value);
     }
 
-    public static ScoreboardEventCoordinator Create(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardEventCoordinator arg0)
+    public static ScoreboardEventCoordinator? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardEventCoordinator arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c6a09b51((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScoreboardEventCoordinator((nint)handle);

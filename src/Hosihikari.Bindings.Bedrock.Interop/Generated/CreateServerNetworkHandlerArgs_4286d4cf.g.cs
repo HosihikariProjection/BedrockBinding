@@ -40,23 +40,23 @@ public sealed unsafe partial class CreateServerNetworkHandlerArgs : global::Syst
         return __hs_handle;
     }
 
-    public static CreateServerNetworkHandlerArgs Create()
+    public static CreateServerNetworkHandlerArgs? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_116f5a76();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreateServerNetworkHandlerArgs((nint)handle);
     }
 
-    public static CreateServerNetworkHandlerArgs Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateServerNetworkHandlerArgs arg0)
+    public static CreateServerNetworkHandlerArgs? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateServerNetworkHandlerArgs arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d9f566c3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreateServerNetworkHandlerArgs((nint)handle);
@@ -146,9 +146,10 @@ public sealed unsafe partial class CreateServerNetworkHandlerArgs : global::Syst
         set => NativeMethods.TablePtr->C2.hs_set_5f22de35((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateServerNetworkHandlerArgs operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateServerNetworkHandlerArgs arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateServerNetworkHandlerArgs? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateServerNetworkHandlerArgs arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateServerNetworkHandlerArgs((nint)NativeMethods.TablePtr->C2.hs_method_b2e316e5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b2e316e5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateServerNetworkHandlerArgs((nint)__hs_handle, false) : null;
     }
 
 

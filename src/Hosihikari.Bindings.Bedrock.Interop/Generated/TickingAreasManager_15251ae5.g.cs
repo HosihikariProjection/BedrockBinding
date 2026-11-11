@@ -44,12 +44,12 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
     public nint _ctor(nint levelStorage, nint limitPolicy) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TickingAreasManager Create()
+    public static TickingAreasManager? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b046fd48();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TickingAreasManager((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
     public static TickingAreasManager Create(nint levelStorage, nint limitPolicy) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TickingAreasManager Create(global::Hosihikari.Bindings.Bedrock.Interop.TickingAreasManager arg0)
+    public static TickingAreasManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.TickingAreasManager arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3a4f4000((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TickingAreasManager((nint)handle);

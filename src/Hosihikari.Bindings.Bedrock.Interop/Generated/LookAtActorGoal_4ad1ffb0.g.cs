@@ -86,12 +86,12 @@ public sealed unsafe partial class LookAtActorGoal : global::System.IDisposable
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LookAtActorGoal Create()
+    public static LookAtActorGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6916afe4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LookAtActorGoal((nint)handle);
@@ -101,12 +101,12 @@ public sealed unsafe partial class LookAtActorGoal : global::System.IDisposable
     public static LookAtActorGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LookAtActorGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.LookAtActorGoal arg0)
+    public static LookAtActorGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.LookAtActorGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a34f4702((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LookAtActorGoal((nint)handle);
@@ -202,9 +202,10 @@ public sealed unsafe partial class LookAtActorGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_b9621d69((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LookAtActorGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LookAtActorGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LookAtActorGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LookAtActorGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LookAtActorGoal((nint)NativeMethods.TablePtr->C2.hs_method_d6b5f743((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d6b5f743((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LookAtActorGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

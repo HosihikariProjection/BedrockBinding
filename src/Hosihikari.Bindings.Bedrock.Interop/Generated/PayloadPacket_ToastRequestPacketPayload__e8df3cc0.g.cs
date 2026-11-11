@@ -93,12 +93,12 @@ public sealed unsafe partial class PayloadPacket_ToastRequestPacketPayload_ : gl
         get => (nint)NativeMethods.TablePtr->C4.hs_get_6d23e2f2((void*)__hosihikari_shim_handle);
     }
 
-    public static PayloadPacket_ToastRequestPacketPayload_ Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_ToastRequestPacketPayload_ arg0)
+    public static PayloadPacket_ToastRequestPacketPayload_? Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_ToastRequestPacketPayload_ arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0cfa2cd4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PayloadPacket_ToastRequestPacketPayload_((nint)handle);

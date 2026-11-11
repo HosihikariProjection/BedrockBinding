@@ -49,12 +49,12 @@ public sealed unsafe partial class DataChannelInterface : global::System.IDispos
         NativeMethods.TablePtr->C4.hs_method_b71f21db((void*)__hosihikari_shim_handle);
     }
 
-    public static DataChannelInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DataChannelInterface arg0)
+    public static DataChannelInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DataChannelInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_7f930a7c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DataChannelInterface((nint)handle);
@@ -103,9 +103,10 @@ public sealed unsafe partial class DataChannelInterface : global::System.IDispos
         return NativeMethods.TablePtr->C4.hs_method_a14f5782((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError error()
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? error()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_7d69189b((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_7d69189b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
     }
 
     public int id()

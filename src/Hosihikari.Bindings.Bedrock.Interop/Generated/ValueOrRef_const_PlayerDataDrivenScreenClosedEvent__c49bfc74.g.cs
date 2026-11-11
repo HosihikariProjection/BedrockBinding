@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerDataDrivenScreenClosed
     public static ValueOrRef_const_PlayerDataDrivenScreenClosedEvent_ Create_1631ac68(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerDataDrivenScreenClosedEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerDataDrivenScreenClosedEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerDataDrivenScreenClosedEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerDataDrivenScreenClosedEvent((nint)NativeMethods.TablePtr->C1.hs_method_6037515b((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6037515b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerDataDrivenScreenClosedEvent((nint)__hs_handle, false) : null;
     }
 
 

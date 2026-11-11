@@ -40,12 +40,12 @@ public sealed unsafe partial class OnHitSubcomponent : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static OnHitSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.OnHitSubcomponent arg0)
+    public static OnHitSubcomponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.OnHitSubcomponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e90da6e0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OnHitSubcomponent((nint)handle);

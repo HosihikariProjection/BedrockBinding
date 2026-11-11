@@ -44,12 +44,12 @@ public sealed unsafe partial class ChunkLoadActionList : global::System.IDisposa
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ChunkLoadActionList Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkLoadActionList arg0)
+    public static ChunkLoadActionList? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkLoadActionList arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c60c3baa((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkLoadActionList((nint)handle);

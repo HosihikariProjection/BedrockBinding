@@ -84,7 +84,7 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
     public nint NewWritableFile(nint f, nint r) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status RemoveFile(string f)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? RemoveFile(string f)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(f);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -99,11 +99,12 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(f, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_f3494e5a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f3494e5a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status RenameFile(string from, string to)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? RenameFile(string from, string to)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(from);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -131,28 +132,29 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_1bccb894((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1));
+                var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1bccb894((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
             }
         }
     }
 
-    public static SnapshotEnv Create()
+    public static SnapshotEnv? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_359dd779();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SnapshotEnv((nint)handle);
     }
 
-    public static SnapshotEnv Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv arg0)
+    public static SnapshotEnv? Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_504f38b1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SnapshotEnv((nint)handle);
@@ -218,9 +220,10 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_da372d31((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv((nint)NativeMethods.TablePtr->C3.hs_method_e06946d5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e06946d5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

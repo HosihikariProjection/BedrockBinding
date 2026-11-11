@@ -40,23 +40,23 @@ public sealed unsafe partial class function_invoke_brstd__detail__function__Deri
         return __hs_handle;
     }
 
-    public static function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_ Create()
+    public static function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3741c977();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_((nint)handle);
     }
 
-    public static function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_ Create_32bd5317()
+    public static function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_? Create_32bd5317()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_32bd5317();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_((nint)handle);

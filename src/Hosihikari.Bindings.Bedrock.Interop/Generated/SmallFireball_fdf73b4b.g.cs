@@ -606,9 +606,10 @@ public sealed unsafe partial class SmallFireball : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource arg0, float arg1, nint arg2)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource arg0, float arg1, nint arg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C3.hs_method_a491d380((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1, (void*)arg2));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a491d380((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1, (void*)arg2);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
 

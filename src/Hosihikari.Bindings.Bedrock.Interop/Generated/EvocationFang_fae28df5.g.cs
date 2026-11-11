@@ -611,9 +611,10 @@ public sealed unsafe partial class EvocationFang : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_2e58bd6a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getSourceUniqueID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getSourceUniqueID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C1.hs_method_43f418fd((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_43f418fd((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     public void handleEntityEvent(byte id, int data)

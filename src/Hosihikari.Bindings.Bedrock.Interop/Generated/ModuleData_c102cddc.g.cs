@@ -52,12 +52,12 @@ public sealed unsafe partial class ModuleData : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ModuleData Create()
+    public static ModuleData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_aa2d10ff();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ModuleData((nint)handle);
@@ -101,9 +101,10 @@ public sealed unsafe partial class ModuleData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_47e581d9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory_Nested.ModuleData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory_Nested.ModuleData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory_Nested.ModuleData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory_Nested.ModuleData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory_Nested.ModuleData((nint)NativeMethods.TablePtr->C3.hs_method_9ce6936e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9ce6936e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory_Nested.ModuleData((nint)__hs_handle, false) : null;
     }
 
 

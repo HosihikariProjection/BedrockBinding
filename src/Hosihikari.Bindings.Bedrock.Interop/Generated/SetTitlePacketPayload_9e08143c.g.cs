@@ -83,18 +83,18 @@ public sealed unsafe partial class SetTitlePacketPayload : global::System.IDispo
         NativeMethods.TablePtr->C3.hs_method_db98c2a6((void*)__hosihikari_shim_handle);
     }
 
-    public static SetTitlePacketPayload Create()
+    public static SetTitlePacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_feaf269a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetTitlePacketPayload((nint)handle);
     }
 
-    public static SetTitlePacketPayload Create(int type, string titleText, string? filteredTitleText)
+    public static SetTitlePacketPayload? Create(int type, string titleText, string? filteredTitleText)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(titleText);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -125,7 +125,7 @@ public sealed unsafe partial class SetTitlePacketPayload : global::System.IDispo
                 var handle = NativeMethods.TablePtr->C3.hs_create_9cf6bb3a(type, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, filteredTitleText is not null);
                 if (handle == null)
                 {
-                    throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                    return null;
                 }
 
                 return new SetTitlePacketPayload((nint)handle);
@@ -133,12 +133,12 @@ public sealed unsafe partial class SetTitlePacketPayload : global::System.IDispo
         }
     }
 
-    public static SetTitlePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SetTitlePacketPayload arg0)
+    public static SetTitlePacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.SetTitlePacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0d0d16e4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetTitlePacketPayload((nint)handle);
@@ -196,9 +196,10 @@ public sealed unsafe partial class SetTitlePacketPayload : global::System.IDispo
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SetTitlePacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SetTitlePacketPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SetTitlePacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SetTitlePacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SetTitlePacketPayload((nint)NativeMethods.TablePtr->C3.hs_method_cdda38fd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cdda38fd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SetTitlePacketPayload((nint)__hs_handle, false) : null;
     }
 
 

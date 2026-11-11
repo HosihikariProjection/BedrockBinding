@@ -44,12 +44,12 @@ public sealed unsafe partial class EnumData : global::System.IDisposable
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EnumData Create()
+    public static EnumData? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e920e742();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EnumData((nint)handle);
@@ -69,9 +69,10 @@ public sealed unsafe partial class EnumData : global::System.IDisposable
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.EnumData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.EnumData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.EnumData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.EnumData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.EnumData((nint)NativeMethods.TablePtr->C0.hs_method_6e3f6a24((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6e3f6a24((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.EnumData((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

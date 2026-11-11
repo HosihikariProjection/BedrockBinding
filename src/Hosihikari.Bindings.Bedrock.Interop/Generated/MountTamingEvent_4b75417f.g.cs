@@ -40,12 +40,12 @@ public sealed unsafe partial class MountTamingEvent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static MountTamingEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.MountTamingEvent arg0)
+    public static MountTamingEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.MountTamingEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_232f533e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MountTamingEvent((nint)handle);

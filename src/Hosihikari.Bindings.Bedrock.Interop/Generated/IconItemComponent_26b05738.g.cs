@@ -52,12 +52,12 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IconItemComponent Create()
+    public static IconItemComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4032f9fe();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IconItemComponent((nint)handle);
@@ -67,12 +67,12 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
     public static IconItemComponent Create(nint component) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IconItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.IconItemComponent arg0)
+    public static IconItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.IconItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9b9cd4fb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IconItemComponent((nint)handle);

@@ -55,45 +55,45 @@ public sealed unsafe partial class MerchantRecipe : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_353dfbaf((void*)__hosihikari_shim_handle);
     }
 
-    public static MerchantRecipe Create()
+    public static MerchantRecipe? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_227cc4bf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MerchantRecipe((nint)handle);
     }
 
-    public static MerchantRecipe Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buy, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance sell)
+    public static MerchantRecipe? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buy, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance sell)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_020ea772((void*)buy.Handle, (void*)sell.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MerchantRecipe((nint)handle);
     }
 
-    public static MerchantRecipe Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyA, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyB, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance sell)
+    public static MerchantRecipe? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyA, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyB, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance sell)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a70bb8de((void*)buyA.Handle, (void*)buyB.Handle, (void*)sell.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MerchantRecipe((nint)handle);
     }
 
-    public static MerchantRecipe Create(global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe arg0)
+    public static MerchantRecipe? Create(global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_32b48020((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MerchantRecipe((nint)handle);

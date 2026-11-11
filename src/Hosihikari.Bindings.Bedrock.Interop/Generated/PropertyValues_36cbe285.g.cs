@@ -48,12 +48,12 @@ public sealed unsafe partial class PropertyValues : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PropertyValues Create()
+    public static PropertyValues? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8329b187();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PropertyValues((nint)handle);
@@ -91,9 +91,10 @@ public sealed unsafe partial class PropertyValues : global::System.IDisposable
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PropertyValues operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PropertyValues arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PropertyValues? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PropertyValues arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PropertyValues((nint)NativeMethods.TablePtr->C2.hs_method_06fe4984((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_06fe4984((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PropertyValues((nint)__hs_handle, false) : null;
     }
 
 

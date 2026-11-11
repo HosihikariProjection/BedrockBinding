@@ -56,12 +56,12 @@ public sealed unsafe partial class StringRequestBody : global::System.IDisposabl
     public nint _getLoggableData() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StringRequestBody Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.StringRequestBody arg0)
+    public static StringRequestBody? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.StringRequestBody arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5b4bb3a1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StringRequestBody((nint)handle);

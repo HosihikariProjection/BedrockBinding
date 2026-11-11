@@ -128,12 +128,12 @@ public sealed unsafe partial class ResourcePackLoader : global::System.IDisposab
         }
     }
 
-    public static ResourcePackLoader Create()
+    public static ResourcePackLoader? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3b4fb8e3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePackLoader((nint)handle);
@@ -151,12 +151,13 @@ public sealed unsafe partial class ResourcePackLoader : global::System.IDisposab
     public nint getPacksWhereAssetExtractionNotViable(nint getContentKey, nint sourceContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_0a868a16((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0a868a16((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, string[] extensionList)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, string[] extensionList)
     {
         var __hs_vectorItems1 = extensionList ?? global::System.Array.Empty<string>();
         var __hs_vectorCount1 = __hs_vectorItems1.Length;
@@ -178,13 +179,15 @@ public sealed unsafe partial class ResourcePackLoader : global::System.IDisposab
                 __hs_vectorData1[__hs_i1] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr1 + __hs_vectorOffset1, Size = (nuint)__hs_length1 };
                 __hs_vectorOffset1 += __hs_length1;
             }
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_06e28cd7((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_vectorData1, (nuint)(extensionList?.Length ?? 0)));
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_06e28cd7((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_vectorData1, (nuint)(extensionList?.Length ?? 0));
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPathContainingResource(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getPathContainingResource(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_ff266d6c((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ff266d6c((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

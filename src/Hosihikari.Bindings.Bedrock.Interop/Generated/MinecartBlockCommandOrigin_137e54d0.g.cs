@@ -122,12 +122,12 @@ public sealed unsafe partial class MinecartBlockCommandOrigin : global::System.I
     public nint _serialize() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinecartBlockCommandOrigin Create()
+    public static MinecartBlockCommandOrigin? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_53b5da38();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecartBlockCommandOrigin((nint)handle);
@@ -141,12 +141,12 @@ public sealed unsafe partial class MinecartBlockCommandOrigin : global::System.I
     public static MinecartBlockCommandOrigin Create(nint level, nint dimensionType, nint name, nint pos, nint minecartId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinecartBlockCommandOrigin Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecartBlockCommandOrigin arg0)
+    public static MinecartBlockCommandOrigin? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecartBlockCommandOrigin arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f47c962d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecartBlockCommandOrigin((nint)handle);
@@ -173,9 +173,10 @@ public sealed unsafe partial class MinecartBlockCommandOrigin : global::System.I
     public nint clone() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CommandOrigin' has no accessible destructor.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getBlockPosition()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getBlockPosition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C2.hs_method_70725769((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_70725769((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? getEntity()
@@ -196,9 +197,10 @@ public sealed unsafe partial class MinecartBlockCommandOrigin : global::System.I
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getWorldPosition()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getWorldPosition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_668d4769((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_668d4769((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public bool isValid()
@@ -212,9 +214,10 @@ public sealed unsafe partial class MinecartBlockCommandOrigin : global::System.I
         get => (nint)NativeMethods.TablePtr->C2.hs_get_62a59cf2((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag serialize()
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? serialize()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)NativeMethods.TablePtr->C2.hs_method_3fed0536((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3fed0536((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
     }
 
 

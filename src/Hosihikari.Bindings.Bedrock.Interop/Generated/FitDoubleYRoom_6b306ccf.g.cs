@@ -48,12 +48,12 @@ public sealed unsafe partial class FitDoubleYRoom : global::System.IDisposable
     public bool _fits(nint definition) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FitDoubleYRoom Create(global::Hosihikari.Bindings.Bedrock.Interop.FitDoubleYRoom arg0)
+    public static FitDoubleYRoom? Create(global::Hosihikari.Bindings.Bedrock.Interop.FitDoubleYRoom arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6b94928e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FitDoubleYRoom((nint)handle);

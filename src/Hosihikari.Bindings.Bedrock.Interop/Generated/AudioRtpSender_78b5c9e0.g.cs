@@ -126,23 +126,23 @@ public sealed unsafe partial class AudioRtpSender : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_503733ec((void*)__hosihikari_shim_handle);
     }
 
-    public static AudioRtpSender Create()
+    public static AudioRtpSender? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f6f0cdd1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AudioRtpSender((nint)handle);
     }
 
-    public static AudioRtpSender Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpSender arg0)
+    public static AudioRtpSender? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpSender arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f73e61d4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AudioRtpSender((nint)handle);
@@ -171,7 +171,7 @@ public sealed unsafe partial class AudioRtpSender : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_3fdc34a4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError GenerateKeyFrame(string[] rids)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? GenerateKeyFrame(string[] rids)
     {
         var __hs_vectorItems0 = rids ?? global::System.Array.Empty<string>();
         var __hs_vectorCount0 = __hs_vectorItems0.Length;
@@ -193,7 +193,8 @@ public sealed unsafe partial class AudioRtpSender : global::System.IDisposable
                 __hs_vectorData0[__hs_i0] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr0 + __hs_vectorOffset0, Size = (nuint)__hs_length0 };
                 __hs_vectorOffset0 += __hs_length0;
             }
-            return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_9f02b692((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(rids?.Length ?? 0)));
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_9f02b692((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(rids?.Length ?? 0));
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
         }
     }
 
@@ -256,9 +257,10 @@ public sealed unsafe partial class AudioRtpSender : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_a63a9ed1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpSender operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpSender arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpSender? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpSender arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpSender((nint)NativeMethods.TablePtr->C4.hs_method_87e25f78((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_87e25f78((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpSender((nint)__hs_handle, false) : null;
     }
 
     public string track_kind()

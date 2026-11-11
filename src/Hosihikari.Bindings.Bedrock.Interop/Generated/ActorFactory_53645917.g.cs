@@ -44,12 +44,12 @@ public sealed unsafe partial class ActorFactory : global::System.IDisposable
     public nint _ctor(nint level, nint experiments) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorFactory Create()
+    public static ActorFactory? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2d8e6f3c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorFactory((nint)handle);

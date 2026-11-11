@@ -73,12 +73,12 @@ public sealed unsafe partial class GlobalPauseCommand : global::System.IDisposab
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GlobalPauseCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.GlobalPauseCommand arg0)
+    public static GlobalPauseCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.GlobalPauseCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f6fa3ec5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GlobalPauseCommand((nint)handle);

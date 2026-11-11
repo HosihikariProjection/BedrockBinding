@@ -178,12 +178,12 @@ public sealed unsafe partial class UnderwaterCaveFeature : global::System.IDispo
     public bool _carveEllipsoidVolume(nint target, nint arg1, nint random, nint pos, nint startPos, nint volume, float rad, float yRad, nint carveValues) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UnderwaterCaveFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.UnderwaterCaveFeature arg0)
+    public static UnderwaterCaveFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.UnderwaterCaveFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_90ecd2b0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UnderwaterCaveFeature((nint)handle);

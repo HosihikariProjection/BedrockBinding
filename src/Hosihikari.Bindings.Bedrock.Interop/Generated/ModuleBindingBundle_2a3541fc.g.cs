@@ -40,12 +40,12 @@ public sealed unsafe partial class ModuleBindingBundle : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static ModuleBindingBundle Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBindingBundle arg0)
+    public static ModuleBindingBundle? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBindingBundle arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_66cf75ae((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ModuleBindingBundle((nint)handle);

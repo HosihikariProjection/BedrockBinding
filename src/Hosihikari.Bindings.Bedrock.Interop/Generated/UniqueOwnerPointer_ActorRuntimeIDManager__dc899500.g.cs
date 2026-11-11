@@ -40,12 +40,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorRuntimeIDManager_ : g
         return __hs_handle;
     }
 
-    public static UniqueOwnerPointer_ActorRuntimeIDManager_ Create()
+    public static UniqueOwnerPointer_ActorRuntimeIDManager_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d9f55905();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_ActorRuntimeIDManager_((nint)handle);
@@ -55,12 +55,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorRuntimeIDManager_ : g
     public static UniqueOwnerPointer_ActorRuntimeIDManager_ Create_944941d7(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static UniqueOwnerPointer_ActorRuntimeIDManager_ Create_074f99c0()
+    public static UniqueOwnerPointer_ActorRuntimeIDManager_? Create_074f99c0()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_074f99c0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_ActorRuntimeIDManager_((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorRuntimeIDManager_ : g
         return NativeMethods.TablePtr->C0.hs_method_28bdb5cc((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager((nint)NativeMethods.TablePtr->C0.hs_method_fdc09f28((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_fdc09f28((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager? operator_operator__()
@@ -113,9 +114,10 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorRuntimeIDManager_ : g
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ActorRuntimeIDManager_ operator_assign()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ActorRuntimeIDManager_? operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ActorRuntimeIDManager_((nint)NativeMethods.TablePtr->C0.hs_method_9f684c7b((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9f684c7b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ActorRuntimeIDManager_((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ActorRuntimeIDManager_ other)

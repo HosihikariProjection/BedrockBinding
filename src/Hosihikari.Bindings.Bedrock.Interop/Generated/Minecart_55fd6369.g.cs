@@ -654,12 +654,12 @@ public sealed unsafe partial class Minecart : global::System.IDisposable
     public void _reloadHardcodedClient(nint method) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Minecart Create()
+    public static Minecart? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_157fc704();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Minecart((nint)handle);
@@ -669,9 +669,10 @@ public sealed unsafe partial class Minecart : global::System.IDisposable
     public static Minecart Create(nint definitions, nint definitionName, nint entityContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C2.hs_method_6a9e6821((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6a9e6821((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public void _lazyInitDisplayBlock()
@@ -703,9 +704,10 @@ public sealed unsafe partial class Minecart : global::System.IDisposable
     public void dropMinecartWithContentsAndRemove(nint vanillaMinecartName, bool dropMinecartComponents) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getControllingPlayer()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getControllingPlayer()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C2.hs_method_d80da32e((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d80da32e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getDefaultDisplayBlock()

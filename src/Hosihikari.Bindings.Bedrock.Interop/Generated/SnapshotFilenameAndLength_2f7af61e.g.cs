@@ -44,23 +44,23 @@ public sealed unsafe partial class SnapshotFilenameAndLength : global::System.ID
     public nint _ctor(nint filename, ulong filesize) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SnapshotFilenameAndLength Create()
+    public static SnapshotFilenameAndLength? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6efdd89b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SnapshotFilenameAndLength((nint)handle);
     }
 
-    public static SnapshotFilenameAndLength Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength arg0)
+    public static SnapshotFilenameAndLength? Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_aa7bd58d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SnapshotFilenameAndLength((nint)handle);
@@ -82,9 +82,10 @@ public sealed unsafe partial class SnapshotFilenameAndLength : global::System.ID
         get => (nint)NativeMethods.TablePtr->C3.hs_get_da7eda21((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength((nint)NativeMethods.TablePtr->C3.hs_method_17659b77((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_17659b77((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

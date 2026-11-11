@@ -60,12 +60,12 @@ public sealed unsafe partial class Localization : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Localization Create()
+    public static Localization? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1b20c5c7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Localization((nint)handle);
@@ -87,7 +87,7 @@ public sealed unsafe partial class Localization : global::System.IDisposable
     public static Localization Create(nint code, nint fallbackLocale) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OptionalString _get(string id, string[] @params)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OptionalString? _get(string id, string[] @params)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(id);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -122,7 +122,8 @@ public sealed unsafe partial class Localization : global::System.IDisposable
             }
             fixed (byte* __hs_stringData0 = __hs_stringBytes0)
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.OptionalString((nint)NativeMethods.TablePtr->C2.hs_method_1aadf153((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_vectorData1, (nuint)(@params?.Length ?? 0)));
+                var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1aadf153((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_vectorData1, (nuint)(@params?.Length ?? 0));
+                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OptionalString((nint)__hs_handle) : null;
             }
         }
     }
@@ -131,7 +132,7 @@ public sealed unsafe partial class Localization : global::System.IDisposable
     public static nint _getDigitGroupSeparator(nint langCode) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OptionalString _getSimple(string id)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OptionalString? _getSimple(string id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(id);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -146,7 +147,8 @@ public sealed unsafe partial class Localization : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(id, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.OptionalString((nint)NativeMethods.TablePtr->C2.hs_method_c859c404((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c859c404((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OptionalString((nint)__hs_handle) : null;
         }
     }
 
@@ -295,9 +297,10 @@ public sealed unsafe partial class Localization : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_9b3b8197((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Localization operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Localization arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Localization? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Localization arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Localization((nint)NativeMethods.TablePtr->C2.hs_method_149ba593((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_149ba593((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Localization((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

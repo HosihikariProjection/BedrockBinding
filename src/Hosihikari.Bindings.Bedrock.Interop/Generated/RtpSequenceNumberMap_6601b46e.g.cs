@@ -56,23 +56,23 @@ public sealed unsafe partial class RtpSequenceNumberMap : global::System.IDispos
     public void InsertPacket(ushort sequence_number, nint info) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RtpSequenceNumberMap Create()
+    public static RtpSequenceNumberMap? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4bebb97b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RtpSequenceNumberMap((nint)handle);
     }
 
-    public static RtpSequenceNumberMap Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap arg0)
+    public static RtpSequenceNumberMap? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0a9299c1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RtpSequenceNumberMap((nint)handle);
@@ -94,9 +94,10 @@ public sealed unsafe partial class RtpSequenceNumberMap : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C4.hs_get_481d0eae((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap((nint)NativeMethods.TablePtr->C4.hs_method_2916ebd5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2916ebd5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap((nint)__hs_handle, false) : null;
     }
 
 

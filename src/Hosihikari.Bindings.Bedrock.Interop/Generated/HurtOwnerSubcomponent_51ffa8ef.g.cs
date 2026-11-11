@@ -56,12 +56,12 @@ public sealed unsafe partial class HurtOwnerSubcomponent : global::System.IDispo
     public void _writetoJSON(nint component) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static HurtOwnerSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.HurtOwnerSubcomponent arg0)
+    public static HurtOwnerSubcomponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.HurtOwnerSubcomponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f49b0db4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HurtOwnerSubcomponent((nint)handle);

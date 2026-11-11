@@ -106,23 +106,23 @@ public sealed unsafe partial class WebRtcNetworkStatus : global::System.IDisposa
         set => NativeMethods.TablePtr->C4.hs_set_aabf14f4((void*)__hosihikari_shim_handle, value);
     }
 
-    public static WebRtcNetworkStatus Create()
+    public static WebRtcNetworkStatus? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_373e25bc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WebRtcNetworkStatus((nint)handle);
     }
 
-    public static WebRtcNetworkStatus Create(global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer_Nested.WebRtcNetworkStatus arg0)
+    public static WebRtcNetworkStatus? Create(global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer_Nested.WebRtcNetworkStatus arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f81e3a4b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WebRtcNetworkStatus((nint)handle);
@@ -134,9 +134,10 @@ public sealed unsafe partial class WebRtcNetworkStatus : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C4.hs_get_bb901926((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer_Nested.WebRtcNetworkStatus operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer_Nested.WebRtcNetworkStatus arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer_Nested.WebRtcNetworkStatus? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer_Nested.WebRtcNetworkStatus arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer_Nested.WebRtcNetworkStatus((nint)NativeMethods.TablePtr->C4.hs_method_de62eab3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_de62eab3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer_Nested.WebRtcNetworkStatus((nint)__hs_handle, false) : null;
     }
 
 

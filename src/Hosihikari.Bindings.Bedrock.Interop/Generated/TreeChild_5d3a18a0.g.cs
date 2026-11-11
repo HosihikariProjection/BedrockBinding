@@ -40,23 +40,23 @@ public sealed unsafe partial class TreeChild : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TreeChild Create()
+    public static TreeChild? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2b9c89bf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TreeChild((nint)handle);
     }
 
-    public static TreeChild Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreasTree_Nested.TreeChild arg0)
+    public static TreeChild? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreasTree_Nested.TreeChild arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_65ce191b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TreeChild((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class TreeChild : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_16257825((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreasTree_Nested.TreeChild operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreasTree_Nested.TreeChild arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreasTree_Nested.TreeChild? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreasTree_Nested.TreeChild arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreasTree_Nested.TreeChild((nint)NativeMethods.TablePtr->C1.hs_method_5affe06d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5affe06d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreasTree_Nested.TreeChild((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

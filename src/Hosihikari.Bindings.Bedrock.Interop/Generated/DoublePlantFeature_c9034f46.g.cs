@@ -44,12 +44,12 @@ public sealed unsafe partial class DoublePlantFeature : global::System.IDisposab
     public bool _place(nint region, nint pos, nint random) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DoublePlantFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.DoublePlantFeature arg0)
+    public static DoublePlantFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.DoublePlantFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_0a0bbfd5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DoublePlantFeature((nint)handle);

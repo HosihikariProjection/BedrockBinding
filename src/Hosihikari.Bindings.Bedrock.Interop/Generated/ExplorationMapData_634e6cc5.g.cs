@@ -48,12 +48,12 @@ public sealed unsafe partial class ExplorationMapData : global::System.IDisposab
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExplorationMapData Create()
+    public static ExplorationMapData? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_81fcc399();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExplorationMapData((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class ExplorationMapData : global::System.IDisposab
     public static ExplorationMapData Create(nint mapType, nint markerType, nint featureName, nint structureType, bool featureMustBeInNewChunks, nint biomeTag, int searchRadiusCells) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExplorationMapData Create(global::Hosihikari.Bindings.Bedrock.Interop.ExplorationMapData arg0)
+    public static ExplorationMapData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ExplorationMapData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4dc5f6f2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExplorationMapData((nint)handle);

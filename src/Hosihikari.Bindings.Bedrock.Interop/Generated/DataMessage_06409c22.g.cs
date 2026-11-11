@@ -40,23 +40,23 @@ public sealed unsafe partial class DataMessage : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static DataMessage Create()
+    public static DataMessage? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_08b6f3e7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DataMessage((nint)handle);
     }
 
-    public static DataMessage Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.DataMessage arg0)
+    public static DataMessage? Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.DataMessage arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f3e4c83f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DataMessage((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class DataMessage : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c352c2bd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.DataMessage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.DataMessage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.DataMessage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.DataMessage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.DataMessage((nint)NativeMethods.TablePtr->C0.hs_method_d2bd59ae((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d2bd59ae((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.DataMessage((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

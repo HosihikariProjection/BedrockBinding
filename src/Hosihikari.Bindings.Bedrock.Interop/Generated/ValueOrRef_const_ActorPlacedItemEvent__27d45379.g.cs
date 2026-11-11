@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ActorPlacedItemEvent_ : glob
     public static ValueOrRef_const_ActorPlacedItemEvent_ Create_82845b5e(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ActorPlacedItemEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorPlacedItemEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorPlacedItemEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorPlacedItemEvent((nint)NativeMethods.TablePtr->C1.hs_method_c8711254((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c8711254((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorPlacedItemEvent((nint)__hs_handle, false) : null;
     }
 
 

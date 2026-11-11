@@ -44,12 +44,12 @@ public sealed unsafe partial class ReplaceRule : global::System.IDisposable
     public nint _ctor(nint block, nint mayReplace) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ReplaceRule Create()
+    public static ReplaceRule? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_162c76f4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReplaceRule((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class ReplaceRule : global::System.IDisposable
     public static ReplaceRule Create(nint block, nint mayReplace) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ReplaceRule Create(global::Hosihikari.Bindings.Bedrock.Interop.ReplaceRule arg0)
+    public static ReplaceRule? Create(global::Hosihikari.Bindings.Bedrock.Interop.ReplaceRule arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_02aa0756((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReplaceRule((nint)handle);

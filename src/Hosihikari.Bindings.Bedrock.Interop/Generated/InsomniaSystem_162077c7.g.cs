@@ -44,12 +44,12 @@ public sealed unsafe partial class InsomniaSystem : global::System.IDisposable
     public void _tick(nint registry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static InsomniaSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.InsomniaSystem arg0)
+    public static InsomniaSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.InsomniaSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2a5c9f9e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InsomniaSystem((nint)handle);

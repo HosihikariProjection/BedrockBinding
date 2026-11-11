@@ -102,12 +102,12 @@ public sealed unsafe partial class BatchedNetworkPeer : global::System.IDisposab
     public void _update() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BatchedNetworkPeer Create()
+    public static BatchedNetworkPeer? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_31ebc378();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BatchedNetworkPeer((nint)handle);
@@ -148,9 +148,10 @@ public sealed unsafe partial class BatchedNetworkPeer : global::System.IDisposab
     public void flush(nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus getNetworkStatus()
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus? getNetworkStatus()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)NativeMethods.TablePtr->C0.hs_method_7c224024((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7c224024((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)__hs_handle) : null;
     }
 
     public bool mAsyncEnabled

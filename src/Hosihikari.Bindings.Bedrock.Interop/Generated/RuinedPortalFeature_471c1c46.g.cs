@@ -57,12 +57,12 @@ public sealed unsafe partial class RuinedPortalFeature : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RuinedPortalFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.RuinedPortalFeature arg0)
+    public static RuinedPortalFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.RuinedPortalFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_054a5c18((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RuinedPortalFeature((nint)handle);

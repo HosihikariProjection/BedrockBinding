@@ -157,34 +157,34 @@ public sealed unsafe partial class FurnaceContainerManagerModel : global::System
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FurnaceContainerManagerModel Create()
+    public static FurnaceContainerManagerModel? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_86b81eb5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FurnaceContainerManagerModel((nint)handle);
     }
 
-    public static FurnaceContainerManagerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceContainerManagerModel arg0)
+    public static FurnaceContainerManagerModel? Create(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceContainerManagerModel arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fc3a72ac((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FurnaceContainerManagerModel((nint)handle);
     }
 
-    public static FurnaceContainerManagerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.HashedString recipeTag, sbyte containerType, byte blockActorType, sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
+    public static FurnaceContainerManagerModel? Create(global::Hosihikari.Bindings.Bedrock.Interop.HashedString recipeTag, sbyte containerType, byte blockActorType, sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8113247c((void*)recipeTag.Handle, containerType, blockActorType, containerId, (void*)player.Handle, (void*)blockPos.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FurnaceContainerManagerModel((nint)handle);
@@ -207,9 +207,10 @@ public sealed unsafe partial class FurnaceContainerManagerModel : global::System
     public void _populateRecipeBook() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext _postInit()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext? _postInit()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C1.hs_method_efba56d9((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_efba56d9((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle) : null;
     }
 
     public void broadcastChanges()
@@ -221,9 +222,10 @@ public sealed unsafe partial class FurnaceContainerManagerModel : global::System
     public nint getItemCopies() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getSlot(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getSlot(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_d6f670ae((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d6f670ae((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public bool isValid(float pickRange)

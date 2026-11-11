@@ -140,23 +140,23 @@ public sealed unsafe partial class LevelContainerModel : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static LevelContainerModel Create()
+    public static LevelContainerModel? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0169a969();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelContainerModel((nint)handle);
     }
 
-    public static LevelContainerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelContainerModel arg0)
+    public static LevelContainerModel? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelContainerModel arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e55206c2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelContainerModel((nint)handle);
@@ -195,9 +195,10 @@ public sealed unsafe partial class LevelContainerModel : global::System.IDisposa
     public static nint getContainerHelper(nint player, nint actorUniqueId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef getContainerWeakRef()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef? getContainerWeakRef()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)NativeMethods.TablePtr->C2.hs_method_c4bc4e1e((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c4bc4e1e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)__hs_handle) : null;
     }
 
     public bool isSlotDisabled(int slot)
@@ -240,9 +241,10 @@ public sealed unsafe partial class LevelContainerModel : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C2.hs_get_4c14d554((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelContainerModel operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelContainerModel arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelContainerModel? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelContainerModel arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelContainerModel((nint)NativeMethods.TablePtr->C2.hs_method_931f801d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_931f801d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelContainerModel((nint)__hs_handle, false) : null;
     }
 
     public void postInit()

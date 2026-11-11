@@ -60,31 +60,32 @@ public sealed unsafe partial class ActorInWeatherTest : global::System.IDisposab
     public bool _setup(nint definition, nint inputs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorInWeatherTest Create()
+    public static ActorInWeatherTest? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9a8b6c10();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorInWeatherTest((nint)handle);
     }
 
-    public static ActorInWeatherTest Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorInWeatherTest arg0)
+    public static ActorInWeatherTest? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorInWeatherTest arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_230299ed((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorInWeatherTest((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _serializeValue()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C0.hs_method_c7c6fc1b((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c7c6fc1b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
     public bool evaluate(nint context)
@@ -108,9 +109,10 @@ public sealed unsafe partial class ActorInWeatherTest : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C0.hs_get_19a2d862((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorInWeatherTest operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorInWeatherTest arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorInWeatherTest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorInWeatherTest arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorInWeatherTest((nint)NativeMethods.TablePtr->C0.hs_method_f1b62d97((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f1b62d97((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorInWeatherTest((nint)__hs_handle, false) : null;
     }
 
     public bool setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)

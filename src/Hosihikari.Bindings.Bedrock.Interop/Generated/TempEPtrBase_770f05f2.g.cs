@@ -52,23 +52,23 @@ public sealed unsafe partial class TempEPtrBase : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TempEPtrBase Create()
+    public static TempEPtrBase? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a355d18a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TempEPtrBase((nint)handle);
     }
 
-    public static TempEPtrBase Create(global::Hosihikari.Bindings.Bedrock.Interop.TempEPtrBase arg0)
+    public static TempEPtrBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.TempEPtrBase arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7c9eed9b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TempEPtrBase((nint)handle);

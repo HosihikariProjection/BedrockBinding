@@ -40,12 +40,12 @@ public sealed unsafe partial class ItemNameDescriptorData : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ItemNameDescriptorData Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.ItemNameDescriptorData arg0)
+    public static ItemNameDescriptorData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.ItemNameDescriptorData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7a9689f8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemNameDescriptorData((nint)handle);

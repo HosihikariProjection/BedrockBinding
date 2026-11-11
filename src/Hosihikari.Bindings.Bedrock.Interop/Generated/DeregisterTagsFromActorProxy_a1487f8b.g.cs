@@ -44,12 +44,12 @@ public sealed unsafe partial class DeregisterTagsFromActorProxy : global::System
     public void _deregisterTagsFromActor(nint actor) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DeregisterTagsFromActorProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.DeregisterTagsFromActorProxy arg0)
+    public static DeregisterTagsFromActorProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.DeregisterTagsFromActorProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a7f37478((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DeregisterTagsFromActorProxy((nint)handle);

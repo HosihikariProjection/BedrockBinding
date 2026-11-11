@@ -44,12 +44,12 @@ public sealed unsafe partial class CreativeContentPacketPayload : global::System
     public nint _ctor(nint creativeItemRegistryForWrite) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CreativeContentPacketPayload Create()
+    public static CreativeContentPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9a4e651a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreativeContentPacketPayload((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class CreativeContentPacketPayload : global::System
     public static CreativeContentPacketPayload Create(nint creativeItemRegistryForWrite) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CreativeContentPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.CreativeContentPacketPayload arg0)
+    public static CreativeContentPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.CreativeContentPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_89f54c57((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreativeContentPacketPayload((nint)handle);

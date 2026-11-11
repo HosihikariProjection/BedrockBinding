@@ -46,12 +46,12 @@ public sealed unsafe partial class ImguiProfiler : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_fcfaa41f((void*)__hosihikari_shim_handle);
     }
 
-    public static ImguiProfiler Create(global::Hosihikari.Bindings.Bedrock.Interop.ImguiProfiler arg0)
+    public static ImguiProfiler? Create(global::Hosihikari.Bindings.Bedrock.Interop.ImguiProfiler arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_efdd3588((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ImguiProfiler((nint)handle);

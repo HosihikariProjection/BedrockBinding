@@ -44,12 +44,12 @@ public sealed unsafe partial class UrlAction : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UrlAction Create(global::Hosihikari.Bindings.Bedrock.Interop.npc.UrlAction arg0)
+    public static UrlAction? Create(global::Hosihikari.Bindings.Bedrock.Interop.npc.UrlAction arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5313b6cf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UrlAction((nint)handle);

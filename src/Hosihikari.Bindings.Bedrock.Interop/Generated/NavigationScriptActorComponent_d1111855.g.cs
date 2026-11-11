@@ -116,12 +116,12 @@ public sealed unsafe partial class NavigationScriptActorComponent : global::Syst
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NavigationScriptActorComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.NavigationScriptActorComponent arg0)
+    public static NavigationScriptActorComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.NavigationScriptActorComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d36b4abb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NavigationScriptActorComponent((nint)handle);

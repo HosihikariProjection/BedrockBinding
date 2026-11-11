@@ -52,12 +52,12 @@ public sealed unsafe partial class BlockDescriptorProxy : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockDescriptorProxy Create()
+    public static BlockDescriptorProxy? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_da08b43a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockDescriptorProxy((nint)handle);
@@ -67,12 +67,12 @@ public sealed unsafe partial class BlockDescriptorProxy : global::System.IDispos
     public static BlockDescriptorProxy Create(nint desc) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockDescriptorProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptorSerializer.BlockDescriptorProxy arg0)
+    public static BlockDescriptorProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptorSerializer.BlockDescriptorProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e1e3694f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockDescriptorProxy((nint)handle);

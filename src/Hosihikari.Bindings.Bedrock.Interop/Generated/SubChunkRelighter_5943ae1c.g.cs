@@ -48,12 +48,12 @@ public sealed unsafe partial class SubChunkRelighter : global::System.IDisposabl
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SubChunkRelighter Create()
+    public static SubChunkRelighter? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_863e674f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SubChunkRelighter((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class SubChunkRelighter : global::System.IDisposabl
     public static SubChunkRelighter Create(nint source, ulong centerSubChunkIndex, nint centerChunkPos, nint absorptionBehavior, bool originalLighting, bool useFullyDarkSubchunk) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SubChunkRelighter Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkRelighter arg0)
+    public static SubChunkRelighter? Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkRelighter arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_aad79583((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SubChunkRelighter((nint)handle);

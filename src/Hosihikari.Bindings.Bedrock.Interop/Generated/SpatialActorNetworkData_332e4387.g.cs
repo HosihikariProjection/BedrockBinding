@@ -40,23 +40,23 @@ public sealed unsafe partial class SpatialActorNetworkData : global::System.IDis
         return __hs_handle;
     }
 
-    public static SpatialActorNetworkData Create()
+    public static SpatialActorNetworkData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8ef26394();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpatialActorNetworkData((nint)handle);
     }
 
-    public static SpatialActorNetworkData Create(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData arg0)
+    public static SpatialActorNetworkData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a8e50246((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpatialActorNetworkData((nint)handle);
@@ -75,9 +75,10 @@ public sealed unsafe partial class SpatialActorNetworkData : global::System.IDis
         set => NativeMethods.TablePtr->C3.hs_set_9de5dfa2((void*)__hosihikari_shim_handle, value);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers mDebugSpatialPacketModifiers()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers? mDebugSpatialPacketModifiers()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers((nint)NativeMethods.TablePtr->C3.hs_method_593746aa(), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_593746aa();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -116,9 +117,10 @@ public sealed unsafe partial class SpatialActorNetworkData : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C3.hs_get_6d3822ff((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData((nint)NativeMethods.TablePtr->C3.hs_method_f5db510d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f5db510d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData((nint)__hs_handle, false) : null;
     }
 
     public void sendUpdate(bool forceMove, bool forceMoveLocalEntity, bool forceAbsoluteMovement, bool forceCompletion)

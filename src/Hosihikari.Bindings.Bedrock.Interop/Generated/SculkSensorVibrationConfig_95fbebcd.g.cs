@@ -60,12 +60,12 @@ public sealed unsafe partial class SculkSensorVibrationConfig : global::System.I
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SculkSensorVibrationConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.SculkSensorVibrationConfig arg0)
+    public static SculkSensorVibrationConfig? Create(global::Hosihikari.Bindings.Bedrock.Interop.SculkSensorVibrationConfig arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cc817e09((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SculkSensorVibrationConfig((nint)handle);

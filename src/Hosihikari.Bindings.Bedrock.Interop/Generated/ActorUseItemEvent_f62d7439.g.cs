@@ -50,23 +50,23 @@ public sealed unsafe partial class ActorUseItemEvent : global::System.IDisposabl
         NativeMethods.TablePtr->C0.hs_method_dec97774((void*)__hosihikari_shim_handle);
     }
 
-    public static ActorUseItemEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance itemUsed, int itemUseMethod)
+    public static ActorUseItemEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance itemUsed, int itemUseMethod)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_de31b7bf((void*)actor.Handle, (void*)itemUsed.Handle, itemUseMethod);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorUseItemEvent((nint)handle);
     }
 
-    public static ActorUseItemEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorUseItemEvent arg0)
+    public static ActorUseItemEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorUseItemEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1835b3bd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorUseItemEvent((nint)handle);

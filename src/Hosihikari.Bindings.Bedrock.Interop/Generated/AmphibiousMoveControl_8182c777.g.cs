@@ -48,12 +48,12 @@ public sealed unsafe partial class AmphibiousMoveControl : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AmphibiousMoveControl Create(global::Hosihikari.Bindings.Bedrock.Interop.AmphibiousMoveControl arg0)
+    public static AmphibiousMoveControl? Create(global::Hosihikari.Bindings.Bedrock.Interop.AmphibiousMoveControl arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_24f7a947((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AmphibiousMoveControl((nint)handle);

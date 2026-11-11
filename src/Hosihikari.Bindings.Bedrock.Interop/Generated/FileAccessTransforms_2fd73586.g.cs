@@ -52,12 +52,12 @@ public sealed unsafe partial class FileAccessTransforms : global::System.IDispos
     public bool _writeTransform(nint stream) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileAccessTransforms Create(global::Hosihikari.Bindings.Bedrock.Interop.FileAccessTransforms arg0)
+    public static FileAccessTransforms? Create(global::Hosihikari.Bindings.Bedrock.Interop.FileAccessTransforms arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_37c09416((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileAccessTransforms((nint)handle);

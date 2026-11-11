@@ -123,9 +123,10 @@ public sealed unsafe partial class ChemistryStickItem : global::System.IDisposab
         set => NativeMethods.TablePtr->C0.hs_set_f0f322ab((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Item setMaxDamage(int maxDamage)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Item? setMaxDamage(int maxDamage)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)NativeMethods.TablePtr->C0.hs_method_ac80e333((void*)__hosihikari_shim_handle, maxDamage), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ac80e333((void*)__hosihikari_shim_handle, maxDamage);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
     }
 
     public bool showsDurabilityInCreative()
@@ -138,9 +139,10 @@ public sealed unsafe partial class ChemistryStickItem : global::System.IDisposab
         return NativeMethods.TablePtr->C0.hs_method_6890a5c1((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C0.hs_method_632310ad((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_632310ad((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int useTimeDepleted(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack inoutInstance, global::Hosihikari.Bindings.Bedrock.Interop.Level? level, global::Hosihikari.Bindings.Bedrock.Interop.Player? player)

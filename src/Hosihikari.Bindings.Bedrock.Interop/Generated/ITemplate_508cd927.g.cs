@@ -40,12 +40,12 @@ public sealed unsafe partial class ITemplate : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ITemplate Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement_Nested.ITemplate arg0)
+    public static ITemplate? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement_Nested.ITemplate arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ffc467b4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ITemplate((nint)handle);
@@ -56,9 +56,10 @@ public sealed unsafe partial class ITemplate : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C3.hs_method_5ed11df7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getSize(byte rotation)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSize(byte rotation)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C3.hs_method_c55386ec((void*)__hosihikari_shim_handle, rotation));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c55386ec((void*)__hosihikari_shim_handle, rotation);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public bool isLegacyStructure()

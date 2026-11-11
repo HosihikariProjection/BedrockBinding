@@ -54,12 +54,12 @@ public sealed unsafe partial class Reader : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_90265a07((void*)__hosihikari_shim_handle);
     }
 
-    public static Reader Create()
+    public static Reader? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e9b8368e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Reader((nint)handle);
@@ -69,12 +69,12 @@ public sealed unsafe partial class Reader : global::System.IDisposable
     public static Reader Create(nint features) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Reader Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.Reader arg0)
+    public static Reader? Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.Reader arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5030eddc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Reader((nint)handle);

@@ -45,12 +45,12 @@ public sealed unsafe partial class Context : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_3839258e((void*)__hosihikari_shim_handle);
     }
 
-    public static Context Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.Context arg0)
+    public static Context? Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.Context arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0479f340((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Context((nint)handle);
@@ -85,9 +85,10 @@ public sealed unsafe partial class Context : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_c3abf97d((void*)__hosihikari_shim_handle, (void*)rtt.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder PacketBuilder()
+    public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder? PacketBuilder()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder((nint)NativeMethods.TablePtr->C4.hs_method_746f50d5((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_746f50d5((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder((nint)__hs_handle) : null;
     }
 
     public void Send(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder builder)
@@ -95,14 +96,16 @@ public sealed unsafe partial class Context : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_7647849e((void*)__hosihikari_shim_handle, (void*)builder.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks callbacks()
+    public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks? callbacks()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks((nint)NativeMethods.TablePtr->C4.hs_method_d58d9ffc((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d58d9ffc((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TimeDelta current_rto()
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TimeDelta? current_rto()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TimeDelta((nint)NativeMethods.TablePtr->C4.hs_method_f0d68a29((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f0d68a29((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TimeDelta((nint)__hs_handle) : null;
     }
 
     public bool is_connection_established()

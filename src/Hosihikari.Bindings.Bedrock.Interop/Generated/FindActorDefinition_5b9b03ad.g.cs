@@ -56,12 +56,12 @@ public sealed unsafe partial class FindActorDefinition : global::System.IDisposa
     public void _load(nint value, nint factory) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FindActorDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.FindActorDefinition arg0)
+    public static FindActorDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.FindActorDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_accd9a6c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FindActorDefinition((nint)handle);

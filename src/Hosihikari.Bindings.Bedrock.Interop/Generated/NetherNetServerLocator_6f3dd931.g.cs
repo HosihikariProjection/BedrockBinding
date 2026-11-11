@@ -80,23 +80,23 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
     public void _update() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetherNetServerLocator Create()
+    public static NetherNetServerLocator? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7688f390();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetherNetServerLocator((nint)handle);
     }
 
-    public static NetherNetServerLocator Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator arg0)
+    public static NetherNetServerLocator? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e39ec665((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetherNetServerLocator((nint)handle);
@@ -130,9 +130,10 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
     public static nint _transformFrom(nint networkID, nint serverData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription acquireHttpProbePermission()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription? acquireHttpProbePermission()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)NativeMethods.TablePtr->C2.hs_method_2bcf3ad5((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2bcf3ad5((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)__hs_handle) : null;
     }
 
     public void addCustomServer(global::Hosihikari.Bindings.Bedrock.Interop.AsynchronousIPResolver futureIP, int port)
@@ -234,9 +235,10 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C2.hs_get_21a39315((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator((nint)NativeMethods.TablePtr->C2.hs_method_212b6eda((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_212b6eda((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator((nint)__hs_handle, false) : null;
     }
 
     public void startAnnouncingServer(string playerName, string worldName, int gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore, global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes supportedAuth, global::Hosihikari.Bindings.Bedrock.Interop.Social.Nonce nonce)

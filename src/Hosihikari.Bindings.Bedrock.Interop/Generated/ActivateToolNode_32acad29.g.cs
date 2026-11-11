@@ -60,12 +60,12 @@ public sealed unsafe partial class ActivateToolNode : global::System.IDisposable
     public static ActivateToolNode Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActivateToolNode Create(global::Hosihikari.Bindings.Bedrock.Interop.ActivateToolNode arg0)
+    public static ActivateToolNode? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActivateToolNode arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_78df7613((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActivateToolNode((nint)handle);

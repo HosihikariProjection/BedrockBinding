@@ -86,23 +86,23 @@ public sealed unsafe partial class FollowCaravanGoal : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FollowCaravanGoal Create()
+    public static FollowCaravanGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ea487d5d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FollowCaravanGoal((nint)handle);
     }
 
-    public static FollowCaravanGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.FollowCaravanGoal arg0)
+    public static FollowCaravanGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.FollowCaravanGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_51089276((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FollowCaravanGoal((nint)handle);
@@ -188,9 +188,10 @@ public sealed unsafe partial class FollowCaravanGoal : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C1.hs_get_425a7f44((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FollowCaravanGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FollowCaravanGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FollowCaravanGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FollowCaravanGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FollowCaravanGoal((nint)NativeMethods.TablePtr->C1.hs_method_9dec8d74((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9dec8d74((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FollowCaravanGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

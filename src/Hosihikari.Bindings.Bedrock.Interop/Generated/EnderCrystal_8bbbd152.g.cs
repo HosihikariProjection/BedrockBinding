@@ -618,12 +618,12 @@ public sealed unsafe partial class EnderCrystal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EnderCrystal Create()
+    public static EnderCrystal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_076b4831();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EnderCrystal((nint)handle);
@@ -633,9 +633,10 @@ public sealed unsafe partial class EnderCrystal : global::System.IDisposable
     public static EnderCrystal Create(nint definitions, nint definitionName, nint entityContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C1.hs_method_4f9696b9((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4f9696b9((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)

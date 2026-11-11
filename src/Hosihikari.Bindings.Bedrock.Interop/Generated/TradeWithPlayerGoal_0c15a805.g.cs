@@ -74,23 +74,23 @@ public sealed unsafe partial class TradeWithPlayerGoal : global::System.IDisposa
     public void _start() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TradeWithPlayerGoal Create()
+    public static TradeWithPlayerGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6e26cef1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TradeWithPlayerGoal((nint)handle);
     }
 
-    public static TradeWithPlayerGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeWithPlayerGoal arg0)
+    public static TradeWithPlayerGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeWithPlayerGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0296a871((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TradeWithPlayerGoal((nint)handle);
@@ -144,9 +144,10 @@ public sealed unsafe partial class TradeWithPlayerGoal : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C4.hs_get_680c2a6a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TradeWithPlayerGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TradeWithPlayerGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.TradeWithPlayerGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TradeWithPlayerGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TradeWithPlayerGoal((nint)NativeMethods.TablePtr->C4.hs_method_3ec38cfd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3ec38cfd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TradeWithPlayerGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

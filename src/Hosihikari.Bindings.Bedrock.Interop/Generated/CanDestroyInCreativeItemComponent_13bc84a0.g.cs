@@ -44,12 +44,12 @@ public sealed unsafe partial class CanDestroyInCreativeItemComponent : global::S
     public void __initializeComponent(nint owner) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CanDestroyInCreativeItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.CanDestroyInCreativeItemComponent arg0)
+    public static CanDestroyInCreativeItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.CanDestroyInCreativeItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_db8b9725((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CanDestroyInCreativeItemComponent((nint)handle);

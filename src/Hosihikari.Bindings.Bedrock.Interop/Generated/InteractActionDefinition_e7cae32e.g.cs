@@ -56,12 +56,12 @@ public sealed unsafe partial class InteractActionDefinition : global::System.IDi
     public void _load(nint value, nint factory) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static InteractActionDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.InteractActionDefinition arg0)
+    public static InteractActionDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.InteractActionDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ab1ff0fd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InteractActionDefinition((nint)handle);

@@ -110,12 +110,12 @@ public sealed unsafe partial class TridentImpalerEnchant : global::System.IDispo
     public int _getMinCost(int level) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TridentImpalerEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.TridentImpalerEnchant arg0)
+    public static TridentImpalerEnchant? Create(global::Hosihikari.Bindings.Bedrock.Interop.TridentImpalerEnchant arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e04d20ee((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TridentImpalerEnchant((nint)handle);

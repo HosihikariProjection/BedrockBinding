@@ -46,12 +46,12 @@ public sealed unsafe partial class ImportStructureMetaData : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C1.hs_get_bf6f285f((void*)__hosihikari_shim_handle);
     }
 
-    public static ImportStructureMetaData Create(global::Hosihikari.Bindings.Bedrock.Interop.ImportStructureMetaData arg0)
+    public static ImportStructureMetaData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ImportStructureMetaData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_97037a13((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ImportStructureMetaData((nint)handle);

@@ -44,23 +44,23 @@ public sealed unsafe partial class ScriptItemEnchantmentLevelOutOfBoundsError : 
     public nint _ctor(nint details, nint typeName, int level, int maxLevel) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptItemEnchantmentLevelOutOfBoundsError Create()
+    public static ScriptItemEnchantmentLevelOutOfBoundsError? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_97914900();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemEnchantmentLevelOutOfBoundsError((nint)handle);
     }
 
-    public static ScriptItemEnchantmentLevelOutOfBoundsError Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentLevelOutOfBoundsError arg0)
+    public static ScriptItemEnchantmentLevelOutOfBoundsError? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentLevelOutOfBoundsError arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7bbb655a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemEnchantmentLevelOutOfBoundsError((nint)handle);

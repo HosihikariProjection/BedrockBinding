@@ -40,12 +40,12 @@ public sealed unsafe partial class LevelChunkMetaDataManager : global::System.ID
         return __hs_handle;
     }
 
-    public static LevelChunkMetaDataManager Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkMetaDataManager arg0)
+    public static LevelChunkMetaDataManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkMetaDataManager arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4189fb59((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunkMetaDataManager((nint)handle);

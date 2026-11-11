@@ -48,12 +48,12 @@ public sealed unsafe partial class LoggingInterfaceGeneric : global::System.IDis
     public void _writeToDebugger(nint area, nint level, nint message) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LoggingInterfaceGeneric Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LoggingInterfaceGeneric arg0)
+    public static LoggingInterfaceGeneric? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LoggingInterfaceGeneric arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d85388b5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LoggingInterfaceGeneric((nint)handle);

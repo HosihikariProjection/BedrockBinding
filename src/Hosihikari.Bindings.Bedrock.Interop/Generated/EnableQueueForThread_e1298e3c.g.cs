@@ -52,12 +52,12 @@ public sealed unsafe partial class EnableQueueForThread : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EnableQueueForThread Create()
+    public static EnableQueueForThread? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_73eba8e0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EnableQueueForThread((nint)handle);

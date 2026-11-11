@@ -40,9 +40,10 @@ public sealed unsafe partial class ItemRegistryManager : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef getItemRegistry()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef? getItemRegistry()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef((nint)NativeMethods.TablePtr->C1.hs_method_eb6e2274());
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_eb6e2274();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -84,12 +84,12 @@ public sealed unsafe partial class AutomationClient : global::System.IDisposable
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AutomationClient Create()
+    public static AutomationClient? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e613e2ea();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutomationClient((nint)handle);
@@ -99,12 +99,12 @@ public sealed unsafe partial class AutomationClient : global::System.IDisposable
     public static AutomationClient Create(nint minecraft) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AutomationClient Create(global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationClient arg0)
+    public static AutomationClient? Create(global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationClient arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d3c5b66b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutomationClient((nint)handle);
@@ -237,9 +237,10 @@ public sealed unsafe partial class AutomationClient : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_ec3d737b((void*)__hosihikari_shim_handle, (void*)uri);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationClient operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationClient arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationClient? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationClient arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationClient((nint)NativeMethods.TablePtr->C0.hs_method_538308e3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_538308e3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationClient((nint)__hs_handle, false) : null;
     }
 
     public void playerListChanged()

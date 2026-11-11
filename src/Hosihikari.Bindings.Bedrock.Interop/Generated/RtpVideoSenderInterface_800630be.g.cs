@@ -99,12 +99,12 @@ public sealed unsafe partial class RtpVideoSenderInterface : global::System.IDis
         NativeMethods.TablePtr->C4.hs_method_6677f54f((void*)__hosihikari_shim_handle, (void*)allocation);
     }
 
-    public static RtpVideoSenderInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSenderInterface arg0)
+    public static RtpVideoSenderInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSenderInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_43306796((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RtpVideoSenderInterface((nint)handle);

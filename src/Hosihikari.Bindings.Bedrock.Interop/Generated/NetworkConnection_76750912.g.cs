@@ -44,23 +44,23 @@ public sealed unsafe partial class NetworkConnection : global::System.IDisposabl
     public nint _ctor(nint id, nint peer, bool isSafeAndFast, nint packetObserver, nint mainThread, bool isRawRecordingEnabled, nint settings, nint packetSecurityController, nint identityPublicKey) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetworkConnection Create()
+    public static NetworkConnection? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3806442a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkConnection((nint)handle);
     }
 
-    public static NetworkConnection Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkConnection arg0)
+    public static NetworkConnection? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkConnection arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_dedb8ef0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkConnection((nint)handle);

@@ -40,20 +40,21 @@ public sealed unsafe partial class IScriptItemCustomComponentRegistry : global::
         return __hs_handle;
     }
 
-    public static IScriptItemCustomComponentRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.IScriptItemCustomComponentRegistry arg0)
+    public static IScriptItemCustomComponentRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.IScriptItemCustomComponentRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_be47d7a4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IScriptItemCustomComponentRegistry((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener getEventListener()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener? getEventListener()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener((nint)NativeMethods.TablePtr->C3.hs_method_b67fe3b6((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b67fe3b6((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener((nint)__hs_handle, false) : null;
     }
 
     public void setCerealContext(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)

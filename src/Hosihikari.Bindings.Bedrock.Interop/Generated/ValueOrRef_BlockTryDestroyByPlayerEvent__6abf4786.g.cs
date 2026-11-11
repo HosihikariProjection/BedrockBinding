@@ -48,14 +48,16 @@ public sealed unsafe partial class ValueOrRef_BlockTryDestroyByPlayerEvent_ : gl
     public static ValueOrRef_BlockTryDestroyByPlayerEvent_ Create_f26343df(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<BlockTryDestroyByPlayerEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent value_1a2addfe()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent? value_1a2addfe()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent((nint)NativeMethods.TablePtr->C1.hs_method_1a2addfe((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1a2addfe((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent value_658592c7()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent? value_658592c7()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent((nint)NativeMethods.TablePtr->C1.hs_method_658592c7((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_658592c7((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent((nint)__hs_handle, false) : null;
     }
 
 

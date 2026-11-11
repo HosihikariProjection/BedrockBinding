@@ -40,23 +40,23 @@ public sealed unsafe partial class FileSource : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static FileSource Create()
+    public static FileSource? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d489033b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileSource((nint)handle);
     }
 
-    public static FileSource Create(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.FileSource arg0)
+    public static FileSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.FileSource arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a6b722f1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileSource((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class FileSource : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_93d7bf26((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.FileSource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.FileSource arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.FileSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.FileSource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.FileSource((nint)NativeMethods.TablePtr->C3.hs_method_9509315b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9509315b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.FileSource((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -63,14 +63,16 @@ public sealed unsafe partial class VectorBase_AABB__Vec3__Vec3_ : global::System
         return NativeMethods.TablePtr->C4.hs_method_379cbccd((void*)__hosihikari_shim_handle, (void*)b.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 operator_index_19708ead(ulong index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? operator_index_19708ead(ulong index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C4.hs_method_19708ead((void*)__hosihikari_shim_handle, index), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_19708ead((void*)__hosihikari_shim_handle, index);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 operator_index_0449c5f5(ulong index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? operator_index_0449c5f5(ulong index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C4.hs_method_0449c5f5((void*)__hosihikari_shim_handle, index), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0449c5f5((void*)__hosihikari_shim_handle, index);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: consteval methods cannot be called at runtime.", false)]

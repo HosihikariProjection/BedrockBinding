@@ -72,31 +72,32 @@ public sealed unsafe partial class ExternalDataServerLevel : global::System.IDis
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExternalDataServerLevel Create()
+    public static ExternalDataServerLevel? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d31f34f7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExternalDataServerLevel((nint)handle);
     }
 
-    public static ExternalDataServerLevel Create(global::Hosihikari.Bindings.Bedrock.Interop.ExternalDataServerLevel arg0)
+    public static ExternalDataServerLevel? Create(global::Hosihikari.Bindings.Bedrock.Interop.ExternalDataServerLevel arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_80679a08((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExternalDataServerLevel((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AdventureSettings getAdventureSettings()
+    public global::Hosihikari.Bindings.Bedrock.Interop.AdventureSettings? getAdventureSettings()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AdventureSettings((nint)NativeMethods.TablePtr->C1.hs_method_de5a4782((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_de5a4782((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AdventureSettings((nint)__hs_handle, false) : null;
     }
 
     public int getDefaultGameType()
@@ -135,9 +136,10 @@ public sealed unsafe partial class ExternalDataServerLevel : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C1.hs_get_cf84ca67((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ExternalDataServerLevel operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExternalDataServerLevel arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ExternalDataServerLevel? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExternalDataServerLevel arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ExternalDataServerLevel((nint)NativeMethods.TablePtr->C1.hs_method_cfa2e2a4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cfa2e2a4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ExternalDataServerLevel((nint)__hs_handle, false) : null;
     }
 
 

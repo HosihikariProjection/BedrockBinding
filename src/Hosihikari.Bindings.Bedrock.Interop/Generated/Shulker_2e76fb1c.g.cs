@@ -766,12 +766,12 @@ public sealed unsafe partial class Shulker : global::System.IDisposable
     public void _reloadHardcoded(nint method, nint @params) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Shulker Create()
+    public static Shulker? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_bfbed06d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Shulker((nint)handle);
@@ -790,9 +790,10 @@ public sealed unsafe partial class Shulker : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_5f549013((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C3.hs_method_ce4ac9ce((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ce4ac9ce((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

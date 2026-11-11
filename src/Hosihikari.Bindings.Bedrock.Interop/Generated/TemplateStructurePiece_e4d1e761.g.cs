@@ -88,34 +88,34 @@ public sealed unsafe partial class TemplateStructurePiece : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TemplateStructurePiece Create()
+    public static TemplateStructurePiece? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8bde8409();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TemplateStructurePiece((nint)handle);
     }
 
-    public static TemplateStructurePiece Create(global::Hosihikari.Bindings.Bedrock.Interop.TemplateStructurePiece arg0)
+    public static TemplateStructurePiece? Create(global::Hosihikari.Bindings.Bedrock.Interop.TemplateStructurePiece arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_49aad12b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TemplateStructurePiece((nint)handle);
     }
 
-    public static TemplateStructurePiece Create(int depth)
+    public static TemplateStructurePiece? Create(int depth)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b1790337(depth);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TemplateStructurePiece((nint)handle);

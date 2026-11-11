@@ -148,12 +148,12 @@ public sealed unsafe partial class ScriptEntityRaycastOptions : global::System.I
         get => (nint)NativeMethods.TablePtr->C3.hs_get_0409c2cc((void*)__hosihikari_shim_handle);
     }
 
-    public static ScriptEntityRaycastOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptEntityRaycastOptions arg0)
+    public static ScriptEntityRaycastOptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptEntityRaycastOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1f23422f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptEntityRaycastOptions((nint)handle);

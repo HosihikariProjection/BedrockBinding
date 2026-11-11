@@ -40,12 +40,12 @@ public sealed unsafe partial class RewindCollisionShapesComponent : global::Syst
         return __hs_handle;
     }
 
-    public static RewindCollisionShapesComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.RewindCollisionShapesComponent arg0)
+    public static RewindCollisionShapesComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.RewindCollisionShapesComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6a9bb624((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RewindCollisionShapesComponent((nint)handle);

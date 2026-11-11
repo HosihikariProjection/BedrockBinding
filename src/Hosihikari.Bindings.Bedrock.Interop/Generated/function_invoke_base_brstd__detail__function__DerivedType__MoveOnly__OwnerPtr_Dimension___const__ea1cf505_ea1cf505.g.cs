@@ -40,7 +40,7 @@ public sealed unsafe partial class function_invoke_base_brstd__detail__function_
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_ operator_call(global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtrFactory_Dimension__DerivedDimensionArguments____ args, string args1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_? operator_call(global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtrFactory_Dimension__DerivedDimensionArguments____ args, string args1)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(args1);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -55,7 +55,8 @@ public sealed unsafe partial class function_invoke_base_brstd__detail__function_
         global::System.Text.Encoding.UTF8.GetBytes(args1, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_((nint)NativeMethods.TablePtr->C4.hs_method_2b3fe9aa((void*)__hosihikari_shim_handle, (void*)args.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1));
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2b3fe9aa((void*)__hosihikari_shim_handle, (void*)args.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_((nint)__hs_handle) : null;
         }
     }
 

@@ -40,12 +40,12 @@ public sealed unsafe partial class WeakPtr_Item_ : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static WeakPtr_Item_ Create()
+    public static WeakPtr_Item_? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_efbb046e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakPtr_Item_((nint)handle);
@@ -55,23 +55,23 @@ public sealed unsafe partial class WeakPtr_Item_ : global::System.IDisposable
     public static WeakPtr_Item_ Create(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static WeakPtr_Item_ Create(global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_ other)
+    public static WeakPtr_Item_? Create(global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_ other)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_66b1d17c((void*)other.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakPtr_Item_((nint)handle);
     }
 
-    public static WeakPtr_Item_ Create_88170740()
+    public static WeakPtr_Item_? Create_88170740()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_88170740();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakPtr_Item_((nint)handle);
@@ -103,9 +103,10 @@ public sealed unsafe partial class WeakPtr_Item_ : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_1adfa31c((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Item operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Item? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)NativeMethods.TablePtr->C4.hs_method_6712708e((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6712708e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? operator_operator__()
@@ -118,9 +119,10 @@ public sealed unsafe partial class WeakPtr_Item_ : global::System.IDisposable
     public nint operator_assign(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_ operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_ other)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_ other)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_((nint)NativeMethods.TablePtr->C4.hs_method_1dc427bf((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1dc427bf((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_((nint)__hs_handle, false) : null;
     }
 
     public int use_count()

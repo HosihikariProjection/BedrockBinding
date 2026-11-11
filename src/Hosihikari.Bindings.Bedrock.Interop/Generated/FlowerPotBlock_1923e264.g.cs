@@ -425,12 +425,12 @@ public sealed unsafe partial class FlowerPotBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FlowerPotBlock Create()
+    public static FlowerPotBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_18ddcfe0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FlowerPotBlock((nint)handle);
@@ -440,9 +440,10 @@ public sealed unsafe partial class FlowerPotBlock : global::System.IDisposable
     public static FlowerPotBlock Create(nint nameId, int id) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? blockActor)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? blockActor)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C1.hs_method_d0020b4c((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(blockActor?.Handle ?? 0)));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d0020b4c((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(blockActor?.Handle ?? 0));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
     }
 
     public bool canSurvive(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

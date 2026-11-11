@@ -110,12 +110,12 @@ public sealed unsafe partial class FrostWalkerEnchant : global::System.IDisposab
     public bool _isTreasureOnly() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FrostWalkerEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.FrostWalkerEnchant arg0)
+    public static FrostWalkerEnchant? Create(global::Hosihikari.Bindings.Bedrock.Interop.FrostWalkerEnchant arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_36cce7d1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FrostWalkerEnchant((nint)handle);

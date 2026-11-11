@@ -84,12 +84,12 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
     public void _setEducationFeaturesEnabled(bool educationEnabled) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelData Create()
+    public static LevelData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3c624e82();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelData((nint)handle);
@@ -107,12 +107,12 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
     public static LevelData Create_b5294d19(nint tag) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelData Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelData arg0)
+    public static LevelData? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_dcbdd0d1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelData((nint)handle);
@@ -145,9 +145,10 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_e503a9e8((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion getBaseGameVersion()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion? getBaseGameVersion()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion((nint)NativeMethods.TablePtr->C2.hs_method_7b550360((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7b550360((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -699,9 +700,10 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
     public nint operator_assign(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelData((nint)NativeMethods.TablePtr->C2.hs_method_b884190f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b884190f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelData((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

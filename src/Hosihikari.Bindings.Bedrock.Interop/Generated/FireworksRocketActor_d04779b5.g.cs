@@ -614,12 +614,12 @@ public sealed unsafe partial class FireworksRocketActor : global::System.IDispos
     public void _readAdditionalSaveData(nint tag, nint dataLoadHelper) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FireworksRocketActor Create()
+    public static FireworksRocketActor? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_62989665();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FireworksRocketActor((nint)handle);

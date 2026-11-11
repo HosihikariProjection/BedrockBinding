@@ -68,12 +68,12 @@ public sealed unsafe partial class BookCloningRecipe : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static BookCloningRecipe Create(global::Hosihikari.Bindings.Bedrock.Interop.BookCloningRecipe arg0)
+    public static BookCloningRecipe? Create(global::Hosihikari.Bindings.Bedrock.Interop.BookCloningRecipe arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2c0e93f4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BookCloningRecipe((nint)handle);
@@ -93,9 +93,10 @@ public sealed unsafe partial class BookCloningRecipe : global::System.IDisposabl
         return NativeMethods.TablePtr->C0.hs_method_0602597a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient getIngredient(int x, int y)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? getIngredient(int x, int y)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)NativeMethods.TablePtr->C0.hs_method_b415f614((void*)__hosihikari_shim_handle, x, y), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b415f614((void*)__hosihikari_shim_handle, x, y);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
     }
 
     public nint getResultItems()

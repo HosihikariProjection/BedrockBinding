@@ -413,12 +413,12 @@ public sealed unsafe partial class GrassBlockBase : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GrassBlockBase Create()
+    public static GrassBlockBase? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fe3908dc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GrassBlockBase((nint)handle);

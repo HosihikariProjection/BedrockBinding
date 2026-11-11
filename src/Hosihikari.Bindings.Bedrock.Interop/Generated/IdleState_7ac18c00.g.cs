@@ -52,12 +52,12 @@ public sealed unsafe partial class IdleState : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IdleState Create(global::Hosihikari.Bindings.Bedrock.Interop.IdleState arg0)
+    public static IdleState? Create(global::Hosihikari.Bindings.Bedrock.Interop.IdleState arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6446b4ec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IdleState((nint)handle);

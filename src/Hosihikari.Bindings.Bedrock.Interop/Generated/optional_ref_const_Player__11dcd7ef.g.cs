@@ -70,9 +70,10 @@ public sealed unsafe partial class optional_ref_const_Player_ : global::System.I
     public nint end() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'decltype(auto)' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Player get()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Player? get()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)NativeMethods.TablePtr->C4.hs_method_46e19fb5((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_46e19fb5((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false) : null;
     }
 
     public bool has_value()
@@ -85,9 +86,10 @@ public sealed unsafe partial class optional_ref_const_Player_ : global::System.I
         return NativeMethods.TablePtr->C4.hs_method_6ec4224c((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Player operator_const_Player___61fd8833()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Player? operator_const_Player___61fd8833()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)NativeMethods.TablePtr->C4.hs_method_61fd8833((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_61fd8833((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Player? operator_const_Player___17b280d0()
@@ -96,9 +98,10 @@ public sealed unsafe partial class optional_ref_const_Player_ : global::System.I
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Player operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Player? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)NativeMethods.TablePtr->C4.hs_method_fd1e4ec1((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fd1e4ec1((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Player? operator_operator__()
@@ -107,66 +110,68 @@ public sealed unsafe partial class optional_ref_const_Player_ : global::System.I
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Player_ operator_assign_acde8630(global::Hosihikari.Bindings.Bedrock.Interop.Player? arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Player_? operator_assign_acde8630(global::Hosihikari.Bindings.Bedrock.Interop.Player? arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Player_((nint)NativeMethods.TablePtr->C4.hs_method_acde8630((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_acde8630((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Player_((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Player_ operator_assign_2f36d7d4(global::Hosihikari.Bindings.Bedrock.Interop.Player? arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Player_? operator_assign_2f36d7d4(global::Hosihikari.Bindings.Bedrock.Interop.Player? arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Player_((nint)NativeMethods.TablePtr->C4.hs_method_2f36d7d4((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2f36d7d4((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Player_((nint)__hs_handle, false) : null;
     }
 
-    public static optional_ref_const_Player_ Create()
+    public static optional_ref_const_Player_? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_56d42b7e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_const_Player_((nint)handle);
     }
 
-    public static optional_ref_const_Player_ Create_ab421d8a(global::Hosihikari.Bindings.Bedrock.Interop.Player? arg0)
+    public static optional_ref_const_Player_? Create_ab421d8a(global::Hosihikari.Bindings.Bedrock.Interop.Player? arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ab421d8a((void*)(arg0?.Handle ?? 0), arg0 is not null);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_const_Player_((nint)handle);
     }
 
-    public static optional_ref_const_Player_ Create_42d346ca(global::Hosihikari.Bindings.Bedrock.Interop.Player? arg0)
+    public static optional_ref_const_Player_? Create_42d346ca(global::Hosihikari.Bindings.Bedrock.Interop.Player? arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_42d346ca((void*)(arg0?.Handle ?? 0), arg0 is not null);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_const_Player_((nint)handle);
     }
 
-    public static optional_ref_const_Player_ Create_a5b1a03d()
+    public static optional_ref_const_Player_? Create_a5b1a03d()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a5b1a03d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_const_Player_((nint)handle);
     }
 
-    public static optional_ref_const_Player_ Create_77c121d9()
+    public static optional_ref_const_Player_? Create_77c121d9()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_77c121d9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_const_Player_((nint)handle);
@@ -180,9 +185,10 @@ public sealed unsafe partial class optional_ref_const_Player_ : global::System.I
     public nint rend() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'decltype(auto)' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Player value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Player? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)NativeMethods.TablePtr->C4.hs_method_05346d37((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_05346d37((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

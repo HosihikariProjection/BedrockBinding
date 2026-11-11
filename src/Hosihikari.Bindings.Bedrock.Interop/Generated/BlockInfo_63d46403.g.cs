@@ -40,12 +40,12 @@ public sealed unsafe partial class BlockInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static BlockInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.DiggerItemComponent_Nested.BlockInfo arg0)
+    public static BlockInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.DiggerItemComponent_Nested.BlockInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c0f1ba51((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockInfo((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class ServerPlayerInteractComponent : global::Syste
         return __hs_handle;
     }
 
-    public static ServerPlayerInteractComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerInteractComponent arg0)
+    public static ServerPlayerInteractComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerInteractComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_725454cc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerPlayerInteractComponent((nint)handle);

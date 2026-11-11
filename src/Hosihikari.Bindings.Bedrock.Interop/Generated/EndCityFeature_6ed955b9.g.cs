@@ -61,23 +61,23 @@ public sealed unsafe partial class EndCityFeature : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EndCityFeature Create()
+    public static EndCityFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f849925f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EndCityFeature((nint)handle);
     }
 
-    public static EndCityFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.EndCityFeature arg0)
+    public static EndCityFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.EndCityFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e0054c8e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EndCityFeature((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class EndCityFeature : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_885c0324((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EndCityFeature operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EndCityFeature arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EndCityFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EndCityFeature arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EndCityFeature((nint)NativeMethods.TablePtr->C1.hs_method_4dc035ce((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4dc035ce((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EndCityFeature((nint)__hs_handle, false) : null;
     }
 
     public bool shouldPostProcessMobs()

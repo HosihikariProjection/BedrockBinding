@@ -52,12 +52,12 @@ public sealed unsafe partial class PlayJumpSoundSystemImpl : global::System.IDis
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayJumpSoundSystemImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayJumpSoundSystemImpl arg0)
+    public static PlayJumpSoundSystemImpl? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayJumpSoundSystemImpl arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b1679d56((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayJumpSoundSystemImpl((nint)handle);

@@ -210,23 +210,23 @@ public sealed unsafe partial class DecoratedPotBlockActor : global::System.IDisp
     public static nint DEFAULT_SHERD_LIST() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DecoratedPotBlockActor Create()
+    public static DecoratedPotBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1dbfe3ef();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DecoratedPotBlockActor((nint)handle);
     }
 
-    public static DecoratedPotBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    public static DecoratedPotBlockActor? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_04cd206d((void*)pos.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DecoratedPotBlockActor((nint)handle);
@@ -254,9 +254,10 @@ public sealed unsafe partial class DecoratedPotBlockActor : global::System.IDisp
         return NativeMethods.TablePtr->C1.hs_method_0dbadbba((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_6d250b27((void*)__hosihikari_shim_handle, arg0), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6d250b27((void*)__hosihikari_shim_handle, arg0);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int getMaxStackSize()

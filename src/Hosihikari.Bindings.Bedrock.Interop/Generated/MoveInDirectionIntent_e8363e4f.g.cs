@@ -40,12 +40,12 @@ public sealed unsafe partial class MoveInDirectionIntent : global::System.IDispo
         return __hs_handle;
     }
 
-    public static MoveInDirectionIntent Create(global::Hosihikari.Bindings.Bedrock.Interop.sim.MoveInDirectionIntent arg0)
+    public static MoveInDirectionIntent? Create(global::Hosihikari.Bindings.Bedrock.Interop.sim.MoveInDirectionIntent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_35a485f1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveInDirectionIntent((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class BatteryMonitorInterface : global::System.IDis
         return __hs_handle;
     }
 
-    public static BatteryMonitorInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.BatteryMonitorInterface arg0)
+    public static BatteryMonitorInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.BatteryMonitorInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_67273914((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BatteryMonitorInterface((nint)handle);

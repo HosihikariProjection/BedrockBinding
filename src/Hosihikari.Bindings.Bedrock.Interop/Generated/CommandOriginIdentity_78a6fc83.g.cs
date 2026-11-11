@@ -48,12 +48,12 @@ public sealed unsafe partial class CommandOriginIdentity : global::System.IDispo
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CommandOriginIdentity Create()
+    public static CommandOriginIdentity? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5d11091b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandOriginIdentity((nint)handle);
@@ -75,9 +75,10 @@ public sealed unsafe partial class CommandOriginIdentity : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_2b0432a3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginIdentity operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginIdentity arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginIdentity? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginIdentity arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginIdentity((nint)NativeMethods.TablePtr->C0.hs_method_05d9ee88((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_05d9ee88((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginIdentity((nint)__hs_handle, false) : null;
     }
 
 

@@ -52,12 +52,12 @@ public sealed unsafe partial class ScatteredFeatureStart : global::System.IDispo
     public bool _requiresNeighborAwareBlockUpgrade() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScatteredFeatureStart Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomScatteredLargeFeatureDetails.ScatteredFeatureStart arg0)
+    public static ScatteredFeatureStart? Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomScatteredLargeFeatureDetails.ScatteredFeatureStart arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2d11a7b8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScatteredFeatureStart((nint)handle);

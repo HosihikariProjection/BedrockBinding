@@ -48,14 +48,16 @@ public sealed unsafe partial class ValueOrRef_OutgoingPacketEvent_ : global::Sys
     public static ValueOrRef_OutgoingPacketEvent_ Create_5a248071(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<OutgoingPacketEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OutgoingPacketEvent value_68d79597()
+    public global::Hosihikari.Bindings.Bedrock.Interop.OutgoingPacketEvent? value_68d79597()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OutgoingPacketEvent((nint)NativeMethods.TablePtr->C1.hs_method_68d79597((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_68d79597((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OutgoingPacketEvent((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OutgoingPacketEvent value_9ed47b11()
+    public global::Hosihikari.Bindings.Bedrock.Interop.OutgoingPacketEvent? value_9ed47b11()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OutgoingPacketEvent((nint)NativeMethods.TablePtr->C1.hs_method_9ed47b11((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9ed47b11((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OutgoingPacketEvent((nint)__hs_handle, false) : null;
     }
 
 

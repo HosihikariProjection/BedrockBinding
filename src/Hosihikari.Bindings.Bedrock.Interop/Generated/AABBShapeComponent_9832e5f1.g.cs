@@ -40,12 +40,12 @@ public sealed unsafe partial class AABBShapeComponent : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static AABBShapeComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent arg0)
+    public static AABBShapeComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3286f4cc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AABBShapeComponent((nint)handle);

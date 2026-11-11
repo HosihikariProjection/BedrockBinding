@@ -52,23 +52,23 @@ public sealed unsafe partial class SimplePositionalRandomFactory : global::Syste
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SimplePositionalRandomFactory Create()
+    public static SimplePositionalRandomFactory? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_84efc4e7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimplePositionalRandomFactory((nint)handle);
     }
 
-    public static SimplePositionalRandomFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.SimplePositionalRandomFactory arg0)
+    public static SimplePositionalRandomFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.SimplePositionalRandomFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4e6d9b3c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimplePositionalRandomFactory((nint)handle);
@@ -88,9 +88,10 @@ public sealed unsafe partial class SimplePositionalRandomFactory : global::Syste
         get => (nint)NativeMethods.TablePtr->C3.hs_get_6574285f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SimplePositionalRandomFactory operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimplePositionalRandomFactory arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SimplePositionalRandomFactory? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimplePositionalRandomFactory arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SimplePositionalRandomFactory((nint)NativeMethods.TablePtr->C3.hs_method_84ee2052((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_84ee2052((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SimplePositionalRandomFactory((nint)__hs_handle, false) : null;
     }
 
 

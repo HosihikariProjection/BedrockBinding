@@ -40,23 +40,23 @@ public sealed unsafe partial class CreateNetworkSystemArguments : global::System
         return __hs_handle;
     }
 
-    public static CreateNetworkSystemArguments Create()
+    public static CreateNetworkSystemArguments? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7a7e5a42();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreateNetworkSystemArguments((nint)handle);
     }
 
-    public static CreateNetworkSystemArguments Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateNetworkSystemArguments arg0)
+    public static CreateNetworkSystemArguments? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateNetworkSystemArguments arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cedbc444((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreateNetworkSystemArguments((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class CreateNetworkSystemArguments : global::System
         get => (nint)NativeMethods.TablePtr->C3.hs_get_cc8c005a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateNetworkSystemArguments operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateNetworkSystemArguments arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateNetworkSystemArguments? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateNetworkSystemArguments arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateNetworkSystemArguments((nint)NativeMethods.TablePtr->C3.hs_method_f9402ee2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f9402ee2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateNetworkSystemArguments((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

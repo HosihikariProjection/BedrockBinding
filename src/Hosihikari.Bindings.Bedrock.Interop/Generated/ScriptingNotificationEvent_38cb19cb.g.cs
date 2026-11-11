@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptingNotificationEvent : global::System.I
         return __hs_handle;
     }
 
-    public static ScriptingNotificationEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptingNotificationEvent arg0)
+    public static ScriptingNotificationEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptingNotificationEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_661d0ad3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptingNotificationEvent((nint)handle);

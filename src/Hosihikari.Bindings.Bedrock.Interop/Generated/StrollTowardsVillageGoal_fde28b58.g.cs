@@ -186,12 +186,12 @@ public sealed unsafe partial class StrollTowardsVillageGoal : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StrollTowardsVillageGoal Create()
+    public static StrollTowardsVillageGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8b012902();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StrollTowardsVillageGoal((nint)handle);
@@ -201,20 +201,21 @@ public sealed unsafe partial class StrollTowardsVillageGoal : global::System.IDi
     public static StrollTowardsVillageGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StrollTowardsVillageGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.StrollTowardsVillageGoal arg0)
+    public static StrollTowardsVillageGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.StrollTowardsVillageGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b872c5bb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StrollTowardsVillageGoal((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos _selectRandomPosInVillage()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _selectRandomPosInVillage()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C3.hs_method_c2ac9561((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c2ac9561((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public string appendDebugInfo(string str)

@@ -40,23 +40,23 @@ public sealed unsafe partial class RakNetGUID : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static RakNetGUID Create()
+    public static RakNetGUID? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d60532da();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakNetGUID((nint)handle);
     }
 
-    public static RakNetGUID Create(ulong g, ushort systemIndex)
+    public static RakNetGUID? Create(ulong g, ushort systemIndex)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_223918d3(g, systemIndex);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakNetGUID((nint)handle);

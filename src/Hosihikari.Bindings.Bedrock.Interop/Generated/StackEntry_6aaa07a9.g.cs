@@ -40,23 +40,23 @@ public sealed unsafe partial class StackEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static StackEntry Create()
+    public static StackEntry? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b09eb6bf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StackEntry((nint)handle);
     }
 
-    public static StackEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ParseHandler_Nested.StackEntry arg0)
+    public static StackEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ParseHandler_Nested.StackEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_38c5f35b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StackEntry((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class StackEntry : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_7a59fc6a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ParseHandler_Nested.StackEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ParseHandler_Nested.StackEntry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ParseHandler_Nested.StackEntry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ParseHandler_Nested.StackEntry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ParseHandler_Nested.StackEntry((nint)NativeMethods.TablePtr->C0.hs_method_9f1a9681((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9f1a9681((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ParseHandler_Nested.StackEntry((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

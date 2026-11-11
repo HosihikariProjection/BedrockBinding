@@ -52,23 +52,23 @@ public sealed unsafe partial class PacketViolationHandler : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PacketViolationHandler Create()
+    public static PacketViolationHandler? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_625e12f9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PacketViolationHandler((nint)handle);
     }
 
-    public static PacketViolationHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationHandler arg0)
+    public static PacketViolationHandler? Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationHandler arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_70ebac98((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PacketViolationHandler((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class PacketViolationHandler : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C2.hs_get_8f0af613((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationHandler operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationHandler arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationHandler? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationHandler arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationHandler((nint)NativeMethods.TablePtr->C2.hs_method_4c137f44((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4c137f44((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationHandler((nint)__hs_handle, false) : null;
     }
 
 

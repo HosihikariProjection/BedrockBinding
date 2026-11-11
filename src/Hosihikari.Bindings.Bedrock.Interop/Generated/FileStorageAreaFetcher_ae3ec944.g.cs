@@ -44,20 +44,21 @@ public sealed unsafe partial class FileStorageAreaFetcher : global::System.IDisp
     public nint _getStorageAreaForPath(nint fileStorageArea, nint path) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileStorageAreaFetcher Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageAreaFetcher arg0)
+    public static FileStorageAreaFetcher? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageAreaFetcher arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4d26f85e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileStorageAreaFetcher((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result getStorageAreaForPath(global::Hosihikari.Bindings.Abi.SharedHandle? fileStorageArea, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? getStorageAreaForPath(global::Hosihikari.Bindings.Abi.SharedHandle? fileStorageArea, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_d2594983((void*)__hosihikari_shim_handle, fileStorageArea?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)path.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d2594983((void*)__hosihikari_shim_handle, fileStorageArea?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)path.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
 

@@ -108,12 +108,12 @@ public sealed unsafe partial class ServerMapDataManager : global::System.IDispos
     public void _requestMapInfo(nint uuid, bool forceUpdate) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerMapDataManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerMapDataManager arg0)
+    public static ServerMapDataManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerMapDataManager arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_95d169f9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerMapDataManager((nint)handle);
@@ -128,9 +128,10 @@ public sealed unsafe partial class ServerMapDataManager : global::System.IDispos
     public void _onGameplayUserAdded(nint entity) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData createMapSavedData(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID uuid)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData? createMapSavedData(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID uuid)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData((nint)NativeMethods.TablePtr->C3.hs_method_665bd675((void*)__hosihikari_shim_handle, (void*)uuid.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_665bd675((void*)__hosihikari_shim_handle, (void*)uuid.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]

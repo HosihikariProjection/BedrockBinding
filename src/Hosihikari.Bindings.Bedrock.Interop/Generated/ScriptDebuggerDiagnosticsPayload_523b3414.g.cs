@@ -60,12 +60,12 @@ public sealed unsafe partial class ScriptDebuggerDiagnosticsPayload : global::Sy
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptDebuggerDiagnosticsPayload Create()
+    public static ScriptDebuggerDiagnosticsPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_879b1aaa();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptDebuggerDiagnosticsPayload((nint)handle);
@@ -79,9 +79,10 @@ public sealed unsafe partial class ScriptDebuggerDiagnosticsPayload : global::Sy
     public static void bindType(nint ctx) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload((nint)NativeMethods.TablePtr->C3.hs_method_67307174((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_67307174((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload((nint)__hs_handle, false) : null;
     }
 
 

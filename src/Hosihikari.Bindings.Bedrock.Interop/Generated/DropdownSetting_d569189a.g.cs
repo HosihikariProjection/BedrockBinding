@@ -48,12 +48,12 @@ public sealed unsafe partial class DropdownSetting : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DropdownSetting Create()
+    public static DropdownSetting? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c30e656d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DropdownSetting((nint)handle);

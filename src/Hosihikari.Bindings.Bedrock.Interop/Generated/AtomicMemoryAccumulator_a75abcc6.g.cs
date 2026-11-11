@@ -40,12 +40,12 @@ public sealed unsafe partial class AtomicMemoryAccumulator : global::System.IDis
         return __hs_handle;
     }
 
-    public static AtomicMemoryAccumulator Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPerformanceData_Nested.AtomicMemoryAccumulator arg0)
+    public static AtomicMemoryAccumulator? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPerformanceData_Nested.AtomicMemoryAccumulator arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7b462059((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AtomicMemoryAccumulator((nint)handle);

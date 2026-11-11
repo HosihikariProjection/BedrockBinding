@@ -44,23 +44,23 @@ public sealed unsafe partial class Components : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Components Create()
+    public static Components? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1189acd5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Components((nint)handle);
     }
 
-    public static Components Create(global::Hosihikari.Bindings.Bedrock.Interop.Util.Url.Components arg0)
+    public static Components? Create(global::Hosihikari.Bindings.Bedrock.Interop.Util.Url.Components arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_980a4ed2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Components((nint)handle);
@@ -96,9 +96,10 @@ public sealed unsafe partial class Components : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_f57fe4e7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Util.Url.Components operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Util.Url.Components arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Util.Url.Components? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Util.Url.Components arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Util.Url.Components((nint)NativeMethods.TablePtr->C4.hs_method_32fc4bfa((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_32fc4bfa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Util.Url.Components((nint)__hs_handle, false) : null;
     }
 
 

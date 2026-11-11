@@ -45,12 +45,12 @@ public sealed unsafe partial class TagUpdateToken : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_a339a753((void*)__hosihikari_shim_handle);
     }
 
-    public static TagUpdateToken Create(global::Hosihikari.Bindings.Bedrock.Interop.TagUpdateToken arg0)
+    public static TagUpdateToken? Create(global::Hosihikari.Bindings.Bedrock.Interop.TagUpdateToken arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a28198a8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TagUpdateToken((nint)handle);

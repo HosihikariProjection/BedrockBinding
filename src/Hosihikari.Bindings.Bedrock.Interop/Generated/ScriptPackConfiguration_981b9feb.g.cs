@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptPackConfiguration : global::System.IDis
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptPackConfiguration Create()
+    public static ScriptPackConfiguration? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6375b2e4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPackConfiguration((nint)handle);
@@ -81,9 +81,10 @@ public sealed unsafe partial class ScriptPackConfiguration : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C3.hs_get_6e3f08c3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptPackConfiguration operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPackConfiguration arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptPackConfiguration? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPackConfiguration arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptPackConfiguration((nint)NativeMethods.TablePtr->C3.hs_method_aba37ae4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_aba37ae4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptPackConfiguration((nint)__hs_handle, false) : null;
     }
 
 

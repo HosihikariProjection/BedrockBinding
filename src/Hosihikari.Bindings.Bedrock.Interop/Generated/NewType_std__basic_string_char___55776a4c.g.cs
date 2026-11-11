@@ -40,29 +40,29 @@ public sealed unsafe partial class NewType_std__basic_string_char__ : global::Sy
         return __hs_handle;
     }
 
-    public static NewType_std__basic_string_char__ Create()
+    public static NewType_std__basic_string_char__? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cbb3cb06();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NewType_std__basic_string_char__((nint)handle);
     }
 
-    public static NewType_std__basic_string_char__ Create(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__ other)
+    public static NewType_std__basic_string_char__? Create(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__ other)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1a50809f((void*)other.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NewType_std__basic_string_char__((nint)handle);
     }
 
-    public static NewType_std__basic_string_char__ Create(string t)
+    public static NewType_std__basic_string_char__? Create(string t)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(t);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -80,7 +80,7 @@ public sealed unsafe partial class NewType_std__basic_string_char__ : global::Sy
             var handle = NativeMethods.TablePtr->C2.hs_create_24a13b1c(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new NewType_std__basic_string_char__((nint)handle);
@@ -93,9 +93,10 @@ public sealed unsafe partial class NewType_std__basic_string_char__ : global::Sy
         get => (nint)NativeMethods.TablePtr->C2.hs_get_160c92f6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__ operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__ other)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__ other)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__((nint)NativeMethods.TablePtr->C2.hs_method_8c7386a4((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8c7386a4((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__ other)

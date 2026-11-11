@@ -40,12 +40,12 @@ public sealed unsafe partial class ChangePlayerScore : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static ChangePlayerScore Create(global::Hosihikari.Bindings.Bedrock.Interop.ChangePlayerScore arg0)
+    public static ChangePlayerScore? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChangePlayerScore arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_019e2d43((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChangePlayerScore((nint)handle);

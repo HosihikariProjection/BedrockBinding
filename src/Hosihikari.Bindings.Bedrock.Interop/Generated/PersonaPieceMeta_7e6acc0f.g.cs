@@ -40,23 +40,23 @@ public sealed unsafe partial class PersonaPieceMeta : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PersonaPieceMeta Create()
+    public static PersonaPieceMeta? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_01954826();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PersonaPieceMeta((nint)handle);
     }
 
-    public static PersonaPieceMeta Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.PersonaPieceMetaDef.PersonaPieceMeta arg0)
+    public static PersonaPieceMeta? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.PersonaPieceMetaDef.PersonaPieceMeta arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ca503e86((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PersonaPieceMeta((nint)handle);

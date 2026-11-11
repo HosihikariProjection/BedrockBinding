@@ -40,12 +40,12 @@ public sealed unsafe partial class MobSpawnerPermutation : global::System.IDispo
         return __hs_handle;
     }
 
-    public static MobSpawnerPermutation Create(global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnerPermutation arg0)
+    public static MobSpawnerPermutation? Create(global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnerPermutation arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_25446522((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobSpawnerPermutation((nint)handle);

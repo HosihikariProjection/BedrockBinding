@@ -78,12 +78,12 @@ public sealed unsafe partial class RNS2_Windows : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_723ab180((void*)__hosihikari_shim_handle, (void*)bindParameters, (void*)file, line);
     }
 
-    public static RNS2_Windows Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Windows arg0)
+    public static RNS2_Windows? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Windows arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_2e084db9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RNS2_Windows((nint)handle);

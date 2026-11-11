@@ -260,12 +260,12 @@ public sealed unsafe partial class ChunkSource : global::System.IDisposable
     public void _writeEntityChunkTransfersToUnloadedChunk(nint chunkKey, nint transfers) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'ActorUnloadedChunkTransferEntry' is not supported.");
 
-    public static ChunkSource Create()
+    public static ChunkSource? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_82a30b84();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkSource((nint)handle);

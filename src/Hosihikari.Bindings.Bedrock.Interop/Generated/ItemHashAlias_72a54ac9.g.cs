@@ -40,12 +40,12 @@ public sealed unsafe partial class ItemHashAlias : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ItemHashAlias Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistry_Nested.ItemHashAlias arg0)
+    public static ItemHashAlias? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistry_Nested.ItemHashAlias arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5a6270ae((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemHashAlias((nint)handle);

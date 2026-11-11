@@ -40,12 +40,12 @@ public sealed unsafe partial class PreferredPathComponent : global::System.IDisp
         return __hs_handle;
     }
 
-    public static PreferredPathComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PreferredPathComponent arg0)
+    public static PreferredPathComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PreferredPathComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6447b3ef((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PreferredPathComponent((nint)handle);

@@ -44,23 +44,23 @@ public sealed unsafe partial class ScriptSystemAfterEvents : global::System.IDis
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptSystemAfterEvents Create()
+    public static ScriptSystemAfterEvents? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_976e6e04();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptSystemAfterEvents((nint)handle);
     }
 
-    public static ScriptSystemAfterEvents Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptSystemAfterEvents arg0)
+    public static ScriptSystemAfterEvents? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptSystemAfterEvents arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_65a20865((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptSystemAfterEvents((nint)handle);
@@ -130,9 +130,10 @@ public sealed unsafe partial class ScriptSystemAfterEvents : global::System.IDis
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptSystemAfterEvents operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptSystemAfterEvents arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptSystemAfterEvents? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptSystemAfterEvents arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptSystemAfterEvents((nint)NativeMethods.TablePtr->C3.hs_method_c1680f04((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c1680f04((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptSystemAfterEvents((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

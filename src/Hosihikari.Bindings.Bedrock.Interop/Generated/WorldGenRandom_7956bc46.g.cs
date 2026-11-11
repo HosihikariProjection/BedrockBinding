@@ -88,12 +88,12 @@ public sealed unsafe partial class WorldGenRandom : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorldGenRandom Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenRandom arg0)
+    public static WorldGenRandom? Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenRandom arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a73d925d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldGenRandom((nint)handle);
@@ -157,9 +157,10 @@ public sealed unsafe partial class WorldGenRandom : global::System.IDisposable
     public nint setDecorationSeed(long seed, int chunkX, int chunkZ) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenRandom setLargeFeatureSeed(long seed, int chunkX, int chunkZ)
+    public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenRandom? setLargeFeatureSeed(long seed, int chunkX, int chunkZ)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenRandom((nint)NativeMethods.TablePtr->C4.hs_method_85a44937((void*)__hosihikari_shim_handle, seed, chunkX, chunkZ), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_85a44937((void*)__hosihikari_shim_handle, seed, chunkX, chunkZ);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenRandom((nint)__hs_handle, false) : null;
     }
 
 

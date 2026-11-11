@@ -44,12 +44,12 @@ public sealed unsafe partial class ActorHistory : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorHistory Create()
+    public static ActorHistory? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d8ed764f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorHistory((nint)handle);

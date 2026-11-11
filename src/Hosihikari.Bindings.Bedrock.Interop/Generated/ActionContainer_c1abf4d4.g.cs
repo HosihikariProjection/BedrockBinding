@@ -44,12 +44,12 @@ public sealed unsafe partial class ActionContainer : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActionContainer Create(global::Hosihikari.Bindings.Bedrock.Interop.npc.ActionContainer arg0)
+    public static ActionContainer? Create(global::Hosihikari.Bindings.Bedrock.Interop.npc.ActionContainer arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_d59f0ec8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActionContainer((nint)handle);

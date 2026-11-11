@@ -40,12 +40,12 @@ public sealed unsafe partial class AttributeRequestComponent : global::System.ID
         return __hs_handle;
     }
 
-    public static AttributeRequestComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent arg0)
+    public static AttributeRequestComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8d9d985b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AttributeRequestComponent((nint)handle);

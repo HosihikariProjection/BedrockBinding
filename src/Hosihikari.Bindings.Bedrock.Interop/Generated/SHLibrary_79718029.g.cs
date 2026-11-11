@@ -48,12 +48,12 @@ public sealed unsafe partial class SHLibrary : global::System.IDisposable
     public bool _postProcess(nint region, nint random, nint chunkBB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SHLibrary Create(global::Hosihikari.Bindings.Bedrock.Interop.SHLibrary arg0)
+    public static SHLibrary? Create(global::Hosihikari.Bindings.Bedrock.Interop.SHLibrary arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0f1f7aa1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SHLibrary((nint)handle);

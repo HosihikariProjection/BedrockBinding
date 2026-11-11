@@ -68,12 +68,12 @@ public sealed unsafe partial class StartGamePacketPayload : global::System.IDisp
     public static StartGamePacketPayload Create(nint settings, nint entityId, nint runtimeId, nint entityGameType, bool enableItemStackNetManager, nint pos, nint rot, nint levelId, nint levelName, nint premiumTemplateContentIdentity, nint multiplayerCorrelationId, nint blockDefinitionGroup, bool isTrial, nint playerPropertyData, nint movementSettings, nint serverVersion, nint worldTemplateId, nint serverJoinInfo, nint serverTelemetryData, ulong levelCurrentTime, int enchantmentSeed, ulong blockTypeRegistryChecksum) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StartGamePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacketPayload arg0)
+    public static StartGamePacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4049ae72((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StartGamePacketPayload((nint)handle);
@@ -229,9 +229,10 @@ public sealed unsafe partial class StartGamePacketPayload : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C3.hs_get_6b9529d0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacketPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacketPayload((nint)NativeMethods.TablePtr->C3.hs_method_015fd893((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_015fd893((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacketPayload((nint)__hs_handle, false) : null;
     }
 
 

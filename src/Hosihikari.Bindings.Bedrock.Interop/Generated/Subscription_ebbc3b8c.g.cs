@@ -45,23 +45,23 @@ public sealed unsafe partial class Subscription : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_f2dcfdf1((void*)__hosihikari_shim_handle);
     }
 
-    public static Subscription Create()
+    public static Subscription? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b5bc2c21();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Subscription((nint)handle);
     }
 
-    public static Subscription Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription arg0)
+    public static Subscription? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d198e47d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Subscription((nint)handle);
@@ -71,9 +71,10 @@ public sealed unsafe partial class Subscription : global::System.IDisposable
     public nint operator_assign(nint conn) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)NativeMethods.TablePtr->C0.hs_method_89ee8718((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_89ee8718((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)__hs_handle, false) : null;
     }
 
 

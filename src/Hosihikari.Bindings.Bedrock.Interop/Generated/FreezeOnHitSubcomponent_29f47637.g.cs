@@ -56,12 +56,12 @@ public sealed unsafe partial class FreezeOnHitSubcomponent : global::System.IDis
     public void _writetoJSON(nint component) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FreezeOnHitSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.FreezeOnHitSubcomponent arg0)
+    public static FreezeOnHitSubcomponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.FreezeOnHitSubcomponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b8540b74((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FreezeOnHitSubcomponent((nint)handle);

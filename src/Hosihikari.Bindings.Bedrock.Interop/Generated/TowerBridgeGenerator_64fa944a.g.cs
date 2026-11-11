@@ -44,12 +44,12 @@ public sealed unsafe partial class TowerBridgeGenerator : global::System.IDispos
     public bool _generate(nint structureManager, nint generators, int genDepth, nint parent, nint offset, nint pieces, nint random) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TowerBridgeGenerator Create(global::Hosihikari.Bindings.Bedrock.Interop.EndCityPieces_Nested.TowerBridgeGenerator arg0)
+    public static TowerBridgeGenerator? Create(global::Hosihikari.Bindings.Bedrock.Interop.EndCityPieces_Nested.TowerBridgeGenerator arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6485115e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TowerBridgeGenerator((nint)handle);

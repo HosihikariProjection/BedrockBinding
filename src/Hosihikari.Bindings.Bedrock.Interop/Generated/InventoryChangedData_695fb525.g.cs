@@ -40,23 +40,23 @@ public sealed unsafe partial class InventoryChangedData : global::System.IDispos
         return __hs_handle;
     }
 
-    public static InventoryChangedData Create()
+    public static InventoryChangedData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9d8a46e3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventoryChangedData((nint)handle);
     }
 
-    public static InventoryChangedData Create(global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingSystem_Nested.InventoryChangedData arg0)
+    public static InventoryChangedData? Create(global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingSystem_Nested.InventoryChangedData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_22bba67b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventoryChangedData((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class InventoryChangedData : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C3.hs_get_da3381c4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingSystem_Nested.InventoryChangedData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingSystem_Nested.InventoryChangedData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingSystem_Nested.InventoryChangedData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingSystem_Nested.InventoryChangedData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingSystem_Nested.InventoryChangedData((nint)NativeMethods.TablePtr->C3.hs_method_f0934749((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f0934749((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingSystem_Nested.InventoryChangedData((nint)__hs_handle, false) : null;
     }
 
 

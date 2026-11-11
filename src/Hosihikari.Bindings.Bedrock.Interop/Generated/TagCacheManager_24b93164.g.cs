@@ -44,12 +44,12 @@ public sealed unsafe partial class TagCacheManager : global::System.IDisposable
     public nint _ctor(nint commandManager, nint deregisterTagsFromActorProxy) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TagCacheManager Create()
+    public static TagCacheManager? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e7209800();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TagCacheManager((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class TagCacheManager : global::System.IDisposable
     public static TagCacheManager Create(nint commandManager, nint deregisterTagsFromActorProxy) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TagCacheManager Create(global::Hosihikari.Bindings.Bedrock.Interop.TagCacheManager arg0)
+    public static TagCacheManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.TagCacheManager arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c929e814((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TagCacheManager((nint)handle);

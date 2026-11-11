@@ -48,23 +48,23 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerDimensionTransferManager Create()
+    public static PlayerDimensionTransferManager? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_25c2f60c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerDimensionTransferManager((nint)handle);
     }
 
-    public static PlayerDimensionTransferManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDimensionTransferManager arg0)
+    public static PlayerDimensionTransferManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDimensionTransferManager arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_dd88e61b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerDimensionTransferManager((nint)handle);

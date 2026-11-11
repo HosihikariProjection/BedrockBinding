@@ -74,23 +74,23 @@ public sealed unsafe partial class RiseToLiquidLevelGoal : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RiseToLiquidLevelGoal Create()
+    public static RiseToLiquidLevelGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_08b2b81f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RiseToLiquidLevelGoal((nint)handle);
     }
 
-    public static RiseToLiquidLevelGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.RiseToLiquidLevelGoal arg0)
+    public static RiseToLiquidLevelGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.RiseToLiquidLevelGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_17739473((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RiseToLiquidLevelGoal((nint)handle);
@@ -145,9 +145,10 @@ public sealed unsafe partial class RiseToLiquidLevelGoal : global::System.IDispo
         set => NativeMethods.TablePtr->C3.hs_set_6c739689((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RiseToLiquidLevelGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RiseToLiquidLevelGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RiseToLiquidLevelGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RiseToLiquidLevelGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RiseToLiquidLevelGoal((nint)NativeMethods.TablePtr->C3.hs_method_31697287((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_31697287((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RiseToLiquidLevelGoal((nint)__hs_handle, false) : null;
     }
 
     public void tick()

@@ -82,12 +82,12 @@ public sealed unsafe partial class GetItemCountCommand : global::System.IDisposa
     public bool _isDone() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GetItemCountCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.GetItemCountCommand arg0)
+    public static GetItemCountCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.GetItemCountCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_40465888((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GetItemCountCommand((nint)handle);

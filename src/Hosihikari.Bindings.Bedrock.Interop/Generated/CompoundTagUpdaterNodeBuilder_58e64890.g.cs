@@ -44,23 +44,23 @@ public sealed unsafe partial class CompoundTagUpdaterNodeBuilder : global::Syste
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CompoundTagUpdaterNodeBuilder Create()
+    public static CompoundTagUpdaterNodeBuilder? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e6bcfbfc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CompoundTagUpdaterNodeBuilder((nint)handle);
     }
 
-    public static CompoundTagUpdaterNodeBuilder Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder arg0)
+    public static CompoundTagUpdaterNodeBuilder? Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2cff0744((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CompoundTagUpdaterNodeBuilder((nint)handle);
@@ -122,9 +122,10 @@ public sealed unsafe partial class CompoundTagUpdaterNodeBuilder : global::Syste
     public nint matchLiteral(nint tagName, nint pattern) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder((nint)NativeMethods.TablePtr->C0.hs_method_4da091a2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4da091a2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

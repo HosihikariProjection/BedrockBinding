@@ -40,12 +40,12 @@ public sealed unsafe partial class DimensionConversionData : global::System.IDis
         return __hs_handle;
     }
 
-    public static DimensionConversionData Create(global::Hosihikari.Bindings.Bedrock.Interop.DimensionConversionData arg0)
+    public static DimensionConversionData? Create(global::Hosihikari.Bindings.Bedrock.Interop.DimensionConversionData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c33c0679((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DimensionConversionData((nint)handle);

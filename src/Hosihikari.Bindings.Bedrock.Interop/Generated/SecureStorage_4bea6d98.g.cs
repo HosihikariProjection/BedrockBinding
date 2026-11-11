@@ -48,12 +48,12 @@ public sealed unsafe partial class SecureStorage : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SecureStorage Create()
+    public static SecureStorage? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a0a18ae6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SecureStorage((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class SecureStorage : global::System.IDisposable
     public static SecureStorage Create(nint settingsPath) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SecureStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.SecureStorage arg0)
+    public static SecureStorage? Create(global::Hosihikari.Bindings.Bedrock.Interop.SecureStorage arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_70df0966((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SecureStorage((nint)handle);
@@ -187,9 +187,10 @@ public sealed unsafe partial class SecureStorage : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_880b4dc5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SecureStorage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SecureStorage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SecureStorage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SecureStorage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SecureStorage((nint)NativeMethods.TablePtr->C3.hs_method_3ba81e34((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3ba81e34((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SecureStorage((nint)__hs_handle, false) : null;
     }
 
     public bool remove(string key)

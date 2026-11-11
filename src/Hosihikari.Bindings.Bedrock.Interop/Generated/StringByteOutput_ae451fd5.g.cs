@@ -67,9 +67,10 @@ public sealed unsafe partial class StringByteOutput : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_f328835c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput((nint)NativeMethods.TablePtr->C3.hs_method_3a4cf29d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3a4cf29d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput((nint)__hs_handle, false) : null;
     }
 
     public void writeBytes(nint data, ulong bytes)

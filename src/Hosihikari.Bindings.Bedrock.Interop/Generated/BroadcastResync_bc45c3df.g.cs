@@ -40,23 +40,23 @@ public sealed unsafe partial class BroadcastResync : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static BroadcastResync Create()
+    public static BroadcastResync? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_963692b6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BroadcastResync((nint)handle);
     }
 
-    public static BroadcastResync Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastResync arg0)
+    public static BroadcastResync? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastResync arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a4211e6f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BroadcastResync((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class BroadcastResync : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_25eefd49((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastResync operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastResync arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastResync? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastResync arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastResync((nint)NativeMethods.TablePtr->C3.hs_method_2be1fa7a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2be1fa7a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastResync((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -44,12 +44,12 @@ public sealed unsafe partial class RepairableItemComponent : global::System.IDis
     public static nint NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RepairableItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.RepairableItemComponent arg0)
+    public static RepairableItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.RepairableItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f3598d24((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RepairableItemComponent((nint)handle);

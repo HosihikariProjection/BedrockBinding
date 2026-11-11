@@ -40,23 +40,23 @@ public sealed unsafe partial class CommandRequest : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CommandRequest Create()
+    public static CommandRequest? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7fa7a286();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandRequest((nint)handle);
     }
 
-    public static CommandRequest Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.CommandRequest arg0)
+    public static CommandRequest? Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.CommandRequest arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8711bf37((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandRequest((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class CommandRequest : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c4d9df74((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.CommandRequest operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.CommandRequest arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.CommandRequest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.CommandRequest arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.CommandRequest((nint)NativeMethods.TablePtr->C0.hs_method_b52aa3c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b52aa3c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.CommandRequest((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -410,9 +410,10 @@ public sealed unsafe partial class SculkShriekerBlock : global::System.IDisposab
         return NativeMethods.TablePtr->C3.hs_method_f3b38f2f((void*)__hosihikari_shim_handle, (void*)arg0.Handle, face, arg2) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getInitialDefaultState()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getInitialDefaultState()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C3.hs_method_06f950fb((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_06f950fb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public int getVariant(global::Hosihikari.Bindings.Bedrock.Interop.Block block)

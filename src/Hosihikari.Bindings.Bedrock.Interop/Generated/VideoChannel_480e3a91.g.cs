@@ -329,23 +329,23 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_ebcf1d37((void*)__hosihikari_shim_handle);
     }
 
-    public static VideoChannel Create()
+    public static VideoChannel? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4174d596();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VideoChannel((nint)handle);
     }
 
-    public static VideoChannel Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel arg0)
+    public static VideoChannel? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a0f1cdb4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VideoChannel((nint)handle);
@@ -384,9 +384,10 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_fd329e11((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel((nint)NativeMethods.TablePtr->C4.hs_method_f230f16e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f230f16e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface? video_media_receive_channel()

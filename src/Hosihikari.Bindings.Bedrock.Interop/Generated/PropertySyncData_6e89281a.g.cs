@@ -48,12 +48,12 @@ public sealed unsafe partial class PropertySyncData : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PropertySyncData Create()
+    public static PropertySyncData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_656f4594();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PropertySyncData((nint)handle);
@@ -79,9 +79,10 @@ public sealed unsafe partial class PropertySyncData : global::System.IDisposable
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PropertySyncData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PropertySyncData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PropertySyncData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PropertySyncData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PropertySyncData((nint)NativeMethods.TablePtr->C2.hs_method_ee0267f0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ee0267f0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PropertySyncData((nint)__hs_handle, false) : null;
     }
 
 

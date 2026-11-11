@@ -48,23 +48,23 @@ public sealed unsafe partial class ScriptCommandError : global::System.IDisposab
     public nint _ctor_0589eb78(nint messages, nint result) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptCommandError Create()
+    public static ScriptCommandError? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_bb04c036();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptCommandError((nint)handle);
     }
 
-    public static ScriptCommandError Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptCommandError arg0)
+    public static ScriptCommandError? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptCommandError arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cb6425df((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptCommandError((nint)handle);

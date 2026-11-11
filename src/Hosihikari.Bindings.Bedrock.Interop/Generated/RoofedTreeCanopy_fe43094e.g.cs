@@ -44,12 +44,12 @@ public sealed unsafe partial class RoofedTreeCanopy : global::System.IDisposable
     public nint _placeCanopy(nint target, nint pos, nint trunkSize, nint random, nint arg4, nint arg5, int arg6, nint arg7) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RoofedTreeCanopy Create(global::Hosihikari.Bindings.Bedrock.Interop.RoofedTreeCanopy arg0)
+    public static RoofedTreeCanopy? Create(global::Hosihikari.Bindings.Bedrock.Interop.RoofedTreeCanopy arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9c2b76f6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RoofedTreeCanopy((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class ChunkPositionAndDimension : global::System.ID
         return __hs_handle;
     }
 
-    public static ChunkPositionAndDimension Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPositionAndDimension arg0)
+    public static ChunkPositionAndDimension? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPositionAndDimension arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_eff7300d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkPositionAndDimension((nint)handle);

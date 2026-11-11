@@ -40,23 +40,23 @@ public sealed unsafe partial class VariableMaxAutoStepDefinition : global::Syste
         return __hs_handle;
     }
 
-    public static VariableMaxAutoStepDefinition Create()
+    public static VariableMaxAutoStepDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f97bd408();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VariableMaxAutoStepDefinition((nint)handle);
     }
 
-    public static VariableMaxAutoStepDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.VariableMaxAutoStepDefinition arg0)
+    public static VariableMaxAutoStepDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.VariableMaxAutoStepDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5429a9c7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VariableMaxAutoStepDefinition((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class VariableMaxAutoStepDefinition : global::Syste
         get => (nint)NativeMethods.TablePtr->C4.hs_get_5fd0c7b4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.VariableMaxAutoStepDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VariableMaxAutoStepDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.VariableMaxAutoStepDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VariableMaxAutoStepDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.VariableMaxAutoStepDefinition((nint)NativeMethods.TablePtr->C4.hs_method_da8c2bd9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_da8c2bd9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VariableMaxAutoStepDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

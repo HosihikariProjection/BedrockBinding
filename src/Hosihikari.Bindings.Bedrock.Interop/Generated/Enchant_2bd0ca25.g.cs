@@ -112,12 +112,12 @@ public sealed unsafe partial class Enchant : global::System.IDisposable
     public bool _isTreasureOnly() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Enchant Create()
+    public static Enchant? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_56ddef82();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Enchant((nint)handle);
@@ -127,12 +127,12 @@ public sealed unsafe partial class Enchant : global::System.IDisposable
     public static Enchant Create(nint type, nint frequency, nint stringId, nint scriptStringId, nint description, nint isAvailableForVillagerTraining, int primarySlots, int secondarySlots) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Enchant Create(global::Hosihikari.Bindings.Bedrock.Interop.Enchant arg0)
+    public static Enchant? Create(global::Hosihikari.Bindings.Bedrock.Interop.Enchant arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_403a2523((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Enchant((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class VibrationListenerComponent : global::System.I
         return __hs_handle;
     }
 
-    public static VibrationListenerComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.VibrationListenerComponent arg0)
+    public static VibrationListenerComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.VibrationListenerComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4974c318((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VibrationListenerComponent((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class ThisPtrPlusSysAddr : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static ThisPtrPlusSysAddr Create()
+    public static ThisPtrPlusSysAddr? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_eb98f1b7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ThisPtrPlusSysAddr((nint)handle);
     }
 
-    public static ThisPtrPlusSysAddr Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface_Nested.ThisPtrPlusSysAddr arg0)
+    public static ThisPtrPlusSysAddr? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface_Nested.ThisPtrPlusSysAddr arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0587301c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ThisPtrPlusSysAddr((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class ThisPtrPlusSysAddr : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C3.hs_get_9a6a6603((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface_Nested.ThisPtrPlusSysAddr operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface_Nested.ThisPtrPlusSysAddr arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface_Nested.ThisPtrPlusSysAddr? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface_Nested.ThisPtrPlusSysAddr arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface_Nested.ThisPtrPlusSysAddr((nint)NativeMethods.TablePtr->C3.hs_method_b39c7b03((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b39c7b03((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface_Nested.ThisPtrPlusSysAddr((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

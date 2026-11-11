@@ -52,23 +52,23 @@ public sealed unsafe partial class floatN2_Vec2_ : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_fc7be25f((void*)__hosihikari_shim_handle, value);
     }
 
-    public static floatN2_Vec2_ Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN2_Vec2_ arg0)
+    public static floatN2_Vec2_? Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN2_Vec2_ arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_8e47f707((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new floatN2_Vec2_((nint)handle);
     }
 
-    public static floatN2_Vec2_ Create(float all)
+    public static floatN2_Vec2_? Create(float all)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_681a8272(all);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new floatN2_Vec2_((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class floatN2_Vec2_ : global::System.IDisposable
     public static floatN2_Vec2_ Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN2_Vec2_ operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN2_Vec2_ arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN2_Vec2_? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN2_Vec2_ arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN2_Vec2_((nint)NativeMethods.TablePtr->C4.hs_method_e769aa4c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e769aa4c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN2_Vec2_((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

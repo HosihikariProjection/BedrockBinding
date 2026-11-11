@@ -40,12 +40,12 @@ public sealed unsafe partial class CraftingTagsProxy : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static CraftingTagsProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.CraftingTagsProxy arg0)
+    public static CraftingTagsProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.CraftingTagsProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3d83870e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CraftingTagsProxy((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class IBlockSource : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IBlockSource Create(global::Hosihikari.Bindings.Bedrock.Interop.IBlockSource arg0)
+    public static IBlockSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.IBlockSource arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a1b08404((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IBlockSource((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class IBlockSource : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_33423cf0((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)blockPos.Handle, face, (void*)item.Handle, generateParticle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HitResult clip(global::Hosihikari.Bindings.Bedrock.Interop.ClipParameters parameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.HitResult? clip(global::Hosihikari.Bindings.Bedrock.Interop.ClipParameters parameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HitResult((nint)NativeMethods.TablePtr->C1.hs_method_cc9f9203((void*)__hosihikari_shim_handle, (void*)parameters.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cc9f9203((void*)__hosihikari_shim_handle, (void*)parameters.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HitResult((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -157,19 +158,22 @@ public sealed unsafe partial class IBlockSource : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource getChunkSource()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource? getChunkSource()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource((nint)NativeMethods.TablePtr->C1.hs_method_c8a69ebb((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c8a69ebb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Dimension getDimension()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Dimension? getDimension()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)NativeMethods.TablePtr->C1.hs_method_72de293d((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_72de293d((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Dimension getDimensionConst()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Dimension? getDimensionConst()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)NativeMethods.TablePtr->C1.hs_method_59cecab6((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_59cecab6((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -180,19 +184,22 @@ public sealed unsafe partial class IBlockSource : global::System.IDisposable
     public short getHeight(nint type, int x, int z) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ILevel getILevel()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ILevel? getILevel()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ILevel((nint)NativeMethods.TablePtr->C1.hs_method_16acf177((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_16acf177((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ILevel((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Level getLevel()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Level? getLevel()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)NativeMethods.TablePtr->C1.hs_method_37a552e1((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_37a552e1((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64 getLevelSeed64()
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64? getLevelSeed64()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64((nint)NativeMethods.TablePtr->C1.hs_method_17189e6b((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_17189e6b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64((nint)__hs_handle) : null;
     }
 
     public short getMaxHeight()

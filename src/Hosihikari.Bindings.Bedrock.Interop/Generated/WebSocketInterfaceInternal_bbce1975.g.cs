@@ -56,12 +56,12 @@ public sealed unsafe partial class WebSocketInterfaceInternal : global::System.I
     public nint _sendMessage(nint arg0, nint arg1, nint arg2) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WebSocketInterfaceInternal Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocketInterfaceInternal arg0)
+    public static WebSocketInterfaceInternal? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocketInterfaceInternal arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c95e242d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WebSocketInterfaceInternal((nint)handle);

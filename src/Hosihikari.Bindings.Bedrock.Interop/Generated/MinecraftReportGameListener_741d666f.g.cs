@@ -52,23 +52,23 @@ public sealed unsafe partial class MinecraftReportGameListener : global::System.
     public void _onTestStructureLoaded(nint testInstance) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinecraftReportGameListener Create()
+    public static MinecraftReportGameListener? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6b0df8c9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftReportGameListener((nint)handle);
     }
 
-    public static MinecraftReportGameListener Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftReportGameListener arg0)
+    public static MinecraftReportGameListener? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftReportGameListener arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bf58e15a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftReportGameListener((nint)handle);
@@ -113,9 +113,10 @@ public sealed unsafe partial class MinecraftReportGameListener : global::System.
         NativeMethods.TablePtr->C2.hs_method_61a77112((void*)__hosihikari_shim_handle, (void*)testInstance.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftReportGameListener operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftReportGameListener arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftReportGameListener? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftReportGameListener arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftReportGameListener((nint)NativeMethods.TablePtr->C2.hs_method_39cd6489((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_39cd6489((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftReportGameListener((nint)__hs_handle, false) : null;
     }
 
 

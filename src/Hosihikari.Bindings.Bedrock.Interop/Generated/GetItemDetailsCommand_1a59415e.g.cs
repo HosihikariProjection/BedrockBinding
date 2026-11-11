@@ -82,12 +82,12 @@ public sealed unsafe partial class GetItemDetailsCommand : global::System.IDispo
     public bool _isDone() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GetItemDetailsCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.GetItemDetailsCommand arg0)
+    public static GetItemDetailsCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.GetItemDetailsCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_34fb41b3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GetItemDetailsCommand((nint)handle);

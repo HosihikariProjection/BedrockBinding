@@ -40,12 +40,12 @@ public sealed unsafe partial class IRepositoryLoader : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static IRepositoryLoader Create(global::Hosihikari.Bindings.Bedrock.Interop.RepositoryLoading.IRepositoryLoader arg0)
+    public static IRepositoryLoader? Create(global::Hosihikari.Bindings.Bedrock.Interop.RepositoryLoading.IRepositoryLoader arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_796ac1ac((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IRepositoryLoader((nint)handle);

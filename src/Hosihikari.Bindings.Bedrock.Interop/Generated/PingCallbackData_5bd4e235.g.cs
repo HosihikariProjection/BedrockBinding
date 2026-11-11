@@ -40,12 +40,12 @@ public sealed unsafe partial class PingCallbackData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PingCallbackData Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.PingCallbackData arg0)
+    public static PingCallbackData? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.PingCallbackData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_96806e33((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PingCallbackData((nint)handle);

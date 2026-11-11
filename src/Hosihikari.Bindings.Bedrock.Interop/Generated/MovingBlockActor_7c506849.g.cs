@@ -117,23 +117,23 @@ public sealed unsafe partial class MovingBlockActor : global::System.IDisposable
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MovingBlockActor Create()
+    public static MovingBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cabc4323();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MovingBlockActor((nint)handle);
     }
 
-    public static MovingBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    public static MovingBlockActor? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d89d20d5((void*)pos.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MovingBlockActor((nint)handle);

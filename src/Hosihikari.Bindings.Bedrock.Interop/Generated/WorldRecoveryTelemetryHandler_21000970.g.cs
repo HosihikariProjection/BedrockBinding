@@ -46,12 +46,12 @@ public sealed unsafe partial class WorldRecoveryTelemetryHandler : global::Syste
         get => (nint)NativeMethods.TablePtr->C0.hs_get_9aa61ca6((void*)__hosihikari_shim_handle);
     }
 
-    public static WorldRecoveryTelemetryHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorldRecoveryTelemetryHandler arg0)
+    public static WorldRecoveryTelemetryHandler? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorldRecoveryTelemetryHandler arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a04c8c12((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldRecoveryTelemetryHandler((nint)handle);

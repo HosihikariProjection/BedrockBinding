@@ -48,23 +48,23 @@ public sealed unsafe partial class PlanterItemComponentLegacyFactoryData : globa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlanterItemComponentLegacyFactoryData Create()
+    public static PlanterItemComponentLegacyFactoryData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d82627f6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlanterItemComponentLegacyFactoryData((nint)handle);
     }
 
-    public static PlanterItemComponentLegacyFactoryData Create(global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponentLegacyFactoryData arg0)
+    public static PlanterItemComponentLegacyFactoryData? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponentLegacyFactoryData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_61b1d210((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlanterItemComponentLegacyFactoryData((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class PlanterItemComponentLegacyFactoryData : globa
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponentLegacyFactoryData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponentLegacyFactoryData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponentLegacyFactoryData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponentLegacyFactoryData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponentLegacyFactoryData((nint)NativeMethods.TablePtr->C2.hs_method_4d4e74d8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4d4e74d8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponentLegacyFactoryData((nint)__hs_handle, false) : null;
     }
 
 

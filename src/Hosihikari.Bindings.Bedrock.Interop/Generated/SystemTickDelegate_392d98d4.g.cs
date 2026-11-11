@@ -48,12 +48,12 @@ public sealed unsafe partial class SystemTickDelegate : global::System.IDisposab
     public void _onLand(nint block, nint region, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SystemTickDelegate Create(global::Hosihikari.Bindings.Bedrock.Interop.FallingBlockSystemOnLand.SystemTickDelegate arg0)
+    public static SystemTickDelegate? Create(global::Hosihikari.Bindings.Bedrock.Interop.FallingBlockSystemOnLand.SystemTickDelegate arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3277ec72((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SystemTickDelegate((nint)handle);

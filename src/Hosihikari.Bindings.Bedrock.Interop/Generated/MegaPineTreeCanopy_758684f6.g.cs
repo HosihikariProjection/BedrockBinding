@@ -44,12 +44,12 @@ public sealed unsafe partial class MegaPineTreeCanopy : global::System.IDisposab
     public nint _placeCanopy(nint target, nint pos, nint trunkSize, nint random, nint arg4, nint treeParams, int arg6, nint arg7) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MegaPineTreeCanopy Create(global::Hosihikari.Bindings.Bedrock.Interop.MegaPineTreeCanopy arg0)
+    public static MegaPineTreeCanopy? Create(global::Hosihikari.Bindings.Bedrock.Interop.MegaPineTreeCanopy arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bea2eb32((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MegaPineTreeCanopy((nint)handle);

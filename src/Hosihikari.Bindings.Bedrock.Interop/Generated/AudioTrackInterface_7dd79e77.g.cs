@@ -57,12 +57,12 @@ public sealed unsafe partial class AudioTrackInterface : global::System.IDisposa
         NativeMethods.TablePtr->C4.hs_method_e30de8a7((void*)__hosihikari_shim_handle, (void*)a1);
     }
 
-    public static AudioTrackInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrackInterface arg0)
+    public static AudioTrackInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrackInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_04b6c4fd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AudioTrackInterface((nint)handle);

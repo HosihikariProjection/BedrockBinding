@@ -459,9 +459,10 @@ public sealed unsafe partial class WolfArmorItem : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_70bb316d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int newAnimationFrame, bool inInventoryPane)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo? getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int newAnimationFrame, bool inInventoryPane)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)NativeMethods.TablePtr->C4.hs_method_a9fb0d81((void*)__hosihikari_shim_handle, (void*)item.Handle, newAnimationFrame, inInventoryPane));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a9fb0d81((void*)__hosihikari_shim_handle, (void*)item.Handle, newAnimationFrame, inInventoryPane);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)__hs_handle) : null;
     }
 
     public bool isBodyArmor()

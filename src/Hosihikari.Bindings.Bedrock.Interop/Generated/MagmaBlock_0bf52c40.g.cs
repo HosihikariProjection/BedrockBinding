@@ -410,9 +410,10 @@ public sealed unsafe partial class MagmaBlock : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_596d2ff8((void*)__hosihikari_shim_handle, (void*)tickData);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Brightness getEmissiveBrightness(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Brightness? getEmissiveBrightness(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)NativeMethods.TablePtr->C2.hs_method_63e60fcd((void*)__hosihikari_shim_handle, (void*)arg0.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_63e60fcd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)__hs_handle) : null;
     }
 
     public int getVariant(global::Hosihikari.Bindings.Bedrock.Interop.Block block)

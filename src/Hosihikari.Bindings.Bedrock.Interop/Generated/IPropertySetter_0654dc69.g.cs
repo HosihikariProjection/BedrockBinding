@@ -48,23 +48,23 @@ public sealed unsafe partial class IPropertySetter : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IPropertySetter Create()
+    public static IPropertySetter? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b92cf52a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IPropertySetter((nint)handle);
     }
 
-    public static IPropertySetter Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertySetter arg0)
+    public static IPropertySetter? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertySetter arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_40934edc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IPropertySetter((nint)handle);
@@ -99,9 +99,10 @@ public sealed unsafe partial class IPropertySetter : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_90dfaf65((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertySetter operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertySetter arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertySetter? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertySetter arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertySetter((nint)NativeMethods.TablePtr->C3.hs_method_e1da8f68((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e1da8f68((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertySetter((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'entt::meta_type' is not supported.", false)]

@@ -40,12 +40,12 @@ public sealed unsafe partial class PortalShape : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PortalShape Create(global::Hosihikari.Bindings.Bedrock.Interop.PortalShape arg0)
+    public static PortalShape? Create(global::Hosihikari.Bindings.Bedrock.Interop.PortalShape arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5fad4e8f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PortalShape((nint)handle);

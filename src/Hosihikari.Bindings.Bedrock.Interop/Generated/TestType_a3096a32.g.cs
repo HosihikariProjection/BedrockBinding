@@ -40,12 +40,12 @@ public sealed unsafe partial class TestType : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TestType Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.PosRules.TestType arg0)
+    public static TestType? Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.PosRules.TestType arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6b155012((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TestType((nint)handle);

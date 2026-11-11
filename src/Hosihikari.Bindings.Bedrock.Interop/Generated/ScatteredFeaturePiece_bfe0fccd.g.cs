@@ -44,23 +44,23 @@ public sealed unsafe partial class ScatteredFeaturePiece : global::System.IDispo
     public nint _ctor(int west, int floor, int north, int width, int height, int depth) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScatteredFeaturePiece Create()
+    public static ScatteredFeaturePiece? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1de230e1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScatteredFeaturePiece((nint)handle);
     }
 
-    public static ScatteredFeaturePiece Create(global::Hosihikari.Bindings.Bedrock.Interop.ScatteredFeaturePiece arg0)
+    public static ScatteredFeaturePiece? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScatteredFeaturePiece arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_72f758a4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScatteredFeaturePiece((nint)handle);

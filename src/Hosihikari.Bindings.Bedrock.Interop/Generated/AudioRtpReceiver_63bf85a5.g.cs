@@ -173,23 +173,23 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_2ac36ee7((void*)__hosihikari_shim_handle);
     }
 
-    public static AudioRtpReceiver Create()
+    public static AudioRtpReceiver? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c5a67a6e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AudioRtpReceiver((nint)handle);
     }
 
-    public static AudioRtpReceiver Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver arg0)
+    public static AudioRtpReceiver? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_90c2fc6f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AudioRtpReceiver((nint)handle);
@@ -407,9 +407,10 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_0a83748d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver((nint)NativeMethods.TablePtr->C4.hs_method_0e6fde3a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0e6fde3a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]

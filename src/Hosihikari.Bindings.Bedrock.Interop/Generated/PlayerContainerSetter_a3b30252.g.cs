@@ -56,23 +56,23 @@ public sealed unsafe partial class PlayerContainerSetter : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerContainerSetter Create()
+    public static PlayerContainerSetter? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_98a783df();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerContainerSetter((nint)handle);
     }
 
-    public static PlayerContainerSetter Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerContainerSetter arg0)
+    public static PlayerContainerSetter? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerContainerSetter arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cbec43cd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerContainerSetter((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class PlayerContainerSetter : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C2.hs_get_92d9220c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerContainerSetter operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerContainerSetter arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerContainerSetter? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerContainerSetter arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerContainerSetter((nint)NativeMethods.TablePtr->C2.hs_method_95e46b17((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_95e46b17((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerContainerSetter((nint)__hs_handle, false) : null;
     }
 
     public void setArmor(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)

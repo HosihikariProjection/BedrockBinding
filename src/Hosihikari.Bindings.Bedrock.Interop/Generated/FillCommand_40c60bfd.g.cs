@@ -73,12 +73,12 @@ public sealed unsafe partial class FillCommand : global::System.IDisposable
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FillCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.FillCommand arg0)
+    public static FillCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.FillCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5aa93abc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FillCommand((nint)handle);

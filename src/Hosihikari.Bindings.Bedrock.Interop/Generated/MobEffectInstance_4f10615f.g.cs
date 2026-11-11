@@ -50,34 +50,34 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_d4d2d9c8((void*)__hosihikari_shim_handle);
     }
 
-    public static MobEffectInstance Create()
+    public static MobEffectInstance? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8ccac967();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEffectInstance((nint)handle);
     }
 
-    public static MobEffectInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance arg0)
+    public static MobEffectInstance? Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d75a45eb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEffectInstance((nint)handle);
     }
 
-    public static MobEffectInstance Create(uint id, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration duration)
+    public static MobEffectInstance? Create(uint id, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration duration)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_443f34ef(id, (void*)duration.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEffectInstance((nint)handle);
@@ -97,9 +97,10 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance? load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance((nint)NativeMethods.TablePtr->C2.hs_method_788d7ed3((void*)tag.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_788d7ed3((void*)tag.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance((nint)__hs_handle) : null;
     }
 
     public bool mAmbient
@@ -184,9 +185,10 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance((nint)NativeMethods.TablePtr->C2.hs_method_46626e80((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_46626e80((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]

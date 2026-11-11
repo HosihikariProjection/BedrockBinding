@@ -40,23 +40,23 @@ public sealed unsafe partial class BlockEventDispatcherToken : global::System.ID
         return __hs_handle;
     }
 
-    public static BlockEventDispatcherToken Create()
+    public static BlockEventDispatcherToken? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_64131696();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockEventDispatcherToken((nint)handle);
     }
 
-    public static BlockEventDispatcherToken Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockEventDispatcherToken arg0)
+    public static BlockEventDispatcherToken? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockEventDispatcherToken arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fe46e90e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockEventDispatcherToken((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class BlockEventDispatcherToken : global::System.ID
     public nint operator_assign(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockEventDispatcherToken operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockEventDispatcherToken arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockEventDispatcherToken? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockEventDispatcherToken arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockEventDispatcherToken((nint)NativeMethods.TablePtr->C0.hs_method_276b9dc4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_276b9dc4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockEventDispatcherToken((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

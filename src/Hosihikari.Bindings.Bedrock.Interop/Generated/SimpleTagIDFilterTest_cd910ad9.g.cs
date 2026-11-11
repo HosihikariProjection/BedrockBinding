@@ -70,31 +70,32 @@ public sealed unsafe partial class SimpleTagIDFilterTest : global::System.IDispo
     public bool _setup(nint definition, nint inputs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SimpleTagIDFilterTest Create()
+    public static SimpleTagIDFilterTest? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_745000bb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimpleTagIDFilterTest((nint)handle);
     }
 
-    public static SimpleTagIDFilterTest Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleTagIDFilterTest arg0)
+    public static SimpleTagIDFilterTest? Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleTagIDFilterTest arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7fdc89ac((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimpleTagIDFilterTest((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _serializeValue()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C3.hs_method_cf18af63((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cf18af63((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.", false)]
@@ -113,9 +114,10 @@ public sealed unsafe partial class SimpleTagIDFilterTest : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C3.hs_get_b03ab948((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SimpleTagIDFilterTest operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimpleTagIDFilterTest arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SimpleTagIDFilterTest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimpleTagIDFilterTest arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SimpleTagIDFilterTest((nint)NativeMethods.TablePtr->C3.hs_method_84f8895c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_84f8895c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SimpleTagIDFilterTest((nint)__hs_handle, false) : null;
     }
 
     public bool setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)

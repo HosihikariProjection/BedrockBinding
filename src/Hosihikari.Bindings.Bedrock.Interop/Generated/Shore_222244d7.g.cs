@@ -40,23 +40,23 @@ public sealed unsafe partial class Shore : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Shore Create()
+    public static Shore? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_eb987110();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Shore((nint)handle);
     }
 
-    public static Shore Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.Shore arg0)
+    public static Shore? Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.Shore arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_086ce180((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Shore((nint)handle);

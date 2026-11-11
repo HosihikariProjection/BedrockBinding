@@ -48,23 +48,23 @@ public sealed unsafe partial class BlockBlobFeature : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockBlobFeature Create()
+    public static BlockBlobFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d43d17c5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockBlobFeature((nint)handle);
     }
 
-    public static BlockBlobFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockBlobFeature arg0)
+    public static BlockBlobFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockBlobFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f593a8e7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockBlobFeature((nint)handle);
@@ -88,9 +88,10 @@ public sealed unsafe partial class BlockBlobFeature : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_09f243bf((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockBlobFeature operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockBlobFeature arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockBlobFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockBlobFeature arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockBlobFeature((nint)NativeMethods.TablePtr->C0.hs_method_b3809328((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b3809328((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockBlobFeature((nint)__hs_handle, false) : null;
     }
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)

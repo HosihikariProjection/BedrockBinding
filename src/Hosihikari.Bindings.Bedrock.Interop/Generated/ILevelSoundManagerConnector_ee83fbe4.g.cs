@@ -46,12 +46,12 @@ public sealed unsafe partial class ILevelSoundManagerConnector : global::System.
         get => (nint)NativeMethods.TablePtr->C1.hs_get_2d16163c((void*)__hosihikari_shim_handle);
     }
 
-    public static ILevelSoundManagerConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevelSoundManagerConnector arg0)
+    public static ILevelSoundManagerConnector? Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevelSoundManagerConnector arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_34c49720((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ILevelSoundManagerConnector((nint)handle);

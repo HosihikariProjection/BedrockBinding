@@ -52,12 +52,12 @@ public sealed unsafe partial class AddVolumeEntityPacketPayload : global::System
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AddVolumeEntityPacketPayload Create()
+    public static AddVolumeEntityPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_71f706f2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddVolumeEntityPacketPayload((nint)handle);

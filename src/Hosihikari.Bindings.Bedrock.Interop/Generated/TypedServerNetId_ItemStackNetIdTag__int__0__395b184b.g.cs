@@ -40,12 +40,12 @@ public sealed unsafe partial class TypedServerNetId_ItemStackNetIdTag__int__0_ :
         return __hs_handle;
     }
 
-    public static TypedServerNetId_ItemStackNetIdTag__int__0_ Create(nint rawId)
+    public static TypedServerNetId_ItemStackNetIdTag__int__0_? Create(nint rawId)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_9beaafba((void*)rawId);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TypedServerNetId_ItemStackNetIdTag__int__0_((nint)handle);

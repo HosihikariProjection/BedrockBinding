@@ -40,23 +40,23 @@ public sealed unsafe partial class DatagramHistoryNode : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static DatagramHistoryNode Create()
+    public static DatagramHistoryNode? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6b6860d7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DatagramHistoryNode((nint)handle);
     }
 
-    public static DatagramHistoryNode Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.DatagramHistoryNode arg0)
+    public static DatagramHistoryNode? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.DatagramHistoryNode arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1e524502((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DatagramHistoryNode((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class DatagramHistoryNode : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_1011b0cd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.DatagramHistoryNode operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.DatagramHistoryNode arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.DatagramHistoryNode? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.DatagramHistoryNode arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.DatagramHistoryNode((nint)NativeMethods.TablePtr->C3.hs_method_412903be((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_412903be((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.DatagramHistoryNode((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

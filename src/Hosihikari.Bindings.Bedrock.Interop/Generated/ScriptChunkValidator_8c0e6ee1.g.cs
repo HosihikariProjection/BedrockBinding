@@ -48,23 +48,23 @@ public sealed unsafe partial class ScriptChunkValidator : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptChunkValidator Create()
+    public static ScriptChunkValidator? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c7995e1f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptChunkValidator((nint)handle);
     }
 
-    public static ScriptChunkValidator Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptChunkValidator arg0)
+    public static ScriptChunkValidator? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptChunkValidator arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_09c78808((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptChunkValidator((nint)handle);

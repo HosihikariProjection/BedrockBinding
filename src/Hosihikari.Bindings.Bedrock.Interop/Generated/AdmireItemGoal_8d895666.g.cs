@@ -72,12 +72,12 @@ public sealed unsafe partial class AdmireItemGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AdmireItemGoal Create()
+    public static AdmireItemGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1d4c5ffe();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AdmireItemGoal((nint)handle);
@@ -87,12 +87,12 @@ public sealed unsafe partial class AdmireItemGoal : global::System.IDisposable
     public static AdmireItemGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AdmireItemGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.AdmireItemGoal arg0)
+    public static AdmireItemGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.AdmireItemGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_13265a58((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AdmireItemGoal((nint)handle);
@@ -176,9 +176,10 @@ public sealed unsafe partial class AdmireItemGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_d0997a59((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AdmireItemGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AdmireItemGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AdmireItemGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AdmireItemGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AdmireItemGoal((nint)NativeMethods.TablePtr->C0.hs_method_7fc9067f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7fc9067f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AdmireItemGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

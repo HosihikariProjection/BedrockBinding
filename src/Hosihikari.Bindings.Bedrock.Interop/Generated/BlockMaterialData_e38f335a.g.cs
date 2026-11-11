@@ -48,12 +48,12 @@ public sealed unsafe partial class BlockMaterialData : global::System.IDisposabl
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockMaterialData Create()
+    public static BlockMaterialData? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f27152d6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockMaterialData((nint)handle);
@@ -75,9 +75,10 @@ public sealed unsafe partial class BlockMaterialData : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_077eb9a2((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesDescription_Nested.BlockMaterialData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesDescription_Nested.BlockMaterialData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesDescription_Nested.BlockMaterialData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesDescription_Nested.BlockMaterialData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesDescription_Nested.BlockMaterialData((nint)NativeMethods.TablePtr->C0.hs_method_e5223111((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e5223111((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesDescription_Nested.BlockMaterialData((nint)__hs_handle, false) : null;
     }
 
 

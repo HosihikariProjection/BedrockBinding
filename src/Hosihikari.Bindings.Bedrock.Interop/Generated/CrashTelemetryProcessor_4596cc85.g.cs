@@ -40,12 +40,12 @@ public sealed unsafe partial class CrashTelemetryProcessor : global::System.IDis
         return __hs_handle;
     }
 
-    public static CrashTelemetryProcessor Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.CrashTelemetryProcessor arg0)
+    public static CrashTelemetryProcessor? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.CrashTelemetryProcessor arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_eb240b23((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CrashTelemetryProcessor((nint)handle);

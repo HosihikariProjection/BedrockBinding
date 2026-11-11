@@ -40,23 +40,23 @@ public sealed unsafe partial class LocklessUint32_t : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static LocklessUint32_t Create()
+    public static LocklessUint32_t? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_aade68f5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LocklessUint32_t((nint)handle);
     }
 
-    public static LocklessUint32_t Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.LocklessUint32_t arg0)
+    public static LocklessUint32_t? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.LocklessUint32_t arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7593e42c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LocklessUint32_t((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class LocklessUint32_t : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_a4e06643((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.LocklessUint32_t operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.LocklessUint32_t arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.LocklessUint32_t? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.LocklessUint32_t arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.LocklessUint32_t((nint)NativeMethods.TablePtr->C2.hs_method_8145152e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8145152e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.LocklessUint32_t((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

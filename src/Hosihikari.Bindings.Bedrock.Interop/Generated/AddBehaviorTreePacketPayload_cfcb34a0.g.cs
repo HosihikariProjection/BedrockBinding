@@ -40,12 +40,12 @@ public sealed unsafe partial class AddBehaviorTreePacketPayload : global::System
         return __hs_handle;
     }
 
-    public static AddBehaviorTreePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.AddBehaviorTreePacketPayload arg0)
+    public static AddBehaviorTreePacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.AddBehaviorTreePacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fa4375ba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddBehaviorTreePacketPayload((nint)handle);

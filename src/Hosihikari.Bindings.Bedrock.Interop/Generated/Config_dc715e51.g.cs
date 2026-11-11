@@ -40,23 +40,23 @@ public sealed unsafe partial class Config : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Config Create()
+    public static Config? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_22365ea1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Config((nint)handle);
     }
 
-    public static Config Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream_Nested.Config arg0)
+    public static Config? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream_Nested.Config arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3209fd40((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Config((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class Config : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_2a3b593d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream_Nested.Config operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream_Nested.Config arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream_Nested.Config? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream_Nested.Config arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream_Nested.Config((nint)NativeMethods.TablePtr->C4.hs_method_82538823((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_82538823((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream_Nested.Config((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

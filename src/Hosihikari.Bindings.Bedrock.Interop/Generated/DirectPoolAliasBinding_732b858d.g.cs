@@ -52,12 +52,12 @@ public sealed unsafe partial class DirectPoolAliasBinding : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DirectPoolAliasBinding Create(global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBindingInternal.DirectPoolAliasBinding arg0)
+    public static DirectPoolAliasBinding? Create(global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBindingInternal.DirectPoolAliasBinding arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_92c11494((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DirectPoolAliasBinding((nint)handle);

@@ -112,25 +112,27 @@ public sealed unsafe partial class PlayerDimensionTransferProxy : global::System
     public void _transferTickingArea(nint actor, nint dimension) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerDimensionTransferProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDimensionTransferProxy arg0)
+    public static PlayerDimensionTransferProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDimensionTransferProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4c368723((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerDimensionTransferProxy((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 calculateAgentSpawnPosition(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? calculateAgentSpawnPosition(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_885dc9e0((void*)__hosihikari_shim_handle, (void*)player.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_885dc9e0((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MovePlayerPacket createMovePlayerPacket(global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte resetPosition)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MovePlayerPacket? createMovePlayerPacket(global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte resetPosition)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MovePlayerPacket((nint)NativeMethods.TablePtr->C2.hs_method_155b4866((void*)__hosihikari_shim_handle, (void*)player.Handle, resetPosition));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_155b4866((void*)__hosihikari_shim_handle, (void*)player.Handle, resetPosition);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MovePlayerPacket((nint)__hs_handle) : null;
     }
 
     public void fireWillChangeDimension(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
@@ -144,9 +146,10 @@ public sealed unsafe partial class PlayerDimensionTransferProxy : global::System
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getSpawnPosition(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSpawnPosition(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C2.hs_method_adee1b81((void*)__hosihikari_shim_handle, (void*)player.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_adee1b81((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
     }
 
     public bool hasRespawnPosition(global::Hosihikari.Bindings.Bedrock.Interop.Player player)

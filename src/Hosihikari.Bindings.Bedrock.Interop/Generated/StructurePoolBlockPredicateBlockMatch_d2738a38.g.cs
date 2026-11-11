@@ -64,12 +64,12 @@ public sealed unsafe partial class StructurePoolBlockPredicateBlockMatch : globa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StructurePoolBlockPredicateBlockMatch Create()
+    public static StructurePoolBlockPredicateBlockMatch? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e40015f3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructurePoolBlockPredicateBlockMatch((nint)handle);
@@ -79,12 +79,12 @@ public sealed unsafe partial class StructurePoolBlockPredicateBlockMatch : globa
     public static StructurePoolBlockPredicateBlockMatch Create(nint block) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StructurePoolBlockPredicateBlockMatch Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatch arg0)
+    public static StructurePoolBlockPredicateBlockMatch? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatch arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6b959547((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructurePoolBlockPredicateBlockMatch((nint)handle);

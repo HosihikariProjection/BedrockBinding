@@ -44,12 +44,12 @@ public sealed unsafe partial class SwampBiomeSurfaceFlag : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SwampBiomeSurfaceFlag Create(global::Hosihikari.Bindings.Bedrock.Interop.SwampBiomeSurfaceFlag arg0)
+    public static SwampBiomeSurfaceFlag? Create(global::Hosihikari.Bindings.Bedrock.Interop.SwampBiomeSurfaceFlag arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_35ae341e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SwampBiomeSurfaceFlag((nint)handle);

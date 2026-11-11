@@ -40,23 +40,23 @@ public sealed unsafe partial class InitProxy : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static InitProxy Create()
+    public static InitProxy? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_836d2f4b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InitProxy((nint)handle);
     }
 
-    public static InitProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.GameRuleCommand_Nested.InitProxy arg0)
+    public static InitProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.GameRuleCommand_Nested.InitProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4e1ee3a0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InitProxy((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class InitProxy : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_4da77e5f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameRuleCommand_Nested.InitProxy operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GameRuleCommand_Nested.InitProxy arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameRuleCommand_Nested.InitProxy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GameRuleCommand_Nested.InitProxy arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameRuleCommand_Nested.InitProxy((nint)NativeMethods.TablePtr->C1.hs_method_d50deb21((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d50deb21((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameRuleCommand_Nested.InitProxy((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

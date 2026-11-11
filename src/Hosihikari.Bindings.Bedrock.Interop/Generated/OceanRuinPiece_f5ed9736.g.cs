@@ -57,12 +57,12 @@ public sealed unsafe partial class OceanRuinPiece : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_ad09354f((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
     }
 
-    public static OceanRuinPiece Create()
+    public static OceanRuinPiece? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d0ee68ad();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OceanRuinPiece((nint)handle);

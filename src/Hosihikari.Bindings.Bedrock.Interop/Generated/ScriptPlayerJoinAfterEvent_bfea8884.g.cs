@@ -52,12 +52,12 @@ public sealed unsafe partial class ScriptPlayerJoinAfterEvent : global::System.I
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptPlayerJoinAfterEvent Create()
+    public static ScriptPlayerJoinAfterEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a63ab6cf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPlayerJoinAfterEvent((nint)handle);
@@ -101,9 +101,10 @@ public sealed unsafe partial class ScriptPlayerJoinAfterEvent : global::System.I
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerJoinAfterEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerJoinAfterEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerJoinAfterEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerJoinAfterEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerJoinAfterEvent((nint)NativeMethods.TablePtr->C3.hs_method_4d158e1a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4d158e1a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerJoinAfterEvent((nint)__hs_handle, false) : null;
     }
 
 

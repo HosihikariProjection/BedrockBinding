@@ -40,12 +40,12 @@ public sealed unsafe partial class MediaStreamTrackInterface : global::System.ID
         return __hs_handle;
     }
 
-    public static MediaStreamTrackInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaStreamTrackInterface arg0)
+    public static MediaStreamTrackInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaStreamTrackInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c84c713c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MediaStreamTrackInterface((nint)handle);

@@ -59,9 +59,10 @@ public sealed unsafe partial class IScriptDebugger
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings getSettings()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings? getSettings()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings((nint)NativeMethods.TablePtr->C1.hs_method_5c35bc3a((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5c35bc3a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings((nint)__hs_handle, false) : null;
     }
 
     public bool listen(ushort port)

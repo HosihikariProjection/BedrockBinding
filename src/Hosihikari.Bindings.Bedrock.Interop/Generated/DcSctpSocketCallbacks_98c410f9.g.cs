@@ -108,12 +108,12 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
     public nint CreateTimeout(nint precision) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'dcsctp::Timeout' is not a known bindable declaration.");
 
-    public static DcSctpSocketCallbacks Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks arg0)
+    public static DcSctpSocketCallbacks? Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b0eb2ec7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DcSctpSocketCallbacks((nint)handle);

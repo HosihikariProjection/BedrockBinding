@@ -40,23 +40,23 @@ public sealed unsafe partial class StateChangeRequestData : global::System.IDisp
         return __hs_handle;
     }
 
-    public static StateChangeRequestData Create()
+    public static StateChangeRequestData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8d008fe8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StateChangeRequestData((nint)handle);
     }
 
-    public static StateChangeRequestData Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.StateChangeRequestData arg0)
+    public static StateChangeRequestData? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.StateChangeRequestData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_86eff49a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StateChangeRequestData((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class StateChangeRequestData : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C3.hs_get_c5b86229((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.StateChangeRequestData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.StateChangeRequestData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.StateChangeRequestData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.StateChangeRequestData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.StateChangeRequestData((nint)NativeMethods.TablePtr->C3.hs_method_727f7fbc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_727f7fbc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.StateChangeRequestData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

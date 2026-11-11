@@ -58,12 +58,12 @@ public sealed unsafe partial class VCMProtectionCallback : global::System.IDispo
         NativeMethods.TablePtr->C4.hs_method_9833ea5f((void*)__hosihikari_shim_handle, retransmission_mode);
     }
 
-    public static VCMProtectionCallback Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VCMProtectionCallback arg0)
+    public static VCMProtectionCallback? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VCMProtectionCallback arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5a5e1200((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VCMProtectionCallback((nint)handle);

@@ -58,23 +58,23 @@ public sealed unsafe partial class floatN4_mce__Color_ : global::System.IDisposa
         set => NativeMethods.TablePtr->C4.hs_set_106bdc40((void*)__hosihikari_shim_handle, value);
     }
 
-    public static floatN4_mce__Color_ Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN4_mce__Color_ arg0)
+    public static floatN4_mce__Color_? Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN4_mce__Color_ arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1286e2be((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new floatN4_mce__Color_((nint)handle);
     }
 
-    public static floatN4_mce__Color_ Create(float all)
+    public static floatN4_mce__Color_? Create(float all)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6b429bee(all);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new floatN4_mce__Color_((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class floatN4_mce__Color_ : global::System.IDisposa
     public static floatN4_mce__Color_ Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN4_mce__Color_ operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN4_mce__Color_ arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN4_mce__Color_? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN4_mce__Color_ arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN4_mce__Color_((nint)NativeMethods.TablePtr->C4.hs_method_d114386b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d114386b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN4_mce__Color_((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

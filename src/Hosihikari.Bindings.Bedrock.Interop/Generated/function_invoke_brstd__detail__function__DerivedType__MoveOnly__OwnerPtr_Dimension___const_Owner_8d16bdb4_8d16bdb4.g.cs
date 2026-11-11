@@ -40,23 +40,23 @@ public sealed unsafe partial class function_invoke_brstd__detail__function__Deri
         return __hs_handle;
     }
 
-    public static function_invoke_brstd__detail__function__DerivedType__MoveOnly__OwnerPtr_Dimension___const_Owner_8d16bdb4 Create()
+    public static function_invoke_brstd__detail__function__DerivedType__MoveOnly__OwnerPtr_Dimension___const_Owner_8d16bdb4? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1a48bb76();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new function_invoke_brstd__detail__function__DerivedType__MoveOnly__OwnerPtr_Dimension___const_Owner_8d16bdb4((nint)handle);
     }
 
-    public static function_invoke_brstd__detail__function__DerivedType__MoveOnly__OwnerPtr_Dimension___const_Owner_8d16bdb4 Create_1d3b086a()
+    public static function_invoke_brstd__detail__function__DerivedType__MoveOnly__OwnerPtr_Dimension___const_Owner_8d16bdb4? Create_1d3b086a()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1d3b086a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new function_invoke_brstd__detail__function__DerivedType__MoveOnly__OwnerPtr_Dimension___const_Owner_8d16bdb4((nint)handle);

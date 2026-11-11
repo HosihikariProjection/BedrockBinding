@@ -44,23 +44,23 @@ public sealed unsafe partial class SpawnGroupRegistry : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpawnGroupRegistry Create()
+    public static SpawnGroupRegistry? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_13c291f1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnGroupRegistry((nint)handle);
     }
 
-    public static SpawnGroupRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry arg0)
+    public static SpawnGroupRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1edf1573((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnGroupRegistry((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class SpawnGroupRegistry : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C3.hs_get_0bdc48e7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry((nint)NativeMethods.TablePtr->C3.hs_method_378afb3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_378afb3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry((nint)__hs_handle, false) : null;
     }
 
 

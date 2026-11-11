@@ -40,12 +40,12 @@ public sealed unsafe partial class ActorAddEffectEvent : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static ActorAddEffectEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorAddEffectEvent arg0)
+    public static ActorAddEffectEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorAddEffectEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3c00b2be((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorAddEffectEvent((nint)handle);

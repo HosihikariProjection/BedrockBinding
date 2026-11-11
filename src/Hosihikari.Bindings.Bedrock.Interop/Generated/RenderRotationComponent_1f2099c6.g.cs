@@ -40,12 +40,12 @@ public sealed unsafe partial class RenderRotationComponent : global::System.IDis
         return __hs_handle;
     }
 
-    public static RenderRotationComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.RenderRotationComponent arg0)
+    public static RenderRotationComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.RenderRotationComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_90fd4e8d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RenderRotationComponent((nint)handle);

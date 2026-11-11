@@ -40,23 +40,23 @@ public sealed unsafe partial class AppLifecycleContext : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static AppLifecycleContext Create()
+    public static AppLifecycleContext? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_92538176();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AppLifecycleContext((nint)handle);
     }
 
-    public static AppLifecycleContext Create(global::Hosihikari.Bindings.Bedrock.Interop.AppLifecycleContext arg0)
+    public static AppLifecycleContext? Create(global::Hosihikari.Bindings.Bedrock.Interop.AppLifecycleContext arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fc88f4bc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AppLifecycleContext((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class AppLifecycleContext : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C0.hs_get_3c7a6daf((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AppLifecycleContext operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AppLifecycleContext arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AppLifecycleContext? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AppLifecycleContext arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AppLifecycleContext((nint)NativeMethods.TablePtr->C0.hs_method_e040be2b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e040be2b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AppLifecycleContext((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

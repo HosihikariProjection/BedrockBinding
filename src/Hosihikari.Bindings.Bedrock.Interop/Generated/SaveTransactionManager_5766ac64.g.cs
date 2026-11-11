@@ -54,12 +54,12 @@ public sealed unsafe partial class SaveTransactionManager : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SaveTransactionManager Create()
+    public static SaveTransactionManager? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_db68c912();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SaveTransactionManager((nint)handle);
@@ -69,12 +69,12 @@ public sealed unsafe partial class SaveTransactionManager : global::System.IDisp
     public static SaveTransactionManager Create(nint workerPool, nint scheduler, nint showIconFunction) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SaveTransactionManager Create(global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager arg0)
+    public static SaveTransactionManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_96e186f3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SaveTransactionManager((nint)handle);
@@ -106,9 +106,10 @@ public sealed unsafe partial class SaveTransactionManager : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C3.hs_get_94a487b6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager((nint)NativeMethods.TablePtr->C3.hs_method_0222336b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0222336b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager((nint)__hs_handle, false) : null;
     }
 
 

@@ -40,23 +40,23 @@ public sealed unsafe partial class FlushingIOController : global::System.IDispos
         return __hs_handle;
     }
 
-    public static FlushingIOController Create()
+    public static FlushingIOController? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9afe7b2c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FlushingIOController((nint)handle);
     }
 
-    public static FlushingIOController Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.FlushingIOController arg0)
+    public static FlushingIOController? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.FlushingIOController arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a2f34850((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FlushingIOController((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class FlushingIOController : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C0.hs_get_fe11bdec((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.FlushingIOController operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.FlushingIOController arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.FlushingIOController? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.FlushingIOController arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.FlushingIOController((nint)NativeMethods.TablePtr->C0.hs_method_940180ef((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_940180ef((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.FlushingIOController((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

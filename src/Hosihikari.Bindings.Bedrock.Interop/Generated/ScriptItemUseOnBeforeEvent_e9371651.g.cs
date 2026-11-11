@@ -62,12 +62,12 @@ public sealed unsafe partial class ScriptItemUseOnBeforeEvent : global::System.I
     public nint _ctor(nint itemEvent, nint player, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptItemUseOnBeforeEvent Create()
+    public static ScriptItemUseOnBeforeEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_62dc7935();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemUseOnBeforeEvent((nint)handle);
@@ -77,12 +77,12 @@ public sealed unsafe partial class ScriptItemUseOnBeforeEvent : global::System.I
     public static ScriptItemUseOnBeforeEvent Create(nint itemEvent, nint player, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptItemUseOnBeforeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemUseOnBeforeEvent arg0)
+    public static ScriptItemUseOnBeforeEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemUseOnBeforeEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_22d19a52((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemUseOnBeforeEvent((nint)handle);

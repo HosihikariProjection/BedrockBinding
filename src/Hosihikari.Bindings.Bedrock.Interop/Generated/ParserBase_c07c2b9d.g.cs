@@ -48,23 +48,23 @@ public sealed unsafe partial class ParserBase : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ParserBase Create()
+    public static ParserBase? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_95efa0db();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ParserBase((nint)handle);
     }
 
-    public static ParserBase Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.ParserBase arg0)
+    public static ParserBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.ParserBase arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_024144d5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ParserBase((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class ParserBase : global::System.IDisposable
     public static ParserBase Create(nint parserVersion, nint supportedVersions) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny doParse(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input input, byte contextArea)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny? doParse(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input input, byte contextArea)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny((nint)NativeMethods.TablePtr->C2.hs_method_77a029e7((void*)__hosihikari_shim_handle, (void*)input.Handle, contextArea));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_77a029e7((void*)__hosihikari_shim_handle, (void*)input.Handle, contextArea);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -91,9 +92,10 @@ public sealed unsafe partial class ParserBase : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_84104207((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.ParserBase operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.ParserBase arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.ParserBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.ParserBase arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.ParserBase((nint)NativeMethods.TablePtr->C2.hs_method_7d3a9c78((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7d3a9c78((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Puv.ParserBase((nint)__hs_handle, false) : null;
     }
 
 

@@ -56,23 +56,23 @@ public sealed unsafe partial class ScriptPressurePlatePopAfterEvent : global::Sy
     public nint _ctor(nint eventData, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptPressurePlatePopAfterEvent Create()
+    public static ScriptPressurePlatePopAfterEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_03568c8b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPressurePlatePopAfterEvent((nint)handle);
     }
 
-    public static ScriptPressurePlatePopAfterEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPressurePlatePopAfterEvent arg0)
+    public static ScriptPressurePlatePopAfterEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPressurePlatePopAfterEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2120226b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPressurePlatePopAfterEvent((nint)handle);

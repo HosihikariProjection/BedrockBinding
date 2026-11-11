@@ -50,12 +50,12 @@ public sealed unsafe partial class IPacketObserver : global::System.IDisposable
     public void _onObserveeDestroyed() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IPacketObserver Create(global::Hosihikari.Bindings.Bedrock.Interop.IPacketObserver arg0)
+    public static IPacketObserver? Create(global::Hosihikari.Bindings.Bedrock.Interop.IPacketObserver arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2fd3c62f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IPacketObserver((nint)handle);

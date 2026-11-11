@@ -60,12 +60,12 @@ public sealed unsafe partial class SwingEventResponse : global::System.IDisposab
     public static nint NameID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SwingEventResponse Create(global::Hosihikari.Bindings.Bedrock.Interop.SwingEventResponse arg0)
+    public static SwingEventResponse? Create(global::Hosihikari.Bindings.Bedrock.Interop.SwingEventResponse arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ecda8d64((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SwingEventResponse((nint)handle);

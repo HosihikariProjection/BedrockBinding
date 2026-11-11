@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ItemStartUseOnEvent_ : globa
     public static ValueOrRef_const_ItemStartUseOnEvent_ Create_c271a6b9(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ItemStartUseOnEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStartUseOnEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStartUseOnEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStartUseOnEvent((nint)NativeMethods.TablePtr->C1.hs_method_502c5ee4((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_502c5ee4((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStartUseOnEvent((nint)__hs_handle, false) : null;
     }
 
 

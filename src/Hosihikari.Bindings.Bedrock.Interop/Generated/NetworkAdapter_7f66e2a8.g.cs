@@ -48,12 +48,12 @@ public sealed unsafe partial class NetworkAdapter : global::System.IDisposable
     public static NetworkAdapter Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetworkAdapter Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter arg0)
+    public static NetworkAdapter? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_55650b8f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkAdapter((nint)handle);
@@ -83,9 +83,10 @@ public sealed unsafe partial class NetworkAdapter : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_7591f48d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter((nint)NativeMethods.TablePtr->C2.hs_method_4e6bd62d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4e6bd62d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -44,23 +44,23 @@ public sealed unsafe partial class PredeclaredAnnotation : global::System.IDispo
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PredeclaredAnnotation Create()
+    public static PredeclaredAnnotation? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_dc75df8b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PredeclaredAnnotation((nint)handle);
     }
 
-    public static PredeclaredAnnotation Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Profiler.details.PredeclaredAnnotation arg0)
+    public static PredeclaredAnnotation? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Profiler.details.PredeclaredAnnotation arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7f315a4e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PredeclaredAnnotation((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class PredeclaredAnnotation : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_baec6c40((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Profiler.details.PredeclaredAnnotation operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Profiler.details.PredeclaredAnnotation arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Profiler.details.PredeclaredAnnotation? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Profiler.details.PredeclaredAnnotation arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Profiler.details.PredeclaredAnnotation((nint)NativeMethods.TablePtr->C0.hs_method_ae426fd9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ae426fd9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Profiler.details.PredeclaredAnnotation((nint)__hs_handle, false) : null;
     }
 
 

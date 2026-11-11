@@ -130,31 +130,32 @@ public sealed unsafe partial class SimplePlayerContainer : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SimplePlayerContainer Create()
+    public static SimplePlayerContainer? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1f0e56af();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimplePlayerContainer((nint)handle);
     }
 
-    public static SimplePlayerContainer Create(global::Hosihikari.Bindings.Bedrock.Interop.SimplePlayerContainer arg0)
+    public static SimplePlayerContainer? Create(global::Hosihikari.Bindings.Bedrock.Interop.SimplePlayerContainer arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_52d80005((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimplePlayerContainer((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_3eb8e9f6((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3eb8e9f6((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -163,9 +164,10 @@ public sealed unsafe partial class SimplePlayerContainer : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C3.hs_get_8ab71c25((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SimplePlayerContainer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimplePlayerContainer arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SimplePlayerContainer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimplePlayerContainer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SimplePlayerContainer((nint)NativeMethods.TablePtr->C3.hs_method_55102523((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_55102523((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SimplePlayerContainer((nint)__hs_handle, false) : null;
     }
 
     public void setItem(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)

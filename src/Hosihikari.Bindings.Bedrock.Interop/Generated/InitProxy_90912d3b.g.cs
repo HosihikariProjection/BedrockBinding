@@ -40,23 +40,23 @@ public sealed unsafe partial class InitProxy : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static InitProxy Create()
+    public static InitProxy? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4bd68b66();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InitProxy((nint)handle);
     }
 
-    public static InitProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardCommand_Nested.InitProxy arg0)
+    public static InitProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardCommand_Nested.InitProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6b976083((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InitProxy((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class InitProxy : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_f59e8707((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardCommand_Nested.InitProxy operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardCommand_Nested.InitProxy arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardCommand_Nested.InitProxy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardCommand_Nested.InitProxy arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardCommand_Nested.InitProxy((nint)NativeMethods.TablePtr->C3.hs_method_107437a7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_107437a7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardCommand_Nested.InitProxy((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

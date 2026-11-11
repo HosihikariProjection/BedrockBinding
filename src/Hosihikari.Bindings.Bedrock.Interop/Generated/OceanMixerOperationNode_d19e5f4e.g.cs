@@ -52,23 +52,23 @@ public sealed unsafe partial class OceanMixerOperationNode : global::System.IDis
     public nint _ctor(uint seedMixup, nint biomeLayer, nint oceanLayer, nint registry, nint genericShallowOcean, nint genericDeepOcean) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OceanMixerOperationNode Create()
+    public static OceanMixerOperationNode? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1d38892e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OceanMixerOperationNode((nint)handle);
     }
 
-    public static OceanMixerOperationNode Create(global::Hosihikari.Bindings.Bedrock.Interop.OceanMixerOperationNode arg0)
+    public static OceanMixerOperationNode? Create(global::Hosihikari.Bindings.Bedrock.Interop.OceanMixerOperationNode arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_261d3e21((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OceanMixerOperationNode((nint)handle);

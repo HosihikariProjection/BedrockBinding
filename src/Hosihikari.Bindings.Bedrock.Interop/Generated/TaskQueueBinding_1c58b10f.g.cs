@@ -40,23 +40,23 @@ public sealed unsafe partial class TaskQueueBinding : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TaskQueueBinding Create()
+    public static TaskQueueBinding? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7bb5d0c2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TaskQueueBinding((nint)handle);
     }
 
-    public static TaskQueueBinding Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance_Nested.TaskQueueBinding arg0)
+    public static TaskQueueBinding? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance_Nested.TaskQueueBinding arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_51a0ee90((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TaskQueueBinding((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class TaskQueueBinding : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_b956794c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance_Nested.TaskQueueBinding operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance_Nested.TaskQueueBinding arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance_Nested.TaskQueueBinding? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance_Nested.TaskQueueBinding arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance_Nested.TaskQueueBinding((nint)NativeMethods.TablePtr->C0.hs_method_dc5dbc6d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dc5dbc6d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance_Nested.TaskQueueBinding((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -87,12 +87,12 @@ public sealed unsafe partial class PayloadPacket_SetLocalPlayerAsInitializedPack
         get => (nint)NativeMethods.TablePtr->C4.hs_get_1c0eafd0((void*)__hosihikari_shim_handle);
     }
 
-    public static PayloadPacket_SetLocalPlayerAsInitializedPacketPayload_ Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_SetLocalPlayerAsInitializedPacketPayload_ arg0)
+    public static PayloadPacket_SetLocalPlayerAsInitializedPacketPayload_? Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_SetLocalPlayerAsInitializedPacketPayload_ arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_aaaefdec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PayloadPacket_SetLocalPlayerAsInitializedPacketPayload_((nint)handle);

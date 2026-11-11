@@ -99,12 +99,12 @@ public sealed unsafe partial class PayloadPacket_PositionTrackingDBServerBroadca
         get => (nint)NativeMethods.TablePtr->C4.hs_get_14bc5787((void*)__hosihikari_shim_handle);
     }
 
-    public static PayloadPacket_PositionTrackingDBServerBroadcastPacketPayload_ Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_PositionTrackingDBServerBroadcastPacketPayload_ arg0)
+    public static PayloadPacket_PositionTrackingDBServerBroadcastPacketPayload_? Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_PositionTrackingDBServerBroadcastPacketPayload_ arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f2df53ea((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PayloadPacket_PositionTrackingDBServerBroadcastPacketPayload_((nint)handle);

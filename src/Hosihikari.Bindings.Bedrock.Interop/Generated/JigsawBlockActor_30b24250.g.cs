@@ -107,12 +107,12 @@ public sealed unsafe partial class JigsawBlockActor : global::System.IDisposable
     public void _setUgcStrings(nint arg0, nint arg1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JigsawBlockActor Create()
+    public static JigsawBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_16abc051();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JigsawBlockActor((nint)handle);

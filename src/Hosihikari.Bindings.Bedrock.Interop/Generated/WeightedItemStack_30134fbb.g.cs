@@ -40,12 +40,12 @@ public sealed unsafe partial class WeightedItemStack : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static WeightedItemStack Create(global::Hosihikari.Bindings.Bedrock.Interop.TrialSpawner_Nested.WeightedItemStack arg0)
+    public static WeightedItemStack? Create(global::Hosihikari.Bindings.Bedrock.Interop.TrialSpawner_Nested.WeightedItemStack arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b0829864((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeightedItemStack((nint)handle);

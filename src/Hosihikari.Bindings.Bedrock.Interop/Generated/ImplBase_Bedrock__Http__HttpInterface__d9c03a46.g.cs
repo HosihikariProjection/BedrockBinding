@@ -40,12 +40,12 @@ public sealed unsafe partial class ImplBase_Bedrock__Http__HttpInterface_ : glob
         return __hs_handle;
     }
 
-    public static ImplBase_Bedrock__Http__HttpInterface_ Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ImplBase_Bedrock__Http__HttpInterface_ arg0)
+    public static ImplBase_Bedrock__Http__HttpInterface_? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ImplBase_Bedrock__Http__HttpInterface_ arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3cc11c75((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ImplBase_Bedrock__Http__HttpInterface_((nint)handle);

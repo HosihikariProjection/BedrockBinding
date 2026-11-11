@@ -736,12 +736,12 @@ public sealed unsafe partial class VindicationIllager : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VindicationIllager Create()
+    public static VindicationIllager? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_70aee5a9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VindicationIllager((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class KeyFrameTransform : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static KeyFrameTransform Create(global::Hosihikari.Bindings.Bedrock.Interop.KeyFrameTransform arg0)
+    public static KeyFrameTransform? Create(global::Hosihikari.Bindings.Bedrock.Interop.KeyFrameTransform arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ad5b0e1c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new KeyFrameTransform((nint)handle);

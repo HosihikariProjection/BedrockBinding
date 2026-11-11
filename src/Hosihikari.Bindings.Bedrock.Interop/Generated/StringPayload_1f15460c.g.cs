@@ -56,23 +56,23 @@ public sealed unsafe partial class StringPayload : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StringPayload Create()
+    public static StringPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_dc181200();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StringPayload((nint)handle);
     }
 
-    public static StringPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringPayload arg0)
+    public static StringPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_42d6bdfa((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StringPayload((nint)handle);
@@ -94,14 +94,16 @@ public sealed unsafe partial class StringPayload : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_67d7aba1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringPayload((nint)NativeMethods.TablePtr->C3.hs_method_e5f52e1c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e5f52e1c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringPayload((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny runOn(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringBasedRuntime runtime, byte? privilege)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny? runOn(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringBasedRuntime runtime, byte? privilege)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)NativeMethods.TablePtr->C3.hs_method_4efdd105((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)runtime.Handle, privilege ?? default(byte), privilege.HasValue));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4efdd105((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)runtime.Handle, privilege ?? default(byte), privilege.HasValue);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)__hs_handle) : null;
     }
 
 

@@ -40,12 +40,12 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerPermissionsSynchroni
         return __hs_handle;
     }
 
-    public static UniqueOwnerPointer_PlayerPermissionsSynchroniser_ Create()
+    public static UniqueOwnerPointer_PlayerPermissionsSynchroniser_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f8ce0107();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_PlayerPermissionsSynchroniser_((nint)handle);
@@ -55,12 +55,12 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerPermissionsSynchroni
     public static UniqueOwnerPointer_PlayerPermissionsSynchroniser_ Create_6c15497e(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static UniqueOwnerPointer_PlayerPermissionsSynchroniser_ Create_070473bf()
+    public static UniqueOwnerPointer_PlayerPermissionsSynchroniser_? Create_070473bf()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_070473bf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_PlayerPermissionsSynchroniser_((nint)handle);
@@ -111,9 +111,10 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerPermissionsSynchroni
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_PlayerPermissionsSynchroniser_ operator_assign()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_PlayerPermissionsSynchroniser_? operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_PlayerPermissionsSynchroniser_((nint)NativeMethods.TablePtr->C0.hs_method_c856d8c5((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c856d8c5((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_PlayerPermissionsSynchroniser_((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_PlayerPermissionsSynchroniser_ other)

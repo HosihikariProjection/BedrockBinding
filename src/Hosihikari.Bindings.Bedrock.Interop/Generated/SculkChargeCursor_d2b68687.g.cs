@@ -40,12 +40,12 @@ public sealed unsafe partial class SculkChargeCursor : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static SculkChargeCursor Create(global::Hosihikari.Bindings.Bedrock.Interop.SculkChargeCursor arg0)
+    public static SculkChargeCursor? Create(global::Hosihikari.Bindings.Bedrock.Interop.SculkChargeCursor arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3379be1e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SculkChargeCursor((nint)handle);

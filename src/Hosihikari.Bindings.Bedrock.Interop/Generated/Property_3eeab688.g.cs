@@ -48,12 +48,12 @@ public sealed unsafe partial class Property : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Property Create()
+    public static Property? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_822cacfd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Property((nint)handle);
@@ -115,9 +115,10 @@ public sealed unsafe partial class Property : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_ad81e578((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property((nint)NativeMethods.TablePtr->C2.hs_method_f72820a3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f72820a3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

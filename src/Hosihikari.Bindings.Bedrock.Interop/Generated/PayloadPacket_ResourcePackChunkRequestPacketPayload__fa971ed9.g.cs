@@ -93,12 +93,12 @@ public sealed unsafe partial class PayloadPacket_ResourcePackChunkRequestPacketP
         get => (nint)NativeMethods.TablePtr->C4.hs_get_ac3d2a87((void*)__hosihikari_shim_handle);
     }
 
-    public static PayloadPacket_ResourcePackChunkRequestPacketPayload_ Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_ResourcePackChunkRequestPacketPayload_ arg0)
+    public static PayloadPacket_ResourcePackChunkRequestPacketPayload_? Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_ResourcePackChunkRequestPacketPayload_ arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_d26d5bfb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PayloadPacket_ResourcePackChunkRequestPacketPayload_((nint)handle);

@@ -400,7 +400,7 @@ public sealed unsafe partial class BushBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BushBlock Create(string nameId, int id)
+    public static BushBlock? Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -418,7 +418,7 @@ public sealed unsafe partial class BushBlock : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C0.hs_create_251c8b55(__hs_stringData0, (nuint)__hs_stringByteCount0, id);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new BushBlock((nint)handle);

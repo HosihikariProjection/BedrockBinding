@@ -53,23 +53,23 @@ public sealed unsafe partial class PackInstance : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_76ce4039((void*)__hosihikari_shim_handle);
     }
 
-    public static PackInstance Create()
+    public static PackInstance? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f85fe3af();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackInstance((nint)handle);
     }
 
-    public static PackInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.PackInstance arg0)
+    public static PackInstance? Create(global::Hosihikari.Bindings.Bedrock.Interop.PackInstance arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5c393eae((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackInstance((nint)handle);

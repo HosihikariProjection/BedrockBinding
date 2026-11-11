@@ -44,23 +44,23 @@ public sealed unsafe partial class StackNode : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StackNode Create()
+    public static StackNode? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6e6de926();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StackNode((nint)handle);
     }
 
-    public static StackNode Create(global::Hosihikari.Bindings.Bedrock.Interop.NBTSchemaWriter_Nested.StackNode arg0)
+    public static StackNode? Create(global::Hosihikari.Bindings.Bedrock.Interop.NBTSchemaWriter_Nested.StackNode arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_838db96d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StackNode((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class StackNode : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_14a50df0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NBTSchemaWriter_Nested.StackNode operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NBTSchemaWriter_Nested.StackNode arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NBTSchemaWriter_Nested.StackNode? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NBTSchemaWriter_Nested.StackNode arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NBTSchemaWriter_Nested.StackNode((nint)NativeMethods.TablePtr->C2.hs_method_8fc593c9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8fc593c9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NBTSchemaWriter_Nested.StackNode((nint)__hs_handle, false) : null;
     }
 
 

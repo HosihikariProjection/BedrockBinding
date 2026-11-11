@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerStopLoadingEvent_ : gl
     public static ValueOrRef_const_PlayerStopLoadingEvent_ Create_a3e4a10b(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerStopLoadingEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerStopLoadingEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerStopLoadingEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerStopLoadingEvent((nint)NativeMethods.TablePtr->C1.hs_method_5dd5ce2b((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5dd5ce2b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerStopLoadingEvent((nint)__hs_handle, false) : null;
     }
 
 

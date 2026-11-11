@@ -40,12 +40,12 @@ public sealed unsafe partial class UnlockedRecipesPacketPayload : global::System
         return __hs_handle;
     }
 
-    public static UnlockedRecipesPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.UnlockedRecipesPacketPayload arg0)
+    public static UnlockedRecipesPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.UnlockedRecipesPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a458626b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UnlockedRecipesPacketPayload((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class Definition : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Definition Create()
+    public static Definition? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f89badc1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Definition((nint)handle);
     }
 
-    public static Definition Create(global::Hosihikari.Bindings.Bedrock.Interop.TripodCameraActivatedComponent_Nested.Definition arg0)
+    public static Definition? Create(global::Hosihikari.Bindings.Bedrock.Interop.TripodCameraActivatedComponent_Nested.Definition arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_64ff77c7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Definition((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class Definition : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_b7666e0f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TripodCameraActivatedComponent_Nested.Definition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TripodCameraActivatedComponent_Nested.Definition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.TripodCameraActivatedComponent_Nested.Definition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TripodCameraActivatedComponent_Nested.Definition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TripodCameraActivatedComponent_Nested.Definition((nint)NativeMethods.TablePtr->C4.hs_method_ef55fe27((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ef55fe27((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TripodCameraActivatedComponent_Nested.Definition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

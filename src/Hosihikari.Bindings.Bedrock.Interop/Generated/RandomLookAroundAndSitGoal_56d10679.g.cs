@@ -90,12 +90,12 @@ public sealed unsafe partial class RandomLookAroundAndSitGoal : global::System.I
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RandomLookAroundAndSitGoal Create()
+    public static RandomLookAroundAndSitGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c6bd08c8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RandomLookAroundAndSitGoal((nint)handle);
@@ -105,12 +105,12 @@ public sealed unsafe partial class RandomLookAroundAndSitGoal : global::System.I
     public static RandomLookAroundAndSitGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RandomLookAroundAndSitGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomLookAroundAndSitGoal arg0)
+    public static RandomLookAroundAndSitGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomLookAroundAndSitGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c5966be2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RandomLookAroundAndSitGoal((nint)handle);

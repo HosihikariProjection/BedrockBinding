@@ -52,12 +52,12 @@ public sealed unsafe partial class SHPrisonHall : global::System.IDisposable
     public bool _postProcess(nint region, nint random, nint chunkBB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SHPrisonHall Create(global::Hosihikari.Bindings.Bedrock.Interop.SHPrisonHall arg0)
+    public static SHPrisonHall? Create(global::Hosihikari.Bindings.Bedrock.Interop.SHPrisonHall arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c98f9244((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SHPrisonHall((nint)handle);

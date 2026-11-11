@@ -768,9 +768,10 @@ public sealed unsafe partial class Warden : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C4.hs_method_64bfc421((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_64bfc421((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public bool canDisableShield()
@@ -788,9 +789,10 @@ public sealed unsafe partial class Warden : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_3cb0f5f4((void*)__hosihikari_shim_handle, fromSpawner) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult doHurtTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor? target, nint cause)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? doHurtTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor? target, nint cause)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C4.hs_method_986c57f6((void*)__hosihikari_shim_handle, (void*)(target?.Handle ?? 0), (void*)cause));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_986c57f6((void*)__hosihikari_shim_handle, (void*)(target?.Handle ?? 0), (void*)cause);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public bool isInvulnerableTo(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)

@@ -40,12 +40,12 @@ public sealed unsafe partial class Bounds : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Bounds Create(global::Hosihikari.Bindings.Bedrock.Interop.Bounds arg0)
+    public static Bounds? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bounds arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_cabb2fca((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Bounds((nint)handle);

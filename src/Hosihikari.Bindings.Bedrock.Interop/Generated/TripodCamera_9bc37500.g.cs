@@ -750,12 +750,12 @@ public sealed unsafe partial class TripodCamera : global::System.IDisposable
     public void _remove() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TripodCamera Create()
+    public static TripodCamera? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b95c81bf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TripodCamera((nint)handle);
@@ -765,9 +765,10 @@ public sealed unsafe partial class TripodCamera : global::System.IDisposable
     public static TripodCamera Create(nint definitions, nint definitionName, nint entityContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C4.hs_method_36514e9c((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_36514e9c((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public bool canExistWhenDisallowMob()
@@ -775,9 +776,10 @@ public sealed unsafe partial class TripodCamera : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_6efa0777((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction? getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C4.hs_method_e4d7fe39((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e4d7fe39((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)__hs_handle) : null;
     }
 
     public float getShadowRadius()

@@ -108,23 +108,23 @@ public sealed unsafe partial class WoodlandMansionPiece : global::System.IDispos
     public void _postProcessMobsAt(nint region, nint random, nint chunkBB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WoodlandMansionPiece Create()
+    public static WoodlandMansionPiece? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_065c4885();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WoodlandMansionPiece((nint)handle);
     }
 
-    public static WoodlandMansionPiece Create(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.WoodlandMansionPiece arg0)
+    public static WoodlandMansionPiece? Create(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.WoodlandMansionPiece arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2bf1e549((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WoodlandMansionPiece((nint)handle);

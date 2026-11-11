@@ -95,12 +95,12 @@ public sealed unsafe partial class FindBlockNode : global::System.IDisposable
     public static FindBlockNode Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FindBlockNode Create(global::Hosihikari.Bindings.Bedrock.Interop.FindBlockNode arg0)
+    public static FindBlockNode? Create(global::Hosihikari.Bindings.Bedrock.Interop.FindBlockNode arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c7924ff6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FindBlockNode((nint)handle);

@@ -56,12 +56,12 @@ public sealed unsafe partial class WaitDefinition : global::System.IDisposable
     public void _load(nint value, nint factory) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WaitDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.WaitDefinition arg0)
+    public static WaitDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.WaitDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_91d1f216((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WaitDefinition((nint)handle);

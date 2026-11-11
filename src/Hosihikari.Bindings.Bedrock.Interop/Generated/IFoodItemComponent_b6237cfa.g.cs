@@ -44,12 +44,12 @@ public sealed unsafe partial class IFoodItemComponent : global::System.IDisposab
     public static nint CAN_ALWAYS_EAT() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IFoodItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.IFoodItemComponent arg0)
+    public static IFoodItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.IFoodItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2ed83279((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IFoodItemComponent((nint)handle);

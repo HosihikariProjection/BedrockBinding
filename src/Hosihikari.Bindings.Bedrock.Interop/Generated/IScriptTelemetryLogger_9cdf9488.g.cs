@@ -40,12 +40,12 @@ public sealed unsafe partial class IScriptTelemetryLogger : global::System.IDisp
         return __hs_handle;
     }
 
-    public static IScriptTelemetryLogger Create(global::Hosihikari.Bindings.Bedrock.Interop.IScriptTelemetryLogger arg0)
+    public static IScriptTelemetryLogger? Create(global::Hosihikari.Bindings.Bedrock.Interop.IScriptTelemetryLogger arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_792f569f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IScriptTelemetryLogger((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class AnvilDamagePacketPayload : global::System.IDi
         return __hs_handle;
     }
 
-    public static AnvilDamagePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.AnvilDamagePacketPayload arg0)
+    public static AnvilDamagePacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.AnvilDamagePacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0ba5f741((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AnvilDamagePacketPayload((nint)handle);

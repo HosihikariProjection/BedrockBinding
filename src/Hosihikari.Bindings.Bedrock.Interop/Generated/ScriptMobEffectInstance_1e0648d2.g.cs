@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptMobEffectInstance : global::System.IDis
         return __hs_handle;
     }
 
-    public static ScriptMobEffectInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptMobEffectInstance arg0)
+    public static ScriptMobEffectInstance? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptMobEffectInstance arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5a64d143((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptMobEffectInstance((nint)handle);

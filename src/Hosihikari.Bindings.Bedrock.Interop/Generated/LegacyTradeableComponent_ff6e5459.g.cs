@@ -44,23 +44,23 @@ public sealed unsafe partial class LegacyTradeableComponent : global::System.IDi
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacyTradeableComponent Create()
+    public static LegacyTradeableComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_764d1522();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyTradeableComponent((nint)handle);
     }
 
-    public static LegacyTradeableComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyTradeableComponent arg0)
+    public static LegacyTradeableComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyTradeableComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_054c3bc7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyTradeableComponent((nint)handle);
@@ -162,9 +162,10 @@ public sealed unsafe partial class LegacyTradeableComponent : global::System.IDi
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyTradeableComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LegacyTradeableComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyTradeableComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LegacyTradeableComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LegacyTradeableComponent((nint)NativeMethods.TablePtr->C2.hs_method_73f3159a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_73f3159a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LegacyTradeableComponent((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -40,12 +40,12 @@ public sealed unsafe partial class Verbose : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Verbose Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginResult_Nested.Verbose arg0)
+    public static Verbose? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginResult_Nested.Verbose arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_890f36c5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Verbose((nint)handle);

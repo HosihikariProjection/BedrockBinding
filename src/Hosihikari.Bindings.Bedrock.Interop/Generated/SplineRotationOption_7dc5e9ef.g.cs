@@ -40,12 +40,12 @@ public sealed unsafe partial class SplineRotationOption : global::System.IDispos
         return __hs_handle;
     }
 
-    public static SplineRotationOption Create(global::Hosihikari.Bindings.Bedrock.Interop.CameraInstructionOptions.SplineInstruction_Nested.SplineRotationOption arg0)
+    public static SplineRotationOption? Create(global::Hosihikari.Bindings.Bedrock.Interop.CameraInstructionOptions.SplineInstruction_Nested.SplineRotationOption arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9b23c828((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SplineRotationOption((nint)handle);

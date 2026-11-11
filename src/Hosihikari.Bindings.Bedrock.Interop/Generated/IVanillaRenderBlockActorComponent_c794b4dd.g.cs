@@ -45,24 +45,28 @@ public sealed unsafe partial class IVanillaRenderBlockActorComponent
         NativeMethods.TablePtr->C1.hs_method_00eb667c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getAABB()
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getAABB()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C1.hs_method_9d711508((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9d711508((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockActor getBlockActor_8e48118b()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? getBlockActor_8e48118b()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockActor((nint)NativeMethods.TablePtr->C1.hs_method_8e48118b((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8e48118b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockActor((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockActor getBlockActor_e8565dbb()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? getBlockActor_e8565dbb()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockActor((nint)NativeMethods.TablePtr->C1.hs_method_e8565dbb((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e8565dbb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockActor((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getBlockActorPosition()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getBlockActorPosition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_fb1ef18a((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_fb1ef18a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
     }
 
     public byte getBlockActorType()
@@ -76,14 +80,16 @@ public sealed unsafe partial class IVanillaRenderBlockActorComponent
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaRenderBlockActorComponent((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorTerrainInterlockData getEntityTerrainInterlockData()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorTerrainInterlockData? getEntityTerrainInterlockData()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorTerrainInterlockData((nint)NativeMethods.TablePtr->C1.hs_method_2e553c75((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2e553c75((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorTerrainInterlockData((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorTerrainInterlockData getEntityTerrainInterlockDataConst()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorTerrainInterlockData? getEntityTerrainInterlockDataConst()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorTerrainInterlockData((nint)NativeMethods.TablePtr->C1.hs_method_89d88307((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_89d88307((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorTerrainInterlockData((nint)__hs_handle, false) : null;
     }
 
     public byte getRendererId()

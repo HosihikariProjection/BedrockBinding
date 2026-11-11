@@ -78,23 +78,23 @@ public sealed unsafe partial class SwimWanderGoal : global::System.IDisposable
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SwimWanderGoal Create()
+    public static SwimWanderGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_db2c2a9d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SwimWanderGoal((nint)handle);
     }
 
-    public static SwimWanderGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SwimWanderGoal arg0)
+    public static SwimWanderGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.SwimWanderGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1f8bb581((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SwimWanderGoal((nint)handle);
@@ -176,9 +176,10 @@ public sealed unsafe partial class SwimWanderGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_5eeaec31((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SwimWanderGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SwimWanderGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SwimWanderGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SwimWanderGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SwimWanderGoal((nint)NativeMethods.TablePtr->C3.hs_method_37de75f4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_37de75f4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SwimWanderGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

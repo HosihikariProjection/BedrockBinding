@@ -40,23 +40,23 @@ public sealed unsafe partial class Failed : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Failed Create()
+    public static Failed? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ffcb9d5b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Failed((nint)handle);
     }
 
-    public static Failed Create(global::Hosihikari.Bindings.Bedrock.Interop.PackCapability_Nested.ValidationResult_Nested.Failed arg0)
+    public static Failed? Create(global::Hosihikari.Bindings.Bedrock.Interop.PackCapability_Nested.ValidationResult_Nested.Failed arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a7053ccf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Failed((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class Failed : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_26644bb2((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PackCapability_Nested.ValidationResult_Nested.Failed operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackCapability_Nested.ValidationResult_Nested.Failed arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PackCapability_Nested.ValidationResult_Nested.Failed? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackCapability_Nested.ValidationResult_Nested.Failed arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackCapability_Nested.ValidationResult_Nested.Failed((nint)NativeMethods.TablePtr->C2.hs_method_108dee3c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_108dee3c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackCapability_Nested.ValidationResult_Nested.Failed((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

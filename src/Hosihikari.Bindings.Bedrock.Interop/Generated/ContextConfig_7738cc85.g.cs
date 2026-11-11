@@ -52,12 +52,12 @@ public sealed unsafe partial class ContextConfig : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ContextConfig Create()
+    public static ContextConfig? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e83b6387();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContextConfig((nint)handle);

@@ -76,12 +76,12 @@ public sealed unsafe partial class ContainerValidationBase : global::System.IDis
     public bool _isValidSlotForContainer(nint screenContext, nint container, nint slot) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ContainerValidationBase Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationBase arg0)
+    public static ContainerValidationBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationBase arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fbdac6ee((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContainerValidationBase((nint)handle);

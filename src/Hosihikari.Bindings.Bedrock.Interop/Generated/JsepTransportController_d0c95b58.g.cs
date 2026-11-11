@@ -128,12 +128,12 @@ public sealed unsafe partial class JsepTransportController : global::System.IDis
     public bool GetStats(nint transport_name, nint stats) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JsepTransportController Create()
+    public static JsepTransportController? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3b4bf63a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JsepTransportController((nint)handle);
@@ -143,12 +143,12 @@ public sealed unsafe partial class JsepTransportController : global::System.IDis
     public static JsepTransportController Create(nint env, nint network_thread, nint port_allocator, nint async_dns_resolver_factory, nint lna_permission_factory, nint payload_type_picker, nint config) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JsepTransportController Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController arg0)
+    public static JsepTransportController? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_08623f45((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JsepTransportController((nint)handle);
@@ -402,9 +402,10 @@ public sealed unsafe partial class JsepTransportController : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C4.hs_get_c0163bb1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController((nint)NativeMethods.TablePtr->C4.hs_method_fee72b69((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fee72b69((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController((nint)__hs_handle, false) : null;
     }
 
 

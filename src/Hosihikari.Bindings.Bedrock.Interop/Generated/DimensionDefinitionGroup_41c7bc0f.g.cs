@@ -48,23 +48,23 @@ public sealed unsafe partial class DimensionDefinitionGroup : global::System.IDi
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DimensionDefinitionGroup Create()
+    public static DimensionDefinitionGroup? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_17661c4b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DimensionDefinitionGroup((nint)handle);
     }
 
-    public static DimensionDefinitionGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.DimensionDefinitionGroup arg0)
+    public static DimensionDefinitionGroup? Create(global::Hosihikari.Bindings.Bedrock.Interop.DimensionDefinitionGroup arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b3c6c7ba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DimensionDefinitionGroup((nint)handle);

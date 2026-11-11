@@ -618,12 +618,12 @@ public sealed unsafe partial class FishingHook : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FishingHook Create()
+    public static FishingHook? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_88d13921();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FishingHook((nint)handle);
@@ -662,9 +662,10 @@ public sealed unsafe partial class FishingHook : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_17d679c3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getSourceUniqueID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getSourceUniqueID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C1.hs_method_9d08d26c((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9d08d26c((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     public void handleEntityEvent(byte eventId, int data)

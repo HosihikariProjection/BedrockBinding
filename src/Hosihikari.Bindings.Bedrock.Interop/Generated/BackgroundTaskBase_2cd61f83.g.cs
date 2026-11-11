@@ -52,23 +52,23 @@ public sealed unsafe partial class BackgroundTaskBase : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BackgroundTaskBase Create()
+    public static BackgroundTaskBase? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_77bea9f0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BackgroundTaskBase((nint)handle);
     }
 
-    public static BackgroundTaskBase Create(global::Hosihikari.Bindings.Bedrock.Interop.BackgroundTaskBase arg0)
+    public static BackgroundTaskBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.BackgroundTaskBase arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_83a885a8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BackgroundTaskBase((nint)handle);
@@ -87,9 +87,10 @@ public sealed unsafe partial class BackgroundTaskBase : global::System.IDisposab
     public static nint gCurrentTask() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BackgroundTaskBase_Nested.DiagnosticInfo getDiagnosticInfo()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BackgroundTaskBase_Nested.DiagnosticInfo? getDiagnosticInfo()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BackgroundTaskBase_Nested.DiagnosticInfo((nint)NativeMethods.TablePtr->C0.hs_method_d74a7ea1((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d74a7ea1((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BackgroundTaskBase_Nested.DiagnosticInfo((nint)__hs_handle) : null;
     }
 
     public bool isOrphaned()

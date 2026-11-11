@@ -44,23 +44,23 @@ public sealed unsafe partial class TypeCache : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TypeCache Create()
+    public static TypeCache? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a4eb4311();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TypeCache((nint)handle);
     }
 
-    public static TypeCache Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.@internal.TypeCache arg0)
+    public static TypeCache? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.@internal.TypeCache arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fbf1fd09((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TypeCache((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class TypeCache : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_f935b9e4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.@internal.TypeCache operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.@internal.TypeCache arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.@internal.TypeCache? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.@internal.TypeCache arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.@internal.TypeCache((nint)NativeMethods.TablePtr->C3.hs_method_2031dde9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2031dde9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.@internal.TypeCache((nint)__hs_handle, false) : null;
     }
 
 

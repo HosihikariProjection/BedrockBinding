@@ -44,12 +44,12 @@ public sealed unsafe partial class SurfaceMaterialAdjustmentEvaluated : global::
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SurfaceMaterialAdjustmentEvaluated Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceMaterialAdjustmentEvaluated arg0)
+    public static SurfaceMaterialAdjustmentEvaluated? Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceMaterialAdjustmentEvaluated arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_40c25e1b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SurfaceMaterialAdjustmentEvaluated((nint)handle);

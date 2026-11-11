@@ -40,23 +40,23 @@ public sealed unsafe partial class PlayerTelemetry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PlayerTelemetry Create()
+    public static PlayerTelemetry? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d22111fa();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerTelemetry((nint)handle);
     }
 
-    public static PlayerTelemetry Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.PlayerTelemetry arg0)
+    public static PlayerTelemetry? Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.PlayerTelemetry arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7faa14b6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerTelemetry((nint)handle);
@@ -158,9 +158,10 @@ public sealed unsafe partial class PlayerTelemetry : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_2b6af2ca((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.PlayerTelemetry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.PlayerTelemetry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.PlayerTelemetry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.PlayerTelemetry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.PlayerTelemetry((nint)NativeMethods.TablePtr->C3.hs_method_c97316f7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c97316f7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.PlayerTelemetry((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

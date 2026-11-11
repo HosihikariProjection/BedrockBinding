@@ -40,12 +40,12 @@ public sealed unsafe partial class OpenSignPacketPayload : global::System.IDispo
         return __hs_handle;
     }
 
-    public static OpenSignPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.OpenSignPacketPayload arg0)
+    public static OpenSignPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.OpenSignPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4a685e58((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OpenSignPacketPayload((nint)handle);

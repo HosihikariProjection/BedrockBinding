@@ -40,12 +40,12 @@ public sealed unsafe partial class HasItemFilter : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static HasItemFilter Create(global::Hosihikari.Bindings.Bedrock.Interop.HasItemFilter arg0)
+    public static HasItemFilter? Create(global::Hosihikari.Bindings.Bedrock.Interop.HasItemFilter arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4394bf60((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HasItemFilter((nint)handle);

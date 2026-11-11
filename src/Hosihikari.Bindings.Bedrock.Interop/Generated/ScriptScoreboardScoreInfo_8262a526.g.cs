@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptScoreboardScoreInfo : global::System.ID
         return __hs_handle;
     }
 
-    public static ScriptScoreboardScoreInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptScoreboardScoreInfo arg0)
+    public static ScriptScoreboardScoreInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptScoreboardScoreInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_169ccbdf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptScoreboardScoreInfo((nint)handle);

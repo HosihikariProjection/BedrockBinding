@@ -100,12 +100,12 @@ public sealed unsafe partial class RegistrationOptions : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C4.hs_get_652995a9((void*)__hosihikari_shim_handle);
     }
 
-    public static RegistrationOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.VanillaSystemsRegistration.RegistrationOptions arg0)
+    public static RegistrationOptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.VanillaSystemsRegistration.RegistrationOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e628320d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RegistrationOptions((nint)handle);

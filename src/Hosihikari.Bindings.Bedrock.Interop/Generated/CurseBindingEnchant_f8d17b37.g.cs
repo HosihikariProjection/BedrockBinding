@@ -52,12 +52,12 @@ public sealed unsafe partial class CurseBindingEnchant : global::System.IDisposa
     public bool _isTreasureOnly() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CurseBindingEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.CurseBindingEnchant arg0)
+    public static CurseBindingEnchant? Create(global::Hosihikari.Bindings.Bedrock.Interop.CurseBindingEnchant arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c546a73e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CurseBindingEnchant((nint)handle);

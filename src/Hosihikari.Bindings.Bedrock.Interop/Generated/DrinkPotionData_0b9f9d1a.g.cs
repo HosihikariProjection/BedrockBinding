@@ -40,12 +40,12 @@ public sealed unsafe partial class DrinkPotionData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static DrinkPotionData Create(global::Hosihikari.Bindings.Bedrock.Interop.DrinkPotionData arg0)
+    public static DrinkPotionData? Create(global::Hosihikari.Bindings.Bedrock.Interop.DrinkPotionData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_684d39df((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DrinkPotionData((nint)handle);

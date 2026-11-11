@@ -40,23 +40,23 @@ public sealed unsafe partial class ComplexAliasBlockPreSplitBlockInfo : global::
         return __hs_handle;
     }
 
-    public static ComplexAliasBlockPreSplitBlockInfo Create()
+    public static ComplexAliasBlockPreSplitBlockInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7c798b5a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComplexAliasBlockPreSplitBlockInfo((nint)handle);
     }
 
-    public static ComplexAliasBlockPreSplitBlockInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventingIdUtils.ComplexAliasBlockAchievementEventHelper.ComplexAliasBlockPreSplitBlockInfo arg0)
+    public static ComplexAliasBlockPreSplitBlockInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventingIdUtils.ComplexAliasBlockAchievementEventHelper.ComplexAliasBlockPreSplitBlockInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9c140fc1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComplexAliasBlockPreSplitBlockInfo((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class ComplexAliasBlockPreSplitBlockInfo : global::
         get => (nint)NativeMethods.TablePtr->C3.hs_get_f82675a7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventingIdUtils.ComplexAliasBlockAchievementEventHelper.ComplexAliasBlockPreSplitBlockInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventingIdUtils.ComplexAliasBlockAchievementEventHelper.ComplexAliasBlockPreSplitBlockInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventingIdUtils.ComplexAliasBlockAchievementEventHelper.ComplexAliasBlockPreSplitBlockInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventingIdUtils.ComplexAliasBlockAchievementEventHelper.ComplexAliasBlockPreSplitBlockInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventingIdUtils.ComplexAliasBlockAchievementEventHelper.ComplexAliasBlockPreSplitBlockInfo((nint)NativeMethods.TablePtr->C3.hs_method_b414e23b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b414e23b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventingIdUtils.ComplexAliasBlockAchievementEventHelper.ComplexAliasBlockPreSplitBlockInfo((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

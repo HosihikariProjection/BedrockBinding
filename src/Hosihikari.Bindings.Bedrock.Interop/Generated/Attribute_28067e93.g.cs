@@ -44,23 +44,23 @@ public sealed unsafe partial class Attribute : global::System.IDisposable
     public nint _ctor(nint name, nint redefMode, bool isSyncable) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Attribute Create()
+    public static Attribute? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_431f9330();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Attribute((nint)handle);
     }
 
-    public static Attribute Create(global::Hosihikari.Bindings.Bedrock.Interop.Attribute arg0)
+    public static Attribute? Create(global::Hosihikari.Bindings.Bedrock.Interop.Attribute arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f810307b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Attribute((nint)handle);

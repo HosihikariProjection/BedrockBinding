@@ -48,12 +48,12 @@ public sealed unsafe partial class WorldChangeTransaction : global::System.IDisp
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorldChangeTransaction Create()
+    public static WorldChangeTransaction? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_dab9da73();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldChangeTransaction((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class WorldChangeTransaction : global::System.IDisp
     public static WorldChangeTransaction Create(nint target) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorldChangeTransaction Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction arg0)
+    public static WorldChangeTransaction? Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_62927858((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldChangeTransaction((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class WorldChangeTransaction : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C4.hs_get_a69fc63b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction((nint)NativeMethods.TablePtr->C4.hs_method_5fd31144((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5fd31144((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction((nint)__hs_handle, false) : null;
     }
 
 

@@ -46,31 +46,32 @@ public sealed unsafe partial class once_flag : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_1886b459((void*)__hosihikari_shim_handle);
     }
 
-    public static once_flag Create()
+    public static once_flag? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_559fad57();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new once_flag((nint)handle);
     }
 
-    public static once_flag Create(global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag arg0)
+    public static once_flag? Create(global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_7d1908a1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new once_flag((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag((nint)NativeMethods.TablePtr->C4.hs_method_f06761d5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f06761d5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

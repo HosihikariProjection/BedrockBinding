@@ -40,23 +40,23 @@ public sealed unsafe partial class EquippableComponent : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static EquippableComponent Create()
+    public static EquippableComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d462e2c0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EquippableComponent((nint)handle);
     }
 
-    public static EquippableComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.EquippableComponent arg0)
+    public static EquippableComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.EquippableComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_30249053((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EquippableComponent((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class EquippableComponent : global::System.IDisposa
     public nint operator_assign(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EquippableComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EquippableComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EquippableComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EquippableComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EquippableComponent((nint)NativeMethods.TablePtr->C1.hs_method_ca2b7290((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ca2b7290((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EquippableComponent((nint)__hs_handle, false) : null;
     }
 
 

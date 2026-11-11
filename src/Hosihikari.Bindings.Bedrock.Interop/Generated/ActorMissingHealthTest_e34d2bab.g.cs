@@ -48,12 +48,12 @@ public sealed unsafe partial class ActorMissingHealthTest : global::System.IDisp
     public nint _getName() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorMissingHealthTest Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorMissingHealthTest arg0)
+    public static ActorMissingHealthTest? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorMissingHealthTest arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_205b2310((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorMissingHealthTest((nint)handle);

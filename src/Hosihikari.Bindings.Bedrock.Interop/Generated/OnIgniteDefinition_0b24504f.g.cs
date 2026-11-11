@@ -62,12 +62,12 @@ public sealed unsafe partial class OnIgniteDefinition : global::System.IDisposab
     public static nint NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OnIgniteDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.OnIgniteDefinition arg0)
+    public static OnIgniteDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.OnIgniteDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7d5dc020((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OnIgniteDefinition((nint)handle);

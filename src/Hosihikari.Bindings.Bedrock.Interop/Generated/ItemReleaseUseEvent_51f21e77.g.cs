@@ -58,12 +58,12 @@ public sealed unsafe partial class ItemReleaseUseEvent : global::System.IDisposa
         set => NativeMethods.TablePtr->C1.hs_set_cd9636ac((void*)__hosihikari_shim_handle, value);
     }
 
-    public static ItemReleaseUseEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemReleaseUseEvent arg0)
+    public static ItemReleaseUseEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemReleaseUseEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ca8143a7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemReleaseUseEvent((nint)handle);

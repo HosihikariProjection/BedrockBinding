@@ -440,9 +440,10 @@ public sealed unsafe partial class RespawnAnchorBlock : global::System.IDisposab
         return NativeMethods.TablePtr->C3.hs_method_36a1b702((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, dir);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Brightness getLightEmission(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Brightness? getLightEmission(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)NativeMethods.TablePtr->C3.hs_method_69c41c69((void*)__hosihikari_shim_handle, (void*)block.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_69c41c69((void*)__hosihikari_shim_handle, (void*)block.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)__hs_handle) : null;
     }
 
     public int getVariant(global::Hosihikari.Bindings.Bedrock.Interop.Block block)

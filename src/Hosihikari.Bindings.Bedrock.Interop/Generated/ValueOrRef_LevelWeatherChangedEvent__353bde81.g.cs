@@ -48,14 +48,16 @@ public sealed unsafe partial class ValueOrRef_LevelWeatherChangedEvent_ : global
     public static ValueOrRef_LevelWeatherChangedEvent_ Create_085cf311(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<LevelWeatherChangedEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelWeatherChangedEvent value_8476a0e4()
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelWeatherChangedEvent? value_8476a0e4()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelWeatherChangedEvent((nint)NativeMethods.TablePtr->C1.hs_method_8476a0e4((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8476a0e4((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelWeatherChangedEvent((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelWeatherChangedEvent value_0f26a396()
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelWeatherChangedEvent? value_0f26a396()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelWeatherChangedEvent((nint)NativeMethods.TablePtr->C1.hs_method_0f26a396((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0f26a396((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelWeatherChangedEvent((nint)__hs_handle, false) : null;
     }
 
 

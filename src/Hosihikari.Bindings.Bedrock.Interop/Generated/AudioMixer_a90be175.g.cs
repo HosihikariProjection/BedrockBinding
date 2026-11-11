@@ -45,12 +45,12 @@ public sealed unsafe partial class AudioMixer : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_031f1662((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0)) != 0;
     }
 
-    public static AudioMixer Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioMixer arg0)
+    public static AudioMixer? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioMixer arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3c8e4b33((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AudioMixer((nint)handle);

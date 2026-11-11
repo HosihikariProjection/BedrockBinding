@@ -810,12 +810,12 @@ public sealed unsafe partial class WitherBoss : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_59763902((void*)__hosihikari_shim_handle, value);
     }
 
-    public static WitherBoss Create()
+    public static WitherBoss? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c9e42089();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WitherBoss((nint)handle);
@@ -830,9 +830,10 @@ public sealed unsafe partial class WitherBoss : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_1dc36d87((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)bb.Handle, (void*)region.Handle, range, attackType);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C4.hs_method_afa28267((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_afa28267((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -882,9 +883,10 @@ public sealed unsafe partial class WitherBoss : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_69c75849((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getFiringPos()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getFiringPos()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C4.hs_method_fcdde4fb((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fcdde4fb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public void handleEntityEvent(byte id, int data)

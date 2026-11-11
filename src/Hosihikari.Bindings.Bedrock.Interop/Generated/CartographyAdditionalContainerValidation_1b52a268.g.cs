@@ -48,12 +48,12 @@ public sealed unsafe partial class CartographyAdditionalContainerValidation : gl
     public bool _isItemAllowedInSlot(nint screenContext, nint slot, nint item, nint amount, bool arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CartographyAdditionalContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.CartographyAdditionalContainerValidation arg0)
+    public static CartographyAdditionalContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.CartographyAdditionalContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f718d9c2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CartographyAdditionalContainerValidation((nint)handle);

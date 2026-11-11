@@ -77,9 +77,10 @@ public sealed unsafe partial class GlowStickItem : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Brightness getLightEmission(int auxValue)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Brightness? getLightEmission(int auxValue)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)NativeMethods.TablePtr->C1.hs_method_ced0f1e0((void*)__hosihikari_shim_handle, auxValue));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ced0f1e0((void*)__hosihikari_shim_handle, auxValue);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)__hs_handle) : null;
     }
 
     public bool isValidAuxValue(int auxValue)

@@ -40,23 +40,23 @@ public sealed unsafe partial class PlatformBuildInfo : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static PlatformBuildInfo Create()
+    public static PlatformBuildInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_09c4fd59();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlatformBuildInfo((nint)handle);
     }
 
-    public static PlatformBuildInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBuildInfo arg0)
+    public static PlatformBuildInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBuildInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b7e9462e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlatformBuildInfo((nint)handle);
@@ -104,9 +104,10 @@ public sealed unsafe partial class PlatformBuildInfo : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_1d83bb8b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBuildInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBuildInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBuildInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBuildInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBuildInfo((nint)NativeMethods.TablePtr->C0.hs_method_4d5c50e7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4d5c50e7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBuildInfo((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

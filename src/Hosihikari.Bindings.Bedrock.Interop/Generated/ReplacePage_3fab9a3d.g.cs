@@ -44,12 +44,12 @@ public sealed unsafe partial class ReplacePage : global::System.IDisposable
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ReplacePage Create()
+    public static ReplacePage? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_824ae6d3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReplacePage((nint)handle);
@@ -77,9 +77,10 @@ public sealed unsafe partial class ReplacePage : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_0cbd27c4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.ReplacePage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.ReplacePage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.ReplacePage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.ReplacePage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.ReplacePage((nint)NativeMethods.TablePtr->C0.hs_method_9379beb0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9379beb0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.ReplacePage((nint)__hs_handle, false) : null;
     }
 
 

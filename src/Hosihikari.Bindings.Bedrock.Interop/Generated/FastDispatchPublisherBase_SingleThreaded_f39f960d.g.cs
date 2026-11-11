@@ -40,12 +40,12 @@ public sealed unsafe partial class FastDispatchPublisherBase_SingleThreaded : gl
         return __hs_handle;
     }
 
-    public static FastDispatchPublisherBase_SingleThreaded Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail.FastDispatchPublisherBase_SingleThreaded arg0)
+    public static FastDispatchPublisherBase_SingleThreaded? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail.FastDispatchPublisherBase_SingleThreaded arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7e10d902((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FastDispatchPublisherBase_SingleThreaded((nint)handle);

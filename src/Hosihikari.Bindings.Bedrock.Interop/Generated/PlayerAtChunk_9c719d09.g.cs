@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerAtChunk : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PlayerAtChunk Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorReplication_Nested.PlayerAtChunk arg0)
+    public static PlayerAtChunk? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorReplication_Nested.PlayerAtChunk arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e7d6fffb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerAtChunk((nint)handle);

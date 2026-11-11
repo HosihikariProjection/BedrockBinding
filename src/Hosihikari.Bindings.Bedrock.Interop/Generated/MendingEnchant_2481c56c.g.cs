@@ -110,12 +110,12 @@ public sealed unsafe partial class MendingEnchant : global::System.IDisposable
     public bool _isTreasureOnly() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MendingEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.MendingEnchant arg0)
+    public static MendingEnchant? Create(global::Hosihikari.Bindings.Bedrock.Interop.MendingEnchant arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b5c942f0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MendingEnchant((nint)handle);

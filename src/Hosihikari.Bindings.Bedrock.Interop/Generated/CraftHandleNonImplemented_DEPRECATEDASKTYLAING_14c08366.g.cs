@@ -44,12 +44,12 @@ public sealed unsafe partial class CraftHandleNonImplemented_DEPRECATEDASKTYLAIN
     public nint __handleCraftAction(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CraftHandleNonImplemented_DEPRECATEDASKTYLAING Create(global::Hosihikari.Bindings.Bedrock.Interop.CraftHandleNonImplemented_DEPRECATEDASKTYLAING arg0)
+    public static CraftHandleNonImplemented_DEPRECATEDASKTYLAING? Create(global::Hosihikari.Bindings.Bedrock.Interop.CraftHandleNonImplemented_DEPRECATEDASKTYLAING arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d7b810bd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CraftHandleNonImplemented_DEPRECATEDASKTYLAING((nint)handle);

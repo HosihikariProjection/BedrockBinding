@@ -69,29 +69,29 @@ public sealed unsafe partial class RedactableString : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_29932b44((void*)__hosihikari_shim_handle);
     }
 
-    public static RedactableString Create()
+    public static RedactableString? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_edaf4644();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RedactableString((nint)handle);
     }
 
-    public static RedactableString Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString arg0)
+    public static RedactableString? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b7ba1026((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RedactableString((nint)handle);
     }
 
-    public static RedactableString Create(string unredactedString)
+    public static RedactableString? Create(string unredactedString)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(unredactedString);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -109,7 +109,7 @@ public sealed unsafe partial class RedactableString : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C0.hs_create_1c61007b(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new RedactableString((nint)handle);
@@ -132,7 +132,7 @@ public sealed unsafe partial class RedactableString : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_3525137a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString operator_operator__(string unredactedSuffix)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString? operator_operator__(string unredactedSuffix)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(unredactedSuffix);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -147,7 +147,8 @@ public sealed unsafe partial class RedactableString : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(unredactedSuffix, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)NativeMethods.TablePtr->C0.hs_method_36637e4a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_36637e4a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)__hs_handle, false) : null;
         }
     }
 
@@ -163,7 +164,7 @@ public sealed unsafe partial class RedactableString : global::System.IDisposable
     public nint operator_assign_3833e972(nint unredactedCString) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString operator_assign(string unredactedString)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString? operator_assign(string unredactedString)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(unredactedString);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -178,7 +179,8 @@ public sealed unsafe partial class RedactableString : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(unredactedString, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)NativeMethods.TablePtr->C0.hs_method_00b73b9f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_00b73b9f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)__hs_handle, false) : null;
         }
     }
 

@@ -200,12 +200,12 @@ public sealed unsafe partial class MoveOutdoorsGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveOutdoorsGoal Create()
+    public static MoveOutdoorsGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6af806f7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveOutdoorsGoal((nint)handle);
@@ -215,12 +215,12 @@ public sealed unsafe partial class MoveOutdoorsGoal : global::System.IDisposable
     public static MoveOutdoorsGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveOutdoorsGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveOutdoorsGoal arg0)
+    public static MoveOutdoorsGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveOutdoorsGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_eadf7f1a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveOutdoorsGoal((nint)handle);

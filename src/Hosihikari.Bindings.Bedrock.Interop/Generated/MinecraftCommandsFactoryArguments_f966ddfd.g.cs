@@ -40,12 +40,12 @@ public sealed unsafe partial class MinecraftCommandsFactoryArguments : global::S
         return __hs_handle;
     }
 
-    public static MinecraftCommandsFactoryArguments Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.MinecraftCommandsFactoryArguments arg0)
+    public static MinecraftCommandsFactoryArguments? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.MinecraftCommandsFactoryArguments arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_dff88828((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftCommandsFactoryArguments((nint)handle);

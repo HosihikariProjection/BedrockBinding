@@ -50,34 +50,34 @@ public sealed unsafe partial class LegacyStructureSettings : global::System.IDis
         NativeMethods.TablePtr->C2.hs_method_1e5d7903((void*)__hosihikari_shim_handle);
     }
 
-    public static LegacyStructureSettings Create()
+    public static LegacyStructureSettings? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_11f2e5e5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyStructureSettings((nint)handle);
     }
 
-    public static LegacyStructureSettings Create(byte mirror, byte rotation, global::Hosihikari.Bindings.Bedrock.Interop.Block? ignoreBlock, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox boundingBox)
+    public static LegacyStructureSettings? Create(byte mirror, byte rotation, global::Hosihikari.Bindings.Bedrock.Interop.Block? ignoreBlock, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox boundingBox)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cd76d26b(mirror, rotation, (void*)(ignoreBlock?.Handle ?? 0), (void*)boundingBox.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyStructureSettings((nint)handle);
     }
 
-    public static LegacyStructureSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureSettings arg0)
+    public static LegacyStructureSettings? Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureSettings arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_96110199((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyStructureSettings((nint)handle);
@@ -182,9 +182,10 @@ public sealed unsafe partial class LegacyStructureSettings : global::System.IDis
         set => NativeMethods.TablePtr->C2.hs_set_dcd362bd((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureSettings operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureSettings rhs)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureSettings? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureSettings rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureSettings((nint)NativeMethods.TablePtr->C2.hs_method_1b6f5167((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1b6f5167((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureSettings((nint)__hs_handle, false) : null;
     }
 
 

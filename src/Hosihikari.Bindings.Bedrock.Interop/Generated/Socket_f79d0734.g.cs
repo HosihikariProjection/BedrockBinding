@@ -140,23 +140,23 @@ public sealed unsafe partial class Socket : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_5d8f1e01((void*)__hosihikari_shim_handle, opt, value);
     }
 
-    public static Socket Create()
+    public static Socket? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_aad64747();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Socket((nint)handle);
     }
 
-    public static Socket Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket arg0)
+    public static Socket? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_78c7daf3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Socket((nint)handle);
@@ -186,9 +186,10 @@ public sealed unsafe partial class Socket : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_546c5235((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket((nint)NativeMethods.TablePtr->C4.hs_method_4efe37d8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4efe37d8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket((nint)__hs_handle, false) : null;
     }
 
 

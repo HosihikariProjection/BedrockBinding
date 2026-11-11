@@ -48,23 +48,23 @@ public sealed unsafe partial class IDefinitionInstance : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IDefinitionInstance Create()
+    public static IDefinitionInstance? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d14e956e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IDefinitionInstance((nint)handle);
     }
 
-    public static IDefinitionInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.IDefinitionInstance arg0)
+    public static IDefinitionInstance? Create(global::Hosihikari.Bindings.Bedrock.Interop.IDefinitionInstance arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_29feebe6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IDefinitionInstance((nint)handle);
@@ -106,9 +106,10 @@ public sealed unsafe partial class IDefinitionInstance : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_fb5d2a6d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.IDefinitionInstance operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IDefinitionInstance arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.IDefinitionInstance? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IDefinitionInstance arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IDefinitionInstance((nint)NativeMethods.TablePtr->C1.hs_method_738d3bb3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_738d3bb3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IDefinitionInstance((nint)__hs_handle, false) : null;
     }
 
 

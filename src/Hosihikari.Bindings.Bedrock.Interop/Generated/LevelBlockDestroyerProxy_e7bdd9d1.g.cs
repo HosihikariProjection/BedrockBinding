@@ -48,12 +48,12 @@ public sealed unsafe partial class LevelBlockDestroyerProxy : global::System.IDi
     public void _sendEvents(nint levelEventManager, nint region, nint pos, nint block, nint destroySound) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelBlockDestroyerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyerProxy arg0)
+    public static LevelBlockDestroyerProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyerProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0be301ea((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelBlockDestroyerProxy((nint)handle);

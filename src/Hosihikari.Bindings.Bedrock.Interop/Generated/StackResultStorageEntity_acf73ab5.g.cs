@@ -45,34 +45,34 @@ public sealed unsafe partial class StackResultStorageEntity : global::System.IDi
         return (nint)NativeMethods.TablePtr->C3.hs_method_4025f5be((void*)__hosihikari_shim_handle, (void*)weakStorage.Handle);
     }
 
-    public static StackResultStorageEntity Create()
+    public static StackResultStorageEntity? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c4231779();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StackResultStorageEntity((nint)handle);
     }
 
-    public static StackResultStorageEntity Create(global::Hosihikari.Bindings.Bedrock.Interop.StackResultStorageEntity arg0)
+    public static StackResultStorageEntity? Create(global::Hosihikari.Bindings.Bedrock.Interop.StackResultStorageEntity arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a8b12d38((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StackResultStorageEntity((nint)handle);
     }
 
-    public static StackResultStorageEntity Create(global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity weakStorage)
+    public static StackResultStorageEntity? Create(global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity weakStorage)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_500f5ff7((void*)weakStorage.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StackResultStorageEntity((nint)handle);

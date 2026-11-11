@@ -40,12 +40,12 @@ public sealed unsafe partial class RuntimeLightingSubchunkList : global::System.
         return __hs_handle;
     }
 
-    public static RuntimeLightingSubchunkList Create(global::Hosihikari.Bindings.Bedrock.Interop.RuntimeLightingManager_Nested.RuntimeLightingSubchunkList arg0)
+    public static RuntimeLightingSubchunkList? Create(global::Hosihikari.Bindings.Bedrock.Interop.RuntimeLightingManager_Nested.RuntimeLightingSubchunkList arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_91a0d9b0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RuntimeLightingSubchunkList((nint)handle);

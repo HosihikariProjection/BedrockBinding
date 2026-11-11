@@ -52,14 +52,16 @@ public sealed unsafe partial class ScriptLevelGameplayHandler
     public nint _handleEvent_a924157d(nint @event) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.LevelWeatherChangedEvent @event)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.LevelWeatherChangedEvent @event)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C3.hs_method_ce6b22d1((void*)__hosihikari_shim_handle, (void*)@event.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ce6b22d1((void*)__hosihikari_shim_handle, (void*)@event.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.WorldClockRestartEvent @event)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.WorldClockRestartEvent @event)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C3.hs_method_415ac37f((void*)__hosihikari_shim_handle, (void*)@event.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_415ac37f((void*)__hosihikari_shim_handle, (void*)@event.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 
     public int handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ScriptingWorldInitializeEvent @event)

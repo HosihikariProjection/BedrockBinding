@@ -105,12 +105,12 @@ public sealed unsafe partial class PayloadPacket_ActorEventPacketPayload_ : glob
         set => NativeMethods.TablePtr->C4.hs_set_36bbad12((void*)__hosihikari_shim_handle, value);
     }
 
-    public static PayloadPacket_ActorEventPacketPayload_ Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_ActorEventPacketPayload_ arg0)
+    public static PayloadPacket_ActorEventPacketPayload_? Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_ActorEventPacketPayload_ arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_82957d0d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PayloadPacket_ActorEventPacketPayload_((nint)handle);

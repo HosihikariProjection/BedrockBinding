@@ -44,23 +44,23 @@ public sealed unsafe partial class AutomaticFeatureRules : global::System.IDispo
     public nint _ctor(nint ctx, nint eventing) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AutomaticFeatureRules Create()
+    public static AutomaticFeatureRules? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7d640f0f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutomaticFeatureRules((nint)handle);
     }
 
-    public static AutomaticFeatureRules Create(global::Hosihikari.Bindings.Bedrock.Interop.AutomaticFeatureRules arg0)
+    public static AutomaticFeatureRules? Create(global::Hosihikari.Bindings.Bedrock.Interop.AutomaticFeatureRules arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_285c6066((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutomaticFeatureRules((nint)handle);
@@ -94,9 +94,10 @@ public sealed unsafe partial class AutomaticFeatureRules : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_99642fb3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AutomaticFeatureRules operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AutomaticFeatureRules arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AutomaticFeatureRules? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AutomaticFeatureRules arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AutomaticFeatureRules((nint)NativeMethods.TablePtr->C0.hs_method_df207b6b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_df207b6b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AutomaticFeatureRules((nint)__hs_handle, false) : null;
     }
 
 

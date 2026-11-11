@@ -73,12 +73,12 @@ public sealed unsafe partial class FogCommand : global::System.IDisposable
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FogCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.FogCommand arg0)
+    public static FogCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.FogCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_0db06009((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FogCommand((nint)handle);

@@ -44,23 +44,23 @@ public sealed unsafe partial class ReleaseDetails : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ReleaseDetails Create()
+    public static ReleaseDetails? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5af599a4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReleaseDetails((nint)handle);
     }
 
-    public static ReleaseDetails Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList_Nested.ReleaseDetails arg0)
+    public static ReleaseDetails? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList_Nested.ReleaseDetails arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5a4ee369((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReleaseDetails((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class ReleaseDetails : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_ebd19cae((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList_Nested.ReleaseDetails operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList_Nested.ReleaseDetails arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList_Nested.ReleaseDetails? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList_Nested.ReleaseDetails arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList_Nested.ReleaseDetails((nint)NativeMethods.TablePtr->C3.hs_method_8efdca72((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8efdca72((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList_Nested.ReleaseDetails((nint)__hs_handle, false) : null;
     }
 
 

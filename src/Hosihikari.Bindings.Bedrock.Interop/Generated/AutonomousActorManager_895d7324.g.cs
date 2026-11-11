@@ -48,23 +48,23 @@ public sealed unsafe partial class AutonomousActorManager : global::System.IDisp
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AutonomousActorManager Create()
+    public static AutonomousActorManager? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f43df7c7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutonomousActorManager((nint)handle);
     }
 
-    public static AutonomousActorManager Create(global::Hosihikari.Bindings.Bedrock.Interop.AutonomousActorManager arg0)
+    public static AutonomousActorManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.AutonomousActorManager arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5d4fb1b3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutonomousActorManager((nint)handle);

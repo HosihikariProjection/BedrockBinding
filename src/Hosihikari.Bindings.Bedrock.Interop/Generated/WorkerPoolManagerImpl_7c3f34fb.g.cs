@@ -58,23 +58,23 @@ public sealed unsafe partial class WorkerPoolManagerImpl : global::System.IDispo
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorkerPoolManagerImpl Create()
+    public static WorkerPoolManagerImpl? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_04f88555();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorkerPoolManagerImpl((nint)handle);
     }
 
-    public static WorkerPoolManagerImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl arg0)
+    public static WorkerPoolManagerImpl? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_aab55a36((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorkerPoolManagerImpl((nint)handle);
@@ -117,9 +117,10 @@ public sealed unsafe partial class WorkerPoolManagerImpl : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_fdc1c24f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl((nint)NativeMethods.TablePtr->C0.hs_method_77348876((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_77348876((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl((nint)__hs_handle, false) : null;
     }
 
     public void tick()

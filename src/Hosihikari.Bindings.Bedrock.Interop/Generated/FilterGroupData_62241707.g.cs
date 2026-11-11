@@ -52,12 +52,12 @@ public sealed unsafe partial class FilterGroupData : global::System.IDisposable
     public static FilterGroupData Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FilterGroupData Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterGroupData arg0)
+    public static FilterGroupData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterGroupData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_93d60372((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilterGroupData((nint)handle);

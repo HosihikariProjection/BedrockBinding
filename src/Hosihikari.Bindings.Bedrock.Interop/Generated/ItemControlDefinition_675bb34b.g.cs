@@ -40,23 +40,23 @@ public sealed unsafe partial class ItemControlDefinition : global::System.IDispo
         return __hs_handle;
     }
 
-    public static ItemControlDefinition Create()
+    public static ItemControlDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f37f7004();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemControlDefinition((nint)handle);
     }
 
-    public static ItemControlDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemControlDefinition arg0)
+    public static ItemControlDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemControlDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d2384da2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemControlDefinition((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class ItemControlDefinition : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C1.hs_get_594a07d0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemControlDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemControlDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemControlDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemControlDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemControlDefinition((nint)NativeMethods.TablePtr->C1.hs_method_1317ba5f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1317ba5f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemControlDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

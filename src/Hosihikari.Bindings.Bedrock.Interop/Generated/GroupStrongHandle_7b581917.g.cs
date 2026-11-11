@@ -40,12 +40,12 @@ public sealed unsafe partial class GroupStrongHandle : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static GroupStrongHandle Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerLocatorBar_Nested.GroupStrongHandle arg0)
+    public static GroupStrongHandle? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerLocatorBar_Nested.GroupStrongHandle arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_600ae7e1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GroupStrongHandle((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class ScriptStructureManager : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ScriptStructureManager Create()
+    public static ScriptStructureManager? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ec67d46b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptStructureManager((nint)handle);
     }
 
-    public static ScriptStructureManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptStructureManager arg0)
+    public static ScriptStructureManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptStructureManager arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6a4bf40b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptStructureManager((nint)handle);

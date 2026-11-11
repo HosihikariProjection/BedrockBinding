@@ -71,12 +71,12 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
         }
     }
 
-    public static ExpressionNode Create()
+    public static ExpressionNode? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6c1bbdef();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExpressionNode((nint)handle);
@@ -86,12 +86,12 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
     public static ExpressionNode Create(nint root) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExpressionNode Create(global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode arg0)
+    public static ExpressionNode? Create(global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7518750b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExpressionNode((nint)handle);
@@ -105,7 +105,7 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
     public static ExpressionNode Create_9f7ca7f0(nint value, nint op) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExpressionNode Create(string expression, short molangVersion)
+    public static ExpressionNode? Create(string expression, short molangVersion)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(expression);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -123,7 +123,7 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_33184c57(__hs_stringData0, (nuint)__hs_stringByteCount0, molangVersion);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new ExpressionNode((nint)handle);
@@ -150,9 +150,10 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
     public static void bindType(nint ctx) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg evalGeneric(global::Hosihikari.Bindings.Bedrock.Interop.RenderParams renderParams)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg? evalGeneric(global::Hosihikari.Bindings.Bedrock.Interop.RenderParams renderParams)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)NativeMethods.TablePtr->C1.hs_method_58110497((void*)__hosihikari_shim_handle, (void*)renderParams.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_58110497((void*)__hosihikari_shim_handle, (void*)renderParams.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle, false) : null;
     }
 
     public string getExpressionString()

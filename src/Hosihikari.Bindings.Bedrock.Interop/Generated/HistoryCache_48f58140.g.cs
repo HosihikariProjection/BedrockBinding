@@ -40,23 +40,23 @@ public sealed unsafe partial class HistoryCache : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static HistoryCache Create()
+    public static HistoryCache? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_88d4db9f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HistoryCache((nint)handle);
     }
 
-    public static HistoryCache Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryCache arg0)
+    public static HistoryCache? Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryCache arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_eebaec85((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HistoryCache((nint)handle);
@@ -94,9 +94,10 @@ public sealed unsafe partial class HistoryCache : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_dd75f939((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryCache operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryCache arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryCache? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryCache arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryCache((nint)NativeMethods.TablePtr->C2.hs_method_e01e6bc0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e01e6bc0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryCache((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -220,12 +220,12 @@ public sealed unsafe partial class SleepGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SleepGoal Create()
+    public static SleepGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e7f520d4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SleepGoal((nint)handle);
@@ -235,12 +235,12 @@ public sealed unsafe partial class SleepGoal : global::System.IDisposable
     public static SleepGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SleepGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SleepGoal arg0)
+    public static SleepGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.SleepGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_306f4faa((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SleepGoal((nint)handle);
@@ -383,9 +383,10 @@ public sealed unsafe partial class SleepGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_3da038af((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SleepGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SleepGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SleepGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SleepGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SleepGoal((nint)NativeMethods.TablePtr->C3.hs_method_9ae263ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9ae263ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SleepGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

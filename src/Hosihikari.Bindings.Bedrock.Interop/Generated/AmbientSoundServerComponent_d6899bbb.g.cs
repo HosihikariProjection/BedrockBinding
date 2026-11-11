@@ -44,12 +44,12 @@ public sealed unsafe partial class AmbientSoundServerComponent : global::System.
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AmbientSoundServerComponent Create()
+    public static AmbientSoundServerComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b96c0e2a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AmbientSoundServerComponent((nint)handle);
@@ -83,9 +83,10 @@ public sealed unsafe partial class AmbientSoundServerComponent : global::System.
         set => NativeMethods.TablePtr->C0.hs_set_5ed91b5c((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundServerComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundServerComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundServerComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundServerComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundServerComponent((nint)NativeMethods.TablePtr->C0.hs_method_66727685((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_66727685((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundServerComponent((nint)__hs_handle, false) : null;
     }
 
 

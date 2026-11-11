@@ -40,23 +40,23 @@ public sealed unsafe partial class Info : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Info Create()
+    public static Info? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_38ff303c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Info((nint)handle);
     }
 
-    public static Info Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info arg0)
+    public static Info? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_68321453((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Info((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class Info : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_95bddd32((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info((nint)NativeMethods.TablePtr->C4.hs_method_ddb2929a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ddb2929a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

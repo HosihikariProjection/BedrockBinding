@@ -90,23 +90,23 @@ public sealed unsafe partial class SnackGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SnackGoal Create()
+    public static SnackGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_69a9e2b5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SnackGoal((nint)handle);
     }
 
-    public static SnackGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SnackGoal arg0)
+    public static SnackGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.SnackGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ba7325a2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SnackGoal((nint)handle);
@@ -203,9 +203,10 @@ public sealed unsafe partial class SnackGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_e4aa8abf((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SnackGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnackGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SnackGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnackGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SnackGoal((nint)NativeMethods.TablePtr->C3.hs_method_7f6f493e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7f6f493e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SnackGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

@@ -78,23 +78,23 @@ public sealed unsafe partial class RunAroundLikeCrazyGoal : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RunAroundLikeCrazyGoal Create()
+    public static RunAroundLikeCrazyGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f28e02af();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RunAroundLikeCrazyGoal((nint)handle);
     }
 
-    public static RunAroundLikeCrazyGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.RunAroundLikeCrazyGoal arg0)
+    public static RunAroundLikeCrazyGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.RunAroundLikeCrazyGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c3ad926e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RunAroundLikeCrazyGoal((nint)handle);
@@ -148,9 +148,10 @@ public sealed unsafe partial class RunAroundLikeCrazyGoal : global::System.IDisp
         set => NativeMethods.TablePtr->C3.hs_set_3563073a((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RunAroundLikeCrazyGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RunAroundLikeCrazyGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RunAroundLikeCrazyGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RunAroundLikeCrazyGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RunAroundLikeCrazyGoal((nint)NativeMethods.TablePtr->C3.hs_method_d299cea9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d299cea9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RunAroundLikeCrazyGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

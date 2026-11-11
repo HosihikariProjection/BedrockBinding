@@ -44,23 +44,23 @@ public sealed unsafe partial class ScriptBlockHitInformation : global::System.ID
     public nint _ctor(nint projectileHitEvent, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptBlockHitInformation Create()
+    public static ScriptBlockHitInformation? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_79319e96();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockHitInformation((nint)handle);
     }
 
-    public static ScriptBlockHitInformation Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockHitInformation arg0)
+    public static ScriptBlockHitInformation? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockHitInformation arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3a6e8981((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockHitInformation((nint)handle);

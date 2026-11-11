@@ -44,23 +44,23 @@ public sealed unsafe partial class PerfContextTrackerReportLite : global::System
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PerfContextTrackerReportLite Create()
+    public static PerfContextTrackerReportLite? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_624b19b4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PerfContextTrackerReportLite((nint)handle);
     }
 
-    public static PerfContextTrackerReportLite Create(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReportLite arg0)
+    public static PerfContextTrackerReportLite? Create(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReportLite arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8d18a841((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PerfContextTrackerReportLite((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class PerfContextTrackerReportLite : global::System
         get => (nint)NativeMethods.TablePtr->C2.hs_get_6e252430((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReportLite operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReportLite arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReportLite? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReportLite arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReportLite((nint)NativeMethods.TablePtr->C2.hs_method_8cf76426((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8cf76426((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReportLite((nint)__hs_handle, false) : null;
     }
 
 

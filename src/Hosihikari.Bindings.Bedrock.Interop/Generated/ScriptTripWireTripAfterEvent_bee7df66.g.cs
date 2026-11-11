@@ -56,23 +56,23 @@ public sealed unsafe partial class ScriptTripWireTripAfterEvent : global::System
     public nint _ctor(nint eventData, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptTripWireTripAfterEvent Create()
+    public static ScriptTripWireTripAfterEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3cb9da38();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptTripWireTripAfterEvent((nint)handle);
     }
 
-    public static ScriptTripWireTripAfterEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTripWireTripAfterEvent arg0)
+    public static ScriptTripWireTripAfterEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTripWireTripAfterEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_97bfc512((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptTripWireTripAfterEvent((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class ScriptTripWireTripAfterEvent : global::System
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTripWireTripAfterEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTripWireTripAfterEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTripWireTripAfterEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTripWireTripAfterEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTripWireTripAfterEvent((nint)NativeMethods.TablePtr->C3.hs_method_998b15c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_998b15c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTripWireTripAfterEvent((nint)__hs_handle, false) : null;
     }
 
 

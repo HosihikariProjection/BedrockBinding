@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerRespawnEvent_ : global
     public static ValueOrRef_const_PlayerRespawnEvent_ Create_198544d7(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerRespawnEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerRespawnEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerRespawnEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerRespawnEvent((nint)NativeMethods.TablePtr->C1.hs_method_53b6ea7e((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_53b6ea7e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerRespawnEvent((nint)__hs_handle, false) : null;
     }
 
 

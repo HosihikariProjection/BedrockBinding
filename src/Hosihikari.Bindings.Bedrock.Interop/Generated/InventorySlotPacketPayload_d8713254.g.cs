@@ -59,34 +59,34 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
         NativeMethods.TablePtr->C1.hs_method_709459ed((void*)__hosihikari_shim_handle);
     }
 
-    public static InventorySlotPacketPayload Create()
+    public static InventorySlotPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4ee28f0a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventorySlotPacketPayload((nint)handle);
     }
 
-    public static InventorySlotPacketPayload Create(sbyte id, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public static InventorySlotPacketPayload? Create(sbyte id, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e2b27470(id, slot, (void*)item.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventorySlotPacketPayload((nint)handle);
     }
 
-    public static InventorySlotPacketPayload Create(sbyte id, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName fullContainerName, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack storageItem)
+    public static InventorySlotPacketPayload? Create(sbyte id, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName fullContainerName, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack storageItem)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d23ccb08(id, slot, (void*)item.Handle, (void*)fullContainerName.Handle, (void*)storageItem.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventorySlotPacketPayload((nint)handle);
@@ -96,12 +96,12 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
     public static InventorySlotPacketPayload Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static InventorySlotPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload arg0)
+    public static InventorySlotPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2399265b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventorySlotPacketPayload((nint)handle);
@@ -137,9 +137,10 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
         get => (nint)NativeMethods.TablePtr->C1.hs_get_646b905d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload((nint)NativeMethods.TablePtr->C1.hs_method_2e195742((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2e195742((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload((nint)__hs_handle, false) : null;
     }
 
 

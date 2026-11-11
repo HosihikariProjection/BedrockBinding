@@ -40,23 +40,23 @@ public sealed unsafe partial class EncryptionResult : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static EncryptionResult Create()
+    public static EncryptionResult? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e340d55e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EncryptionResult((nint)handle);
     }
 
-    public static EncryptionResult Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionResult arg0)
+    public static EncryptionResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionResult arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4c7ed51c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EncryptionResult((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class EncryptionResult : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c929de00((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionResult arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionResult((nint)NativeMethods.TablePtr->C0.hs_method_0f5037d8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_0f5037d8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionResult((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

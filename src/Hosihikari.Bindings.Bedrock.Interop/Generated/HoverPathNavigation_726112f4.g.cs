@@ -76,12 +76,12 @@ public sealed unsafe partial class HoverPathNavigation : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static HoverPathNavigation Create(global::Hosihikari.Bindings.Bedrock.Interop.HoverPathNavigation arg0)
+    public static HoverPathNavigation? Create(global::Hosihikari.Bindings.Bedrock.Interop.HoverPathNavigation arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_793546e8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HoverPathNavigation((nint)handle);
@@ -100,9 +100,10 @@ public sealed unsafe partial class HoverPathNavigation : global::System.IDisposa
     public nint createPath_7f2e3072(nint parent, nint mob, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getTempMobPos(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getTempMobPos(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C1.hs_method_201e2db9((void*)__hosihikari_shim_handle, (void*)mob.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_201e2db9((void*)__hosihikari_shim_handle, (void*)mob.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.NavigationDescription? description)

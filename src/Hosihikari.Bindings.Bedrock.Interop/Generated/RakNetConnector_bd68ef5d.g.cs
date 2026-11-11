@@ -156,23 +156,23 @@ public sealed unsafe partial class RakNetConnector : global::System.IDisposable
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RakNetConnector Create()
+    public static RakNetConnector? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_19cb8263();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakNetConnector((nint)handle);
     }
 
-    public static RakNetConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector arg0)
+    public static RakNetConnector? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_30178366((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakNetConnector((nint)handle);
@@ -203,9 +203,10 @@ public sealed unsafe partial class RakNetConnector : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_bf431ced((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo getConnectedGameInfo()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo? getConnectedGameInfo()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)NativeMethods.TablePtr->C3.hs_method_a260d3bd((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a260d3bd((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)__hs_handle, false) : null;
     }
 
     public ushort getIPv4Port()
@@ -224,9 +225,10 @@ public sealed unsafe partial class RakNetConnector : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier getNetworkIdentifier()
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier? getNetworkIdentifier()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)NativeMethods.TablePtr->C3.hs_method_661c48fc((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_661c48fc((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle) : null;
     }
 
     public int getNetworkType()
@@ -383,9 +385,10 @@ public sealed unsafe partial class RakNetConnector : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_e95291e3((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector((nint)NativeMethods.TablePtr->C3.hs_method_5bf96d83((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5bf96d83((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector((nint)__hs_handle, false) : null;
     }
 
     public void runEvents()

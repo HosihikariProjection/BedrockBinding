@@ -53,12 +53,12 @@ public sealed unsafe partial class ClassBinding : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_f69c7660((void*)__hosihikari_shim_handle);
     }
 
-    public static ClassBinding Create()
+    public static ClassBinding? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3378dd54();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClassBinding((nint)handle);

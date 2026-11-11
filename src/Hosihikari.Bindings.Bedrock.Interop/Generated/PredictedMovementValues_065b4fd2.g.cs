@@ -40,23 +40,23 @@ public sealed unsafe partial class PredictedMovementValues : global::System.IDis
         return __hs_handle;
     }
 
-    public static PredictedMovementValues Create()
+    public static PredictedMovementValues? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8116fab0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PredictedMovementValues((nint)handle);
     }
 
-    public static PredictedMovementValues Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementValues arg0)
+    public static PredictedMovementValues? Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementValues arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_00fb41d5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PredictedMovementValues((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class PredictedMovementValues : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C2.hs_get_0366b8dc((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementValues operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementValues arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementValues? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementValues arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementValues((nint)NativeMethods.TablePtr->C2.hs_method_5874dd26((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5874dd26((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementValues((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

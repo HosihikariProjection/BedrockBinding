@@ -40,23 +40,23 @@ public sealed unsafe partial class ExecutableComponent : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static ExecutableComponent Create()
+    public static ExecutableComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b2cb22c0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExecutableComponent((nint)handle);
     }
 
-    public static ExecutableComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockCustomComponentsComponent_Nested.ExecutableComponent arg0)
+    public static ExecutableComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockCustomComponentsComponent_Nested.ExecutableComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_65236176((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExecutableComponent((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class ExecutableComponent : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C0.hs_get_2b608a92((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockCustomComponentsComponent_Nested.ExecutableComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockCustomComponentsComponent_Nested.ExecutableComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockCustomComponentsComponent_Nested.ExecutableComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockCustomComponentsComponent_Nested.ExecutableComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockCustomComponentsComponent_Nested.ExecutableComponent((nint)NativeMethods.TablePtr->C0.hs_method_e7403a82((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e7403a82((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockCustomComponentsComponent_Nested.ExecutableComponent((nint)__hs_handle, false) : null;
     }
 
 

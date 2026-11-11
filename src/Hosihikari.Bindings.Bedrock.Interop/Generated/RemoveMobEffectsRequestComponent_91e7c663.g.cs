@@ -40,12 +40,12 @@ public sealed unsafe partial class RemoveMobEffectsRequestComponent : global::Sy
         return __hs_handle;
     }
 
-    public static RemoveMobEffectsRequestComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.TickMobEffectsSystem.RemoveMobEffectsRequestComponent arg0)
+    public static RemoveMobEffectsRequestComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.TickMobEffectsSystem.RemoveMobEffectsRequestComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1f383268((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RemoveMobEffectsRequestComponent((nint)handle);

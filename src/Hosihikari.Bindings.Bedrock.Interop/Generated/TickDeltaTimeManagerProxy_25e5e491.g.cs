@@ -52,12 +52,12 @@ public sealed unsafe partial class TickDeltaTimeManagerProxy : global::System.ID
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TickDeltaTimeManagerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManagerProxy arg0)
+    public static TickDeltaTimeManagerProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManagerProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_360a1cbe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TickDeltaTimeManagerProxy((nint)handle);

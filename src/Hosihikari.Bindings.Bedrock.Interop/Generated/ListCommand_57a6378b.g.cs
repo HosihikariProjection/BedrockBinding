@@ -73,12 +73,12 @@ public sealed unsafe partial class ListCommand : global::System.IDisposable
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ListCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.ListCommand arg0)
+    public static ListCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.ListCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c37aab1f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ListCommand((nint)handle);

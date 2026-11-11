@@ -210,12 +210,12 @@ public sealed unsafe partial class RakWebSocketClient : global::System.IDisposab
     public void __updateState() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RakWebSocketClient Create(global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketClient arg0)
+    public static RakWebSocketClient? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketClient arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cf4b3711((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakWebSocketClient((nint)handle);

@@ -44,12 +44,12 @@ public sealed unsafe partial class StructureFeatureRegistry : global::System.IDi
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StructureFeatureRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureFeatureRegistry arg0)
+    public static StructureFeatureRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureFeatureRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_674d562f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureFeatureRegistry((nint)handle);

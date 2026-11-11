@@ -48,23 +48,23 @@ public sealed unsafe partial class StructurePoolBlockTagRule : global::System.ID
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StructurePoolBlockTagRule Create()
+    public static StructurePoolBlockTagRule? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d7d30f21();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructurePoolBlockTagRule((nint)handle);
     }
 
-    public static StructurePoolBlockTagRule Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockTagRule arg0)
+    public static StructurePoolBlockTagRule? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockTagRule arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0efb5281((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructurePoolBlockTagRule((nint)handle);

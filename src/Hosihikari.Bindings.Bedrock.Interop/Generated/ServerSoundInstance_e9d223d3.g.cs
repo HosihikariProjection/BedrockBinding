@@ -48,12 +48,12 @@ public sealed unsafe partial class ServerSoundInstance : global::System.IDisposa
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerSoundInstance Create()
+    public static ServerSoundInstance? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7bd740b5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerSoundInstance((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class ServerSoundInstance : global::System.IDisposa
     public static ServerSoundInstance Create(nint handle, nint manager, nint soundEventId, nint definition, int loopCount, nint recipient) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerSoundInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstance arg0)
+    public static ServerSoundInstance? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstance arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f0b22c5c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerSoundInstance((nint)handle);
@@ -124,9 +124,10 @@ public sealed unsafe partial class ServerSoundInstance : global::System.IDisposa
     public nint operator_assign(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstance operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstance arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstance? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstance arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstance((nint)NativeMethods.TablePtr->C3.hs_method_7e889c97((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7e889c97((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstance((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

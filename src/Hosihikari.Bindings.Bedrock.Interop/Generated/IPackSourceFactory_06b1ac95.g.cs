@@ -46,12 +46,12 @@ public sealed unsafe partial class IPackSourceFactory : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C1.hs_get_bf8c5e18((void*)__hosihikari_shim_handle);
     }
 
-    public static IPackSourceFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.IPackSourceFactory arg0)
+    public static IPackSourceFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.IPackSourceFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_23676a74((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IPackSourceFactory((nint)handle);
@@ -61,28 +61,32 @@ public sealed unsafe partial class IPackSourceFactory : global::System.IDisposab
     public nint createCompositePackSource(nint sources) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompositePackSource' has no accessible destructor.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackSource createDirectoryPackSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, sbyte packType, byte packOrigin, bool isDevDirectory)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackSource? createDirectoryPackSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, sbyte packType, byte packOrigin, bool isDevDirectory)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackSource((nint)NativeMethods.TablePtr->C1.hs_method_1055bb66((void*)__hosihikari_shim_handle, (void*)path.Handle, packType, packOrigin, isDevDirectory), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1055bb66((void*)__hosihikari_shim_handle, (void*)path.Handle, packType, packOrigin, isDevDirectory);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackSource((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource createInPackagePackSource(sbyte packType)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource? createInPackagePackSource(sbyte packType)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource((nint)NativeMethods.TablePtr->C1.hs_method_a4573675((void*)__hosihikari_shim_handle, packType), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a4573675((void*)__hosihikari_shim_handle, packType);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Realms::RealmsServicePackSource' is not a known bindable declaration.", false)]
     public nint createRealmsServicePackSource(long realmId, nint packType, nint servicePackData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Realms::RealmsServicePackSource' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource createWorldHistoryPackSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path pathToWorld, sbyte packType)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource? createWorldHistoryPackSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path pathToWorld, sbyte packType)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource((nint)NativeMethods.TablePtr->C1.hs_method_18e6da02((void*)__hosihikari_shim_handle, (void*)pathToWorld.Handle, packType), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_18e6da02((void*)__hosihikari_shim_handle, (void*)pathToWorld.Handle, packType);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource createWorldTemplatePackSource(global::Hosihikari.Bindings.Abi.SharedHandle? worldTemplateManager, global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID worldTemplateId, sbyte packType, byte packOrigin)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource? createWorldTemplatePackSource(global::Hosihikari.Bindings.Abi.SharedHandle? worldTemplateManager, global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID worldTemplateId, sbyte packType, byte packOrigin)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource((nint)NativeMethods.TablePtr->C1.hs_method_d4c6be6a((void*)__hosihikari_shim_handle, worldTemplateManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)worldTemplateId.Handle, packType, packOrigin), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d4c6be6a((void*)__hosihikari_shim_handle, worldTemplateManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)worldTemplateId.Handle, packType, packOrigin);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'WorldTemplateCollectionView' has no generated wrapper.", false)]

@@ -40,12 +40,12 @@ public sealed unsafe partial class RemoveEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static RemoveEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListPacketPayload_Nested.RemoveEntry arg0)
+    public static RemoveEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListPacketPayload_Nested.RemoveEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d422ceb4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RemoveEntry((nint)handle);

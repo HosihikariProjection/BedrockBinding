@@ -60,23 +60,23 @@ public sealed unsafe partial class MultiRecipe : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MultiRecipe Create()
+    public static MultiRecipe? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3ed9d5e9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MultiRecipe((nint)handle);
     }
 
-    public static MultiRecipe Create(global::Hosihikari.Bindings.Bedrock.Interop.MultiRecipe arg0)
+    public static MultiRecipe? Create(global::Hosihikari.Bindings.Bedrock.Interop.MultiRecipe arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_31c94a4c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MultiRecipe((nint)handle);

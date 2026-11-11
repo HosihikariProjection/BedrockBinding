@@ -275,12 +275,12 @@ public sealed unsafe partial class ChestBlockActor : global::System.IDisposable
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ChestBlockActor Create()
+    public static ChestBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6b9eb1a2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChestBlockActor((nint)handle);
@@ -414,9 +414,10 @@ public sealed unsafe partial class ChestBlockActor : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C0.hs_method_538b33b1((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_538b33b1((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int getMaxStackSize()
@@ -430,9 +431,10 @@ public sealed unsafe partial class ChestBlockActor : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getObstructionAABB()
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getObstructionAABB()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_ce9c7703((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ce9c7703((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
     public uint getOpenSound()

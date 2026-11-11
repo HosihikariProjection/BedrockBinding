@@ -40,23 +40,23 @@ public sealed unsafe partial class ActiveTransfer : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ActiveTransfer Create()
+    public static ActiveTransfer? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0f7803e6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActiveTransfer((nint)handle);
     }
 
-    public static ActiveTransfer Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfer arg0)
+    public static ActiveTransfer? Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfer arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_86561fa0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActiveTransfer((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class ActiveTransfer : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_56061983((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfer arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfer((nint)NativeMethods.TablePtr->C0.hs_method_37187fb6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_37187fb6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfer((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

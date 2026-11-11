@@ -40,12 +40,12 @@ public sealed unsafe partial class SeatDescription : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static SeatDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.RideableComponentDefinition_Nested.SeatDescription arg0)
+    public static SeatDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.RideableComponentDefinition_Nested.SeatDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fd6d93d0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SeatDescription((nint)handle);

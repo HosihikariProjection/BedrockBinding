@@ -56,12 +56,12 @@ public sealed unsafe partial class MobEffectResponse : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MobEffectResponse Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectResponse arg0)
+    public static MobEffectResponse? Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectResponse arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_61ebea7c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEffectResponse((nint)handle);

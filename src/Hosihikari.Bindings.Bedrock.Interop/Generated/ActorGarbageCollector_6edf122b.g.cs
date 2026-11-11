@@ -40,12 +40,12 @@ public sealed unsafe partial class ActorGarbageCollector : global::System.IDispo
         return __hs_handle;
     }
 
-    public static ActorGarbageCollector Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector arg0)
+    public static ActorGarbageCollector? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_70791f11((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorGarbageCollector((nint)handle);

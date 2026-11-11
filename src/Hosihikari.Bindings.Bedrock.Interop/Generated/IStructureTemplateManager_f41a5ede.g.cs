@@ -46,18 +46,18 @@ public sealed unsafe partial class IStructureTemplateManager : global::System.ID
         get => (nint)NativeMethods.TablePtr->C1.hs_get_425092e0((void*)__hosihikari_shim_handle);
     }
 
-    public static IStructureTemplateManager Create(global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager arg0)
+    public static IStructureTemplateManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f3dbaa7b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IStructureTemplateManager((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate getOrCreate(string structureName)
+    public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate? getOrCreate(string structureName)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(structureName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -72,7 +72,8 @@ public sealed unsafe partial class IStructureTemplateManager : global::System.ID
         global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)NativeMethods.TablePtr->C1.hs_method_4ebf5d76((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4ebf5d76((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)__hs_handle, false) : null;
         }
     }
 
@@ -82,7 +83,7 @@ public sealed unsafe partial class IStructureTemplateManager : global::System.ID
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureTemplate getOrCreateLegacy(string structureName)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureTemplate? getOrCreateLegacy(string structureName)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(structureName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -97,7 +98,8 @@ public sealed unsafe partial class IStructureTemplateManager : global::System.ID
         global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureTemplate((nint)NativeMethods.TablePtr->C1.hs_method_a51f3bcb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a51f3bcb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureTemplate((nint)__hs_handle, false) : null;
         }
     }
 

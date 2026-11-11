@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerPreMobTravelComponent : global::System.
         return __hs_handle;
     }
 
-    public static PlayerPreMobTravelComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerPreMobTravelComponent arg0)
+    public static PlayerPreMobTravelComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerPreMobTravelComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_970b3c7c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerPreMobTravelComponent((nint)handle);

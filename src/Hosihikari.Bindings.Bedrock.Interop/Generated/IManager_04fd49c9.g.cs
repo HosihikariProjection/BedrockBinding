@@ -46,12 +46,12 @@ public sealed unsafe partial class IManager : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_e71a6b17((void*)__hosihikari_shim_handle);
     }
 
-    public static IManager Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.IManager arg0)
+    public static IManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.IManager arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8c96cd4f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IManager((nint)handle);

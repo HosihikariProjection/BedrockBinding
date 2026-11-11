@@ -70,23 +70,23 @@ public sealed unsafe partial class FilterTestHourlyClock : global::System.IDispo
     public bool _setup(nint definition, nint inputs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FilterTestHourlyClock Create()
+    public static FilterTestHourlyClock? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1d403049();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilterTestHourlyClock((nint)handle);
     }
 
-    public static FilterTestHourlyClock Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHourlyClock arg0)
+    public static FilterTestHourlyClock? Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHourlyClock arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_095b0886((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilterTestHourlyClock((nint)handle);
@@ -109,9 +109,10 @@ public sealed unsafe partial class FilterTestHourlyClock : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C1.hs_get_6d6a2384((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHourlyClock operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHourlyClock arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHourlyClock? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHourlyClock arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHourlyClock((nint)NativeMethods.TablePtr->C1.hs_method_249d5355((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_249d5355((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHourlyClock((nint)__hs_handle, false) : null;
     }
 
     public bool setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)

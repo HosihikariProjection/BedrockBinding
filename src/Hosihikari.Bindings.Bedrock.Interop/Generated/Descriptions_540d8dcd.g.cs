@@ -44,12 +44,12 @@ public sealed unsafe partial class Descriptions : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Descriptions Create(global::Hosihikari.Bindings.Bedrock.Interop.FeatureTerrainAdjustments_Nested.Descriptions arg0)
+    public static Descriptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.FeatureTerrainAdjustments_Nested.Descriptions arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e8166563((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Descriptions((nint)handle);

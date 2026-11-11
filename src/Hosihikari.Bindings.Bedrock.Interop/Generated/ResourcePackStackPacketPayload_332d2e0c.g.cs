@@ -48,23 +48,23 @@ public sealed unsafe partial class ResourcePackStackPacketPayload : global::Syst
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ResourcePackStackPacketPayload Create()
+    public static ResourcePackStackPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_01d947cd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePackStackPacketPayload((nint)handle);
     }
 
-    public static ResourcePackStackPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStackPacketPayload arg0)
+    public static ResourcePackStackPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStackPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_afc8deeb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePackStackPacketPayload((nint)handle);

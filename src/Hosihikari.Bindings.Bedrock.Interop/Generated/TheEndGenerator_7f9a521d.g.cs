@@ -155,23 +155,23 @@ public sealed unsafe partial class TheEndGenerator : global::System.IDisposable
     public bool _structurePostProcessChunk(nint neighborhoodIn) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TheEndGenerator Create()
+    public static TheEndGenerator? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b8b12074();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TheEndGenerator((nint)handle);
     }
 
-    public static TheEndGenerator Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, uint seed, global::Hosihikari.Bindings.Bedrock.Interop.Biome? overrideBiome)
+    public static TheEndGenerator? Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, uint seed, global::Hosihikari.Bindings.Bedrock.Interop.Biome? overrideBiome)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_070d8b4b((void*)dimension.Handle, seed, (void*)(overrideBiome?.Handle ?? 0));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TheEndGenerator((nint)handle);
@@ -192,9 +192,10 @@ public sealed unsafe partial class TheEndGenerator : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_b29b01e6((void*)__hosihikari_shim_handle, (void*)neighborhood.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos findSpawnPosition()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? findSpawnPosition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C3.hs_method_2e00d4b0((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2e00d4b0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -203,19 +204,22 @@ public sealed unsafe partial class TheEndGenerator : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_77b35c7c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox area, uint scale)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea? getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox area, uint scale)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)NativeMethods.TablePtr->C3.hs_method_97beb34a((void*)__hosihikari_shim_handle, (void*)area.Handle, scale));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_97beb34a((void*)__hosihikari_shim_handle, (void*)area.Handle, scale);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource getBiomeSource()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource? getBiomeSource()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource((nint)NativeMethods.TablePtr->C3.hs_method_65dbcd10((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_65dbcd10((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorldGenerator_Nested.BlockVolumeDimensions getBlockVolumeDimensions()
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorldGenerator_Nested.BlockVolumeDimensions? getBlockVolumeDimensions()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldGenerator_Nested.BlockVolumeDimensions((nint)NativeMethods.TablePtr->C3.hs_method_913d6066((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_913d6066((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldGenerator_Nested.BlockVolumeDimensions((nint)__hs_handle) : null;
     }
 
     public float getIslandHeightValue(int chunkX, int chunkZ, int cellOffsetX, int cellOffsetZ)

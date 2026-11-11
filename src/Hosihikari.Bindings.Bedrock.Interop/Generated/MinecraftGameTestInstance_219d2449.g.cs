@@ -88,23 +88,23 @@ public sealed unsafe partial class MinecraftGameTestInstance : global::System.ID
     public void _spawnStructure() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinecraftGameTestInstance Create()
+    public static MinecraftGameTestInstance? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8878ddb0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftGameTestInstance((nint)handle);
     }
 
-    public static MinecraftGameTestInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestInstance arg0)
+    public static MinecraftGameTestInstance? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestInstance arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_329af3fe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftGameTestInstance((nint)handle);
@@ -125,9 +125,10 @@ public sealed unsafe partial class MinecraftGameTestInstance : global::System.ID
         NativeMethods.TablePtr->C2.hs_method_105d5ddc((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource getBlockSource()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? getBlockSource()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)NativeMethods.TablePtr->C2.hs_method_a042c163((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a042c163((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getStructureBlockPivot()
@@ -144,9 +145,10 @@ public sealed unsafe partial class MinecraftGameTestInstance : global::System.ID
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox getStructureBoundingBox()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? getStructureBoundingBox()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)NativeMethods.TablePtr->C2.hs_method_0c2401a1((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0c2401a1((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getStructureBounds()
@@ -156,9 +158,10 @@ public sealed unsafe partial class MinecraftGameTestInstance : global::System.ID
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType getStructureDimension()
+    public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? getStructureDimension()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C2.hs_method_19c47ee3((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_19c47ee3((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
     }
 
     public bool hasStructureBlock()
@@ -189,9 +192,10 @@ public sealed unsafe partial class MinecraftGameTestInstance : global::System.ID
         get => (nint)NativeMethods.TablePtr->C2.hs_get_83a7191d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestInstance operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestInstance arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestInstance? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestInstance arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestInstance((nint)NativeMethods.TablePtr->C2.hs_method_4ab7cf13((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4ab7cf13((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestInstance((nint)__hs_handle, false) : null;
     }
 
     public void spawnStructure()

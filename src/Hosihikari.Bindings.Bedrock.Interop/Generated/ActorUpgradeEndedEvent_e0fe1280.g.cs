@@ -40,23 +40,23 @@ public sealed unsafe partial class ActorUpgradeEndedEvent : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ActorUpgradeEndedEvent Create()
+    public static ActorUpgradeEndedEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ad53f936();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorUpgradeEndedEvent((nint)handle);
     }
 
-    public static ActorUpgradeEndedEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeEndedEvent arg0)
+    public static ActorUpgradeEndedEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeEndedEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2af3c6ec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorUpgradeEndedEvent((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class ActorUpgradeEndedEvent : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C0.hs_get_2224f8ef((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeEndedEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeEndedEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeEndedEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeEndedEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeEndedEvent((nint)NativeMethods.TablePtr->C0.hs_method_ce2b151d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ce2b151d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeEndedEvent((nint)__hs_handle, false) : null;
     }
 
 

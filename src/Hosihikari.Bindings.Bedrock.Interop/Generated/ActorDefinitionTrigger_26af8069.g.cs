@@ -53,12 +53,12 @@ public sealed unsafe partial class ActorDefinitionTrigger : global::System.IDisp
         NativeMethods.TablePtr->C0.hs_method_c88a89a8((void*)__hosihikari_shim_handle);
     }
 
-    public static ActorDefinitionTrigger Create()
+    public static ActorDefinitionTrigger? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_81eec5fd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionTrigger((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class ActorDefinitionTrigger : global::System.IDisp
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger((nint)NativeMethods.TablePtr->C0.hs_method_5a1b951f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5a1b951f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger((nint)__hs_handle, false) : null;
     }
 
 

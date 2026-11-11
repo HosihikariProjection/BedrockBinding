@@ -40,12 +40,12 @@ public sealed unsafe partial class SerializationTraitsSupport : global::System.I
         return __hs_handle;
     }
 
-    public static SerializationTraitsSupport Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SerializationTraitsSupport arg0)
+    public static SerializationTraitsSupport? Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SerializationTraitsSupport arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_db35b457((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SerializationTraitsSupport((nint)handle);

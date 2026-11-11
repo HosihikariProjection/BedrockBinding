@@ -40,23 +40,23 @@ public sealed unsafe partial class ParseRule : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ParseRule Create()
+    public static ParseRule? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_625865c8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ParseRule((nint)handle);
     }
 
-    public static ParseRule Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule arg0)
+    public static ParseRule? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e3d43013((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ParseRule((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class ParseRule : global::System.IDisposable
     public nint operator_assign(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule((nint)NativeMethods.TablePtr->C0.hs_method_dcec9f0b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dcec9f0b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

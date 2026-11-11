@@ -40,23 +40,23 @@ public sealed unsafe partial class RtcpXr : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static RtcpXr Create()
+    public static RtcpXr? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_eb89071d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RtcpXr((nint)handle);
     }
 
-    public static RtcpXr Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Config_Nested.Rtp_Nested.RtcpXr arg0)
+    public static RtcpXr? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Config_Nested.Rtp_Nested.RtcpXr arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_23f765c0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RtcpXr((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class RtcpXr : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_82f82628((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Config_Nested.Rtp_Nested.RtcpXr operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Config_Nested.Rtp_Nested.RtcpXr arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Config_Nested.Rtp_Nested.RtcpXr? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Config_Nested.Rtp_Nested.RtcpXr arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Config_Nested.Rtp_Nested.RtcpXr((nint)NativeMethods.TablePtr->C4.hs_method_ee6d4292((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ee6d4292((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Config_Nested.Rtp_Nested.RtcpXr((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

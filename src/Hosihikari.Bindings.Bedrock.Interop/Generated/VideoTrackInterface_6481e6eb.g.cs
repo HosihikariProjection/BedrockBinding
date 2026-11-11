@@ -75,12 +75,12 @@ public sealed unsafe partial class VideoTrackInterface : global::System.IDisposa
         NativeMethods.TablePtr->C4.hs_method_724fc27f((void*)__hosihikari_shim_handle, (void*)a1);
     }
 
-    public static VideoTrackInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoTrackInterface arg0)
+    public static VideoTrackInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoTrackInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b8423bb3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VideoTrackInterface((nint)handle);

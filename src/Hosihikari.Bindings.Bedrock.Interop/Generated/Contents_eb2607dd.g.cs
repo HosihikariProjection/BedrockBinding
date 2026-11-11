@@ -48,12 +48,12 @@ public sealed unsafe partial class Contents : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Contents Create()
+    public static Contents? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d8c291f2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Contents((nint)handle);
@@ -93,9 +93,10 @@ public sealed unsafe partial class Contents : global::System.IDisposable
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.Spawn.Contents operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.Spawn.Contents arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.Spawn.Contents? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.Spawn.Contents arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.Spawn.Contents((nint)NativeMethods.TablePtr->C3.hs_method_ec27ee79((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ec27ee79((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.Spawn.Contents((nint)__hs_handle, false) : null;
     }
 
 

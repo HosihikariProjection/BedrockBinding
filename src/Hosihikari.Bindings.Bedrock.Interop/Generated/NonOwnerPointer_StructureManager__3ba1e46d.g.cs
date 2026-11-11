@@ -40,45 +40,45 @@ public sealed unsafe partial class NonOwnerPointer_StructureManager_ : global::S
         return __hs_handle;
     }
 
-    public static NonOwnerPointer_StructureManager_ Create()
+    public static NonOwnerPointer_StructureManager_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6e415f80();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_StructureManager_((nint)handle);
     }
 
-    public static NonOwnerPointer_StructureManager_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    public static NonOwnerPointer_StructureManager_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a8b7df47(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_StructureManager_((nint)handle);
     }
 
-    public static NonOwnerPointer_StructureManager_ Create_f1a2a2bb()
+    public static NonOwnerPointer_StructureManager_? Create_f1a2a2bb()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f1a2a2bb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_StructureManager_((nint)handle);
     }
 
-    public static NonOwnerPointer_StructureManager_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.StructureManager? p)
+    public static NonOwnerPointer_StructureManager_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.StructureManager? p)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_19fca3c9(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_StructureManager_((nint)handle);
@@ -113,9 +113,10 @@ public sealed unsafe partial class NonOwnerPointer_StructureManager_ : global::S
         return NativeMethods.TablePtr->C0.hs_method_c397b3e1((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StructureManager operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.StructureManager? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureManager((nint)NativeMethods.TablePtr->C0.hs_method_c09c757f((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c09c757f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureManager((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureManager? operator_operator__()

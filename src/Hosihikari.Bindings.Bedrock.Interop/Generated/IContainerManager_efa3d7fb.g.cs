@@ -40,12 +40,12 @@ public sealed unsafe partial class IContainerManager : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static IContainerManager Create(global::Hosihikari.Bindings.Bedrock.Interop.IContainerManager arg0)
+    public static IContainerManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.IContainerManager arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_962d1dd9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IContainerManager((nint)handle);
@@ -66,9 +66,10 @@ public sealed unsafe partial class IContainerManager : global::System.IDisposabl
         return NativeMethods.TablePtr->C1.hs_method_8a83abae((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getFullContainerSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName name)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getFullContainerSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName name)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_0cdcbf0c((void*)__hosihikari_shim_handle, slot, (void*)name.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0cdcbf0c((void*)__hosihikari_shim_handle, slot, (void*)name.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.", false)]
@@ -82,9 +83,10 @@ public sealed unsafe partial class IContainerManager : global::System.IDisposabl
         return __hs_hasValue ? __hs_value : (int?)null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getSlot(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getSlot(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_fee45252((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_fee45252((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

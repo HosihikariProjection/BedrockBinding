@@ -40,23 +40,23 @@ public sealed unsafe partial class ConnectionRecord : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ConnectionRecord Create()
+    public static ConnectionRecord? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d5731968();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ConnectionRecord((nint)handle);
     }
 
-    public static ConnectionRecord Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SignalReceiver_Nested.ConnectionRecord arg0)
+    public static ConnectionRecord? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SignalReceiver_Nested.ConnectionRecord arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_344f3bbc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ConnectionRecord((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class ConnectionRecord : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_f7356350((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SignalReceiver_Nested.ConnectionRecord operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SignalReceiver_Nested.ConnectionRecord arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SignalReceiver_Nested.ConnectionRecord? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SignalReceiver_Nested.ConnectionRecord arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SignalReceiver_Nested.ConnectionRecord((nint)NativeMethods.TablePtr->C0.hs_method_1246fa8a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1246fa8a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SignalReceiver_Nested.ConnectionRecord((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

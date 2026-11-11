@@ -40,12 +40,12 @@ public sealed unsafe partial class EntityCommandTarget : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static EntityCommandTarget Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockUpdatePacketPayload_Nested.EntityCommandTarget arg0)
+    public static EntityCommandTarget? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockUpdatePacketPayload_Nested.EntityCommandTarget arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_88e9993f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityCommandTarget((nint)handle);

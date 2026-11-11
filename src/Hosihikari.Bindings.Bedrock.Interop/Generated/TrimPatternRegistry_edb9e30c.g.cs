@@ -40,12 +40,12 @@ public sealed unsafe partial class TrimPatternRegistry : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static TrimPatternRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.TrimPatternRegistry arg0)
+    public static TrimPatternRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.TrimPatternRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e5840630((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TrimPatternRegistry((nint)handle);

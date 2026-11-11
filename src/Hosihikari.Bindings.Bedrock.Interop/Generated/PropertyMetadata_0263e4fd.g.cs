@@ -40,12 +40,12 @@ public sealed unsafe partial class PropertyMetadata : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PropertyMetadata Create(global::Hosihikari.Bindings.Bedrock.Interop.PropertyMetadata arg0)
+    public static PropertyMetadata? Create(global::Hosihikari.Bindings.Bedrock.Interop.PropertyMetadata arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0375513f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PropertyMetadata((nint)handle);

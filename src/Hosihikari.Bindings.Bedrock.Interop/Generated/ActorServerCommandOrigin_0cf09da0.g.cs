@@ -76,12 +76,12 @@ public sealed unsafe partial class ActorServerCommandOrigin : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorServerCommandOrigin Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorServerCommandOrigin arg0)
+    public static ActorServerCommandOrigin? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorServerCommandOrigin arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_07b18996((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorServerCommandOrigin((nint)handle);
@@ -112,9 +112,10 @@ public sealed unsafe partial class ActorServerCommandOrigin : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C0.hs_get_831b1823((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag serialize()
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? serialize()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)NativeMethods.TablePtr->C0.hs_method_42d35346((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_42d35346((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
     }
 
 

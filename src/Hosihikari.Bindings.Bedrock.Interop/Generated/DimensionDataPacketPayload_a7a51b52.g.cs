@@ -48,12 +48,12 @@ public sealed unsafe partial class DimensionDataPacketPayload : global::System.I
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DimensionDataPacketPayload Create()
+    public static DimensionDataPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_54d68874();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DimensionDataPacketPayload((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class DimensionDataPacketPayload : global::System.I
     public static DimensionDataPacketPayload Create(nint dimensionDefinitionGroup) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DimensionDataPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.DimensionDataPacketPayload arg0)
+    public static DimensionDataPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.DimensionDataPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ffc2f4e2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DimensionDataPacketPayload((nint)handle);

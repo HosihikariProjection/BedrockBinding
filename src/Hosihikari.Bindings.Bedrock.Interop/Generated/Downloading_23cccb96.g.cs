@@ -40,12 +40,12 @@ public sealed unsafe partial class Downloading : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Downloading Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackClientResponsePacketPayload_Nested.Downloading arg0)
+    public static Downloading? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackClientResponsePacketPayload_Nested.Downloading arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_260e75db((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Downloading((nint)handle);

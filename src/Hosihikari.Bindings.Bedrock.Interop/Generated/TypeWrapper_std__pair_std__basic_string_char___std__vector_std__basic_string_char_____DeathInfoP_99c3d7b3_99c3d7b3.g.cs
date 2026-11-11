@@ -40,34 +40,34 @@ public sealed unsafe partial class TypeWrapper_std__pair_std__basic_string_char_
         return __hs_handle;
     }
 
-    public static TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3 Create()
+    public static TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6b3af97d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3((nint)handle);
     }
 
-    public static TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3 Create(global::Hosihikari.Bindings.Bedrock.Interop.TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3 arg0)
+    public static TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3? Create(global::Hosihikari.Bindings.Bedrock.Interop.TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3 arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ac3aee18((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3((nint)handle);
     }
 
-    public static TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3 Create(nint other)
+    public static TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3? Create(nint other)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_41d640b9((void*)other);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3((nint)handle);

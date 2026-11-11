@@ -40,23 +40,23 @@ public sealed unsafe partial class ViewEachWithBlockSourceArgs : global::System.
         return __hs_handle;
     }
 
-    public static ViewEachWithBlockSourceArgs Create()
+    public static ViewEachWithBlockSourceArgs? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e0763f63();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ViewEachWithBlockSourceArgs((nint)handle);
     }
 
-    public static ViewEachWithBlockSourceArgs Create(global::Hosihikari.Bindings.Bedrock.Interop.ViewEachWithBlockSourceArgs arg0)
+    public static ViewEachWithBlockSourceArgs? Create(global::Hosihikari.Bindings.Bedrock.Interop.ViewEachWithBlockSourceArgs arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_490df61a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ViewEachWithBlockSourceArgs((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class ViewEachWithBlockSourceArgs : global::System.
         get => (nint)NativeMethods.TablePtr->C4.hs_get_46852ee7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ViewEachWithBlockSourceArgs operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ViewEachWithBlockSourceArgs arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ViewEachWithBlockSourceArgs? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ViewEachWithBlockSourceArgs arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ViewEachWithBlockSourceArgs((nint)NativeMethods.TablePtr->C4.hs_method_31d3e030((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_31d3e030((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ViewEachWithBlockSourceArgs((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

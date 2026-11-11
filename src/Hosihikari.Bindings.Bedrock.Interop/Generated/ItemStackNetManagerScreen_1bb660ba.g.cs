@@ -40,12 +40,12 @@ public sealed unsafe partial class ItemStackNetManagerScreen : global::System.ID
         return __hs_handle;
     }
 
-    public static ItemStackNetManagerScreen Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerScreen arg0)
+    public static ItemStackNetManagerScreen? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerScreen arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_15963363((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackNetManagerScreen((nint)handle);

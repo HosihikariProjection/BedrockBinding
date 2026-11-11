@@ -50,34 +50,34 @@ public sealed unsafe partial class ScopedItemRegistry : global::System.IDisposab
         NativeMethods.TablePtr->C1.hs_method_6c6678fe((void*)__hosihikari_shim_handle);
     }
 
-    public static ScopedItemRegistry Create()
+    public static ScopedItemRegistry? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f6c68bf6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScopedItemRegistry((nint)handle);
     }
 
-    public static ScopedItemRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryManager_Nested.ScopedItemRegistry arg0)
+    public static ScopedItemRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryManager_Nested.ScopedItemRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fe26f2ca((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScopedItemRegistry((nint)handle);
     }
 
-    public static ScopedItemRegistry Create(global::Hosihikari.Bindings.Abi.SharedHandle? registry)
+    public static ScopedItemRegistry? Create(global::Hosihikari.Bindings.Abi.SharedHandle? registry)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_634e8a6a(registry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScopedItemRegistry((nint)handle);

@@ -86,23 +86,23 @@ public sealed unsafe partial class VillagerCelebrationGoal : global::System.IDis
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VillagerCelebrationGoal Create()
+    public static VillagerCelebrationGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a6c9e6db();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VillagerCelebrationGoal((nint)handle);
     }
 
-    public static VillagerCelebrationGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.VillagerCelebrationGoal arg0)
+    public static VillagerCelebrationGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.VillagerCelebrationGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_d2bfe20f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VillagerCelebrationGoal((nint)handle);
@@ -174,9 +174,10 @@ public sealed unsafe partial class VillagerCelebrationGoal : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C4.hs_get_be04d5dd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.VillagerCelebrationGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VillagerCelebrationGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.VillagerCelebrationGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VillagerCelebrationGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.VillagerCelebrationGoal((nint)NativeMethods.TablePtr->C4.hs_method_9da52ffb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_9da52ffb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VillagerCelebrationGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

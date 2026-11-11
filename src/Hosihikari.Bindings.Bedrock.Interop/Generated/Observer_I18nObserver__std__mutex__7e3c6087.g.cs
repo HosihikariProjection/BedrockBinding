@@ -40,23 +40,23 @@ public sealed unsafe partial class Observer_I18nObserver__std__mutex_ : global::
         return __hs_handle;
     }
 
-    public static Observer_I18nObserver__std__mutex_ Create()
+    public static Observer_I18nObserver__std__mutex_? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_bcd90dda();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Observer_I18nObserver__std__mutex_((nint)handle);
     }
 
-    public static Observer_I18nObserver__std__mutex_ Create(nint subject)
+    public static Observer_I18nObserver__std__mutex_? Create(nint subject)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_0560e525((void*)subject);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Observer_I18nObserver__std__mutex_((nint)handle);

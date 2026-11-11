@@ -201,12 +201,12 @@ public sealed unsafe partial class NetherCaveFeature : global::System.IDisposabl
         get => NativeMethods.TablePtr->C2.hs_get_2b9e2409((void*)__hosihikari_shim_handle);
     }
 
-    public static NetherCaveFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherCaveFeature arg0)
+    public static NetherCaveFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherCaveFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0bdb3c2c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetherCaveFeature((nint)handle);

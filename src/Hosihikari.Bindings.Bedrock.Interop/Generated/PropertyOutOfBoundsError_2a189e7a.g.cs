@@ -90,23 +90,23 @@ public sealed unsafe partial class PropertyOutOfBoundsError : global::System.IDi
     public nint _ctor(nint propertyName, nint minValue_, nint maxValue_) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PropertyOutOfBoundsError Create()
+    public static PropertyOutOfBoundsError? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f9ac68c7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PropertyOutOfBoundsError((nint)handle);
     }
 
-    public static PropertyOutOfBoundsError Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError arg0)
+    public static PropertyOutOfBoundsError? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a4634328((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PropertyOutOfBoundsError((nint)handle);
@@ -138,9 +138,10 @@ public sealed unsafe partial class PropertyOutOfBoundsError : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C3.hs_get_bf67caee((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError((nint)NativeMethods.TablePtr->C3.hs_method_96722437((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_96722437((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError((nint)__hs_handle, false) : null;
     }
 
 

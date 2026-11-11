@@ -44,23 +44,23 @@ public sealed unsafe partial class PersonaCharacterHandle : global::System.IDisp
     public static nint INVALID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PersonaCharacterHandle Create()
+    public static PersonaCharacterHandle? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b130ebbb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PersonaCharacterHandle((nint)handle);
     }
 
-    public static PersonaCharacterHandle Create(global::Hosihikari.Bindings.Bedrock.Interop.persona.PersonaCharacterHandle arg0)
+    public static PersonaCharacterHandle? Create(global::Hosihikari.Bindings.Bedrock.Interop.persona.PersonaCharacterHandle arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f8961d42((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PersonaCharacterHandle((nint)handle);

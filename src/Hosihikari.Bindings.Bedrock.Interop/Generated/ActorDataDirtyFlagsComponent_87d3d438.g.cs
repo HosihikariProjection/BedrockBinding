@@ -40,12 +40,12 @@ public sealed unsafe partial class ActorDataDirtyFlagsComponent : global::System
         return __hs_handle;
     }
 
-    public static ActorDataDirtyFlagsComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDataDirtyFlagsComponent arg0)
+    public static ActorDataDirtyFlagsComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDataDirtyFlagsComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5d22c736((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDataDirtyFlagsComponent((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class BiomeComponentFactory : global::System.IDispo
         return __hs_handle;
     }
 
-    public static BiomeComponentFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.BiomeComponentFactory arg0)
+    public static BiomeComponentFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.BiomeComponentFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8b83d147((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BiomeComponentFactory((nint)handle);

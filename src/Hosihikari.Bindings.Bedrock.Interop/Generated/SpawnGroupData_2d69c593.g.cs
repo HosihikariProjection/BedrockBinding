@@ -48,23 +48,23 @@ public sealed unsafe partial class SpawnGroupData : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpawnGroupData Create()
+    public static SpawnGroupData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_96771ba4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnGroupData((nint)handle);
     }
 
-    public static SpawnGroupData Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupData arg0)
+    public static SpawnGroupData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9261eeec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnGroupData((nint)handle);

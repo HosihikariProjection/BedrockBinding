@@ -40,12 +40,12 @@ public sealed unsafe partial class Influence : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Influence Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBuildOrderPolicy_Nested.Influence arg0)
+    public static Influence? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBuildOrderPolicy_Nested.Influence arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c404d041((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Influence((nint)handle);

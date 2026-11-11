@@ -58,23 +58,23 @@ public sealed unsafe partial class InventoryAction : global::System.IDisposable
     public static InventoryAction Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static InventoryAction Create(global::Hosihikari.Bindings.Bedrock.Interop.InventorySource source, uint slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack fromItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack toItem)
+    public static InventoryAction? Create(global::Hosihikari.Bindings.Bedrock.Interop.InventorySource source, uint slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack fromItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack toItem)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e8c9be5a((void*)source.Handle, slot, (void*)fromItem.Handle, (void*)toItem.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventoryAction((nint)handle);
     }
 
-    public static InventoryAction Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryAction arg0)
+    public static InventoryAction? Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryAction arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_83d1d2d5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventoryAction((nint)handle);

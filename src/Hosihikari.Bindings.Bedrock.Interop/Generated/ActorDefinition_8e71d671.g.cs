@@ -44,23 +44,23 @@ public sealed unsafe partial class ActorDefinition : global::System.IDisposable
     public nint _ctor(nint id) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorDefinition Create()
+    public static ActorDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c6921deb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinition((nint)handle);
     }
 
-    public static ActorDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinition arg0)
+    public static ActorDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_081c0522((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinition((nint)handle);

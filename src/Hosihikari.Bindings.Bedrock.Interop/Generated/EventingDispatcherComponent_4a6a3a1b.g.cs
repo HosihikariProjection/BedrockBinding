@@ -40,12 +40,12 @@ public sealed unsafe partial class EventingDispatcherComponent : global::System.
         return __hs_handle;
     }
 
-    public static EventingDispatcherComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.EventingDispatcherComponent arg0)
+    public static EventingDispatcherComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.EventingDispatcherComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_545e63ff((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EventingDispatcherComponent((nint)handle);

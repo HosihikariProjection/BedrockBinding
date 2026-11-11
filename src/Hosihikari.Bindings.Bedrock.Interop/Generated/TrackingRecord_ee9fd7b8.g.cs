@@ -40,12 +40,12 @@ public sealed unsafe partial class TrackingRecord : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TrackingRecord Create(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.TrackingRecord arg0)
+    public static TrackingRecord? Create(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.TrackingRecord arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9b4635e1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TrackingRecord((nint)handle);

@@ -48,12 +48,12 @@ public sealed unsafe partial class Release : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Release Create()
+    public static Release? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_970a0940();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Release((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class Release : global::System.IDisposable
     public static Release Create(nint comparison_, nint version_, nint exclusiveMajorVersionLimit_) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Release Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Release arg0)
+    public static Release? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Release arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_170da435((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Release((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class Release : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_c1e333c6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Release operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Release arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Release? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Release arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Release((nint)NativeMethods.TablePtr->C3.hs_method_2eab6d95((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2eab6d95((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Release((nint)__hs_handle, false) : null;
     }
 
 

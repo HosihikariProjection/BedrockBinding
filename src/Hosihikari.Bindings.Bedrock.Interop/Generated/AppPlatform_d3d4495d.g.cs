@@ -965,12 +965,12 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
     public void _vibrate(int arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AppPlatform Create()
+    public static AppPlatform? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c0203a75();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AppPlatform((nint)handle);
@@ -1001,29 +1001,34 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_e2d81da9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ _getCurrentStoragePath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? _getCurrentStoragePath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_ee6ebfe2((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ee6ebfe2((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ _getExternalStoragePath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? _getExternalStoragePath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_8272b1e7((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8272b1e7((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ _getInternalStoragePath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? _getInternalStoragePath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_6da030e0((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6da030e0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ _getSharedDataPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? _getSharedDataPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_f84e16e4((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f84e16e4((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ _getUserdataPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? _getUserdataPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_054c7941((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_054c7941((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public void _initializeFileStorageAreas()
@@ -1041,7 +1046,7 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_12e5176b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_ _readAssetFileInternal(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filename, ref string buffer)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_? _readAssetFileInternal(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filename, ref string buffer)
     {
         var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(buffer);
@@ -1059,7 +1064,8 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         {
             try
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)NativeMethods.TablePtr->C0.hs_method_4db23ea7((void*)__hosihikari_shim_handle, (void*)filename.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, &__hs_strOut0));
+                var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4db23ea7((void*)__hosihikari_shim_handle, (void*)filename.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, &__hs_strOut0);
+                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)__hs_handle) : null;
             }
             finally
             {
@@ -1195,9 +1201,10 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_7f42376d((void*)__hosihikari_shim_handle, (void*)filename.Handle, (void*)destination.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ copyImportFileToTempFolder(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path filePath)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? copyImportFileToTempFolder(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path filePath)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_f52181f5((void*)__hosihikari_shim_handle, (void*)filePath.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f52181f5((void*)__hosihikari_shim_handle, (void*)filePath.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? createLoggingStorageArea(int fileAccessType, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView loggingPath)
@@ -1235,9 +1242,10 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_c0ac3df2((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AppLifecycleContext getAppLifecycleContext()
+    public global::Hosihikari.Bindings.Bedrock.Interop.AppLifecycleContext? getAppLifecycleContext()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AppLifecycleContext((nint)NativeMethods.TablePtr->C0.hs_method_21bc434e((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_21bc434e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AppLifecycleContext((nint)__hs_handle, false) : null;
     }
 
     public string getApplicationId()
@@ -1250,9 +1258,10 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
     public nint getArchiveHandlePool() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getAssetFileFullPath(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path filename)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getAssetFileFullPath(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path filename)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_d978b39b((void*)__hosihikari_shim_handle, (void*)filename.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d978b39b((void*)__hosihikari_shim_handle, (void*)filename.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public string[] getBroadcastAddresses()
@@ -1272,9 +1281,10 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_6f4213b1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getCacheStoragePath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getCacheStoragePath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_6d84b243((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6d84b243((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public int getCaretPosition()
@@ -1282,9 +1292,10 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_87089bf1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getCatalogSearchScratchPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getCatalogSearchScratchPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_b7cabb56((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b7cabb56((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public string getClientUpdateUrl()
@@ -1413,14 +1424,16 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         return __hs_result;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getInternalPackStoragePath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getInternalPackStoragePath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_610b35f6((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_610b35f6((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getLevelInfoCachePath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getLevelInfoCachePath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_31f2d870((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_31f2d870((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]
@@ -1431,9 +1444,10 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
     public nint getLocaleForDateTimeFormatting() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getLoggingPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getLoggingPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_152a3985((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_152a3985((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public ulong getLowMemoryEventRecoveryThreshold(int severity)
@@ -1521,14 +1535,16 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_b7bf9de2((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getOnDiskPackScratchPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getOnDiskPackScratchPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_74df37ac((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_74df37ac((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getOnDiskScratchPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getOnDiskScratchPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_1401fa7d((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1401fa7d((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public int? getOperationMode()
@@ -1559,19 +1575,22 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPackagePath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getPackagePath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_bcc0d0be((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_bcc0d0be((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPackagedShaderCachePath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getPackagedShaderCachePath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_f25ab00c((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f25ab00c((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID getPlatformBetaPackUUID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? getPlatformBetaPackUUID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C0.hs_method_c4dafb8d((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c4dafb8d((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false) : null;
     }
 
     public int getPlatformDpi()
@@ -1605,9 +1624,10 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_a8d9b7ce((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPlatformTempPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getPlatformTempPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_b93b2b3f((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b93b2b3f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public int getPlatformType()
@@ -1636,9 +1656,10 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
     public nint getRenderSurfaceParameters() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'dragon::platform::SurfaceParameters' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getScratchPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getScratchPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_c0cbd6c5((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c0cbd6c5((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public int getScreenHeight()
@@ -1655,7 +1676,7 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
     public nint getSecureStorage() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'SecureStorage' has no accessible destructor.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SecureStorageKey getSecureStorageKey(string arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SecureStorageKey? getSecureStorageKey(string arg0)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(arg0);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -1670,27 +1691,31 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(arg0, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.SecureStorageKey((nint)NativeMethods.TablePtr->C0.hs_method_dd9cd931((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dd9cd931((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SecureStorageKey((nint)__hs_handle) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getSettingsPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getSettingsPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_004e1f8d((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_004e1f8d((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getShaderCachePath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getShaderCachePath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_3c076af4((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3c076af4((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'SecureStorage' has no accessible destructor.", false)]
     public nint getSharedSecureStorage() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'SecureStorage' has no accessible destructor.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getSharedSettingsPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getSharedSettingsPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_8740dee5((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8740dee5((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public ulong getSingleMipDefaultMemoryBudget()
@@ -1709,9 +1734,10 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getTextureCacheStoragePath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getTextureCacheStoragePath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_c38a2d6e((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c38a2d6e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public ulong getTextureMemoryBudget()
@@ -1719,9 +1745,10 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_aaa4c469((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID getThirdPartyPackUUID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? getThirdPartyPackUUID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C0.hs_method_359ea9cf((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_359ea9cf((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false) : null;
     }
 
     public ulong getTotalHardwareThreadsCount()
@@ -1761,14 +1788,16 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_f9ecf2f7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getUserStorageRootPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getUserStorageRootPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_4e6d4ed2((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4e6d4ed2((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getUserdataPathForLevels()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getUserdataPathForLevels()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C0.hs_method_8a156098((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8a156098((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]

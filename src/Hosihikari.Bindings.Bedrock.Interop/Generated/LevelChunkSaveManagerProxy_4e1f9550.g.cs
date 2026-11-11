@@ -80,12 +80,12 @@ public sealed unsafe partial class LevelChunkSaveManagerProxy : global::System.I
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelChunkSaveManagerProxy Create()
+    public static LevelChunkSaveManagerProxy? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_853a6f14();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunkSaveManagerProxy((nint)handle);
@@ -95,12 +95,12 @@ public sealed unsafe partial class LevelChunkSaveManagerProxy : global::System.I
     public static LevelChunkSaveManagerProxy Create(nint random, nint scheduler) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelChunkSaveManagerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkSaveManagerProxy arg0)
+    public static LevelChunkSaveManagerProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkSaveManagerProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a9bca45e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunkSaveManagerProxy((nint)handle);
@@ -146,9 +146,10 @@ public sealed unsafe partial class LevelChunkSaveManagerProxy : global::System.I
         get => (nint)NativeMethods.TablePtr->C2.hs_get_f6391289((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkSaveManagerProxy operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkSaveManagerProxy arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkSaveManagerProxy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkSaveManagerProxy arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkSaveManagerProxy((nint)NativeMethods.TablePtr->C2.hs_method_8d6dd182((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8d6dd182((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkSaveManagerProxy((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.", false)]

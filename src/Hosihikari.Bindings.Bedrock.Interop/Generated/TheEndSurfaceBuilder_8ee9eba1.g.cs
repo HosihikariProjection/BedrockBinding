@@ -60,12 +60,12 @@ public sealed unsafe partial class TheEndSurfaceBuilder : global::System.IDispos
     public bool _isBestBuilder(nint surfaceBuilderData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TheEndSurfaceBuilder Create(global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.TheEndSurfaceBuilder arg0)
+    public static TheEndSurfaceBuilder? Create(global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.TheEndSurfaceBuilder arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_683837ab((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TheEndSurfaceBuilder((nint)handle);

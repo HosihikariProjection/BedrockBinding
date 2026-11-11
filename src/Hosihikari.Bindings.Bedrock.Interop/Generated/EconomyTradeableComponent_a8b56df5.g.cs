@@ -48,12 +48,12 @@ public sealed unsafe partial class EconomyTradeableComponent : global::System.ID
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EconomyTradeableComponent Create()
+    public static EconomyTradeableComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5565f498();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EconomyTradeableComponent((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class EconomyTradeableComponent : global::System.ID
     public static EconomyTradeableComponent Create(nint owner) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EconomyTradeableComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.EconomyTradeableComponent arg0)
+    public static EconomyTradeableComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.EconomyTradeableComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_bdf7904d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EconomyTradeableComponent((nint)handle);
@@ -272,9 +272,10 @@ public sealed unsafe partial class EconomyTradeableComponent : global::System.ID
         NativeMethods.TablePtr->C1.hs_method_4cf51c36((void*)__hosihikari_shim_handle, recipeIndex, numTrades);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EconomyTradeableComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EconomyTradeableComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EconomyTradeableComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EconomyTradeableComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EconomyTradeableComponent((nint)NativeMethods.TablePtr->C1.hs_method_78855bbf((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_78855bbf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EconomyTradeableComponent((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

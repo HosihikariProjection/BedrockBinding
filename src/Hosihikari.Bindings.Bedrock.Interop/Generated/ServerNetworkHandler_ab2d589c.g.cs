@@ -574,12 +574,12 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
     public void _sendSubClientLoginMessageLocal(nint source, nint connectionRequest, nint playerInfo, nint subid) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerNetworkHandler Create()
+    public static ServerNetworkHandler? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0fb5aa2c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerNetworkHandler((nint)handle);
@@ -589,12 +589,12 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
     public static ServerNetworkHandler Create(nint gameCallbacks, nint level, nint serverJoinInfo, nint serveTelemetryData, nint network, nint serverKeys, nint minecraftServiceKeys, nint serverLocator, nint packetSender, nint allowList, nint editorAllowList, nint permissionsFile, nint hostPublicKey, int maxChunkRadius, int maxNumPlayers, nint commandHandler, nint app, nint packIdToContentKey, nint scheduler, nint textFilteringProcessor, nint gameTest, nint appConfigs, nint networkServerConfig, nint packSettingsCache, nint dependencies) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerNetworkHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler arg0)
+    public static ServerNetworkHandler? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4b577dbb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerNetworkHandler((nint)handle);
@@ -1733,9 +1733,10 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler((nint)NativeMethods.TablePtr->C3.hs_method_68aeaac4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_68aeaac4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

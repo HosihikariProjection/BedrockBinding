@@ -80,23 +80,23 @@ public sealed unsafe partial class BasicNetworkManager : global::System.IDisposa
     public static nint _vftableForNetworkBinderInterface() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BasicNetworkManager Create()
+    public static BasicNetworkManager? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6e0a7cb5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BasicNetworkManager((nint)handle);
     }
 
-    public static BasicNetworkManager Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BasicNetworkManager arg0)
+    public static BasicNetworkManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BasicNetworkManager arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_86944925((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BasicNetworkManager((nint)handle);
@@ -218,9 +218,10 @@ public sealed unsafe partial class BasicNetworkManager : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C4.hs_get_2cc8e6aa((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BasicNetworkManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BasicNetworkManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BasicNetworkManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BasicNetworkManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BasicNetworkManager((nint)NativeMethods.TablePtr->C4.hs_method_6cd83e55((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6cd83e55((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BasicNetworkManager((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::NetworkMask' is not supported.", false)]

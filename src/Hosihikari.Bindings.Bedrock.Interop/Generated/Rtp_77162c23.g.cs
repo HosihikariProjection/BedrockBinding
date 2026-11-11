@@ -40,23 +40,23 @@ public sealed unsafe partial class Rtp : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Rtp Create()
+    public static Rtp? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ef4c18df();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Rtp((nint)handle);
     }
 
-    public static Rtp Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Config_Nested.Rtp arg0)
+    public static Rtp? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Config_Nested.Rtp arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a74c1b62((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Rtp((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class Rtp : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_85c622fe((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Config_Nested.Rtp operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Config_Nested.Rtp arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Config_Nested.Rtp? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Config_Nested.Rtp arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Config_Nested.Rtp((nint)NativeMethods.TablePtr->C4.hs_method_44d9f26d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_44d9f26d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Config_Nested.Rtp((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

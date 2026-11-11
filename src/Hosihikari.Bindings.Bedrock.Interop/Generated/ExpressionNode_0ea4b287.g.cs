@@ -48,23 +48,23 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExpressionNode Create()
+    public static ExpressionNode? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_dc7b95c1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExpressionNode((nint)handle);
     }
 
-    public static ExpressionNode Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.ExpressionNode arg0)
+    public static ExpressionNode? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.ExpressionNode arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_bc3a816e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExpressionNode((nint)handle);

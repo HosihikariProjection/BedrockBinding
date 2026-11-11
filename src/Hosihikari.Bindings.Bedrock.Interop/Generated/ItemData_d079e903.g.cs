@@ -40,12 +40,12 @@ public sealed unsafe partial class ItemData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ItemData Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemData arg0)
+    public static ItemData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_0deb7afd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemData((nint)handle);

@@ -482,9 +482,10 @@ public sealed unsafe partial class ChestBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_21c79c60((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, dir);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getInitialDefaultState()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getInitialDefaultState()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C0.hs_method_5da09937((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5da09937((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public byte getMappedFace(byte face, global::Hosihikari.Bindings.Bedrock.Interop.Block block)

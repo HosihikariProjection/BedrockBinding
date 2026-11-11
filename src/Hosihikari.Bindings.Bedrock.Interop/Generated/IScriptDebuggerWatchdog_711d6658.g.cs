@@ -40,12 +40,12 @@ public sealed unsafe partial class IScriptDebuggerWatchdog : global::System.IDis
         return __hs_handle;
     }
 
-    public static IScriptDebuggerWatchdog Create(global::Hosihikari.Bindings.Bedrock.Interop.IScriptDebuggerWatchdog arg0)
+    public static IScriptDebuggerWatchdog? Create(global::Hosihikari.Bindings.Bedrock.Interop.IScriptDebuggerWatchdog arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a2d4e888((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IScriptDebuggerWatchdog((nint)handle);

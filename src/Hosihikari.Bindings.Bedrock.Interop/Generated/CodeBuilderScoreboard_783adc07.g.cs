@@ -40,12 +40,12 @@ public sealed unsafe partial class CodeBuilderScoreboard : global::System.IDispo
         return __hs_handle;
     }
 
-    public static CodeBuilderScoreboard Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyTelemetryEventPacketPayload_Nested.CodeBuilderScoreboard arg0)
+    public static CodeBuilderScoreboard? Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyTelemetryEventPacketPayload_Nested.CodeBuilderScoreboard arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f160f6fb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CodeBuilderScoreboard((nint)handle);

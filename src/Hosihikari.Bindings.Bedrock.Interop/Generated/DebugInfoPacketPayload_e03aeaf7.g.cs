@@ -40,12 +40,12 @@ public sealed unsafe partial class DebugInfoPacketPayload : global::System.IDisp
         return __hs_handle;
     }
 
-    public static DebugInfoPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.DebugInfoPacketPayload arg0)
+    public static DebugInfoPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.DebugInfoPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3b303ca1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DebugInfoPacketPayload((nint)handle);

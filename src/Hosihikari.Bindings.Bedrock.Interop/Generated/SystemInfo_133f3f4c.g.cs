@@ -45,23 +45,23 @@ public sealed unsafe partial class SystemInfo : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C3.hs_method_6f79bd74((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
-    public static SystemInfo Create()
+    public static SystemInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_28b365ad();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SystemInfo((nint)handle);
     }
 
-    public static SystemInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.SystemInfo arg0)
+    public static SystemInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.SystemInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0dcac51e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SystemInfo((nint)handle);
@@ -97,9 +97,10 @@ public sealed unsafe partial class SystemInfo : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_356f0eb1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SystemInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SystemInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SystemInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SystemInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SystemInfo((nint)NativeMethods.TablePtr->C3.hs_method_b8cf264c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b8cf264c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SystemInfo((nint)__hs_handle, false) : null;
     }
 
 

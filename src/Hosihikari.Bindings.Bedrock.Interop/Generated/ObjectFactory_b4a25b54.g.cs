@@ -40,23 +40,23 @@ public sealed unsafe partial class ObjectFactory : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ObjectFactory Create()
+    public static ObjectFactory? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4b8ba786();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ObjectFactory((nint)handle);
     }
 
-    public static ObjectFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectFactory arg0)
+    public static ObjectFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_12c42766((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ObjectFactory((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class ObjectFactory : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_440edd5a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectFactory operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectFactory arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectFactory? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectFactory arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectFactory((nint)NativeMethods.TablePtr->C3.hs_method_6d3fa4b3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6d3fa4b3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectFactory((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

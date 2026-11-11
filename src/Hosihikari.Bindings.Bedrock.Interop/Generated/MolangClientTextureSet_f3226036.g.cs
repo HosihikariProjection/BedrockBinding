@@ -40,12 +40,12 @@ public sealed unsafe partial class MolangClientTextureSet : global::System.IDisp
         return __hs_handle;
     }
 
-    public static MolangClientTextureSet Create()
+    public static MolangClientTextureSet? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fd7d4784();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangClientTextureSet((nint)handle);
@@ -69,9 +69,10 @@ public sealed unsafe partial class MolangClientTextureSet : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C2.hs_get_1e854993((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MolangClientTextureSet operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MolangClientTextureSet rhs)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MolangClientTextureSet? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MolangClientTextureSet rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangClientTextureSet((nint)NativeMethods.TablePtr->C2.hs_method_f74b43e6((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f74b43e6((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangClientTextureSet((nint)__hs_handle, false) : null;
     }
 
 

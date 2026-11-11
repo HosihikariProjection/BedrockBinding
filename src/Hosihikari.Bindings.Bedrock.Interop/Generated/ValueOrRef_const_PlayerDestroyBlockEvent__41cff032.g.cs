@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerDestroyBlockEvent_ : g
     public static ValueOrRef_const_PlayerDestroyBlockEvent_ Create_27ee2463(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerDestroyBlockEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerDestroyBlockEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerDestroyBlockEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerDestroyBlockEvent((nint)NativeMethods.TablePtr->C1.hs_method_776832c7((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_776832c7((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerDestroyBlockEvent((nint)__hs_handle, false) : null;
     }
 
 

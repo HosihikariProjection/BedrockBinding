@@ -192,23 +192,23 @@ public sealed unsafe partial class DcSctpTransport : global::System.IDisposable
     public nint CreateTimeout(nint precision) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'dcsctp::Timeout' is not a known bindable declaration.");
 
-    public static DcSctpTransport Create()
+    public static DcSctpTransport? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_de42499f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DcSctpTransport((nint)handle);
     }
 
-    public static DcSctpTransport Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport arg0)
+    public static DcSctpTransport? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a8cd230a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DcSctpTransport((nint)handle);
@@ -327,9 +327,10 @@ public sealed unsafe partial class DcSctpTransport : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_fd756839((void*)__hosihikari_shim_handle, sid) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError SendData(int sid, nint @params, nint payload)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? SendData(int sid, nint @params, nint payload)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_802b6fa8((void*)__hosihikari_shim_handle, sid, (void*)@params, (void*)payload));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_802b6fa8((void*)__hosihikari_shim_handle, sid, (void*)@params, (void*)payload);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.", false)]
@@ -471,9 +472,10 @@ public sealed unsafe partial class DcSctpTransport : global::System.IDisposable
         return __hs_hasValue ? __hs_value : (int?)null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport((nint)NativeMethods.TablePtr->C4.hs_method_d70f6efa((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d70f6efa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport((nint)__hs_handle, false) : null;
     }
 
     public void set_debug_name_for_testing(nint debug_name)

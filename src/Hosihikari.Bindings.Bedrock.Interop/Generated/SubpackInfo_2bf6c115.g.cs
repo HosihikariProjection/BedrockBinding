@@ -48,12 +48,12 @@ public sealed unsafe partial class SubpackInfo : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SubpackInfo Create()
+    public static SubpackInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e18dddea();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SubpackInfo((nint)handle);
@@ -81,9 +81,10 @@ public sealed unsafe partial class SubpackInfo : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_7a6e4b00((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SubpackInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SubpackInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SubpackInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SubpackInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubpackInfo((nint)NativeMethods.TablePtr->C3.hs_method_31c23f5e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_31c23f5e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubpackInfo((nint)__hs_handle, false) : null;
     }
 
 

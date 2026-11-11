@@ -49,12 +49,12 @@ public sealed unsafe partial class ActorDefinitionPtr : global::System.IDisposab
         NativeMethods.TablePtr->C0.hs_method_3b774765((void*)__hosihikari_shim_handle);
     }
 
-    public static ActorDefinitionPtr Create()
+    public static ActorDefinitionPtr? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2d9c5fb2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionPtr((nint)handle);

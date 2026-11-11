@@ -45,12 +45,12 @@ public sealed unsafe partial class RtpPacketSinkInterface : global::System.IDisp
         NativeMethods.TablePtr->C4.hs_method_d768e22d((void*)__hosihikari_shim_handle, (void*)parsed_packet);
     }
 
-    public static RtpPacketSinkInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpPacketSinkInterface arg0)
+    public static RtpPacketSinkInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpPacketSinkInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_599073bb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RtpPacketSinkInterface((nint)handle);

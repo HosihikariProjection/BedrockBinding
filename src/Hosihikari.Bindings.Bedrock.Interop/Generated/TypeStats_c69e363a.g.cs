@@ -40,23 +40,23 @@ public sealed unsafe partial class TypeStats : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TypeStats Create()
+    public static TypeStats? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_71c48f8d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TypeStats((nint)handle);
     }
 
-    public static TypeStats Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCounter.TypeStats arg0)
+    public static TypeStats? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCounter.TypeStats arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f2bf3b86((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TypeStats((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class TypeStats : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_18b6836f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCounter.TypeStats operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCounter.TypeStats arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCounter.TypeStats? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCounter.TypeStats arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCounter.TypeStats((nint)NativeMethods.TablePtr->C3.hs_method_4dad1336((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4dad1336((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCounter.TypeStats((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

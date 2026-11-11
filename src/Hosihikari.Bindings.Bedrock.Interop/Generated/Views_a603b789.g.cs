@@ -44,12 +44,12 @@ public sealed unsafe partial class Views : global::System.IDisposable
     public nint _ctor(nint c) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Views Create()
+    public static Views? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7f1b150f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Views((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class Views : global::System.IDisposable
     public static Views Create(nint c) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Views Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayJumpSoundSystemImpl_Nested.Views arg0)
+    public static Views? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayJumpSoundSystemImpl_Nested.Views arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ce782c8f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Views((nint)handle);

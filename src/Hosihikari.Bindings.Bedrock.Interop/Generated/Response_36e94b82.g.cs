@@ -45,23 +45,23 @@ public sealed unsafe partial class Response : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_7a9336ce((void*)__hosihikari_shim_handle);
     }
 
-    public static Response Create()
+    public static Response? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_84f7522a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Response((nint)handle);
     }
 
-    public static Response Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Response arg0)
+    public static Response? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Response arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f89dbbc5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Response((nint)handle);

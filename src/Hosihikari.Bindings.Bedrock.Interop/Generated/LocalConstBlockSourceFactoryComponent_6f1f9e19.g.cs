@@ -46,12 +46,12 @@ public sealed unsafe partial class LocalConstBlockSourceFactoryComponent : globa
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d428e989((void*)__hosihikari_shim_handle);
     }
 
-    public static LocalConstBlockSourceFactoryComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.LocalConstBlockSourceFactoryComponent arg0)
+    public static LocalConstBlockSourceFactoryComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.LocalConstBlockSourceFactoryComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cf58fa98((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LocalConstBlockSourceFactoryComponent((nint)handle);

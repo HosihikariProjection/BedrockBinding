@@ -111,12 +111,12 @@ public sealed unsafe partial class SculkShriekerBlockActor : global::System.IDis
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SculkShriekerBlockActor Create()
+    public static SculkShriekerBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d17a3f6d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SculkShriekerBlockActor((nint)handle);

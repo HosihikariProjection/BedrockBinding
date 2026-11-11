@@ -46,12 +46,12 @@ public sealed unsafe partial class IContentAccessibilityProvider : global::Syste
         get => (nint)NativeMethods.TablePtr->C1.hs_get_2be30cc4((void*)__hosihikari_shim_handle);
     }
 
-    public static IContentAccessibilityProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider arg0)
+    public static IContentAccessibilityProvider? Create(global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3a2fd8a3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IContentAccessibilityProvider((nint)handle);

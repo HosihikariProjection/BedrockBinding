@@ -70,23 +70,23 @@ public sealed unsafe partial class HoeItem : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static HoeItem Create()
+    public static HoeItem? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ecb66bc0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HoeItem((nint)handle);
     }
 
-    public static HoeItem Create(global::Hosihikari.Bindings.Bedrock.Interop.HoeItem arg0)
+    public static HoeItem? Create(global::Hosihikari.Bindings.Bedrock.Interop.HoeItem arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a56a1608((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HoeItem((nint)handle);

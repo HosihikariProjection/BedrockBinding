@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ScriptCommandMessageEvent_ :
     public static ValueOrRef_const_ScriptCommandMessageEvent_ Create_a0c92c90(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ScriptCommandMessageEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandMessageEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandMessageEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandMessageEvent((nint)NativeMethods.TablePtr->C1.hs_method_e80ff5bf((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e80ff5bf((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandMessageEvent((nint)__hs_handle, false) : null;
     }
 
 

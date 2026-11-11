@@ -44,12 +44,12 @@ public sealed unsafe partial class VibrationListenerSystem : global::System.IDis
     public void _tick(nint registry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VibrationListenerSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.VibrationListenerSystem arg0)
+    public static VibrationListenerSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.VibrationListenerSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_37d0a08b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VibrationListenerSystem((nint)handle);

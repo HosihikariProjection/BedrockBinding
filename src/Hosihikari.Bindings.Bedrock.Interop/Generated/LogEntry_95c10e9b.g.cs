@@ -40,12 +40,12 @@ public sealed unsafe partial class LogEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static LogEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.BasicSerializerContext_Nested.LogEntry arg0)
+    public static LogEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.BasicSerializerContext_Nested.LogEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0d0a0e53((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LogEntry((nint)handle);

@@ -56,12 +56,12 @@ public sealed unsafe partial class DouseFireSubcomponent : global::System.IDispo
     public void _writetoJSON(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DouseFireSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.DouseFireSubcomponent arg0)
+    public static DouseFireSubcomponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.DouseFireSubcomponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8ff1c3ec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DouseFireSubcomponent((nint)handle);

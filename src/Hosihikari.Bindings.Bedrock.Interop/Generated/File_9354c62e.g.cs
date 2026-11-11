@@ -44,23 +44,23 @@ public sealed unsafe partial class File : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static File Create()
+    public static File? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3ed2af73();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new File((nint)handle);
     }
 
-    public static File Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.File arg0)
+    public static File? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.File arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7928a64e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new File((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class File : global::System.IDisposable
     public nint open(nint fileName, nint openMode, nint bufferingMode) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.File operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.File arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.File? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.File arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.File((nint)NativeMethods.TablePtr->C1.hs_method_e502811e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e502811e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.File((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

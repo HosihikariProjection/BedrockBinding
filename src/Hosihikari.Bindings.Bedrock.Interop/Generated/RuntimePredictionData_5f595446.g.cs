@@ -44,23 +44,23 @@ public sealed unsafe partial class RuntimePredictionData : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RuntimePredictionData Create()
+    public static RuntimePredictionData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6a49d988();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RuntimePredictionData((nint)handle);
     }
 
-    public static RuntimePredictionData Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData arg0)
+    public static RuntimePredictionData? Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ac7e398b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RuntimePredictionData((nint)handle);
@@ -132,9 +132,10 @@ public sealed unsafe partial class RuntimePredictionData : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d27fc427((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData((nint)NativeMethods.TablePtr->C2.hs_method_71594491((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_71594491((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

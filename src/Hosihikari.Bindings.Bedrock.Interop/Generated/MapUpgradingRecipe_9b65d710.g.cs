@@ -80,23 +80,23 @@ public sealed unsafe partial class MapUpgradingRecipe : global::System.IDisposab
     public static nint CraftingTableID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MapUpgradingRecipe Create()
+    public static MapUpgradingRecipe? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8e66a87b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MapUpgradingRecipe((nint)handle);
     }
 
-    public static MapUpgradingRecipe Create(global::Hosihikari.Bindings.Bedrock.Interop.MapUpgradingRecipe arg0)
+    public static MapUpgradingRecipe? Create(global::Hosihikari.Bindings.Bedrock.Interop.MapUpgradingRecipe arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e572086a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MapUpgradingRecipe((nint)handle);
@@ -116,9 +116,10 @@ public sealed unsafe partial class MapUpgradingRecipe : global::System.IDisposab
         return NativeMethods.TablePtr->C2.hs_method_7dadc957((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient getIngredient(int x, int y)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? getIngredient(int x, int y)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)NativeMethods.TablePtr->C2.hs_method_dfc230d0((void*)__hosihikari_shim_handle, x, y), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_dfc230d0((void*)__hosihikari_shim_handle, x, y);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
     }
 
     public nint getResultItems()

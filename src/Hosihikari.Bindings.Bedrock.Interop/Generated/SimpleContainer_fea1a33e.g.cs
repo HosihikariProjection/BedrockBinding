@@ -142,12 +142,12 @@ public sealed unsafe partial class SimpleContainer : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SimpleContainer Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleContainer arg0)
+    public static SimpleContainer? Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleContainer arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1f26fb29((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimpleContainer((nint)handle);
@@ -158,9 +158,10 @@ public sealed unsafe partial class SimpleContainer : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_846deb4d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_4712ea61((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4712ea61((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int getMaxStackSize()

@@ -45,23 +45,23 @@ public sealed unsafe partial class PlayerAuthInputPacketPayload : global::System
         NativeMethods.TablePtr->C2.hs_method_8ddc1de3((void*)__hosihikari_shim_handle);
     }
 
-    public static PlayerAuthInputPacketPayload Create()
+    public static PlayerAuthInputPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8ca07112();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerAuthInputPacketPayload((nint)handle);
     }
 
-    public static PlayerAuthInputPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacketPayload arg0)
+    public static PlayerAuthInputPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f4333ef7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerAuthInputPacketPayload((nint)handle);
@@ -185,9 +185,10 @@ public sealed unsafe partial class PlayerAuthInputPacketPayload : global::System
     public nint operator_assign(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacketPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacketPayload((nint)NativeMethods.TablePtr->C2.hs_method_00b00a4e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_00b00a4e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacketPayload((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

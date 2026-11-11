@@ -48,12 +48,12 @@ public sealed unsafe partial class ToggleSetting : global::System.IDisposable
     public static nint TYPE_NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ToggleSetting Create()
+    public static ToggleSetting? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_16ef8d82();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ToggleSetting((nint)handle);
@@ -87,9 +87,10 @@ public sealed unsafe partial class ToggleSetting : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_44e8024e((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.ToggleSetting operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.ToggleSetting arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.ToggleSetting? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.ToggleSetting arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.ToggleSetting((nint)NativeMethods.TablePtr->C3.hs_method_955f5c14((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_955f5c14((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.ToggleSetting((nint)__hs_handle, false) : null;
     }
 
 

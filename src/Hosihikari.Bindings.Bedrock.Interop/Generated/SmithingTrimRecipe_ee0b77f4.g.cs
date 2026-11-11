@@ -121,28 +121,29 @@ public sealed unsafe partial class SmithingTrimRecipe : global::System.IDisposab
         return NativeMethods.TablePtr->C3.hs_method_6758065f((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle) != 0;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID ID()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? ID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C3.hs_method_5f37b880(), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5f37b880();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false) : null;
     }
 
-    public static SmithingTrimRecipe Create()
+    public static SmithingTrimRecipe? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d4a6eb43();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SmithingTrimRecipe((nint)handle);
     }
 
-    public static SmithingTrimRecipe Create(global::Hosihikari.Bindings.Bedrock.Interop.SmithingTrimRecipe arg0)
+    public static SmithingTrimRecipe? Create(global::Hosihikari.Bindings.Bedrock.Interop.SmithingTrimRecipe arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_81710eca((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SmithingTrimRecipe((nint)handle);

@@ -44,12 +44,12 @@ public sealed unsafe partial class LevelLooseFileStorage : global::System.IDispo
     public nint _ctor(nint levelDirectory, nint contentIdentity, nint keyProvider) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelLooseFileStorage Create()
+    public static LevelLooseFileStorage? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3571fda3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelLooseFileStorage((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class LevelLooseFileStorage : global::System.IDispo
     public static LevelLooseFileStorage Create(nint levelDirectory, nint contentIdentity, nint keyProvider) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelLooseFileStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelLooseFileStorage arg0)
+    public static LevelLooseFileStorage? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelLooseFileStorage arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d94474c3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelLooseFileStorage((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class LevelLooseFileStorage : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C2.hs_get_416b5f96((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelLooseFileStorage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelLooseFileStorage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelLooseFileStorage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelLooseFileStorage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelLooseFileStorage((nint)NativeMethods.TablePtr->C2.hs_method_6c3e755f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6c3e755f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelLooseFileStorage((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

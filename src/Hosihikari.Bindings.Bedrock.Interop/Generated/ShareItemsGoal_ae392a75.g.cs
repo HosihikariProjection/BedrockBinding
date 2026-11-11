@@ -90,12 +90,12 @@ public sealed unsafe partial class ShareItemsGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ShareItemsGoal Create()
+    public static ShareItemsGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ac536ec1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShareItemsGoal((nint)handle);
@@ -105,12 +105,12 @@ public sealed unsafe partial class ShareItemsGoal : global::System.IDisposable
     public static ShareItemsGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ShareItemsGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.ShareItemsGoal arg0)
+    public static ShareItemsGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShareItemsGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e091c809((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShareItemsGoal((nint)handle);
@@ -200,9 +200,10 @@ public sealed unsafe partial class ShareItemsGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_d0d8f57d((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ShareItemsGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ShareItemsGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ShareItemsGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ShareItemsGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ShareItemsGoal((nint)NativeMethods.TablePtr->C3.hs_method_7e8623af((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7e8623af((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ShareItemsGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

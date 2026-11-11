@@ -44,12 +44,12 @@ public sealed unsafe partial class RaidBossComponent : global::System.IDisposabl
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RaidBossComponent Create()
+    public static RaidBossComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1d121499();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RaidBossComponent((nint)handle);
@@ -145,9 +145,10 @@ public sealed unsafe partial class RaidBossComponent : global::System.IDisposabl
         set => NativeMethods.TablePtr->C2.hs_set_9ca10407((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RaidBossComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RaidBossComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RaidBossComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RaidBossComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RaidBossComponent((nint)NativeMethods.TablePtr->C2.hs_method_142db2f6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_142db2f6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RaidBossComponent((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

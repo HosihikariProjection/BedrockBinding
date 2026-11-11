@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ServerInstanceRequestResourc
     public static ValueOrRef_const_ServerInstanceRequestResourceReload_ Create_09a6bcbe(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ServerInstanceRequestResourceReload>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceRequestResourceReload value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceRequestResourceReload? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceRequestResourceReload((nint)NativeMethods.TablePtr->C1.hs_method_02661437((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_02661437((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceRequestResourceReload((nint)__hs_handle, false) : null;
     }
 
 

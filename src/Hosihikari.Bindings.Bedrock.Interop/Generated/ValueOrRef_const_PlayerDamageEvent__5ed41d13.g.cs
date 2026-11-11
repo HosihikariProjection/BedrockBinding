@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerDamageEvent_ : global:
     public static ValueOrRef_const_PlayerDamageEvent_ Create_eb080e99(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerDamageEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerDamageEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerDamageEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerDamageEvent((nint)NativeMethods.TablePtr->C1.hs_method_372a2fcc((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_372a2fcc((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerDamageEvent((nint)__hs_handle, false) : null;
     }
 
 

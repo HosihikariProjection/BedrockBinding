@@ -48,12 +48,12 @@ public sealed unsafe partial class MultiSelectSetting : global::System.IDisposab
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MultiSelectSetting Create()
+    public static MultiSelectSetting? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_39154e83();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MultiSelectSetting((nint)handle);

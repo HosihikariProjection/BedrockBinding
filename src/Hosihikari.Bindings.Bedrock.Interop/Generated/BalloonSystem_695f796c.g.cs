@@ -44,12 +44,12 @@ public sealed unsafe partial class BalloonSystem : global::System.IDisposable
     public void _tick(nint registry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BalloonSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.BalloonSystem arg0)
+    public static BalloonSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.BalloonSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8f6e5267((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BalloonSystem((nint)handle);

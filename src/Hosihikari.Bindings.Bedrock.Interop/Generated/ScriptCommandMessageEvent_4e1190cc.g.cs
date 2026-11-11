@@ -48,23 +48,23 @@ public sealed unsafe partial class ScriptCommandMessageEvent : global::System.ID
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptCommandMessageEvent Create()
+    public static ScriptCommandMessageEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d667d821();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptCommandMessageEvent((nint)handle);
     }
 
-    public static ScriptCommandMessageEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandMessageEvent arg0)
+    public static ScriptCommandMessageEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandMessageEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2bd41884((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptCommandMessageEvent((nint)handle);
@@ -110,9 +110,10 @@ public sealed unsafe partial class ScriptCommandMessageEvent : global::System.ID
         get => (nint)NativeMethods.TablePtr->C3.hs_get_8cb30d89((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandMessageEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandMessageEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandMessageEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandMessageEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandMessageEvent((nint)NativeMethods.TablePtr->C3.hs_method_5cfea8aa((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5cfea8aa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandMessageEvent((nint)__hs_handle, false) : null;
     }
 
 

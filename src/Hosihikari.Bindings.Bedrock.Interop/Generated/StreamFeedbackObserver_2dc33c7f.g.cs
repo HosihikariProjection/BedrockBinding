@@ -44,12 +44,12 @@ public sealed unsafe partial class StreamFeedbackObserver : global::System.IDisp
     public void OnPacketFeedbackVector(nint packet_feedback_vector) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
 
-    public static StreamFeedbackObserver Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.StreamFeedbackObserver arg0)
+    public static StreamFeedbackObserver? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.StreamFeedbackObserver arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0b226af9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StreamFeedbackObserver((nint)handle);

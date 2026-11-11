@@ -56,12 +56,12 @@ public sealed unsafe partial class LazyTemplate : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LazyTemplate Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement_Nested.LazyTemplate arg0)
+    public static LazyTemplate? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement_Nested.LazyTemplate arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_03bc9756((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LazyTemplate((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class LazyTemplate : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C3.hs_method_53d20e90((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getSize(byte rotation)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSize(byte rotation)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C3.hs_method_7c722fe3((void*)__hosihikari_shim_handle, rotation));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7c722fe3((void*)__hosihikari_shim_handle, rotation);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public bool isLegacyStructure()

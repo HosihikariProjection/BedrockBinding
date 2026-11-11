@@ -614,12 +614,12 @@ public sealed unsafe partial class IronGolem : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IronGolem Create()
+    public static IronGolem? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_20231a12();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IronGolem((nint)handle);
@@ -634,9 +634,10 @@ public sealed unsafe partial class IronGolem : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_629a90c7((void*)__hosihikari_shim_handle, (void*)source.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult doHurtTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor? target, nint cause)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? doHurtTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor? target, nint cause)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C1.hs_method_296c4df0((void*)__hosihikari_shim_handle, (void*)(target?.Handle ?? 0), (void*)cause));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_296c4df0((void*)__hosihikari_shim_handle, (void*)(target?.Handle ?? 0), (void*)cause);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public float getShadowRadius()

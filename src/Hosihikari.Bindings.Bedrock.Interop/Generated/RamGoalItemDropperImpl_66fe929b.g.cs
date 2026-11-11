@@ -52,23 +52,23 @@ public sealed unsafe partial class RamGoalItemDropperImpl : global::System.IDisp
     public void _tryDropHorn(nint dropPos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RamGoalItemDropperImpl Create()
+    public static RamGoalItemDropperImpl? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3d3d586d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RamGoalItemDropperImpl((nint)handle);
     }
 
-    public static RamGoalItemDropperImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoalUtils.RamGoalItemDropperImpl arg0)
+    public static RamGoalItemDropperImpl? Create(global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoalUtils.RamGoalItemDropperImpl arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_77cf4b4e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RamGoalItemDropperImpl((nint)handle);
@@ -96,9 +96,10 @@ public sealed unsafe partial class RamGoalItemDropperImpl : global::System.IDisp
         set => NativeMethods.TablePtr->C3.hs_set_d42823a5((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoalUtils.RamGoalItemDropperImpl operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoalUtils.RamGoalItemDropperImpl arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoalUtils.RamGoalItemDropperImpl? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoalUtils.RamGoalItemDropperImpl arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoalUtils.RamGoalItemDropperImpl((nint)NativeMethods.TablePtr->C3.hs_method_5e27bcb9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5e27bcb9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoalUtils.RamGoalItemDropperImpl((nint)__hs_handle, false) : null;
     }
 
     public void tryDropHorn(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 dropPos)

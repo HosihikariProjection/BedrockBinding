@@ -40,12 +40,12 @@ public sealed unsafe partial class GeneticsDefinition : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static GeneticsDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.GeneticsDefinition arg0)
+    public static GeneticsDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.GeneticsDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e7f7d8a6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GeneticsDefinition((nint)handle);

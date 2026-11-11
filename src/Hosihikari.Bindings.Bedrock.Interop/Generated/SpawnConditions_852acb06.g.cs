@@ -40,12 +40,12 @@ public sealed unsafe partial class SpawnConditions : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static SpawnConditions Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnConditions arg0)
+    public static SpawnConditions? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnConditions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b333c3b2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnConditions((nint)handle);

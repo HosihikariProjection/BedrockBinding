@@ -40,12 +40,12 @@ public sealed unsafe partial class StructurePlacement : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static StructurePlacement Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructurePlacement arg0)
+    public static StructurePlacement? Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructurePlacement arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_484e4486((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructurePlacement((nint)handle);

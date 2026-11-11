@@ -44,12 +44,12 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IconItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_60.IconItemComponent arg0)
+    public static IconItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_60.IconItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2952969c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IconItemComponent((nint)handle);

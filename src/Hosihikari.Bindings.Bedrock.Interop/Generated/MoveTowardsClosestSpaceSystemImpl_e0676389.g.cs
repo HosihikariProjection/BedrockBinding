@@ -44,12 +44,12 @@ public sealed unsafe partial class MoveTowardsClosestSpaceSystemImpl : global::S
     public void _tick(nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveTowardsClosestSpaceSystemImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveTowardsClosestSpaceSystemImpl arg0)
+    public static MoveTowardsClosestSpaceSystemImpl? Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveTowardsClosestSpaceSystemImpl arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_65346ba7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveTowardsClosestSpaceSystemImpl((nint)handle);

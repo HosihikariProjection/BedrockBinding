@@ -40,23 +40,23 @@ public sealed unsafe partial class ColorDefinition : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ColorDefinition Create()
+    public static ColorDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_39abfce0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ColorDefinition((nint)handle);
     }
 
-    public static ColorDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.ColorDefinition arg0)
+    public static ColorDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.ColorDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ba38a26b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ColorDefinition((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class ColorDefinition : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_69c9bce1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ColorDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ColorDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ColorDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ColorDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ColorDefinition((nint)NativeMethods.TablePtr->C0.hs_method_6edd95ed((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6edd95ed((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ColorDefinition((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

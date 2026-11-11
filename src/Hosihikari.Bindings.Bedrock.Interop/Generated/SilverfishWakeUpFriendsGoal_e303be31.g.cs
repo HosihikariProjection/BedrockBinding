@@ -74,23 +74,23 @@ public sealed unsafe partial class SilverfishWakeUpFriendsGoal : global::System.
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SilverfishWakeUpFriendsGoal Create()
+    public static SilverfishWakeUpFriendsGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7f0f9d6c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SilverfishWakeUpFriendsGoal((nint)handle);
     }
 
-    public static SilverfishWakeUpFriendsGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SilverfishWakeUpFriendsGoal arg0)
+    public static SilverfishWakeUpFriendsGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.SilverfishWakeUpFriendsGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a5346828((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SilverfishWakeUpFriendsGoal((nint)handle);
@@ -133,9 +133,10 @@ public sealed unsafe partial class SilverfishWakeUpFriendsGoal : global::System.
         get => (nint)NativeMethods.TablePtr->C3.hs_get_03839d40((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SilverfishWakeUpFriendsGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SilverfishWakeUpFriendsGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SilverfishWakeUpFriendsGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SilverfishWakeUpFriendsGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SilverfishWakeUpFriendsGoal((nint)NativeMethods.TablePtr->C3.hs_method_9b958339((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9b958339((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SilverfishWakeUpFriendsGoal((nint)__hs_handle, false) : null;
     }
 
     public void tick()

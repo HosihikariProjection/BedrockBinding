@@ -40,12 +40,12 @@ public sealed unsafe partial class InsideBubbleColumnBlockComponent : global::Sy
         return __hs_handle;
     }
 
-    public static InsideBubbleColumnBlockComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideBubbleColumnBlockComponent arg0)
+    public static InsideBubbleColumnBlockComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideBubbleColumnBlockComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e52aa20b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InsideBubbleColumnBlockComponent((nint)handle);

@@ -40,34 +40,34 @@ public sealed unsafe partial class SubChunkPacketData : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static SubChunkPacketData Create()
+    public static SubChunkPacketData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f943735f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SubChunkPacketData((nint)handle);
     }
 
-    public static SubChunkPacketData Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData arg0)
+    public static SubChunkPacketData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cd54848a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SubChunkPacketData((nint)handle);
     }
 
-    public static SubChunkPacketData Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPosOffset pos, byte requestResult)
+    public static SubChunkPacketData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPosOffset pos, byte requestResult)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_761193ff((void*)pos.Handle, requestResult);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SubChunkPacketData((nint)handle);
@@ -103,9 +103,10 @@ public sealed unsafe partial class SubChunkPacketData : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C3.hs_get_a637987a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData rhs)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData((nint)NativeMethods.TablePtr->C3.hs_method_f9441d89((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f9441d89((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -48,12 +48,12 @@ public sealed unsafe partial class LabTableReactionComponent : global::System.ID
     public void __onTick(nint arg0, nint arg1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LabTableReactionComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.LabTableReactionComponent arg0)
+    public static LabTableReactionComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.LabTableReactionComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d6b7d166((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LabTableReactionComponent((nint)handle);

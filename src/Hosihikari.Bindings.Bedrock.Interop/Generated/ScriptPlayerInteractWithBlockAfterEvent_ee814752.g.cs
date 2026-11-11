@@ -54,12 +54,12 @@ public sealed unsafe partial class ScriptPlayerInteractWithBlockAfterEvent : glo
     public nint _ctor(nint eventData, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptPlayerInteractWithBlockAfterEvent Create()
+    public static ScriptPlayerInteractWithBlockAfterEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_db22411a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPlayerInteractWithBlockAfterEvent((nint)handle);

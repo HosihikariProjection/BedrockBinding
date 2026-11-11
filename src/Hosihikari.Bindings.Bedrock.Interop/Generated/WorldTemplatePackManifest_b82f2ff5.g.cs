@@ -310,23 +310,23 @@ public sealed unsafe partial class WorldTemplatePackManifest : global::System.ID
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorldTemplatePackManifest Create()
+    public static WorldTemplatePackManifest? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4fe00513();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldTemplatePackManifest((nint)handle);
     }
 
-    public static WorldTemplatePackManifest Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest arg0)
+    public static WorldTemplatePackManifest? Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1bf657d5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldTemplatePackManifest((nint)handle);
@@ -348,9 +348,10 @@ public sealed unsafe partial class WorldTemplatePackManifest : global::System.ID
         get => (nint)NativeMethods.TablePtr->C4.hs_get_c46d90f9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest((nint)NativeMethods.TablePtr->C4.hs_method_012f8df2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_012f8df2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest((nint)__hs_handle, false) : null;
     }
 
 

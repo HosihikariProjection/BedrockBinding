@@ -40,34 +40,34 @@ public sealed unsafe partial class NewType_std__optional_unsigned_int__ : global
         return __hs_handle;
     }
 
-    public static NewType_std__optional_unsigned_int__ Create()
+    public static NewType_std__optional_unsigned_int__? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ae0b69e5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NewType_std__optional_unsigned_int__((nint)handle);
     }
 
-    public static NewType_std__optional_unsigned_int__ Create(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__ other)
+    public static NewType_std__optional_unsigned_int__? Create(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__ other)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b60763e5((void*)other.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NewType_std__optional_unsigned_int__((nint)handle);
     }
 
-    public static NewType_std__optional_unsigned_int__ Create(uint? t)
+    public static NewType_std__optional_unsigned_int__? Create(uint? t)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9f7d132b(t ?? default(uint), t.HasValue);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NewType_std__optional_unsigned_int__((nint)handle);
@@ -79,9 +79,10 @@ public sealed unsafe partial class NewType_std__optional_unsigned_int__ : global
         get => (nint)NativeMethods.TablePtr->C2.hs_get_667181cc((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__ operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__ other)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__ other)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__((nint)NativeMethods.TablePtr->C2.hs_method_4dcb9cb7((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4dcb9cb7((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__ other)

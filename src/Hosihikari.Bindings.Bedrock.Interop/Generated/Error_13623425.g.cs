@@ -44,12 +44,12 @@ public sealed unsafe partial class Error : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Error Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginResult_Nested.Error arg0)
+    public static Error? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginResult_Nested.Error arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_34db57ea((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Error((nint)handle);

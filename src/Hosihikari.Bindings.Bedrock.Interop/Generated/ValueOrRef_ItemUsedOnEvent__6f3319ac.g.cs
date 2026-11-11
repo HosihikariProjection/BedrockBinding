@@ -48,14 +48,16 @@ public sealed unsafe partial class ValueOrRef_ItemUsedOnEvent_ : global::System.
     public static ValueOrRef_ItemUsedOnEvent_ Create_019c45fb(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<ItemUsedOnEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent value_b1588fdd()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent? value_b1588fdd()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent((nint)NativeMethods.TablePtr->C1.hs_method_b1588fdd((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b1588fdd((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent value_2586af5a()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent? value_2586af5a()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent((nint)NativeMethods.TablePtr->C1.hs_method_2586af5a((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2586af5a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent((nint)__hs_handle, false) : null;
     }
 
 

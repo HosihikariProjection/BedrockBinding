@@ -44,23 +44,23 @@ public sealed unsafe partial class ItemStackRequestActionCraftHandler : global::
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemStackRequestActionCraftHandler Create()
+    public static ItemStackRequestActionCraftHandler? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2ce7981b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackRequestActionCraftHandler((nint)handle);
     }
 
-    public static ItemStackRequestActionCraftHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftHandler arg0)
+    public static ItemStackRequestActionCraftHandler? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftHandler arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_555d0530((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackRequestActionCraftHandler((nint)handle);
@@ -145,9 +145,10 @@ public sealed unsafe partial class ItemStackRequestActionCraftHandler : global::
     public void onContainerScreenOpen(nint screenContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftHandler operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftHandler arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftHandler? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftHandler arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftHandler((nint)NativeMethods.TablePtr->C1.hs_method_c47c7916((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c47c7916((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftHandler((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

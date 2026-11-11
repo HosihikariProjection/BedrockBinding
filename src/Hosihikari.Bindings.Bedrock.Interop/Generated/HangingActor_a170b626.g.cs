@@ -630,12 +630,12 @@ public sealed unsafe partial class HangingActor : global::System.IDisposable
     public bool _wouldSurvive(nint region) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static HangingActor Create()
+    public static HangingActor? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ca02bc73();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HangingActor((nint)handle);
@@ -657,9 +657,10 @@ public sealed unsafe partial class HangingActor : global::System.IDisposable
     public void _calculateAABB() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float arg1, nint arg2)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float arg1, nint arg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C1.hs_method_2bdacec5((void*)__hosihikari_shim_handle, (void*)source.Handle, arg1, (void*)arg2));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2bdacec5((void*)__hosihikari_shim_handle, (void*)source.Handle, arg1, (void*)arg2);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)

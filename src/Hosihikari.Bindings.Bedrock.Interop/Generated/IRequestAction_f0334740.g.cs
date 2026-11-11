@@ -44,12 +44,12 @@ public sealed unsafe partial class IRequestAction : global::System.IDisposable
     public void _serialize(nint tag) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IRequestAction Create(global::Hosihikari.Bindings.Bedrock.Interop.IRequestAction arg0)
+    public static IRequestAction? Create(global::Hosihikari.Bindings.Bedrock.Interop.IRequestAction arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4a34bbce((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IRequestAction((nint)handle);

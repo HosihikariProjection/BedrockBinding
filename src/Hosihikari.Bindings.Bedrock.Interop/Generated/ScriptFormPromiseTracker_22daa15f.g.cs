@@ -66,12 +66,12 @@ public sealed unsafe partial class ScriptFormPromiseTracker : global::System.IDi
     public nint _onLevelRemovedPlayer(nint player) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptFormPromiseTracker Create()
+    public static ScriptFormPromiseTracker? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_20698098();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptFormPromiseTracker((nint)handle);
@@ -81,12 +81,12 @@ public sealed unsafe partial class ScriptFormPromiseTracker : global::System.IDi
     public static ScriptFormPromiseTracker Create(nint events, nint levelEventCoordinator, nint playerEventCooordinator) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptFormPromiseTracker Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptFormPromiseTracker arg0)
+    public static ScriptFormPromiseTracker? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptFormPromiseTracker arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8946007c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptFormPromiseTracker((nint)handle);
@@ -146,9 +146,10 @@ public sealed unsafe partial class ScriptFormPromiseTracker : global::System.IDi
         return NativeMethods.TablePtr->C3.hs_method_df55be78((void*)__hosihikari_shim_handle, (void*)player.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptFormPromiseTracker operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptFormPromiseTracker arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptFormPromiseTracker? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptFormPromiseTracker arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptFormPromiseTracker((nint)NativeMethods.TablePtr->C3.hs_method_8ec349f6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8ec349f6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptFormPromiseTracker((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

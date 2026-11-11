@@ -52,12 +52,12 @@ public sealed unsafe partial class State : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static State Create()
+    public static State? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_42da82c5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new State((nint)handle);
@@ -71,12 +71,12 @@ public sealed unsafe partial class State : global::System.IDisposable
     public static State Create_6c11983a(nint name, nint stringState) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static State Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor_Nested.State arg0)
+    public static State? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor_Nested.State arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_067e1875((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new State((nint)handle);

@@ -56,23 +56,23 @@ public sealed unsafe partial class CerealSchemaUpgrade : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CerealSchemaUpgrade Create()
+    public static CerealSchemaUpgrade? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d3dab8fa();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CerealSchemaUpgrade((nint)handle);
     }
 
-    public static CerealSchemaUpgrade Create(global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaUpgrade arg0)
+    public static CerealSchemaUpgrade? Create(global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaUpgrade arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7da8b609((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CerealSchemaUpgrade((nint)handle);
@@ -110,9 +110,10 @@ public sealed unsafe partial class CerealSchemaUpgrade : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C0.hs_get_21b6f130((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaUpgrade operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaUpgrade arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaUpgrade? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaUpgrade arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaUpgrade((nint)NativeMethods.TablePtr->C0.hs_method_69c81ffe((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_69c81ffe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaUpgrade((nint)__hs_handle, false) : null;
     }
 
     public bool previousSchema(nint component)

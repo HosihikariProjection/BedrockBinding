@@ -40,23 +40,23 @@ public sealed unsafe partial class DebugAssertException : global::System.IDispos
         return __hs_handle;
     }
 
-    public static DebugAssertException Create()
+    public static DebugAssertException? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_559e190c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DebugAssertException((nint)handle);
     }
 
-    public static DebugAssertException Create(global::Hosihikari.Bindings.Bedrock.Interop.DebugAssertException arg0)
+    public static DebugAssertException? Create(global::Hosihikari.Bindings.Bedrock.Interop.DebugAssertException arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_19ae9c47((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DebugAssertException((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class DebugAssertException : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_8fbb552e((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DebugAssertException operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DebugAssertException arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DebugAssertException? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DebugAssertException arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DebugAssertException((nint)NativeMethods.TablePtr->C1.hs_method_b5fc01cc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b5fc01cc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DebugAssertException((nint)__hs_handle, false) : null;
     }
 
     public nint what()

@@ -40,12 +40,12 @@ public sealed unsafe partial class UniqueOwnerPointer_StructureSpawnRegistry_ : 
         return __hs_handle;
     }
 
-    public static UniqueOwnerPointer_StructureSpawnRegistry_ Create()
+    public static UniqueOwnerPointer_StructureSpawnRegistry_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_bc747483();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_StructureSpawnRegistry_((nint)handle);
@@ -55,12 +55,12 @@ public sealed unsafe partial class UniqueOwnerPointer_StructureSpawnRegistry_ : 
     public static UniqueOwnerPointer_StructureSpawnRegistry_ Create_60d90daa(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static UniqueOwnerPointer_StructureSpawnRegistry_ Create_cfdb262e()
+    public static UniqueOwnerPointer_StructureSpawnRegistry_? Create_cfdb262e()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_cfdb262e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_StructureSpawnRegistry_((nint)handle);
@@ -111,9 +111,10 @@ public sealed unsafe partial class UniqueOwnerPointer_StructureSpawnRegistry_ : 
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_StructureSpawnRegistry_ operator_assign()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_StructureSpawnRegistry_? operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_StructureSpawnRegistry_((nint)NativeMethods.TablePtr->C0.hs_method_ca5162b8((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ca5162b8((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_StructureSpawnRegistry_((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_StructureSpawnRegistry_ other)

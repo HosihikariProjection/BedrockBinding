@@ -74,12 +74,12 @@ public sealed unsafe partial class ContentLogFileEndPoint : global::System.IDisp
     public void _setEnabled(bool newState) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ContentLogFileEndPoint Create()
+    public static ContentLogFileEndPoint? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6a11efaa();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContentLogFileEndPoint((nint)handle);
@@ -89,12 +89,12 @@ public sealed unsafe partial class ContentLogFileEndPoint : global::System.IDisp
     public static ContentLogFileEndPoint Create(nint debugLogDirectory, nint fileName, nint minLogLevel) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ContentLogFileEndPoint Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLogFileEndPoint arg0)
+    public static ContentLogFileEndPoint? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLogFileEndPoint arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_66b4984b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContentLogFileEndPoint((nint)handle);
@@ -162,9 +162,10 @@ public sealed unsafe partial class ContentLogFileEndPoint : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C1.hs_get_d3b19e9c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContentLogFileEndPoint operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ContentLogFileEndPoint arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContentLogFileEndPoint? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ContentLogFileEndPoint arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogFileEndPoint((nint)NativeMethods.TablePtr->C1.hs_method_cece1e00((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cece1e00((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogFileEndPoint((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

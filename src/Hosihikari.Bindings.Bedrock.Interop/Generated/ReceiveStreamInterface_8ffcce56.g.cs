@@ -40,12 +40,12 @@ public sealed unsafe partial class ReceiveStreamInterface : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ReceiveStreamInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.ReceiveStreamInterface arg0)
+    public static ReceiveStreamInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.ReceiveStreamInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0253241f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReceiveStreamInterface((nint)handle);

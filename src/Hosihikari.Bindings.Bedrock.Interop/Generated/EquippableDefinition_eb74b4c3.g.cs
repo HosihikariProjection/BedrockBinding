@@ -40,12 +40,12 @@ public sealed unsafe partial class EquippableDefinition : global::System.IDispos
         return __hs_handle;
     }
 
-    public static EquippableDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.EquippableDefinition arg0)
+    public static EquippableDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.EquippableDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_85b1d857((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EquippableDefinition((nint)handle);

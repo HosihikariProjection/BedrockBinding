@@ -40,23 +40,23 @@ public sealed unsafe partial class MockableOwnedBlockSource : global::System.IDi
         return __hs_handle;
     }
 
-    public static MockableOwnedBlockSource Create()
+    public static MockableOwnedBlockSource? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_132a5d38();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MockableOwnedBlockSource((nint)handle);
     }
 
-    public static MockableOwnedBlockSource Create(global::Hosihikari.Bindings.Bedrock.Interop.MockableOwnedBlockSource arg0)
+    public static MockableOwnedBlockSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.MockableOwnedBlockSource arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7506784a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MockableOwnedBlockSource((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class MockableOwnedBlockSource : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C2.hs_get_50e0bdd1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MockableOwnedBlockSource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MockableOwnedBlockSource arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MockableOwnedBlockSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MockableOwnedBlockSource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MockableOwnedBlockSource((nint)NativeMethods.TablePtr->C2.hs_method_616f77b8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_616f77b8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MockableOwnedBlockSource((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

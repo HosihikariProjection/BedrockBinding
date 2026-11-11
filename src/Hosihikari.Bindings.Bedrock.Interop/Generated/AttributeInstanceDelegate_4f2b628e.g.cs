@@ -64,12 +64,12 @@ public sealed unsafe partial class AttributeInstanceDelegate : global::System.ID
     public bool _willChange(float oldValue, float newValue, nint buff) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AttributeInstanceDelegate Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstanceDelegate arg0)
+    public static AttributeInstanceDelegate? Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstanceDelegate arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7ce208b5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AttributeInstanceDelegate((nint)handle);

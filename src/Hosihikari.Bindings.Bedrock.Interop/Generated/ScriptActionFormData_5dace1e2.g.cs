@@ -40,23 +40,23 @@ public sealed unsafe partial class ScriptActionFormData : global::System.IDispos
         return __hs_handle;
     }
 
-    public static ScriptActionFormData Create()
+    public static ScriptActionFormData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_48f8f6b3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptActionFormData((nint)handle);
     }
 
-    public static ScriptActionFormData Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormData arg0)
+    public static ScriptActionFormData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2b69e4e1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptActionFormData((nint)handle);
@@ -108,9 +108,10 @@ public sealed unsafe partial class ScriptActionFormData : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C3.hs_get_4dccea21((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormData((nint)NativeMethods.TablePtr->C3.hs_method_d7ebb944((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d7ebb944((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormData((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

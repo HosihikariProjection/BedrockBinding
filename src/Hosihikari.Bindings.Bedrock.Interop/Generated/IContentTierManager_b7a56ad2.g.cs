@@ -46,12 +46,12 @@ public sealed unsafe partial class IContentTierManager : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_cc842ac6((void*)__hosihikari_shim_handle);
     }
 
-    public static IContentTierManager Create(global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager arg0)
+    public static IContentTierManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fe7a5b74((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IContentTierManager((nint)handle);

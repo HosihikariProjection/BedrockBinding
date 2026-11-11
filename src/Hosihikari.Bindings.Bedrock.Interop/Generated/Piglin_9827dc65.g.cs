@@ -736,12 +736,12 @@ public sealed unsafe partial class Piglin : global::System.IDisposable
     public bool _isDarkEnoughToSpawn() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Piglin Create()
+    public static Piglin? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b6c1c285();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Piglin((nint)handle);
@@ -751,9 +751,10 @@ public sealed unsafe partial class Piglin : global::System.IDisposable
     public static Piglin Create(nint definitions, nint definitionName, nint entityContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction? getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_6ef3a1d3((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6ef3a1d3((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)__hs_handle) : null;
     }
 
     public bool isDarkEnoughToSpawn()

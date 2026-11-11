@@ -44,23 +44,23 @@ public sealed unsafe partial class ArgumentOutOfBoundsError : global::System.IDi
     public nint _ctor(nint propertyName, int index_, nint value_, nint minValue_, nint maxValue_) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ArgumentOutOfBoundsError Create()
+    public static ArgumentOutOfBoundsError? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_71d561ed();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ArgumentOutOfBoundsError((nint)handle);
     }
 
-    public static ArgumentOutOfBoundsError Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentOutOfBoundsError arg0)
+    public static ArgumentOutOfBoundsError? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentOutOfBoundsError arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fadebe2d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ArgumentOutOfBoundsError((nint)handle);
@@ -94,9 +94,10 @@ public sealed unsafe partial class ArgumentOutOfBoundsError : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C3.hs_get_d0f506fb((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentOutOfBoundsError operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentOutOfBoundsError arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentOutOfBoundsError? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentOutOfBoundsError arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentOutOfBoundsError((nint)NativeMethods.TablePtr->C3.hs_method_c7f8bdd5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c7f8bdd5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentOutOfBoundsError((nint)__hs_handle, false) : null;
     }
 
 

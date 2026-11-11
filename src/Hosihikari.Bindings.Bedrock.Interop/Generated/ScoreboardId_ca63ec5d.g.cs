@@ -40,9 +40,10 @@ public sealed unsafe partial class ScoreboardId : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId INVALID()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId? INVALID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)NativeMethods.TablePtr->C3.hs_method_bec087ec(), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_bec087ec();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_handle, false) : null;
     }
 
     public nint mIdentityDef

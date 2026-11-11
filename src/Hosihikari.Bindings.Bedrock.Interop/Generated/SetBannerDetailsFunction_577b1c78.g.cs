@@ -54,12 +54,12 @@ public sealed unsafe partial class SetBannerDetailsFunction : global::System.IDi
     public nint _getFunctionType() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SetBannerDetailsFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetBannerDetailsFunction arg0)
+    public static SetBannerDetailsFunction? Create(global::Hosihikari.Bindings.Bedrock.Interop.SetBannerDetailsFunction arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_982d5f70((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetBannerDetailsFunction((nint)handle);

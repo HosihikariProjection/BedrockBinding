@@ -40,12 +40,12 @@ public sealed unsafe partial class TagsProxy : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TagsProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptorSerializer.TagsProxy arg0)
+    public static TagsProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptorSerializer.TagsProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f31f4e4e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TagsProxy((nint)handle);

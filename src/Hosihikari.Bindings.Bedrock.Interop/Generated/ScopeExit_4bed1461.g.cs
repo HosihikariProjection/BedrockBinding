@@ -44,23 +44,23 @@ public sealed unsafe partial class ScopeExit : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScopeExit Create()
+    public static ScopeExit? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_450dfb7f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScopeExit((nint)handle);
     }
 
-    public static ScopeExit Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ScopeExit arg0)
+    public static ScopeExit? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ScopeExit arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_de06b83f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScopeExit((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class ScopeExit : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_10dc729a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ScopeExit operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ScopeExit arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ScopeExit? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ScopeExit arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ScopeExit((nint)NativeMethods.TablePtr->C0.hs_method_c327474c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c327474c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ScopeExit((nint)__hs_handle, false) : null;
     }
 
 

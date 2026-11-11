@@ -46,31 +46,32 @@ public sealed unsafe partial class ClientNetworkSystem : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C0.hs_get_a4e0ceb1((void*)__hosihikari_shim_handle);
     }
 
-    public static ClientNetworkSystem Create()
+    public static ClientNetworkSystem? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ab0f2a92();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClientNetworkSystem((nint)handle);
     }
 
-    public static ClientNetworkSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientNetworkSystem arg0)
+    public static ClientNetworkSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientNetworkSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_16dcad57((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClientNetworkSystem((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo getConnectionInfo()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo? getConnectionInfo()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)NativeMethods.TablePtr->C0.hs_method_d3c43046((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d3c43046((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)__hs_handle, false) : null;
     }
 
     public string? getNetworkInfoString()

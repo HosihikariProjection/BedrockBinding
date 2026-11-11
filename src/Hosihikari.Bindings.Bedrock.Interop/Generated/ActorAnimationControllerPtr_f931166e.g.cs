@@ -48,12 +48,12 @@ public sealed unsafe partial class ActorAnimationControllerPtr : global::System.
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorAnimationControllerPtr Create()
+    public static ActorAnimationControllerPtr? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_32b56eae();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorAnimationControllerPtr((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class ActorAnimationControllerPtr : global::System.
     public static ActorAnimationControllerPtr Create(nint group, nint name) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorAnimationControllerPtr Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerPtr arg0)
+    public static ActorAnimationControllerPtr? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerPtr arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_01fcb97d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorAnimationControllerPtr((nint)handle);

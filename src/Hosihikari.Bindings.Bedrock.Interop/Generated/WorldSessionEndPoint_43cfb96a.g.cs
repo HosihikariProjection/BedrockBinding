@@ -66,23 +66,23 @@ public sealed unsafe partial class WorldSessionEndPoint : global::System.IDispos
     public void _setEnabled(bool newState) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorldSessionEndPoint Create()
+    public static WorldSessionEndPoint? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_9f238416();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldSessionEndPoint((nint)handle);
     }
 
-    public static WorldSessionEndPoint Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldSessionEndPoint arg0)
+    public static WorldSessionEndPoint? Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldSessionEndPoint arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_040d8271((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldSessionEndPoint((nint)handle);
@@ -120,9 +120,10 @@ public sealed unsafe partial class WorldSessionEndPoint : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C4.hs_get_9ab5f965((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorldSessionEndPoint operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldSessionEndPoint arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorldSessionEndPoint? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldSessionEndPoint arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldSessionEndPoint((nint)NativeMethods.TablePtr->C4.hs_method_2c728e35((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2c728e35((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldSessionEndPoint((nint)__hs_handle, false) : null;
     }
 
     public void setEnabled(bool newState)

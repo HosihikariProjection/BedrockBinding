@@ -40,12 +40,12 @@ public sealed unsafe partial class DamageAbsorptionItemComponent : global::Syste
         return __hs_handle;
     }
 
-    public static DamageAbsorptionItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_10.DamageAbsorptionItemComponent arg0)
+    public static DamageAbsorptionItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_10.DamageAbsorptionItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_daf7db70((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DamageAbsorptionItemComponent((nint)handle);

@@ -44,12 +44,12 @@ public sealed unsafe partial class SpellStage : global::System.IDisposable
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpellStage Create()
+    public static SpellStage? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3522a99a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpellStage((nint)handle);
@@ -131,9 +131,10 @@ public sealed unsafe partial class SpellStage : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_5930db2b((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellStage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellStage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellStage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellStage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellStage((nint)NativeMethods.TablePtr->C3.hs_method_a1eac6cf((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a1eac6cf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellStage((nint)__hs_handle, false) : null;
     }
 
 

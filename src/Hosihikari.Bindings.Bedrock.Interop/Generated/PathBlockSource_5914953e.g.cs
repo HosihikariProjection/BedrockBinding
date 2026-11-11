@@ -60,23 +60,23 @@ public sealed unsafe partial class PathBlockSource : global::System.IDisposable
     public bool _isWaterBlock(nint blockPos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PathBlockSource Create()
+    public static PathBlockSource? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_de3cd498();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PathBlockSource((nint)handle);
     }
 
-    public static PathBlockSource Create(global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource arg0)
+    public static PathBlockSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b2770d59((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PathBlockSource((nint)handle);
@@ -123,9 +123,10 @@ public sealed unsafe partial class PathBlockSource : global::System.IDisposable
         get => NativeMethods.TablePtr->C2.hs_get_287cd025((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource((nint)NativeMethods.TablePtr->C2.hs_method_b25108d4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b25108d4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource((nint)__hs_handle, false) : null;
     }
 
 

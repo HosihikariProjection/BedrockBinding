@@ -86,23 +86,23 @@ public sealed unsafe partial class SneezeGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SneezeGoal Create()
+    public static SneezeGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_46d4899e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SneezeGoal((nint)handle);
     }
 
-    public static SneezeGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SneezeGoal arg0)
+    public static SneezeGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.SneezeGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a696ea41((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SneezeGoal((nint)handle);
@@ -210,9 +210,10 @@ public sealed unsafe partial class SneezeGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_d9936fa9((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SneezeGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SneezeGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SneezeGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SneezeGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SneezeGoal((nint)NativeMethods.TablePtr->C3.hs_method_26702166((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_26702166((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SneezeGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

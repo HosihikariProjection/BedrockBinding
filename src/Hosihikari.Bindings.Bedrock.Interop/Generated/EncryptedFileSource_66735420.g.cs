@@ -40,23 +40,23 @@ public sealed unsafe partial class EncryptedFileSource : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static EncryptedFileSource Create()
+    public static EncryptedFileSource? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_207daa73();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EncryptedFileSource((nint)handle);
     }
 
-    public static EncryptedFileSource Create(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedFileSource arg0)
+    public static EncryptedFileSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedFileSource arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_357f0fce((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EncryptedFileSource((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class EncryptedFileSource : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_44348e2b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedFileSource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedFileSource arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedFileSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedFileSource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedFileSource((nint)NativeMethods.TablePtr->C3.hs_method_9e8840f9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9e8840f9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedFileSource((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

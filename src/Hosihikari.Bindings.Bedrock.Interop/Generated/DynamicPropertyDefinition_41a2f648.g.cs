@@ -44,23 +44,23 @@ public sealed unsafe partial class DynamicPropertyDefinition : global::System.ID
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DynamicPropertyDefinition Create()
+    public static DynamicPropertyDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5799a3e5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DynamicPropertyDefinition((nint)handle);
     }
 
-    public static DynamicPropertyDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertyDefinition arg0)
+    public static DynamicPropertyDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertyDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c39bf83f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DynamicPropertyDefinition((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class DynamicPropertyDefinition : global::System.ID
         get => (nint)NativeMethods.TablePtr->C1.hs_get_573b0393((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertyDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertyDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertyDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertyDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertyDefinition((nint)NativeMethods.TablePtr->C1.hs_method_25d09b3b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_25d09b3b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertyDefinition((nint)__hs_handle, false) : null;
     }
 
 

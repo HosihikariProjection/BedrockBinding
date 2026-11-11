@@ -40,45 +40,45 @@ public sealed unsafe partial class WeakRef_EntityRegistry_ : global::System.IDis
         return __hs_handle;
     }
 
-    public static WeakRef_EntityRegistry_ Create_c106b94c(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    public static WeakRef_EntityRegistry_? Create_c106b94c(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c106b94c(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakRef_EntityRegistry_((nint)handle);
     }
 
-    public static WeakRef_EntityRegistry_ Create_a2247688(global::Hosihikari.Bindings.Abi.SharedHandle? ptr)
+    public static WeakRef_EntityRegistry_? Create_a2247688(global::Hosihikari.Bindings.Abi.SharedHandle? ptr)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a2247688(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakRef_EntityRegistry_((nint)handle);
     }
 
-    public static WeakRef_EntityRegistry_ Create_da957b9c(global::Hosihikari.Bindings.Abi.SharedHandle? ptr)
+    public static WeakRef_EntityRegistry_? Create_da957b9c(global::Hosihikari.Bindings.Abi.SharedHandle? ptr)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_da957b9c(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakRef_EntityRegistry_((nint)handle);
     }
 
-    public static WeakRef_EntityRegistry_ Create_2156dfc2(global::Hosihikari.Bindings.Abi.SharedHandle? ptr)
+    public static WeakRef_EntityRegistry_? Create_2156dfc2(global::Hosihikari.Bindings.Abi.SharedHandle? ptr)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2156dfc2(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakRef_EntityRegistry_((nint)handle);

@@ -86,9 +86,10 @@ public sealed unsafe partial class CryptoOptions : global::System.IDisposable
     public bool operator_not_equal(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)NativeMethods.TablePtr->C4.hs_method_3711f42d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3711f42d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

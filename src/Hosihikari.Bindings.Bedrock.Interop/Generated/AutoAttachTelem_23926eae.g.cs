@@ -40,23 +40,23 @@ public sealed unsafe partial class AutoAttachTelem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static AutoAttachTelem Create()
+    public static AutoAttachTelem? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_885e8467();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutoAttachTelem((nint)handle);
     }
 
-    public static AutoAttachTelem Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger_Nested.AutoAttachTelem arg0)
+    public static AutoAttachTelem? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger_Nested.AutoAttachTelem arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_18167288((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutoAttachTelem((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class AutoAttachTelem : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_97c01e7a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger_Nested.AutoAttachTelem operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger_Nested.AutoAttachTelem arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger_Nested.AutoAttachTelem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger_Nested.AutoAttachTelem arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger_Nested.AutoAttachTelem((nint)NativeMethods.TablePtr->C3.hs_method_299afe08((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_299afe08((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger_Nested.AutoAttachTelem((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

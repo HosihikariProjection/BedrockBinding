@@ -40,12 +40,12 @@ public sealed unsafe partial class ClientVibrationComponent : global::System.IDi
         return __hs_handle;
     }
 
-    public static ClientVibrationComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientVibrationComponent arg0)
+    public static ClientVibrationComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientVibrationComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d97ec29a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClientVibrationComponent((nint)handle);

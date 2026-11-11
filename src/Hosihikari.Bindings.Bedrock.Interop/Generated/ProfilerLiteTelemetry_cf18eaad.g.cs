@@ -44,23 +44,23 @@ public sealed unsafe partial class ProfilerLiteTelemetry : global::System.IDispo
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ProfilerLiteTelemetry Create()
+    public static ProfilerLiteTelemetry? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7b531b12();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ProfilerLiteTelemetry((nint)handle);
     }
 
-    public static ProfilerLiteTelemetry Create(global::Hosihikari.Bindings.Bedrock.Interop.ProfilerLiteTelemetry arg0)
+    public static ProfilerLiteTelemetry? Create(global::Hosihikari.Bindings.Bedrock.Interop.ProfilerLiteTelemetry arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fa25bcb8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ProfilerLiteTelemetry((nint)handle);
@@ -144,9 +144,10 @@ public sealed unsafe partial class ProfilerLiteTelemetry : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C2.hs_get_f07a9cc8((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ProfilerLiteTelemetry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ProfilerLiteTelemetry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ProfilerLiteTelemetry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ProfilerLiteTelemetry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ProfilerLiteTelemetry((nint)NativeMethods.TablePtr->C2.hs_method_746111d7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_746111d7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ProfilerLiteTelemetry((nint)__hs_handle, false) : null;
     }
 
 

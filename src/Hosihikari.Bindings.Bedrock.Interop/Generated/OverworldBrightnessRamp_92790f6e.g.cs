@@ -46,12 +46,12 @@ public sealed unsafe partial class OverworldBrightnessRamp : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C2.hs_get_7a7dc069((void*)__hosihikari_shim_handle);
     }
 
-    public static OverworldBrightnessRamp Create(global::Hosihikari.Bindings.Bedrock.Interop.OverworldBrightnessRamp arg0)
+    public static OverworldBrightnessRamp? Create(global::Hosihikari.Bindings.Bedrock.Interop.OverworldBrightnessRamp arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c671d3b3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OverworldBrightnessRamp((nint)handle);

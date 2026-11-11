@@ -40,12 +40,12 @@ public sealed unsafe partial class AttributeDescription : global::System.IDispos
         return __hs_handle;
     }
 
-    public static AttributeDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeDescription arg0)
+    public static AttributeDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_bfaf0151((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AttributeDescription((nint)handle);

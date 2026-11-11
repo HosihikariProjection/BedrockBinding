@@ -58,12 +58,12 @@ public sealed unsafe partial class VillageManager : global::System.IDisposable
     public nint _getVillageByID(nint villageID) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VillageManager Create()
+    public static VillageManager? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_529bf1a2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VillageManager((nint)handle);
@@ -73,12 +73,12 @@ public sealed unsafe partial class VillageManager : global::System.IDisposable
     public static VillageManager Create(nint dimension) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VillageManager Create(global::Hosihikari.Bindings.Bedrock.Interop.VillageManager arg0)
+    public static VillageManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.VillageManager arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_7860319e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VillageManager((nint)handle);
@@ -223,9 +223,10 @@ public sealed unsafe partial class VillageManager : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_ed6691f4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.VillageManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VillageManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.VillageManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VillageManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.VillageManager((nint)NativeMethods.TablePtr->C4.hs_method_85127e18((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_85127e18((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VillageManager((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

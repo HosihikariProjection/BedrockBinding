@@ -40,20 +40,21 @@ public sealed unsafe partial class ExternalDataInterface : global::System.IDispo
         return __hs_handle;
     }
 
-    public static ExternalDataInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.ExternalDataInterface arg0)
+    public static ExternalDataInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.ExternalDataInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ff425abb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExternalDataInterface((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AdventureSettings getAdventureSettings()
+    public global::Hosihikari.Bindings.Bedrock.Interop.AdventureSettings? getAdventureSettings()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AdventureSettings((nint)NativeMethods.TablePtr->C1.hs_method_946c132b((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_946c132b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AdventureSettings((nint)__hs_handle, false) : null;
     }
 
     public int getDefaultGameType()

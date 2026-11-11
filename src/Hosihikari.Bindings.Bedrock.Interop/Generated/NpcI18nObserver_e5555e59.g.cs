@@ -62,23 +62,23 @@ public sealed unsafe partial class NpcI18nObserver : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NpcI18nObserver Create()
+    public static NpcI18nObserver? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_727f71bd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NpcI18nObserver((nint)handle);
     }
 
-    public static NpcI18nObserver Create(global::Hosihikari.Bindings.Bedrock.Interop.NpcI18nObserver arg0)
+    public static NpcI18nObserver? Create(global::Hosihikari.Bindings.Bedrock.Interop.NpcI18nObserver arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_406eceb7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NpcI18nObserver((nint)handle);
@@ -129,9 +129,10 @@ public sealed unsafe partial class NpcI18nObserver : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_e24a6ba5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NpcI18nObserver operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NpcI18nObserver arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NpcI18nObserver? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NpcI18nObserver arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NpcI18nObserver((nint)NativeMethods.TablePtr->C2.hs_method_9c76907c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9c76907c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NpcI18nObserver((nint)__hs_handle, false) : null;
     }
 
 

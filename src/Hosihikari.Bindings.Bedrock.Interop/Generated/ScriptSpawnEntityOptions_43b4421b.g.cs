@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptSpawnEntityOptions : global::System.IDi
         return __hs_handle;
     }
 
-    public static ScriptSpawnEntityOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptSpawnEntityOptions arg0)
+    public static ScriptSpawnEntityOptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptSpawnEntityOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3434192c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptSpawnEntityOptions((nint)handle);

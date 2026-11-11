@@ -59,9 +59,10 @@ public sealed unsafe partial class DoubleTag : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_9f4e510c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_10f57199((void*)__hosihikari_shim_handle, (void*)dis.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_10f57199((void*)__hosihikari_shim_handle, (void*)dis.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     public string _toString()
@@ -79,23 +80,23 @@ public sealed unsafe partial class DoubleTag : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_a5bdb266((void*)__hosihikari_shim_handle, (void*)dos.Handle);
     }
 
-    public static DoubleTag Create(global::Hosihikari.Bindings.Bedrock.Interop.DoubleTag arg0)
+    public static DoubleTag? Create(global::Hosihikari.Bindings.Bedrock.Interop.DoubleTag arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f809c52f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DoubleTag((nint)handle);
     }
 
-    public static DoubleTag Create(double value)
+    public static DoubleTag? Create(double value)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a5e6f4d0(value);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DoubleTag((nint)handle);
@@ -126,9 +127,10 @@ public sealed unsafe partial class DoubleTag : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_c57b7ba6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_73bd2676((void*)__hosihikari_shim_handle, (void*)dis.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_73bd2676((void*)__hosihikari_shim_handle, (void*)dis.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     public double operator_double()
@@ -136,9 +138,10 @@ public sealed unsafe partial class DoubleTag : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_adf0ecb3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DoubleTag operator_assign(double value)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DoubleTag? operator_assign(double value)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DoubleTag((nint)NativeMethods.TablePtr->C1.hs_method_13d84009((void*)__hosihikari_shim_handle, value), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_13d84009((void*)__hosihikari_shim_handle, value);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DoubleTag((nint)__hs_handle, false) : null;
     }
 
     public string toString()

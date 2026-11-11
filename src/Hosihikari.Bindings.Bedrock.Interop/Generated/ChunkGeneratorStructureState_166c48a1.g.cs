@@ -45,12 +45,12 @@ public sealed unsafe partial class ChunkGeneratorStructureState : global::System
         NativeMethods.TablePtr->C4.hs_method_28d9f3f7((void*)__hosihikari_shim_handle);
     }
 
-    public static ChunkGeneratorStructureState Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState arg0)
+    public static ChunkGeneratorStructureState? Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_7346b301((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkGeneratorStructureState((nint)handle);
@@ -60,9 +60,10 @@ public sealed unsafe partial class ChunkGeneratorStructureState : global::System
     public static nint createFlat(long levelSeed, nint biomeSource, nint structureOverrides) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::shared_ptr<const br::worldgen::StructureSet>' is not supported.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState createNormal(long levelSeed, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource, global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureSetRegistry allStructures)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState? createNormal(long levelSeed, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource, global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureSetRegistry allStructures)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState((nint)NativeMethods.TablePtr->C4.hs_method_eb982308(levelSeed, (void*)biomeSource.Handle, (void*)allStructures.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_eb982308(levelSeed, (void*)biomeSource.Handle, (void*)allStructures.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

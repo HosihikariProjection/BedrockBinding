@@ -40,23 +40,23 @@ public sealed unsafe partial class SaveResult : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static SaveResult Create()
+    public static SaveResult? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0a13486f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SaveResult((nint)handle);
     }
 
-    public static SaveResult Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.SaveResult arg0)
+    public static SaveResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.SaveResult arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a678d74e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SaveResult((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class SaveResult : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_92b7c1dc((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.SaveResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.SaveResult arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.SaveResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.SaveResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.SaveResult((nint)NativeMethods.TablePtr->C0.hs_method_b47e2c1e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b47e2c1e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.SaveResult((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

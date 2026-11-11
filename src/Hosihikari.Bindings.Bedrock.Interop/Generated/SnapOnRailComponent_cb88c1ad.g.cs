@@ -40,12 +40,12 @@ public sealed unsafe partial class SnapOnRailComponent : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static SnapOnRailComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapOnRailComponent arg0)
+    public static SnapOnRailComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapOnRailComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4a9b37be((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SnapOnRailComponent((nint)handle);

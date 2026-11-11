@@ -69,12 +69,12 @@ public sealed unsafe partial class SendShowStoreOfferCommand : global::System.ID
         set => NativeMethods.TablePtr->C3.hs_set_477310d1((void*)__hosihikari_shim_handle, value);
     }
 
-    public static SendShowStoreOfferCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.SendShowStoreOfferCommand arg0)
+    public static SendShowStoreOfferCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.SendShowStoreOfferCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_654da22f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SendShowStoreOfferCommand((nint)handle);

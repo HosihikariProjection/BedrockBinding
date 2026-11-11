@@ -44,23 +44,23 @@ public sealed unsafe partial class ScriptDebuggerSettings : global::System.IDisp
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptDebuggerSettings Create()
+    public static ScriptDebuggerSettings? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a501a15e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptDebuggerSettings((nint)handle);
     }
 
-    public static ScriptDebuggerSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings arg0)
+    public static ScriptDebuggerSettings? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d4cea215((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptDebuggerSettings((nint)handle);

@@ -80,12 +80,12 @@ public sealed unsafe partial class BlockSourceListener : global::System.IDisposa
         NativeMethods.TablePtr->C0.hs_method_b2e22233((void*)__hosihikari_shim_handle, (void*)source.Handle);
     }
 
-    public static BlockSourceListener Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSourceListener arg0)
+    public static BlockSourceListener? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSourceListener arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f691a159((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockSourceListener((nint)handle);

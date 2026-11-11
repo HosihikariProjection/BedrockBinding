@@ -91,12 +91,12 @@ public sealed unsafe partial class EatBlockGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EatBlockGoal Create()
+    public static EatBlockGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_97d87ea6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EatBlockGoal((nint)handle);
@@ -106,12 +106,12 @@ public sealed unsafe partial class EatBlockGoal : global::System.IDisposable
     public static EatBlockGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EatBlockGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.EatBlockGoal arg0)
+    public static EatBlockGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.EatBlockGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b7525cd1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EatBlockGoal((nint)handle);
@@ -183,9 +183,10 @@ public sealed unsafe partial class EatBlockGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_40b6c135((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EatBlockGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EatBlockGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EatBlockGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EatBlockGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EatBlockGoal((nint)NativeMethods.TablePtr->C1.hs_method_b8586ded((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b8586ded((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EatBlockGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

@@ -215,12 +215,12 @@ public sealed unsafe partial class StompEggGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StompEggGoal Create()
+    public static StompEggGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2fdbe850();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StompEggGoal((nint)handle);
@@ -230,12 +230,12 @@ public sealed unsafe partial class StompEggGoal : global::System.IDisposable
     public static StompEggGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StompEggGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.StompEggGoal arg0)
+    public static StompEggGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.StompEggGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d35c8749((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StompEggGoal((nint)handle);

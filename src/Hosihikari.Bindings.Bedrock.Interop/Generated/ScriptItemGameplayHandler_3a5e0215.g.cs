@@ -48,13 +48,15 @@ public sealed unsafe partial class ScriptItemGameplayHandler
     public nint _handleEvent_6d634278(nint itemEvent) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemUseEvent itemEvent)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemUseEvent itemEvent)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C3.hs_method_8303f1e8((void*)__hosihikari_shim_handle, (void*)itemEvent.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8303f1e8((void*)__hosihikari_shim_handle, (void*)itemEvent.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemUseOnEvent itemEvent)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemUseOnEvent itemEvent)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C3.hs_method_e10c06a4((void*)__hosihikari_shim_handle, (void*)itemEvent.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e10c06a4((void*)__hosihikari_shim_handle, (void*)itemEvent.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 }

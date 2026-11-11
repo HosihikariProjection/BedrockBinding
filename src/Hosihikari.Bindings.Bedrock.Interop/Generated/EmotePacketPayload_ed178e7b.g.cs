@@ -48,12 +48,12 @@ public sealed unsafe partial class EmotePacketPayload : global::System.IDisposab
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EmotePacketPayload Create()
+    public static EmotePacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1222e95a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EmotePacketPayload((nint)handle);
@@ -99,9 +99,10 @@ public sealed unsafe partial class EmotePacketPayload : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C1.hs_get_a4827cb6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EmotePacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EmotePacketPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EmotePacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EmotePacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EmotePacketPayload((nint)NativeMethods.TablePtr->C1.hs_method_d451d445((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d451d445((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EmotePacketPayload((nint)__hs_handle, false) : null;
     }
 
 

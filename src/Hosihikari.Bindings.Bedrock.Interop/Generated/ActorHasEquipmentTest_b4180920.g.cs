@@ -72,23 +72,23 @@ public sealed unsafe partial class ActorHasEquipmentTest : global::System.IDispo
     public bool _setup(nint definition, nint inputs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorHasEquipmentTest Create()
+    public static ActorHasEquipmentTest? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ada4a7b6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorHasEquipmentTest((nint)handle);
     }
 
-    public static ActorHasEquipmentTest Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorHasEquipmentTest arg0)
+    public static ActorHasEquipmentTest? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorHasEquipmentTest arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c656202a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorHasEquipmentTest((nint)handle);
@@ -104,14 +104,16 @@ public sealed unsafe partial class ActorHasEquipmentTest : global::System.IDispo
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _serializeDomain()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeDomain()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C0.hs_method_2e613f91((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2e613f91((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _serializeValue()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C0.hs_method_34980d6c((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_34980d6c((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
     public bool evaluate(nint context)
@@ -145,9 +147,10 @@ public sealed unsafe partial class ActorHasEquipmentTest : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_25cb27d3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHasEquipmentTest operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorHasEquipmentTest arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHasEquipmentTest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorHasEquipmentTest arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHasEquipmentTest((nint)NativeMethods.TablePtr->C0.hs_method_a63a0489((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a63a0489((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHasEquipmentTest((nint)__hs_handle, false) : null;
     }
 
     public bool setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)

@@ -48,23 +48,23 @@ public sealed unsafe partial class ScreenFlow : global::System.IDisposable
     public void PopulateEvent(nint @event, bool clear) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScreenFlow Create()
+    public static ScreenFlow? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d50a64a0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScreenFlow((nint)handle);
     }
 
-    public static ScreenFlow Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow arg0)
+    public static ScreenFlow? Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_86d04271((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScreenFlow((nint)handle);
@@ -110,9 +110,10 @@ public sealed unsafe partial class ScreenFlow : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_2c6d9f4b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow((nint)NativeMethods.TablePtr->C3.hs_method_f7ecf5ac((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f7ecf5ac((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

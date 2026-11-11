@@ -56,23 +56,23 @@ public sealed unsafe partial class AttributeBuff : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AttributeBuff Create()
+    public static AttributeBuff? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7085c17d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AttributeBuff((nint)handle);
     }
 
-    public static AttributeBuff Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeBuff arg0)
+    public static AttributeBuff? Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeBuff arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c86cbcdb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AttributeBuff((nint)handle);

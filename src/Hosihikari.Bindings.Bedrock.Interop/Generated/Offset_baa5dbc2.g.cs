@@ -47,31 +47,32 @@ public sealed unsafe partial class Offset : global::System.IDisposable
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
     }
 
-    public static Offset Create()
+    public static Offset? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4c99cdbb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Offset((nint)handle);
     }
 
-    public static Offset Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.NodeBase_Nested.Offset arg0)
+    public static Offset? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.NodeBase_Nested.Offset arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_894bf829((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Offset((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.NodeBase_Nested.Offset operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.NodeBase_Nested.Offset arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.NodeBase_Nested.Offset? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.NodeBase_Nested.Offset arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.NodeBase_Nested.Offset((nint)NativeMethods.TablePtr->C0.hs_method_83efcc01((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_83efcc01((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.NodeBase_Nested.Offset((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

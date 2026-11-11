@@ -52,12 +52,12 @@ public sealed unsafe partial class BoolOption : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BoolOption Create()
+    public static BoolOption? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_34ac6114();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BoolOption((nint)handle);

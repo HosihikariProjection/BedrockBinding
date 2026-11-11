@@ -49,23 +49,23 @@ public sealed unsafe partial class SetDisplayObjectivePacketPayload : global::Sy
         NativeMethods.TablePtr->C3.hs_method_86acdda6((void*)__hosihikari_shim_handle);
     }
 
-    public static SetDisplayObjectivePacketPayload Create()
+    public static SetDisplayObjectivePacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7617f1e9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetDisplayObjectivePacketPayload((nint)handle);
     }
 
-    public static SetDisplayObjectivePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SetDisplayObjectivePacketPayload arg0)
+    public static SetDisplayObjectivePacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.SetDisplayObjectivePacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3c507726((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetDisplayObjectivePacketPayload((nint)handle);

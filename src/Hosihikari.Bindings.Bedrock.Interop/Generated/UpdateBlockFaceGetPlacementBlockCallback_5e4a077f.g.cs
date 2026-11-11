@@ -48,12 +48,12 @@ public sealed unsafe partial class UpdateBlockFaceGetPlacementBlockCallback : gl
     public nint _getPlacementBlock(nint block, nint arg1, nint arg2, byte face, nint arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UpdateBlockFaceGetPlacementBlockCallback Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTrait.PlacementPosition_Nested.UpdateBlockFaceGetPlacementBlockCallback arg0)
+    public static UpdateBlockFaceGetPlacementBlockCallback? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTrait.PlacementPosition_Nested.UpdateBlockFaceGetPlacementBlockCallback arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_31be7778((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UpdateBlockFaceGetPlacementBlockCallback((nint)handle);

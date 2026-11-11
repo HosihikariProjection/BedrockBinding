@@ -44,23 +44,23 @@ public sealed unsafe partial class WorldSaveAndExitPackTelemetryData : global::S
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorldSaveAndExitPackTelemetryData Create()
+    public static WorldSaveAndExitPackTelemetryData? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_98242c45();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldSaveAndExitPackTelemetryData((nint)handle);
     }
 
-    public static WorldSaveAndExitPackTelemetryData Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldSaveAndExitPackTelemetryData arg0)
+    public static WorldSaveAndExitPackTelemetryData? Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldSaveAndExitPackTelemetryData arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_8623c799((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldSaveAndExitPackTelemetryData((nint)handle);
@@ -126,9 +126,10 @@ public sealed unsafe partial class WorldSaveAndExitPackTelemetryData : global::S
         get => (nint)NativeMethods.TablePtr->C4.hs_get_e4622603((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorldSaveAndExitPackTelemetryData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldSaveAndExitPackTelemetryData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorldSaveAndExitPackTelemetryData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldSaveAndExitPackTelemetryData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldSaveAndExitPackTelemetryData((nint)NativeMethods.TablePtr->C4.hs_method_731c0c21((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_731c0c21((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldSaveAndExitPackTelemetryData((nint)__hs_handle, false) : null;
     }
 
 

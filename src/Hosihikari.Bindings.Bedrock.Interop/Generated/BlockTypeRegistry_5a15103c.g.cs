@@ -52,9 +52,10 @@ public sealed unsafe partial class BlockTypeRegistry : global::System.IDisposabl
     public static BlockTypeRegistry Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.LookupByNameImplReturnType _lookupByNameImpl(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, int data, int resolve, bool logNotFound)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.LookupByNameImplReturnType? _lookupByNameImpl(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, int data, int resolve, bool logNotFound)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.LookupByNameImplReturnType((nint)NativeMethods.TablePtr->C0.hs_method_56276c75((void*)__hosihikari_shim_handle, (void*)name.Handle, data, resolve, logNotFound));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_56276c75((void*)__hosihikari_shim_handle, (void*)name.Handle, data, resolve, logNotFound);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.LookupByNameImplReturnType((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -78,23 +79,26 @@ public sealed unsafe partial class BlockTypeRegistry : global::System.IDisposabl
     public void finalizeBlockCustomComponentEvents(nint scriptManager) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry get()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry? get()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry((nint)NativeMethods.TablePtr->C0.hs_method_2f097c1e(), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2f097c1e();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString getBlockNameFromNameHash(ulong hash)
+    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getBlockNameFromNameHash(ulong hash)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C0.hs_method_d60831e5((void*)__hosihikari_shim_handle, hash), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d60831e5((void*)__hosihikari_shim_handle, hash);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getComplexAliasPostSplitBlockNames(nint oldName) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getDefaultBlockState(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, bool logNotFound)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getDefaultBlockState(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, bool logNotFound)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C0.hs_method_c4530951((void*)__hosihikari_shim_handle, (void*)name.Handle, logNotFound), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c4530951((void*)__hosihikari_shim_handle, (void*)name.Handle, logNotFound);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public bool isComplexAliasBlock(global::Hosihikari.Bindings.Bedrock.Interop.HashedString blockName)
@@ -154,9 +158,10 @@ public sealed unsafe partial class BlockTypeRegistry : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_b8c678c1((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Owner_BlockTypeRegistry_ mBlockTypeRegistry()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Owner_BlockTypeRegistry_? mBlockTypeRegistry()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Owner_BlockTypeRegistry_((nint)NativeMethods.TablePtr->C0.hs_method_7e1e575a(), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7e1e575a();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Owner_BlockTypeRegistry_((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

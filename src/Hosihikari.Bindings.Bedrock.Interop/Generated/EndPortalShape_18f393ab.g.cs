@@ -44,12 +44,12 @@ public sealed unsafe partial class EndPortalShape : global::System.IDisposable
     public nint _ctor(nint region, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EndPortalShape Create()
+    public static EndPortalShape? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_66fb8030();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EndPortalShape((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class EndPortalShape : global::System.IDisposable
     public static EndPortalShape Create(nint region, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EndPortalShape Create(global::Hosihikari.Bindings.Bedrock.Interop.EndPortalShape arg0)
+    public static EndPortalShape? Create(global::Hosihikari.Bindings.Bedrock.Interop.EndPortalShape arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b97e76c7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EndPortalShape((nint)handle);
@@ -122,9 +122,10 @@ public sealed unsafe partial class EndPortalShape : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_fb7ab657((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EndPortalShape operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EndPortalShape arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EndPortalShape? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EndPortalShape arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EndPortalShape((nint)NativeMethods.TablePtr->C1.hs_method_95938773((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_95938773((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EndPortalShape((nint)__hs_handle, false) : null;
     }
 
 

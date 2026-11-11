@@ -61,12 +61,12 @@ public sealed unsafe partial class ServerScriptManager : global::System.IDisposa
     public nint _onServerUpdateEnd(nint instance) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerScriptManager Create()
+    public static ServerScriptManager? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0747cdde();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerScriptManager((nint)handle);
@@ -76,12 +76,12 @@ public sealed unsafe partial class ServerScriptManager : global::System.IDisposa
     public static ServerScriptManager Create(nint settings, nint serverLevel, nint packSettingsCache, nint serverScheduler, nint commands, nint eventing, nint itemRegistry, nint server, nint registry, nint localProfilerControlBroker, nint asyncJoinRegistrar, nint diagnostics) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerScriptManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager arg0)
+    public static ServerScriptManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e3983870((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerScriptManager((nint)handle);
@@ -345,9 +345,10 @@ public sealed unsafe partial class ServerScriptManager : global::System.IDisposa
         return NativeMethods.TablePtr->C3.hs_method_8450a734((void*)__hosihikari_shim_handle, (void*)instance.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager((nint)NativeMethods.TablePtr->C3.hs_method_5e52db65((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5e52db65((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

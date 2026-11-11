@@ -44,12 +44,12 @@ public sealed unsafe partial class ExternalLinkSettings : global::System.IDispos
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExternalLinkSettings Create()
+    public static ExternalLinkSettings? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b5b154be();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExternalLinkSettings((nint)handle);
@@ -69,9 +69,10 @@ public sealed unsafe partial class ExternalLinkSettings : global::System.IDispos
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ExternalLinkSettings operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExternalLinkSettings arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ExternalLinkSettings? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExternalLinkSettings arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ExternalLinkSettings((nint)NativeMethods.TablePtr->C1.hs_method_05a3e263((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_05a3e263((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ExternalLinkSettings((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

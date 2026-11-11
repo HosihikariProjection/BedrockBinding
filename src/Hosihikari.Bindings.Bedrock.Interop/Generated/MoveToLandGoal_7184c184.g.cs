@@ -192,12 +192,12 @@ public sealed unsafe partial class MoveToLandGoal : global::System.IDisposable
     public bool _isValidTarget(nint region, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveToLandGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveToLandGoal arg0)
+    public static MoveToLandGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveToLandGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f5152bf2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveToLandGoal((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class DecorationBlockDescriptor : global::System.ID
         return __hs_handle;
     }
 
-    public static DecorationBlockDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.AttachableDecoration_Nested.DecorationBlockDescriptor arg0)
+    public static DecorationBlockDescriptor? Create(global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.AttachableDecoration_Nested.DecorationBlockDescriptor arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b1fefa73((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DecorationBlockDescriptor((nint)handle);

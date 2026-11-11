@@ -190,12 +190,12 @@ public sealed unsafe partial class MeleeAttackGoal : global::System.IDisposable
     public static nint MIN_HIT_THROUGH_WALL_FIX_VERSION() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MeleeAttackGoal Create()
+    public static MeleeAttackGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d8ba95d4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MeleeAttackGoal((nint)handle);
@@ -205,12 +205,12 @@ public sealed unsafe partial class MeleeAttackGoal : global::System.IDisposable
     public static MeleeAttackGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MeleeAttackGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackGoal arg0)
+    public static MeleeAttackGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_06e83dce((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MeleeAttackGoal((nint)handle);

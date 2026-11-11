@@ -46,12 +46,12 @@ public sealed unsafe partial class WorkerPool : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_353c9653((void*)__hosihikari_shim_handle);
     }
 
-    public static WorkerPool Create(global::Hosihikari.Bindings.Bedrock.Interop.WorkerPool arg0)
+    public static WorkerPool? Create(global::Hosihikari.Bindings.Bedrock.Interop.WorkerPool arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0cb2265d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorkerPool((nint)handle);

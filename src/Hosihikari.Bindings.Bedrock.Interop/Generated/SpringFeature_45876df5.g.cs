@@ -68,23 +68,23 @@ public sealed unsafe partial class SpringFeature : global::System.IDisposable
     public bool _place(nint region, nint pos, nint random) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpringFeature Create()
+    public static SpringFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_53220b11();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpringFeature((nint)handle);
     }
 
-    public static SpringFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.SpringFeature arg0)
+    public static SpringFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpringFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_57a39b36((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpringFeature((nint)handle);
@@ -100,9 +100,10 @@ public sealed unsafe partial class SpringFeature : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_5fa54b17((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SpringFeature operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpringFeature arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SpringFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpringFeature arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpringFeature((nint)NativeMethods.TablePtr->C3.hs_method_3134e879((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3134e879((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SpringFeature((nint)__hs_handle, false) : null;
     }
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)

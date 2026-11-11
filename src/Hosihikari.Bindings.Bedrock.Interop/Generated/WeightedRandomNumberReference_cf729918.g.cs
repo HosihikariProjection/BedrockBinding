@@ -40,12 +40,12 @@ public sealed unsafe partial class WeightedRandomNumberReference : global::Syste
         return __hs_handle;
     }
 
-    public static WeightedRandomNumberReference Create(global::Hosihikari.Bindings.Bedrock.Interop.GrowingPlantFeature_Nested.WeightedRandomNumberReference arg0)
+    public static WeightedRandomNumberReference? Create(global::Hosihikari.Bindings.Bedrock.Interop.GrowingPlantFeature_Nested.WeightedRandomNumberReference arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_cddd9de0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeightedRandomNumberReference((nint)handle);

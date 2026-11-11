@@ -1599,12 +1599,12 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_87a159ab((void*)__hosihikari_shim_handle, (void*)pos.Handle, shouldStopRiding, cause, sourceEntityType, keepVelocity);
     }
 
-    public static SimulatedPlayer Create()
+    public static SimulatedPlayer? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0a26ea3c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimulatedPlayer((nint)handle);
@@ -1614,12 +1614,12 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
     public static SimulatedPlayer Create(nint level, nint packetSender, nint network, nint clientCacheMirror, nint playerGameType, nint owner, nint subid, nint playerLoadedCallback, nint uuid, nint deviceId, nint authType, nint authInfo, int maxChunkRadius, bool enableItemStackNetManager, nint entityContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SimulatedPlayer Create(global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer arg0)
+    public static SimulatedPlayer? Create(global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_33d12e23((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimulatedPlayer((nint)handle);
@@ -1725,9 +1725,10 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings getMovementSettings()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings? getMovementSettings()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings((nint)NativeMethods.TablePtr->C3.hs_method_22f85abe((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_22f85abe((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings((nint)__hs_handle, false) : null;
     }
 
     public string getXuid()
@@ -1934,14 +1935,16 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_eb37cdce((void*)__hosihikari_shim_handle, (void*)position.Handle, speed, faceTarget);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult simulateNavigateToEntity(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, float speed)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult? simulateNavigateToEntity(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, float speed)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult((nint)NativeMethods.TablePtr->C3.hs_method_0ba1f22d((void*)__hosihikari_shim_handle, (void*)actor.Handle, speed));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0ba1f22d((void*)__hosihikari_shim_handle, (void*)actor.Handle, speed);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult simulateNavigateToLocation(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position, float speed)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult? simulateNavigateToLocation(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position, float speed)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult((nint)NativeMethods.TablePtr->C3.hs_method_2944beac((void*)__hosihikari_shim_handle, (void*)position.Handle, speed));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2944beac((void*)__hosihikari_shim_handle, (void*)position.Handle, speed);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult((nint)__hs_handle) : null;
     }
 
     public void simulateNavigateToLocations(global::Hosihikari.Bindings.Bedrock.Interop.Vec3[] positions, float speed)

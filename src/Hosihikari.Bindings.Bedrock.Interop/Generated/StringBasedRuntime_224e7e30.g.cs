@@ -44,23 +44,24 @@ public sealed unsafe partial class StringBasedRuntime : global::System.IDisposab
     public nint _run(nint contextId, nint payload, nint privilege) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StringBasedRuntime Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringBasedRuntime arg0)
+    public static StringBasedRuntime? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringBasedRuntime arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6df50c9c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StringBasedRuntime((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny run(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IPayload? payload, byte? privilege)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny? run(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IPayload? payload, byte? privilege)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)NativeMethods.TablePtr->C3.hs_method_afc1088c((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)(payload?.Handle ?? 0), privilege ?? default(byte), privilege.HasValue));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_afc1088c((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)(payload?.Handle ?? 0), privilege ?? default(byte), privilege.HasValue);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny runString(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, string scriptName, string scriptData, byte? privilege)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny? runString(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, string scriptName, string scriptData, byte? privilege)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(scriptName);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -88,7 +89,8 @@ public sealed unsafe partial class StringBasedRuntime : global::System.IDisposab
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)NativeMethods.TablePtr->C3.hs_method_b9040ab8((void*)__hosihikari_shim_handle, (void*)contextId.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, privilege ?? default(byte), privilege.HasValue));
+                var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b9040ab8((void*)__hosihikari_shim_handle, (void*)contextId.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, privilege ?? default(byte), privilege.HasValue);
+                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)__hs_handle) : null;
             }
         }
     }

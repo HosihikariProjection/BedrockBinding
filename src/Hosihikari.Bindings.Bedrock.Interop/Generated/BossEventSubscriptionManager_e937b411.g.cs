@@ -46,12 +46,12 @@ public sealed unsafe partial class BossEventSubscriptionManager : global::System
         get => (nint)NativeMethods.TablePtr->C0.hs_get_84c60fc2((void*)__hosihikari_shim_handle);
     }
 
-    public static BossEventSubscriptionManager Create(global::Hosihikari.Bindings.Bedrock.Interop.BossEventSubscriptionManager arg0)
+    public static BossEventSubscriptionManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.BossEventSubscriptionManager arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2e446964((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BossEventSubscriptionManager((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptPlayerGameModeChangeAfterEvent : global
         return __hs_handle;
     }
 
-    public static ScriptPlayerGameModeChangeAfterEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerGameModeChangeAfterEvent arg0)
+    public static ScriptPlayerGameModeChangeAfterEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerGameModeChangeAfterEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e1b2f489((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPlayerGameModeChangeAfterEvent((nint)handle);

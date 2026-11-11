@@ -40,23 +40,23 @@ public sealed unsafe partial class TimeAndValue2 : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TimeAndValue2 Create()
+    public static TimeAndValue2? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_422ab487();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TimeAndValue2((nint)handle);
     }
 
-    public static TimeAndValue2 Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BPSTracker_Nested.TimeAndValue2 arg0)
+    public static TimeAndValue2? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BPSTracker_Nested.TimeAndValue2 arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5d71a3eb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TimeAndValue2((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class TimeAndValue2 : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d6285161((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BPSTracker_Nested.TimeAndValue2 operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BPSTracker_Nested.TimeAndValue2 arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BPSTracker_Nested.TimeAndValue2? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BPSTracker_Nested.TimeAndValue2 arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BPSTracker_Nested.TimeAndValue2((nint)NativeMethods.TablePtr->C2.hs_method_30baa7b3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_30baa7b3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BPSTracker_Nested.TimeAndValue2((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

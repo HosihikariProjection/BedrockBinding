@@ -86,23 +86,23 @@ public sealed unsafe partial class GuardianAttackGoal : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GuardianAttackGoal Create()
+    public static GuardianAttackGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8d62446d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GuardianAttackGoal((nint)handle);
     }
 
-    public static GuardianAttackGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.GuardianAttackGoal arg0)
+    public static GuardianAttackGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.GuardianAttackGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7cf76bbc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GuardianAttackGoal((nint)handle);
@@ -198,9 +198,10 @@ public sealed unsafe partial class GuardianAttackGoal : global::System.IDisposab
         set => NativeMethods.TablePtr->C1.hs_set_641d39c7((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GuardianAttackGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GuardianAttackGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GuardianAttackGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GuardianAttackGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GuardianAttackGoal((nint)NativeMethods.TablePtr->C1.hs_method_a7015fb2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a7015fb2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GuardianAttackGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

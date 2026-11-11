@@ -80,12 +80,12 @@ public sealed unsafe partial class ItemStackNetManagerBase : global::System.IDis
     public bool _retainSetItemStackNetIdVariant() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemStackNetManagerBase Create()
+    public static ItemStackNetManagerBase? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e4ba3812();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackNetManagerBase((nint)handle);
@@ -95,12 +95,12 @@ public sealed unsafe partial class ItemStackNetManagerBase : global::System.IDis
     public static ItemStackNetManagerBase Create(nint player, bool isClientSide, bool isEnabled) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemStackNetManagerBase Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerBase arg0)
+    public static ItemStackNetManagerBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerBase arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b87dd3ae((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackNetManagerBase((nint)handle);
@@ -147,9 +147,10 @@ public sealed unsafe partial class ItemStackNetManagerBase : global::System.IDis
     public nint getRequestId() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'TypedClientNetId<ItemStackRequestIdTag, int>' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext getScreenContext()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext? getScreenContext()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C1.hs_method_9629ceb0((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9629ceb0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SparseContainer? initOpenContainer(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName openContainerId, global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef containerWeakRef)
@@ -225,9 +226,10 @@ public sealed unsafe partial class ItemStackNetManagerBase : global::System.IDis
         NativeMethods.TablePtr->C1.hs_method_6c2608f2((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerBase operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerBase arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerBase arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerBase((nint)NativeMethods.TablePtr->C1.hs_method_0c9c251a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0c9c251a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerBase((nint)__hs_handle, false) : null;
     }
 
     public bool retainSetItemStackNetIdVariant()

@@ -44,12 +44,12 @@ public sealed unsafe partial class FastDispatchPublisherBase_MultiThreaded : glo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FastDispatchPublisherBase_MultiThreaded Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail.FastDispatchPublisherBase_MultiThreaded arg0)
+    public static FastDispatchPublisherBase_MultiThreaded? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail.FastDispatchPublisherBase_MultiThreaded arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e9868159((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FastDispatchPublisherBase_MultiThreaded((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class CCRakNetSlidingWindow : global::System.IDispo
         return __hs_handle;
     }
 
-    public static CCRakNetSlidingWindow Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.CCRakNetSlidingWindow arg0)
+    public static CCRakNetSlidingWindow? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.CCRakNetSlidingWindow arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_178cba2a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CCRakNetSlidingWindow((nint)handle);

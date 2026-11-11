@@ -48,23 +48,23 @@ public sealed unsafe partial class EntityRegistry : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EntityRegistry Create()
+    public static EntityRegistry? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e8738377();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityRegistry((nint)handle);
     }
 
-    public static EntityRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry arg0)
+    public static EntityRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d254e07a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityRegistry((nint)handle);

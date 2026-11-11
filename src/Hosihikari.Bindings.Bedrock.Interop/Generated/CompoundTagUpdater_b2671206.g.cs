@@ -40,12 +40,12 @@ public sealed unsafe partial class CompoundTagUpdater : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static CompoundTagUpdater Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdater arg0)
+    public static CompoundTagUpdater? Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdater arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f2cc2bd1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CompoundTagUpdater((nint)handle);

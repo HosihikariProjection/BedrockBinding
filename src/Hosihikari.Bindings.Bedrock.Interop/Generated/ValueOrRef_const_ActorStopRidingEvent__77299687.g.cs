@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ActorStopRidingEvent_ : glob
     public static ValueOrRef_const_ActorStopRidingEvent_ Create_97365d36(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ActorStopRidingEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorStopRidingEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorStopRidingEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorStopRidingEvent((nint)NativeMethods.TablePtr->C1.hs_method_91bd0329((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_91bd0329((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorStopRidingEvent((nint)__hs_handle, false) : null;
     }
 
 

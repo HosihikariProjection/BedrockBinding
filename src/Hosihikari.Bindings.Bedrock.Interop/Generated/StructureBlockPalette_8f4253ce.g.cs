@@ -44,12 +44,12 @@ public sealed unsafe partial class StructureBlockPalette : global::System.IDispo
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StructureBlockPalette Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette arg0)
+    public static StructureBlockPalette? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3567ad66((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureBlockPalette((nint)handle);

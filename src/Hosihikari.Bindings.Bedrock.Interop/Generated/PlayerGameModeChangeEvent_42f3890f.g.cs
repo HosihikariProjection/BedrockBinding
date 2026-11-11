@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerGameModeChangeEvent : global::System.ID
         return __hs_handle;
     }
 
-    public static PlayerGameModeChangeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameModeChangeEvent arg0)
+    public static PlayerGameModeChangeEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameModeChangeEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_08f3cb85((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerGameModeChangeEvent((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class ThreadSpecificData : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static ThreadSpecificData Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLog_Nested.ThreadSpecificData arg0)
+    public static ThreadSpecificData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLog_Nested.ThreadSpecificData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_22059f89((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ThreadSpecificData((nint)handle);

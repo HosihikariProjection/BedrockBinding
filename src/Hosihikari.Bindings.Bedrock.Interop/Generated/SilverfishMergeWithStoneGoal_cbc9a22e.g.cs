@@ -126,23 +126,23 @@ public sealed unsafe partial class SilverfishMergeWithStoneGoal : global::System
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SilverfishMergeWithStoneGoal Create()
+    public static SilverfishMergeWithStoneGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e7e01540();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SilverfishMergeWithStoneGoal((nint)handle);
     }
 
-    public static SilverfishMergeWithStoneGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SilverfishMergeWithStoneGoal arg0)
+    public static SilverfishMergeWithStoneGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.SilverfishMergeWithStoneGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_876bf341((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SilverfishMergeWithStoneGoal((nint)handle);
@@ -196,9 +196,10 @@ public sealed unsafe partial class SilverfishMergeWithStoneGoal : global::System
         get => (nint)NativeMethods.TablePtr->C3.hs_get_c8b5b6cc((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SilverfishMergeWithStoneGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SilverfishMergeWithStoneGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SilverfishMergeWithStoneGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SilverfishMergeWithStoneGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SilverfishMergeWithStoneGoal((nint)NativeMethods.TablePtr->C3.hs_method_c2651965((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c2651965((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SilverfishMergeWithStoneGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

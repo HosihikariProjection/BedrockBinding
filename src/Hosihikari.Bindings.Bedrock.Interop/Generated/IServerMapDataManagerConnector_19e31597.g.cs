@@ -40,12 +40,12 @@ public sealed unsafe partial class IServerMapDataManagerConnector : global::Syst
         return __hs_handle;
     }
 
-    public static IServerMapDataManagerConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.IServerMapDataManagerConnector arg0)
+    public static IServerMapDataManagerConnector? Create(global::Hosihikari.Bindings.Bedrock.Interop.IServerMapDataManagerConnector arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_10236be5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IServerMapDataManagerConnector((nint)handle);

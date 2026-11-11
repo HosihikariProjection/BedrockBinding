@@ -60,23 +60,23 @@ public sealed unsafe partial class FastWriter : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public static FastWriter Create()
+    public static FastWriter? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_17779024();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FastWriter((nint)handle);
     }
 
-    public static FastWriter Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.FastWriter arg0)
+    public static FastWriter? Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.FastWriter arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ad49e772((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FastWriter((nint)handle);

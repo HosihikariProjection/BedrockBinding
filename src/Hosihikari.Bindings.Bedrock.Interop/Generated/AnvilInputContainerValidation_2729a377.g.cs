@@ -44,12 +44,12 @@ public sealed unsafe partial class AnvilInputContainerValidation : global::Syste
     public int _getContainerOffset(nint screenContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AnvilInputContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.AnvilInputContainerValidation arg0)
+    public static AnvilInputContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.AnvilInputContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_08756dea((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AnvilInputContainerValidation((nint)handle);

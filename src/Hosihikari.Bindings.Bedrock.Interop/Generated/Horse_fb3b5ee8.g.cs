@@ -667,12 +667,12 @@ public sealed unsafe partial class Horse : global::System.IDisposable
     public bool _tameToPlayer(nint player, bool tamingParticles) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Horse Create()
+    public static Horse? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_df1fd355();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Horse((nint)handle);
@@ -682,9 +682,10 @@ public sealed unsafe partial class Horse : global::System.IDisposable
     public static Horse Create(nint definitions, nint definitionName, nint entityContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C1.hs_method_12a02085((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_12a02085((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -706,18 +707,20 @@ public sealed unsafe partial class Horse : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_c9b68111((void*)__hosihikari_shim_handle, itemId);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getControllingPlayer()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getControllingPlayer()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C1.hs_method_0fc144e1((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0fc144e1((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint getInterpolatedRidingOffset(nint renderRotationComponent, nint standAnimationComponent, float alpha) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getInterpolatedRidingOffset(float a, int arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getInterpolatedRidingOffset(float a, int arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C1.hs_method_f5d8c672((void*)__hosihikari_shim_handle, a, arg1));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f5d8c672((void*)__hosihikari_shim_handle, a, arg1);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public float getShadowRadius()

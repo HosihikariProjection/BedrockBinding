@@ -44,12 +44,12 @@ public sealed unsafe partial class ScriptPackPermissions : global::System.IDispo
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptPackPermissions Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPackPermissions arg0)
+    public static ScriptPackPermissions? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPackPermissions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_bae9c255((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPackPermissions((nint)handle);

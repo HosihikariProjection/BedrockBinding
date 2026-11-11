@@ -40,23 +40,23 @@ public sealed unsafe partial class BlockSet : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static BlockSet Create()
+    public static BlockSet? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_67274ce4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockSet((nint)handle);
     }
 
-    public static BlockSet Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSet arg0)
+    public static BlockSet? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSet arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c60adb8d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockSet((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class BlockSet : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_7def6f46((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSet operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockSet arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSet? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockSet arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSet((nint)NativeMethods.TablePtr->C0.hs_method_66866876((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_66866876((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSet((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

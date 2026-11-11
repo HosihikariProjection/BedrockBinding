@@ -419,9 +419,10 @@ public sealed unsafe partial class GravelBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_0dc38b61((void*)__hosihikari_shim_handle, arg0) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getDustColor(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getDustColor(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C1.hs_method_944dbaed((void*)__hosihikari_shim_handle, (void*)block.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_944dbaed((void*)__hosihikari_shim_handle, (void*)block.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public string getDustParticleName(global::Hosihikari.Bindings.Bedrock.Interop.Block block)

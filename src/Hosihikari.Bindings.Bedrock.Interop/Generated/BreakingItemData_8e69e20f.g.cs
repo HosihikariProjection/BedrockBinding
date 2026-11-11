@@ -40,23 +40,23 @@ public sealed unsafe partial class BreakingItemData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static BreakingItemData Create()
+    public static BreakingItemData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fd4c5480();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BreakingItemData((nint)handle);
     }
 
-    public static BreakingItemData Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.BreakingItemData arg0)
+    public static BreakingItemData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.BreakingItemData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_172cc944((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BreakingItemData((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class BreakingItemData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_71904cda((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.BreakingItemData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.BreakingItemData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.BreakingItemData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.BreakingItemData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.BreakingItemData((nint)NativeMethods.TablePtr->C2.hs_method_4315c896((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4315c896((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.BreakingItemData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

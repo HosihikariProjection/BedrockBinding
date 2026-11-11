@@ -56,12 +56,12 @@ public sealed unsafe partial class BaseConnectionRequest : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BaseConnectionRequest Create()
+    public static BaseConnectionRequest? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ff0045a9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseConnectionRequest((nint)handle);
@@ -193,9 +193,10 @@ public sealed unsafe partial class BaseConnectionRequest : global::System.IDispo
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getSkinColor()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getSkinColor()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C0.hs_method_a2be0990((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a2be0990((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public byte[] getSkinData()
@@ -215,9 +216,10 @@ public sealed unsafe partial class BaseConnectionRequest : global::System.IDispo
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion getSkinGeometryMinEngineVersion()
+    public global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion? getSkinGeometryMinEngineVersion()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion((nint)NativeMethods.TablePtr->C0.hs_method_e68141cc((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e68141cc((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion((nint)__hs_handle) : null;
     }
 
     public string getSkinId()
@@ -299,9 +301,10 @@ public sealed unsafe partial class BaseConnectionRequest : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_b9dfc627((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BaseConnectionRequest operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BaseConnectionRequest arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BaseConnectionRequest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BaseConnectionRequest arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseConnectionRequest((nint)NativeMethods.TablePtr->C0.hs_method_168b18b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_168b18b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseConnectionRequest((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

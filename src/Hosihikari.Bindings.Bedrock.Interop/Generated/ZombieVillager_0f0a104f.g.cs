@@ -748,12 +748,12 @@ public sealed unsafe partial class ZombieVillager : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ZombieVillager Create()
+    public static ZombieVillager? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f84c79a0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ZombieVillager((nint)handle);

@@ -1652,12 +1652,12 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
     public bool _swing(nint swingSource, nint handSlot) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerPlayer Create()
+    public static ServerPlayer? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0404ac2d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerPlayer((nint)handle);
@@ -1667,12 +1667,12 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
     public static ServerPlayer Create(nint level, nint packetSender, nint network, nint clientCacheMirror, nint playerGameType, bool isHostingPlayer, nint owner, nint subid, nint onPlayerLoadedCallback, nint uuid, nint deviceId, nint authType, nint authInfo, int maxChunkRadius, bool enableItemStackNetManager, nint entityContext, nint platformType, nint inputMode, nint clientOptions) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerPlayer Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer arg0)
+    public static ServerPlayer? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_dc65a030((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerPlayer((nint)handle);
@@ -1985,14 +1985,16 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_82f2ee4b((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getControllingPlayer()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getControllingPlayer()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C3.hs_method_a22509f4((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a22509f4((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString getCurrentStructureFeature()
+    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getCurrentStructureFeature()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C3.hs_method_cf7db217((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cf7db217((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle) : null;
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getEditorPlayer()
@@ -2019,9 +2021,10 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventCoordinator getPlayerEventCoordinator()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventCoordinator? getPlayerEventCoordinator()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventCoordinator((nint)NativeMethods.TablePtr->C3.hs_method_1678f14b((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1678f14b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventCoordinator((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -2334,9 +2337,10 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
     public nint openUnmanagedContainer(nint containerType, nint owner) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer((nint)NativeMethods.TablePtr->C3.hs_method_a3f27031((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a3f27031((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

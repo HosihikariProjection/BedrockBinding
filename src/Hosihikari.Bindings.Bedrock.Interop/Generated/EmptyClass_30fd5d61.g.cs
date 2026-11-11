@@ -40,23 +40,23 @@ public sealed unsafe partial class EmptyClass : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static EmptyClass Create()
+    public static EmptyClass? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6a095946();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EmptyClass((nint)handle);
     }
 
-    public static EmptyClass Create(global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.EmptyClass arg0)
+    public static EmptyClass? Create(global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.EmptyClass arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b07d1457((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EmptyClass((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class EmptyClass : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_188f91b7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.EmptyClass operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.EmptyClass arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.EmptyClass? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.EmptyClass arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.EmptyClass((nint)NativeMethods.TablePtr->C2.hs_method_5b436184((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5b436184((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.EmptyClass((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

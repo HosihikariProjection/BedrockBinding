@@ -45,9 +45,10 @@ public sealed unsafe partial class StringByteInput : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_f13cb1b4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _readBytesResult(nint data, ulong bytes)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _readBytesResult(nint data, ulong bytes)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_57713712((void*)__hosihikari_shim_handle, (void*)data, bytes));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_57713712((void*)__hosihikari_shim_handle, (void*)data, bytes);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -58,7 +59,7 @@ public sealed unsafe partial class StringByteInput : global::System.IDisposable
     public static StringByteInput Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the class stores borrowed strings but the constructor has no string parameter.");
 
-    public static StringByteInput Create(string sv, ulong offset)
+    public static StringByteInput? Create(string sv, ulong offset)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(sv);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -76,7 +77,7 @@ public sealed unsafe partial class StringByteInput : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C3.hs_create_d3d076ec(__hs_stringData0, (nuint)__hs_stringByteCount0, offset);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new StringByteInput((nint)handle);
@@ -100,9 +101,10 @@ public sealed unsafe partial class StringByteInput : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_d7f0e456((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ readBytesResult(nint data, ulong bytes)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? readBytesResult(nint data, ulong bytes)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_abedd66e((void*)__hosihikari_shim_handle, (void*)data, bytes));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_abedd66e((void*)__hosihikari_shim_handle, (void*)data, bytes);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
 

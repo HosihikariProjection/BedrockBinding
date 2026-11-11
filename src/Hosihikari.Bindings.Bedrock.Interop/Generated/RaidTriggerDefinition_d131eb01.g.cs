@@ -44,23 +44,23 @@ public sealed unsafe partial class RaidTriggerDefinition : global::System.IDispo
     public static nint JSONUTIL_DROP_UNRECOGNIZED_FIELDS_VERSION() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RaidTriggerDefinition Create()
+    public static RaidTriggerDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ff0897ef();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RaidTriggerDefinition((nint)handle);
     }
 
-    public static RaidTriggerDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.RaidTriggerDefinition arg0)
+    public static RaidTriggerDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.RaidTriggerDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7d6fc5d6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RaidTriggerDefinition((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class RaidTriggerDefinition : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C2.hs_get_1eac86ab((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RaidTriggerDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RaidTriggerDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RaidTriggerDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RaidTriggerDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RaidTriggerDefinition((nint)NativeMethods.TablePtr->C2.hs_method_ac10d143((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ac10d143((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RaidTriggerDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

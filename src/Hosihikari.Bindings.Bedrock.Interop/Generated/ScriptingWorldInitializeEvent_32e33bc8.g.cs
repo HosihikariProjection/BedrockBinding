@@ -40,23 +40,23 @@ public sealed unsafe partial class ScriptingWorldInitializeEvent : global::Syste
         return __hs_handle;
     }
 
-    public static ScriptingWorldInitializeEvent Create()
+    public static ScriptingWorldInitializeEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e5498414();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptingWorldInitializeEvent((nint)handle);
     }
 
-    public static ScriptingWorldInitializeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptingWorldInitializeEvent arg0)
+    public static ScriptingWorldInitializeEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptingWorldInitializeEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_674d2ec6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptingWorldInitializeEvent((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class ScriptingWorldInitializeEvent : global::Syste
         get => (nint)NativeMethods.TablePtr->C3.hs_get_55dd9166((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptingWorldInitializeEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptingWorldInitializeEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptingWorldInitializeEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptingWorldInitializeEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptingWorldInitializeEvent((nint)NativeMethods.TablePtr->C3.hs_method_fd7587d6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fd7587d6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptingWorldInitializeEvent((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -88,23 +88,23 @@ public sealed unsafe partial class ComplexAliasDescriptor : global::System.IDisp
     public nint _toMap() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ComplexAliasDescriptor Create()
+    public static ComplexAliasDescriptor? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8e0ed52e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComplexAliasDescriptor((nint)handle);
     }
 
-    public static ComplexAliasDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.ComplexAliasDescriptor arg0)
+    public static ComplexAliasDescriptor? Create(global::Hosihikari.Bindings.Bedrock.Interop.ComplexAliasDescriptor arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3c313c99((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComplexAliasDescriptor((nint)handle);
@@ -133,9 +133,10 @@ public sealed unsafe partial class ComplexAliasDescriptor : global::System.IDisp
         return NativeMethods.TablePtr->C0.hs_method_9d26c201((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry getItem()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry? getItem()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry((nint)NativeMethods.TablePtr->C0.hs_method_e49c2bd5((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e49c2bd5((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry((nint)__hs_handle) : null;
     }
 
     public byte getType()

@@ -45,12 +45,12 @@ public sealed unsafe partial class PlayerInteractWithBlockAfterEvent : global::S
         NativeMethods.TablePtr->C2.hs_method_7fab1b01((void*)__hosihikari_shim_handle);
     }
 
-    public static PlayerInteractWithBlockAfterEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerInteractWithBlockAfterEvent arg0)
+    public static PlayerInteractWithBlockAfterEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerInteractWithBlockAfterEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_32761df0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerInteractWithBlockAfterEvent((nint)handle);

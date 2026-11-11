@@ -40,12 +40,12 @@ public sealed unsafe partial class IGameplayUserManagerConnector : global::Syste
         return __hs_handle;
     }
 
-    public static IGameplayUserManagerConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.IGameplayUserManagerConnector arg0)
+    public static IGameplayUserManagerConnector? Create(global::Hosihikari.Bindings.Bedrock.Interop.IGameplayUserManagerConnector arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ff697be9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IGameplayUserManagerConnector((nint)handle);

@@ -73,12 +73,12 @@ public sealed unsafe partial class XPCommand : global::System.IDisposable
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static XPCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.XPCommand arg0)
+    public static XPCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.XPCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b2685e9b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new XPCommand((nint)handle);

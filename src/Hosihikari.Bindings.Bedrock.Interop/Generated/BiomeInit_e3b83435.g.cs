@@ -44,12 +44,12 @@ public sealed unsafe partial class BiomeInit : global::System.IDisposable
     public nint _ctor(nint registry, nint defaultOceanBiome, nint fallbackBiome, nint generator) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BiomeInit Create()
+    public static BiomeInit? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e15fc015();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BiomeInit((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class BiomeInit : global::System.IDisposable
     public static BiomeInit Create(nint registry, nint defaultOceanBiome, nint fallbackBiome, nint generator) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BiomeInit Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.BiomeInit arg0)
+    public static BiomeInit? Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.BiomeInit arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c8c4379d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BiomeInit((nint)handle);

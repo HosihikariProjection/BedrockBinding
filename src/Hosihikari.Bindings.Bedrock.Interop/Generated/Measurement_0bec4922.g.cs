@@ -40,23 +40,23 @@ public sealed unsafe partial class Measurement : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Measurement Create()
+    public static Measurement? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f9e0cc44();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Measurement((nint)handle);
     }
 
-    public static Measurement Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement arg0)
+    public static Measurement? Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2a270fe3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Measurement((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class Measurement : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_9731660f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement((nint)NativeMethods.TablePtr->C3.hs_method_494ac3de((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_494ac3de((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

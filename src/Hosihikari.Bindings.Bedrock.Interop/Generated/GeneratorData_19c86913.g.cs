@@ -40,23 +40,23 @@ public sealed unsafe partial class GeneratorData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static GeneratorData Create()
+    public static GeneratorData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_81f74c0b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GeneratorData((nint)handle);
     }
 
-    public static GeneratorData Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.GeneratorData arg0)
+    public static GeneratorData? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.GeneratorData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7cec7c85((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GeneratorData((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class GeneratorData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_71cf66b2((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.GeneratorData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.GeneratorData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.GeneratorData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.GeneratorData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.GeneratorData((nint)NativeMethods.TablePtr->C3.hs_method_a8160e08((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a8160e08((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.GeneratorData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

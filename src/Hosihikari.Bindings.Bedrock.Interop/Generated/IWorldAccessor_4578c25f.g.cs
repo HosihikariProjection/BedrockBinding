@@ -40,12 +40,12 @@ public sealed unsafe partial class IWorldAccessor : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IWorldAccessor Create(global::Hosihikari.Bindings.Bedrock.Interop.DespawnComponent_Nested.IWorldAccessor arg0)
+    public static IWorldAccessor? Create(global::Hosihikari.Bindings.Bedrock.Interop.DespawnComponent_Nested.IWorldAccessor arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fd9ad183((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IWorldAccessor((nint)handle);
@@ -69,9 +69,10 @@ public sealed unsafe partial class IWorldAccessor : global::System.IDisposable
         return __hs_hasValue ? __hs_value : (int?)null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.IRandom getChanceRandom()
+    public global::Hosihikari.Bindings.Bedrock.Interop.IRandom? getChanceRandom()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IRandom((nint)NativeMethods.TablePtr->C1.hs_method_843be2dc((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_843be2dc((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IRandom((nint)__hs_handle, false) : null;
     }
 
     public uint getChunkTickRange()

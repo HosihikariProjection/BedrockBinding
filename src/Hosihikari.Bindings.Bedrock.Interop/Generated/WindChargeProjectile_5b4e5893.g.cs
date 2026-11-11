@@ -619,9 +619,10 @@ public sealed unsafe partial class WindChargeProjectile : global::System.IDispos
         NativeMethods.TablePtr->C4.hs_method_72c851c7((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getSourceUniqueID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getSourceUniqueID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C4.hs_method_345f0e7b((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_345f0e7b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     public void initializeComponents(byte method, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList @params)

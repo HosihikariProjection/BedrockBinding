@@ -44,12 +44,12 @@ public sealed unsafe partial class CommandParameterData : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CommandParameterData Create()
+    public static CommandParameterData? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_deb2041d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandParameterData((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class CommandParameterData : global::System.IDispos
     public static CommandParameterData Create(nint typeIndex, nint parser, nint name, nint type, nint enumNameOrPostfix, nint subChain, int offset, bool optional, int flagOffset, nint options, nint rule) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public static CommandParameterData Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData arg0)
+    public static CommandParameterData? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_02d557eb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandParameterData((nint)handle);
@@ -162,9 +162,10 @@ public sealed unsafe partial class CommandParameterData : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C0.hs_get_b21095f8((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData((nint)NativeMethods.TablePtr->C0.hs_method_33748eb7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_33748eb7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData other)

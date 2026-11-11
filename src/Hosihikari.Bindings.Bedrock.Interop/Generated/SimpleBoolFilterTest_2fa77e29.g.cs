@@ -70,31 +70,32 @@ public sealed unsafe partial class SimpleBoolFilterTest : global::System.IDispos
     public bool _setup(nint definition, nint inputs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SimpleBoolFilterTest Create()
+    public static SimpleBoolFilterTest? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6127d13b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimpleBoolFilterTest((nint)handle);
     }
 
-    public static SimpleBoolFilterTest Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleBoolFilterTest arg0)
+    public static SimpleBoolFilterTest? Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleBoolFilterTest arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_60c085ae((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimpleBoolFilterTest((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _serializeValue()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C3.hs_method_989fcabb((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_989fcabb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.", false)]
@@ -107,9 +108,10 @@ public sealed unsafe partial class SimpleBoolFilterTest : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C3.hs_get_e3b77f46((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SimpleBoolFilterTest operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimpleBoolFilterTest arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SimpleBoolFilterTest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimpleBoolFilterTest arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SimpleBoolFilterTest((nint)NativeMethods.TablePtr->C3.hs_method_ae7e6cff((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ae7e6cff((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SimpleBoolFilterTest((nint)__hs_handle, false) : null;
     }
 
     public bool setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)

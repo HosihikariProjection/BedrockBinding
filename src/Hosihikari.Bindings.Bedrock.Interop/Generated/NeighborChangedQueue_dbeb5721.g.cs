@@ -40,23 +40,23 @@ public sealed unsafe partial class NeighborChangedQueue : global::System.IDispos
         return __hs_handle;
     }
 
-    public static NeighborChangedQueue Create()
+    public static NeighborChangedQueue? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5d3b87e1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NeighborChangedQueue((nint)handle);
     }
 
-    public static NeighborChangedQueue Create(global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue arg0)
+    public static NeighborChangedQueue? Create(global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ea31a025((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NeighborChangedQueue((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class NeighborChangedQueue : global::System.IDispos
     public nint operator_assign(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue((nint)NativeMethods.TablePtr->C2.hs_method_c799f390((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c799f390((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

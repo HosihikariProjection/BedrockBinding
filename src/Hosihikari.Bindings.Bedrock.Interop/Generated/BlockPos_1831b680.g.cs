@@ -44,28 +44,32 @@ public sealed unsafe partial class BlockPos : global::System.IDisposable
     public static nint MAX() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.BlockPos MIN()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? MIN()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C0.hs_method_f83ed88f(), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f83ed88f();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.BlockPos ZERO()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? ZERO()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C0.hs_method_62cc45ae(), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_62cc45ae();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void bindType(nint ctx) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 bottomCenter()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? bottomCenter()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C0.hs_method_d2f2d8cb((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d2f2d8cb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 center()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? center()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C0.hs_method_56722f70((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_56722f70((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -76,14 +80,16 @@ public sealed unsafe partial class BlockPos : global::System.IDisposable
     public nint north() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB operator_AABB()
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? operator_AABB()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_e8bd4566((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e8bd4566((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox operator_BoundingBox()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? operator_BoundingBox()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)NativeMethods.TablePtr->C0.hs_method_be72bb15((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_be72bb15((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

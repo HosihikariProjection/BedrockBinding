@@ -40,23 +40,23 @@ public sealed unsafe partial class Node : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Node Create()
+    public static Node? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1b56593c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Node((nint)handle);
     }
 
-    public static Node Create(global::Hosihikari.Bindings.Bedrock.Interop.glTF.Node arg0)
+    public static Node? Create(global::Hosihikari.Bindings.Bedrock.Interop.glTF.Node arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_d275d66f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Node((nint)handle);
@@ -134,9 +134,10 @@ public sealed unsafe partial class Node : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_5272a4f3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.glTF.Node operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.glTF.Node arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.glTF.Node? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.glTF.Node arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.glTF.Node((nint)NativeMethods.TablePtr->C4.hs_method_ac1996b4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ac1996b4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.glTF.Node((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

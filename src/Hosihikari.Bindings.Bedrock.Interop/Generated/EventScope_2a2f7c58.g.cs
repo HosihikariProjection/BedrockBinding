@@ -44,23 +44,23 @@ public sealed unsafe partial class EventScope : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EventScope Create()
+    public static EventScope? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e4b38f79();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EventScope((nint)handle);
     }
 
-    public static EventScope Create(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope arg0)
+    public static EventScope? Create(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f8825f05((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EventScope((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class EventScope : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_1822aabf((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope((nint)NativeMethods.TablePtr->C2.hs_method_c334bcd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c334bcd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope((nint)__hs_handle, false) : null;
     }
 
 

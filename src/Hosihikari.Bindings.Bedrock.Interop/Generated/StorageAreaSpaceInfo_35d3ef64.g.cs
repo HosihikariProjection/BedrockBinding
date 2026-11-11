@@ -40,23 +40,23 @@ public sealed unsafe partial class StorageAreaSpaceInfo : global::System.IDispos
         return __hs_handle;
     }
 
-    public static StorageAreaSpaceInfo Create()
+    public static StorageAreaSpaceInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7892fec8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StorageAreaSpaceInfo((nint)handle);
     }
 
-    public static StorageAreaSpaceInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo arg0)
+    public static StorageAreaSpaceInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ac843cc2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StorageAreaSpaceInfo((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class StorageAreaSpaceInfo : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_36baa7cb((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo((nint)NativeMethods.TablePtr->C1.hs_method_1cbe648c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1cbe648c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

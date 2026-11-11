@@ -40,12 +40,12 @@ public sealed unsafe partial class TameableComponent : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static TameableComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.TameableComponent arg0)
+    public static TameableComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.TameableComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_768e22a7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TameableComponent((nint)handle);

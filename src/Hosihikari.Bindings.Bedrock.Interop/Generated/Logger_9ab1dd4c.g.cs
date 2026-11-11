@@ -48,12 +48,12 @@ public sealed unsafe partial class Logger : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Logger Create()
+    public static Logger? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4ec7f23e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Logger((nint)handle);
@@ -125,9 +125,10 @@ public sealed unsafe partial class Logger : global::System.IDisposable
     public void merge(nint log) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger((nint)NativeMethods.TablePtr->C2.hs_method_08ee7537((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_08ee7537((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger((nint)__hs_handle, false) : null;
     }
 
 

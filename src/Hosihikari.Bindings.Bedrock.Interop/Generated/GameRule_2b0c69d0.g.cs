@@ -89,18 +89,18 @@ public sealed unsafe partial class GameRule : global::System.IDisposable
     public static GameRule Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static GameRule Create(global::Hosihikari.Bindings.Bedrock.Interop.GameRule arg0)
+    public static GameRule? Create(global::Hosihikari.Bindings.Bedrock.Interop.GameRule arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3be87fd9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameRule((nint)handle);
     }
 
-    public static GameRule Create(string name, bool canBeModifiedByPlayer)
+    public static GameRule? Create(string name, bool canBeModifiedByPlayer)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -118,7 +118,7 @@ public sealed unsafe partial class GameRule : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_87008cbf(__hs_stringData0, (nuint)__hs_stringByteCount0, canBeModifiedByPlayer);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new GameRule((nint)handle);

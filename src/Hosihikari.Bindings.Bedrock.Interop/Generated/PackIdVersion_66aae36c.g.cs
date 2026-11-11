@@ -49,34 +49,34 @@ public sealed unsafe partial class PackIdVersion : global::System.IDisposable
     public static nint EMPTY() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PackIdVersion Create()
+    public static PackIdVersion? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_af41f8a4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackIdVersion((nint)handle);
     }
 
-    public static PackIdVersion Create(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion arg0)
+    public static PackIdVersion? Create(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f93103b4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackIdVersion((nint)handle);
     }
 
-    public static PackIdVersion Create(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID id, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion version, sbyte packType)
+    public static PackIdVersion? Create(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID id, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion version, sbyte packType)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0eac9b2a((void*)id.Handle, (void*)version.Handle, packType);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackIdVersion((nint)handle);
@@ -88,7 +88,7 @@ public sealed unsafe partial class PackIdVersion : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion fromString(string inputStr)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion? fromString(string inputStr)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(inputStr);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -103,7 +103,8 @@ public sealed unsafe partial class PackIdVersion : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(inputStr, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)NativeMethods.TablePtr->C2.hs_method_4c7897de(__hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4c7897de(__hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)__hs_handle) : null;
         }
     }
 
@@ -125,9 +126,10 @@ public sealed unsafe partial class PackIdVersion : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_9a6996ec((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)NativeMethods.TablePtr->C2.hs_method_147fff3a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_147fff3a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion rhs)

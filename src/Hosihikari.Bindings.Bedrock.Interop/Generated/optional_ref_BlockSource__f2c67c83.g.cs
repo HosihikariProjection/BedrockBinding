@@ -70,9 +70,10 @@ public sealed unsafe partial class optional_ref_BlockSource_ : global::System.ID
     public nint end() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'decltype(auto)' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource get()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? get()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)NativeMethods.TablePtr->C4.hs_method_da327b64((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_da327b64((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
     }
 
     public bool has_value()
@@ -80,9 +81,10 @@ public sealed unsafe partial class optional_ref_BlockSource_ : global::System.ID
         return NativeMethods.TablePtr->C4.hs_method_df38bb5e((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource operator_BlockSource___66883dee()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? operator_BlockSource___66883dee()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)NativeMethods.TablePtr->C4.hs_method_66883dee((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_66883dee((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? operator_BlockSource___30276f42()
@@ -96,9 +98,10 @@ public sealed unsafe partial class optional_ref_BlockSource_ : global::System.ID
         return NativeMethods.TablePtr->C4.hs_method_2693981a((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)NativeMethods.TablePtr->C4.hs_method_bc6b9893((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_bc6b9893((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? operator_operator__()
@@ -107,66 +110,68 @@ public sealed unsafe partial class optional_ref_BlockSource_ : global::System.ID
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_BlockSource_ operator_assign_daf6a4f2(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_BlockSource_? operator_assign_daf6a4f2(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_BlockSource_((nint)NativeMethods.TablePtr->C4.hs_method_daf6a4f2((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_daf6a4f2((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_BlockSource_((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_BlockSource_ operator_assign_5af9f026(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_BlockSource_? operator_assign_5af9f026(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_BlockSource_((nint)NativeMethods.TablePtr->C4.hs_method_5af9f026((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5af9f026((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_BlockSource_((nint)__hs_handle, false) : null;
     }
 
-    public static optional_ref_BlockSource_ Create()
+    public static optional_ref_BlockSource_? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5ddecffd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_BlockSource_((nint)handle);
     }
 
-    public static optional_ref_BlockSource_ Create_40f8e17b(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? arg0)
+    public static optional_ref_BlockSource_? Create_40f8e17b(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_40f8e17b((void*)(arg0?.Handle ?? 0), arg0 is not null);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_BlockSource_((nint)handle);
     }
 
-    public static optional_ref_BlockSource_ Create_d0c076c5(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? arg0)
+    public static optional_ref_BlockSource_? Create_d0c076c5(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_d0c076c5((void*)(arg0?.Handle ?? 0), arg0 is not null);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_BlockSource_((nint)handle);
     }
 
-    public static optional_ref_BlockSource_ Create_5c6d5c07()
+    public static optional_ref_BlockSource_? Create_5c6d5c07()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5c6d5c07();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_BlockSource_((nint)handle);
     }
 
-    public static optional_ref_BlockSource_ Create_7873c69d()
+    public static optional_ref_BlockSource_? Create_7873c69d()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_7873c69d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_BlockSource_((nint)handle);
@@ -180,9 +185,10 @@ public sealed unsafe partial class optional_ref_BlockSource_ : global::System.ID
     public nint rend() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'decltype(auto)' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)NativeMethods.TablePtr->C4.hs_method_8cc9bd21((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8cc9bd21((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

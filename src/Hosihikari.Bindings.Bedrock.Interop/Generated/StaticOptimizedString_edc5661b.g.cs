@@ -50,23 +50,23 @@ public sealed unsafe partial class StaticOptimizedString : global::System.IDispo
         NativeMethods.TablePtr->C0.hs_method_14025dd1((void*)__hosihikari_shim_handle);
     }
 
-    public static StaticOptimizedString Create()
+    public static StaticOptimizedString? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a8b11a8f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StaticOptimizedString((nint)handle);
     }
 
-    public static StaticOptimizedString Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString other)
+    public static StaticOptimizedString? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString other)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4569d2c7((void*)other.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StaticOptimizedString((nint)handle);
@@ -83,9 +83,10 @@ public sealed unsafe partial class StaticOptimizedString : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_7b0350b5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString other)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString other)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString((nint)NativeMethods.TablePtr->C0.hs_method_6796d0c9((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6796d0c9((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString((nint)__hs_handle, false) : null;
     }
 
 

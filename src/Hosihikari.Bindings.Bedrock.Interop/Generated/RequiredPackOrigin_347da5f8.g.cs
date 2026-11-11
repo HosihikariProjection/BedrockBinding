@@ -40,23 +40,23 @@ public sealed unsafe partial class RequiredPackOrigin : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static RequiredPackOrigin Create()
+    public static RequiredPackOrigin? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cdc973d6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RequiredPackOrigin((nint)handle);
     }
 
-    public static RequiredPackOrigin Create(global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredPackOrigin arg0)
+    public static RequiredPackOrigin? Create(global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredPackOrigin arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9081c01d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RequiredPackOrigin((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class RequiredPackOrigin : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C2.hs_get_df776a7f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredPackOrigin operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredPackOrigin arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredPackOrigin? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredPackOrigin arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredPackOrigin((nint)NativeMethods.TablePtr->C2.hs_method_d5ac3491((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d5ac3491((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredPackOrigin((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

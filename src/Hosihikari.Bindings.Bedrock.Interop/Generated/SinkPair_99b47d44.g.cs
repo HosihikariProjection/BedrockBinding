@@ -44,23 +44,23 @@ public sealed unsafe partial class SinkPair : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SinkPair Create()
+    public static SinkPair? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_59e335e8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SinkPair((nint)handle);
     }
 
-    public static SinkPair Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded_Nested.SinkPair arg0)
+    public static SinkPair? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded_Nested.SinkPair arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_00dbf4b5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SinkPair((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class SinkPair : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_2624f9e2((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded_Nested.SinkPair operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded_Nested.SinkPair arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded_Nested.SinkPair? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded_Nested.SinkPair arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded_Nested.SinkPair((nint)NativeMethods.TablePtr->C4.hs_method_ce72a586((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ce72a586((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded_Nested.SinkPair((nint)__hs_handle, false) : null;
     }
 
 

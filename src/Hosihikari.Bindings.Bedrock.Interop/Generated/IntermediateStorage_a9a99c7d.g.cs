@@ -40,23 +40,23 @@ public sealed unsafe partial class IntermediateStorage : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static IntermediateStorage Create()
+    public static IntermediateStorage? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_63025202();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IntermediateStorage((nint)handle);
     }
 
-    public static IntermediateStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentUseOnEvent_Nested.IntermediateStorage arg0)
+    public static IntermediateStorage? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentUseOnEvent_Nested.IntermediateStorage arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_77dfc27a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IntermediateStorage((nint)handle);
@@ -108,9 +108,10 @@ public sealed unsafe partial class IntermediateStorage : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_6f477fef((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentUseOnEvent_Nested.IntermediateStorage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentUseOnEvent_Nested.IntermediateStorage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentUseOnEvent_Nested.IntermediateStorage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentUseOnEvent_Nested.IntermediateStorage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentUseOnEvent_Nested.IntermediateStorage((nint)NativeMethods.TablePtr->C3.hs_method_a012dee0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a012dee0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentUseOnEvent_Nested.IntermediateStorage((nint)__hs_handle, false) : null;
     }
 
 

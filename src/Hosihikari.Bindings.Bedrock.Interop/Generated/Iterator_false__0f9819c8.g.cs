@@ -46,29 +46,34 @@ public sealed unsafe partial class Iterator_false_ : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_3575eea5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Tag operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Tag? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Tag((nint)NativeMethods.TablePtr->C0.hs_method_c960b250((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c960b250((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Tag((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_ operator_operator___414f6adc()
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_? operator_operator___414f6adc()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_((nint)NativeMethods.TablePtr->C0.hs_method_414f6adc((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_414f6adc((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_ operator_operator___de33b787(int arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_? operator_operator___de33b787(int arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_((nint)NativeMethods.TablePtr->C0.hs_method_de33b787((void*)__hosihikari_shim_handle, arg0));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_de33b787((void*)__hosihikari_shim_handle, arg0);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_ operator_operator___d7f8c4ff()
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_? operator_operator___d7f8c4ff()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_((nint)NativeMethods.TablePtr->C0.hs_method_d7f8c4ff((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d7f8c4ff((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_ operator_operator___620fa356(int arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_? operator_operator___620fa356(int arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_((nint)NativeMethods.TablePtr->C0.hs_method_620fa356((void*)__hosihikari_shim_handle, arg0));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_620fa356((void*)__hosihikari_shim_handle, arg0);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_((nint)__hs_handle) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Tag? operator_operator___b98d80e9()

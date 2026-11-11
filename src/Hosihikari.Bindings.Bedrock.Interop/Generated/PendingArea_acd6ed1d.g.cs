@@ -40,12 +40,12 @@ public sealed unsafe partial class PendingArea : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PendingArea Create(global::Hosihikari.Bindings.Bedrock.Interop.PendingArea arg0)
+    public static PendingArea? Create(global::Hosihikari.Bindings.Bedrock.Interop.PendingArea arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a6d5d5fb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PendingArea((nint)handle);

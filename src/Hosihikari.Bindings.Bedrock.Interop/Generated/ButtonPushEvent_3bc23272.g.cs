@@ -40,12 +40,12 @@ public sealed unsafe partial class ButtonPushEvent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ButtonPushEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ButtonPushEvent arg0)
+    public static ButtonPushEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ButtonPushEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e37bfdb5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ButtonPushEvent((nint)handle);

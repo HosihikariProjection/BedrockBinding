@@ -90,12 +90,12 @@ public sealed unsafe partial class KnockbackRoarGoal : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static KnockbackRoarGoal Create()
+    public static KnockbackRoarGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_479d633d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new KnockbackRoarGoal((nint)handle);
@@ -105,12 +105,12 @@ public sealed unsafe partial class KnockbackRoarGoal : global::System.IDisposabl
     public static KnockbackRoarGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static KnockbackRoarGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.KnockbackRoarGoal arg0)
+    public static KnockbackRoarGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.KnockbackRoarGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8e8c41f5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new KnockbackRoarGoal((nint)handle);
@@ -236,9 +236,10 @@ public sealed unsafe partial class KnockbackRoarGoal : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_3693c356((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.KnockbackRoarGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.KnockbackRoarGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.KnockbackRoarGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.KnockbackRoarGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.KnockbackRoarGoal((nint)NativeMethods.TablePtr->C2.hs_method_c6c81f4b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c6c81f4b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.KnockbackRoarGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

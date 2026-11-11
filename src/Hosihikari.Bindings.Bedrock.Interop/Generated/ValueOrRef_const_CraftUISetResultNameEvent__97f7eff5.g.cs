@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_CraftUISetResultNameEvent_ :
     public static ValueOrRef_const_CraftUISetResultNameEvent_ Create_611733ad(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const CraftUISetResultNameEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CraftUISetResultNameEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.CraftUISetResultNameEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CraftUISetResultNameEvent((nint)NativeMethods.TablePtr->C1.hs_method_1e576145((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1e576145((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CraftUISetResultNameEvent((nint)__hs_handle, false) : null;
     }
 
 

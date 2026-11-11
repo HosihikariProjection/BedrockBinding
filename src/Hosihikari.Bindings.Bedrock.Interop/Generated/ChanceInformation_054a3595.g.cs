@@ -40,23 +40,23 @@ public sealed unsafe partial class ChanceInformation : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static ChanceInformation Create()
+    public static ChanceInformation? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_49f4ea25();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChanceInformation((nint)handle);
     }
 
-    public static ChanceInformation Create(global::Hosihikari.Bindings.Bedrock.Interop.ChanceInformation arg0)
+    public static ChanceInformation? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChanceInformation arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_40deddc2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChanceInformation((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class ChanceInformation : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_f008c384((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChanceInformation operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ChanceInformation arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChanceInformation? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ChanceInformation arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChanceInformation((nint)NativeMethods.TablePtr->C0.hs_method_15a3063c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_15a3063c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChanceInformation((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

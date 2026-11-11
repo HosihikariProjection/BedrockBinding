@@ -48,23 +48,23 @@ public sealed unsafe partial class StyledStreamWriter : global::System.IDisposab
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StyledStreamWriter Create()
+    public static StyledStreamWriter? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a54b045a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StyledStreamWriter((nint)handle);
     }
 
-    public static StyledStreamWriter Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.StyledStreamWriter arg0)
+    public static StyledStreamWriter? Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.StyledStreamWriter arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_072b5665((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StyledStreamWriter((nint)handle);

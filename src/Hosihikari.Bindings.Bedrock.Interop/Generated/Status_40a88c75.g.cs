@@ -40,19 +40,22 @@ public sealed unsafe partial class Status : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Corruption(nint msg, nint msg2)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Corruption(nint msg, nint msg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_f403fdbc((void*)msg, (void*)msg2));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f403fdbc((void*)msg, (void*)msg2);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status IOError(nint msg, nint msg2)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? IOError(nint msg, nint msg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_f29ee684((void*)msg, (void*)msg2));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f29ee684((void*)msg, (void*)msg2);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status InvalidArgument(nint msg, nint msg2)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? InvalidArgument(nint msg, nint msg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_361cfac0((void*)msg, (void*)msg2));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_361cfac0((void*)msg, (void*)msg2);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
     public bool IsCorruption()
@@ -80,38 +83,41 @@ public sealed unsafe partial class Status : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_8ca41eaf((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status NotFound(nint msg, nint msg2)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? NotFound(nint msg, nint msg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_e2caef53((void*)msg, (void*)msg2));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e2caef53((void*)msg, (void*)msg2);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status NotSupported(nint msg, nint msg2)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? NotSupported(nint msg, nint msg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_cee7588b((void*)msg, (void*)msg2));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_cee7588b((void*)msg, (void*)msg2);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status OK()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? OK()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_98f1bea2());
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_98f1bea2();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
-    public static Status Create()
+    public static Status? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b28ae7d8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Status((nint)handle);
     }
 
-    public static Status Create(global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status rhs)
+    public static Status? Create(global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status rhs)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_277626ab((void*)rhs.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Status((nint)handle);
@@ -132,9 +138,10 @@ public sealed unsafe partial class Status : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_edb2b52e((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status rhs)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_9c889e6a((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_9c889e6a((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

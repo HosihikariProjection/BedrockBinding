@@ -69,18 +69,18 @@ public sealed unsafe partial class PackInstanceId : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_a57a3c19((void*)__hosihikari_shim_handle);
     }
 
-    public static PackInstanceId Create()
+    public static PackInstanceId? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_316c4bbf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackInstanceId((nint)handle);
     }
 
-    public static PackInstanceId Create(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion packId, string subpackName)
+    public static PackInstanceId? Create(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion packId, string subpackName)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(subpackName);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -98,19 +98,19 @@ public sealed unsafe partial class PackInstanceId : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C2.hs_create_c87a4df2((void*)packId.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new PackInstanceId((nint)handle);
         }
     }
 
-    public static PackInstanceId Create(global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId arg0)
+    public static PackInstanceId? Create(global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f4c26b98((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackInstanceId((nint)handle);
@@ -128,9 +128,10 @@ public sealed unsafe partial class PackInstanceId : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_c2cc8584((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId((nint)NativeMethods.TablePtr->C2.hs_method_2d46a31c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2d46a31c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId((nint)__hs_handle, false) : null;
     }
 
 

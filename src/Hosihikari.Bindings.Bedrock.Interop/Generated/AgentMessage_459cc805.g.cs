@@ -40,23 +40,23 @@ public sealed unsafe partial class AgentMessage : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static AgentMessage Create()
+    public static AgentMessage? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_494ab5e2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AgentMessage((nint)handle);
     }
 
-    public static AgentMessage Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.AgentMessage arg0)
+    public static AgentMessage? Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.AgentMessage arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d924464c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AgentMessage((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class AgentMessage : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_3f21008c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.AgentMessage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.AgentMessage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.AgentMessage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.AgentMessage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.AgentMessage((nint)NativeMethods.TablePtr->C0.hs_method_13ef39d7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_13ef39d7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.AgentMessage((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

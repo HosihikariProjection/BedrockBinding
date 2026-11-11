@@ -44,12 +44,12 @@ public sealed unsafe partial class TransformationSystem : global::System.IDispos
     public void _tick(nint registry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TransformationSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.TransformationSystem arg0)
+    public static TransformationSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.TransformationSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_7bdbc040((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TransformationSystem((nint)handle);

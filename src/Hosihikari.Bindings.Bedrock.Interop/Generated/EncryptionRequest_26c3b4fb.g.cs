@@ -44,23 +44,23 @@ public sealed unsafe partial class EncryptionRequest : global::System.IDisposabl
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EncryptionRequest Create()
+    public static EncryptionRequest? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1b87633c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EncryptionRequest((nint)handle);
     }
 
-    public static EncryptionRequest Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionRequest arg0)
+    public static EncryptionRequest? Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionRequest arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_47a7c118((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EncryptionRequest((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class EncryptionRequest : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_03ddab91((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionRequest operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionRequest arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionRequest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionRequest arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionRequest((nint)NativeMethods.TablePtr->C0.hs_method_0e63c2dc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_0e63c2dc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionRequest((nint)__hs_handle, false) : null;
     }
 
 

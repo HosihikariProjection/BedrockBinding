@@ -40,12 +40,12 @@ public sealed unsafe partial class Entry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Entry Create(global::Hosihikari.Bindings.Bedrock.Interop.CircuitTrackingInfo_Nested.Entry arg0)
+    public static Entry? Create(global::Hosihikari.Bindings.Bedrock.Interop.CircuitTrackingInfo_Nested.Entry arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_211c0911((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Entry((nint)handle);

@@ -86,34 +86,34 @@ public sealed unsafe partial class StructureFeature : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StructureFeature Create()
+    public static StructureFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c64f354f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureFeature((nint)handle);
     }
 
-    public static StructureFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureFeature arg0)
+    public static StructureFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9f38461a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureFeature((nint)handle);
     }
 
-    public static StructureFeature Create(uint seed, global::Hosihikari.Bindings.Bedrock.Interop.HashedString structureFeatureType)
+    public static StructureFeature? Create(uint seed, global::Hosihikari.Bindings.Bedrock.Interop.HashedString structureFeatureType)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_deb6ec7c(seed, (void*)structureFeatureType.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureFeature((nint)handle);

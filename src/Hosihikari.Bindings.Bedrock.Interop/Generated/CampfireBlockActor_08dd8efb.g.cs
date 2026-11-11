@@ -124,12 +124,12 @@ public sealed unsafe partial class CampfireBlockActor : global::System.IDisposab
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CampfireBlockActor Create()
+    public static CampfireBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_107d7e74();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CampfireBlockActor((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class IntProviderType : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IntProviderType Create(global::Hosihikari.Bindings.Bedrock.Interop.IntProviderType arg0)
+    public static IntProviderType? Create(global::Hosihikari.Bindings.Bedrock.Interop.IntProviderType arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_01f46f3d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IntProviderType((nint)handle);

@@ -86,23 +86,23 @@ public sealed unsafe partial class RoarGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RoarGoal Create()
+    public static RoarGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f0beceea();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RoarGoal((nint)handle);
     }
 
-    public static RoarGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.RoarGoal arg0)
+    public static RoarGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.RoarGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_242eb988((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RoarGoal((nint)handle);
@@ -162,9 +162,10 @@ public sealed unsafe partial class RoarGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_c41a8bb4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RoarGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RoarGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RoarGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RoarGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RoarGoal((nint)NativeMethods.TablePtr->C3.hs_method_4a460cf5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4a460cf5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RoarGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

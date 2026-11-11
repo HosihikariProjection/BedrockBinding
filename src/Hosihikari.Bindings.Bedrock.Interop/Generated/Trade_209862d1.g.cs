@@ -44,23 +44,23 @@ public sealed unsafe partial class Trade : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Trade Create()
+    public static Trade? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b7e51d4e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Trade((nint)handle);
     }
 
-    public static Trade Create(global::Hosihikari.Bindings.Bedrock.Interop.Trade arg0)
+    public static Trade? Create(global::Hosihikari.Bindings.Bedrock.Interop.Trade arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ed8eb71a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Trade((nint)handle);
@@ -112,9 +112,10 @@ public sealed unsafe partial class Trade : global::System.IDisposable
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Trade operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Trade arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Trade? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Trade arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Trade((nint)NativeMethods.TablePtr->C4.hs_method_dd628fc5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_dd628fc5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Trade((nint)__hs_handle, false) : null;
     }
 
 

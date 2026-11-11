@@ -58,12 +58,12 @@ public sealed unsafe partial class BlockSelectionBoxComponent : global::System.I
         get => (nint)NativeMethods.TablePtr->C0.hs_get_0d0d99db((void*)__hosihikari_shim_handle);
     }
 
-    public static BlockSelectionBoxComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSelectionBoxComponent arg0)
+    public static BlockSelectionBoxComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSelectionBoxComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_18c2f06a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockSelectionBoxComponent((nint)handle);

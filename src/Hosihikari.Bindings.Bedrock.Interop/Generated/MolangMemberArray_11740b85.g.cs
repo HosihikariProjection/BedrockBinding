@@ -91,12 +91,12 @@ public sealed unsafe partial class MolangMemberArray : global::System.IDisposabl
         return (nint)NativeMethods.TablePtr->C2.hs_method_b37cacf0((void*)__hosihikari_shim_handle, arg0, (void*)vec.Handle);
     }
 
-    public static MolangMemberArray Create()
+    public static MolangMemberArray? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9c853883();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangMemberArray((nint)handle);
@@ -118,12 +118,12 @@ public sealed unsafe partial class MolangMemberArray : global::System.IDisposabl
     public static MolangMemberArray Create(nint arg0, nint color) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MolangMemberArray Create(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.mce.Color color)
+    public static MolangMemberArray? Create(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.mce.Color color)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c00239fc(arg0, (void*)color.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangMemberArray((nint)handle);
@@ -149,34 +149,34 @@ public sealed unsafe partial class MolangMemberArray : global::System.IDisposabl
     public static MolangMemberArray Create_25f3a6ab(nint arg0, float u, float v) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MolangMemberArray Create(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.Vec2 vec)
+    public static MolangMemberArray? Create(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.Vec2 vec)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1a6ecc9b(arg0, (void*)vec.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangMemberArray((nint)handle);
     }
 
-    public static MolangMemberArray Create(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 vec)
+    public static MolangMemberArray? Create(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 vec)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5e3265f0(arg0, (void*)vec.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangMemberArray((nint)handle);
     }
 
-    public static MolangMemberArray Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangMemberArray arg0)
+    public static MolangMemberArray? Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangMemberArray arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5dc4d7c9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangMemberArray((nint)handle);

@@ -80,12 +80,12 @@ public sealed unsafe partial class VoiceMediaSendChannelInterface : global::Syst
         return NativeMethods.TablePtr->C4.hs_method_75b0ca7a((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
     }
 
-    public static VoiceMediaSendChannelInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaSendChannelInterface arg0)
+    public static VoiceMediaSendChannelInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaSendChannelInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_64171ae5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VoiceMediaSendChannelInterface((nint)handle);

@@ -44,12 +44,12 @@ public sealed unsafe partial class BossSystem : global::System.IDisposable
     public void _tick(nint registry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BossSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.BossSystem arg0)
+    public static BossSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.BossSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_79f26e9e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BossSystem((nint)handle);

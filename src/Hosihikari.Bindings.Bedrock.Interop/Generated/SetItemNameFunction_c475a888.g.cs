@@ -62,23 +62,23 @@ public sealed unsafe partial class SetItemNameFunction : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SetItemNameFunction Create()
+    public static SetItemNameFunction? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_44b80abc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetItemNameFunction((nint)handle);
     }
 
-    public static SetItemNameFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetItemNameFunction arg0)
+    public static SetItemNameFunction? Create(global::Hosihikari.Bindings.Bedrock.Interop.SetItemNameFunction arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f6344fd9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetItemNameFunction((nint)handle);

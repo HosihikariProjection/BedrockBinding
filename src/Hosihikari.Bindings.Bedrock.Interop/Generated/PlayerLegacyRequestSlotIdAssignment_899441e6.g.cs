@@ -44,12 +44,12 @@ public sealed unsafe partial class PlayerLegacyRequestSlotIdAssignment : global:
     public nint _ctor(nint containerName, nint container) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerLegacyRequestSlotIdAssignment Create()
+    public static PlayerLegacyRequestSlotIdAssignment? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1c3f2c9d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerLegacyRequestSlotIdAssignment((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class PlayerLegacyRequestSlotIdAssignment : global:
     public static PlayerLegacyRequestSlotIdAssignment Create(nint containerName, nint container) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerLegacyRequestSlotIdAssignment Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionHandler_Nested.PlayerLegacyRequestSlotIdAssignment arg0)
+    public static PlayerLegacyRequestSlotIdAssignment? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionHandler_Nested.PlayerLegacyRequestSlotIdAssignment arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_bb093de0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerLegacyRequestSlotIdAssignment((nint)handle);

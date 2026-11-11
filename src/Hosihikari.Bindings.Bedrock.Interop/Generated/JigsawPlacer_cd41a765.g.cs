@@ -40,23 +40,23 @@ public sealed unsafe partial class JigsawPlacer : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static JigsawPlacer Create()
+    public static JigsawPlacer? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_29a44966();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JigsawPlacer((nint)handle);
     }
 
-    public static JigsawPlacer Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawPlacer arg0)
+    public static JigsawPlacer? Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawPlacer arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ee011a87((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JigsawPlacer((nint)handle);
@@ -122,9 +122,10 @@ public sealed unsafe partial class JigsawPlacer : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_04bc351a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawPlacer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawPlacer arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawPlacer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawPlacer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawPlacer((nint)NativeMethods.TablePtr->C4.hs_method_e0f40b66((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e0f40b66((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawPlacer((nint)__hs_handle, false) : null;
     }
 
 

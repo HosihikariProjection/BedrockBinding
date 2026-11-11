@@ -40,23 +40,23 @@ public sealed unsafe partial class SoundVolumeDefinition : global::System.IDispo
         return __hs_handle;
     }
 
-    public static SoundVolumeDefinition Create()
+    public static SoundVolumeDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0fd9ec57();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SoundVolumeDefinition((nint)handle);
     }
 
-    public static SoundVolumeDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition arg0)
+    public static SoundVolumeDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fbfebd10((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SoundVolumeDefinition((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class SoundVolumeDefinition : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C3.hs_get_93ead6b6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition((nint)NativeMethods.TablePtr->C3.hs_method_87e49141((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_87e49141((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

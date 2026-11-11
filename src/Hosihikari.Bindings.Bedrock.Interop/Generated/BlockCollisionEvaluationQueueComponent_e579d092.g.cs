@@ -40,12 +40,12 @@ public sealed unsafe partial class BlockCollisionEvaluationQueueComponent : glob
         return __hs_handle;
     }
 
-    public static BlockCollisionEvaluationQueueComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockCollisionEvaluationQueueComponent arg0)
+    public static BlockCollisionEvaluationQueueComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockCollisionEvaluationQueueComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_dcb5cdb8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockCollisionEvaluationQueueComponent((nint)handle);

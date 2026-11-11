@@ -60,23 +60,23 @@ public sealed unsafe partial class ParticleEffectResponse : global::System.IDisp
     public static nint NameID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ParticleEffectResponse Create()
+    public static ParticleEffectResponse? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d7ae59fc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ParticleEffectResponse((nint)handle);
     }
 
-    public static ParticleEffectResponse Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEffectResponse arg0)
+    public static ParticleEffectResponse? Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEffectResponse arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_be98c94a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ParticleEffectResponse((nint)handle);
@@ -116,9 +116,10 @@ public sealed unsafe partial class ParticleEffectResponse : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C2.hs_get_ee8b4808((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ParticleEffectResponse operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEffectResponse arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ParticleEffectResponse? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEffectResponse arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ParticleEffectResponse((nint)NativeMethods.TablePtr->C2.hs_method_cc2b1baa((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cc2b1baa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ParticleEffectResponse((nint)__hs_handle, false) : null;
     }
 
 

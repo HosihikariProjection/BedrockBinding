@@ -329,23 +329,23 @@ public sealed unsafe partial class VoiceChannel : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_a2be3e35((void*)__hosihikari_shim_handle);
     }
 
-    public static VoiceChannel Create()
+    public static VoiceChannel? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_13987dde();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VoiceChannel((nint)handle);
     }
 
-    public static VoiceChannel Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel arg0)
+    public static VoiceChannel? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5cb185fb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VoiceChannel((nint)handle);
@@ -384,9 +384,10 @@ public sealed unsafe partial class VoiceChannel : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_1e4aa64e((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel((nint)NativeMethods.TablePtr->C4.hs_method_7e5c2a51((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_7e5c2a51((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaReceiveChannelInterface? voice_media_receive_channel()

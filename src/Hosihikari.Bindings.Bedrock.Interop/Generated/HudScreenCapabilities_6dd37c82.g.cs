@@ -44,23 +44,23 @@ public sealed unsafe partial class HudScreenCapabilities : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static HudScreenCapabilities Create()
+    public static HudScreenCapabilities? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_62fad163();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HudScreenCapabilities((nint)handle);
     }
 
-    public static HudScreenCapabilities Create(global::Hosihikari.Bindings.Bedrock.Interop.HudScreenCapabilities arg0)
+    public static HudScreenCapabilities? Create(global::Hosihikari.Bindings.Bedrock.Interop.HudScreenCapabilities arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3d1e929a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HudScreenCapabilities((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class HudScreenCapabilities : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C1.hs_get_b4ab4554((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HudScreenCapabilities operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HudScreenCapabilities arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.HudScreenCapabilities? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HudScreenCapabilities arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HudScreenCapabilities((nint)NativeMethods.TablePtr->C1.hs_method_5f8a801a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5f8a801a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HudScreenCapabilities((nint)__hs_handle, false) : null;
     }
 
 

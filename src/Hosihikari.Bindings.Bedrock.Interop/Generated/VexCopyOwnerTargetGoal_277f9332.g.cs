@@ -174,12 +174,12 @@ public sealed unsafe partial class VexCopyOwnerTargetGoal : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VexCopyOwnerTargetGoal Create()
+    public static VexCopyOwnerTargetGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_81261b90();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VexCopyOwnerTargetGoal((nint)handle);
@@ -189,12 +189,12 @@ public sealed unsafe partial class VexCopyOwnerTargetGoal : global::System.IDisp
     public static VexCopyOwnerTargetGoal Create(nint mob, nint name, nint goalId, nint targetTypes) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VexCopyOwnerTargetGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.VexCopyOwnerTargetGoal arg0)
+    public static VexCopyOwnerTargetGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.VexCopyOwnerTargetGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e234d095((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VexCopyOwnerTargetGoal((nint)handle);

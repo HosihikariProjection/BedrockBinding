@@ -40,12 +40,12 @@ public sealed unsafe partial class PropertyGroup : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PropertyGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.PropertyGroup arg0)
+    public static PropertyGroup? Create(global::Hosihikari.Bindings.Bedrock.Interop.PropertyGroup arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f579a815((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PropertyGroup((nint)handle);

@@ -144,12 +144,12 @@ public sealed unsafe partial class DirectionalProducerComponent : global::System
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DirectionalProducerComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.DirectionalProducerComponent arg0)
+    public static DirectionalProducerComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.DirectionalProducerComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6e0bd911((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DirectionalProducerComponent((nint)handle);

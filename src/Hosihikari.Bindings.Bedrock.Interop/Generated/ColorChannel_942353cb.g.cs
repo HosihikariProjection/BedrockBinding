@@ -40,23 +40,23 @@ public sealed unsafe partial class ColorChannel : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ColorChannel Create()
+    public static ColorChannel? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b635c031();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ColorChannel((nint)handle);
     }
 
-    public static ColorChannel Create(global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel arg0)
+    public static ColorChannel? Create(global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8bf59731((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ColorChannel((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class ColorChannel : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_653713f7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel((nint)NativeMethods.TablePtr->C0.hs_method_0be425f5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_0be425f5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

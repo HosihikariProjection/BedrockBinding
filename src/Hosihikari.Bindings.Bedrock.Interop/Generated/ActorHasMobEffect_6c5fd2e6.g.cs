@@ -60,31 +60,32 @@ public sealed unsafe partial class ActorHasMobEffect : global::System.IDisposabl
     public bool _setup(nint definition, nint inputs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorHasMobEffect Create()
+    public static ActorHasMobEffect? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e8bc7478();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorHasMobEffect((nint)handle);
     }
 
-    public static ActorHasMobEffect Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorHasMobEffect arg0)
+    public static ActorHasMobEffect? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorHasMobEffect arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_495e01a3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorHasMobEffect((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _serializeValue()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C0.hs_method_c555cb78((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c555cb78((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
     public bool evaluate(nint context)
@@ -108,9 +109,10 @@ public sealed unsafe partial class ActorHasMobEffect : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_726d6ad6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHasMobEffect operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorHasMobEffect arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHasMobEffect? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorHasMobEffect arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHasMobEffect((nint)NativeMethods.TablePtr->C0.hs_method_85406e13((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_85406e13((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHasMobEffect((nint)__hs_handle, false) : null;
     }
 
     public bool setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)

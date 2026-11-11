@@ -40,23 +40,23 @@ public sealed unsafe partial class Association : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Association Create()
+    public static Association? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_af196601();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Association((nint)handle);
     }
 
-    public static Association Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Association arg0)
+    public static Association? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Association arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_502197f5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Association((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class Association : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_004a35ba((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Association operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Association arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Association? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Association arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Association((nint)NativeMethods.TablePtr->C4.hs_method_90e03d21((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_90e03d21((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Association((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

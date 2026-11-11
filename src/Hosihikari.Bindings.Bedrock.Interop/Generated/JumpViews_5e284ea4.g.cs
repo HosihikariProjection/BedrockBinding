@@ -44,12 +44,12 @@ public sealed unsafe partial class JumpViews : global::System.IDisposable
     public nint _ctor(nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JumpViews Create()
+    public static JumpViews? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3038df24();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JumpViews((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class JumpViews : global::System.IDisposable
     public static JumpViews Create(nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JumpViews Create(global::Hosihikari.Bindings.Bedrock.Interop.MobJumpFromGroundSystemImpl.JumpViews arg0)
+    public static JumpViews? Create(global::Hosihikari.Bindings.Bedrock.Interop.MobJumpFromGroundSystemImpl.JumpViews arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_73c71df9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JumpViews((nint)handle);

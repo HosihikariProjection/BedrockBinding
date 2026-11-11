@@ -40,12 +40,12 @@ public sealed unsafe partial class IncomingPacketEvent : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static IncomingPacketEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.IncomingPacketEvent arg0)
+    public static IncomingPacketEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.IncomingPacketEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_74100dd9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IncomingPacketEvent((nint)handle);

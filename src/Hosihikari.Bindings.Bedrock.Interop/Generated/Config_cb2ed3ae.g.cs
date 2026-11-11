@@ -40,12 +40,12 @@ public sealed unsafe partial class Config : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Config Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnCategory.Config arg0)
+    public static Config? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnCategory.Config arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b9b07ff0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Config((nint)handle);

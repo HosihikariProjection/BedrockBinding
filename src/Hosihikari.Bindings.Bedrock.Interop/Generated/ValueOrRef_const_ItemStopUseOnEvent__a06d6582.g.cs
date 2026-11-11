@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ItemStopUseOnEvent_ : global
     public static ValueOrRef_const_ItemStopUseOnEvent_ Create_8cbbe17d(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ItemStopUseOnEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStopUseOnEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStopUseOnEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStopUseOnEvent((nint)NativeMethods.TablePtr->C1.hs_method_7ce20751((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7ce20751((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStopUseOnEvent((nint)__hs_handle, false) : null;
     }
 
 

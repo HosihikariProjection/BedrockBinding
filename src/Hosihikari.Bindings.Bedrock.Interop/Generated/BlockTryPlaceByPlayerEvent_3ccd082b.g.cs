@@ -40,23 +40,23 @@ public sealed unsafe partial class BlockTryPlaceByPlayerEvent : global::System.I
         return __hs_handle;
     }
 
-    public static BlockTryPlaceByPlayerEvent Create()
+    public static BlockTryPlaceByPlayerEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_29109416();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockTryPlaceByPlayerEvent((nint)handle);
     }
 
-    public static BlockTryPlaceByPlayerEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTryPlaceByPlayerEvent arg0)
+    public static BlockTryPlaceByPlayerEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTryPlaceByPlayerEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8207a83a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockTryPlaceByPlayerEvent((nint)handle);
@@ -91,9 +91,10 @@ public sealed unsafe partial class BlockTryPlaceByPlayerEvent : global::System.I
         get => (nint)NativeMethods.TablePtr->C0.hs_get_5e3bb65a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTryPlaceByPlayerEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockTryPlaceByPlayerEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTryPlaceByPlayerEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockTryPlaceByPlayerEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTryPlaceByPlayerEvent((nint)NativeMethods.TablePtr->C0.hs_method_992a50b1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_992a50b1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTryPlaceByPlayerEvent((nint)__hs_handle, false) : null;
     }
 
 

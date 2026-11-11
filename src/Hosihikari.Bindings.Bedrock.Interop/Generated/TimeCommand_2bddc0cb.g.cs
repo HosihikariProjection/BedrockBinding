@@ -73,12 +73,12 @@ public sealed unsafe partial class TimeCommand : global::System.IDisposable
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TimeCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.TimeCommand arg0)
+    public static TimeCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.TimeCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_37206f83((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TimeCommand((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptEntityHitInformation : global::System.I
         return __hs_handle;
     }
 
-    public static ScriptEntityHitInformation Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptEntityHitInformation arg0)
+    public static ScriptEntityHitInformation? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptEntityHitInformation arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f0d9b317((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptEntityHitInformation((nint)handle);

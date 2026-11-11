@@ -40,45 +40,45 @@ public sealed unsafe partial class NonOwnerPointer_const_GameRules_ : global::Sy
         return __hs_handle;
     }
 
-    public static NonOwnerPointer_const_GameRules_ Create()
+    public static NonOwnerPointer_const_GameRules_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_eedf0e10();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_const_GameRules_((nint)handle);
     }
 
-    public static NonOwnerPointer_const_GameRules_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    public static NonOwnerPointer_const_GameRules_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2148d69c(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_const_GameRules_((nint)handle);
     }
 
-    public static NonOwnerPointer_const_GameRules_ Create_a56d99b2()
+    public static NonOwnerPointer_const_GameRules_? Create_a56d99b2()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a56d99b2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_const_GameRules_((nint)handle);
     }
 
-    public static NonOwnerPointer_const_GameRules_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.GameRules? p)
+    public static NonOwnerPointer_const_GameRules_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.GameRules? p)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_55508c8d(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_const_GameRules_((nint)handle);
@@ -112,9 +112,10 @@ public sealed unsafe partial class NonOwnerPointer_const_GameRules_ : global::Sy
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameRules((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameRules operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameRules? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameRules((nint)NativeMethods.TablePtr->C0.hs_method_8ed66f7c((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8ed66f7c((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameRules((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameRules? operator_operator__()

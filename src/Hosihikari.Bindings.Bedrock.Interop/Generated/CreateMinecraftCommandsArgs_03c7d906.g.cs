@@ -40,23 +40,23 @@ public sealed unsafe partial class CreateMinecraftCommandsArgs : global::System.
         return __hs_handle;
     }
 
-    public static CreateMinecraftCommandsArgs Create()
+    public static CreateMinecraftCommandsArgs? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7964e501();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreateMinecraftCommandsArgs((nint)handle);
     }
 
-    public static CreateMinecraftCommandsArgs Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateMinecraftCommandsArgs arg0)
+    public static CreateMinecraftCommandsArgs? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateMinecraftCommandsArgs arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_747bf71c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreateMinecraftCommandsArgs((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class CreateMinecraftCommandsArgs : global::System.
         get => (nint)NativeMethods.TablePtr->C2.hs_get_99119e92((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateMinecraftCommandsArgs operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateMinecraftCommandsArgs arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateMinecraftCommandsArgs? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateMinecraftCommandsArgs arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateMinecraftCommandsArgs((nint)NativeMethods.TablePtr->C2.hs_method_2b7ddb4f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2b7ddb4f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.CreateMinecraftCommandsArgs((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

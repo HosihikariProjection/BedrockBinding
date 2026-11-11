@@ -40,12 +40,12 @@ public sealed unsafe partial class IdentityDictionary : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static IdentityDictionary Create(global::Hosihikari.Bindings.Bedrock.Interop.IdentityDictionary arg0)
+    public static IdentityDictionary? Create(global::Hosihikari.Bindings.Bedrock.Interop.IdentityDictionary arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c4ab9c2c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IdentityDictionary((nint)handle);
@@ -55,9 +55,10 @@ public sealed unsafe partial class IdentityDictionary : global::System.IDisposab
     public bool clearIdentity(nint scoreboardId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId convertFakeToReal(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId scoreboardId, global::Hosihikari.Bindings.Bedrock.Interop.PlayerScoreboardId playerId)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId? convertFakeToReal(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId scoreboardId, global::Hosihikari.Bindings.Bedrock.Interop.PlayerScoreboardId playerId)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)NativeMethods.TablePtr->C1.hs_method_4c8c05dc((void*)__hosihikari_shim_handle, (void*)scoreboardId.Handle, (void*)playerId.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4c8c05dc((void*)__hosihikari_shim_handle, (void*)scoreboardId.Handle, (void*)playerId.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

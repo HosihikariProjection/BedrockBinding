@@ -40,45 +40,45 @@ public sealed unsafe partial class NonOwnerPointer_IResourcePackRepository_ : gl
         return __hs_handle;
     }
 
-    public static NonOwnerPointer_IResourcePackRepository_ Create()
+    public static NonOwnerPointer_IResourcePackRepository_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f97e03d1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_IResourcePackRepository_((nint)handle);
     }
 
-    public static NonOwnerPointer_IResourcePackRepository_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    public static NonOwnerPointer_IResourcePackRepository_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_da6c550c(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_IResourcePackRepository_((nint)handle);
     }
 
-    public static NonOwnerPointer_IResourcePackRepository_ Create_529b8d9d()
+    public static NonOwnerPointer_IResourcePackRepository_? Create_529b8d9d()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_529b8d9d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_IResourcePackRepository_((nint)handle);
     }
 
-    public static NonOwnerPointer_IResourcePackRepository_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository? p)
+    public static NonOwnerPointer_IResourcePackRepository_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository? p)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_daaab5ab(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_IResourcePackRepository_((nint)handle);
@@ -113,9 +113,10 @@ public sealed unsafe partial class NonOwnerPointer_IResourcePackRepository_ : gl
         return NativeMethods.TablePtr->C0.hs_method_1fd08a56((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository((nint)NativeMethods.TablePtr->C0.hs_method_ebe96686((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ebe96686((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository? operator_operator__()

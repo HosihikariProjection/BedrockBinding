@@ -44,23 +44,23 @@ public sealed unsafe partial class Members : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Members Create()
+    public static Members? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f59d1d29();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Members((nint)handle);
     }
 
-    public static Members Create(global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.Members arg0)
+    public static Members? Create(global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.Members arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_de48d98a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Members((nint)handle);
@@ -384,9 +384,10 @@ public sealed unsafe partial class Members : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c50ff84d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.Members operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.Members arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.Members? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.Members arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.Members((nint)NativeMethods.TablePtr->C0.hs_method_2dd6069c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2dd6069c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.Members((nint)__hs_handle, false) : null;
     }
 
 

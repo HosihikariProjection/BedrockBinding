@@ -40,12 +40,12 @@ public sealed unsafe partial class ItemChargeEvent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ItemChargeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemChargeEvent arg0)
+    public static ItemChargeEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemChargeEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_39c51c45((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemChargeEvent((nint)handle);

@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptAsyncJobCoordinator : global::System.ID
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptAsyncJobCoordinator Create()
+    public static ScriptAsyncJobCoordinator? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3b91b0fd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptAsyncJobCoordinator((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class ScriptAsyncJobCoordinator : global::System.ID
     public static ScriptAsyncJobCoordinator Create(nint events) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptAsyncJobCoordinator Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptAsyncJobCoordinator arg0)
+    public static ScriptAsyncJobCoordinator? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptAsyncJobCoordinator arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5e3c7e47((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptAsyncJobCoordinator((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class ScriptAsyncJobCoordinator : global::System.ID
         get => (nint)NativeMethods.TablePtr->C3.hs_get_b9f778af((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptAsyncJobCoordinator operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptAsyncJobCoordinator arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptAsyncJobCoordinator? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptAsyncJobCoordinator arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptAsyncJobCoordinator((nint)NativeMethods.TablePtr->C3.hs_method_40545ac2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_40545ac2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptAsyncJobCoordinator((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

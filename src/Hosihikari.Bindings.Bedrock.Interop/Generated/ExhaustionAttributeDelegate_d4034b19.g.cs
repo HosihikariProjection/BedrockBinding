@@ -55,12 +55,12 @@ public sealed unsafe partial class ExhaustionAttributeDelegate : global::System.
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExhaustionAttributeDelegate Create(global::Hosihikari.Bindings.Bedrock.Interop.ExhaustionAttributeDelegate arg0)
+    public static ExhaustionAttributeDelegate? Create(global::Hosihikari.Bindings.Bedrock.Interop.ExhaustionAttributeDelegate arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5ad54d93((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExhaustionAttributeDelegate((nint)handle);

@@ -48,23 +48,23 @@ public sealed unsafe partial class MovePlayerPacketPayload : global::System.IDis
     public nint _ctor(nint player, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MovePlayerPacketPayload Create()
+    public static MovePlayerPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ec22f922();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MovePlayerPacketPayload((nint)handle);
     }
 
-    public static MovePlayerPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.MovePlayerPacketPayload arg0)
+    public static MovePlayerPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.MovePlayerPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_30f8f574((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MovePlayerPacketPayload((nint)handle);

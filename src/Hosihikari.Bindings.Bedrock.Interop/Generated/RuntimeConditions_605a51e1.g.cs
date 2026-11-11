@@ -40,23 +40,23 @@ public sealed unsafe partial class RuntimeConditions : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static RuntimeConditions Create()
+    public static RuntimeConditions? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c31e1367();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RuntimeConditions((nint)handle);
     }
 
-    public static RuntimeConditions Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RuntimeConditions arg0)
+    public static RuntimeConditions? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RuntimeConditions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d1eb3faa((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RuntimeConditions((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class RuntimeConditions : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C3.hs_get_2b459874((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RuntimeConditions operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RuntimeConditions arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RuntimeConditions? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RuntimeConditions arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RuntimeConditions((nint)NativeMethods.TablePtr->C3.hs_method_d5663d27((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d5663d27((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RuntimeConditions((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

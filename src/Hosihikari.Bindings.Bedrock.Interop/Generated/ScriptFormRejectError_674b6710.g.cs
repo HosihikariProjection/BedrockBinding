@@ -44,12 +44,12 @@ public sealed unsafe partial class ScriptFormRejectError : global::System.IDispo
     public nint _ctor(nint reason) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptFormRejectError Create()
+    public static ScriptFormRejectError? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3d6a41e3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptFormRejectError((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class ScriptFormRejectError : global::System.IDispo
     public static ScriptFormRejectError Create(nint reason) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptFormRejectError Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptFormRejectError arg0)
+    public static ScriptFormRejectError? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptFormRejectError arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5872577d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptFormRejectError((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class ScriptFormRejectError : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C3.hs_get_6387ea2d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptFormRejectError operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptFormRejectError arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptFormRejectError? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptFormRejectError arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptFormRejectError((nint)NativeMethods.TablePtr->C3.hs_method_7bab788f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7bab788f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptFormRejectError((nint)__hs_handle, false) : null;
     }
 
 

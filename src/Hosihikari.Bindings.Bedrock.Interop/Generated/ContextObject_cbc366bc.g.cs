@@ -44,12 +44,12 @@ public sealed unsafe partial class ContextObject : global::System.IDisposable
     public nint _ctor(nint contextId, nint jsContext, nint scope, nint bindings, nint factory, nint inspector, nint printer, nint loader, nint arg8, nint contextConfig) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ContextObject Create()
+    public static ContextObject? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c8e6b921();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContextObject((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class ContextObject : global::System.IDisposable
     public static ContextObject Create(nint contextId, nint jsContext, nint scope, nint bindings, nint factory, nint inspector, nint printer, nint loader, nint arg8, nint contextConfig) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ContextObject Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject arg0)
+    public static ContextObject? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_db6d90d7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContextObject((nint)handle);
@@ -188,9 +188,10 @@ public sealed unsafe partial class ContextObject : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_d5a61608((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject((nint)NativeMethods.TablePtr->C3.hs_method_b2617111((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b2617111((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

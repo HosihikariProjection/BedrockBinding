@@ -86,12 +86,12 @@ public sealed unsafe partial class NearestAttackableTargetGoal : global::System.
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NearestAttackableTargetGoal Create()
+    public static NearestAttackableTargetGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_dfa73cef();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NearestAttackableTargetGoal((nint)handle);
@@ -101,12 +101,12 @@ public sealed unsafe partial class NearestAttackableTargetGoal : global::System.
     public static NearestAttackableTargetGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NearestAttackableTargetGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.NearestAttackableTargetGoal arg0)
+    public static NearestAttackableTargetGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.NearestAttackableTargetGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5ccda13a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NearestAttackableTargetGoal((nint)handle);

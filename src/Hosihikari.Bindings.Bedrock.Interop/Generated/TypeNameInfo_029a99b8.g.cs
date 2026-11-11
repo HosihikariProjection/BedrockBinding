@@ -44,23 +44,23 @@ public sealed unsafe partial class TypeNameInfo : global::System.IDisposable
     public nint _ctor(nint bindingName, nint typeName, bool bound) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TypeNameInfo Create()
+    public static TypeNameInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f39b1671();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TypeNameInfo((nint)handle);
     }
 
-    public static TypeNameInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo arg0)
+    public static TypeNameInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_16590dec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TypeNameInfo((nint)handle);
@@ -88,9 +88,10 @@ public sealed unsafe partial class TypeNameInfo : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_feb1c039((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo((nint)NativeMethods.TablePtr->C3.hs_method_258f2f77((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_258f2f77((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

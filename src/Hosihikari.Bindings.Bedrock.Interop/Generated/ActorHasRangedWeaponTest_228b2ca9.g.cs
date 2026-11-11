@@ -48,12 +48,12 @@ public sealed unsafe partial class ActorHasRangedWeaponTest : global::System.IDi
     public nint _getName() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorHasRangedWeaponTest Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorHasRangedWeaponTest arg0)
+    public static ActorHasRangedWeaponTest? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorHasRangedWeaponTest arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_19ca827c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorHasRangedWeaponTest((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class RetryPolicy : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static RetryPolicy Create()
+    public static RetryPolicy? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_dfb3b709();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RetryPolicy((nint)handle);
     }
 
-    public static RetryPolicy Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RetryPolicy arg0)
+    public static RetryPolicy? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RetryPolicy arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d61c0140((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RetryPolicy((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class RetryPolicy : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_779a74fa((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RetryPolicy operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RetryPolicy arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RetryPolicy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RetryPolicy arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RetryPolicy((nint)NativeMethods.TablePtr->C0.hs_method_90944c4e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_90944c4e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RetryPolicy((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

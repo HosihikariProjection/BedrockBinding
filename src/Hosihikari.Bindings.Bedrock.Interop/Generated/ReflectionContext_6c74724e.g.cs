@@ -44,12 +44,12 @@ public sealed unsafe partial class ReflectionContext : global::System.IDisposabl
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ReflectionContext Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ReflectionContext arg0)
+    public static ReflectionContext? Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ReflectionContext arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_9154c1e3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReflectionContext((nint)handle);

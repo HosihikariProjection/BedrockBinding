@@ -40,12 +40,12 @@ public sealed unsafe partial class IStructureTemplate : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static IStructureTemplate Create(global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplate arg0)
+    public static IStructureTemplate? Create(global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplate arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4f727dd7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IStructureTemplate((nint)handle);
@@ -55,9 +55,10 @@ public sealed unsafe partial class IStructureTemplate : global::System.IDisposab
     public nint randomPalette(nint randomPosSeed) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'br::worldgen::StructureTemplateBlockPalette' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos rawSize()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? rawSize()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_2df178bd((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2df178bd((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public int shouldHandleUpgradeForBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block)

@@ -44,23 +44,23 @@ public sealed unsafe partial class WebSocketPacketData : global::System.IDisposa
     public nint _ctor(nint ip) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WebSocketPacketData Create()
+    public static WebSocketPacketData? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1b347efb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WebSocketPacketData((nint)handle);
     }
 
-    public static WebSocketPacketData Create(global::Hosihikari.Bindings.Bedrock.Interop.WebSocketPacketData arg0)
+    public static WebSocketPacketData? Create(global::Hosihikari.Bindings.Bedrock.Interop.WebSocketPacketData arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3d2852a3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WebSocketPacketData((nint)handle);

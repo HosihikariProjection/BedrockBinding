@@ -62,12 +62,12 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ShooterItemComponent Create()
+    public static ShooterItemComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a7a032d8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShooterItemComponent((nint)handle);
@@ -77,12 +77,12 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
     public static ShooterItemComponent Create(nint component) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ShooterItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ShooterItemComponent arg0)
+    public static ShooterItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShooterItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_82586418((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShooterItemComponent((nint)handle);

@@ -48,12 +48,12 @@ public sealed unsafe partial class EnumValue : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EnumValue Create()
+    public static EnumValue? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c7a40269();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EnumValue((nint)handle);

@@ -44,12 +44,12 @@ public sealed unsafe partial class RegionFile : global::System.IDisposable
     public nint _ctor(nint basePath) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RegionFile Create()
+    public static RegionFile? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4432eeda();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RegionFile((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class RegionFile : global::System.IDisposable
     public static RegionFile Create(nint basePath) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RegionFile Create(global::Hosihikari.Bindings.Bedrock.Interop.RegionFile arg0)
+    public static RegionFile? Create(global::Hosihikari.Bindings.Bedrock.Interop.RegionFile arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_627885bd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RegionFile((nint)handle);

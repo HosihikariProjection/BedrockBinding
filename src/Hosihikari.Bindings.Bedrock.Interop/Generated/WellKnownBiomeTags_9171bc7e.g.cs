@@ -344,12 +344,12 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_0992cc81((void*)__hosihikari_shim_handle);
     }
 
-    public static WellKnownBiomeTags Create()
+    public static WellKnownBiomeTags? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e2b91e0a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WellKnownBiomeTags((nint)handle);
@@ -359,12 +359,12 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
     public static WellKnownBiomeTags Create(nint tagRegistry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WellKnownBiomeTags Create(global::Hosihikari.Bindings.Bedrock.Interop.WellKnownBiomeTags arg0)
+    public static WellKnownBiomeTags? Create(global::Hosihikari.Bindings.Bedrock.Interop.WellKnownBiomeTags arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ad347694((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WellKnownBiomeTags((nint)handle);

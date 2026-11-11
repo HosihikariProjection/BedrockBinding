@@ -40,12 +40,12 @@ public sealed unsafe partial class IUIEventTelemetry : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static IUIEventTelemetry Create(global::Hosihikari.Bindings.Bedrock.Interop.IUIEventTelemetry arg0)
+    public static IUIEventTelemetry? Create(global::Hosihikari.Bindings.Bedrock.Interop.IUIEventTelemetry arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_57008d17((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IUIEventTelemetry((nint)handle);

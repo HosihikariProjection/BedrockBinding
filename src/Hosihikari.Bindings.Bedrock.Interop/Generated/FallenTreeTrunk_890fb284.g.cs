@@ -48,12 +48,12 @@ public sealed unsafe partial class FallenTreeTrunk : global::System.IDisposable
     public nint _placeTrunk(nint target, nint pos, nint random, int treeHeight, nint renderParams, nint treeParams, nint arg6) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FallenTreeTrunk Create(global::Hosihikari.Bindings.Bedrock.Interop.FallenTreeTrunk arg0)
+    public static FallenTreeTrunk? Create(global::Hosihikari.Bindings.Bedrock.Interop.FallenTreeTrunk arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a3e7f2f3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FallenTreeTrunk((nint)handle);

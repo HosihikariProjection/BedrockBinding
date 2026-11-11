@@ -40,23 +40,23 @@ public sealed unsafe partial class EnchantInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static EnchantInfo Create()
+    public static EnchantInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_26ed858b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EnchantInfo((nint)handle);
     }
 
-    public static EnchantInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition_Nested.EnchantInfo arg0)
+    public static EnchantInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition_Nested.EnchantInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4d1b6b4f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EnchantInfo((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class EnchantInfo : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_76cb167c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition_Nested.EnchantInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition_Nested.EnchantInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition_Nested.EnchantInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition_Nested.EnchantInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition_Nested.EnchantInfo((nint)NativeMethods.TablePtr->C2.hs_method_433ee2a3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_433ee2a3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition_Nested.EnchantInfo((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

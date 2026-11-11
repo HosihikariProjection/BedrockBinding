@@ -64,12 +64,12 @@ public sealed unsafe partial class ServerActorManagerProxy : global::System.IDis
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerActorManagerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerActorManagerProxy arg0)
+    public static ServerActorManagerProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerActorManagerProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_04b1a56a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerActorManagerProxy((nint)handle);
@@ -101,9 +101,10 @@ public sealed unsafe partial class ServerActorManagerProxy : global::System.IDis
         NativeMethods.TablePtr->C3.hs_method_ded0ee13((void*)__hosihikari_shim_handle, (void*)actor.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__ActorValidationError_ validate(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__ActorValidationError_? validate(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__ActorValidationError_((nint)NativeMethods.TablePtr->C3.hs_method_fd7dd051((void*)__hosihikari_shim_handle, (void*)actor.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fd7dd051((void*)__hosihikari_shim_handle, (void*)actor.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__ActorValidationError_((nint)__hs_handle) : null;
     }
 
 

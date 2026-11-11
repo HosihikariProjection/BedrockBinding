@@ -40,12 +40,12 @@ public sealed unsafe partial class MobEffectPacketPayload : global::System.IDisp
         return __hs_handle;
     }
 
-    public static MobEffectPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectPacketPayload arg0)
+    public static MobEffectPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b3980ba3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEffectPacketPayload((nint)handle);

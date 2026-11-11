@@ -78,29 +78,29 @@ public sealed unsafe partial class SerializedPersonaPieceHandle : global::System
         }
     }
 
-    public static SerializedPersonaPieceHandle Create()
+    public static SerializedPersonaPieceHandle? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_71ccd2c5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SerializedPersonaPieceHandle((nint)handle);
     }
 
-    public static SerializedPersonaPieceHandle Create(global::Hosihikari.Bindings.Bedrock.Interop.SerializedPersonaPieceHandle arg0)
+    public static SerializedPersonaPieceHandle? Create(global::Hosihikari.Bindings.Bedrock.Interop.SerializedPersonaPieceHandle arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_27e65e28((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SerializedPersonaPieceHandle((nint)handle);
     }
 
-    public static SerializedPersonaPieceHandle Create(string pieceId, uint pieceType, global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID packId, bool isDefaultPiece, string productId)
+    public static SerializedPersonaPieceHandle? Create(string pieceId, uint pieceType, global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID packId, bool isDefaultPiece, string productId)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(pieceId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -131,7 +131,7 @@ public sealed unsafe partial class SerializedPersonaPieceHandle : global::System
                 var handle = NativeMethods.TablePtr->C3.hs_create_617959f8(__hs_stringData0, (nuint)__hs_stringByteCount0, pieceType, (void*)packId.Handle, isDefaultPiece, __hs_stringData4, (nuint)__hs_stringByteCount4);
                 if (handle == null)
                 {
-                    throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                    return null;
                 }
 
                 return new SerializedPersonaPieceHandle((nint)handle);
@@ -169,9 +169,10 @@ public sealed unsafe partial class SerializedPersonaPieceHandle : global::System
         get => (nint)NativeMethods.TablePtr->C3.hs_get_9aed1f28((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SerializedPersonaPieceHandle operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SerializedPersonaPieceHandle arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SerializedPersonaPieceHandle? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SerializedPersonaPieceHandle arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SerializedPersonaPieceHandle((nint)NativeMethods.TablePtr->C3.hs_method_7842a00c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7842a00c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SerializedPersonaPieceHandle((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SerializedPersonaPieceHandle rhs)

@@ -58,12 +58,12 @@ public sealed unsafe partial class SyncScriptGameTestFunction : global::System.I
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SyncScriptGameTestFunction Create()
+    public static SyncScriptGameTestFunction? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5fe6f9e2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SyncScriptGameTestFunction((nint)handle);
@@ -73,12 +73,12 @@ public sealed unsafe partial class SyncScriptGameTestFunction : global::System.I
     public static SyncScriptGameTestFunction Create(nint scope, nint functionHandle, nint testName) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SyncScriptGameTestFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.SyncScriptGameTestFunction arg0)
+    public static SyncScriptGameTestFunction? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.SyncScriptGameTestFunction arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7e670630((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SyncScriptGameTestFunction((nint)handle);

@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_MountTamingEvent_ : global::
     public static ValueOrRef_const_MountTamingEvent_ Create_5cb338fc(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const MountTamingEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MountTamingEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.MountTamingEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MountTamingEvent((nint)NativeMethods.TablePtr->C1.hs_method_d1ee5277((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d1ee5277((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MountTamingEvent((nint)__hs_handle, false) : null;
     }
 
 

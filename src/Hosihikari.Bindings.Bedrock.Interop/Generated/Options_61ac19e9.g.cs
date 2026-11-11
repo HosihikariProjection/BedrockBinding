@@ -40,23 +40,23 @@ public sealed unsafe partial class Options : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Options Create()
+    public static Options? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1c249dc8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Options((nint)handle);
     }
 
-    public static Options Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options arg0)
+    public static Options? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3edb1e0c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Options((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class Options : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_a8dc93a4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options((nint)NativeMethods.TablePtr->C4.hs_method_6496e3bd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6496e3bd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

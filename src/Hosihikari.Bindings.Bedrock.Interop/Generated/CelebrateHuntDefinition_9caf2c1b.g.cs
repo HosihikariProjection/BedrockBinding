@@ -40,12 +40,12 @@ public sealed unsafe partial class CelebrateHuntDefinition : global::System.IDis
         return __hs_handle;
     }
 
-    public static CelebrateHuntDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.CelebrateHuntDefinition arg0)
+    public static CelebrateHuntDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.CelebrateHuntDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7b442c8c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CelebrateHuntDefinition((nint)handle);

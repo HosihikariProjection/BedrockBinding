@@ -46,12 +46,12 @@ public sealed unsafe partial class IFileAccess : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_f29c3c21((void*)__hosihikari_shim_handle);
     }
 
-    public static IFileAccess Create(global::Hosihikari.Bindings.Bedrock.Interop.IFileAccess arg0)
+    public static IFileAccess? Create(global::Hosihikari.Bindings.Bedrock.Interop.IFileAccess arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2f046828((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IFileAccess((nint)handle);

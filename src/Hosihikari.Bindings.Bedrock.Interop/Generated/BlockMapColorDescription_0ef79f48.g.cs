@@ -62,12 +62,12 @@ public sealed unsafe partial class BlockMapColorDescription : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockMapColorDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockMapColorDescription arg0)
+    public static BlockMapColorDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockMapColorDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d57d647a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockMapColorDescription((nint)handle);

@@ -151,23 +151,23 @@ public sealed unsafe partial class NetworkChunkSource : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetworkChunkSource Create()
+    public static NetworkChunkSource? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b52a529c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkChunkSource((nint)handle);
     }
 
-    public static NetworkChunkSource Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
+    public static NetworkChunkSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a3fd2fb7((void*)dimension.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkChunkSource((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class FileSizePresetToken : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static FileSizePresetToken Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSizePresetToken arg0)
+    public static FileSizePresetToken? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSizePresetToken arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4447bfd9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileSizePresetToken((nint)handle);

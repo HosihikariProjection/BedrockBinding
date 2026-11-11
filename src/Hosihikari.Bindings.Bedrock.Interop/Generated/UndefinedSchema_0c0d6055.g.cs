@@ -56,12 +56,12 @@ public sealed unsafe partial class UndefinedSchema : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UndefinedSchema Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.UndefinedSchema arg0)
+    public static UndefinedSchema? Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.UndefinedSchema arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4914515c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UndefinedSchema((nint)handle);

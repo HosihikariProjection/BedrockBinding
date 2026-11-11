@@ -40,23 +40,23 @@ public sealed unsafe partial class HeightmapData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static HeightmapData Create()
+    public static HeightmapData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_19402288();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HeightmapData((nint)handle);
     }
 
-    public static HeightmapData Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.HeightmapData arg0)
+    public static HeightmapData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.HeightmapData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9e1dd212((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HeightmapData((nint)handle);

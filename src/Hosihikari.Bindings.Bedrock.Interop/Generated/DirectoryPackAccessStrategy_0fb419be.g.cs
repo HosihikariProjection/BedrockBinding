@@ -116,23 +116,23 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
     public void _unload() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DirectoryPackAccessStrategy Create()
+    public static DirectoryPackAccessStrategy? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4fbbe2cc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DirectoryPackAccessStrategy((nint)handle);
     }
 
-    public static DirectoryPackAccessStrategy Create(global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackAccessStrategy arg0)
+    public static DirectoryPackAccessStrategy? Create(global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackAccessStrategy arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_05c4b48c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DirectoryPackAccessStrategy((nint)handle);
@@ -194,9 +194,10 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation getPackLocation()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation? getPackLocation()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)NativeMethods.TablePtr->C1.hs_method_57eba825((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_57eba825((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)__hs_handle, false) : null;
     }
 
     public string getPackName()
@@ -215,9 +216,10 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
         return NativeMethods.TablePtr->C1.hs_method_eaf1a8e2((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_ getStreamableSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView? tempDirectory)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_? getStreamableSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView? tempDirectory)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_28769f25((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, (void*)(tempDirectory?.Handle ?? 0), tempDirectory is not null));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_28769f25((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, (void*)(tempDirectory?.Handle ?? 0), tempDirectory is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)__hs_handle) : null;
     }
 
     public bool hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, bool trustedContentOnly, bool caseSensative)
@@ -270,9 +272,10 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
         get => (nint)NativeMethods.TablePtr->C1.hs_get_4850f1df((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackAccessStrategy operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackAccessStrategy arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackAccessStrategy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackAccessStrategy arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackAccessStrategy((nint)NativeMethods.TablePtr->C1.hs_method_97d019aa((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_97d019aa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackAccessStrategy((nint)__hs_handle, false) : null;
     }
 
     public void unload()

@@ -40,23 +40,23 @@ public sealed unsafe partial class HttpProbeImpl : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static HttpProbeImpl Create()
+    public static HttpProbeImpl? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3c482dd4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HttpProbeImpl((nint)handle);
     }
 
-    public static HttpProbeImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.HttpProbeImpl arg0)
+    public static HttpProbeImpl? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.HttpProbeImpl arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b344b5d5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HttpProbeImpl((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class HttpProbeImpl : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_524227a0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.HttpProbeImpl operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.HttpProbeImpl arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.HttpProbeImpl? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.HttpProbeImpl arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.HttpProbeImpl((nint)NativeMethods.TablePtr->C2.hs_method_80b5fe7a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_80b5fe7a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.HttpProbeImpl((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

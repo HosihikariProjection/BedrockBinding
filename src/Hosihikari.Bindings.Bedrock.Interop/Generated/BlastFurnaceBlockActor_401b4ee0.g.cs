@@ -68,23 +68,23 @@ public sealed unsafe partial class BlastFurnaceBlockActor : global::System.IDisp
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlastFurnaceBlockActor Create()
+    public static BlastFurnaceBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_af2f5c52();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlastFurnaceBlockActor((nint)handle);
     }
 
-    public static BlastFurnaceBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlastFurnaceBlockActor arg0)
+    public static BlastFurnaceBlockActor? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlastFurnaceBlockActor arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5e68d60c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlastFurnaceBlockActor((nint)handle);

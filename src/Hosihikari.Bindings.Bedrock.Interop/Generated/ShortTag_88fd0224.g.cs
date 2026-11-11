@@ -59,9 +59,10 @@ public sealed unsafe partial class ShortTag : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_c8d9e05a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_d45c5758((void*)__hosihikari_shim_handle, (void*)dis.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d45c5758((void*)__hosihikari_shim_handle, (void*)dis.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     public string _toString()
@@ -79,23 +80,23 @@ public sealed unsafe partial class ShortTag : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_39b3943b((void*)__hosihikari_shim_handle, (void*)dos.Handle);
     }
 
-    public static ShortTag Create()
+    public static ShortTag? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2de1b428();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShortTag((nint)handle);
     }
 
-    public static ShortTag Create(global::Hosihikari.Bindings.Bedrock.Interop.ShortTag arg0)
+    public static ShortTag? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShortTag arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_79cc151f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShortTag((nint)handle);
@@ -126,14 +127,16 @@ public sealed unsafe partial class ShortTag : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_1bae5d8a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_a0c92b75((void*)__hosihikari_shim_handle, (void*)dis.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a0c92b75((void*)__hosihikari_shim_handle, (void*)dis.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ShortTag operator_subtract()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ShortTag? operator_subtract()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ShortTag((nint)NativeMethods.TablePtr->C3.hs_method_debd4bf2((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_debd4bf2((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ShortTag((nint)__hs_handle) : null;
     }
 
     public string toString()

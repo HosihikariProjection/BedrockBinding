@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptCamera : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ScriptCamera Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptCamera arg0)
+    public static ScriptCamera? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptCamera arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0375470f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptCamera((nint)handle);

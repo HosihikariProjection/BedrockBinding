@@ -40,23 +40,23 @@ public sealed unsafe partial class JigsawStructureBlockInfo : global::System.IDi
         return __hs_handle;
     }
 
-    public static JigsawStructureBlockInfo Create()
+    public static JigsawStructureBlockInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_2e501d1b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JigsawStructureBlockInfo((nint)handle);
     }
 
-    public static JigsawStructureBlockInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockInfo arg0)
+    public static JigsawStructureBlockInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_2f68fb78((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JigsawStructureBlockInfo((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class JigsawStructureBlockInfo : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C2.hs_get_3dbe4abd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockInfo((nint)NativeMethods.TablePtr->C2.hs_method_c300b40b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c300b40b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockInfo((nint)__hs_handle, false) : null;
     }
 
 

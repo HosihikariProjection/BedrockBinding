@@ -48,12 +48,12 @@ public sealed unsafe partial class FlyMoveControl : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FlyMoveControl Create(global::Hosihikari.Bindings.Bedrock.Interop.FlyMoveControl arg0)
+    public static FlyMoveControl? Create(global::Hosihikari.Bindings.Bedrock.Interop.FlyMoveControl arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6fa41140((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FlyMoveControl((nint)handle);

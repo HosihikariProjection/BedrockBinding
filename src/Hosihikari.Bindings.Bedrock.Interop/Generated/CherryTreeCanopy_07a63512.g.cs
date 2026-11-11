@@ -44,12 +44,12 @@ public sealed unsafe partial class CherryTreeCanopy : global::System.IDisposable
     public nint _placeCanopy(nint target, nint pos, nint trunkSize, nint random, nint arg4, nint treeParams, int arg6, nint arg7) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CherryTreeCanopy Create(global::Hosihikari.Bindings.Bedrock.Interop.CherryTreeCanopy arg0)
+    public static CherryTreeCanopy? Create(global::Hosihikari.Bindings.Bedrock.Interop.CherryTreeCanopy arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b915a097((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CherryTreeCanopy((nint)handle);

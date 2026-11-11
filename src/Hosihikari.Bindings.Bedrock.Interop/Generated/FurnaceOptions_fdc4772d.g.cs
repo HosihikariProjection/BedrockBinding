@@ -40,23 +40,23 @@ public sealed unsafe partial class FurnaceOptions : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static FurnaceOptions Create()
+    public static FurnaceOptions? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d42e8224();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FurnaceOptions((nint)handle);
     }
 
-    public static FurnaceOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceOptions arg0)
+    public static FurnaceOptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ba9bc6c4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FurnaceOptions((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class FurnaceOptions : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_3b8f5987((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FurnaceOptions operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceOptions arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FurnaceOptions? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceOptions arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FurnaceOptions((nint)NativeMethods.TablePtr->C1.hs_method_43009ffb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_43009ffb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FurnaceOptions((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

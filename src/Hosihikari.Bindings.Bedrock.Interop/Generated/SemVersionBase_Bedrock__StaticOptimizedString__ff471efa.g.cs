@@ -40,45 +40,45 @@ public sealed unsafe partial class SemVersionBase_Bedrock__StaticOptimizedString
         return __hs_handle;
     }
 
-    public static SemVersionBase_Bedrock__StaticOptimizedString_ Create()
+    public static SemVersionBase_Bedrock__StaticOptimizedString_? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cafbfae3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SemVersionBase_Bedrock__StaticOptimizedString_((nint)handle);
     }
 
-    public static SemVersionBase_Bedrock__StaticOptimizedString_ Create(global::Hosihikari.Bindings.Bedrock.Interop.SemVersionAnyVersionType arg0)
+    public static SemVersionBase_Bedrock__StaticOptimizedString_? Create(global::Hosihikari.Bindings.Bedrock.Interop.SemVersionAnyVersionType arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9e7ddeba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SemVersionBase_Bedrock__StaticOptimizedString_((nint)handle);
     }
 
-    public static SemVersionBase_Bedrock__StaticOptimizedString_ Create(global::Hosihikari.Bindings.Bedrock.Interop.SemVersionBase_Bedrock__StaticOptimizedString_ arg0)
+    public static SemVersionBase_Bedrock__StaticOptimizedString_? Create(global::Hosihikari.Bindings.Bedrock.Interop.SemVersionBase_Bedrock__StaticOptimizedString_ arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8b76034a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SemVersionBase_Bedrock__StaticOptimizedString_((nint)handle);
     }
 
-    public static SemVersionBase_Bedrock__StaticOptimizedString_ Create(ushort major, ushort minor, ushort patch, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString preRelease, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString buildMeta)
+    public static SemVersionBase_Bedrock__StaticOptimizedString_? Create(ushort major, ushort minor, ushort patch, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString preRelease, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString buildMeta)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d863f8f3(major, minor, patch, (void*)preRelease.Handle, (void*)buildMeta.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SemVersionBase_Bedrock__StaticOptimizedString_((nint)handle);

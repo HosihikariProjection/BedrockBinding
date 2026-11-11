@@ -40,23 +40,23 @@ public sealed unsafe partial class PackCapability : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PackCapability Create()
+    public static PackCapability? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8423df23();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackCapability((nint)handle);
     }
 
-    public static PackCapability Create(global::Hosihikari.Bindings.Bedrock.Interop.PackCapability arg0)
+    public static PackCapability? Create(global::Hosihikari.Bindings.Bedrock.Interop.PackCapability arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b9264fa8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackCapability((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class PackCapability : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_c9b6dc57((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PackCapability operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackCapability arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PackCapability? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackCapability arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackCapability((nint)NativeMethods.TablePtr->C2.hs_method_79016a69((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_79016a69((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackCapability((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

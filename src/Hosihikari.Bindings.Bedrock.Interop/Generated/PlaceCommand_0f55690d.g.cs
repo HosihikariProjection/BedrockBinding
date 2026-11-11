@@ -78,12 +78,12 @@ public sealed unsafe partial class PlaceCommand : global::System.IDisposable
     public bool _isDone() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlaceCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.PlaceCommand arg0)
+    public static PlaceCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.PlaceCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8dc78b9d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlaceCommand((nint)handle);

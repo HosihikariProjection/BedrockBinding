@@ -40,23 +40,23 @@ public sealed unsafe partial class ReadMode : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ReadMode Create()
+    public static ReadMode? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b1baae56();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReadMode((nint)handle);
     }
 
-    public static ReadMode Create(global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.ReadMode arg0)
+    public static ReadMode? Create(global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.ReadMode arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ad1396b0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReadMode((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class ReadMode : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_24ea0ed7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.ReadMode operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.ReadMode arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.ReadMode? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.ReadMode arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.ReadMode((nint)NativeMethods.TablePtr->C0.hs_method_4fcc68e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4fcc68e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.ReadMode((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

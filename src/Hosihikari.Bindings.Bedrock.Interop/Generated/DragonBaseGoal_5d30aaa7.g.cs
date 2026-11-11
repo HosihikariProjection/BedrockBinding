@@ -58,23 +58,23 @@ public sealed unsafe partial class DragonBaseGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_3da2bdc8((void*)__hosihikari_shim_handle, value);
     }
 
-    public static DragonBaseGoal Create()
+    public static DragonBaseGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_aa4fe68c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DragonBaseGoal((nint)handle);
     }
 
-    public static DragonBaseGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.DragonBaseGoal arg0)
+    public static DragonBaseGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.DragonBaseGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2f2f8ff9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DragonBaseGoal((nint)handle);
@@ -110,9 +110,10 @@ public sealed unsafe partial class DragonBaseGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_630844f3((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DragonBaseGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DragonBaseGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DragonBaseGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DragonBaseGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DragonBaseGoal((nint)NativeMethods.TablePtr->C1.hs_method_b7ad8b6b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b7ad8b6b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DragonBaseGoal((nint)__hs_handle, false) : null;
     }
 
 

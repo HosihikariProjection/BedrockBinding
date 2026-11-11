@@ -48,23 +48,23 @@ public sealed unsafe partial class ConstDeserializeDataParams : global::System.I
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ConstDeserializeDataParams Create()
+    public static ConstDeserializeDataParams? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a7fc3a24();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ConstDeserializeDataParams((nint)handle);
     }
 
-    public static ConstDeserializeDataParams Create(global::Hosihikari.Bindings.Bedrock.Interop.ConstDeserializeDataParams arg0)
+    public static ConstDeserializeDataParams? Create(global::Hosihikari.Bindings.Bedrock.Interop.ConstDeserializeDataParams arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f3cd041a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ConstDeserializeDataParams((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class ConstDeserializeDataParams : global::System.I
         get => (nint)NativeMethods.TablePtr->C0.hs_get_24de129a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ConstDeserializeDataParams operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ConstDeserializeDataParams arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ConstDeserializeDataParams? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ConstDeserializeDataParams arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ConstDeserializeDataParams((nint)NativeMethods.TablePtr->C0.hs_method_08d2a02d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_08d2a02d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ConstDeserializeDataParams((nint)__hs_handle, false) : null;
     }
 
 

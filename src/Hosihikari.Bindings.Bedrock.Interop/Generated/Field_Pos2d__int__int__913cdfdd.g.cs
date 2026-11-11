@@ -50,9 +50,10 @@ public sealed unsafe partial class Field_Pos2d__int__int_ : global::System.IDisp
         return NativeMethods.TablePtr->C4.hs_method_9b86c755((void*)__hosihikari_shim_handle, (void*)b.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Pos2d div(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Pos2d? div(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Pos2d((nint)NativeMethods.TablePtr->C4.hs_method_697df019((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_697df019((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Pos2d((nint)__hs_handle) : null;
     }
 
     public double dot(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)
@@ -90,29 +91,34 @@ public sealed unsafe partial class Field_Pos2d__int__int_ : global::System.IDisp
     public nint lt(nint b) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<2>' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Pos2d mul(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Pos2d? mul(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Pos2d((nint)NativeMethods.TablePtr->C4.hs_method_d3e2441a((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d3e2441a((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Pos2d((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Pos2d operator_multiply(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Pos2d? operator_multiply(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Pos2d((nint)NativeMethods.TablePtr->C4.hs_method_ce6a3751((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ce6a3751((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Pos2d((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Pos2d operator_operator___0a17a7ff(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Pos2d? operator_operator___0a17a7ff(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Pos2d((nint)NativeMethods.TablePtr->C4.hs_method_0a17a7ff((void*)__hosihikari_shim_handle, (void*)b.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0a17a7ff((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Pos2d((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Pos2d operator_divide(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Pos2d? operator_divide(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Pos2d((nint)NativeMethods.TablePtr->C4.hs_method_c71b1b89((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c71b1b89((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Pos2d((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Pos2d operator_operator___bcad5542(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Pos2d? operator_operator___bcad5542(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Pos2d((nint)NativeMethods.TablePtr->C4.hs_method_bcad5542((void*)__hosihikari_shim_handle, (void*)b.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_bcad5542((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Pos2d((nint)__hs_handle, false) : null;
     }
 
     public bool operator_less(global::Hosihikari.Bindings.Bedrock.Interop.Pos2d b)

@@ -40,12 +40,12 @@ public sealed unsafe partial class CraftRecipeAutoActionData : global::System.ID
         return __hs_handle;
     }
 
-    public static CraftRecipeAutoActionData Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.CraftRecipeAutoActionData arg0)
+    public static CraftRecipeAutoActionData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.CraftRecipeAutoActionData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3d5b4ec1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CraftRecipeAutoActionData((nint)handle);

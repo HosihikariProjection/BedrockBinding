@@ -69,9 +69,10 @@ public sealed unsafe partial class ListTag : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_1cb61dde((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C2.hs_method_9d6de6b6((void*)__hosihikari_shim_handle, (void*)dis.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9d6de6b6((void*)__hosihikari_shim_handle, (void*)dis.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     public void _print(string prefix_, global::Hosihikari.Bindings.Bedrock.Interop.PrintStream @out)
@@ -108,23 +109,23 @@ public sealed unsafe partial class ListTag : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_afa1f270((void*)__hosihikari_shim_handle, (void*)dos.Handle);
     }
 
-    public static ListTag Create()
+    public static ListTag? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b18d4b6a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ListTag((nint)handle);
     }
 
-    public static ListTag Create(global::Hosihikari.Bindings.Bedrock.Interop.ListTag arg0)
+    public static ListTag? Create(global::Hosihikari.Bindings.Bedrock.Interop.ListTag arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9f01beca((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ListTag((nint)handle);
@@ -174,9 +175,10 @@ public sealed unsafe partial class ListTag : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_37c5b3fa((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C2.hs_method_d656d80f((void*)__hosihikari_shim_handle, (void*)dis.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d656d80f((void*)__hosihikari_shim_handle, (void*)dis.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

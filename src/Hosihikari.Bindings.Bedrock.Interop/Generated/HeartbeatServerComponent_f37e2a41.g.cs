@@ -40,23 +40,23 @@ public sealed unsafe partial class HeartbeatServerComponent : global::System.IDi
         return __hs_handle;
     }
 
-    public static HeartbeatServerComponent Create()
+    public static HeartbeatServerComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ce7afce3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HeartbeatServerComponent((nint)handle);
     }
 
-    public static HeartbeatServerComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerComponent arg0)
+    public static HeartbeatServerComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_990f002a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HeartbeatServerComponent((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class HeartbeatServerComponent : global::System.IDi
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerComponent((nint)NativeMethods.TablePtr->C1.hs_method_5ac4390b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5ac4390b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerComponent((nint)__hs_handle, false) : null;
     }
 
 

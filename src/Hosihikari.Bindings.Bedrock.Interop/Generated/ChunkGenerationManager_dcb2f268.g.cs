@@ -40,12 +40,12 @@ public sealed unsafe partial class ChunkGenerationManager : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ChunkGenerationManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkGenerationManager arg0)
+    public static ChunkGenerationManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkGenerationManager arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_69d3ea11((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkGenerationManager((nint)handle);

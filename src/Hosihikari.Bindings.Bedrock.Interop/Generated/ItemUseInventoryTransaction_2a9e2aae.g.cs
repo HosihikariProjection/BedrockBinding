@@ -78,23 +78,23 @@ public sealed unsafe partial class ItemUseInventoryTransaction : global::System.
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemUseInventoryTransaction Create()
+    public static ItemUseInventoryTransaction? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ef544063();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemUseInventoryTransaction((nint)handle);
     }
 
-    public static ItemUseInventoryTransaction Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemUseInventoryTransaction transaction)
+    public static ItemUseInventoryTransaction? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemUseInventoryTransaction transaction)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_db70ab00((void*)transaction.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemUseInventoryTransaction((nint)handle);
@@ -203,9 +203,10 @@ public sealed unsafe partial class ItemUseInventoryTransaction : global::System.
     public static void resendPlayerState(nint player) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemUseInventoryTransaction setSelectedItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemUseInventoryTransaction? setSelectedItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemUseInventoryTransaction((nint)NativeMethods.TablePtr->C1.hs_method_7355b6fd((void*)__hosihikari_shim_handle, (void*)item.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7355b6fd((void*)__hosihikari_shim_handle, (void*)item.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemUseInventoryTransaction((nint)__hs_handle, false) : null;
     }
 
 

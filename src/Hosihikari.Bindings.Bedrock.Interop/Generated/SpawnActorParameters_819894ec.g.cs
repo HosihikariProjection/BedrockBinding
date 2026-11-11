@@ -52,12 +52,12 @@ public sealed unsafe partial class SpawnActorParameters : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpawnActorParameters Create()
+    public static SpawnActorParameters? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_49899bce();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnActorParameters((nint)handle);
@@ -137,9 +137,10 @@ public sealed unsafe partial class SpawnActorParameters : global::System.IDispos
         set => NativeMethods.TablePtr->C3.hs_set_87e1f95b((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorParameters operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorParameters arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorParameters? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorParameters arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorParameters((nint)NativeMethods.TablePtr->C3.hs_method_1952d441((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1952d441((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorParameters((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

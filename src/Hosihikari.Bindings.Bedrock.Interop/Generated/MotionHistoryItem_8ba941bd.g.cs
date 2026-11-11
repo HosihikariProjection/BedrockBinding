@@ -58,36 +58,38 @@ public sealed unsafe partial class MotionHistoryItem : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_1a24f105((void*)__hosihikari_shim_handle);
     }
 
-    public static MotionHistoryItem Create()
+    public static MotionHistoryItem? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1066a5bf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MotionHistoryItem((nint)handle);
     }
 
-    public static MotionHistoryItem Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MotionHistoryItem arg0)
+    public static MotionHistoryItem? Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MotionHistoryItem arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_55fa6ed6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MotionHistoryItem((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getPos()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getPos()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_5b97a13f((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5b97a13f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 getRot()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2? getRot()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C2.hs_method_6b5603da((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6b5603da((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle, false) : null;
     }
 
     public float getYHeadRot()
@@ -169,9 +171,10 @@ public sealed unsafe partial class MotionHistoryItem : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_4f3f3d8f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MotionHistoryItem operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MotionHistoryItem arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MotionHistoryItem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MotionHistoryItem arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MotionHistoryItem((nint)NativeMethods.TablePtr->C2.hs_method_5d6bf809((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5d6bf809((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MotionHistoryItem((nint)__hs_handle, false) : null;
     }
 
 

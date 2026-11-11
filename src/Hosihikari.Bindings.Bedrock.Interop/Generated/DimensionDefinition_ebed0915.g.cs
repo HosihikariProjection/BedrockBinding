@@ -45,12 +45,12 @@ public sealed unsafe partial class DimensionDefinition : global::System.IDisposa
         NativeMethods.TablePtr->C1.hs_method_fccd6b1f((void*)__hosihikari_shim_handle);
     }
 
-    public static DimensionDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.DimensionDefinitionGroup_Nested.DimensionDefinition arg0)
+    public static DimensionDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.DimensionDefinitionGroup_Nested.DimensionDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_829bae14((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DimensionDefinition((nint)handle);

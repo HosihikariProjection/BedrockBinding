@@ -44,12 +44,12 @@ public sealed unsafe partial class PlayerInputTick : global::System.IDisposable
     public nint _ctor(nint entity) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerInputTick Create()
+    public static PlayerInputTick? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b837b199();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerInputTick((nint)handle);

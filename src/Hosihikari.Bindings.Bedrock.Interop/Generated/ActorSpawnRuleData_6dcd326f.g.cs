@@ -48,12 +48,12 @@ public sealed unsafe partial class ActorSpawnRuleData : global::System.IDisposab
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorSpawnRuleData Create()
+    public static ActorSpawnRuleData? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9696d7e8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorSpawnRuleData((nint)handle);

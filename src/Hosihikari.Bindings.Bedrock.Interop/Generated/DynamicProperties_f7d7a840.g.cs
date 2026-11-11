@@ -40,12 +40,12 @@ public sealed unsafe partial class DynamicProperties : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static DynamicProperties Create(global::Hosihikari.Bindings.Bedrock.Interop.DynamicProperties arg0)
+    public static DynamicProperties? Create(global::Hosihikari.Bindings.Bedrock.Interop.DynamicProperties arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5a4947fe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DynamicProperties((nint)handle);

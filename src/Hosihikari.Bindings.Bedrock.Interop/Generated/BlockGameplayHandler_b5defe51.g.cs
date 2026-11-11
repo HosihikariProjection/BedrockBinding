@@ -40,25 +40,27 @@ public sealed unsafe partial class BlockGameplayHandler : global::System.IDispos
         return __hs_handle;
     }
 
-    public static BlockGameplayHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockGameplayHandler arg0)
+    public static BlockGameplayHandler? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockGameplayHandler arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ee6d8892((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockGameplayHandler((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.MutableBlockGameplayEvent_CoordinatorResult_ @event)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.MutableBlockGameplayEvent_CoordinatorResult_ @event)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C0.hs_method_1a38f6b7((void*)__hosihikari_shim_handle, (void*)@event.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1a38f6b7((void*)__hosihikari_shim_handle, (void*)@event.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.BlockGameplayEvent_CoordinatorResult_ arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.BlockGameplayEvent_CoordinatorResult_ arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C0.hs_method_459aad24((void*)__hosihikari_shim_handle, (void*)arg0.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_459aad24((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'GameplayHandlerResult<std::optional<std::basic_string<char>>>' requires --link-carrier or --virtual-dispatch.", false)]

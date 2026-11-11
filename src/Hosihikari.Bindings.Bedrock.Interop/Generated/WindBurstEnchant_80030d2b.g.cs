@@ -122,12 +122,12 @@ public sealed unsafe partial class WindBurstEnchant : global::System.IDisposable
     public bool _isTreasureOnly() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WindBurstEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.WindBurstEnchant arg0)
+    public static WindBurstEnchant? Create(global::Hosihikari.Bindings.Bedrock.Interop.WindBurstEnchant arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f48691eb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WindBurstEnchant((nint)handle);

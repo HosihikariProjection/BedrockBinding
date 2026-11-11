@@ -40,12 +40,12 @@ public sealed unsafe partial class TriggerJumpRequestComponent : global::System.
         return __hs_handle;
     }
 
-    public static TriggerJumpRequestComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.TriggerJumpRequestComponent arg0)
+    public static TriggerJumpRequestComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.TriggerJumpRequestComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ccfd69b4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TriggerJumpRequestComponent((nint)handle);

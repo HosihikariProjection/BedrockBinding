@@ -64,12 +64,12 @@ public sealed unsafe partial class NetworkItemInstanceDescriptor : global::Syste
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetworkItemInstanceDescriptor Create()
+    public static NetworkItemInstanceDescriptor? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e159059c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkItemInstanceDescriptor((nint)handle);

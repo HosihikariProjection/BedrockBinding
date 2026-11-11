@@ -44,23 +44,23 @@ public sealed unsafe partial class LegacyBlockInfo : global::System.IDisposable
     public nint _ctor(int legacyId_, nint legacyFullName_, nint legacyRawName_, byte maxAuxValue_, nint newBlockNameAuxVariants_, int startVariant) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacyBlockInfo Create()
+    public static LegacyBlockInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2b591d0d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyBlockInfo((nint)handle);
     }
 
-    public static LegacyBlockInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.LegacyBlockInfo arg0)
+    public static LegacyBlockInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.LegacyBlockInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_830c97b4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyBlockInfo((nint)handle);

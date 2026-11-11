@@ -40,23 +40,23 @@ public sealed unsafe partial class DetectRedstone : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static DetectRedstone Create()
+    public static DetectRedstone? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ae9911ff();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DetectRedstone((nint)handle);
     }
 
-    public static DetectRedstone Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.DetectRedstone arg0)
+    public static DetectRedstone? Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.DetectRedstone arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_10b0faeb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DetectRedstone((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class DetectRedstone : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_02db6194((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.DetectRedstone operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.DetectRedstone arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.DetectRedstone? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.DetectRedstone arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.DetectRedstone((nint)NativeMethods.TablePtr->C0.hs_method_d2427165((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d2427165((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.DetectRedstone((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

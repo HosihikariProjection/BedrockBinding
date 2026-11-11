@@ -68,12 +68,12 @@ public sealed unsafe partial class ServerLocator : global::System.IDisposable
     public nint _getTransportEndpointCache() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerLocator Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerLocator arg0)
+    public static ServerLocator? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerLocator arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9cbcec0d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerLocator((nint)handle);
@@ -89,9 +89,10 @@ public sealed unsafe partial class ServerLocator : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_30715cea((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription acquireHttpProbePermission()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription? acquireHttpProbePermission()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)NativeMethods.TablePtr->C3.hs_method_112a9da1((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_112a9da1((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)__hs_handle) : null;
     }
 
     public void addCustomServer(global::Hosihikari.Bindings.Bedrock.Interop.AsynchronousIPResolver futureIP, int port)

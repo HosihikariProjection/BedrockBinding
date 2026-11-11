@@ -62,12 +62,12 @@ public sealed unsafe partial class ItemEventResponseFactory : global::System.IDi
     public static nint _vftableForIPackLoadScoped() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemEventResponseFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemEventResponseFactory arg0)
+    public static ItemEventResponseFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemEventResponseFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c988458c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemEventResponseFactory((nint)handle);

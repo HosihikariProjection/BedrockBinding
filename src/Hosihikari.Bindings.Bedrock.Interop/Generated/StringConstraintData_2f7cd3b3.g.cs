@@ -40,12 +40,12 @@ public sealed unsafe partial class StringConstraintData : global::System.IDispos
         return __hs_handle;
     }
 
-    public static StringConstraintData Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.StringConstraintData arg0)
+    public static StringConstraintData? Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.StringConstraintData arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_944b14f3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StringConstraintData((nint)handle);

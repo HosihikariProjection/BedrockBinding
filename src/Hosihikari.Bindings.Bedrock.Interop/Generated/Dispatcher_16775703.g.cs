@@ -53,12 +53,12 @@ public sealed unsafe partial class Dispatcher : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_a295a9b3((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public static Dispatcher Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Dispatcher arg0)
+    public static Dispatcher? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Dispatcher arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e4073286((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Dispatcher((nint)handle);

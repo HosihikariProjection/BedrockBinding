@@ -48,12 +48,12 @@ public sealed unsafe partial class BiomeDecorationFeature : global::System.IDisp
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BiomeDecorationFeature Create()
+    public static BiomeDecorationFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d31b2d10();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BiomeDecorationFeature((nint)handle);
@@ -93,9 +93,10 @@ public sealed unsafe partial class BiomeDecorationFeature : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C0.hs_get_9ea2145f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeDecorationFeature operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BiomeDecorationFeature arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeDecorationFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BiomeDecorationFeature arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeDecorationFeature((nint)NativeMethods.TablePtr->C0.hs_method_8071ca7f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8071ca7f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeDecorationFeature((nint)__hs_handle, false) : null;
     }
 
 

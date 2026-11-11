@@ -40,12 +40,12 @@ public sealed unsafe partial class GeometryPart : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static GeometryPart Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_60.BlockCulling_Nested.Rule_Nested.GeometryPart arg0)
+    public static GeometryPart? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_60.BlockCulling_Nested.Rule_Nested.GeometryPart arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_555656f7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GeometryPart((nint)handle);

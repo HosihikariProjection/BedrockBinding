@@ -52,23 +52,23 @@ public sealed unsafe partial class EncryptedZipTransforms : global::System.IDisp
     public bool _writeTransform(nint stream) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EncryptedZipTransforms Create()
+    public static EncryptedZipTransforms? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a88452be();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EncryptedZipTransforms((nint)handle);
     }
 
-    public static EncryptedZipTransforms Create(global::Hosihikari.Bindings.Bedrock.Interop.EncryptedZipTransforms arg0)
+    public static EncryptedZipTransforms? Create(global::Hosihikari.Bindings.Bedrock.Interop.EncryptedZipTransforms arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c5ca2891((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EncryptedZipTransforms((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class EncryptedZipTransforms : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C1.hs_get_d9ae2d2d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EncryptedZipTransforms operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EncryptedZipTransforms arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EncryptedZipTransforms? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EncryptedZipTransforms arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EncryptedZipTransforms((nint)NativeMethods.TablePtr->C1.hs_method_49459877((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_49459877((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EncryptedZipTransforms((nint)__hs_handle, false) : null;
     }
 
     public bool readTransform(byte[] stream)

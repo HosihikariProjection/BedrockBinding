@@ -56,12 +56,12 @@ public sealed unsafe partial class SurfaceLevelCache : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SurfaceLevelCache Create()
+    public static SurfaceLevelCache? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_dac60e02();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SurfaceLevelCache((nint)handle);
@@ -71,12 +71,12 @@ public sealed unsafe partial class SurfaceLevelCache : global::System.IDisposabl
     public static SurfaceLevelCache Create(nint startPos, nint preliminarySurfaceProvider, ulong bufferSizeXZ) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SurfaceLevelCache Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache arg0)
+    public static SurfaceLevelCache? Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_063174fc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SurfaceLevelCache((nint)handle);
@@ -110,9 +110,10 @@ public sealed unsafe partial class SurfaceLevelCache : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C3.hs_get_133b4a8a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache((nint)NativeMethods.TablePtr->C3.hs_method_3442d142((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3442d142((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache((nint)__hs_handle, false) : null;
     }
 
 

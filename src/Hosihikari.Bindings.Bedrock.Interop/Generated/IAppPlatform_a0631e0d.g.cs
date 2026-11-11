@@ -46,12 +46,12 @@ public sealed unsafe partial class IAppPlatform : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_af0e09a7((void*)__hosihikari_shim_handle);
     }
 
-    public static IAppPlatform Create(global::Hosihikari.Bindings.Bedrock.Interop.IAppPlatform arg0)
+    public static IAppPlatform? Create(global::Hosihikari.Bindings.Bedrock.Interop.IAppPlatform arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d9386417((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IAppPlatform((nint)handle);
@@ -89,9 +89,10 @@ public sealed unsafe partial class IAppPlatform : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C1.hs_method_b53c5fb6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getLoggingPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getLoggingPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C1.hs_method_70b0603e((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_70b0603e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public ulong getLowPhysicalMemoryThreshold()

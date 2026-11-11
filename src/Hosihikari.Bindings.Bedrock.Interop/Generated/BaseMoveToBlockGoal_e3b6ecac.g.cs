@@ -82,12 +82,12 @@ public sealed unsafe partial class BaseMoveToBlockGoal : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BaseMoveToBlockGoal Create()
+    public static BaseMoveToBlockGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_51265d45();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseMoveToBlockGoal((nint)handle);
@@ -97,12 +97,12 @@ public sealed unsafe partial class BaseMoveToBlockGoal : global::System.IDisposa
     public static BaseMoveToBlockGoal Create(nint mob, nint name, nint goalId, float speedModifier, int searchRange, int searchHeight, int searchCount, float goalRadius, float cooldownTime) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BaseMoveToBlockGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToBlockGoal arg0)
+    public static BaseMoveToBlockGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToBlockGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ddaa8bfd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseMoveToBlockGoal((nint)handle);

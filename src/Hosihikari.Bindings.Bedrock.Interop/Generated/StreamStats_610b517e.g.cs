@@ -40,23 +40,23 @@ public sealed unsafe partial class StreamStats : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static StreamStats Create()
+    public static StreamStats? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_20a27a9b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StreamStats((nint)handle);
     }
 
-    public static StreamStats Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.StreamStats arg0)
+    public static StreamStats? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.StreamStats arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4de04c26((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StreamStats((nint)handle);
@@ -194,9 +194,10 @@ public sealed unsafe partial class StreamStats : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_3197f008((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.StreamStats operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.StreamStats arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.StreamStats? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.StreamStats arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.StreamStats((nint)NativeMethods.TablePtr->C4.hs_method_1f3e33ea((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1f3e33ea((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.StreamStats((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

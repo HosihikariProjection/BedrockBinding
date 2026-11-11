@@ -68,23 +68,23 @@ public sealed unsafe partial class ItemStackRequestActionCraftLoom : global::Sys
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemStackRequestActionCraftLoom Create()
+    public static ItemStackRequestActionCraftLoom? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b9747816();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackRequestActionCraftLoom((nint)handle);
     }
 
-    public static ItemStackRequestActionCraftLoom Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftLoom arg0)
+    public static ItemStackRequestActionCraftLoom? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftLoom arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b891daba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackRequestActionCraftLoom((nint)handle);
@@ -94,9 +94,10 @@ public sealed unsafe partial class ItemStackRequestActionCraftLoom : global::Sys
     public static ItemStackRequestActionCraftLoom Create(nint patternNameId, byte numCrafts) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_1d6f19f3((void*)__hosihikari_shim_handle, (void*)stream.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1d6f19f3((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     public void _write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)

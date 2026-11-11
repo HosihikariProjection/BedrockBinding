@@ -40,12 +40,12 @@ public sealed unsafe partial class GameSpecificNetEventCallback : global::System
         return __hs_handle;
     }
 
-    public static GameSpecificNetEventCallback Create(global::Hosihikari.Bindings.Bedrock.Interop.GameSpecificNetEventCallback arg0)
+    public static GameSpecificNetEventCallback? Create(global::Hosihikari.Bindings.Bedrock.Interop.GameSpecificNetEventCallback arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9bd8fb35((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameSpecificNetEventCallback((nint)handle);

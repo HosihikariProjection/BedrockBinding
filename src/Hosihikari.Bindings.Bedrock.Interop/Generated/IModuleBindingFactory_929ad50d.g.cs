@@ -40,12 +40,12 @@ public sealed unsafe partial class IModuleBindingFactory : global::System.IDispo
         return __hs_handle;
     }
 
-    public static IModuleBindingFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IModuleBindingFactory arg0)
+    public static IModuleBindingFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IModuleBindingFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0d2351c8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IModuleBindingFactory((nint)handle);
@@ -69,9 +69,10 @@ public sealed unsafe partial class IModuleBindingFactory : global::System.IDispo
     public nint getSupportedVersions() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'Scripting::Version' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID getUUID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? getUUID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C3.hs_method_e64a816d((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e64a816d((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle) : null;
     }
 
     public bool hasAlias(string alias)

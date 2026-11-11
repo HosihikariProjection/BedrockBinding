@@ -135,12 +135,12 @@ public sealed unsafe partial class ItemFrameBlockActor : global::System.IDisposa
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemFrameBlockActor Create()
+    public static ItemFrameBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_dc6a000c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemFrameBlockActor((nint)handle);

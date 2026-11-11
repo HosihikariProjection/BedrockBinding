@@ -44,12 +44,12 @@ public sealed unsafe partial class OutOfWorldSystem : global::System.IDisposable
     public void _tick(nint registry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OutOfWorldSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.OutOfWorldSystem arg0)
+    public static OutOfWorldSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.OutOfWorldSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_aa6e31ab((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OutOfWorldSystem((nint)handle);

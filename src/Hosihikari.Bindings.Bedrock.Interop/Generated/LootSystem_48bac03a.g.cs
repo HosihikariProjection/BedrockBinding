@@ -48,12 +48,12 @@ public sealed unsafe partial class LootSystem : global::System.IDisposable
     public void _tick(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LootSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.LootSystem arg0)
+    public static LootSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.LootSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c233b322((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LootSystem((nint)handle);

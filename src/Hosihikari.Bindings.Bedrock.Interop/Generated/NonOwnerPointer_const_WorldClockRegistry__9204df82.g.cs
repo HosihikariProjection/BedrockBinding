@@ -40,45 +40,45 @@ public sealed unsafe partial class NonOwnerPointer_const_WorldClockRegistry_ : g
         return __hs_handle;
     }
 
-    public static NonOwnerPointer_const_WorldClockRegistry_ Create()
+    public static NonOwnerPointer_const_WorldClockRegistry_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_da75e712();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_const_WorldClockRegistry_((nint)handle);
     }
 
-    public static NonOwnerPointer_const_WorldClockRegistry_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    public static NonOwnerPointer_const_WorldClockRegistry_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d64d30de(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_const_WorldClockRegistry_((nint)handle);
     }
 
-    public static NonOwnerPointer_const_WorldClockRegistry_ Create_4bdcdbad()
+    public static NonOwnerPointer_const_WorldClockRegistry_? Create_4bdcdbad()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4bdcdbad();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_const_WorldClockRegistry_((nint)handle);
     }
 
-    public static NonOwnerPointer_const_WorldClockRegistry_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, nint p)
+    public static NonOwnerPointer_const_WorldClockRegistry_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, nint p)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6b7c61eb(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)p);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_const_WorldClockRegistry_((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptScreenDisplay : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static ScriptScreenDisplay Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptScreenDisplay arg0)
+    public static ScriptScreenDisplay? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptScreenDisplay arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9b14dc67((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptScreenDisplay((nint)handle);

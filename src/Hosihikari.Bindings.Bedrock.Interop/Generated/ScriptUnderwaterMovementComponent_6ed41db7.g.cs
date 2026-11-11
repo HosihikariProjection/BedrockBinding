@@ -74,12 +74,12 @@ public sealed unsafe partial class ScriptUnderwaterMovementComponent : global::S
     public static nint ComponentId() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptUnderwaterMovementComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptUnderwaterMovementComponent arg0)
+    public static ScriptUnderwaterMovementComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptUnderwaterMovementComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d1cc4ec5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptUnderwaterMovementComponent((nint)handle);

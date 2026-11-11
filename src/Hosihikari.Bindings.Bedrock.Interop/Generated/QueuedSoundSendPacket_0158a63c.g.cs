@@ -40,12 +40,12 @@ public sealed unsafe partial class QueuedSoundSendPacket : global::System.IDispo
         return __hs_handle;
     }
 
-    public static QueuedSoundSendPacket Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelSoundManager_Nested.QueuedSoundSendPacket arg0)
+    public static QueuedSoundSendPacket? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelSoundManager_Nested.QueuedSoundSendPacket arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_86078b6d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new QueuedSoundSendPacket((nint)handle);

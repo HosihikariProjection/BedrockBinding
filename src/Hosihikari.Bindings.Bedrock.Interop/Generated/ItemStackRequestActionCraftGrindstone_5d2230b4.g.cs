@@ -56,9 +56,10 @@ public sealed unsafe partial class ItemStackRequestActionCraftGrindstone
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_77f36665((void*)__hosihikari_shim_handle, (void*)stream.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_77f36665((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     public void _write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
@@ -66,9 +67,10 @@ public sealed unsafe partial class ItemStackRequestActionCraftGrindstone
         NativeMethods.TablePtr->C1.hs_method_c6faf5b4((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetIdVariant getRecipeNetId()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetIdVariant? getRecipeNetId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetIdVariant((nint)NativeMethods.TablePtr->C1.hs_method_351ae23f((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_351ae23f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetIdVariant((nint)__hs_handle, false) : null;
     }
 
     public int mRepairCost

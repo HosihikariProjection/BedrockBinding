@@ -40,23 +40,23 @@ public sealed unsafe partial class IWatchdog : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IWatchdog Create()
+    public static IWatchdog? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4c338f29();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IWatchdog((nint)handle);
     }
 
-    public static IWatchdog Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IWatchdog arg0)
+    public static IWatchdog? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IWatchdog arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3f211ecf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IWatchdog((nint)handle);
@@ -83,9 +83,10 @@ public sealed unsafe partial class IWatchdog : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_6a4a563e((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IWatchdog operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IWatchdog arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IWatchdog? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IWatchdog arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IWatchdog((nint)NativeMethods.TablePtr->C3.hs_method_5d8a2683((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5d8a2683((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IWatchdog((nint)__hs_handle, false) : null;
     }
 
     public void popPhase()

@@ -40,23 +40,23 @@ public sealed unsafe partial class TypeStats : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TypeStats Create()
+    public static TypeStats? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5b6100e1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TypeStats((nint)handle);
     }
 
-    public static TypeStats Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter_Nested.TypeStats arg0)
+    public static TypeStats? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter_Nested.TypeStats arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d35c6583((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TypeStats((nint)handle);
@@ -110,9 +110,10 @@ public sealed unsafe partial class TypeStats : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_18869d2d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter_Nested.TypeStats operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter_Nested.TypeStats arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter_Nested.TypeStats? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter_Nested.TypeStats arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter_Nested.TypeStats((nint)NativeMethods.TablePtr->C3.hs_method_f7025eae((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f7025eae((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter_Nested.TypeStats((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -40,23 +40,23 @@ public sealed unsafe partial class IncomingPacketQueue : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static IncomingPacketQueue Create()
+    public static IncomingPacketQueue? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_abe61b71();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IncomingPacketQueue((nint)handle);
     }
 
-    public static IncomingPacketQueue Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem_Nested.IncomingPacketQueue arg0)
+    public static IncomingPacketQueue? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem_Nested.IncomingPacketQueue arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_46a59bc6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IncomingPacketQueue((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class IncomingPacketQueue : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C2.hs_get_0f09c2a3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem_Nested.IncomingPacketQueue operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem_Nested.IncomingPacketQueue arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem_Nested.IncomingPacketQueue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem_Nested.IncomingPacketQueue arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem_Nested.IncomingPacketQueue((nint)NativeMethods.TablePtr->C2.hs_method_10e73aaa((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_10e73aaa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem_Nested.IncomingPacketQueue((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

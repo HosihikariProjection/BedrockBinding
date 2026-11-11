@@ -40,45 +40,45 @@ public sealed unsafe partial class NonOwnerPointer_ActorGarbageCollector_ : glob
         return __hs_handle;
     }
 
-    public static NonOwnerPointer_ActorGarbageCollector_ Create()
+    public static NonOwnerPointer_ActorGarbageCollector_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b5593f5b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_ActorGarbageCollector_((nint)handle);
     }
 
-    public static NonOwnerPointer_ActorGarbageCollector_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    public static NonOwnerPointer_ActorGarbageCollector_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0352a6f4(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_ActorGarbageCollector_((nint)handle);
     }
 
-    public static NonOwnerPointer_ActorGarbageCollector_ Create_9ec500bc()
+    public static NonOwnerPointer_ActorGarbageCollector_? Create_9ec500bc()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9ec500bc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_ActorGarbageCollector_((nint)handle);
     }
 
-    public static NonOwnerPointer_ActorGarbageCollector_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector? p)
+    public static NonOwnerPointer_ActorGarbageCollector_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector? p)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_50913451(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_ActorGarbageCollector_((nint)handle);
@@ -113,9 +113,10 @@ public sealed unsafe partial class NonOwnerPointer_ActorGarbageCollector_ : glob
         return NativeMethods.TablePtr->C0.hs_method_86088a6d((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector((nint)NativeMethods.TablePtr->C0.hs_method_c3956a92((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c3956a92((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector? operator_operator__()

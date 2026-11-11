@@ -40,12 +40,12 @@ public sealed unsafe partial class Dependencies : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Dependencies Create(global::Hosihikari.Bindings.Bedrock.Interop.Dependencies arg0)
+    public static Dependencies? Create(global::Hosihikari.Bindings.Bedrock.Interop.Dependencies arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_aa3e81b3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Dependencies((nint)handle);

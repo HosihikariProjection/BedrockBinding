@@ -128,12 +128,12 @@ public sealed unsafe partial class NetherNetConnector : global::System.IDisposab
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetherNetConnector Create()
+    public static NetherNetConnector? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ee1e8340();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetherNetConnector((nint)handle);
@@ -196,9 +196,10 @@ public sealed unsafe partial class NetherNetConnector : global::System.IDisposab
         return NativeMethods.TablePtr->C2.hs_method_cebde9d4((void*)__hosihikari_shim_handle, (void*)primaryConnection.Handle, (void*)backupConnection.Handle, identityGenerator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier getNetworkIdentifier()
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier? getNetworkIdentifier()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)NativeMethods.TablePtr->C2.hs_method_7ee0c809((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7ee0c809((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle) : null;
     }
 
     public int getNetworkType()

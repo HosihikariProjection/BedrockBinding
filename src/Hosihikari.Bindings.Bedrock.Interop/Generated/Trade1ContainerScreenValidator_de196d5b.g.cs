@@ -50,12 +50,12 @@ public sealed unsafe partial class Trade1ContainerScreenValidator : global::Syst
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Trade1ContainerScreenValidator Create(global::Hosihikari.Bindings.Bedrock.Interop.Trade1ContainerScreenValidator arg0)
+    public static Trade1ContainerScreenValidator? Create(global::Hosihikari.Bindings.Bedrock.Interop.Trade1ContainerScreenValidator arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_868fde23((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Trade1ContainerScreenValidator((nint)handle);

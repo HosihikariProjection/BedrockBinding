@@ -48,21 +48,22 @@ public sealed unsafe partial class ServerCorrectionPolicy : global::System.IDisp
     public void _notifyOfExternalCorrection(ulong frame) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection _shouldCorrectMovement(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacket packet, ulong frame, byte currentCounter, bool isStrictMovement)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection? _shouldCorrectMovement(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacket packet, ulong frame, byte currentCounter, bool isStrictMovement)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)NativeMethods.TablePtr->C3.hs_method_181652e8((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)packet.Handle, frame, currentCounter, isStrictMovement));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_181652e8((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)packet.Handle, frame, currentCounter, isStrictMovement);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerCorrectionPolicy Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerCorrectionPolicy arg0)
+    public static ServerCorrectionPolicy? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerCorrectionPolicy arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3c4d407f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerCorrectionPolicy((nint)handle);
@@ -96,9 +97,10 @@ public sealed unsafe partial class ServerCorrectionPolicy : global::System.IDisp
         NativeMethods.TablePtr->C3.hs_method_9ace10a2((void*)__hosihikari_shim_handle, frame);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection shouldCorrectMovement(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacket packet, ulong frame, byte currentCounter, bool isStrictMovement)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection? shouldCorrectMovement(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacket packet, ulong frame, byte currentCounter, bool isStrictMovement)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)NativeMethods.TablePtr->C3.hs_method_5507fd09((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)packet.Handle, frame, currentCounter, isStrictMovement));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5507fd09((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)packet.Handle, frame, currentCounter, isStrictMovement);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)__hs_handle) : null;
     }
 
 

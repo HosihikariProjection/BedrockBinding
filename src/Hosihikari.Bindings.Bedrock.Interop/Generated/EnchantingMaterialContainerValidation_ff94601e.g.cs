@@ -48,12 +48,12 @@ public sealed unsafe partial class EnchantingMaterialContainerValidation : globa
     public bool _isItemAllowedInSlot(nint screenContext, nint slot, nint item, nint amount, bool arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EnchantingMaterialContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.EnchantingMaterialContainerValidation arg0)
+    public static EnchantingMaterialContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.EnchantingMaterialContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_aeb28015((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EnchantingMaterialContainerValidation((nint)handle);

@@ -44,12 +44,12 @@ public sealed unsafe partial class BedrockLoadContext : global::System.IDisposab
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BedrockLoadContext Create(global::Hosihikari.Bindings.Bedrock.Interop.BedrockLoadContext arg0)
+    public static BedrockLoadContext? Create(global::Hosihikari.Bindings.Bedrock.Interop.BedrockLoadContext arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6eb58a54((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BedrockLoadContext((nint)handle);

@@ -128,23 +128,23 @@ public sealed unsafe partial class StructurePoolElement : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StructurePoolElement Create()
+    public static StructurePoolElement? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7f829c23();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructurePoolElement((nint)handle);
     }
 
-    public static StructurePoolElement Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement arg0)
+    public static StructurePoolElement? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5072c3c0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructurePoolElement((nint)handle);
@@ -180,9 +180,10 @@ public sealed unsafe partial class StructurePoolElement : global::System.IDispos
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox getBoundingBox(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, byte rotation)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? getBoundingBox(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, byte rotation)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)NativeMethods.TablePtr->C3.hs_method_1c252930((void*)__hosihikari_shim_handle, (void*)position.Handle, rotation));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1c252930((void*)__hosihikari_shim_handle, (void*)position.Handle, rotation);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'JigsawBlockInfo' is not supported.", false)]
@@ -203,9 +204,10 @@ public sealed unsafe partial class StructurePoolElement : global::System.IDispos
         return NativeMethods.TablePtr->C3.hs_method_a3d27143((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getSize(byte rotation)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSize(byte rotation)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C3.hs_method_4b650a9f((void*)__hosihikari_shim_handle, rotation));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4b650a9f((void*)__hosihikari_shim_handle, rotation);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: map key type 'BlockPos' is not supported.", false)]

@@ -40,12 +40,12 @@ public sealed unsafe partial class DefaultPlusExtraBlockRenderer : global::Syste
         return __hs_handle;
     }
 
-    public static DefaultPlusExtraBlockRenderer Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockGeometryComponent_Nested.DefaultPlusExtraBlockRenderer arg0)
+    public static DefaultPlusExtraBlockRenderer? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockGeometryComponent_Nested.DefaultPlusExtraBlockRenderer arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e4f0efd0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DefaultPlusExtraBlockRenderer((nint)handle);

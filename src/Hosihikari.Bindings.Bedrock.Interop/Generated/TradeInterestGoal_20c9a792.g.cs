@@ -90,12 +90,12 @@ public sealed unsafe partial class TradeInterestGoal : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TradeInterestGoal Create()
+    public static TradeInterestGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_62f102ba();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TradeInterestGoal((nint)handle);
@@ -105,12 +105,12 @@ public sealed unsafe partial class TradeInterestGoal : global::System.IDisposabl
     public static TradeInterestGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TradeInterestGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeInterestGoal arg0)
+    public static TradeInterestGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeInterestGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_040f9d89((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TradeInterestGoal((nint)handle);
@@ -248,9 +248,10 @@ public sealed unsafe partial class TradeInterestGoal : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C4.hs_get_ee982459((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TradeInterestGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TradeInterestGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.TradeInterestGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TradeInterestGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TradeInterestGoal((nint)NativeMethods.TablePtr->C4.hs_method_0c13f5b1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0c13f5b1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TradeInterestGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

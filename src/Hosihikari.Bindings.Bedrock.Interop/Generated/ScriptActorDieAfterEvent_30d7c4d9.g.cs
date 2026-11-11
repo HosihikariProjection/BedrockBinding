@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptActorDieAfterEvent : global::System.IDi
     public nint _ctor(nint eventData, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptActorDieAfterEvent Create()
+    public static ScriptActorDieAfterEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8680c20b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptActorDieAfterEvent((nint)handle);
@@ -83,9 +83,10 @@ public sealed unsafe partial class ScriptActorDieAfterEvent : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C3.hs_get_eb11448f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorDieAfterEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorDieAfterEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorDieAfterEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorDieAfterEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorDieAfterEvent((nint)NativeMethods.TablePtr->C3.hs_method_b41efd67((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b41efd67((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorDieAfterEvent((nint)__hs_handle, false) : null;
     }
 
 

@@ -48,12 +48,12 @@ public sealed unsafe partial class SHFillerCorridor : global::System.IDisposable
     public bool _postProcess(nint region, nint arg1, nint chunkBB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SHFillerCorridor Create(global::Hosihikari.Bindings.Bedrock.Interop.SHFillerCorridor arg0)
+    public static SHFillerCorridor? Create(global::Hosihikari.Bindings.Bedrock.Interop.SHFillerCorridor arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_84f1dd25((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SHFillerCorridor((nint)handle);

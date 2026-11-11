@@ -40,12 +40,12 @@ public sealed unsafe partial class TradeTables : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TradeTables Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeTables arg0)
+    public static TradeTables? Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeTables arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_fef2ecba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TradeTables((nint)handle);

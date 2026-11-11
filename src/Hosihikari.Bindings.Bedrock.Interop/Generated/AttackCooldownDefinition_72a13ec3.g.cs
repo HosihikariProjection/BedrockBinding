@@ -40,12 +40,12 @@ public sealed unsafe partial class AttackCooldownDefinition : global::System.IDi
         return __hs_handle;
     }
 
-    public static AttackCooldownDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.AttackCooldownDefinition arg0)
+    public static AttackCooldownDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.AttackCooldownDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_51f9604e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AttackCooldownDefinition((nint)handle);

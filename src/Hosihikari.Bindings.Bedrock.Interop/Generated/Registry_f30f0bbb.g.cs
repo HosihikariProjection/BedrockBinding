@@ -40,12 +40,12 @@ public sealed unsafe partial class Registry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Registry Create(global::Hosihikari.Bindings.Bedrock.Interop.Motif_Nested.Registry arg0)
+    public static Registry? Create(global::Hosihikari.Bindings.Bedrock.Interop.Motif_Nested.Registry arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c3c2d7db((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Registry((nint)handle);

@@ -40,25 +40,27 @@ public sealed unsafe partial class ValueConstIterator : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static ValueConstIterator Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueConstIterator arg0)
+    public static ValueConstIterator? Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueConstIterator arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ef7563ad((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ValueConstIterator((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C2.hs_method_d397ba9a((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d397ba9a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueConstIterator operator_operator__()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueConstIterator? operator_operator__()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueConstIterator((nint)NativeMethods.TablePtr->C2.hs_method_4740e90a((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4740e90a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueConstIterator((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

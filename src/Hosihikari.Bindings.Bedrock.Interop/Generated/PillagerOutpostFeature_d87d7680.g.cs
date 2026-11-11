@@ -80,34 +80,34 @@ public sealed unsafe partial class PillagerOutpostFeature : global::System.IDisp
         get => NativeMethods.TablePtr->C2.hs_get_a7efef52((void*)__hosihikari_shim_handle);
     }
 
-    public static PillagerOutpostFeature Create()
+    public static PillagerOutpostFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c57a212f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PillagerOutpostFeature((nint)handle);
     }
 
-    public static PillagerOutpostFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.PillagerOutpostFeature arg0)
+    public static PillagerOutpostFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.PillagerOutpostFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1e1185ac((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PillagerOutpostFeature((nint)handle);
     }
 
-    public static PillagerOutpostFeature Create(uint seed)
+    public static PillagerOutpostFeature? Create(uint seed)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4f52ebb2(seed);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PillagerOutpostFeature((nint)handle);

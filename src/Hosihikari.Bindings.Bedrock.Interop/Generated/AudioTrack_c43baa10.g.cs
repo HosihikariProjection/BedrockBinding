@@ -81,23 +81,23 @@ public sealed unsafe partial class AudioTrack : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_136db1be((void*)__hosihikari_shim_handle, (void*)sink);
     }
 
-    public static AudioTrack Create()
+    public static AudioTrack? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ee15b809();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AudioTrack((nint)handle);
     }
 
-    public static AudioTrack Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrack arg0)
+    public static AudioTrack? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrack arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_8f2624a1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AudioTrack((nint)handle);
@@ -141,9 +141,10 @@ public sealed unsafe partial class AudioTrack : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_6c7c02d9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrack operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrack arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrack? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrack arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrack((nint)NativeMethods.TablePtr->C4.hs_method_6295e0b0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6295e0b0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrack((nint)__hs_handle, false) : null;
     }
 
 

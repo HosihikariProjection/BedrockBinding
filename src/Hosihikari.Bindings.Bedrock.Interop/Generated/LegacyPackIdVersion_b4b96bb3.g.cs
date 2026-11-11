@@ -44,12 +44,12 @@ public sealed unsafe partial class LegacyPackIdVersion : global::System.IDisposa
     public nint _ctor(nint id, nint version) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacyPackIdVersion Create()
+    public static LegacyPackIdVersion? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1c34db35();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyPackIdVersion((nint)handle);
@@ -75,9 +75,10 @@ public sealed unsafe partial class LegacyPackIdVersion : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C2.hs_get_e7264480((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyPackIdVersion operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LegacyPackIdVersion arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyPackIdVersion? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LegacyPackIdVersion arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LegacyPackIdVersion((nint)NativeMethods.TablePtr->C2.hs_method_a9c6d851((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a9c6d851((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LegacyPackIdVersion((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

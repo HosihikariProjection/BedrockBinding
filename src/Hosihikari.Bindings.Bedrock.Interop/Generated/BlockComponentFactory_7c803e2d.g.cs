@@ -48,12 +48,12 @@ public sealed unsafe partial class BlockComponentFactory : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockComponentFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentFactory arg0)
+    public static BlockComponentFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ccd6f834((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockComponentFactory((nint)handle);

@@ -82,23 +82,23 @@ public sealed unsafe partial class MoveToBlockGoal : global::System.IDisposable
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveToBlockGoal Create()
+    public static MoveToBlockGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bee99668();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveToBlockGoal((nint)handle);
     }
 
-    public static MoveToBlockGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveToBlockGoal arg0)
+    public static MoveToBlockGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveToBlockGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_2361fb17((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveToBlockGoal((nint)handle);
@@ -289,9 +289,10 @@ public sealed unsafe partial class MoveToBlockGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_28520f67((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MoveToBlockGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MoveToBlockGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MoveToBlockGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MoveToBlockGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MoveToBlockGoal((nint)NativeMethods.TablePtr->C2.hs_method_39f72d42((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_39f72d42((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MoveToBlockGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

@@ -64,12 +64,12 @@ public sealed unsafe partial class HugeFungusFeature : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static HugeFungusFeature Create()
+    public static HugeFungusFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d26c1ef9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HugeFungusFeature((nint)handle);
@@ -79,12 +79,12 @@ public sealed unsafe partial class HugeFungusFeature : global::System.IDisposabl
     public static HugeFungusFeature Create(bool isBlue) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static HugeFungusFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.HugeFungusFeature arg0)
+    public static HugeFungusFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.HugeFungusFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b1e64ecd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HugeFungusFeature((nint)handle);

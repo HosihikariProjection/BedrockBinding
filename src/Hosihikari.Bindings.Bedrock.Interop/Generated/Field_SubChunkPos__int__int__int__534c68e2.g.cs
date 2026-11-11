@@ -50,9 +50,10 @@ public sealed unsafe partial class Field_SubChunkPos__int__int__int_ : global::S
         return NativeMethods.TablePtr->C4.hs_method_4ae0ff4c((void*)__hosihikari_shim_handle, (void*)b.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos div(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos? div(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)NativeMethods.TablePtr->C4.hs_method_5c78b7cf((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5c78b7cf((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle) : null;
     }
 
     public double dot(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
@@ -90,29 +91,34 @@ public sealed unsafe partial class Field_SubChunkPos__int__int__int_ : global::S
     public nint lt(nint b) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos mul(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos? mul(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)NativeMethods.TablePtr->C4.hs_method_ea36587d((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ea36587d((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos operator_multiply(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos? operator_multiply(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)NativeMethods.TablePtr->C4.hs_method_e3370113((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e3370113((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos operator_operator___9a9cad5f(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos? operator_operator___9a9cad5f(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)NativeMethods.TablePtr->C4.hs_method_9a9cad5f((void*)__hosihikari_shim_handle, (void*)b.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_9a9cad5f((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos operator_divide(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos? operator_divide(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)NativeMethods.TablePtr->C4.hs_method_e61e1af6((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e61e1af6((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos operator_operator___0fe69d6b(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos? operator_operator___0fe69d6b(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)NativeMethods.TablePtr->C4.hs_method_0fe69d6b((void*)__hosihikari_shim_handle, (void*)b.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0fe69d6b((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle, false) : null;
     }
 
     public bool operator_less(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)

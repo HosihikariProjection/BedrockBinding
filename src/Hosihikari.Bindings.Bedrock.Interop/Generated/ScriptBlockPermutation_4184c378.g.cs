@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptBlockPermutation : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ScriptBlockPermutation Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockPermutation arg0)
+    public static ScriptBlockPermutation? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockPermutation arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ba9ba323((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockPermutation((nint)handle);

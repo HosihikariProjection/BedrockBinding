@@ -48,12 +48,12 @@ public sealed unsafe partial class AbsorptionMobEffect : global::System.IDisposa
     public void _removeEffects(nint attributeMapToRemoveFrom) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AbsorptionMobEffect Create(global::Hosihikari.Bindings.Bedrock.Interop.AbsorptionMobEffect arg0)
+    public static AbsorptionMobEffect? Create(global::Hosihikari.Bindings.Bedrock.Interop.AbsorptionMobEffect arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e9383fc0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AbsorptionMobEffect((nint)handle);

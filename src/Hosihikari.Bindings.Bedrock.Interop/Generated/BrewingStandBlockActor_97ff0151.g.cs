@@ -175,12 +175,12 @@ public sealed unsafe partial class BrewingStandBlockActor : global::System.IDisp
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BrewingStandBlockActor Create()
+    public static BrewingStandBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ff636a90();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BrewingStandBlockActor((nint)handle);
@@ -217,9 +217,10 @@ public sealed unsafe partial class BrewingStandBlockActor : global::System.IDisp
         return NativeMethods.TablePtr->C0.hs_method_f4d57c50((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C0.hs_method_7e30aae5((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7e30aae5((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int getMaxStackSize()

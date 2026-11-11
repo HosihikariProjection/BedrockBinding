@@ -40,23 +40,23 @@ public sealed unsafe partial class EntityId : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static EntityId Create()
+    public static EntityId? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a1e79e19();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityId((nint)handle);
     }
 
-    public static EntityId Create(uint rawId)
+    public static EntityId? Create(uint rawId)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d0a3d983(rawId);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityId((nint)handle);

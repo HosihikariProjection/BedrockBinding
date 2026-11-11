@@ -40,12 +40,12 @@ public sealed unsafe partial class AcceleratedRule : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static AcceleratedRule Create(global::Hosihikari.Bindings.Bedrock.Interop.OreFeature_Nested.AcceleratedRule arg0)
+    public static AcceleratedRule? Create(global::Hosihikari.Bindings.Bedrock.Interop.OreFeature_Nested.AcceleratedRule arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0c5ec81c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AcceleratedRule((nint)handle);

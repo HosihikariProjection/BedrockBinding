@@ -44,12 +44,12 @@ public sealed unsafe partial class FilterInputDefinition : global::System.IDispo
     public nint _ctor(nint f, nint d) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FilterInputDefinition Create()
+    public static FilterInputDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e20b94ed();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilterInputDefinition((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class FilterInputDefinition : global::System.IDispo
     public static FilterInputDefinition Create(nint f, nint d) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FilterInputDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterInputDefinition arg0)
+    public static FilterInputDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterInputDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1a8bcd93((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilterInputDefinition((nint)handle);
@@ -82,9 +82,10 @@ public sealed unsafe partial class FilterInputDefinition : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C1.hs_get_05fbcb82((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FilterInputDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FilterInputDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FilterInputDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FilterInputDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FilterInputDefinition((nint)NativeMethods.TablePtr->C1.hs_method_b802c5c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b802c5c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FilterInputDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

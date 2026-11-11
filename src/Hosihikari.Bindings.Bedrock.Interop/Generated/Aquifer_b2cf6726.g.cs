@@ -40,23 +40,23 @@ public sealed unsafe partial class Aquifer : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Aquifer Create()
+    public static Aquifer? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_81667cb9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Aquifer((nint)handle);
     }
 
-    public static Aquifer Create(global::Hosihikari.Bindings.Bedrock.Interop.Aquifer arg0)
+    public static Aquifer? Create(global::Hosihikari.Bindings.Bedrock.Interop.Aquifer arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2d3a5762((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Aquifer((nint)handle);
@@ -146,9 +146,10 @@ public sealed unsafe partial class Aquifer : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_ca83f45c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Aquifer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Aquifer arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Aquifer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Aquifer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Aquifer((nint)NativeMethods.TablePtr->C0.hs_method_07f97ced((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_07f97ced((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Aquifer((nint)__hs_handle, false) : null;
     }
 
 

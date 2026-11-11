@@ -40,12 +40,12 @@ public sealed unsafe partial class ItemDefinitionEventTriggeredEvent : global::S
         return __hs_handle;
     }
 
-    public static ItemDefinitionEventTriggeredEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemDefinitionEventTriggeredEvent arg0)
+    public static ItemDefinitionEventTriggeredEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemDefinitionEventTriggeredEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c630db67((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemDefinitionEventTriggeredEvent((nint)handle);

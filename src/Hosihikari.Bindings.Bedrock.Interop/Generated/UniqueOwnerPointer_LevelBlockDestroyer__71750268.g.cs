@@ -40,12 +40,12 @@ public sealed unsafe partial class UniqueOwnerPointer_LevelBlockDestroyer_ : glo
         return __hs_handle;
     }
 
-    public static UniqueOwnerPointer_LevelBlockDestroyer_ Create()
+    public static UniqueOwnerPointer_LevelBlockDestroyer_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d6f8ecbd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_LevelBlockDestroyer_((nint)handle);
@@ -55,12 +55,12 @@ public sealed unsafe partial class UniqueOwnerPointer_LevelBlockDestroyer_ : glo
     public static UniqueOwnerPointer_LevelBlockDestroyer_ Create_97b52fb1(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static UniqueOwnerPointer_LevelBlockDestroyer_ Create_84b655e5()
+    public static UniqueOwnerPointer_LevelBlockDestroyer_? Create_84b655e5()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_84b655e5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_LevelBlockDestroyer_((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class UniqueOwnerPointer_LevelBlockDestroyer_ : glo
         return NativeMethods.TablePtr->C0.hs_method_94b70b7b((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer((nint)NativeMethods.TablePtr->C0.hs_method_36fb1866((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_36fb1866((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer? operator_operator__()
@@ -113,9 +114,10 @@ public sealed unsafe partial class UniqueOwnerPointer_LevelBlockDestroyer_ : glo
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelBlockDestroyer_ operator_assign()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelBlockDestroyer_? operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelBlockDestroyer_((nint)NativeMethods.TablePtr->C0.hs_method_443df525((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_443df525((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelBlockDestroyer_((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelBlockDestroyer_ other)

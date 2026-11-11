@@ -40,12 +40,12 @@ public sealed unsafe partial class DataLoadHelper : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static DataLoadHelper Create(global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper arg0)
+    public static DataLoadHelper? Create(global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d204d99b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DataLoadHelper((nint)handle);
@@ -60,19 +60,22 @@ public sealed unsafe partial class DataLoadHelper : global::System.IDisposable
     public nint loadActorInternalComponentInfo(nint registry, nint componentName) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: map key type 'HashedString' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID loadActorUniqueID(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID id)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? loadActorUniqueID(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID id)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C1.hs_method_06e69235((void*)__hosihikari_shim_handle, (void*)id.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_06e69235((void*)__hosihikari_shim_handle, (void*)id.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos loadBlockPosition(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? loadBlockPosition(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_1f603f05((void*)__hosihikari_shim_handle, (void*)blockPos.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1f603f05((void*)__hosihikari_shim_handle, (void*)blockPos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos loadBlockPositionOffset(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPosOffset)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? loadBlockPositionOffset(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPosOffset)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_a1f876b2((void*)__hosihikari_shim_handle, (void*)blockPosOffset.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a1f876b2((void*)__hosihikari_shim_handle, (void*)blockPosOffset.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public byte loadDirection(byte direction)
@@ -80,9 +83,10 @@ public sealed unsafe partial class DataLoadHelper : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_5dc08de0((void*)__hosihikari_shim_handle, direction);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 loadDirection(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 direction)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? loadDirection(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 direction)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C1.hs_method_e485593c((void*)__hosihikari_shim_handle, (void*)direction.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e485593c((void*)__hosihikari_shim_handle, (void*)direction.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public byte loadFacingID(byte facing)
@@ -95,14 +99,16 @@ public sealed unsafe partial class DataLoadHelper : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_af4697c2((void*)__hosihikari_shim_handle, mirror);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID loadOwnerID(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID id)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? loadOwnerID(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID id)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C1.hs_method_eb619a5d((void*)__hosihikari_shim_handle, (void*)id.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_eb619a5d((void*)__hosihikari_shim_handle, (void*)id.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 loadPosition(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? loadPosition(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C1.hs_method_bb607843((void*)__hosihikari_shim_handle, (void*)position.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_bb607843((void*)__hosihikari_shim_handle, (void*)position.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public byte loadRotation(byte rotation)

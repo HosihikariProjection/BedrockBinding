@@ -94,23 +94,23 @@ public sealed unsafe partial class CraftHandlerTrade : global::System.IDisposabl
     public nint _handleConsumedItem(nint openContainerNetId, nint slot, nint consumedItem) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CraftHandlerTrade Create()
+    public static CraftHandlerTrade? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_768512ec();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CraftHandlerTrade((nint)handle);
     }
 
-    public static CraftHandlerTrade Create(global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerTrade arg0)
+    public static CraftHandlerTrade? Create(global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerTrade arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e3e0fe6d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CraftHandlerTrade((nint)handle);
@@ -164,9 +164,10 @@ public sealed unsafe partial class CraftHandlerTrade : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C1.hs_get_cf8b0bf9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerTrade operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerTrade arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerTrade? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerTrade arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerTrade((nint)NativeMethods.TablePtr->C1.hs_method_da0f3516((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_da0f3516((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerTrade((nint)__hs_handle, false) : null;
     }
 
 

@@ -60,46 +60,50 @@ public sealed unsafe partial class InMemoryWritableFile : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Append(nint data)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Append(nint data)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_4ca2d7de((void*)__hosihikari_shim_handle, (void*)data));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4ca2d7de((void*)__hosihikari_shim_handle, (void*)data);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Close()
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Close()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_2c1621a0((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2c1621a0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Flush()
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Flush()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_1ee15d88((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1ee15d88((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
-    public static InMemoryWritableFile Create()
+    public static InMemoryWritableFile? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_dd219cb2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InMemoryWritableFile((nint)handle);
     }
 
-    public static InMemoryWritableFile Create(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryWritableFile arg0)
+    public static InMemoryWritableFile? Create(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryWritableFile arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c508ec78((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InMemoryWritableFile((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Sync()
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Sync()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_0edfbf84((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0edfbf84((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -108,9 +112,10 @@ public sealed unsafe partial class InMemoryWritableFile : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_ab9bc7c9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InMemoryWritableFile operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryWritableFile arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InMemoryWritableFile? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryWritableFile arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryWritableFile((nint)NativeMethods.TablePtr->C1.hs_method_241fecb4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_241fecb4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryWritableFile((nint)__hs_handle, false) : null;
     }
 
 

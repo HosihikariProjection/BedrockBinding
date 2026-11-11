@@ -40,23 +40,23 @@ public sealed unsafe partial class ResourceReference : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static ResourceReference Create()
+    public static ResourceReference? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_98cee977();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourceReference((nint)handle);
     }
 
-    public static ResourceReference Create(global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode_Nested.ResourceReference arg0)
+    public static ResourceReference? Create(global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode_Nested.ResourceReference arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_dbd2cf00((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourceReference((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class ResourceReference : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C1.hs_get_c1f5fa9b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode_Nested.ResourceReference operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode_Nested.ResourceReference arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode_Nested.ResourceReference? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode_Nested.ResourceReference arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode_Nested.ResourceReference((nint)NativeMethods.TablePtr->C1.hs_method_79db2ccd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_79db2ccd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode_Nested.ResourceReference((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

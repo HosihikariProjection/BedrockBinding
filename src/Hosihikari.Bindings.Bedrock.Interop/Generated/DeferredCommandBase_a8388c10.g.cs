@@ -40,12 +40,12 @@ public sealed unsafe partial class DeferredCommandBase : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static DeferredCommandBase Create(global::Hosihikari.Bindings.Bedrock.Interop.DeferredCommandBase arg0)
+    public static DeferredCommandBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.DeferredCommandBase arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e059bdc9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DeferredCommandBase((nint)handle);

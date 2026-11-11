@@ -159,18 +159,18 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
         NativeMethods.TablePtr->C0.hs_method_4bc9d47b((void*)__hosihikari_shim_handle);
     }
 
-    public static ActorDefinitionIdentifier Create()
+    public static ActorDefinitionIdentifier? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d4365d92();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionIdentifier((nint)handle);
     }
 
-    public static ActorDefinitionIdentifier Create(int type, string initEvent)
+    public static ActorDefinitionIdentifier? Create(int type, string initEvent)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(initEvent);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -188,36 +188,36 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
             var handle = NativeMethods.TablePtr->C0.hs_create_4248b22e(type, __hs_stringData1, (nuint)__hs_stringByteCount1);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new ActorDefinitionIdentifier((nint)handle);
         }
     }
 
-    public static ActorDefinitionIdentifier Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier other)
+    public static ActorDefinitionIdentifier? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier other)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_919c009e((void*)other.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionIdentifier((nint)handle);
     }
 
-    public static ActorDefinitionIdentifier Create(nint fullName)
+    public static ActorDefinitionIdentifier? Create(nint fullName)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3487f887((void*)fullName);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionIdentifier((nint)handle);
     }
 
-    public static ActorDefinitionIdentifier Create_066565d5(string fullName)
+    public static ActorDefinitionIdentifier? Create_066565d5(string fullName)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fullName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -235,14 +235,14 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
             var handle = NativeMethods.TablePtr->C0.hs_create_066565d5(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new ActorDefinitionIdentifier((nint)handle);
         }
     }
 
-    public static ActorDefinitionIdentifier Create(string nameSpace, string identifier, string initEvent)
+    public static ActorDefinitionIdentifier? Create(string nameSpace, string identifier, string initEvent)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameSpace);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -286,7 +286,7 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
                     var handle = NativeMethods.TablePtr->C0.hs_create_4884bc05(__hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                     if (handle == null)
                     {
-                        throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                        return null;
                     }
 
                     return new ActorDefinitionIdentifier((nint)handle);
@@ -295,7 +295,7 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
         }
     }
 
-    public static ActorDefinitionIdentifier Create_1a0b9af2(string fullName)
+    public static ActorDefinitionIdentifier? Create_1a0b9af2(string fullName)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fullName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -313,7 +313,7 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
             var handle = NativeMethods.TablePtr->C0.hs_create_1a0b9af2(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new ActorDefinitionIdentifier((nint)handle);
@@ -363,9 +363,10 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
         get => (nint)NativeMethods.TablePtr->C0.hs_get_03f8a839((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier other)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier other)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier((nint)NativeMethods.TablePtr->C0.hs_method_d340954d((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d340954d((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

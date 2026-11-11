@@ -45,12 +45,12 @@ public sealed unsafe partial class CommandOutputMessage : global::System.IDispos
         return (nint)NativeMethods.TablePtr->C0.hs_method_a37f0d69((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
     }
 
-    public static CommandOutputMessage Create()
+    public static CommandOutputMessage? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_44adbd2a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandOutputMessage((nint)handle);
@@ -60,12 +60,12 @@ public sealed unsafe partial class CommandOutputMessage : global::System.IDispos
     public static CommandOutputMessage Create(nint type, nint messageId, nint @params) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
 
-    public static CommandOutputMessage Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage rhs)
+    public static CommandOutputMessage? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage rhs)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_07eb098e((void*)rhs.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandOutputMessage((nint)handle);
@@ -89,9 +89,10 @@ public sealed unsafe partial class CommandOutputMessage : global::System.IDispos
         set => NativeMethods.TablePtr->C0.hs_set_c846747a((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage rhs)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage((nint)NativeMethods.TablePtr->C0.hs_method_f8f3fb08((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f8f3fb08((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

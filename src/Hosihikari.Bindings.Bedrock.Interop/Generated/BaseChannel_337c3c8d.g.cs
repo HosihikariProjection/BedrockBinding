@@ -136,23 +136,23 @@ public sealed unsafe partial class BaseChannel : global::System.IDisposable
     public nint _voice_media_send_channel() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BaseChannel Create()
+    public static BaseChannel? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_20915dd0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseChannel((nint)handle);
     }
 
-    public static BaseChannel Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BaseChannel arg0)
+    public static BaseChannel? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BaseChannel arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_74656dad((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseChannel((nint)handle);
@@ -535,9 +535,10 @@ public sealed unsafe partial class BaseChannel : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BaseChannel operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BaseChannel arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BaseChannel? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BaseChannel arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BaseChannel((nint)NativeMethods.TablePtr->C4.hs_method_05c3d0b6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_05c3d0b6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BaseChannel((nint)__hs_handle, false) : null;
     }
 
     public nint remote_streams()

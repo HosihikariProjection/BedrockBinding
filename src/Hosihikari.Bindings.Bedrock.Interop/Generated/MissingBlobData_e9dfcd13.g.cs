@@ -44,12 +44,12 @@ public sealed unsafe partial class MissingBlobData : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MissingBlobData Create(global::Hosihikari.Bindings.Bedrock.Interop.MissingBlobData arg0)
+    public static MissingBlobData? Create(global::Hosihikari.Bindings.Bedrock.Interop.MissingBlobData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_74770e4c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MissingBlobData((nint)handle);

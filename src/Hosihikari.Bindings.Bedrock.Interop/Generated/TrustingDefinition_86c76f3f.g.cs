@@ -40,23 +40,23 @@ public sealed unsafe partial class TrustingDefinition : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static TrustingDefinition Create()
+    public static TrustingDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_cfce722d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TrustingDefinition((nint)handle);
     }
 
-    public static TrustingDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.TrustingDefinition arg0)
+    public static TrustingDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.TrustingDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_163d974e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TrustingDefinition((nint)handle);
@@ -88,9 +88,10 @@ public sealed unsafe partial class TrustingDefinition : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_f7d80ed0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TrustingDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TrustingDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.TrustingDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TrustingDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TrustingDefinition((nint)NativeMethods.TablePtr->C4.hs_method_3cc22f40((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3cc22f40((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TrustingDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

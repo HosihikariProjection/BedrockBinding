@@ -44,12 +44,12 @@ public sealed unsafe partial class CameraList : global::System.IDisposable
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CameraList Create()
+    public static CameraList? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0b11e0b0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CameraList((nint)handle);
@@ -71,9 +71,10 @@ public sealed unsafe partial class CameraList : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_60b22382((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets_Nested.CameraList operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets_Nested.CameraList arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets_Nested.CameraList? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets_Nested.CameraList arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets_Nested.CameraList((nint)NativeMethods.TablePtr->C0.hs_method_2260d389((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2260d389((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets_Nested.CameraList((nint)__hs_handle, false) : null;
     }
 
 

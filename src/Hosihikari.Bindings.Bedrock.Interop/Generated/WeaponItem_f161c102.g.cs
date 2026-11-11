@@ -353,23 +353,23 @@ public sealed unsafe partial class WeaponItem : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WeaponItem Create()
+    public static WeaponItem? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_10d3718f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeaponItem((nint)handle);
     }
 
-    public static WeaponItem Create(global::Hosihikari.Bindings.Bedrock.Interop.WeaponItem arg0)
+    public static WeaponItem? Create(global::Hosihikari.Bindings.Bedrock.Interop.WeaponItem arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_fee2396b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeaponItem((nint)handle);
@@ -437,14 +437,16 @@ public sealed unsafe partial class WeaponItem : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_b3b2f198((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WeaponItem operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WeaponItem arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WeaponItem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WeaponItem arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WeaponItem((nint)NativeMethods.TablePtr->C4.hs_method_989cf91f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_989cf91f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WeaponItem((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C4.hs_method_70424b9d((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)player.Handle, handSlot), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_70424b9d((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)player.Handle, handSlot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
 

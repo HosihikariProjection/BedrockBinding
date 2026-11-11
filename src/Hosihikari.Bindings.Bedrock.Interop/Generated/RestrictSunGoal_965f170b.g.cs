@@ -78,23 +78,23 @@ public sealed unsafe partial class RestrictSunGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RestrictSunGoal Create()
+    public static RestrictSunGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_efe8605c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RestrictSunGoal((nint)handle);
     }
 
-    public static RestrictSunGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.RestrictSunGoal arg0)
+    public static RestrictSunGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.RestrictSunGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_55dacb61((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RestrictSunGoal((nint)handle);
@@ -131,9 +131,10 @@ public sealed unsafe partial class RestrictSunGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_003ffccd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RestrictSunGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RestrictSunGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RestrictSunGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RestrictSunGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RestrictSunGoal((nint)NativeMethods.TablePtr->C3.hs_method_eeec921f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_eeec921f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RestrictSunGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

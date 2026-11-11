@@ -40,23 +40,23 @@ public sealed unsafe partial class ActorAnimationController : global::System.IDi
         return __hs_handle;
     }
 
-    public static ActorAnimationController Create()
+    public static ActorAnimationController? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6dc3fda0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorAnimationController((nint)handle);
     }
 
-    public static ActorAnimationController Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationController arg0)
+    public static ActorAnimationController? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationController arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_eadd468f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorAnimationController((nint)handle);

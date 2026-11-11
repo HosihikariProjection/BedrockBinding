@@ -48,23 +48,23 @@ public sealed unsafe partial class DurationFieldKeys : global::System.IDisposabl
     public nint _ctor(nint days, nint hours, nint minutes, nint seconds, nint day, nint hour, nint minute, nint second) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DurationFieldKeys Create()
+    public static DurationFieldKeys? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a8f25838();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DurationFieldKeys((nint)handle);
     }
 
-    public static DurationFieldKeys Create(global::Hosihikari.Bindings.Bedrock.Interop.DurationFieldKeys arg0)
+    public static DurationFieldKeys? Create(global::Hosihikari.Bindings.Bedrock.Interop.DurationFieldKeys arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_dc508eaa((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DurationFieldKeys((nint)handle);
@@ -126,9 +126,10 @@ public sealed unsafe partial class DurationFieldKeys : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C1.hs_get_7da1d838((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DurationFieldKeys operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DurationFieldKeys arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DurationFieldKeys? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DurationFieldKeys arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DurationFieldKeys((nint)NativeMethods.TablePtr->C1.hs_method_2b1c919c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2b1c919c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DurationFieldKeys((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

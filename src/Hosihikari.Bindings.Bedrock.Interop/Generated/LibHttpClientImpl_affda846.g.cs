@@ -72,12 +72,12 @@ public sealed unsafe partial class LibHttpClientImpl : global::System.IDisposabl
     public static LibHttpClientImpl Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LibHttpClientImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientImpl arg0)
+    public static LibHttpClientImpl? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientImpl arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ceaa75d1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LibHttpClientImpl((nint)handle);

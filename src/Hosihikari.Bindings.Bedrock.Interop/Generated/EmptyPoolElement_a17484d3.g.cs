@@ -68,23 +68,23 @@ public sealed unsafe partial class EmptyPoolElement : global::System.IDisposable
     public nint _type() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EmptyPoolElement Create()
+    public static EmptyPoolElement? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_269a6bb9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EmptyPoolElement((nint)handle);
     }
 
-    public static EmptyPoolElement Create(global::Hosihikari.Bindings.Bedrock.Interop.EmptyPoolElement arg0)
+    public static EmptyPoolElement? Create(global::Hosihikari.Bindings.Bedrock.Interop.EmptyPoolElement arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e067bf8b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EmptyPoolElement((nint)handle);
@@ -94,9 +94,10 @@ public sealed unsafe partial class EmptyPoolElement : global::System.IDisposable
     public static EmptyPoolElement Create(nint manager) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox getBoundingBox(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, byte rotation)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? getBoundingBox(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, byte rotation)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)NativeMethods.TablePtr->C1.hs_method_4b480154((void*)__hosihikari_shim_handle, (void*)position.Handle, rotation));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4b480154((void*)__hosihikari_shim_handle, (void*)position.Handle, rotation);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'JigsawBlockInfo' is not supported.", false)]
@@ -107,9 +108,10 @@ public sealed unsafe partial class EmptyPoolElement : global::System.IDisposable
     public nint getJigsawMarkers(nint position, nint rotation) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'JigsawBlockInfo' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getSize(byte rotation)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSize(byte rotation)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_53c2f7a1((void*)__hosihikari_shim_handle, rotation));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_53c2f7a1((void*)__hosihikari_shim_handle, rotation);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public bool isValid()

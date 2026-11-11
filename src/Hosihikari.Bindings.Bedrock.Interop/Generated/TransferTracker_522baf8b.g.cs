@@ -40,23 +40,23 @@ public sealed unsafe partial class TransferTracker : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TransferTracker Create()
+    public static TransferTracker? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_400b8363();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TransferTracker((nint)handle);
     }
 
-    public static TransferTracker Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfersManager_Nested.TransferTracker arg0)
+    public static TransferTracker? Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfersManager_Nested.TransferTracker arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4792d207((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TransferTracker((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class TransferTracker : global::System.IDisposable
     public void onAckReceived(ulong acked) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfersManager_Nested.TransferTracker operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfersManager_Nested.TransferTracker arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfersManager_Nested.TransferTracker? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfersManager_Nested.TransferTracker arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfersManager_Nested.TransferTracker((nint)NativeMethods.TablePtr->C0.hs_method_7fa12b07((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7fa12b07((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfersManager_Nested.TransferTracker((nint)__hs_handle, false) : null;
     }
 
 

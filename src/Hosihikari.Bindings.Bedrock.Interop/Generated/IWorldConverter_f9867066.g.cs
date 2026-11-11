@@ -40,12 +40,12 @@ public sealed unsafe partial class IWorldConverter : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IWorldConverter Create(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.IWorldConverter arg0)
+    public static IWorldConverter? Create(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.IWorldConverter arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a04609de((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IWorldConverter((nint)handle);

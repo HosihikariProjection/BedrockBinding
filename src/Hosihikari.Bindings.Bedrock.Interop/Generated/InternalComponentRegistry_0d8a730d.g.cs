@@ -48,12 +48,12 @@ public sealed unsafe partial class InternalComponentRegistry : global::System.ID
     public static nint INTERNAL_COMPONENTS() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static InternalComponentRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.InternalComponentRegistry arg0)
+    public static InternalComponentRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.InternalComponentRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_31bafc7d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InternalComponentRegistry((nint)handle);

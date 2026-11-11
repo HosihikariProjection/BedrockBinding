@@ -65,6 +65,19 @@ public sealed class BedrockSmokePlugin : IPlugin
                 }
             }
 
+            // BlockPos::center is not in this build's runtime data, so the shim cannot resolve
+            // it. A wrapper around the resulting null handle would look alive and fail on the
+            // next call; the projection maps it to null instead.
+            using (var pos = new BlockPos(IntPtr.Zero))
+            {
+                var center = pos.center();
+                log.AppendLine($"blockpos.center.isnull={center == null}");
+                if (center != null)
+                {
+                    throw new InvalidOperationException("a member without a symbol returned a non-null wrapper.");
+                }
+            }
+
             log.AppendLine("result=OK");
         }
         catch (Exception exception)

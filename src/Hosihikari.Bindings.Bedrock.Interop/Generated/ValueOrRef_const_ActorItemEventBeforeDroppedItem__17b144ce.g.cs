@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ActorItemEventBeforeDroppedI
     public static ValueOrRef_const_ActorItemEventBeforeDroppedItem_ Create_1bc97f0a(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ActorItemEventBeforeDroppedItem>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorItemEventBeforeDroppedItem value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorItemEventBeforeDroppedItem? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorItemEventBeforeDroppedItem((nint)NativeMethods.TablePtr->C1.hs_method_60df7f1c((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_60df7f1c((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorItemEventBeforeDroppedItem((nint)__hs_handle, false) : null;
     }
 
 

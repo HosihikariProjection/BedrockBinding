@@ -40,23 +40,23 @@ public sealed unsafe partial class JSValue : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static JSValue Create()
+    public static JSValue? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2b38d819();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JSValue((nint)handle);
     }
 
-    public static JSValue Create(global::Hosihikari.Bindings.Bedrock.Interop.JSValue arg0)
+    public static JSValue? Create(global::Hosihikari.Bindings.Bedrock.Interop.JSValue arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3e8482bb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JSValue((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class JSValue : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_835829d0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.JSValue operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JSValue arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.JSValue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JSValue arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JSValue((nint)NativeMethods.TablePtr->C1.hs_method_35011460((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_35011460((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.JSValue((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

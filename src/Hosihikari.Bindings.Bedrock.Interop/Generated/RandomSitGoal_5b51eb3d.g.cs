@@ -82,23 +82,23 @@ public sealed unsafe partial class RandomSitGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RandomSitGoal Create()
+    public static RandomSitGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3cd8e0d9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RandomSitGoal((nint)handle);
     }
 
-    public static RandomSitGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomSitGoal arg0)
+    public static RandomSitGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomSitGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_30738397((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RandomSitGoal((nint)handle);
@@ -176,9 +176,10 @@ public sealed unsafe partial class RandomSitGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_e8697064((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RandomSitGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RandomSitGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RandomSitGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RandomSitGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RandomSitGoal((nint)NativeMethods.TablePtr->C3.hs_method_5ca47418((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5ca47418((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RandomSitGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

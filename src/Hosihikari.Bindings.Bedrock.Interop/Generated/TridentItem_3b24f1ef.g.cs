@@ -402,9 +402,10 @@ public sealed unsafe partial class TridentItem : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_bbce0400((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)(player?.Handle ?? 0), durationLeft);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C4.hs_method_b3690ffc((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)player.Handle, handSlot), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b3690ffc((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)player.Handle, handSlot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
 

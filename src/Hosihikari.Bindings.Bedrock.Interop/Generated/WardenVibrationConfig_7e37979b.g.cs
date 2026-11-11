@@ -60,12 +60,12 @@ public sealed unsafe partial class WardenVibrationConfig : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WardenVibrationConfig Create()
+    public static WardenVibrationConfig? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a54fb1dd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WardenVibrationConfig((nint)handle);
@@ -75,12 +75,12 @@ public sealed unsafe partial class WardenVibrationConfig : global::System.IDispo
     public static WardenVibrationConfig Create(nint actor, ushort signalThrottlingTicks) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WardenVibrationConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.WardenVibrationConfig arg0)
+    public static WardenVibrationConfig? Create(global::Hosihikari.Bindings.Bedrock.Interop.WardenVibrationConfig arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_31e3714a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WardenVibrationConfig((nint)handle);

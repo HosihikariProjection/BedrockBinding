@@ -40,20 +40,21 @@ public sealed unsafe partial class IGameConnectionInfoProvider : global::System.
         return __hs_handle;
     }
 
-    public static IGameConnectionInfoProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.IGameConnectionInfoProvider arg0)
+    public static IGameConnectionInfoProvider? Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.IGameConnectionInfoProvider arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_32f8cb7b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IGameConnectionInfoProvider((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo getConnectionInfo()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo? getConnectionInfo()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)NativeMethods.TablePtr->C3.hs_method_67f57023((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_67f57023((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)__hs_handle, false) : null;
     }
 
     public string? getNetworkInfoString()

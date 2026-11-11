@@ -58,12 +58,12 @@ public sealed unsafe partial class LegacyOnHitBlockTriggerItemComponent : global
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacyOnHitBlockTriggerItemComponent Create()
+    public static LegacyOnHitBlockTriggerItemComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1d3daada();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyOnHitBlockTriggerItemComponent((nint)handle);
@@ -73,12 +73,12 @@ public sealed unsafe partial class LegacyOnHitBlockTriggerItemComponent : global
     public static LegacyOnHitBlockTriggerItemComponent Create(nint componentData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacyOnHitBlockTriggerItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyOnHitBlockTriggerItemComponent arg0)
+    public static LegacyOnHitBlockTriggerItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyOnHitBlockTriggerItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0089af43((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyOnHitBlockTriggerItemComponent((nint)handle);

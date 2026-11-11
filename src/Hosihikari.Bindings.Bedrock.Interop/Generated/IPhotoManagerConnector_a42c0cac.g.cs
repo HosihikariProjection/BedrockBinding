@@ -40,12 +40,12 @@ public sealed unsafe partial class IPhotoManagerConnector : global::System.IDisp
         return __hs_handle;
     }
 
-    public static IPhotoManagerConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.IPhotoManagerConnector arg0)
+    public static IPhotoManagerConnector? Create(global::Hosihikari.Bindings.Bedrock.Interop.IPhotoManagerConnector arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e3daaa88((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IPhotoManagerConnector((nint)handle);

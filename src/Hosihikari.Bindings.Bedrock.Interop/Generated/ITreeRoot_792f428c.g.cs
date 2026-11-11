@@ -40,12 +40,12 @@ public sealed unsafe partial class ITreeRoot : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ITreeRoot Create(global::Hosihikari.Bindings.Bedrock.Interop.ITreeRoot arg0)
+    public static ITreeRoot? Create(global::Hosihikari.Bindings.Bedrock.Interop.ITreeRoot arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_dc596401((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ITreeRoot((nint)handle);

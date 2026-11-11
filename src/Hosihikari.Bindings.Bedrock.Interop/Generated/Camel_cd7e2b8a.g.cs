@@ -606,12 +606,12 @@ public sealed unsafe partial class Camel : global::System.IDisposable
     public void _normalTick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Camel Create()
+    public static Camel? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_51da2bbe();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Camel((nint)handle);
@@ -631,9 +631,10 @@ public sealed unsafe partial class Camel : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_7a72b364((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getInterpolatedRidingOffset(float arg0, int arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getInterpolatedRidingOffset(float arg0, int arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C0.hs_method_1353dd8d((void*)__hosihikari_shim_handle, arg0, arg1));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1353dd8d((void*)__hosihikari_shim_handle, arg0, arg1);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

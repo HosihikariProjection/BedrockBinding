@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptStructurePlaceOptions : global::System.
         return __hs_handle;
     }
 
-    public static ScriptStructurePlaceOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptStructurePlaceOptions arg0)
+    public static ScriptStructurePlaceOptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptStructurePlaceOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_634e8f76((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptStructurePlaceOptions((nint)handle);

@@ -44,12 +44,12 @@ public sealed unsafe partial class AttackDamageMobEffect : global::System.IDispo
     public float _getAttributeModifierValue(int amplifier, nint modifier) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AttackDamageMobEffect Create(global::Hosihikari.Bindings.Bedrock.Interop.AttackDamageMobEffect arg0)
+    public static AttackDamageMobEffect? Create(global::Hosihikari.Bindings.Bedrock.Interop.AttackDamageMobEffect arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7420f18c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AttackDamageMobEffect((nint)handle);

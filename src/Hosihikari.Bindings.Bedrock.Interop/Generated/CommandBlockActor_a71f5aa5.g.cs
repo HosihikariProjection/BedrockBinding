@@ -157,9 +157,10 @@ public sealed unsafe partial class CommandBlockActor : global::System.IDisposabl
     public bool getConditionalMode(nint region) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString getCustomName()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString? getCustomName()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)NativeMethods.TablePtr->C0.hs_method_c478905c((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c478905c((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)__hs_handle, false) : null;
     }
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.ILevel level, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper dataLoadHelper)

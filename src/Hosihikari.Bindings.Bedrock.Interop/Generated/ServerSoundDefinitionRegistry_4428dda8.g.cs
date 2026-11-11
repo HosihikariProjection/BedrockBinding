@@ -40,23 +40,23 @@ public sealed unsafe partial class ServerSoundDefinitionRegistry : global::Syste
         return __hs_handle;
     }
 
-    public static ServerSoundDefinitionRegistry Create()
+    public static ServerSoundDefinitionRegistry? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1ac8fcd2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerSoundDefinitionRegistry((nint)handle);
     }
 
-    public static ServerSoundDefinitionRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundDefinitionRegistry arg0)
+    public static ServerSoundDefinitionRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundDefinitionRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3b5e196a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerSoundDefinitionRegistry((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class ServerSoundDefinitionRegistry : global::Syste
         get => (nint)NativeMethods.TablePtr->C3.hs_get_1221266b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundDefinitionRegistry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundDefinitionRegistry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundDefinitionRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundDefinitionRegistry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundDefinitionRegistry((nint)NativeMethods.TablePtr->C3.hs_method_6aa15e8f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6aa15e8f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundDefinitionRegistry((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

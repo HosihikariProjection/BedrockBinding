@@ -40,23 +40,23 @@ public sealed unsafe partial class PerfContextTrackerReport : global::System.IDi
         return __hs_handle;
     }
 
-    public static PerfContextTrackerReport Create()
+    public static PerfContextTrackerReport? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bce7b6b8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PerfContextTrackerReport((nint)handle);
     }
 
-    public static PerfContextTrackerReport Create(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReport arg0)
+    public static PerfContextTrackerReport? Create(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReport arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_90777ee7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PerfContextTrackerReport((nint)handle);
@@ -212,9 +212,10 @@ public sealed unsafe partial class PerfContextTrackerReport : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C2.hs_get_4b4d5b74((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReport operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReport arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReport? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReport arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReport((nint)NativeMethods.TablePtr->C2.hs_method_9bc9340e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9bc9340e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReport((nint)__hs_handle, false) : null;
     }
 
 

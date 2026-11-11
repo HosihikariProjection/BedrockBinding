@@ -86,23 +86,23 @@ public sealed unsafe partial class BegGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BegGoal Create()
+    public static BegGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5934d0a2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BegGoal((nint)handle);
     }
 
-    public static BegGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.BegGoal arg0)
+    public static BegGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.BegGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_dd56289c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BegGoal((nint)handle);
@@ -180,9 +180,10 @@ public sealed unsafe partial class BegGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_eebd8d98((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BegGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BegGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BegGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BegGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BegGoal((nint)NativeMethods.TablePtr->C0.hs_method_b7c120a9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b7c120a9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BegGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

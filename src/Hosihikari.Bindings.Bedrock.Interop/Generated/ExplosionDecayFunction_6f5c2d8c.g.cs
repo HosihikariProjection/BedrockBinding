@@ -52,12 +52,12 @@ public sealed unsafe partial class ExplosionDecayFunction : global::System.IDisp
     public nint _getFunctionType() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExplosionDecayFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.ExplosionDecayFunction arg0)
+    public static ExplosionDecayFunction? Create(global::Hosihikari.Bindings.Bedrock.Interop.ExplosionDecayFunction arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d38e4743((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExplosionDecayFunction((nint)handle);

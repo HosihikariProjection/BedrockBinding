@@ -40,12 +40,12 @@ public sealed unsafe partial class Hopper : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Hopper Create(global::Hosihikari.Bindings.Bedrock.Interop.Hopper arg0)
+    public static Hopper? Create(global::Hosihikari.Bindings.Bedrock.Interop.Hopper arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f8621168((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Hopper((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class HttpInterface_windows : global::System.IDispo
         return __hs_handle;
     }
 
-    public static HttpInterface_windows Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.HttpInterface_windows arg0)
+    public static HttpInterface_windows? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.HttpInterface_windows arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9b54e6a6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HttpInterface_windows((nint)handle);

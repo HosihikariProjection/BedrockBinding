@@ -40,12 +40,12 @@ public sealed unsafe partial class Context : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Context Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.BasicSerializerContext_Nested.Context arg0)
+    public static Context? Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.BasicSerializerContext_Nested.Context arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5dbaa8de((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Context((nint)handle);

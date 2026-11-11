@@ -56,12 +56,12 @@ public sealed unsafe partial class ScanSurfaceFeature : global::System.IDisposab
     public nint _place(nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScanSurfaceFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.ScanSurfaceFeature arg0)
+    public static ScanSurfaceFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScanSurfaceFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8c3b2b25((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScanSurfaceFeature((nint)handle);

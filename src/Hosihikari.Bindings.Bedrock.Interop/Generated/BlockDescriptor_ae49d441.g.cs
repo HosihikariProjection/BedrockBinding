@@ -56,12 +56,12 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockDescriptor Create()
+    public static BlockDescriptor? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_74b90777();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockDescriptor((nint)handle);

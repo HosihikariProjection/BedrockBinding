@@ -46,12 +46,12 @@ public sealed unsafe partial class NetworkedItemComponent_AllowOffHandItemCompon
         set => NativeMethods.TablePtr->C2.hs_set_c9eb8811((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    public static NetworkedItemComponent_AllowOffHandItemComponent_ Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkedItemComponent_AllowOffHandItemComponent_ arg0)
+    public static NetworkedItemComponent_AllowOffHandItemComponent_? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkedItemComponent_AllowOffHandItemComponent_ arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_44bd2ee1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkedItemComponent_AllowOffHandItemComponent_((nint)handle);

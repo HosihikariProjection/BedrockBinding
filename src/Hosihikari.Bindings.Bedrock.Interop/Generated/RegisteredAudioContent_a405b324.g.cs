@@ -44,23 +44,23 @@ public sealed unsafe partial class RegisteredAudioContent : global::System.IDisp
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RegisteredAudioContent Create()
+    public static RegisteredAudioContent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_307b7aae();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RegisteredAudioContent((nint)handle);
     }
 
-    public static RegisteredAudioContent Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry_Nested.RegisteredAudioContent arg0)
+    public static RegisteredAudioContent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry_Nested.RegisteredAudioContent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_42defee2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RegisteredAudioContent((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class RegisteredAudioContent : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C3.hs_get_a7c07cc2((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry_Nested.RegisteredAudioContent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry_Nested.RegisteredAudioContent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry_Nested.RegisteredAudioContent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry_Nested.RegisteredAudioContent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry_Nested.RegisteredAudioContent((nint)NativeMethods.TablePtr->C3.hs_method_9957ed57((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9957ed57((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry_Nested.RegisteredAudioContent((nint)__hs_handle, false) : null;
     }
 
 

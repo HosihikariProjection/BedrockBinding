@@ -44,12 +44,12 @@ public sealed unsafe partial class EntityTypes : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EntityTypes Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_120.EntityTypes arg0)
+    public static EntityTypes? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_120.EntityTypes arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a52c7bc1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityTypes((nint)handle);

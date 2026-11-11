@@ -40,18 +40,18 @@ public sealed unsafe partial class Builder : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Builder Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Resources.Archive.Builder arg0)
+    public static Builder? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Resources.Archive.Builder arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2cd54e85((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Builder((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ addEntry(string name, byte[] data)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? addEntry(string name, byte[] data)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -68,7 +68,8 @@ public sealed unsafe partial class Builder : global::System.IDisposable
         {
             fixed (byte* __hs_stringData0 = __hs_stringBytes0)
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C0.hs_method_b547814a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_vectorData1, (nuint)(data?.Length ?? 0)));
+                var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b547814a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_vectorData1, (nuint)(data?.Length ?? 0));
+                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
             }
         }
     }
@@ -78,11 +79,12 @@ public sealed unsafe partial class Builder : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_065eddb1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ toBuffer(byte[] buffer)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? toBuffer(byte[] buffer)
     {
         fixed (byte* __hs_vectorData0 = buffer)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C0.hs_method_5695cdf5((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(buffer?.Length ?? 0)));
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5695cdf5((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(buffer?.Length ?? 0));
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
         }
     }
 

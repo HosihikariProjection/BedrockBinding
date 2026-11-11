@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptInvalidContainerSlotError : global::Sys
     public static ScriptInvalidContainerSlotError Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptInvalidContainerSlotError Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptInvalidContainerSlotError arg0)
+    public static ScriptInvalidContainerSlotError? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptInvalidContainerSlotError arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5e224b73((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptInvalidContainerSlotError((nint)handle);

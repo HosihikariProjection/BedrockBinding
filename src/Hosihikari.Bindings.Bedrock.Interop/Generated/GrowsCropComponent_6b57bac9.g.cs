@@ -40,12 +40,12 @@ public sealed unsafe partial class GrowsCropComponent : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static GrowsCropComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.GrowsCropComponent arg0)
+    public static GrowsCropComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.GrowsCropComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_793bad39((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GrowsCropComponent((nint)handle);

@@ -44,12 +44,12 @@ public sealed unsafe partial class Rail : global::System.IDisposable
     public nint _ctor(nint region, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Rail Create()
+    public static Rail? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_93d7b62d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Rail((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class Rail : global::System.IDisposable
     public static Rail Create(nint region, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Rail Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseRailBlock_Nested.Rail arg0)
+    public static Rail? Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseRailBlock_Nested.Rail arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_55ae9104((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Rail((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class Rail : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_47922777((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BaseRailBlock_Nested.Rail operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BaseRailBlock_Nested.Rail arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BaseRailBlock_Nested.Rail? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BaseRailBlock_Nested.Rail arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseRailBlock_Nested.Rail((nint)NativeMethods.TablePtr->C0.hs_method_ecc7591d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ecc7591d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseRailBlock_Nested.Rail((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

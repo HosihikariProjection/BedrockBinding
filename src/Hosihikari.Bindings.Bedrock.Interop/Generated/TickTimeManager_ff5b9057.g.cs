@@ -44,12 +44,12 @@ public sealed unsafe partial class TickTimeManager : global::System.IDisposable
     public void _update() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TickTimeManager Create(global::Hosihikari.Bindings.Bedrock.Interop.TickTimeManager arg0)
+    public static TickTimeManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.TickTimeManager arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e96221f4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TickTimeManager((nint)handle);

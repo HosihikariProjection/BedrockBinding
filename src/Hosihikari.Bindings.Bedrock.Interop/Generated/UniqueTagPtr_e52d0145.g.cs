@@ -40,12 +40,12 @@ public sealed unsafe partial class UniqueTagPtr : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static UniqueTagPtr Create()
+    public static UniqueTagPtr? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_8521841a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueTagPtr((nint)handle);
@@ -55,12 +55,12 @@ public sealed unsafe partial class UniqueTagPtr : global::System.IDisposable
     public static UniqueTagPtr Create_f5338471(nint r) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static UniqueTagPtr Create(global::Hosihikari.Bindings.Bedrock.Interop.Tag? p)
+    public static UniqueTagPtr? Create(global::Hosihikari.Bindings.Bedrock.Interop.Tag? p)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_22ef47e9((void*)(p?.Handle ?? 0));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueTagPtr((nint)handle);
@@ -70,34 +70,34 @@ public sealed unsafe partial class UniqueTagPtr : global::System.IDisposable
     public static UniqueTagPtr Create_110a5880(nint r) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static UniqueTagPtr Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant r)
+    public static UniqueTagPtr? Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant r)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_32c271ac((void*)r.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueTagPtr((nint)handle);
     }
 
-    public static UniqueTagPtr Create(global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr r)
+    public static UniqueTagPtr? Create(global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr r)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1d626605((void*)r.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueTagPtr((nint)handle);
     }
 
-    public static UniqueTagPtr Create_52ce7fb7()
+    public static UniqueTagPtr? Create_52ce7fb7()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_52ce7fb7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueTagPtr((nint)handle);
@@ -268,9 +268,10 @@ public sealed unsafe partial class UniqueTagPtr : global::System.IDisposable
     public nint operator_unique_ptr() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Tag' has no accessible destructor.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Tag operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Tag? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Tag((nint)NativeMethods.TablePtr->C4.hs_method_de644c2f((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_de644c2f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Tag((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Tag? operator_operator__()
@@ -287,19 +288,22 @@ public sealed unsafe partial class UniqueTagPtr : global::System.IDisposable
     public nint operator_assign_7e091760(nint r) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant r)
+    public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant r)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C4.hs_method_3d7d5816((void*)__hosihikari_shim_handle, (void*)r.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3d7d5816((void*)__hosihikari_shim_handle, (void*)r.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr r)
+    public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr r)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C4.hs_method_16bfe6b5((void*)__hosihikari_shim_handle, (void*)r.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_16bfe6b5((void*)__hosihikari_shim_handle, (void*)r.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr operator_assign()
+    public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr? operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C4.hs_method_e0872ef3((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e0872ef3((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -311,7 +315,7 @@ public sealed unsafe partial class UniqueTagPtr : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_38ce2eb3((void*)__hosihikari_shim_handle, (void*)r.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant operator_index_eecc8ea8(string index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant? operator_index_eecc8ea8(string index)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(index);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -326,16 +330,18 @@ public sealed unsafe partial class UniqueTagPtr : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(index, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)NativeMethods.TablePtr->C4.hs_method_eecc8ea8((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_eecc8ea8((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)__hs_handle, false) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr operator_index_2d70a6b4(ulong index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr? operator_index_2d70a6b4(ulong index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C4.hs_method_2d70a6b4((void*)__hosihikari_shim_handle, index), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2d70a6b4((void*)__hosihikari_shim_handle, index);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant operator_index_ec65411b(string index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant? operator_index_ec65411b(string index)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(index);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -350,13 +356,15 @@ public sealed unsafe partial class UniqueTagPtr : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(index, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)NativeMethods.TablePtr->C4.hs_method_ec65411b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ec65411b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)__hs_handle, false) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr operator_index_a6808613(ulong index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr? operator_index_a6808613(ulong index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C4.hs_method_a6808613((void*)__hosihikari_shim_handle, index), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a6808613((void*)__hosihikari_shim_handle, index);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Tag? release()

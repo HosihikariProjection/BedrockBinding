@@ -48,23 +48,23 @@ public sealed unsafe partial class StructureTemplatePool : global::System.IDispo
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StructureTemplatePool Create()
+    public static StructureTemplatePool? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_63280539();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureTemplatePool((nint)handle);
     }
 
-    public static StructureTemplatePool Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplatePool arg0)
+    public static StructureTemplatePool? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplatePool arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3953b72f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureTemplatePool((nint)handle);

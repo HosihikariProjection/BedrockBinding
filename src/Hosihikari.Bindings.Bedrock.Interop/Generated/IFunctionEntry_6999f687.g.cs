@@ -40,12 +40,12 @@ public sealed unsafe partial class IFunctionEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IFunctionEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.IFunctionEntry arg0)
+    public static IFunctionEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.IFunctionEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fdb522ef((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IFunctionEntry((nint)handle);

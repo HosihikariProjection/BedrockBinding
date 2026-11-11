@@ -86,36 +86,38 @@ public sealed unsafe partial class MoveHistoryItem : global::System.IDisposable
     public bool _isValidStartItem() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveHistoryItem Create()
+    public static MoveHistoryItem? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_018d8ffe();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveHistoryItem((nint)handle);
     }
 
-    public static MoveHistoryItem Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MoveHistoryItem arg0)
+    public static MoveHistoryItem? Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MoveHistoryItem arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c62ae58f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveHistoryItem((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getPos()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getPos()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_bdf7deb2((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_bdf7deb2((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 getRot()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2? getRot()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C2.hs_method_18c529a7((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_18c529a7((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle, false) : null;
     }
 
     public float getYHeadRot()
@@ -173,9 +175,10 @@ public sealed unsafe partial class MoveHistoryItem : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_ea45d930((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MoveHistoryItem operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MoveHistoryItem arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MoveHistoryItem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MoveHistoryItem arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MoveHistoryItem((nint)NativeMethods.TablePtr->C2.hs_method_40509506((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_40509506((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MoveHistoryItem((nint)__hs_handle, false) : null;
     }
 
 

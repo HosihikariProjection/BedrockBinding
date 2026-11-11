@@ -44,23 +44,23 @@ public sealed unsafe partial class BoneAnimation : global::System.IDisposable
     public nint _ctor(nint name) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BoneAnimation Create()
+    public static BoneAnimation? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8845654b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BoneAnimation((nint)handle);
     }
 
-    public static BoneAnimation Create(global::Hosihikari.Bindings.Bedrock.Interop.BoneAnimation arg0)
+    public static BoneAnimation? Create(global::Hosihikari.Bindings.Bedrock.Interop.BoneAnimation arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_766ab786((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BoneAnimation((nint)handle);

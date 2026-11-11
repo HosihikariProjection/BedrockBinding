@@ -40,12 +40,12 @@ public sealed unsafe partial class containers : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static containers Create(global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_int__int__std__less_int___std__vector_int___std__vec_72746a4e.containers arg0)
+    public static containers? Create(global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_int__int__std__less_int___std__vector_int___std__vec_72746a4e.containers arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_247c0b27((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new containers((nint)handle);

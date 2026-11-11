@@ -40,23 +40,23 @@ public sealed unsafe partial class AssertHandlerContext : global::System.IDispos
         return __hs_handle;
     }
 
-    public static AssertHandlerContext Create()
+    public static AssertHandlerContext? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2da2ae28();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AssertHandlerContext((nint)handle);
     }
 
-    public static AssertHandlerContext Create(global::Hosihikari.Bindings.Bedrock.Interop.AssertHandlerContext arg0)
+    public static AssertHandlerContext? Create(global::Hosihikari.Bindings.Bedrock.Interop.AssertHandlerContext arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_09bedf09((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AssertHandlerContext((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class AssertHandlerContext : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C0.hs_get_93ec9bff((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AssertHandlerContext operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AssertHandlerContext arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AssertHandlerContext? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AssertHandlerContext arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AssertHandlerContext((nint)NativeMethods.TablePtr->C0.hs_method_ab3ab007((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ab3ab007((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AssertHandlerContext((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

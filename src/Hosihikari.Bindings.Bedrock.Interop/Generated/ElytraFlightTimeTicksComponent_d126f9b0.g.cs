@@ -40,12 +40,12 @@ public sealed unsafe partial class ElytraFlightTimeTicksComponent : global::Syst
         return __hs_handle;
     }
 
-    public static ElytraFlightTimeTicksComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ElytraFlightTimeTicksComponent arg0)
+    public static ElytraFlightTimeTicksComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ElytraFlightTimeTicksComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1a369ac1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ElytraFlightTimeTicksComponent((nint)handle);

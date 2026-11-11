@@ -86,23 +86,23 @@ public sealed unsafe partial class SquidMoveAwayFromGroundGoal : global::System.
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SquidMoveAwayFromGroundGoal Create()
+    public static SquidMoveAwayFromGroundGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f1a54d0d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SquidMoveAwayFromGroundGoal((nint)handle);
     }
 
-    public static SquidMoveAwayFromGroundGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SquidMoveAwayFromGroundGoal arg0)
+    public static SquidMoveAwayFromGroundGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.SquidMoveAwayFromGroundGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5dedafbc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SquidMoveAwayFromGroundGoal((nint)handle);
@@ -144,9 +144,10 @@ public sealed unsafe partial class SquidMoveAwayFromGroundGoal : global::System.
         get => (nint)NativeMethods.TablePtr->C3.hs_get_905e048a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SquidMoveAwayFromGroundGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SquidMoveAwayFromGroundGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SquidMoveAwayFromGroundGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SquidMoveAwayFromGroundGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SquidMoveAwayFromGroundGoal((nint)NativeMethods.TablePtr->C3.hs_method_ae71ca82((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ae71ca82((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SquidMoveAwayFromGroundGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

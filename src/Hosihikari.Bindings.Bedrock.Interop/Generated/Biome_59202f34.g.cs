@@ -44,12 +44,12 @@ public sealed unsafe partial class Biome : global::System.IDisposable
     public nint _ctor(nint id, nint name) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Biome Create()
+    public static Biome? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_951cac8d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Biome((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class Biome : global::System.IDisposable
     public static Biome Create(nint id, nint name) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Biome Create(global::Hosihikari.Bindings.Bedrock.Interop.Biome arg0)
+    public static Biome? Create(global::Hosihikari.Bindings.Bedrock.Interop.Biome arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_50a61096((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Biome((nint)handle);

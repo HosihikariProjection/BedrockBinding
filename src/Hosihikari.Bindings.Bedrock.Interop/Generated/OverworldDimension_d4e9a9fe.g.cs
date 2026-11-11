@@ -438,12 +438,12 @@ public sealed unsafe partial class OverworldDimension : global::System.IDisposab
     public void _upgradeLevelChunk(nint source, nint lc, nint generatedChunk) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OverworldDimension Create(global::Hosihikari.Bindings.Bedrock.Interop.OverworldDimension arg0)
+    public static OverworldDimension? Create(global::Hosihikari.Bindings.Bedrock.Interop.OverworldDimension arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ef96dae5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OverworldDimension((nint)handle);
@@ -467,9 +467,10 @@ public sealed unsafe partial class OverworldDimension : global::System.IDisposab
         NativeMethods.TablePtr->C2.hs_method_258900bb((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)lc.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getBrightnessDependentFogColor(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color baseColor, float brightness)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getBrightnessDependentFogColor(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color baseColor, float brightness)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C2.hs_method_da0cee5d((void*)__hosihikari_shim_handle, (void*)baseColor.Handle, brightness));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_da0cee5d((void*)__hosihikari_shim_handle, (void*)baseColor.Handle, brightness);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public short getCloudHeight()
@@ -482,9 +483,10 @@ public sealed unsafe partial class OverworldDimension : global::System.IDisposab
         return NativeMethods.TablePtr->C2.hs_method_27748618((void*)__hosihikari_shim_handle, (void*)lc.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 translatePosAcrossDimension(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originalPos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromId)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? translatePosAcrossDimension(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originalPos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromId)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_80de1c66((void*)__hosihikari_shim_handle, (void*)originalPos.Handle, (void*)fromId.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_80de1c66((void*)__hosihikari_shim_handle, (void*)originalPos.Handle, (void*)fromId.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public void upgradeLevelChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk generatedChunk)

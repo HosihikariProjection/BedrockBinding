@@ -48,12 +48,12 @@ public sealed unsafe partial class NBBridgeEndFiller : global::System.IDisposabl
     public bool _postProcess(nint region, nint random, nint chunkBB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NBBridgeEndFiller Create(global::Hosihikari.Bindings.Bedrock.Interop.NBBridgeEndFiller arg0)
+    public static NBBridgeEndFiller? Create(global::Hosihikari.Bindings.Bedrock.Interop.NBBridgeEndFiller arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_785103df((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NBBridgeEndFiller((nint)handle);

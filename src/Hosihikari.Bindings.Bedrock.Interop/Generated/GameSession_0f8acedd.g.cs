@@ -44,23 +44,23 @@ public sealed unsafe partial class GameSession : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GameSession Create()
+    public static GameSession? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_59ea2a07();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameSession((nint)handle);
     }
 
-    public static GameSession Create(global::Hosihikari.Bindings.Bedrock.Interop.GameSession arg0)
+    public static GameSession? Create(global::Hosihikari.Bindings.Bedrock.Interop.GameSession arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f0ee2f8d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameSession((nint)handle);
@@ -108,9 +108,10 @@ public sealed unsafe partial class GameSession : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_0278f8c4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameSession operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GameSession arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameSession? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GameSession arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameSession((nint)NativeMethods.TablePtr->C1.hs_method_477f681f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_477f681f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameSession((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -45,28 +45,32 @@ public sealed unsafe partial class VanillaDimensions : global::System.IDisposabl
         return (nint)NativeMethods.TablePtr->C4.hs_method_d32f5d1a();
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType Nether()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? Nether()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C4.hs_method_e7379ce2(), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e7379ce2();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle, false) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType Overworld()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? Overworld()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C4.hs_method_d548ade6(), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d548ade6();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle, false) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType TheEnd()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? TheEnd()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C4.hs_method_be32882b(), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_be32882b();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint TheEndSpawnPoint() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType Undefined()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? Undefined()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C4.hs_method_546a7ff3(), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_546a7ff3();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle, false) : null;
     }
 
     public static bool convertPointBetweenDimensions(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 startingPosition, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 outputPosition, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromID, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType toID, global::Hosihikari.Bindings.Bedrock.Interop.DimensionConversionData data)
@@ -78,7 +82,7 @@ public sealed unsafe partial class VanillaDimensions : global::System.IDisposabl
     public static nint fromSerializedInt(nint i) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromString(string name)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? fromString(string name)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -93,7 +97,8 @@ public sealed unsafe partial class VanillaDimensions : global::System.IDisposabl
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C4.hs_method_e0ce4a41(__hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e0ce4a41(__hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
         }
     }
 

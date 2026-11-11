@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptGameTestRegistrationBuilder : global::S
         return __hs_handle;
     }
 
-    public static ScriptGameTestRegistrationBuilder Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestRegistrationBuilder arg0)
+    public static ScriptGameTestRegistrationBuilder? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestRegistrationBuilder arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_38bafa39((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptGameTestRegistrationBuilder((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class WindOffsetter : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static WindOffsetter Create(global::Hosihikari.Bindings.Bedrock.Interop.SpeleothemUtils.WindOffsetter arg0)
+    public static WindOffsetter? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpeleothemUtils.WindOffsetter arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3664c40a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WindOffsetter((nint)handle);

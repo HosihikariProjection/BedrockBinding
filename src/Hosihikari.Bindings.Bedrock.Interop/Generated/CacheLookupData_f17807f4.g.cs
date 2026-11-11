@@ -40,23 +40,23 @@ public sealed unsafe partial class CacheLookupData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CacheLookupData Create()
+    public static CacheLookupData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_30981ae0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CacheLookupData((nint)handle);
     }
 
-    public static CacheLookupData Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCache_Nested.CacheLookupData arg0)
+    public static CacheLookupData? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCache_Nested.CacheLookupData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b76282db((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CacheLookupData((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class CacheLookupData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_10b9b86b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCache_Nested.CacheLookupData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCache_Nested.CacheLookupData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCache_Nested.CacheLookupData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCache_Nested.CacheLookupData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCache_Nested.CacheLookupData((nint)NativeMethods.TablePtr->C3.hs_method_92892c3d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_92892c3d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.HandleCache_Nested.CacheLookupData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

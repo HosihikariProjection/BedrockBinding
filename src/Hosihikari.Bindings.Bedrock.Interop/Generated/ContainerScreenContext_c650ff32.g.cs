@@ -40,12 +40,12 @@ public sealed unsafe partial class ContainerScreenContext : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ContainerScreenContext Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext arg0)
+    public static ContainerScreenContext? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_63e3fd51((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContainerScreenContext((nint)handle);

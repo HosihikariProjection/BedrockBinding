@@ -40,12 +40,12 @@ public sealed unsafe partial class BiomeIdType : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static BiomeIdType Create(global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType arg0)
+    public static BiomeIdType? Create(global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d51cbb44((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BiomeIdType((nint)handle);

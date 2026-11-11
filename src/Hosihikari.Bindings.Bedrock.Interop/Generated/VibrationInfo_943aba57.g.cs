@@ -40,12 +40,12 @@ public sealed unsafe partial class VibrationInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static VibrationInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.VibrationInfo arg0)
+    public static VibrationInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.VibrationInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_7c2303c7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VibrationInfo((nint)handle);

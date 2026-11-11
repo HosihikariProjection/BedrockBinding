@@ -40,23 +40,23 @@ public sealed unsafe partial class ScriptPluginManagerResult : global::System.ID
         return __hs_handle;
     }
 
-    public static ScriptPluginManagerResult Create()
+    public static ScriptPluginManagerResult? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1348c4ab();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPluginManagerResult((nint)handle);
     }
 
-    public static ScriptPluginManagerResult Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManagerResult arg0)
+    public static ScriptPluginManagerResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManagerResult arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c30f9065((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPluginManagerResult((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class ScriptPluginManagerResult : global::System.ID
         get => (nint)NativeMethods.TablePtr->C3.hs_get_111d240d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManagerResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManagerResult arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManagerResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManagerResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManagerResult((nint)NativeMethods.TablePtr->C3.hs_method_ad8c4c3b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ad8c4c3b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManagerResult((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

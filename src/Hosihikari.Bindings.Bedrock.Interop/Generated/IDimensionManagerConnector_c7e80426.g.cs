@@ -40,12 +40,12 @@ public sealed unsafe partial class IDimensionManagerConnector : global::System.I
         return __hs_handle;
     }
 
-    public static IDimensionManagerConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.IDimensionManagerConnector arg0)
+    public static IDimensionManagerConnector? Create(global::Hosihikari.Bindings.Bedrock.Interop.IDimensionManagerConnector arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b160576f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IDimensionManagerConnector((nint)handle);

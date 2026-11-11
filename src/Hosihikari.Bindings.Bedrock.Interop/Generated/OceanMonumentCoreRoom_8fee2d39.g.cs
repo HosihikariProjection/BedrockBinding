@@ -48,12 +48,12 @@ public sealed unsafe partial class OceanMonumentCoreRoom : global::System.IDispo
     public bool _postProcess(nint region, nint random, nint chunkBB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OceanMonumentCoreRoom Create(global::Hosihikari.Bindings.Bedrock.Interop.OceanMonumentCoreRoom arg0)
+    public static OceanMonumentCoreRoom? Create(global::Hosihikari.Bindings.Bedrock.Interop.OceanMonumentCoreRoom arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1276ea16((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OceanMonumentCoreRoom((nint)handle);

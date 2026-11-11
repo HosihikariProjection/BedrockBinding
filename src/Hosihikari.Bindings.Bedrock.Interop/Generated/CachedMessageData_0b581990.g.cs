@@ -40,23 +40,23 @@ public sealed unsafe partial class CachedMessageData : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static CachedMessageData Create()
+    public static CachedMessageData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c1e3778d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CachedMessageData((nint)handle);
     }
 
-    public static CachedMessageData Create(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData arg0)
+    public static CachedMessageData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0e34b712((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CachedMessageData((nint)handle);
@@ -103,9 +103,10 @@ public sealed unsafe partial class CachedMessageData : global::System.IDisposabl
         set => NativeMethods.TablePtr->C3.hs_set_47317652((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData((nint)NativeMethods.TablePtr->C3.hs_method_33a5ba8f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_33a5ba8f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData((nint)__hs_handle, false) : null;
     }
 
 

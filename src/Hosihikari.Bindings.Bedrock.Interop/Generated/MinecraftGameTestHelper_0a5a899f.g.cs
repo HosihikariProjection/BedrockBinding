@@ -298,23 +298,23 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
     public nint _worldPosition_9708f0b9(nint relativePos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinecraftGameTestHelper Create()
+    public static MinecraftGameTestHelper? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e132ea2f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftGameTestHelper((nint)handle);
     }
 
-    public static MinecraftGameTestHelper Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestHelper arg0)
+    public static MinecraftGameTestHelper? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestHelper arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_274b5beb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftGameTestHelper((nint)handle);
@@ -544,9 +544,10 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestHelper operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestHelper arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestHelper? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestHelper arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestHelper((nint)NativeMethods.TablePtr->C2.hs_method_40909120((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_40909120((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestHelper((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? pressButton(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos buttonPos)

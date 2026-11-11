@@ -49,23 +49,23 @@ public sealed unsafe partial class Results : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_7018af57((void*)__hosihikari_shim_handle);
     }
 
-    public static Results Create()
+    public static Results? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d9a5bb8c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Results((nint)handle);
     }
 
-    public static Results Create(global::Hosihikari.Bindings.Bedrock.Interop.Recipe_Nested.Results arg0)
+    public static Results? Create(global::Hosihikari.Bindings.Bedrock.Interop.Recipe_Nested.Results arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5c1d78ca((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Results((nint)handle);

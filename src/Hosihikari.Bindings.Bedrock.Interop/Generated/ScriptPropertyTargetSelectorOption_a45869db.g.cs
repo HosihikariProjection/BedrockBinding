@@ -44,12 +44,12 @@ public sealed unsafe partial class ScriptPropertyTargetSelectorOption : global::
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptPropertyTargetSelectorOption Create()
+    public static ScriptPropertyTargetSelectorOption? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b972d81e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPropertyTargetSelectorOption((nint)handle);

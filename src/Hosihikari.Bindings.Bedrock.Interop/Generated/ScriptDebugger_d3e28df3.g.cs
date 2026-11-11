@@ -72,23 +72,23 @@ public sealed unsafe partial class ScriptDebugger : global::System.IDisposable
     public nint _stopProfiler() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptDebugger Create()
+    public static ScriptDebugger? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8cab23c9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptDebugger((nint)handle);
     }
 
-    public static ScriptDebugger Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger arg0)
+    public static ScriptDebugger? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a2a1c2e4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptDebugger((nint)handle);
@@ -153,9 +153,10 @@ public sealed unsafe partial class ScriptDebugger : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings getSettings()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings? getSettings()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings((nint)NativeMethods.TablePtr->C3.hs_method_d90bcc50((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d90bcc50((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings((nint)__hs_handle, false) : null;
     }
 
     public bool isStatPublisherEnabled()
@@ -282,9 +283,10 @@ public sealed unsafe partial class ScriptDebugger : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_1ba56654((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger((nint)NativeMethods.TablePtr->C3.hs_method_3c3c8c32((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3c3c8c32((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'DebuggerStat' is not supported.", false)]

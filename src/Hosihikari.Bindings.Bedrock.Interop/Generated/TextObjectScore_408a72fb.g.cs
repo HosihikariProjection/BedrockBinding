@@ -64,31 +64,32 @@ public sealed unsafe partial class TextObjectScore : global::System.IDisposable
     public static nint RAW_TEXT_SCORE_OBJECTIVE_KEY() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TextObjectScore Create()
+    public static TextObjectScore? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_668a1145();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TextObjectScore((nint)handle);
     }
 
-    public static TextObjectScore Create(global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore arg0)
+    public static TextObjectScore? Create(global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5b921914((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TextObjectScore((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value asJsonValue()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? asJsonValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C3.hs_method_4bbc7fe6((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4bbc7fe6((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
     public string asString()
@@ -109,14 +110,16 @@ public sealed unsafe partial class TextObjectScore : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_2bcec254((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore((nint)NativeMethods.TablePtr->C3.hs_method_82095862((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_82095862((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value resolve(nint resolveData)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? resolve(nint resolveData)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C3.hs_method_c57a372b((void*)__hosihikari_shim_handle, (void*)resolveData));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c57a372b((void*)__hosihikari_shim_handle, (void*)resolveData);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
 

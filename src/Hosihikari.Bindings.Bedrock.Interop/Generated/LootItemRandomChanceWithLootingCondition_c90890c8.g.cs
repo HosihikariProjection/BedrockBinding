@@ -54,23 +54,23 @@ public sealed unsafe partial class LootItemRandomChanceWithLootingCondition : gl
     public nint _getConditionType() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LootItemRandomChanceWithLootingCondition Create()
+    public static LootItemRandomChanceWithLootingCondition? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_410a23b7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LootItemRandomChanceWithLootingCondition((nint)handle);
     }
 
-    public static LootItemRandomChanceWithLootingCondition Create(global::Hosihikari.Bindings.Bedrock.Interop.LootItemRandomChanceWithLootingCondition arg0)
+    public static LootItemRandomChanceWithLootingCondition? Create(global::Hosihikari.Bindings.Bedrock.Interop.LootItemRandomChanceWithLootingCondition arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_980c862b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LootItemRandomChanceWithLootingCondition((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class LootItemRandomChanceWithLootingCondition : gl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_03dc4dc2((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LootItemRandomChanceWithLootingCondition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemRandomChanceWithLootingCondition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LootItemRandomChanceWithLootingCondition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemRandomChanceWithLootingCondition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LootItemRandomChanceWithLootingCondition((nint)NativeMethods.TablePtr->C2.hs_method_4c0c788e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4c0c788e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LootItemRandomChanceWithLootingCondition((nint)__hs_handle, false) : null;
     }
 
 

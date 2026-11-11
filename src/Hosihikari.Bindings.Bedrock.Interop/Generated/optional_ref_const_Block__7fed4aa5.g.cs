@@ -70,9 +70,10 @@ public sealed unsafe partial class optional_ref_const_Block_ : global::System.ID
     public nint end() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'decltype(auto)' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block get()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? get()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_8ffccce7((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8ffccce7((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public bool has_value()
@@ -85,9 +86,10 @@ public sealed unsafe partial class optional_ref_const_Block_ : global::System.ID
         return NativeMethods.TablePtr->C4.hs_method_23bd3754((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block operator_const_Block___56d65a97()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? operator_const_Block___56d65a97()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_56d65a97((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_56d65a97((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? operator_const_Block___6163a266()
@@ -96,9 +98,10 @@ public sealed unsafe partial class optional_ref_const_Block_ : global::System.ID
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_81ca56fb((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_81ca56fb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? operator_operator__()
@@ -107,66 +110,68 @@ public sealed unsafe partial class optional_ref_const_Block_ : global::System.ID
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Block_ operator_assign_c91ecad9(global::Hosihikari.Bindings.Bedrock.Interop.Block? arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Block_? operator_assign_c91ecad9(global::Hosihikari.Bindings.Bedrock.Interop.Block? arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Block_((nint)NativeMethods.TablePtr->C4.hs_method_c91ecad9((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c91ecad9((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Block_((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Block_ operator_assign_15a182fc(global::Hosihikari.Bindings.Bedrock.Interop.Block? arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Block_? operator_assign_15a182fc(global::Hosihikari.Bindings.Bedrock.Interop.Block? arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Block_((nint)NativeMethods.TablePtr->C4.hs_method_15a182fc((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_15a182fc((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_const_Block_((nint)__hs_handle, false) : null;
     }
 
-    public static optional_ref_const_Block_ Create()
+    public static optional_ref_const_Block_? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_d14967c2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_const_Block_((nint)handle);
     }
 
-    public static optional_ref_const_Block_ Create_444eeaf7(global::Hosihikari.Bindings.Bedrock.Interop.Block? arg0)
+    public static optional_ref_const_Block_? Create_444eeaf7(global::Hosihikari.Bindings.Bedrock.Interop.Block? arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_444eeaf7((void*)(arg0?.Handle ?? 0), arg0 is not null);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_const_Block_((nint)handle);
     }
 
-    public static optional_ref_const_Block_ Create_273451b0(global::Hosihikari.Bindings.Bedrock.Interop.Block? arg0)
+    public static optional_ref_const_Block_? Create_273451b0(global::Hosihikari.Bindings.Bedrock.Interop.Block? arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_273451b0((void*)(arg0?.Handle ?? 0), arg0 is not null);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_const_Block_((nint)handle);
     }
 
-    public static optional_ref_const_Block_ Create_0a229e6e()
+    public static optional_ref_const_Block_? Create_0a229e6e()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0a229e6e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_const_Block_((nint)handle);
     }
 
-    public static optional_ref_const_Block_ Create_c21bce62()
+    public static optional_ref_const_Block_? Create_c21bce62()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c21bce62();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_const_Block_((nint)handle);
@@ -180,9 +185,10 @@ public sealed unsafe partial class optional_ref_const_Block_ : global::System.ID
     public nint rend() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'decltype(auto)' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_e822af9e((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e822af9e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

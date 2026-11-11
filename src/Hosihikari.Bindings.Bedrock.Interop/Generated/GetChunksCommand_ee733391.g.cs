@@ -73,12 +73,12 @@ public sealed unsafe partial class GetChunksCommand : global::System.IDisposable
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GetChunksCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.GetChunksCommand arg0)
+    public static GetChunksCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.GetChunksCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9cba433b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GetChunksCommand((nint)handle);

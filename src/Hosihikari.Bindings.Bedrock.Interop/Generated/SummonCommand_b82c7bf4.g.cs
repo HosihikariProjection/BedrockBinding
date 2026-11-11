@@ -77,12 +77,12 @@ public sealed unsafe partial class SummonCommand : global::System.IDisposable
     public void _postExecute(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SummonCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.SummonCommand arg0)
+    public static SummonCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.SummonCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_edb5b3a7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SummonCommand((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class MonumentRoomFitter : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static MonumentRoomFitter Create(global::Hosihikari.Bindings.Bedrock.Interop.MonumentRoomFitter arg0)
+    public static MonumentRoomFitter? Create(global::Hosihikari.Bindings.Bedrock.Interop.MonumentRoomFitter arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d4cc86e6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MonumentRoomFitter((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class NewIncomingConnectionEvent : global::System.I
         return __hs_handle;
     }
 
-    public static NewIncomingConnectionEvent Create()
+    public static NewIncomingConnectionEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_56b37085();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NewIncomingConnectionEvent((nint)handle);
     }
 
-    public static NewIncomingConnectionEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.NewIncomingConnectionEvent arg0)
+    public static NewIncomingConnectionEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.NewIncomingConnectionEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c1f1effc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NewIncomingConnectionEvent((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class NewIncomingConnectionEvent : global::System.I
         get => (nint)NativeMethods.TablePtr->C2.hs_get_fb4544a5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.NewIncomingConnectionEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.NewIncomingConnectionEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.NewIncomingConnectionEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.NewIncomingConnectionEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.NewIncomingConnectionEvent((nint)NativeMethods.TablePtr->C2.hs_method_4f027969((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4f027969((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.NewIncomingConnectionEvent((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

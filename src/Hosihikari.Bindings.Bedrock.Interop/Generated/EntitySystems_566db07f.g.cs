@@ -66,12 +66,12 @@ public sealed unsafe partial class EntitySystems : global::System.IDisposable
     public void _tickMovementCorrectionReplay(nint registry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EntitySystems Create()
+    public static EntitySystems? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_57445035();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntitySystems((nint)handle);

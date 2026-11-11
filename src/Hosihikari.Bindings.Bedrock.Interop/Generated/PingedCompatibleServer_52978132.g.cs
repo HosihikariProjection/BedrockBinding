@@ -48,12 +48,12 @@ public sealed unsafe partial class PingedCompatibleServer : global::System.IDisp
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PingedCompatibleServer Create()
+    public static PingedCompatibleServer? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_36d9ced8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PingedCompatibleServer((nint)handle);

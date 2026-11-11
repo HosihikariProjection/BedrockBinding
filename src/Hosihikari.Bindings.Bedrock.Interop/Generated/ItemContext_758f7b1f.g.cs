@@ -52,12 +52,12 @@ public sealed unsafe partial class ItemContext : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemContext Create()
+    public static ItemContext? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a045b6cf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemContext((nint)handle);
@@ -67,12 +67,12 @@ public sealed unsafe partial class ItemContext : global::System.IDisposable
     public static ItemContext Create(nint region, nint containerPos, int slot) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemContext Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemContext arg0)
+    public static ItemContext? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemContext arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3414860f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemContext((nint)handle);

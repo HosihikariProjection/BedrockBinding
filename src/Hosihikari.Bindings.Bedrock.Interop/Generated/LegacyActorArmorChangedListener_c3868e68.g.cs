@@ -44,23 +44,23 @@ public sealed unsafe partial class LegacyActorArmorChangedListener : global::Sys
     public void _containerContentChanged(int arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacyActorArmorChangedListener Create()
+    public static LegacyActorArmorChangedListener? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9af3dd15();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyActorArmorChangedListener((nint)handle);
     }
 
-    public static LegacyActorArmorChangedListener Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyActorArmorChangedListener arg0)
+    public static LegacyActorArmorChangedListener? Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyActorArmorChangedListener arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0e53310d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyActorArmorChangedListener((nint)handle);
@@ -85,9 +85,10 @@ public sealed unsafe partial class LegacyActorArmorChangedListener : global::Sys
         get => (nint)NativeMethods.TablePtr->C2.hs_get_167fa479((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyActorArmorChangedListener operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LegacyActorArmorChangedListener arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyActorArmorChangedListener? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LegacyActorArmorChangedListener arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LegacyActorArmorChangedListener((nint)NativeMethods.TablePtr->C2.hs_method_7f445c60((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7f445c60((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LegacyActorArmorChangedListener((nint)__hs_handle, false) : null;
     }
 
 

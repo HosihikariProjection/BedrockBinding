@@ -56,23 +56,23 @@ public sealed unsafe partial class BannerPattern : global::System.IDisposable
     public nint _ctor(nint name, nint nameID, nint itemFunctor, short patternItemType, bool ignoreAux) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BannerPattern Create()
+    public static BannerPattern? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a9d32ea6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BannerPattern((nint)handle);
     }
 
-    public static BannerPattern Create(global::Hosihikari.Bindings.Bedrock.Interop.BannerPattern arg0)
+    public static BannerPattern? Create(global::Hosihikari.Bindings.Bedrock.Interop.BannerPattern arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_49511c8f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BannerPattern((nint)handle);

@@ -48,12 +48,12 @@ public sealed unsafe partial class LeashableComponent : global::System.IDisposab
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LeashableComponent Create()
+    public static LeashableComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b68403a3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LeashableComponent((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class LeashableComponent : global::System.IDisposab
     public static LeashableComponent Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LeashableComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent arg0)
+    public static LeashableComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1b8d1972((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LeashableComponent((nint)handle);
@@ -118,9 +118,10 @@ public sealed unsafe partial class LeashableComponent : global::System.IDisposab
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent((nint)NativeMethods.TablePtr->C2.hs_method_e5e216ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e5e216ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent((nint)__hs_handle, false) : null;
     }
 
 

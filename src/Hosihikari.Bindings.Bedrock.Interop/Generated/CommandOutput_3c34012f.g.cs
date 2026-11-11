@@ -50,34 +50,34 @@ public sealed unsafe partial class CommandOutput : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C0.hs_method_d2442b59((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
     }
 
-    public static CommandOutput Create()
+    public static CommandOutput? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_cf8dbaaa();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandOutput((nint)handle);
     }
 
-    public static CommandOutput Create(int type)
+    public static CommandOutput? Create(int type)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d5983ae2(type);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandOutput((nint)handle);
     }
 
-    public static CommandOutput Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput rhs)
+    public static CommandOutput? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput rhs)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_64253553((void*)rhs.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandOutput((nint)handle);
@@ -137,9 +137,10 @@ public sealed unsafe partial class CommandOutput : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_46392650((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput rhs)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput((nint)NativeMethods.TablePtr->C0.hs_method_7506367a((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7506367a((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]

@@ -86,23 +86,23 @@ public sealed unsafe partial class FindMountGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FindMountGoal Create()
+    public static FindMountGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1b800f61();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FindMountGoal((nint)handle);
     }
 
-    public static FindMountGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.FindMountGoal arg0)
+    public static FindMountGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.FindMountGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8fb7855d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FindMountGoal((nint)handle);
@@ -214,9 +214,10 @@ public sealed unsafe partial class FindMountGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_efcf6615((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FindMountGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FindMountGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FindMountGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FindMountGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FindMountGoal((nint)NativeMethods.TablePtr->C1.hs_method_4c9a8e43((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4c9a8e43((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FindMountGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

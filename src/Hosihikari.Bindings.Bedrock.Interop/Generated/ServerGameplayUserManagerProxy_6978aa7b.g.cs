@@ -48,12 +48,12 @@ public sealed unsafe partial class ServerGameplayUserManagerProxy : global::Syst
     public nint _validatePlayerName(nint playerName, nint gameplayUserManager) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerGameplayUserManagerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerGameplayUserManagerProxy arg0)
+    public static ServerGameplayUserManagerProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerGameplayUserManagerProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b70fdfdc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerGameplayUserManagerProxy((nint)handle);

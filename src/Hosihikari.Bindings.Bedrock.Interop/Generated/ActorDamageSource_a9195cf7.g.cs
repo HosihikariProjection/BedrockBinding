@@ -92,9 +92,10 @@ public sealed unsafe partial class ActorDamageSource : global::System.IDisposabl
         return NativeMethods.TablePtr->C0.hs_method_789a21a3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID _getDamagingEntityUniqueID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? _getDamagingEntityUniqueID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C0.hs_method_77a0163a((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_77a0163a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     public uint _getEntityCategories()
@@ -107,9 +108,10 @@ public sealed unsafe partial class ActorDamageSource : global::System.IDisposabl
         return NativeMethods.TablePtr->C0.hs_method_289be002((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID _getEntityUniqueID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? _getEntityUniqueID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C0.hs_method_b883af35((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b883af35((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     public bool _getIsCreative()
@@ -171,18 +173,18 @@ public sealed unsafe partial class ActorDamageSource : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorDamageSource Create()
+    public static ActorDamageSource? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_da6f36ad();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDamageSource((nint)handle);
     }
 
-    public static ActorDamageSource Create(int cause, string deathMessageOverride)
+    public static ActorDamageSource? Create(int cause, string deathMessageOverride)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(deathMessageOverride);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -200,19 +202,19 @@ public sealed unsafe partial class ActorDamageSource : global::System.IDisposabl
             var handle = NativeMethods.TablePtr->C0.hs_create_140b4306(cause, __hs_stringData1, (nuint)__hs_stringByteCount1);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new ActorDamageSource((nint)handle);
         }
     }
 
-    public static ActorDamageSource Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource arg0)
+    public static ActorDamageSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_140ccc3d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDamageSource((nint)handle);
@@ -258,9 +260,10 @@ public sealed unsafe partial class ActorDamageSource : global::System.IDisposabl
         return NativeMethods.TablePtr->C0.hs_method_7af10ac9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getDamagingEntityUniqueID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getDamagingEntityUniqueID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C0.hs_method_b5b22f44((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b5b22f44((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::pair<std::basic_string<char>, std::vector<std::basic_string<char>>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -277,9 +280,10 @@ public sealed unsafe partial class ActorDamageSource : global::System.IDisposabl
         return NativeMethods.TablePtr->C0.hs_method_f86bfd48((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getEntityUniqueID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getEntityUniqueID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C0.hs_method_878ed629((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_878ed629((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     public bool getIsCreative()

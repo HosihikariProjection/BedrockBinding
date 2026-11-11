@@ -73,12 +73,12 @@ public sealed unsafe partial class UnlockRecipeCommand : global::System.IDisposa
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UnlockRecipeCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.UnlockRecipeCommand arg0)
+    public static UnlockRecipeCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.UnlockRecipeCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_8c31531b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UnlockRecipeCommand((nint)handle);

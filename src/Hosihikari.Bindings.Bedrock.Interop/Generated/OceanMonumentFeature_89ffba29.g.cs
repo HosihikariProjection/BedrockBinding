@@ -70,34 +70,34 @@ public sealed unsafe partial class OceanMonumentFeature : global::System.IDispos
     public bool _shouldPostProcessMobs() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OceanMonumentFeature Create()
+    public static OceanMonumentFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fd9f0948();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OceanMonumentFeature((nint)handle);
     }
 
-    public static OceanMonumentFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.OceanMonumentFeature arg0)
+    public static OceanMonumentFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.OceanMonumentFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3e49f071((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OceanMonumentFeature((nint)handle);
     }
 
-    public static OceanMonumentFeature Create(uint seed)
+    public static OceanMonumentFeature? Create(uint seed)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_10661a98(seed);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OceanMonumentFeature((nint)handle);

@@ -50,34 +50,34 @@ public sealed unsafe partial class SetActorDataPacketPayload : global::System.ID
         NativeMethods.TablePtr->C3.hs_method_8e884df2((void*)__hosihikari_shim_handle);
     }
 
-    public static SetActorDataPacketPayload Create()
+    public static SetActorDataPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4317ff48();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetActorDataPacketPayload((nint)handle);
     }
 
-    public static SetActorDataPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID id, global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorDataEntityWrapper entityData, global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent? propertyComponent, ulong tick, bool packAll)
+    public static SetActorDataPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID id, global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorDataEntityWrapper entityData, global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent? propertyComponent, ulong tick, bool packAll)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_669d990a((void*)id.Handle, (void*)entityData.Handle, (void*)(propertyComponent?.Handle ?? 0), tick, packAll);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetActorDataPacketPayload((nint)handle);
     }
 
-    public static SetActorDataPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload arg0)
+    public static SetActorDataPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ecd5b7dd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetActorDataPacketPayload((nint)handle);
@@ -111,9 +111,10 @@ public sealed unsafe partial class SetActorDataPacketPayload : global::System.ID
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload((nint)NativeMethods.TablePtr->C3.hs_method_18c1d708((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_18c1d708((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload((nint)__hs_handle, false) : null;
     }
 
 

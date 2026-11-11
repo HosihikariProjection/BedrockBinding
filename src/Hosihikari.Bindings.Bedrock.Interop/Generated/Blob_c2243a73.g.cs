@@ -40,34 +40,34 @@ public sealed unsafe partial class Blob : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Blob Create()
+    public static Blob? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_cfe01b58();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Blob((nint)handle);
     }
 
-    public static Blob Create(global::Hosihikari.Bindings.Bedrock.Interop.mce.Blob arg0)
+    public static Blob? Create(global::Hosihikari.Bindings.Bedrock.Interop.mce.Blob arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_90fbdc0f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Blob((nint)handle);
     }
 
-    public static Blob Create_a8edb308(nint ptr, ulong size)
+    public static Blob? Create_a8edb308(nint ptr, ulong size)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a8edb308((void*)ptr, size);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Blob((nint)handle);
@@ -81,12 +81,12 @@ public sealed unsafe partial class Blob : global::System.IDisposable
     public static Blob Create_6b624502(nint ptr, ulong size) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static Blob Create(ulong size)
+    public static Blob? Create(ulong size)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4bcea155(size);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Blob((nint)handle);
@@ -169,9 +169,10 @@ public sealed unsafe partial class Blob : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_62e77b1e((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Blob operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.mce.Blob arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Blob? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.mce.Blob arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Blob((nint)NativeMethods.TablePtr->C4.hs_method_68934cf4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_68934cf4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Blob((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

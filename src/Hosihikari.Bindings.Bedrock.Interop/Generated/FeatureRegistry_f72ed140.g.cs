@@ -79,34 +79,34 @@ public sealed unsafe partial class FeatureRegistry : global::System.IDisposable
     public static nint FIRST_PASS() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FeatureRegistry Create()
+    public static FeatureRegistry? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_cc48b490();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FeatureRegistry((nint)handle);
     }
 
-    public static FeatureRegistry Create(global::Hosihikari.Bindings.Abi.SharedHandle? validator)
+    public static FeatureRegistry? Create(global::Hosihikari.Bindings.Abi.SharedHandle? validator)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7485efb2(validator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FeatureRegistry((nint)handle);
     }
 
-    public static FeatureRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry arg0)
+    public static FeatureRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c78364b7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FeatureRegistry((nint)handle);

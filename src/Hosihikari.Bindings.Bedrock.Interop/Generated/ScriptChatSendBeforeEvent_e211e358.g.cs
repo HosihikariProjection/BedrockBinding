@@ -58,12 +58,12 @@ public sealed unsafe partial class ScriptChatSendBeforeEvent : global::System.ID
         get => (nint)NativeMethods.TablePtr->C3.hs_get_ca5ad50c((void*)__hosihikari_shim_handle);
     }
 
-    public static ScriptChatSendBeforeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptChatSendBeforeEvent arg0)
+    public static ScriptChatSendBeforeEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptChatSendBeforeEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3d8c57c4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptChatSendBeforeEvent((nint)handle);

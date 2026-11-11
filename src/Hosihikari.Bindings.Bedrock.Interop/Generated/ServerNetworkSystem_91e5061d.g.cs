@@ -224,12 +224,12 @@ public sealed unsafe partial class ServerNetworkSystem : global::System.IDisposa
     public nint _ctor(nint receiveThread, nint overrideBroadcastAddresses, nint networkToggles, nint networkDebugManager, nint appPlatform, nint networkSessionOwner, nint networkSettingOption, nint portConfig, nint defaultLogSeverity, nint networkId, nint signalingService, nint packetGroupBuilder, nint packetController, nint httpLibraryToken) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerNetworkSystem Create()
+    public static ServerNetworkSystem? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ae187462();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerNetworkSystem((nint)handle);
@@ -239,12 +239,12 @@ public sealed unsafe partial class ServerNetworkSystem : global::System.IDisposa
     public static ServerNetworkSystem Create(nint receiveThread, nint overrideBroadcastAddresses, nint networkToggles, nint networkDebugManager, nint appPlatform, nint networkSessionOwner, nint networkSettingOption, nint portConfig, nint defaultLogSeverity, nint networkId, nint signalingService, nint packetGroupBuilder, nint packetController, nint httpLibraryToken) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerNetworkSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkSystem arg0)
+    public static ServerNetworkSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7fd65ad3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerNetworkSystem((nint)handle);

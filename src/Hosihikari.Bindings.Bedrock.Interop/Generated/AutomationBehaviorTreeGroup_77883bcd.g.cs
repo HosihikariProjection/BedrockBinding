@@ -44,23 +44,23 @@ public sealed unsafe partial class AutomationBehaviorTreeGroup : global::System.
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AutomationBehaviorTreeGroup Create()
+    public static AutomationBehaviorTreeGroup? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_05f2dedf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutomationBehaviorTreeGroup((nint)handle);
     }
 
-    public static AutomationBehaviorTreeGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.AutomationBehaviorTreeGroup arg0)
+    public static AutomationBehaviorTreeGroup? Create(global::Hosihikari.Bindings.Bedrock.Interop.AutomationBehaviorTreeGroup arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_371647d9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutomationBehaviorTreeGroup((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class AutomationBehaviorTreeGroup : global::System.
         get => (nint)NativeMethods.TablePtr->C0.hs_get_1d72e7fd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AutomationBehaviorTreeGroup operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AutomationBehaviorTreeGroup arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AutomationBehaviorTreeGroup? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AutomationBehaviorTreeGroup arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AutomationBehaviorTreeGroup((nint)NativeMethods.TablePtr->C0.hs_method_15b4fe38((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_15b4fe38((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AutomationBehaviorTreeGroup((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

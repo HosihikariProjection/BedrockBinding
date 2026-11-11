@@ -40,23 +40,23 @@ public sealed unsafe partial class FamilyTypeDefinition : global::System.IDispos
         return __hs_handle;
     }
 
-    public static FamilyTypeDefinition Create()
+    public static FamilyTypeDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_22082f8a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FamilyTypeDefinition((nint)handle);
     }
 
-    public static FamilyTypeDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.FamilyTypeDefinition arg0)
+    public static FamilyTypeDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.FamilyTypeDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3fe74dc6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FamilyTypeDefinition((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class FamilyTypeDefinition : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_e28aff9d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FamilyTypeDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FamilyTypeDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FamilyTypeDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FamilyTypeDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FamilyTypeDefinition((nint)NativeMethods.TablePtr->C1.hs_method_5785e507((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5785e507((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FamilyTypeDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

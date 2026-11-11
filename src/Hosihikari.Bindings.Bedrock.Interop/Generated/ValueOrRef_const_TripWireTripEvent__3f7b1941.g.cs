@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_TripWireTripEvent_ : global:
     public static ValueOrRef_const_TripWireTripEvent_ Create_e0670972(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const TripWireTripEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TripWireTripEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.TripWireTripEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TripWireTripEvent((nint)NativeMethods.TablePtr->C1.hs_method_24632efd((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_24632efd((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TripWireTripEvent((nint)__hs_handle, false) : null;
     }
 
 

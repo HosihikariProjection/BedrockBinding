@@ -49,12 +49,12 @@ public sealed unsafe partial class CommandContext : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_a97f77ba((void*)__hosihikari_shim_handle);
     }
 
-    public static CommandContext Create()
+    public static CommandContext? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5263810a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandContext((nint)handle);

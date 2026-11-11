@@ -48,23 +48,23 @@ public sealed unsafe partial class SynchedActorData : global::System.IDisposable
     public static nint DIFF_ITEM_NULL() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SynchedActorData Create()
+    public static SynchedActorData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ba2fceee();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SynchedActorData((nint)handle);
     }
 
-    public static SynchedActorData Create(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData arg0)
+    public static SynchedActorData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2f680bc9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SynchedActorData((nint)handle);
@@ -104,9 +104,10 @@ public sealed unsafe partial class SynchedActorData : global::System.IDisposable
     public nint operator_assign(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData((nint)NativeMethods.TablePtr->C3.hs_method_76b7d7e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_76b7d7e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'std::unique_ptr<DataItem>' is not supported.", false)]

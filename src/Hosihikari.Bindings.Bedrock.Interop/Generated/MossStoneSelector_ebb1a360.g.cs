@@ -44,12 +44,12 @@ public sealed unsafe partial class MossStoneSelector : global::System.IDisposabl
     public nint _next(nint random, int arg1, int arg2, int arg3, bool arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MossStoneSelector Create(global::Hosihikari.Bindings.Bedrock.Interop.MossStoneSelector arg0)
+    public static MossStoneSelector? Create(global::Hosihikari.Bindings.Bedrock.Interop.MossStoneSelector arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fb4a4d0a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MossStoneSelector((nint)handle);
@@ -61,9 +61,10 @@ public sealed unsafe partial class MossStoneSelector : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_ecc5aecc((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block next(global::Hosihikari.Bindings.Bedrock.Interop.Random random, int arg1, int arg2, int arg3, bool arg4)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? next(global::Hosihikari.Bindings.Bedrock.Interop.Random random, int arg1, int arg2, int arg3, bool arg4)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C2.hs_method_4221e17d((void*)__hosihikari_shim_handle, (void*)random.Handle, arg1, arg2, arg3, arg4), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4221e17d((void*)__hosihikari_shim_handle, (void*)random.Handle, arg1, arg2, arg3, arg4);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
 

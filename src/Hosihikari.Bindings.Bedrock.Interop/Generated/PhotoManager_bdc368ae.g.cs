@@ -52,12 +52,12 @@ public sealed unsafe partial class PhotoManager : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PhotoManager Create()
+    public static PhotoManager? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c0385a01();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PhotoManager((nint)handle);

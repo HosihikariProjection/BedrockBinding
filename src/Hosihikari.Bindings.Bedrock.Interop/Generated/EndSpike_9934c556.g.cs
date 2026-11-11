@@ -40,12 +40,12 @@ public sealed unsafe partial class EndSpike : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static EndSpike Create(global::Hosihikari.Bindings.Bedrock.Interop.SpikeFeature_Nested.EndSpike arg0)
+    public static EndSpike? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpikeFeature_Nested.EndSpike arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b472044f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EndSpike((nint)handle);

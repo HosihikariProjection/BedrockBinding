@@ -40,12 +40,12 @@ public sealed unsafe partial class VaultConfig : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static VaultConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultConfig arg0)
+    public static VaultConfig? Create(global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultConfig arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_28167544((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VaultConfig((nint)handle);

@@ -60,34 +60,34 @@ public sealed unsafe partial class PlayerListEntry : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_6eef638d((void*)__hosihikari_shim_handle);
     }
 
-    public static PlayerListEntry Create()
+    public static PlayerListEntry? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4c0b97fa();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerListEntry((nint)handle);
     }
 
-    public static PlayerListEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public static PlayerListEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a8ef6468((void*)player.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerListEntry((nint)handle);
     }
 
-    public static PlayerListEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry arg0)
+    public static PlayerListEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_db50ba46((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerListEntry((nint)handle);
@@ -165,9 +165,10 @@ public sealed unsafe partial class PlayerListEntry : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_6ce20cff((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry((nint)NativeMethods.TablePtr->C2.hs_method_5bd005bc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5bd005bc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry((nint)__hs_handle, false) : null;
     }
 
 

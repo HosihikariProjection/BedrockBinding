@@ -40,12 +40,12 @@ public sealed unsafe partial class TargetInstruction : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static TargetInstruction Create(global::Hosihikari.Bindings.Bedrock.Interop.CameraInstructionOptions.TargetInstruction arg0)
+    public static TargetInstruction? Create(global::Hosihikari.Bindings.Bedrock.Interop.CameraInstructionOptions.TargetInstruction arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ef3aed60((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TargetInstruction((nint)handle);

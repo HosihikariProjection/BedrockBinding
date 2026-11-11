@@ -340,12 +340,12 @@ public sealed unsafe partial class ScriptWorldAfterEvents : global::System.IDisp
     public void _onWorldInitialize(nint eventData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptWorldAfterEvents Create()
+    public static ScriptWorldAfterEvents? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7239fd9c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptWorldAfterEvents((nint)handle);
@@ -367,9 +367,10 @@ public sealed unsafe partial class ScriptWorldAfterEvents : global::System.IDisp
     public nint getFineGrainedSignalSubscriberStats() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Level getLevel()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Level? getLevel()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)NativeMethods.TablePtr->C3.hs_method_b6359e09((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b6359e09((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

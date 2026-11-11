@@ -56,12 +56,12 @@ public sealed unsafe partial class TargetGoalDefinition : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TargetGoalDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.TargetGoalDefinition arg0)
+    public static TargetGoalDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.TargetGoalDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_bc4d06c7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TargetGoalDefinition((nint)handle);

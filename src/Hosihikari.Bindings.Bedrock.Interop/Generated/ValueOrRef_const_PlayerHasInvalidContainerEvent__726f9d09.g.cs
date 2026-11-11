@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerHasInvalidContainerEve
     public static ValueOrRef_const_PlayerHasInvalidContainerEvent_ Create_e8926ae2(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerHasInvalidContainerEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerHasInvalidContainerEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerHasInvalidContainerEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerHasInvalidContainerEvent((nint)NativeMethods.TablePtr->C1.hs_method_6b02438d((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6b02438d((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerHasInvalidContainerEvent((nint)__hs_handle, false) : null;
     }
 
 

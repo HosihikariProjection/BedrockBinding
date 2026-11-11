@@ -56,12 +56,12 @@ public sealed unsafe partial class TrailComponentDefinition : global::System.IDi
     public static nint NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TrailComponentDefinition Create()
+    public static TrailComponentDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_718c09d0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TrailComponentDefinition((nint)handle);
@@ -115,9 +115,10 @@ public sealed unsafe partial class TrailComponentDefinition : global::System.IDi
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition((nint)NativeMethods.TablePtr->C3.hs_method_86b1b194((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_86b1b194((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

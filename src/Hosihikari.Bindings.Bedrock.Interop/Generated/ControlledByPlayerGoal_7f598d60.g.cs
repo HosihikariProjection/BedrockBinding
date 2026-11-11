@@ -82,23 +82,23 @@ public sealed unsafe partial class ControlledByPlayerGoal : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ControlledByPlayerGoal Create()
+    public static ControlledByPlayerGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7daaafab();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ControlledByPlayerGoal((nint)handle);
     }
 
-    public static ControlledByPlayerGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.ControlledByPlayerGoal arg0)
+    public static ControlledByPlayerGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.ControlledByPlayerGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f57b3f1d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ControlledByPlayerGoal((nint)handle);
@@ -153,9 +153,10 @@ public sealed unsafe partial class ControlledByPlayerGoal : global::System.IDisp
         set => NativeMethods.TablePtr->C1.hs_set_509d481f((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ControlledByPlayerGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ControlledByPlayerGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ControlledByPlayerGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ControlledByPlayerGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ControlledByPlayerGoal((nint)NativeMethods.TablePtr->C1.hs_method_d8a361f6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d8a361f6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ControlledByPlayerGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

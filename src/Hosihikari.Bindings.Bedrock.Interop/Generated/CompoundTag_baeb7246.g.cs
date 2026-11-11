@@ -71,9 +71,10 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_41f6a9a7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C0.hs_method_8afb8d7f((void*)__hosihikari_shim_handle, (void*)dis.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8afb8d7f((void*)__hosihikari_shim_handle, (void*)dis.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     public void _print(string prefix_, global::Hosihikari.Bindings.Bedrock.Interop.PrintStream @out)
@@ -110,12 +111,12 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_14576819((void*)__hosihikari_shim_handle, (void*)dos.Handle);
     }
 
-    public static CompoundTag Create()
+    public static CompoundTag? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7b78bada();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CompoundTag((nint)handle);
@@ -125,12 +126,12 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
     public static CompoundTag Create_b6f04892(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static CompoundTag Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag arg0)
+    public static CompoundTag? Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fa795b4c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CompoundTag((nint)handle);
@@ -148,7 +149,7 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
     public void append(nint tag) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant at_955dd2d3(string index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant? at_955dd2d3(string index)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(index);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -163,11 +164,12 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(index, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)NativeMethods.TablePtr->C0.hs_method_955dd2d3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_955dd2d3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)__hs_handle, false) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant at_a343c2f8(string index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant? at_a343c2f8(string index)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(index);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -182,7 +184,8 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(index, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)NativeMethods.TablePtr->C0.hs_method_a343c2f8((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a343c2f8((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)__hs_handle, false) : null;
         }
     }
 
@@ -363,9 +366,10 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_c8e2d2c7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C0.hs_method_e6fc6bc1((void*)__hosihikari_shim_handle, (void*)dis.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e6fc6bc1((void*)__hosihikari_shim_handle, (void*)dis.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -382,12 +386,13 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)NativeMethods.TablePtr->C0.hs_method_3d74e2df((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3d74e2df((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant operator_index_b696ac4c(string index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant? operator_index_b696ac4c(string index)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(index);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -402,11 +407,12 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(index, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)NativeMethods.TablePtr->C0.hs_method_b696ac4c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b696ac4c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)__hs_handle, false) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant operator_index_4e7a6a47(string index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant? operator_index_4e7a6a47(string index)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(index);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -421,7 +427,8 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(index, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)NativeMethods.TablePtr->C0.hs_method_4e7a6a47((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4e7a6a47((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)__hs_handle, false) : null;
         }
     }
 
@@ -494,7 +501,7 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
     public nint putByteArray(nint name, nint mem) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag putCompound(string name, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag value)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? putCompound(string name, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag value)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -509,7 +516,8 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)NativeMethods.TablePtr->C0.hs_method_6bdda699((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)value.Handle), false);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6bdda699((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)value.Handle);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle, false) : null;
         }
     }
 

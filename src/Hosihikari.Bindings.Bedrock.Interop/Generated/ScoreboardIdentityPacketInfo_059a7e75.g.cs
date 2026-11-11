@@ -40,12 +40,12 @@ public sealed unsafe partial class ScoreboardIdentityPacketInfo : global::System
         return __hs_handle;
     }
 
-    public static ScoreboardIdentityPacketInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardIdentityPacketInfo arg0)
+    public static ScoreboardIdentityPacketInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardIdentityPacketInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_83eee2a2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScoreboardIdentityPacketInfo((nint)handle);

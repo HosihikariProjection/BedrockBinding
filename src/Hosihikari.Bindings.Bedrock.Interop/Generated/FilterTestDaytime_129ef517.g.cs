@@ -66,12 +66,12 @@ public sealed unsafe partial class FilterTestDaytime : global::System.IDisposabl
     public nint _getName() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FilterTestDaytime Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterTestDaytime arg0)
+    public static FilterTestDaytime? Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterTestDaytime arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6fbd6ed4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilterTestDaytime((nint)handle);

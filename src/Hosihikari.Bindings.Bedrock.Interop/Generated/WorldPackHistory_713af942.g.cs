@@ -48,12 +48,12 @@ public sealed unsafe partial class WorldPackHistory : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorldPackHistory Create()
+    public static WorldPackHistory? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_7fef27bc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldPackHistory((nint)handle);

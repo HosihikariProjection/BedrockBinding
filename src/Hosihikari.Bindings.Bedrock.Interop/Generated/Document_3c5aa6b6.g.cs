@@ -40,12 +40,12 @@ public sealed unsafe partial class Document : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Document Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.PackSettingsDefinition.Document arg0)
+    public static Document? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.PackSettingsDefinition.Document arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_01f7cb32((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Document((nint)handle);

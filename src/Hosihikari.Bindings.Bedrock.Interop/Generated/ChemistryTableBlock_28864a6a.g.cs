@@ -427,9 +427,10 @@ public sealed unsafe partial class ChemistryTableBlock : global::System.IDisposa
         return NativeMethods.TablePtr->C0.hs_method_7d345a07((void*)__hosihikari_shim_handle, face, (void*)block.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte id, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte id, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C0.hs_method_17dcda29((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, id, (void*)clickPos.Handle, itemValue), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_17dcda29((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, id, (void*)clickPos.Handle, itemValue);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public bool isCraftingBlock()

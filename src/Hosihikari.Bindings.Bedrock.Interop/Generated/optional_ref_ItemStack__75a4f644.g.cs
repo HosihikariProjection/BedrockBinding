@@ -70,9 +70,10 @@ public sealed unsafe partial class optional_ref_ItemStack_ : global::System.IDis
     public nint end() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'decltype(auto)' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack get()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? get()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C4.hs_method_3b7af0cb((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3b7af0cb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public bool has_value()
@@ -80,9 +81,10 @@ public sealed unsafe partial class optional_ref_ItemStack_ : global::System.IDis
         return NativeMethods.TablePtr->C4.hs_method_d9b9101f((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack operator_ItemStack___1b9cc1aa()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? operator_ItemStack___1b9cc1aa()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C4.hs_method_1b9cc1aa((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1b9cc1aa((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? operator_ItemStack___ab1acbd9()
@@ -96,9 +98,10 @@ public sealed unsafe partial class optional_ref_ItemStack_ : global::System.IDis
         return NativeMethods.TablePtr->C4.hs_method_f987907e((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C4.hs_method_04f38d66((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_04f38d66((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? operator_operator__()
@@ -107,66 +110,68 @@ public sealed unsafe partial class optional_ref_ItemStack_ : global::System.IDis
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_ItemStack_ operator_assign_702d27c0(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_ItemStack_? operator_assign_702d27c0(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_ItemStack_((nint)NativeMethods.TablePtr->C4.hs_method_702d27c0((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_702d27c0((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_ItemStack_((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_ItemStack_ operator_assign_d6e5a038(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_ItemStack_? operator_assign_d6e5a038(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_ItemStack_((nint)NativeMethods.TablePtr->C4.hs_method_d6e5a038((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d6e5a038((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_ItemStack_((nint)__hs_handle, false) : null;
     }
 
-    public static optional_ref_ItemStack_ Create()
+    public static optional_ref_ItemStack_? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_41fe2bd9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_ItemStack_((nint)handle);
     }
 
-    public static optional_ref_ItemStack_ Create_3d5dae02(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? arg0)
+    public static optional_ref_ItemStack_? Create_3d5dae02(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3d5dae02((void*)(arg0?.Handle ?? 0), arg0 is not null);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_ItemStack_((nint)handle);
     }
 
-    public static optional_ref_ItemStack_ Create_6f1e8e81(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? arg0)
+    public static optional_ref_ItemStack_? Create_6f1e8e81(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6f1e8e81((void*)(arg0?.Handle ?? 0), arg0 is not null);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_ItemStack_((nint)handle);
     }
 
-    public static optional_ref_ItemStack_ Create_e27fed9c()
+    public static optional_ref_ItemStack_? Create_e27fed9c()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e27fed9c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_ItemStack_((nint)handle);
     }
 
-    public static optional_ref_ItemStack_ Create_e7210497()
+    public static optional_ref_ItemStack_? Create_e7210497()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e7210497();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new optional_ref_ItemStack_((nint)handle);
@@ -180,9 +185,10 @@ public sealed unsafe partial class optional_ref_ItemStack_ : global::System.IDis
     public nint rend() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'decltype(auto)' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C4.hs_method_5a7523b8((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5a7523b8((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

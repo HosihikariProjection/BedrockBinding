@@ -44,23 +44,23 @@ public sealed unsafe partial class ValidationResult : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ValidationResult Create()
+    public static ValidationResult? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5d07bc85();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ValidationResult((nint)handle);
     }
 
-    public static ValidationResult Create(global::Hosihikari.Bindings.Bedrock.Interop.Util.ResourceUri.ValidationResult arg0)
+    public static ValidationResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.Util.ResourceUri.ValidationResult arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f5c70ec4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ValidationResult((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class ValidationResult : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_c6c1a4de((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Util.ResourceUri.ValidationResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Util.ResourceUri.ValidationResult arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Util.ResourceUri.ValidationResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Util.ResourceUri.ValidationResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Util.ResourceUri.ValidationResult((nint)NativeMethods.TablePtr->C4.hs_method_ad875863((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ad875863((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Util.ResourceUri.ValidationResult((nint)__hs_handle, false) : null;
     }
 
 

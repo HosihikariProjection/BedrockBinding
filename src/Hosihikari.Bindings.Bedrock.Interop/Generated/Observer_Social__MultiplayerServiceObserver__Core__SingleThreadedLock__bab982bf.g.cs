@@ -40,23 +40,23 @@ public sealed unsafe partial class Observer_Social__MultiplayerServiceObserver__
         return __hs_handle;
     }
 
-    public static Observer_Social__MultiplayerServiceObserver__Core__SingleThreadedLock_ Create()
+    public static Observer_Social__MultiplayerServiceObserver__Core__SingleThreadedLock_? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c7f4c3b7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Observer_Social__MultiplayerServiceObserver__Core__SingleThreadedLock_((nint)handle);
     }
 
-    public static Observer_Social__MultiplayerServiceObserver__Core__SingleThreadedLock_ Create(nint subject)
+    public static Observer_Social__MultiplayerServiceObserver__Core__SingleThreadedLock_? Create(nint subject)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b10d7b80((void*)subject);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Observer_Social__MultiplayerServiceObserver__Core__SingleThreadedLock_((nint)handle);

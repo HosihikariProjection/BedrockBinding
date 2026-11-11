@@ -40,23 +40,23 @@ public sealed unsafe partial class ActorBeforeHealEvent : global::System.IDispos
         return __hs_handle;
     }
 
-    public static ActorBeforeHealEvent Create()
+    public static ActorBeforeHealEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_69cc9817();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorBeforeHealEvent((nint)handle);
     }
 
-    public static ActorBeforeHealEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent arg0)
+    public static ActorBeforeHealEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_423e4555((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorBeforeHealEvent((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class ActorBeforeHealEvent : global::System.IDispos
         set => NativeMethods.TablePtr->C0.hs_set_0ccf7f1e((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent((nint)NativeMethods.TablePtr->C0.hs_method_162f71d2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_162f71d2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

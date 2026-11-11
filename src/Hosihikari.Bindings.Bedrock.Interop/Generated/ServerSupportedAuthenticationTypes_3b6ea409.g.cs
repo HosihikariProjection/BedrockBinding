@@ -40,23 +40,23 @@ public sealed unsafe partial class ServerSupportedAuthenticationTypes : global::
         return __hs_handle;
     }
 
-    public static ServerSupportedAuthenticationTypes Create()
+    public static ServerSupportedAuthenticationTypes? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8d06f4e4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerSupportedAuthenticationTypes((nint)handle);
     }
 
-    public static ServerSupportedAuthenticationTypes Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes arg0)
+    public static ServerSupportedAuthenticationTypes? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f444f38e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerSupportedAuthenticationTypes((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class ServerSupportedAuthenticationTypes : global::
         get => (nint)NativeMethods.TablePtr->C3.hs_get_a21e73b4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes((nint)NativeMethods.TablePtr->C3.hs_method_5e7261d9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5e7261d9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

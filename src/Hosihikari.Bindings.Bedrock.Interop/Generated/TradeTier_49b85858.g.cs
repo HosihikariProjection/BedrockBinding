@@ -40,12 +40,12 @@ public sealed unsafe partial class TradeTier : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TradeTier Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeTier arg0)
+    public static TradeTier? Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeTier arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_7939eca8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TradeTier((nint)handle);

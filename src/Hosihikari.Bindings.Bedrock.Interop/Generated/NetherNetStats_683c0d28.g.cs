@@ -40,23 +40,23 @@ public sealed unsafe partial class NetherNetStats : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static NetherNetStats Create()
+    public static NetherNetStats? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_2815c6a2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetherNetStats((nint)handle);
     }
 
-    public static NetherNetStats Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkDebugManager_Nested.NetherNetStats arg0)
+    public static NetherNetStats? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkDebugManager_Nested.NetherNetStats arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ef94c3f0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetherNetStats((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class NetherNetStats : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_53d4a508((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkDebugManager_Nested.NetherNetStats operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkDebugManager_Nested.NetherNetStats arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkDebugManager_Nested.NetherNetStats? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkDebugManager_Nested.NetherNetStats arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkDebugManager_Nested.NetherNetStats((nint)NativeMethods.TablePtr->C2.hs_method_acc42a03((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_acc42a03((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkDebugManager_Nested.NetherNetStats((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

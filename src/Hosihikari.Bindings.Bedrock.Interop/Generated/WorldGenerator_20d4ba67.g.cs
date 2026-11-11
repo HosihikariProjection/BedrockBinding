@@ -173,12 +173,12 @@ public sealed unsafe partial class WorldGenerator : global::System.IDisposable
     public static nint _vftableForIPreliminarySurfaceProvider() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorldGenerator Create()
+    public static WorldGenerator? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b0cbad6b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldGenerator((nint)handle);
@@ -236,33 +236,38 @@ public sealed unsafe partial class WorldGenerator : global::System.IDisposable
     public bool findNearestStructureFeature(nint feature, nint origin, nint pos, bool mustBeInNewChunks, nint biomeTag, int searchRadiusCells) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos findSpawnPosition()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? findSpawnPosition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C4.hs_method_fb2ac35b((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fb2ac35b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString findStructureFeatureTypeAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? findStructureFeatureTypeAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_3916e141((void*)__hosihikari_shim_handle, (void*)pos.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3916e141((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: span element type 'ChunkPos' is not supported.", false)]
     public void garbageCollectBlueprints(nint activeChunks) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'ChunkPos' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox area, uint scale)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea? getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox area, uint scale)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)NativeMethods.TablePtr->C4.hs_method_1621c3e1((void*)__hosihikari_shim_handle, (void*)area.Handle, scale));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1621c3e1((void*)__hosihikari_shim_handle, (void*)area.Handle, scale);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource getBiomeSource()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource? getBiomeSource()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource((nint)NativeMethods.TablePtr->C4.hs_method_ee8020d6((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ee8020d6((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorldGenerator_Nested.BlockVolumeDimensions getBlockVolumeDimensions()
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorldGenerator_Nested.BlockVolumeDimensions? getBlockVolumeDimensions()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldGenerator_Nested.BlockVolumeDimensions((nint)NativeMethods.TablePtr->C4.hs_method_561738f8((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_561738f8((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldGenerator_Nested.BlockVolumeDimensions((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'DividedPos2d<4>' is not a known bindable declaration.", false)]

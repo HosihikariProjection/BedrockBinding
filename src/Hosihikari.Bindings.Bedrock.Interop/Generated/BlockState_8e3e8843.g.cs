@@ -40,23 +40,23 @@ public sealed unsafe partial class BlockState : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static BlockState Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockState arg0)
+    public static BlockState? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockState arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a8a31296((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockState((nint)handle);
     }
 
-    public static BlockState Create(ulong id, ulong variationCount, global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, global::Hosihikari.Bindings.Bedrock.Interop.BlockState_Nested.StateListNode node)
+    public static BlockState? Create(ulong id, ulong variationCount, global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, global::Hosihikari.Bindings.Bedrock.Interop.BlockState_Nested.StateListNode node)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ae25a15e(id, variationCount, (void*)name.Handle, (void*)node.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockState((nint)handle);

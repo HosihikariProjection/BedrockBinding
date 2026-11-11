@@ -88,12 +88,12 @@ public sealed unsafe partial class SimpleBlockVolume : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SimpleBlockVolume Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleBlockVolume arg0)
+    public static SimpleBlockVolume? Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleBlockVolume arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_33e34009((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SimpleBlockVolume((nint)handle);
@@ -111,9 +111,10 @@ public sealed unsafe partial class SimpleBlockVolume : global::System.IDisposabl
     public void forEach(nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox getBoundingBox()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? getBoundingBox()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)NativeMethods.TablePtr->C3.hs_method_381a34fe((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_381a34fe((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle) : null;
     }
 
     public int getCapacity()
@@ -141,14 +142,16 @@ public sealed unsafe partial class SimpleBlockVolume : global::System.IDisposabl
     public nint getIterator() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'BaseBlockLocationIterator' has no accessible destructor.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getMax()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getMax()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C3.hs_method_010b4d4a((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_010b4d4a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getMin()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getMin()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C3.hs_method_51aa534b((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_51aa534b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'glm::vec<3, int>' requires --link-carrier or --virtual-dispatch.", false)]

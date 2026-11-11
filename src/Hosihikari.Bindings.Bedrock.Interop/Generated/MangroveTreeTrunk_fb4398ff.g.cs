@@ -48,12 +48,12 @@ public sealed unsafe partial class MangroveTreeTrunk : global::System.IDisposabl
     public nint _placeTrunk(nint target, nint pos, nint random, int treeHeight, nint renderParams, nint treeParams, nint canopy) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MangroveTreeTrunk Create(global::Hosihikari.Bindings.Bedrock.Interop.MangroveTreeTrunk arg0)
+    public static MangroveTreeTrunk? Create(global::Hosihikari.Bindings.Bedrock.Interop.MangroveTreeTrunk arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fb4d038f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MangroveTreeTrunk((nint)handle);

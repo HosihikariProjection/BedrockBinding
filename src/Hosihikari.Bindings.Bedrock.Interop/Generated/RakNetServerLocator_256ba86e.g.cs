@@ -96,23 +96,23 @@ public sealed unsafe partial class RakNetServerLocator : global::System.IDisposa
     public void _update() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RakNetServerLocator Create()
+    public static RakNetServerLocator? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_19ddeda7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakNetServerLocator((nint)handle);
     }
 
-    public static RakNetServerLocator Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator arg0)
+    public static RakNetServerLocator? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_678d9b9b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakNetServerLocator((nint)handle);
@@ -369,9 +369,10 @@ public sealed unsafe partial class RakNetServerLocator : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_dc3c3f1c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator((nint)NativeMethods.TablePtr->C3.hs_method_62f4c30b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_62f4c30b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator((nint)__hs_handle, false) : null;
     }
 
     public void startAnnouncingServer(string playerName, string worldName, int gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore, global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes supportedAuth, global::Hosihikari.Bindings.Bedrock.Interop.Social.Nonce arg9)

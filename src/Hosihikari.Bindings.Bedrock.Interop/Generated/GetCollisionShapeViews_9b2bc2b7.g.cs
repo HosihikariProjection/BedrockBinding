@@ -44,12 +44,12 @@ public sealed unsafe partial class GetCollisionShapeViews : global::System.IDisp
     public nint _ctor(nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GetCollisionShapeViews Create()
+    public static GetCollisionShapeViews? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6c2388bf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GetCollisionShapeViews((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class GetCollisionShapeViews : global::System.IDisp
     public static GetCollisionShapeViews Create(nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GetCollisionShapeViews Create(global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews arg0)
+    public static GetCollisionShapeViews? Create(global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_11db6922((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GetCollisionShapeViews((nint)handle);
@@ -142,9 +142,10 @@ public sealed unsafe partial class GetCollisionShapeViews : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C1.hs_get_f8911f84((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews((nint)NativeMethods.TablePtr->C1.hs_method_6ed03123((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6ed03123((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -40,12 +40,12 @@ public sealed unsafe partial class Type : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Type Create(global::Hosihikari.Bindings.Bedrock.Interop.Recipes_Nested.Type arg0)
+    public static Type? Create(global::Hosihikari.Bindings.Bedrock.Interop.Recipes_Nested.Type arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a4a57201((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Type((nint)handle);

@@ -58,12 +58,12 @@ public sealed unsafe partial class LegacyEventItemComponent : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacyEventItemComponent Create()
+    public static LegacyEventItemComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_689f5893();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyEventItemComponent((nint)handle);
@@ -73,12 +73,12 @@ public sealed unsafe partial class LegacyEventItemComponent : global::System.IDi
     public static LegacyEventItemComponent Create(nint componentData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacyEventItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyEventItemComponent arg0)
+    public static LegacyEventItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyEventItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c51c72ec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyEventItemComponent((nint)handle);

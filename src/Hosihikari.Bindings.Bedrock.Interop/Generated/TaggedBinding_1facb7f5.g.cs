@@ -40,23 +40,23 @@ public sealed unsafe partial class TaggedBinding : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TaggedBinding Create()
+    public static TaggedBinding? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f1a807ac();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TaggedBinding((nint)handle);
     }
 
-    public static TaggedBinding Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding arg0)
+    public static TaggedBinding? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_953dca3e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TaggedBinding((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class TaggedBinding : global::System.IDisposable
     public nint onlyStable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding((nint)NativeMethods.TablePtr->C3.hs_method_9a26601c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9a26601c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

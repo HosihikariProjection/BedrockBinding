@@ -40,12 +40,12 @@ public sealed unsafe partial class ChargeableItemComponentLegacyFactoryData : gl
         return __hs_handle;
     }
 
-    public static ChargeableItemComponentLegacyFactoryData Create(global::Hosihikari.Bindings.Bedrock.Interop.ChargeableItemComponentLegacyFactoryData arg0)
+    public static ChargeableItemComponentLegacyFactoryData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChargeableItemComponentLegacyFactoryData arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c6e824b1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChargeableItemComponentLegacyFactoryData((nint)handle);

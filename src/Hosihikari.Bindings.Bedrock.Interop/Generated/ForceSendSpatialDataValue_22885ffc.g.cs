@@ -40,12 +40,12 @@ public sealed unsafe partial class ForceSendSpatialDataValue : global::System.ID
         return __hs_handle;
     }
 
-    public static ForceSendSpatialDataValue Create(global::Hosihikari.Bindings.Bedrock.Interop.ForceSendSpatialDataValue arg0)
+    public static ForceSendSpatialDataValue? Create(global::Hosihikari.Bindings.Bedrock.Interop.ForceSendSpatialDataValue arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6e78e0b3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ForceSendSpatialDataValue((nint)handle);

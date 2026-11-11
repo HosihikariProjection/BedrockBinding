@@ -62,23 +62,23 @@ public sealed unsafe partial class LegacyOnDigTriggerItemComponent : global::Sys
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacyOnDigTriggerItemComponent Create()
+    public static LegacyOnDigTriggerItemComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_29b933b1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyOnDigTriggerItemComponent((nint)handle);
     }
 
-    public static LegacyOnDigTriggerItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyOnDigTriggerItemComponent arg0)
+    public static LegacyOnDigTriggerItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyOnDigTriggerItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_876d2d02((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyOnDigTriggerItemComponent((nint)handle);

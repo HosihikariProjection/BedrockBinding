@@ -52,12 +52,12 @@ public sealed unsafe partial class AgentActionEventPacketPayload : global::Syste
     public static AgentActionEventPacketPayload Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AgentActionEventPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentActionEventPacketPayload arg0)
+    public static AgentActionEventPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentActionEventPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_55ff09f9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AgentActionEventPacketPayload((nint)handle);

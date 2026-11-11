@@ -53,12 +53,12 @@ public sealed unsafe partial class LevelSoundEventPacketPayload : global::System
         NativeMethods.TablePtr->C2.hs_method_5addd697((void*)__hosihikari_shim_handle);
     }
 
-    public static LevelSoundEventPacketPayload Create()
+    public static LevelSoundEventPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3c718e27();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelSoundEventPacketPayload((nint)handle);
@@ -120,9 +120,10 @@ public sealed unsafe partial class LevelSoundEventPacketPayload : global::System
         get => (nint)NativeMethods.TablePtr->C2.hs_get_8b7b9005((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelSoundEventPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelSoundEventPacketPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelSoundEventPacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelSoundEventPacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelSoundEventPacketPayload((nint)NativeMethods.TablePtr->C2.hs_method_61ce2815((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_61ce2815((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelSoundEventPacketPayload((nint)__hs_handle, false) : null;
     }
 
 

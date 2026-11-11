@@ -75,12 +75,12 @@ public sealed unsafe partial class MediaSendChannelInterface : global::System.ID
         return NativeMethods.TablePtr->C4.hs_method_f2ed2d72((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public static MediaSendChannelInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaSendChannelInterface arg0)
+    public static MediaSendChannelInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaSendChannelInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_fbae4349((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MediaSendChannelInterface((nint)handle);

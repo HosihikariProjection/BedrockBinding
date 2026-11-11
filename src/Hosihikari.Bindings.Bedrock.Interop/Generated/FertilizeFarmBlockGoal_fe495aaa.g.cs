@@ -208,12 +208,12 @@ public sealed unsafe partial class FertilizeFarmBlockGoal : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FertilizeFarmBlockGoal Create()
+    public static FertilizeFarmBlockGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7ab38b75();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FertilizeFarmBlockGoal((nint)handle);
@@ -223,12 +223,12 @@ public sealed unsafe partial class FertilizeFarmBlockGoal : global::System.IDisp
     public static FertilizeFarmBlockGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FertilizeFarmBlockGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.FertilizeFarmBlockGoal arg0)
+    public static FertilizeFarmBlockGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.FertilizeFarmBlockGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_daabc9b5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FertilizeFarmBlockGoal((nint)handle);

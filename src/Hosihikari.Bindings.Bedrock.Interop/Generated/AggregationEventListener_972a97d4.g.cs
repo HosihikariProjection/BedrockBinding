@@ -72,12 +72,12 @@ public sealed unsafe partial class AggregationEventListener : global::System.IDi
     public void _stopDebugEventLogging() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AggregationEventListener Create()
+    public static AggregationEventListener? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5e6fd3ec();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AggregationEventListener((nint)handle);
@@ -87,12 +87,12 @@ public sealed unsafe partial class AggregationEventListener : global::System.IDi
     public static AggregationEventListener Create(nint logFileName) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AggregationEventListener Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AggregationEventListener arg0)
+    public static AggregationEventListener? Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AggregationEventListener arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_edac3994((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AggregationEventListener((nint)handle);
@@ -216,9 +216,10 @@ public sealed unsafe partial class AggregationEventListener : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C3.hs_get_f2eae545((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AggregationEventListener operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AggregationEventListener arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AggregationEventListener? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AggregationEventListener arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AggregationEventListener((nint)NativeMethods.TablePtr->C3.hs_method_d7dcb791((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d7dcb791((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AggregationEventListener((nint)__hs_handle, false) : null;
     }
 
     public void recordEvent(nint @event, global::Hosihikari.Bindings.Abi.SharedHandle? appPlatform)

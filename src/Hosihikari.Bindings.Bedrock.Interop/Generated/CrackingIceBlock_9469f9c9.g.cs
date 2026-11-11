@@ -389,23 +389,23 @@ public sealed unsafe partial class CrackingIceBlock : global::System.IDisposable
     public nint _playerWillDestroy(nint player, nint pos, nint block) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CrackingIceBlock Create()
+    public static CrackingIceBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1ef09421();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CrackingIceBlock((nint)handle);
     }
 
-    public static CrackingIceBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CrackingIceBlock arg0)
+    public static CrackingIceBlock? Create(global::Hosihikari.Bindings.Bedrock.Interop.CrackingIceBlock arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_beb07d3c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CrackingIceBlock((nint)handle);
@@ -440,9 +440,10 @@ public sealed unsafe partial class CrackingIceBlock : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_7e29d3d5((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)pos.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CrackingIceBlock operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CrackingIceBlock arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CrackingIceBlock? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CrackingIceBlock arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CrackingIceBlock((nint)NativeMethods.TablePtr->C1.hs_method_b6f9b03b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b6f9b03b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CrackingIceBlock((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? playerWillDestroy(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)

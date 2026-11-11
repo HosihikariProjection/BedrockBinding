@@ -40,23 +40,23 @@ public sealed unsafe partial class Image : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Image Create()
+    public static Image? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b0926a4e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Image((nint)handle);
     }
 
-    public static Image Create(global::Hosihikari.Bindings.Bedrock.Interop.mce.Image arg0)
+    public static Image? Create(global::Hosihikari.Bindings.Bedrock.Interop.mce.Image arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_43e86491((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Image((nint)handle);
@@ -70,31 +70,32 @@ public sealed unsafe partial class Image : global::System.IDisposable
     public static Image Create_ce54012e(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static Image Create(uint w, uint h, uint format, byte usage)
+    public static Image? Create(uint w, uint h, uint format, byte usage)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_fb89ed27(w, h, format, usage);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Image((nint)handle);
     }
 
-    public static Image Create(uint w, uint h, uint d, uint format, byte usage)
+    public static Image? Create(uint w, uint h, uint d, uint format, byte usage)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ec52064f(w, h, d, format, usage);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Image((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Image clone()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Image? clone()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)NativeMethods.TablePtr->C4.hs_method_8907b10c((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8907b10c((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)__hs_handle) : null;
     }
 
     public void copyRawImage(global::Hosihikari.Bindings.Bedrock.Interop.mce.Blob arg0)
@@ -149,9 +150,10 @@ public sealed unsafe partial class Image : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_9247a852((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Image operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.mce.Image arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Image? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.mce.Image arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)NativeMethods.TablePtr->C4.hs_method_a55d1dd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a55d1dd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

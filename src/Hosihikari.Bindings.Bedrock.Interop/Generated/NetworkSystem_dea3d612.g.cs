@@ -142,12 +142,12 @@ public sealed unsafe partial class NetworkSystem : global::System.IDisposable
     public bool _useIPv6Only() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetworkSystem Create()
+    public static NetworkSystem? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f1027a3d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkSystem((nint)handle);
@@ -157,12 +157,12 @@ public sealed unsafe partial class NetworkSystem : global::System.IDisposable
     public static NetworkSystem Create(nint deps) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static NetworkSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem arg0)
+    public static NetworkSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_dd2c67f9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkSystem((nint)handle);
@@ -458,9 +458,10 @@ public sealed unsafe partial class NetworkSystem : global::System.IDisposable
     public void onWebsocketRequest(nint serverAddress, nint payload, nint errorCallback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem((nint)NativeMethods.TablePtr->C2.hs_method_9fed2170((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9fed2170((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem((nint)__hs_handle, false) : null;
     }
 
     public void runEvents(bool networkIsCritical)

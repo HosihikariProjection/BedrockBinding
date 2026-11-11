@@ -62,23 +62,23 @@ public sealed unsafe partial class RandomBlockStateFunction : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RandomBlockStateFunction Create()
+    public static RandomBlockStateFunction? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1bd06a3f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RandomBlockStateFunction((nint)handle);
     }
 
-    public static RandomBlockStateFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomBlockStateFunction arg0)
+    public static RandomBlockStateFunction? Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomBlockStateFunction arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_27568101((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RandomBlockStateFunction((nint)handle);

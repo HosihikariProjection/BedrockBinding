@@ -40,12 +40,12 @@ public sealed unsafe partial class IServerPlayerSleepManagerConnector : global::
         return __hs_handle;
     }
 
-    public static IServerPlayerSleepManagerConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.IServerPlayerSleepManagerConnector arg0)
+    public static IServerPlayerSleepManagerConnector? Create(global::Hosihikari.Bindings.Bedrock.Interop.IServerPlayerSleepManagerConnector arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ba862f0b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IServerPlayerSleepManagerConnector((nint)handle);

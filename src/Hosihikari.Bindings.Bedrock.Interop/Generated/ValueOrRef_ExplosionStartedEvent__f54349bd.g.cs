@@ -48,14 +48,16 @@ public sealed unsafe partial class ValueOrRef_ExplosionStartedEvent_ : global::S
     public static ValueOrRef_ExplosionStartedEvent_ Create_4217990e(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<ExplosionStartedEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent value_5bd40b1f()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent? value_5bd40b1f()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent((nint)NativeMethods.TablePtr->C1.hs_method_5bd40b1f((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5bd40b1f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent value_e2c3e59d()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent? value_e2c3e59d()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent((nint)NativeMethods.TablePtr->C1.hs_method_e2c3e59d((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e2c3e59d((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent((nint)__hs_handle, false) : null;
     }
 
 

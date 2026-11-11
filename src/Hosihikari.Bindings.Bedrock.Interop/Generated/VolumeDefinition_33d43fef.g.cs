@@ -44,23 +44,23 @@ public sealed unsafe partial class VolumeDefinition : global::System.IDisposable
     public static nint NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VolumeDefinition Create()
+    public static VolumeDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1d1534cd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VolumeDefinition((nint)handle);
     }
 
-    public static VolumeDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.VolumeDefinition arg0)
+    public static VolumeDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.VolumeDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f93e6e84((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VolumeDefinition((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class VolumeDefinition : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_2975cf97((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.VolumeDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VolumeDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.VolumeDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VolumeDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.VolumeDefinition((nint)NativeMethods.TablePtr->C4.hs_method_f2a61ec5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f2a61ec5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VolumeDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

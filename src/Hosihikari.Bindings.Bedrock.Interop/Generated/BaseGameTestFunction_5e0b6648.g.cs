@@ -52,23 +52,23 @@ public sealed unsafe partial class BaseGameTestFunction : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BaseGameTestFunction Create()
+    public static BaseGameTestFunction? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b091dd58();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseGameTestFunction((nint)handle);
     }
 
-    public static BaseGameTestFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestFunction arg0)
+    public static BaseGameTestFunction? Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestFunction arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_30fda20a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BaseGameTestFunction((nint)handle);
@@ -168,9 +168,10 @@ public sealed unsafe partial class BaseGameTestFunction : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C4.hs_get_7868fab8((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestFunction operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestFunction arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestFunction? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestFunction arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestFunction((nint)NativeMethods.TablePtr->C4.hs_method_2f32d563((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2f32d563((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestFunction((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'gametest::IGameTestFunctionRunResult' has no accessible destructor.", false)]

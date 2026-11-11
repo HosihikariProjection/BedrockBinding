@@ -40,23 +40,23 @@ public sealed unsafe partial class PacketViolationDetectedTelemetryData : global
         return __hs_handle;
     }
 
-    public static PacketViolationDetectedTelemetryData Create()
+    public static PacketViolationDetectedTelemetryData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c34232e5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PacketViolationDetectedTelemetryData((nint)handle);
     }
 
-    public static PacketViolationDetectedTelemetryData Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationDetectedTelemetryData arg0)
+    public static PacketViolationDetectedTelemetryData? Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationDetectedTelemetryData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_126c5935((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PacketViolationDetectedTelemetryData((nint)handle);
@@ -100,9 +100,10 @@ public sealed unsafe partial class PacketViolationDetectedTelemetryData : global
         get => (nint)NativeMethods.TablePtr->C2.hs_get_daa5f365((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationDetectedTelemetryData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationDetectedTelemetryData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationDetectedTelemetryData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationDetectedTelemetryData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationDetectedTelemetryData((nint)NativeMethods.TablePtr->C2.hs_method_84669da6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_84669da6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationDetectedTelemetryData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

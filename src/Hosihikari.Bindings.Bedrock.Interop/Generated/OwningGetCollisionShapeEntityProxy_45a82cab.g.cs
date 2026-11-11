@@ -56,23 +56,23 @@ public sealed unsafe partial class OwningGetCollisionShapeEntityProxy : global::
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OwningGetCollisionShapeEntityProxy Create()
+    public static OwningGetCollisionShapeEntityProxy? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3b8f66ab();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OwningGetCollisionShapeEntityProxy((nint)handle);
     }
 
-    public static OwningGetCollisionShapeEntityProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.OwningGetCollisionShapeEntityProxy arg0)
+    public static OwningGetCollisionShapeEntityProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.OwningGetCollisionShapeEntityProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a0642d67((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OwningGetCollisionShapeEntityProxy((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class OwningGetCollisionShapeEntityProxy : global::
         get => (nint)NativeMethods.TablePtr->C2.hs_get_cc3c2cb4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OwningGetCollisionShapeEntityProxy operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OwningGetCollisionShapeEntityProxy arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OwningGetCollisionShapeEntityProxy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OwningGetCollisionShapeEntityProxy arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OwningGetCollisionShapeEntityProxy((nint)NativeMethods.TablePtr->C2.hs_method_97dbff3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_97dbff3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OwningGetCollisionShapeEntityProxy((nint)__hs_handle, false) : null;
     }
 
 

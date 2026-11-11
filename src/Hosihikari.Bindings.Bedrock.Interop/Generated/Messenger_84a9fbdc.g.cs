@@ -182,12 +182,12 @@ public sealed unsafe partial class Messenger : global::System.IDisposable
     public void _tradeCompleted(nint player, nint trader, nint itemA, nint itemB, nint tradedFor, int traderEmeraldCount) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Messenger Create()
+    public static Messenger? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_bccde317();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Messenger((nint)handle);

@@ -162,12 +162,12 @@ public sealed unsafe partial class Trade2ContainerManagerModel : global::System.
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static Trade2ContainerManagerModel Create()
+    public static Trade2ContainerManagerModel? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b032f452();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Trade2ContainerManagerModel((nint)handle);
@@ -177,20 +177,21 @@ public sealed unsafe partial class Trade2ContainerManagerModel : global::System.
     public static Trade2ContainerManagerModel Create(nint containerId, nint player, nint uniqueId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Trade2ContainerManagerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.Trade2ContainerManagerModel arg0)
+    public static Trade2ContainerManagerModel? Create(global::Hosihikari.Bindings.Bedrock.Interop.Trade2ContainerManagerModel arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_9421511d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Trade2ContainerManagerModel((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext _postInit()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext? _postInit()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C4.hs_method_5e26d47b((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5e26d47b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle) : null;
     }
 
     public void broadcastChanges()
@@ -202,9 +203,10 @@ public sealed unsafe partial class Trade2ContainerManagerModel : global::System.
     public nint getItemCopies() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getSlot(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getSlot(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C4.hs_method_c2bbd0fb((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c2bbd0fb((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public bool isValid(float pickRange)

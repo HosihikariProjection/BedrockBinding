@@ -40,12 +40,12 @@ public sealed unsafe partial class RailActivatorDefinition : global::System.IDis
         return __hs_handle;
     }
 
-    public static RailActivatorDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.RailActivatorDefinition arg0)
+    public static RailActivatorDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.RailActivatorDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_64dd587e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RailActivatorDefinition((nint)handle);

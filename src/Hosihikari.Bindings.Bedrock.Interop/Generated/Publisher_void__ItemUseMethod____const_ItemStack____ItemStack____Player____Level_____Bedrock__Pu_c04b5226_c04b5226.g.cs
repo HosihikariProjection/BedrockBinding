@@ -52,12 +52,12 @@ public sealed unsafe partial class Publisher_void__ItemUseMethod____const_ItemSt
         get => (nint)NativeMethods.TablePtr->C0.hs_get_ab82b547((void*)__hosihikari_shim_handle);
     }
 
-    public static Publisher_void__ItemUseMethod____const_ItemStack____ItemStack____Player____Level_____Bedrock__Pu_c04b5226 Create()
+    public static Publisher_void__ItemUseMethod____const_ItemStack____ItemStack____Player____Level_____Bedrock__Pu_c04b5226? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9a329c0c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Publisher_void__ItemUseMethod____const_ItemStack____ItemStack____Player____Level_____Bedrock__Pu_c04b5226((nint)handle);

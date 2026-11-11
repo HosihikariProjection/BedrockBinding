@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ScriptingWorldInitializeEven
     public static ValueOrRef_const_ScriptingWorldInitializeEvent_ Create_442fc699(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ScriptingWorldInitializeEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptingWorldInitializeEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptingWorldInitializeEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptingWorldInitializeEvent((nint)NativeMethods.TablePtr->C1.hs_method_d0a6a1fa((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d0a6a1fa((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptingWorldInitializeEvent((nint)__hs_handle, false) : null;
     }
 
 

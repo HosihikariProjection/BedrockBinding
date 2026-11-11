@@ -229,12 +229,12 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
     public void _syncAndSuspendStorage() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DBStorage Create()
+    public static DBStorage? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_57cceaff();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DBStorage((nint)handle);
@@ -265,9 +265,10 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_473a2b8f((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_ compactStorage()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_? compactStorage()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)NativeMethods.TablePtr->C1.hs_method_e8caf676((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e8caf676((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ChunkSource' has no accessible destructor.", false)]
@@ -300,7 +301,7 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_ deleteData(string key, uint category)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_? deleteData(string key, uint category)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(key);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -315,7 +316,8 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(key, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)NativeMethods.TablePtr->C1.hs_method_fa14b7ae((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, category));
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_fa14b7ae((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, category);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle) : null;
         }
     }
 
@@ -343,19 +345,22 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getFullPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getFullPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C1.hs_method_2c4959c7((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2c4959c7((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult getLevelStorageState()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult? getLevelStorageState()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)NativeMethods.TablePtr->C1.hs_method_4ebd2427((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4ebd2427((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult getState()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult? getState()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)NativeMethods.TablePtr->C1.hs_method_034b9434((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_034b9434((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)__hs_handle) : null;
     }
 
     public string getStatistics(string outStats, uint statsType)
@@ -736,12 +741,13 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_acd803f3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_ saveData(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageWriteBatch batch)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_? saveData(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageWriteBatch batch)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)NativeMethods.TablePtr->C1.hs_method_182417cc((void*)__hosihikari_shim_handle, (void*)batch.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_182417cc((void*)__hosihikari_shim_handle, (void*)batch.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_ saveData(string key, string data, uint category)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_? saveData(string key, string data, uint category)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(key);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -769,7 +775,8 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)NativeMethods.TablePtr->C1.hs_method_6b18b97b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, category));
+                var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6b18b97b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, category);
+                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle) : null;
             }
         }
     }

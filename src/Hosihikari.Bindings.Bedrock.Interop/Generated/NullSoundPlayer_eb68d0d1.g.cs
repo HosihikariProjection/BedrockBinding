@@ -198,12 +198,12 @@ public sealed unsafe partial class NullSoundPlayer : global::System.IDisposable
     public bool _wasSoundStoppedExplicitly(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NullSoundPlayer Create(global::Hosihikari.Bindings.Bedrock.Interop.NullSoundPlayer arg0)
+    public static NullSoundPlayer? Create(global::Hosihikari.Bindings.Bedrock.Interop.NullSoundPlayer arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8a098ba3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NullSoundPlayer((nint)handle);
@@ -224,9 +224,10 @@ public sealed unsafe partial class NullSoundPlayer : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_4ac7e84a((void*)__hosihikari_shim_handle, arg0);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView getCurrentlyPlayingMusicPath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView? getCurrentlyPlayingMusicPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView((nint)NativeMethods.TablePtr->C2.hs_method_0f1d45c8((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0f1d45c8((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView((nint)__hs_handle) : null;
     }
 
     public bool getItem(string arg0, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView arg1, nint arg2)

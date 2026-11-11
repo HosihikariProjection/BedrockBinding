@@ -40,12 +40,12 @@ public sealed unsafe partial class MinecartPreNormalTickBlockPosComponent : glob
         return __hs_handle;
     }
 
-    public static MinecartPreNormalTickBlockPosComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecartPreNormalTickBlockPosComponent arg0)
+    public static MinecartPreNormalTickBlockPosComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecartPreNormalTickBlockPosComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_60477c75((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecartPreNormalTickBlockPosComponent((nint)handle);

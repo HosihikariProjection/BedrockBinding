@@ -40,23 +40,23 @@ public sealed unsafe partial class ActorRuntimeID : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ActorRuntimeID Create()
+    public static ActorRuntimeID? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_533257ff();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorRuntimeID((nint)handle);
     }
 
-    public static ActorRuntimeID Create(ulong x)
+    public static ActorRuntimeID? Create(ulong x)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3dc9e315(x);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorRuntimeID((nint)handle);

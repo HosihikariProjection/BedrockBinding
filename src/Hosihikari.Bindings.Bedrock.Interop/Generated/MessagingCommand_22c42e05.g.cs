@@ -69,12 +69,12 @@ public sealed unsafe partial class MessagingCommand : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_0d648061((void*)__hosihikari_shim_handle, value);
     }
 
-    public static MessagingCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.MessagingCommand arg0)
+    public static MessagingCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.MessagingCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9ec6ca43((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MessagingCommand((nint)handle);

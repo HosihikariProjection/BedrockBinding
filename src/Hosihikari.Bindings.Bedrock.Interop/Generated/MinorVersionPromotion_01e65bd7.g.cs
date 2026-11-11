@@ -44,23 +44,23 @@ public sealed unsafe partial class MinorVersionPromotion : global::System.IDispo
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinorVersionPromotion Create()
+    public static MinorVersionPromotion? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f4a13c74();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinorVersionPromotion((nint)handle);
     }
 
-    public static MinorVersionPromotion Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.MinorVersionPromotion arg0)
+    public static MinorVersionPromotion? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.MinorVersionPromotion arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_900751ac((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinorVersionPromotion((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class MinorVersionPromotion : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C3.hs_get_9b5b7800((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.MinorVersionPromotion operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.MinorVersionPromotion arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.MinorVersionPromotion? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.MinorVersionPromotion arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.MinorVersionPromotion((nint)NativeMethods.TablePtr->C3.hs_method_b8349b08((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b8349b08((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.MinorVersionPromotion((nint)__hs_handle, false) : null;
     }
 
 

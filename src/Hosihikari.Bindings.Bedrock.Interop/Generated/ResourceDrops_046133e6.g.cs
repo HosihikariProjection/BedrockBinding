@@ -45,12 +45,12 @@ public sealed unsafe partial class ResourceDrops : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_ab99f556((void*)__hosihikari_shim_handle);
     }
 
-    public static ResourceDrops Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceDrops arg0)
+    public static ResourceDrops? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceDrops arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a25bab3a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourceDrops((nint)handle);

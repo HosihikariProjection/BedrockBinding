@@ -50,9 +50,10 @@ public sealed unsafe partial class Field_Vec2__float__float_ : global::System.ID
         return NativeMethods.TablePtr->C4.hs_method_1edd72e9((void*)__hosihikari_shim_handle, (void*)b.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 div(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2? div(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_cc77421b((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_cc77421b((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
     }
 
     public double dot(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
@@ -90,29 +91,34 @@ public sealed unsafe partial class Field_Vec2__float__float_ : global::System.ID
     public nint lt(nint b) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<2>' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 mul(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2? mul(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_b4ad3131((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b4ad3131((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 operator_multiply(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2? operator_multiply(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_948ad276((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_948ad276((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 operator_operator___2f9a2907(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2? operator_operator___2f9a2907(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_2f9a2907((void*)__hosihikari_shim_handle, (void*)b.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2f9a2907((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 operator_divide(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2? operator_divide(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_c98c71c5((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c98c71c5((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 operator_operator___5f9bc4f6(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2? operator_operator___5f9bc4f6(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_5f9bc4f6((void*)__hosihikari_shim_handle, (void*)b.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5f9bc4f6((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle, false) : null;
     }
 
     public bool operator_less(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)

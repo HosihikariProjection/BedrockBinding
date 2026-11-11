@@ -74,23 +74,23 @@ public sealed unsafe partial class DispatcherProcess : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DispatcherProcess Create()
+    public static DispatcherProcess? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6fe7f178();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DispatcherProcess((nint)handle);
     }
 
-    public static DispatcherProcess Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatcherProcess arg0)
+    public static DispatcherProcess? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatcherProcess arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ded093c3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DispatcherProcess((nint)handle);
@@ -111,9 +111,10 @@ public sealed unsafe partial class DispatcherProcess : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_8ddd38c1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatcherProcess operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatcherProcess arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatcherProcess? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatcherProcess arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatcherProcess((nint)NativeMethods.TablePtr->C0.hs_method_05f2c946((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_05f2c946((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatcherProcess((nint)__hs_handle, false) : null;
     }
 
     public void resume()

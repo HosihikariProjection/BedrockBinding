@@ -56,12 +56,12 @@ public sealed unsafe partial class SculkSpreader : global::System.IDisposable
     public static SculkSpreader Create(bool isWorldGen, int growthSpawnCost, int noGrowthRadius, int chargeDecayRate, int additionalDecayRate) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SculkSpreader Create(global::Hosihikari.Bindings.Bedrock.Interop.SculkSpreader arg0)
+    public static SculkSpreader? Create(global::Hosihikari.Bindings.Bedrock.Interop.SculkSpreader arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c9debf80((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SculkSpreader((nint)handle);

@@ -86,23 +86,23 @@ public sealed unsafe partial class GoAndGiveItemsToNoteblockGoal : global::Syste
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GoAndGiveItemsToNoteblockGoal Create()
+    public static GoAndGiveItemsToNoteblockGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_086495ed();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GoAndGiveItemsToNoteblockGoal((nint)handle);
     }
 
-    public static GoAndGiveItemsToNoteblockGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToNoteblockGoal arg0)
+    public static GoAndGiveItemsToNoteblockGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToNoteblockGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fc47a8e4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GoAndGiveItemsToNoteblockGoal((nint)handle);
@@ -204,9 +204,10 @@ public sealed unsafe partial class GoAndGiveItemsToNoteblockGoal : global::Syste
         set => NativeMethods.TablePtr->C1.hs_set_39d06dcc((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToNoteblockGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToNoteblockGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToNoteblockGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToNoteblockGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToNoteblockGoal((nint)NativeMethods.TablePtr->C1.hs_method_e570a8a4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e570a8a4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToNoteblockGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

@@ -56,12 +56,12 @@ public sealed unsafe partial class LegacyBodyControl : global::System.IDisposabl
     public void _clientTick(nint mob) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacyBodyControl Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyBodyControl arg0)
+    public static LegacyBodyControl? Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyBodyControl arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7343bbd3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyBodyControl((nint)handle);

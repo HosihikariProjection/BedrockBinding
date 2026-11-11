@@ -73,12 +73,12 @@ public sealed unsafe partial class WorldBuilderCommand : global::System.IDisposa
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorldBuilderCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldBuilderCommand arg0)
+    public static WorldBuilderCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldBuilderCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5f0fc8c1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldBuilderCommand((nint)handle);

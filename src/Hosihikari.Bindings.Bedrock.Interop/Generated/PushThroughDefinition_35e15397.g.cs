@@ -40,23 +40,23 @@ public sealed unsafe partial class PushThroughDefinition : global::System.IDispo
         return __hs_handle;
     }
 
-    public static PushThroughDefinition Create()
+    public static PushThroughDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f3d21606();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PushThroughDefinition((nint)handle);
     }
 
-    public static PushThroughDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition arg0)
+    public static PushThroughDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_55f04446((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PushThroughDefinition((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class PushThroughDefinition : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C2.hs_get_58c47340((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition((nint)NativeMethods.TablePtr->C2.hs_method_9ca927eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9ca927eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

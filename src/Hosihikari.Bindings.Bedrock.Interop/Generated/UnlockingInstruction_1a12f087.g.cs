@@ -44,23 +44,23 @@ public sealed unsafe partial class UnlockingInstruction : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UnlockingInstruction Create()
+    public static UnlockingInstruction? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_13a6732b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UnlockingInstruction((nint)handle);
     }
 
-    public static UnlockingInstruction Create(global::Hosihikari.Bindings.Bedrock.Interop.UnlockedRecipesServerComponent_Nested.UnlockingInstruction arg0)
+    public static UnlockingInstruction? Create(global::Hosihikari.Bindings.Bedrock.Interop.UnlockedRecipesServerComponent_Nested.UnlockingInstruction arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_8a9f6c26((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UnlockingInstruction((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class UnlockingInstruction : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C4.hs_get_edb9d0c2((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.UnlockedRecipesServerComponent_Nested.UnlockingInstruction operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.UnlockedRecipesServerComponent_Nested.UnlockingInstruction arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.UnlockedRecipesServerComponent_Nested.UnlockingInstruction? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.UnlockedRecipesServerComponent_Nested.UnlockingInstruction arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UnlockedRecipesServerComponent_Nested.UnlockingInstruction((nint)NativeMethods.TablePtr->C4.hs_method_27732734((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_27732734((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.UnlockedRecipesServerComponent_Nested.UnlockingInstruction((nint)__hs_handle, false) : null;
     }
 
 

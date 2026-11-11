@@ -40,12 +40,12 @@ public sealed unsafe partial class FileReference_17_ : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static FileReference_17_ Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.FileReference_17_ arg0)
+    public static FileReference_17_? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.FileReference_17_ arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fd9c759f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileReference_17_((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class SendPacketsComponent : global::System.IDispos
         return __hs_handle;
     }
 
-    public static SendPacketsComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SendPacketsComponent arg0)
+    public static SendPacketsComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.SendPacketsComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2cd8a220((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SendPacketsComponent((nint)handle);

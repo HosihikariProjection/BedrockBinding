@@ -108,23 +108,23 @@ public sealed unsafe partial class AutomationSession : global::System.IDisposabl
     public void _unsubscribe(nint requestId, nint eventId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AutomationSession Create()
+    public static AutomationSession? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fef84248();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutomationSession((nint)handle);
     }
 
-    public static AutomationSession Create(global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationSession arg0)
+    public static AutomationSession? Create(global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationSession arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7d0c35e0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AutomationSession((nint)handle);
@@ -553,9 +553,10 @@ public sealed unsafe partial class AutomationSession : global::System.IDisposabl
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationSession operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationSession arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationSession? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationSession arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationSession((nint)NativeMethods.TablePtr->C0.hs_method_48889a5f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_48889a5f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Automation.AutomationSession((nint)__hs_handle, false) : null;
     }
 
     public void subscribe(string requestId, string eventId)

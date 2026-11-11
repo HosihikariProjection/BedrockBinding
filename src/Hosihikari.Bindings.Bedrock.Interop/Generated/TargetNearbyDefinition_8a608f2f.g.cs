@@ -40,23 +40,23 @@ public sealed unsafe partial class TargetNearbyDefinition : global::System.IDisp
         return __hs_handle;
     }
 
-    public static TargetNearbyDefinition Create()
+    public static TargetNearbyDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_60c64f45();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TargetNearbyDefinition((nint)handle);
     }
 
-    public static TargetNearbyDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.TargetNearbyDefinition arg0)
+    public static TargetNearbyDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.TargetNearbyDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c21a473f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TargetNearbyDefinition((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class TargetNearbyDefinition : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C3.hs_get_4d25d239((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TargetNearbyDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TargetNearbyDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.TargetNearbyDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TargetNearbyDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TargetNearbyDefinition((nint)NativeMethods.TablePtr->C3.hs_method_4375088f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4375088f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TargetNearbyDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

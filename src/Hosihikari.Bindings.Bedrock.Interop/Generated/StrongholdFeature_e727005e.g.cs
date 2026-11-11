@@ -62,34 +62,34 @@ public sealed unsafe partial class StrongholdFeature : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StrongholdFeature Create()
+    public static StrongholdFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_45352203();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StrongholdFeature((nint)handle);
     }
 
-    public static StrongholdFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.VillageFeature? villages, uint seed)
+    public static StrongholdFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.VillageFeature? villages, uint seed)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6379e4b1((void*)(villages?.Handle ?? 0), seed);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StrongholdFeature((nint)handle);
     }
 
-    public static StrongholdFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.StrongholdFeature arg0)
+    public static StrongholdFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.StrongholdFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_64a45bed((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StrongholdFeature((nint)handle);

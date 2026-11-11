@@ -40,12 +40,12 @@ public sealed unsafe partial class DyeableItemComponent : global::System.IDispos
         return __hs_handle;
     }
 
-    public static DyeableItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_30.DyeableItemComponent arg0)
+    public static DyeableItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_30.DyeableItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8292faa7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DyeableItemComponent((nint)handle);

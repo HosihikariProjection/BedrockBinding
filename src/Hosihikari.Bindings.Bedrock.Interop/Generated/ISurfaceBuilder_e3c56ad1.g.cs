@@ -40,12 +40,12 @@ public sealed unsafe partial class ISurfaceBuilder : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ISurfaceBuilder Create(global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder arg0)
+    public static ISurfaceBuilder? Create(global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3c032dfe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ISurfaceBuilder((nint)handle);

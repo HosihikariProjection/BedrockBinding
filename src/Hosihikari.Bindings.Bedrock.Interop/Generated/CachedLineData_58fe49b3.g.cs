@@ -40,12 +40,12 @@ public sealed unsafe partial class CachedLineData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CachedLineData Create(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedLineData arg0)
+    public static CachedLineData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedLineData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_25c55864((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CachedLineData((nint)handle);

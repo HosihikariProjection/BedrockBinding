@@ -60,9 +60,10 @@ public sealed unsafe partial class BalloonItem : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult? _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)NativeMethods.TablePtr->C0.hs_method_e4ab0b56((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)pos.Handle, face, handSlot, (void*)clickPos.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e4ab0b56((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)pos.Handle, face, handSlot, (void*)clickPos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle) : null;
     }
 
     public string buildDescriptionId(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemDescriptor, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? arg1)
@@ -71,9 +72,10 @@ public sealed unsafe partial class BalloonItem : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getColor(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? arg0, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor instance)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getColor(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? arg0, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor instance)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C0.hs_method_79a9e6f6((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), (void*)instance.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_79a9e6f6((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), (void*)instance.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public bool isDyeable()

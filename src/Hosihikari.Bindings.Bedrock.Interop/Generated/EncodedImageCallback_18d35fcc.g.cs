@@ -48,12 +48,12 @@ public sealed unsafe partial class EncodedImageCallback : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EncodedImageCallback Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback arg0)
+    public static EncodedImageCallback? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1b3f03d6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EncodedImageCallback((nint)handle);
@@ -64,9 +64,10 @@ public sealed unsafe partial class EncodedImageCallback : global::System.IDispos
         NativeMethods.TablePtr->C4.hs_method_bbe00f5d((void*)__hosihikari_shim_handle, arg0);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result OnEncodedImage(nint encoded_image, nint codec_specific_info)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result? OnEncodedImage(nint encoded_image, nint codec_specific_info)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result((nint)NativeMethods.TablePtr->C4.hs_method_4fdf4696((void*)__hosihikari_shim_handle, (void*)encoded_image, (void*)codec_specific_info));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4fdf4696((void*)__hosihikari_shim_handle, (void*)encoded_image, (void*)codec_specific_info);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result((nint)__hs_handle) : null;
     }
 
 

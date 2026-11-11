@@ -40,12 +40,12 @@ public sealed unsafe partial class BreakDoorAnnotationComponent : global::System
         return __hs_handle;
     }
 
-    public static BreakDoorAnnotationComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BreakDoorAnnotationComponent arg0)
+    public static BreakDoorAnnotationComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BreakDoorAnnotationComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f8598355((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BreakDoorAnnotationComponent((nint)handle);

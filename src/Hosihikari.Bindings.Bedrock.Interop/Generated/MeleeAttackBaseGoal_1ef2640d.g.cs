@@ -90,12 +90,12 @@ public sealed unsafe partial class MeleeAttackBaseGoal : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MeleeAttackBaseGoal Create()
+    public static MeleeAttackBaseGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_214550b7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MeleeAttackBaseGoal((nint)handle);
@@ -105,12 +105,12 @@ public sealed unsafe partial class MeleeAttackBaseGoal : global::System.IDisposa
     public static MeleeAttackBaseGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MeleeAttackBaseGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackBaseGoal arg0)
+    public static MeleeAttackBaseGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackBaseGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_682ab02f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MeleeAttackBaseGoal((nint)handle);
@@ -263,9 +263,10 @@ public sealed unsafe partial class MeleeAttackBaseGoal : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C2.hs_get_4b22b3e9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackBaseGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackBaseGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackBaseGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackBaseGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackBaseGoal((nint)NativeMethods.TablePtr->C2.hs_method_44dcacd1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_44dcacd1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackBaseGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

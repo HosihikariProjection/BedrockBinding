@@ -48,12 +48,12 @@ public sealed unsafe partial class ChatEvent : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ChatEvent Create()
+    public static ChatEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0daa4ddb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChatEvent((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class ChatEvent : global::System.IDisposable
     public static ChatEvent Create(nint sender, nint packet) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ChatEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ChatEvent arg0)
+    public static ChatEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChatEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d7f0e846((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChatEvent((nint)handle);

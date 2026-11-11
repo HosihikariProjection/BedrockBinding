@@ -44,12 +44,12 @@ public sealed unsafe partial class GameRulesChangedPacketData : global::System.I
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GameRulesChangedPacketData Create(global::Hosihikari.Bindings.Bedrock.Interop.GameRulesChangedPacketData arg0)
+    public static GameRulesChangedPacketData? Create(global::Hosihikari.Bindings.Bedrock.Interop.GameRulesChangedPacketData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fe7e0beb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameRulesChangedPacketData((nint)handle);

@@ -44,12 +44,12 @@ public sealed unsafe partial class Call : global::System.IDisposable
     public void AddAdaptationResource(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::Resource>' is not a known bindable declaration.");
 
-    public static Call Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call arg0)
+    public static Call? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_9683f489((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Call((nint)handle);
@@ -132,9 +132,10 @@ public sealed unsafe partial class Call : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PayloadTypeSuggester((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats GetStats()
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats? GetStats()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_36bb4ca8((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_36bb4ca8((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats((nint)__hs_handle) : null;
     }
 
     public nint GetTransportControllerSend()

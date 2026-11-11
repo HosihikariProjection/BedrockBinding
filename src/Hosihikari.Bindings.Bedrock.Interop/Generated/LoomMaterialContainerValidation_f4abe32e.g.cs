@@ -48,12 +48,12 @@ public sealed unsafe partial class LoomMaterialContainerValidation : global::Sys
     public bool _isItemAllowedInSlot(nint screenContext, nint slot, nint item, nint amount, bool arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LoomMaterialContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.LoomMaterialContainerValidation arg0)
+    public static LoomMaterialContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.LoomMaterialContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f22fbcc4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LoomMaterialContainerValidation((nint)handle);

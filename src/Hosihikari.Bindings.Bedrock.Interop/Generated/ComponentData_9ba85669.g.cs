@@ -48,12 +48,12 @@ public sealed unsafe partial class ComponentData : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ComponentData Create()
+    public static ComponentData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d44dbfbf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComponentData((nint)handle);
@@ -75,9 +75,10 @@ public sealed unsafe partial class ComponentData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_d6cad353((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent_Nested.ComponentData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent_Nested.ComponentData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent_Nested.ComponentData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent_Nested.ComponentData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent_Nested.ComponentData((nint)NativeMethods.TablePtr->C3.hs_method_b9f79f15((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b9f79f15((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent_Nested.ComponentData((nint)__hs_handle, false) : null;
     }
 
 

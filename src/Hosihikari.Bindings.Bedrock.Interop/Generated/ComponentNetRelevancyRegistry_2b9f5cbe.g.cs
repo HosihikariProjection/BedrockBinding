@@ -40,23 +40,23 @@ public sealed unsafe partial class ComponentNetRelevancyRegistry : global::Syste
         return __hs_handle;
     }
 
-    public static ComponentNetRelevancyRegistry Create()
+    public static ComponentNetRelevancyRegistry? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_daad5c21();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComponentNetRelevancyRegistry((nint)handle);
     }
 
-    public static ComponentNetRelevancyRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.ComponentNetRelevancyRegistry arg0)
+    public static ComponentNetRelevancyRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.ComponentNetRelevancyRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fc2e8c0e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComponentNetRelevancyRegistry((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class ComponentNetRelevancyRegistry : global::Syste
         get => (nint)NativeMethods.TablePtr->C0.hs_get_8316d670((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ComponentNetRelevancyRegistry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ComponentNetRelevancyRegistry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ComponentNetRelevancyRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ComponentNetRelevancyRegistry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ComponentNetRelevancyRegistry((nint)NativeMethods.TablePtr->C0.hs_method_ca25e053((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ca25e053((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ComponentNetRelevancyRegistry((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

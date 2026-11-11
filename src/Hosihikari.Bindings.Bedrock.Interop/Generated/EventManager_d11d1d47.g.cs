@@ -48,12 +48,12 @@ public sealed unsafe partial class EventManager : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EventManager Create()
+    public static EventManager? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b7b144ee();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EventManager((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class EventManager : global::System.IDisposable
     public static EventManager Create(nint args) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EventManager Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager arg0)
+    public static EventManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d478b35b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EventManager((nint)handle);
@@ -222,9 +222,10 @@ public sealed unsafe partial class EventManager : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_3ac3fa19((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager((nint)NativeMethods.TablePtr->C3.hs_method_bde18dc3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_bde18dc3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

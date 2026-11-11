@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptEngine : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptEngine Create()
+    public static ScriptEngine? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c20f6983();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptEngine((nint)handle);

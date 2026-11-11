@@ -40,23 +40,23 @@ public sealed unsafe partial class WriteBudgetHistoryEntry : global::System.IDis
         return __hs_handle;
     }
 
-    public static WriteBudgetHistoryEntry Create()
+    public static WriteBudgetHistoryEntry? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f92f9ccb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WriteBudgetHistoryEntry((nint)handle);
     }
 
-    public static WriteBudgetHistoryEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetHistoryEntry arg0)
+    public static WriteBudgetHistoryEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetHistoryEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f0a63007((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WriteBudgetHistoryEntry((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class WriteBudgetHistoryEntry : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C1.hs_get_cf0bc7ab((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetHistoryEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetHistoryEntry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetHistoryEntry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetHistoryEntry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetHistoryEntry((nint)NativeMethods.TablePtr->C1.hs_method_4eec5bf3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4eec5bf3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetHistoryEntry((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

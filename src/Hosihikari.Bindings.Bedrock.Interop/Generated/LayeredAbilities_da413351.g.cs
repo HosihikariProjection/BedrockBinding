@@ -45,23 +45,23 @@ public sealed unsafe partial class LayeredAbilities : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C2.hs_method_6606cdb9((void*)__hosihikari_shim_handle);
     }
 
-    public static LayeredAbilities Create()
+    public static LayeredAbilities? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1141060b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LayeredAbilities((nint)handle);
     }
 
-    public static LayeredAbilities Create(global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities arg0)
+    public static LayeredAbilities? Create(global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_66d20e6a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LayeredAbilities((nint)handle);
@@ -75,14 +75,16 @@ public sealed unsafe partial class LayeredAbilities : global::System.IDisposable
     public void forEachLayer(nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Ability getAbility(sbyte val)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Ability? getAbility(sbyte val)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Ability((nint)NativeMethods.TablePtr->C2.hs_method_01fb0e9e((void*)__hosihikari_shim_handle, val), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_01fb0e9e((void*)__hosihikari_shim_handle, val);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Ability((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Ability getAbility(ushort layer, sbyte val)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Ability? getAbility(ushort layer, sbyte val)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Ability((nint)NativeMethods.TablePtr->C2.hs_method_5a3de719((void*)__hosihikari_shim_handle, layer, val), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5a3de719((void*)__hosihikari_shim_handle, layer, val);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Ability((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -106,9 +108,10 @@ public sealed unsafe partial class LayeredAbilities : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_1aac01e9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities rhs)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)NativeMethods.TablePtr->C2.hs_method_d9b59028((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d9b59028((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)__hs_handle, false) : null;
     }
 
     public bool setAbility(sbyte val, bool value)

@@ -40,23 +40,23 @@ public sealed unsafe partial class VolumeIdentifier : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static VolumeIdentifier Create()
+    public static VolumeIdentifier? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_93e52176();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VolumeIdentifier((nint)handle);
     }
 
-    public static VolumeIdentifier Create(global::Hosihikari.Bindings.Bedrock.Interop.VolumeIdentifier arg0)
+    public static VolumeIdentifier? Create(global::Hosihikari.Bindings.Bedrock.Interop.VolumeIdentifier arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0f0fa100((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VolumeIdentifier((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class VolumeIdentifier : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_78311124((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.VolumeIdentifier operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VolumeIdentifier arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.VolumeIdentifier? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VolumeIdentifier arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.VolumeIdentifier((nint)NativeMethods.TablePtr->C4.hs_method_866c4faf((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_866c4faf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VolumeIdentifier((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

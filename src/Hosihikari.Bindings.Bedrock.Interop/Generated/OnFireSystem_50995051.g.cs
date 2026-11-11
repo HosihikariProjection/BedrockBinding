@@ -40,12 +40,12 @@ public sealed unsafe partial class OnFireSystem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static OnFireSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.OnFireSystem arg0)
+    public static OnFireSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.OnFireSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ef2a5f98((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OnFireSystem((nint)handle);

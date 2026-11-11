@@ -40,12 +40,12 @@ public sealed unsafe partial class AudioReceiveStreamInterface : global::System.
         return __hs_handle;
     }
 
-    public static AudioReceiveStreamInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface arg0)
+    public static AudioReceiveStreamInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3a37dba2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AudioReceiveStreamInterface((nint)handle);
@@ -56,9 +56,10 @@ public sealed unsafe partial class AudioReceiveStreamInterface : global::System.
         return NativeMethods.TablePtr->C4.hs_method_6d8d19e9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Stats GetStats(bool arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Stats? GetStats(bool arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_a10a8fcd((void*)__hosihikari_shim_handle, arg0));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a10a8fcd((void*)__hosihikari_shim_handle, arg0);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Stats((nint)__hs_handle) : null;
     }
 
     public bool IsRunning()

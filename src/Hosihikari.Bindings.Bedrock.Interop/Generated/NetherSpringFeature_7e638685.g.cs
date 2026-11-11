@@ -73,23 +73,23 @@ public sealed unsafe partial class NetherSpringFeature : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetherSpringFeature Create()
+    public static NetherSpringFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_459e10da();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetherSpringFeature((nint)handle);
     }
 
-    public static NetherSpringFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherSpringFeature arg0)
+    public static NetherSpringFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherSpringFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_129d37ca((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetherSpringFeature((nint)handle);
@@ -107,9 +107,10 @@ public sealed unsafe partial class NetherSpringFeature : global::System.IDisposa
         set => NativeMethods.TablePtr->C2.hs_set_fe5f6054((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetherSpringFeature operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherSpringFeature arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetherSpringFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherSpringFeature arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetherSpringFeature((nint)NativeMethods.TablePtr->C2.hs_method_579a2156((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_579a2156((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetherSpringFeature((nint)__hs_handle, false) : null;
     }
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)

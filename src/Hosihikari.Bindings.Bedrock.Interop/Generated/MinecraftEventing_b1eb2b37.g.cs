@@ -1670,12 +1670,12 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
     public void _updatePrimaryLocalUserId(nint userId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinecraftEventing Create()
+    public static MinecraftEventing? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6002558f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftEventing((nint)handle);
@@ -7891,9 +7891,10 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
     public nint getCrashTelemetryProcessor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'gsl::not_null<Bedrock::CrashTelemetryProcessor *>' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager getEventManager()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager? getEventManager()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager((nint)NativeMethods.TablePtr->C2.hs_method_836200a9((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_836200a9((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager((nint)__hs_handle, false) : null;
     }
 
     public string getExperienceId()
@@ -8176,9 +8177,10 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
     public static void onVehicleExited(nint player) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value propertiesAsJsonValue()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? propertiesAsJsonValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C2.hs_method_5e6411d6((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5e6411d6((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'Bedrock::PubSub::Subscription' is not supported.", false)]

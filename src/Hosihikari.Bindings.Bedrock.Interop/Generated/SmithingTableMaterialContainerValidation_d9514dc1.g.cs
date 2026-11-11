@@ -48,12 +48,12 @@ public sealed unsafe partial class SmithingTableMaterialContainerValidation : gl
     public bool _isItemAllowedInSlot(nint screenContext, nint arg1, nint item, nint arg3, bool arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SmithingTableMaterialContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.SmithingTableMaterialContainerValidation arg0)
+    public static SmithingTableMaterialContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.SmithingTableMaterialContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_af128ee5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SmithingTableMaterialContainerValidation((nint)handle);

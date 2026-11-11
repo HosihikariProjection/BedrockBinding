@@ -48,12 +48,12 @@ public sealed unsafe partial class ActorDefinitionEvent : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorDefinitionEvent Create()
+    public static ActorDefinitionEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3c4aebab();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionEvent((nint)handle);

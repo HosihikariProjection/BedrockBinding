@@ -68,12 +68,12 @@ public sealed unsafe partial class ArmorContainerValidation : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ArmorContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.ArmorContainerValidation arg0)
+    public static ArmorContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.ArmorContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_59077aac((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ArmorContainerValidation((nint)handle);

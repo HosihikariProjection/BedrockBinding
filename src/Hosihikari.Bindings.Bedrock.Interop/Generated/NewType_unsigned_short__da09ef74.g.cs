@@ -40,34 +40,34 @@ public sealed unsafe partial class NewType_unsigned_short_ : global::System.IDis
         return __hs_handle;
     }
 
-    public static NewType_unsigned_short_ Create()
+    public static NewType_unsigned_short_? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9833c6c1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NewType_unsigned_short_((nint)handle);
     }
 
-    public static NewType_unsigned_short_ Create(global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_short_ other)
+    public static NewType_unsigned_short_? Create(global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_short_ other)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_01f24cb5((void*)other.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NewType_unsigned_short_((nint)handle);
     }
 
-    public static NewType_unsigned_short_ Create(nint t)
+    public static NewType_unsigned_short_? Create(nint t)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_07d52d6b((void*)t);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NewType_unsigned_short_((nint)handle);
@@ -79,9 +79,10 @@ public sealed unsafe partial class NewType_unsigned_short_ : global::System.IDis
         set => NativeMethods.TablePtr->C2.hs_set_0727ae7c((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_short_ operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_short_ other)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_short_? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_short_ other)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_short_((nint)NativeMethods.TablePtr->C2.hs_method_45fc3e3e((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_45fc3e3e((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_short_((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_short_ other)

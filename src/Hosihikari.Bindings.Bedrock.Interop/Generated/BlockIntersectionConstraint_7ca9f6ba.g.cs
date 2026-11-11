@@ -52,12 +52,12 @@ public sealed unsafe partial class BlockIntersectionConstraint : global::System.
     public bool _isSatisfied(nint target, nint structurePos, nint structureRot, nint centeringOffset) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockIntersectionConstraint Create()
+    public static BlockIntersectionConstraint? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2a4d85d4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockIntersectionConstraint((nint)handle);
@@ -67,12 +67,12 @@ public sealed unsafe partial class BlockIntersectionConstraint : global::System.
     public static BlockIntersectionConstraint Create(nint structure) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockIntersectionConstraint Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockIntersectionConstraint arg0)
+    public static BlockIntersectionConstraint? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockIntersectionConstraint arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b1c64173((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockIntersectionConstraint((nint)handle);

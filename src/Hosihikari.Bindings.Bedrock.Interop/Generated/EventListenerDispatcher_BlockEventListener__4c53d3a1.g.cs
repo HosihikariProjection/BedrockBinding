@@ -40,12 +40,12 @@ public sealed unsafe partial class EventListenerDispatcher_BlockEventListener_ :
         return __hs_handle;
     }
 
-    public static EventListenerDispatcher_BlockEventListener_ Create(global::Hosihikari.Bindings.Bedrock.Interop.EventListenerDispatcher_BlockEventListener_ arg0)
+    public static EventListenerDispatcher_BlockEventListener_? Create(global::Hosihikari.Bindings.Bedrock.Interop.EventListenerDispatcher_BlockEventListener_ arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_02fbae49((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EventListenerDispatcher_BlockEventListener_((nint)handle);

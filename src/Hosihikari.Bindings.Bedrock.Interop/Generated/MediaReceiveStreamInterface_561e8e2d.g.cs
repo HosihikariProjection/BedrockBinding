@@ -44,12 +44,12 @@ public sealed unsafe partial class MediaReceiveStreamInterface : global::System.
     public nint GetSources() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'webrtc::RtpSource' is not supported.");
 
-    public static MediaReceiveStreamInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaReceiveStreamInterface arg0)
+    public static MediaReceiveStreamInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaReceiveStreamInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_96df91b6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MediaReceiveStreamInterface((nint)handle);

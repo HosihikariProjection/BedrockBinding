@@ -48,12 +48,12 @@ public sealed unsafe partial class IBlockWorldGenAPI : global::System.IDisposabl
     public nint _getChunk(nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IBlockWorldGenAPI Create(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI arg0)
+    public static IBlockWorldGenAPI? Create(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_34870a0f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IBlockWorldGenAPI((nint)handle);
@@ -94,14 +94,16 @@ public sealed unsafe partial class IBlockWorldGenAPI : global::System.IDisposabl
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C1.hs_method_82275149((void*)__hosihikari_shim_handle, (void*)pos.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_82275149((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getBlockNoBoundsCheck(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlockNoBoundsCheck(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C1.hs_method_7c762b76((void*)__hosihikari_shim_handle, (void*)pos.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7c762b76((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk? getChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos)
@@ -110,14 +112,16 @@ public sealed unsafe partial class IBlockWorldGenAPI : global::System.IDisposabl
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext getContext()
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext? getContext()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext((nint)NativeMethods.TablePtr->C1.hs_method_11f0151a((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_11f0151a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getExtraBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getExtraBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C1.hs_method_e22b1ecd((void*)__hosihikari_shim_handle, (void*)pos.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e22b1ecd((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public short getHeightmap(int x, int z)
@@ -125,9 +129,10 @@ public sealed unsafe partial class IBlockWorldGenAPI : global::System.IDisposabl
         return NativeMethods.TablePtr->C1.hs_method_7cd1dcb3((void*)__hosihikari_shim_handle, x, z);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelData getLevelData()
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelData? getLevelData()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelData((nint)NativeMethods.TablePtr->C1.hs_method_7ad9bddd((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7ad9bddd((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelData((nint)__hs_handle, false) : null;
     }
 
     public short getLocalWaterLevel(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

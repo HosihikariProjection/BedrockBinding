@@ -40,12 +40,12 @@ public sealed unsafe partial class LeverActionEvent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static LeverActionEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.LeverActionEvent arg0)
+    public static LeverActionEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.LeverActionEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b4db483e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LeverActionEvent((nint)handle);

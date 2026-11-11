@@ -40,12 +40,12 @@ public sealed unsafe partial class MobTravelComponent : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static MobTravelComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.MobTravelComponent arg0)
+    public static MobTravelComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.MobTravelComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_872efda2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobTravelComponent((nint)handle);

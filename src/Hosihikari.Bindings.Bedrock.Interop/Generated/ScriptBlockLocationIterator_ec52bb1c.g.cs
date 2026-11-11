@@ -44,23 +44,23 @@ public sealed unsafe partial class ScriptBlockLocationIterator : global::System.
     public nint _ctor(nint nativeIterator, nint strongTypedIterableHandle) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptBlockLocationIterator Create()
+    public static ScriptBlockLocationIterator? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ce902d2f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockLocationIterator((nint)handle);
     }
 
-    public static ScriptBlockLocationIterator Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockLocationIterator arg0)
+    public static ScriptBlockLocationIterator? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockLocationIterator arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d8ccd360((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockLocationIterator((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class ScriptBlockLocationIterator : global::System.
     public nint operator_assign(nint it) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockLocationIterator operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockLocationIterator arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockLocationIterator? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockLocationIterator arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockLocationIterator((nint)NativeMethods.TablePtr->C3.hs_method_e0139daa((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e0139daa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockLocationIterator((nint)__hs_handle, false) : null;
     }
 
 

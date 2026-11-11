@@ -48,12 +48,12 @@ public sealed unsafe partial class ActorInactivityTimerTest : global::System.IDi
     public nint _getName() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorInactivityTimerTest Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorInactivityTimerTest arg0)
+    public static ActorInactivityTimerTest? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorInactivityTimerTest arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8ba7eac6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorInactivityTimerTest((nint)handle);

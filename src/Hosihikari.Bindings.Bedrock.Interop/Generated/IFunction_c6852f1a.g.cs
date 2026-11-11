@@ -44,23 +44,23 @@ public sealed unsafe partial class IFunction : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IFunction Create()
+    public static IFunction? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e9258c76();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IFunction((nint)handle);
     }
 
-    public static IFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IFunction arg0)
+    public static IFunction? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IFunction arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5867bf8a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IFunction((nint)handle);
@@ -75,9 +75,10 @@ public sealed unsafe partial class IFunction : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_22a68993((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentDetails getArgDetails(uint arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentDetails? getArgDetails(uint arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentDetails((nint)NativeMethods.TablePtr->C3.hs_method_e1dfb386((void*)__hosihikari_shim_handle, arg0), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e1dfb386((void*)__hosihikari_shim_handle, arg0);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentDetails((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'entt::meta_type' requires --link-carrier or --virtual-dispatch.", false)]
@@ -131,9 +132,10 @@ public sealed unsafe partial class IFunction : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_1cdbc7a0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IFunction operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IFunction arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IFunction? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IFunction arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IFunction((nint)NativeMethods.TablePtr->C3.hs_method_cb5bdb0f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cb5bdb0f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IFunction((nint)__hs_handle, false) : null;
     }
 
 

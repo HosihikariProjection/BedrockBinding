@@ -40,23 +40,23 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static DynamicValue Create()
+    public static DynamicValue? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0e49a12e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DynamicValue((nint)handle);
     }
 
-    public static DynamicValue Create(bool value)
+    public static DynamicValue? Create(bool value)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_d343e52d(value);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DynamicValue((nint)handle);
@@ -66,40 +66,40 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
     public static DynamicValue Create_c6deb99a(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static DynamicValue Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.NullType arg0)
+    public static DynamicValue? Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.NullType arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_166d68b0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DynamicValue((nint)handle);
     }
 
-    public static DynamicValue Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue arg0)
+    public static DynamicValue? Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_427b59bc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DynamicValue((nint)handle);
     }
 
-    public static DynamicValue Create_f6f13569(nint value)
+    public static DynamicValue? Create_f6f13569(nint value)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f6f13569((void*)value);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DynamicValue((nint)handle);
     }
 
-    public static DynamicValue Create_b6d559d3(string value)
+    public static DynamicValue? Create_b6d559d3(string value)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(value);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -117,14 +117,14 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C4.hs_create_b6d559d3(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new DynamicValue((nint)handle);
         }
     }
 
-    public static DynamicValue Create_61c69f52(string value)
+    public static DynamicValue? Create_61c69f52(string value)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(value);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -142,19 +142,19 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C4.hs_create_61c69f52(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new DynamicValue((nint)handle);
         }
     }
 
-    public static DynamicValue Create_224b3641()
+    public static DynamicValue? Create_224b3641()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_224b3641();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DynamicValue((nint)handle);
@@ -168,9 +168,10 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
     public static DynamicValue Create_9642241c(nint value) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue array()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue? array()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)NativeMethods.TablePtr->C4.hs_method_bd632c6a());
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_bd632c6a();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: span element type 'cereal::DynamicValue' is not supported.", false)]
@@ -207,14 +208,16 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C4.hs_method_13c1eafb((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.NullType asNull_1bb2fbe0()
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.NullType? asNull_1bb2fbe0()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.NullType((nint)NativeMethods.TablePtr->C4.hs_method_1bb2fbe0((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1bb2fbe0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.NullType((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.NullType asNull_030d90a3()
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.NullType? asNull_030d90a3()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.NullType((nint)NativeMethods.TablePtr->C4.hs_method_030d90a3((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_030d90a3((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.NullType((nint)__hs_handle, false) : null;
     }
 
     public nint asNumber_bbdc22d8()
@@ -249,7 +252,7 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue at_04c0ca6e(string member)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue? at_04c0ca6e(string member)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(member);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -264,16 +267,18 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(member, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)NativeMethods.TablePtr->C4.hs_method_04c0ca6e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_04c0ca6e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)__hs_handle, false) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue at_f335e49d(ulong index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue? at_f335e49d(ulong index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)NativeMethods.TablePtr->C4.hs_method_f335e49d((void*)__hosihikari_shim_handle, index), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f335e49d((void*)__hosihikari_shim_handle, index);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue at_ddca1913(string member)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue? at_ddca1913(string member)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(member);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -288,13 +293,15 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(member, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)NativeMethods.TablePtr->C4.hs_method_ddca1913((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ddca1913((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)__hs_handle, false) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue at_1ee494f9(ulong index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue? at_1ee494f9(ulong index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)NativeMethods.TablePtr->C4.hs_method_1ee494f9((void*)__hosihikari_shim_handle, index), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1ee494f9((void*)__hosihikari_shim_handle, index);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)__hs_handle, false) : null;
     }
 
     public void clear()
@@ -425,9 +432,10 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_d6bf6366((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue @object()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue? @object()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)NativeMethods.TablePtr->C4.hs_method_56a109cf());
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_56a109cf();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: span element type 'std::pair<std::basic_string<char>, cereal::DynamicValue>' is not supported.", false)]
@@ -438,12 +446,13 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)NativeMethods.TablePtr->C4.hs_method_c0785aff((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c0785aff((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue operator_index_46ab7a4c(string member)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue? operator_index_46ab7a4c(string member)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(member);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -458,16 +467,18 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(member, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)NativeMethods.TablePtr->C4.hs_method_46ab7a4c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_46ab7a4c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)__hs_handle, false) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue operator_index_a004ac4f(ulong index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue? operator_index_a004ac4f(ulong index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)NativeMethods.TablePtr->C4.hs_method_a004ac4f((void*)__hosihikari_shim_handle, index), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a004ac4f((void*)__hosihikari_shim_handle, index);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue operator_index_9ccbdd93(string member)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue? operator_index_9ccbdd93(string member)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(member);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -482,23 +493,27 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(member, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)NativeMethods.TablePtr->C4.hs_method_9ccbdd93((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_9ccbdd93((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)__hs_handle, false) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue operator_index_0cae0eb4(ulong index)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue? operator_index_0cae0eb4(ulong index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)NativeMethods.TablePtr->C4.hs_method_0cae0eb4((void*)__hosihikari_shim_handle, index), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0cae0eb4((void*)__hosihikari_shim_handle, index);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue pushBack(global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue element)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue? pushBack(global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue element)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)NativeMethods.TablePtr->C4.hs_method_3f5da23c((void*)__hosihikari_shim_handle, (void*)element.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3f5da23c((void*)__hosihikari_shim_handle, (void*)element.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue push_back(global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue element)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue? push_back(global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue element)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)NativeMethods.TablePtr->C4.hs_method_8b5f1738((void*)__hosihikari_shim_handle, (void*)element.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8b5f1738((void*)__hosihikari_shim_handle, (void*)element.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue((nint)__hs_handle, false) : null;
     }
 
     public void reserve(ulong capacity)

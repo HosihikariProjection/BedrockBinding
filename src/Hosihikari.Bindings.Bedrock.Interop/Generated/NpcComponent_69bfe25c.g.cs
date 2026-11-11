@@ -64,12 +64,12 @@ public sealed unsafe partial class NpcComponent : global::System.IDisposable
     public static nint NAME_RAW_TEXT_TAG() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NpcComponent Create()
+    public static NpcComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e6ee8b87();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NpcComponent((nint)handle);
@@ -79,12 +79,12 @@ public sealed unsafe partial class NpcComponent : global::System.IDisposable
     public static NpcComponent Create(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NpcComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.NpcComponent arg0)
+    public static NpcComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.NpcComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c78061a6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NpcComponent((nint)handle);
@@ -247,9 +247,10 @@ public sealed unsafe partial class NpcComponent : global::System.IDisposable
     public nint operator_assign(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NpcComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NpcComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NpcComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NpcComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NpcComponent((nint)NativeMethods.TablePtr->C2.hs_method_f4321d6c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f4321d6c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NpcComponent((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -44,12 +44,12 @@ public sealed unsafe partial class CoordinateRange : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CoordinateRange Create(global::Hosihikari.Bindings.Bedrock.Interop.ScatterParams_Nested.CoordinateRange arg0)
+    public static CoordinateRange? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScatterParams_Nested.CoordinateRange arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9e76804d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CoordinateRange((nint)handle);

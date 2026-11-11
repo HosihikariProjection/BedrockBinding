@@ -56,12 +56,12 @@ public sealed unsafe partial class FurnaceFuelContainerValidation : global::Syst
     public bool _isItemAllowedInSlot(nint screenContext, nint slot, nint item, nint amount, bool arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FurnaceFuelContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceFuelContainerValidation arg0)
+    public static FurnaceFuelContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceFuelContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ef81a5d1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FurnaceFuelContainerValidation((nint)handle);

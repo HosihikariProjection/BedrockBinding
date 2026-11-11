@@ -46,12 +46,12 @@ public sealed unsafe partial class IEntityRegistryOwner : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_41c95094((void*)__hosihikari_shim_handle);
     }
 
-    public static IEntityRegistryOwner Create(global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner arg0)
+    public static IEntityRegistryOwner? Create(global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ce02a64d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IEntityRegistryOwner((nint)handle);

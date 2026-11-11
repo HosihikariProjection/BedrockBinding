@@ -44,12 +44,12 @@ public sealed unsafe partial class SurfaceBuilderParameters : global::System.IDi
     public nint _ctor(nint biome, nint surfaceBuilderData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SurfaceBuilderParameters Create()
+    public static SurfaceBuilderParameters? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d336cd93();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SurfaceBuilderParameters((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class SurfaceBuilderParameters : global::System.IDi
     public static SurfaceBuilderParameters Create(nint biome, nint surfaceBuilderData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SurfaceBuilderParameters Create(global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.SurfaceBuilderParameters arg0)
+    public static SurfaceBuilderParameters? Create(global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.SurfaceBuilderParameters arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9c9bd3f8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SurfaceBuilderParameters((nint)handle);

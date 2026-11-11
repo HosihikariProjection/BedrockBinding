@@ -45,34 +45,34 @@ public sealed unsafe partial class AnimatedImageData : global::System.IDisposabl
         return (nint)NativeMethods.TablePtr->C0.hs_method_865d812c((void*)__hosihikari_shim_handle, type, animationExpression, (void*)animatedImage.Handle, frames);
     }
 
-    public static AnimatedImageData Create()
+    public static AnimatedImageData? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7ae8a19f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AnimatedImageData((nint)handle);
     }
 
-    public static AnimatedImageData Create(global::Hosihikari.Bindings.Bedrock.Interop.AnimatedImageData arg0)
+    public static AnimatedImageData? Create(global::Hosihikari.Bindings.Bedrock.Interop.AnimatedImageData arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f4a77ddc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AnimatedImageData((nint)handle);
     }
 
-    public static AnimatedImageData Create(uint type, uint animationExpression, global::Hosihikari.Bindings.Bedrock.Interop.mce.Image animatedImage, float frames)
+    public static AnimatedImageData? Create(uint type, uint animationExpression, global::Hosihikari.Bindings.Bedrock.Interop.mce.Image animatedImage, float frames)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c9294b82(type, animationExpression, (void*)animatedImage.Handle, frames);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AnimatedImageData((nint)handle);

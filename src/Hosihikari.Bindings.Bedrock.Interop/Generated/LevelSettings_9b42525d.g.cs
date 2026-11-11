@@ -62,12 +62,12 @@ public sealed unsafe partial class LevelSettings : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_f9cdc5ff((void*)__hosihikari_shim_handle);
     }
 
-    public static LevelSettings Create()
+    public static LevelSettings? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4c2d4947();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelSettings((nint)handle);
@@ -507,9 +507,10 @@ public sealed unsafe partial class LevelSettings : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_c1ace3c1((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings((nint)NativeMethods.TablePtr->C2.hs_method_664eee8d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_664eee8d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings((nint)__hs_handle, false) : null;
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64? parseSeedString(string seedInput)

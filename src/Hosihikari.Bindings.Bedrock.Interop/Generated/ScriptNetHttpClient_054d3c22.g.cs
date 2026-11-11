@@ -44,23 +44,23 @@ public sealed unsafe partial class ScriptNetHttpClient : global::System.IDisposa
     public nint _ctor(nint descriptorString, nint serverScheduler, nint config, nint @delegate, nint serializationRegistry, nint contentEncoder) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptNetHttpClient Create()
+    public static ScriptNetHttpClient? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_313b7ca6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptNetHttpClient((nint)handle);
     }
 
-    public static ScriptNetHttpClient Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient arg0)
+    public static ScriptNetHttpClient? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_65dc4e44((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptNetHttpClient((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class ScriptNetHttpClient : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_80de5b16((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient((nint)NativeMethods.TablePtr->C3.hs_method_311a2e9a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_311a2e9a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

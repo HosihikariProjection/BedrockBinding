@@ -44,23 +44,23 @@ public sealed unsafe partial class ContainerValidationSlotData : global::System.
     public static nint AUTOPLACE() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ContainerValidationSlotData Create()
+    public static ContainerValidationSlotData? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_696be157();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContainerValidationSlotData((nint)handle);
     }
 
-    public static ContainerValidationSlotData Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationSlotData arg0)
+    public static ContainerValidationSlotData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationSlotData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4dff3350((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContainerValidationSlotData((nint)handle);

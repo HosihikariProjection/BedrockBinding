@@ -40,12 +40,12 @@ public sealed unsafe partial class TradeGroup : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TradeGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeGroup arg0)
+    public static TradeGroup? Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeGroup arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1acfa958((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TradeGroup((nint)handle);

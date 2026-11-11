@@ -101,9 +101,10 @@ public sealed unsafe partial class FireworkChargeItem : global::System.IDisposab
         NativeMethods.TablePtr->C1.hs_method_8131ef9c((void*)__hosihikari_shim_handle, (void*)stack.Handle, (void*)level.Handle, (void*)hovertext.Handle, advancedToolTips);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getColor(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? userData, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getColor(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? userData, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C1.hs_method_c743592d((void*)__hosihikari_shim_handle, (void*)(userData?.Handle ?? 0), (void*)arg1.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c743592d((void*)__hosihikari_shim_handle, (void*)(userData?.Handle ?? 0), (void*)arg1.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

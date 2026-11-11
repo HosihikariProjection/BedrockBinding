@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptNetHeader : global::System.IDisposable
     public nint _ctor(nint key, nint value) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptNetHeader Create()
+    public static ScriptNetHeader? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_748ff047();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptNetHeader((nint)handle);
@@ -91,9 +91,10 @@ public sealed unsafe partial class ScriptNetHeader : global::System.IDisposable
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHeader operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHeader arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHeader? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHeader arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHeader((nint)NativeMethods.TablePtr->C3.hs_method_c35c176e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c35c176e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHeader((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

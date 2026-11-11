@@ -76,12 +76,12 @@ public sealed unsafe partial class ClassroomModeNetworkHandler : global::System.
     public static nint _vftableForNetEventCallback() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ClassroomModeNetworkHandler Create()
+    public static ClassroomModeNetworkHandler? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_32580b68();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClassroomModeNetworkHandler((nint)handle);
@@ -91,12 +91,12 @@ public sealed unsafe partial class ClassroomModeNetworkHandler : global::System.
     public static ClassroomModeNetworkHandler Create(bool isDedicatedServer) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ClassroomModeNetworkHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.ClassroomModeNetworkHandler arg0)
+    public static ClassroomModeNetworkHandler? Create(global::Hosihikari.Bindings.Bedrock.Interop.ClassroomModeNetworkHandler arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_941ca5f6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClassroomModeNetworkHandler((nint)handle);
@@ -160,9 +160,10 @@ public sealed unsafe partial class ClassroomModeNetworkHandler : global::System.
     public void onWebsocketRequest(nint serverAddress, nint payload, nint errorCallback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ClassroomModeNetworkHandler operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ClassroomModeNetworkHandler arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ClassroomModeNetworkHandler? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ClassroomModeNetworkHandler arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ClassroomModeNetworkHandler((nint)NativeMethods.TablePtr->C0.hs_method_ceda1bec((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ceda1bec((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ClassroomModeNetworkHandler((nint)__hs_handle, false) : null;
     }
 
 

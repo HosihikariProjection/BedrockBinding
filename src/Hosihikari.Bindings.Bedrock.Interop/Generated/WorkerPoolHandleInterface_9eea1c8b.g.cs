@@ -40,12 +40,12 @@ public sealed unsafe partial class WorkerPoolHandleInterface : global::System.ID
         return __hs_handle;
     }
 
-    public static WorkerPoolHandleInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolHandleInterface arg0)
+    public static WorkerPoolHandleInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolHandleInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_13aa8090((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorkerPoolHandleInterface((nint)handle);

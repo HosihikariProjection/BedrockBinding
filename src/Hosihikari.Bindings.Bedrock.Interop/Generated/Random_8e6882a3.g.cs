@@ -89,34 +89,34 @@ public sealed unsafe partial class Random : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Random Create()
+    public static Random? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7491608f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Random((nint)handle);
     }
 
-    public static Random Create(global::Hosihikari.Bindings.Bedrock.Interop.Random arg0)
+    public static Random? Create(global::Hosihikari.Bindings.Bedrock.Interop.Random arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e821c6a2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Random((nint)handle);
     }
 
-    public static Random Create(uint seed, bool onlyUsedDeterministically)
+    public static Random? Create(uint seed, bool onlyUsedDeterministically)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1e8dd6b6(seed, onlyUsedDeterministically);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Random((nint)handle);

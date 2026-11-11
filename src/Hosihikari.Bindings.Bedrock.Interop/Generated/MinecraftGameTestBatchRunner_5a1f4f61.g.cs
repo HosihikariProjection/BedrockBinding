@@ -48,23 +48,23 @@ public sealed unsafe partial class MinecraftGameTestBatchRunner : global::System
     public void __runTest(nint test, nint ticker) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinecraftGameTestBatchRunner Create()
+    public static MinecraftGameTestBatchRunner? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ac14da0b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftGameTestBatchRunner((nint)handle);
     }
 
-    public static MinecraftGameTestBatchRunner Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestBatchRunner arg0)
+    public static MinecraftGameTestBatchRunner? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestBatchRunner arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cb88bba0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftGameTestBatchRunner((nint)handle);
@@ -93,9 +93,10 @@ public sealed unsafe partial class MinecraftGameTestBatchRunner : global::System
         get => (nint)NativeMethods.TablePtr->C2.hs_get_a12a4b66((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestBatchRunner operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestBatchRunner arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestBatchRunner? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestBatchRunner arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestBatchRunner((nint)NativeMethods.TablePtr->C2.hs_method_787ecd5a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_787ecd5a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestBatchRunner((nint)__hs_handle, false) : null;
     }
 
 

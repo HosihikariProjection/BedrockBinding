@@ -94,12 +94,12 @@ public sealed unsafe partial class ScriptHealthComponent : global::System.IDispo
     public static nint ComponentId() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptHealthComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptHealthComponent arg0)
+    public static ScriptHealthComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptHealthComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c507591f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptHealthComponent((nint)handle);

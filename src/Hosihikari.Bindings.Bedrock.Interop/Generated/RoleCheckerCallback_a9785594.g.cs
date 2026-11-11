@@ -40,23 +40,23 @@ public sealed unsafe partial class RoleCheckerCallback : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static RoleCheckerCallback Create()
+    public static RoleCheckerCallback? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_dbb6083f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RoleCheckerCallback((nint)handle);
     }
 
-    public static RoleCheckerCallback Create(global::Hosihikari.Bindings.Bedrock.Interop.RoleCheckerCallback arg0)
+    public static RoleCheckerCallback? Create(global::Hosihikari.Bindings.Bedrock.Interop.RoleCheckerCallback arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_242eae95((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RoleCheckerCallback((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class RoleCheckerCallback : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_dbea6d09((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RoleCheckerCallback operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RoleCheckerCallback arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RoleCheckerCallback? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RoleCheckerCallback arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RoleCheckerCallback((nint)NativeMethods.TablePtr->C3.hs_method_b8ebec87((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b8ebec87((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RoleCheckerCallback((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

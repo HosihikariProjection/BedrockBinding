@@ -69,12 +69,12 @@ public sealed unsafe partial class ServerCommand : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_d73cf25d((void*)__hosihikari_shim_handle, value);
     }
 
-    public static ServerCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerCommand arg0)
+    public static ServerCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5629b4e6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerCommand((nint)handle);

@@ -48,23 +48,23 @@ public sealed unsafe partial class DiscFeature : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DiscFeature Create()
+    public static DiscFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1a5813c7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DiscFeature((nint)handle);
     }
 
-    public static DiscFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.DiscFeature arg0)
+    public static DiscFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.DiscFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_95f07f15((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DiscFeature((nint)handle);
@@ -82,9 +82,10 @@ public sealed unsafe partial class DiscFeature : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_c4edfe4d((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DiscFeature operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DiscFeature arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DiscFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DiscFeature arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DiscFeature((nint)NativeMethods.TablePtr->C1.hs_method_b30e80e4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b30e80e4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DiscFeature((nint)__hs_handle, false) : null;
     }
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)

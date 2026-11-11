@@ -40,23 +40,23 @@ public sealed unsafe partial class AmbientSoundIntervalDefinition : global::Syst
         return __hs_handle;
     }
 
-    public static AmbientSoundIntervalDefinition Create()
+    public static AmbientSoundIntervalDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_51441a3b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AmbientSoundIntervalDefinition((nint)handle);
     }
 
-    public static AmbientSoundIntervalDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundIntervalDefinition arg0)
+    public static AmbientSoundIntervalDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundIntervalDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d9b14c99((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AmbientSoundIntervalDefinition((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class AmbientSoundIntervalDefinition : global::Syst
         get => (nint)NativeMethods.TablePtr->C0.hs_get_60f39b42((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundIntervalDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundIntervalDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundIntervalDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundIntervalDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundIntervalDefinition((nint)NativeMethods.TablePtr->C0.hs_method_370dee54((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_370dee54((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundIntervalDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

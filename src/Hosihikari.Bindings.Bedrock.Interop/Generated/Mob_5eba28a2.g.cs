@@ -598,9 +598,10 @@ public sealed unsafe partial class Mob : global::System.IDisposable
     public float __getWalkTargetValue(nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult __hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? __hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C2.hs_method_957b1190((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_957b1190((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -948,12 +949,12 @@ public sealed unsafe partial class Mob : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Mob Create()
+    public static Mob? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ed6f59e9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Mob((nint)handle);
@@ -984,9 +985,10 @@ public sealed unsafe partial class Mob : global::System.IDisposable
     public void _doSprintParticleEffect() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB _getAdjustedAABBForSpawnCheck(global::Hosihikari.Bindings.Bedrock.Interop.AABB aabb, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 mobPos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? _getAdjustedAABBForSpawnCheck(global::Hosihikari.Bindings.Bedrock.Interop.AABB aabb, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 mobPos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C2.hs_method_3c3735ab((void*)__hosihikari_shim_handle, (void*)aabb.Handle, (void*)mobPos.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3c3735ab((void*)__hosihikari_shim_handle, (void*)aabb.Handle, (void*)mobPos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
     public float _getWalkTargetValue(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
@@ -994,9 +996,10 @@ public sealed unsafe partial class Mob : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_971636e0((void*)__hosihikari_shim_handle, (void*)pos.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C2.hs_method_8d0f79b3((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8d0f79b3((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -1042,9 +1045,10 @@ public sealed unsafe partial class Mob : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_7df6fd52((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult attack(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, nint cause)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? attack(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, nint cause)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C2.hs_method_053ab711((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)cause));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_053ab711((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)cause);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public void baseTick()
@@ -1157,14 +1161,16 @@ public sealed unsafe partial class Mob : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_fbd5315e((void*)__hosihikari_shim_handle, (void*)source.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult doFireHurt(int amount)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? doFireHurt(int amount)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C2.hs_method_c48e7cb2((void*)__hosihikari_shim_handle, amount));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c48e7cb2((void*)__hosihikari_shim_handle, amount);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult doHurtTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor? target, nint cause)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? doHurtTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor? target, nint cause)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C2.hs_method_cd40d385((void*)__hosihikari_shim_handle, (void*)(target?.Handle ?? 0), (void*)cause));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cd40d385((void*)__hosihikari_shim_handle, (void*)(target?.Handle ?? 0), (void*)cause);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -1273,9 +1279,10 @@ public sealed unsafe partial class Mob : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_041420fd((void*)__hosihikari_shim_handle, a);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItemSlot(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItemSlot(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_012286d5((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_012286d5((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int getItemUseDuration()

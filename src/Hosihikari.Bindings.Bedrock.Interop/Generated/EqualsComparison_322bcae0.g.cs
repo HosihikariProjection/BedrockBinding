@@ -40,12 +40,12 @@ public sealed unsafe partial class EqualsComparison : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static EqualsComparison Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.EqualsComparison arg0)
+    public static EqualsComparison? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.EqualsComparison arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_19f6485f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EqualsComparison((nint)handle);

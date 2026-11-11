@@ -40,23 +40,23 @@ public sealed unsafe partial class SendPacketToOwnerInfo : global::System.IDispo
         return __hs_handle;
     }
 
-    public static SendPacketToOwnerInfo Create()
+    public static SendPacketToOwnerInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6b78e226();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SendPacketToOwnerInfo((nint)handle);
     }
 
-    public static SendPacketToOwnerInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.SendPacketToOwnerInfo arg0)
+    public static SendPacketToOwnerInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.SendPacketToOwnerInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a3b084d3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SendPacketToOwnerInfo((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class SendPacketToOwnerInfo : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C3.hs_get_bed18662((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SendPacketToOwnerInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SendPacketToOwnerInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SendPacketToOwnerInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SendPacketToOwnerInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SendPacketToOwnerInfo((nint)NativeMethods.TablePtr->C3.hs_method_4646ffee((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4646ffee((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SendPacketToOwnerInfo((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

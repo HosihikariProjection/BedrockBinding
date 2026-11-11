@@ -73,23 +73,23 @@ public sealed unsafe partial class ItemUseOnActorInventoryTransaction : global::
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemUseOnActorInventoryTransaction Create()
+    public static ItemUseOnActorInventoryTransaction? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c9b8e8d4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemUseOnActorInventoryTransaction((nint)handle);
     }
 
-    public static ItemUseOnActorInventoryTransaction Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemUseOnActorInventoryTransaction arg0)
+    public static ItemUseOnActorInventoryTransaction? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemUseOnActorInventoryTransaction arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_436f643f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemUseOnActorInventoryTransaction((nint)handle);

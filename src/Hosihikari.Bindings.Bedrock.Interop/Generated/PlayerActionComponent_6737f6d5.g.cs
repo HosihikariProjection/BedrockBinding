@@ -48,12 +48,12 @@ public sealed unsafe partial class PlayerActionComponent : global::System.IDispo
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerActionComponent Create()
+    public static PlayerActionComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b2832f30();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerActionComponent((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class PlayerActionComponent : global::System.IDispo
     public static PlayerActionComponent Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerActionComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerActionComponent arg0)
+    public static PlayerActionComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerActionComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4c8b5acd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerActionComponent((nint)handle);
@@ -108,9 +108,10 @@ public sealed unsafe partial class PlayerActionComponent : global::System.IDispo
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerActionComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerActionComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerActionComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerActionComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerActionComponent((nint)NativeMethods.TablePtr->C2.hs_method_98fde0f3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_98fde0f3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerActionComponent((nint)__hs_handle, false) : null;
     }
 
 

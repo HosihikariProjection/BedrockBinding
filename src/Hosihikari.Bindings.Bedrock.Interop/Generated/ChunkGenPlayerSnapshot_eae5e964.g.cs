@@ -40,12 +40,12 @@ public sealed unsafe partial class ChunkGenPlayerSnapshot : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ChunkGenPlayerSnapshot Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkGenPlayerSnapshot arg0)
+    public static ChunkGenPlayerSnapshot? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkGenPlayerSnapshot arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3aada991((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkGenPlayerSnapshot((nint)handle);

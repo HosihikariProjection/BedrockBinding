@@ -52,12 +52,12 @@ public sealed unsafe partial class SHChestCorridor : global::System.IDisposable
     public bool _postProcess(nint region, nint random, nint chunkBB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SHChestCorridor Create(global::Hosihikari.Bindings.Bedrock.Interop.SHChestCorridor arg0)
+    public static SHChestCorridor? Create(global::Hosihikari.Bindings.Bedrock.Interop.SHChestCorridor arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9d6e39ae((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SHChestCorridor((nint)handle);

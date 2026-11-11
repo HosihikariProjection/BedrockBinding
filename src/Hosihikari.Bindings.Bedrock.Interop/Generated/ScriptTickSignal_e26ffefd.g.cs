@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptTickSignal : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ScriptTickSignal Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTickSignal arg0)
+    public static ScriptTickSignal? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTickSignal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4c01be2c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptTickSignal((nint)handle);

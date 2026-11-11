@@ -80,12 +80,12 @@ public sealed unsafe partial class FeaturePoolElement : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FeaturePoolElement Create()
+    public static FeaturePoolElement? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c029f1ce();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FeaturePoolElement((nint)handle);
@@ -95,12 +95,12 @@ public sealed unsafe partial class FeaturePoolElement : global::System.IDisposab
     public static FeaturePoolElement Create(nint featureRegistry, nint structureManager, nint name) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FeaturePoolElement Create(global::Hosihikari.Bindings.Bedrock.Interop.FeaturePoolElement arg0)
+    public static FeaturePoolElement? Create(global::Hosihikari.Bindings.Bedrock.Interop.FeaturePoolElement arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_82551d35((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FeaturePoolElement((nint)handle);
@@ -116,9 +116,10 @@ public sealed unsafe partial class FeaturePoolElement : global::System.IDisposab
     public nint getJigsawMarkers(nint position, nint settings, nint region) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'JigsawBlockInfo' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getSize(byte rotation)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSize(byte rotation)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_39c33018((void*)__hosihikari_shim_handle, rotation));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_39c33018((void*)__hosihikari_shim_handle, rotation);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

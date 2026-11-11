@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptActorLoadAfterEvent : global::System.ID
         return __hs_handle;
     }
 
-    public static ScriptActorLoadAfterEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorLoadAfterEvent arg0)
+    public static ScriptActorLoadAfterEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorLoadAfterEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f7d34ea5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptActorLoadAfterEvent((nint)handle);

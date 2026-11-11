@@ -458,12 +458,12 @@ public sealed unsafe partial class NetherDimension : global::System.IDisposable
     public void _upgradeLevelChunk(nint source, nint lc, nint generatedChunk) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetherDimension Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherDimension arg0)
+    public static NetherDimension? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherDimension arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_81796f7e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetherDimension((nint)handle);
@@ -487,9 +487,10 @@ public sealed unsafe partial class NetherDimension : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_bea08698((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)lc.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType getDefaultBiomeId()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType? getDefaultBiomeId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)NativeMethods.TablePtr->C2.hs_method_6c2b63f2((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6c2b63f2((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)__hs_handle) : null;
     }
 
     public float getTimeOfDay(int time, float a)
@@ -527,9 +528,10 @@ public sealed unsafe partial class NetherDimension : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_4746a816((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 translatePosAcrossDimension(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originalPos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromId)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? translatePosAcrossDimension(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originalPos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromId)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_f114a105((void*)__hosihikari_shim_handle, (void*)originalPos.Handle, (void*)fromId.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f114a105((void*)__hosihikari_shim_handle, (void*)originalPos.Handle, (void*)fromId.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public void upgradeLevelChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk generatedChunk)

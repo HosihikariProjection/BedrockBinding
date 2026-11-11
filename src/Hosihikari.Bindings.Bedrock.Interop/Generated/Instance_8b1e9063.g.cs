@@ -44,23 +44,23 @@ public sealed unsafe partial class Instance : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Instance Create()
+    public static Instance? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_59a03d51();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Instance((nint)handle);
     }
 
-    public static Instance Create(global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.Instance arg0)
+    public static Instance? Create(global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.Instance arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_33c99623((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Instance((nint)handle);
@@ -96,9 +96,10 @@ public sealed unsafe partial class Instance : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_0f5751fd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.Instance operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.Instance arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.Instance? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.Instance arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.Instance((nint)NativeMethods.TablePtr->C1.hs_method_8c1c54fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8c1c54fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.Instance((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -44,12 +44,12 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
     public nint _ctor(nint level, nint resourcePackManager, nint eventing, nint experiments, nint linkedAssetValidator) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorDefinitionGroup Create()
+    public static ActorDefinitionGroup? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b9d11a9c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionGroup((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
     public static ActorDefinitionGroup Create(nint level, nint resourcePackManager, nint eventing, nint experiments, nint linkedAssetValidator) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorDefinitionGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup arg0)
+    public static ActorDefinitionGroup? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7509967f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionGroup((nint)handle);
@@ -136,12 +136,13 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C0.hs_get_0cd0b0af((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup((nint)NativeMethods.TablePtr->C0.hs_method_5c9578df((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5c9578df((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionPtr tryGetDefinition(string definitionId)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionPtr? tryGetDefinition(string definitionId)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(definitionId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -156,7 +157,8 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
         global::System.Text.Encoding.UTF8.GetBytes(definitionId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionPtr((nint)NativeMethods.TablePtr->C0.hs_method_ef042212((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ef042212((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionPtr((nint)__hs_handle) : null;
         }
     }
 

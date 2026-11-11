@@ -40,12 +40,12 @@ public sealed unsafe partial class IDataOutput : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IDataOutput Create(global::Hosihikari.Bindings.Bedrock.Interop.IDataOutput arg0)
+    public static IDataOutput? Create(global::Hosihikari.Bindings.Bedrock.Interop.IDataOutput arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7bf22221((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IDataOutput((nint)handle);

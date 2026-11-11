@@ -64,12 +64,12 @@ public sealed unsafe partial class Publisher_void__const_Json__Value_____Bedrock
         get => (nint)NativeMethods.TablePtr->C0.hs_get_75771e1d((void*)__hosihikari_shim_handle);
     }
 
-    public static Publisher_void__const_Json__Value_____Bedrock__PubSub__ThreadModel__MultiThreaded__0_ Create()
+    public static Publisher_void__const_Json__Value_____Bedrock__PubSub__ThreadModel__MultiThreaded__0_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_93d2cffe();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Publisher_void__const_Json__Value_____Bedrock__PubSub__ThreadModel__MultiThreaded__0_((nint)handle);

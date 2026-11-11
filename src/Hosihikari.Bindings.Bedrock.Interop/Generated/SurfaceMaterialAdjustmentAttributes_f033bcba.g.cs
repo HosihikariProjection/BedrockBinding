@@ -40,12 +40,12 @@ public sealed unsafe partial class SurfaceMaterialAdjustmentAttributes : global:
         return __hs_handle;
     }
 
-    public static SurfaceMaterialAdjustmentAttributes Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceMaterialAdjustmentAttributes arg0)
+    public static SurfaceMaterialAdjustmentAttributes? Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceMaterialAdjustmentAttributes arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9a2820a4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SurfaceMaterialAdjustmentAttributes((nint)handle);

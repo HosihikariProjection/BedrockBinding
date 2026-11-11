@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerEatFoodEvent : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static PlayerEatFoodEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerEatFoodEvent arg0)
+    public static PlayerEatFoodEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerEatFoodEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4d20bc86((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerEatFoodEvent((nint)handle);

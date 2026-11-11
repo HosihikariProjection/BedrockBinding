@@ -40,23 +40,23 @@ public sealed unsafe partial class DynamicAmbientSound : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static DynamicAmbientSound Create()
+    public static DynamicAmbientSound? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_65a984e1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DynamicAmbientSound((nint)handle);
     }
 
-    public static DynamicAmbientSound Create(global::Hosihikari.Bindings.Bedrock.Interop.DynamicAmbientSound arg0)
+    public static DynamicAmbientSound? Create(global::Hosihikari.Bindings.Bedrock.Interop.DynamicAmbientSound arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_592354f3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DynamicAmbientSound((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class DynamicAmbientSound : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_af3dc148((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DynamicAmbientSound operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DynamicAmbientSound arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DynamicAmbientSound? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DynamicAmbientSound arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DynamicAmbientSound((nint)NativeMethods.TablePtr->C1.hs_method_c1741308((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c1741308((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DynamicAmbientSound((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -40,23 +40,23 @@ public sealed unsafe partial class RakNetSocket2 : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static RakNetSocket2 Create()
+    public static RakNetSocket2? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b63baa8f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakNetSocket2((nint)handle);
     }
 
-    public static RakNetSocket2 Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetSocket2 arg0)
+    public static RakNetSocket2? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetSocket2 arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_2d1babfa((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakNetSocket2((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class RakNetSocket2 : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_50151cf7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetSocket2 operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetSocket2 arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetSocket2? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetSocket2 arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetSocket2((nint)NativeMethods.TablePtr->C2.hs_method_84e676ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_84e676ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetSocket2((nint)__hs_handle, false) : null;
     }
 
 

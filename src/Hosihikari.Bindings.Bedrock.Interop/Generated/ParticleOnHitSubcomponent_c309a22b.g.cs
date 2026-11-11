@@ -56,12 +56,12 @@ public sealed unsafe partial class ParticleOnHitSubcomponent : global::System.ID
     public void _writetoJSON(nint component) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ParticleOnHitSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleOnHitSubcomponent arg0)
+    public static ParticleOnHitSubcomponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleOnHitSubcomponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_60f3a8d8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ParticleOnHitSubcomponent((nint)handle);

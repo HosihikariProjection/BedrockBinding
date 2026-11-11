@@ -40,23 +40,23 @@ public sealed unsafe partial class DataStoreInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static DataStoreInfo Create()
+    public static DataStoreInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d9e0b9d7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DataStoreInfo((nint)handle);
     }
 
-    public static DataStoreInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStoreDetail.DataStoreInfo arg0)
+    public static DataStoreInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStoreDetail.DataStoreInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8c5c3bac((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DataStoreInfo((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class DataStoreInfo : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_cd95396c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStoreDetail.DataStoreInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStoreDetail.DataStoreInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStoreDetail.DataStoreInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStoreDetail.DataStoreInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStoreDetail.DataStoreInfo((nint)NativeMethods.TablePtr->C0.hs_method_e0b5646e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e0b5646e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStoreDetail.DataStoreInfo((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -40,45 +40,45 @@ public sealed unsafe partial class NonOwnerPointer_IContentAccessibilityProvider
         return __hs_handle;
     }
 
-    public static NonOwnerPointer_IContentAccessibilityProvider_ Create()
+    public static NonOwnerPointer_IContentAccessibilityProvider_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5da8e30e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_IContentAccessibilityProvider_((nint)handle);
     }
 
-    public static NonOwnerPointer_IContentAccessibilityProvider_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    public static NonOwnerPointer_IContentAccessibilityProvider_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_767d7de2(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_IContentAccessibilityProvider_((nint)handle);
     }
 
-    public static NonOwnerPointer_IContentAccessibilityProvider_ Create_6b5a45e7()
+    public static NonOwnerPointer_IContentAccessibilityProvider_? Create_6b5a45e7()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6b5a45e7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_IContentAccessibilityProvider_((nint)handle);
     }
 
-    public static NonOwnerPointer_IContentAccessibilityProvider_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider? p)
+    public static NonOwnerPointer_IContentAccessibilityProvider_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider? p)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_bc601579(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_IContentAccessibilityProvider_((nint)handle);
@@ -113,9 +113,10 @@ public sealed unsafe partial class NonOwnerPointer_IContentAccessibilityProvider
         return NativeMethods.TablePtr->C0.hs_method_cdff72b8((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider((nint)NativeMethods.TablePtr->C0.hs_method_b6666ddf((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b6666ddf((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider? operator_operator__()

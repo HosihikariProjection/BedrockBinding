@@ -76,12 +76,12 @@ public sealed unsafe partial class LegacyForestRockFeature : global::System.IDis
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacyForestRockFeature Create()
+    public static LegacyForestRockFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_dfe1d7e9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyForestRockFeature((nint)handle);
@@ -91,12 +91,12 @@ public sealed unsafe partial class LegacyForestRockFeature : global::System.IDis
     public static LegacyForestRockFeature Create(nint registry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacyForestRockFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyForestRockFeature arg0)
+    public static LegacyForestRockFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyForestRockFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b3a07fe3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyForestRockFeature((nint)handle);

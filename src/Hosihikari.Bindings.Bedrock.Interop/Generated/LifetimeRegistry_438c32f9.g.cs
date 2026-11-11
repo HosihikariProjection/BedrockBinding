@@ -48,12 +48,12 @@ public sealed unsafe partial class LifetimeRegistry : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LifetimeRegistry Create()
+    public static LifetimeRegistry? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5e808d63();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LifetimeRegistry((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class LifetimeRegistry : global::System.IDisposable
     public static LifetimeRegistry Create(nint contextId, nint registryRef) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LifetimeRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.LifetimeRegistry arg0)
+    public static LifetimeRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.LifetimeRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1c196258((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LifetimeRegistry((nint)handle);
@@ -134,9 +134,10 @@ public sealed unsafe partial class LifetimeRegistry : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_bf2b612a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.LifetimeRegistry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.LifetimeRegistry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.LifetimeRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.LifetimeRegistry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.LifetimeRegistry((nint)NativeMethods.TablePtr->C3.hs_method_2fa31785((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2fa31785((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.LifetimeRegistry((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

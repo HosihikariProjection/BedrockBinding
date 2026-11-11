@@ -44,12 +44,12 @@ public sealed unsafe partial class ScriptServerVariables : global::System.IDispo
     public nint _ctor(nint packConfigManager, nint contextConfig) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptServerVariables Create()
+    public static ScriptServerVariables? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b7243c16();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptServerVariables((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class ScriptServerVariables : global::System.IDispo
     public static ScriptServerVariables Create(nint packConfigManager, nint contextConfig) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptServerVariables Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerVariables arg0)
+    public static ScriptServerVariables? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerVariables arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_307c722c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptServerVariables((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class ScriptServerVariables : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C3.hs_get_d1f3de51((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerVariables operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerVariables arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerVariables? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerVariables arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerVariables((nint)NativeMethods.TablePtr->C3.hs_method_00e09114((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_00e09114((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerVariables((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

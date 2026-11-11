@@ -48,12 +48,12 @@ public sealed unsafe partial class FileInfo : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileInfo Create()
+    public static FileInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9a445ba0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileInfo((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class FileInfo : global::System.IDisposable
     public static FileInfo Create(nint _filePath, int _fileSize, nint _fileHash) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo arg0)
+    public static FileInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3f9196f2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileInfo((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class FileInfo : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_3d698967((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FileInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FileInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FileInfo((nint)NativeMethods.TablePtr->C1.hs_method_2808cbba((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2808cbba((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FileInfo((nint)__hs_handle, false) : null;
     }
 
 

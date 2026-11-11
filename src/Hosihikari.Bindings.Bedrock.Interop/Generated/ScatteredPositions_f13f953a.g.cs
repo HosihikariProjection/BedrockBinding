@@ -40,23 +40,23 @@ public sealed unsafe partial class ScatteredPositions : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static ScatteredPositions Create()
+    public static ScatteredPositions? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ada59b99();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScatteredPositions((nint)handle);
     }
 
-    public static ScatteredPositions Create(global::Hosihikari.Bindings.Bedrock.Interop.ScatterParams_Nested.ScatteredPositions arg0)
+    public static ScatteredPositions? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScatterParams_Nested.ScatteredPositions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b6d85f9b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScatteredPositions((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class ScatteredPositions : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C3.hs_get_4b5aa46d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScatterParams_Nested.ScatteredPositions operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScatterParams_Nested.ScatteredPositions arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScatterParams_Nested.ScatteredPositions? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScatterParams_Nested.ScatteredPositions arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScatterParams_Nested.ScatteredPositions((nint)NativeMethods.TablePtr->C3.hs_method_ab82d47e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ab82d47e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScatterParams_Nested.ScatteredPositions((nint)__hs_handle, false) : null;
     }
 
 

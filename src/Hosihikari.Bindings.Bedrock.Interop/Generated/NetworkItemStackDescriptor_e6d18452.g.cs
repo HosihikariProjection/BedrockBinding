@@ -71,34 +71,34 @@ public sealed unsafe partial class NetworkItemStackDescriptor : global::System.I
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetworkItemStackDescriptor Create()
+    public static NetworkItemStackDescriptor? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_979c63c3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkItemStackDescriptor((nint)handle);
     }
 
-    public static NetworkItemStackDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public static NetworkItemStackDescriptor? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5720ea22((void*)item.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkItemStackDescriptor((nint)handle);
     }
 
-    public static NetworkItemStackDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkItemStackDescriptor arg0)
+    public static NetworkItemStackDescriptor? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkItemStackDescriptor arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6b1e138b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkItemStackDescriptor((nint)handle);
@@ -132,9 +132,10 @@ public sealed unsafe partial class NetworkItemStackDescriptor : global::System.I
         get => (nint)NativeMethods.TablePtr->C2.hs_get_3b6e1fc4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkItemStackDescriptor operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkItemStackDescriptor arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkItemStackDescriptor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkItemStackDescriptor arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkItemStackDescriptor((nint)NativeMethods.TablePtr->C2.hs_method_8df12852((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8df12852((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkItemStackDescriptor((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

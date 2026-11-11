@@ -40,23 +40,23 @@ public sealed unsafe partial class CopyWorldResult : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CopyWorldResult Create()
+    public static CopyWorldResult? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5ec3461c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CopyWorldResult((nint)handle);
     }
 
-    public static CopyWorldResult Create(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.CopyWorldResult arg0)
+    public static CopyWorldResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.CopyWorldResult arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1bea212e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CopyWorldResult((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class CopyWorldResult : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_785e4a72((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.CopyWorldResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.CopyWorldResult arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.CopyWorldResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.CopyWorldResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.CopyWorldResult((nint)NativeMethods.TablePtr->C1.hs_method_9d556fad((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9d556fad((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.CopyWorldResult((nint)__hs_handle, false) : null;
     }
 
     public int outcome

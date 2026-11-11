@@ -40,12 +40,12 @@ public sealed unsafe partial class IDebuggerController : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static IDebuggerController Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IDebuggerController arg0)
+    public static IDebuggerController? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IDebuggerController arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_49bc672a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IDebuggerController((nint)handle);

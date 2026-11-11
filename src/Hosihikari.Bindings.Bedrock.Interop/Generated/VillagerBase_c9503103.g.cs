@@ -739,12 +739,12 @@ public sealed unsafe partial class VillagerBase : global::System.IDisposable
     public void _readAdditionalSaveData(nint tag, nint dataLoadHelper) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VillagerBase Create()
+    public static VillagerBase? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b6a8b563();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VillagerBase((nint)handle);

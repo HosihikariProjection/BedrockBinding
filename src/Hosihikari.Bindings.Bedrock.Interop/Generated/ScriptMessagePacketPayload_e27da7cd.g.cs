@@ -44,23 +44,23 @@ public sealed unsafe partial class ScriptMessagePacketPayload : global::System.I
     public nint _ctor(nint messageId, nint messageValue) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptMessagePacketPayload Create()
+    public static ScriptMessagePacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0d0a521c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptMessagePacketPayload((nint)handle);
     }
 
-    public static ScriptMessagePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMessagePacketPayload arg0)
+    public static ScriptMessagePacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMessagePacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a991cd82((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptMessagePacketPayload((nint)handle);

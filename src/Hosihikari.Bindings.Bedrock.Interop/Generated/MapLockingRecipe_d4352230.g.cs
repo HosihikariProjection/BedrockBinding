@@ -72,12 +72,12 @@ public sealed unsafe partial class MapLockingRecipe : global::System.IDisposable
     public static nint CartographyTableID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MapLockingRecipe Create(global::Hosihikari.Bindings.Bedrock.Interop.MapLockingRecipe arg0)
+    public static MapLockingRecipe? Create(global::Hosihikari.Bindings.Bedrock.Interop.MapLockingRecipe arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_27993b97((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MapLockingRecipe((nint)handle);
@@ -93,9 +93,10 @@ public sealed unsafe partial class MapLockingRecipe : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_4dfe1c36((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient getIngredient(int x, int y)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? getIngredient(int x, int y)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)NativeMethods.TablePtr->C2.hs_method_feff0386((void*)__hosihikari_shim_handle, x, y), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_feff0386((void*)__hosihikari_shim_handle, x, y);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
     }
 
     public nint getResultItems()

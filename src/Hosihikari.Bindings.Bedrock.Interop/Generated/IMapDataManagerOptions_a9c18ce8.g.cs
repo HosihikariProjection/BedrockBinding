@@ -40,20 +40,21 @@ public sealed unsafe partial class IMapDataManagerOptions : global::System.IDisp
         return __hs_handle;
     }
 
-    public static IMapDataManagerOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.IMapDataManagerOptions arg0)
+    public static IMapDataManagerOptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.IMapDataManagerOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2fd24446((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IMapDataManagerOptions((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getWorldCenter()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getWorldCenter()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_20df32af((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_20df32af((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
     }
 
     public bool hasMapsCenteredToOrigin()

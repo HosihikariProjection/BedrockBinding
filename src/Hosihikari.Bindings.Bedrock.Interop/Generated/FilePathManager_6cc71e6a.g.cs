@@ -62,12 +62,12 @@ public sealed unsafe partial class FilePathManager : global::System.IDisposable
     public static nint ARCHIVE_DIR() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FilePathManager Create()
+    public static FilePathManager? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3766b08c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilePathManager((nint)handle);
@@ -77,12 +77,12 @@ public sealed unsafe partial class FilePathManager : global::System.IDisposable
     public static FilePathManager Create(nint paths) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FilePathManager Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager arg0)
+    public static FilePathManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_865f7932((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilePathManager((nint)handle);

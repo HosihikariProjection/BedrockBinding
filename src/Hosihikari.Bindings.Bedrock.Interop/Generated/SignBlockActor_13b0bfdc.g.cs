@@ -160,12 +160,12 @@ public sealed unsafe partial class SignBlockActor : global::System.IDisposable
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SignBlockActor Create()
+    public static SignBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_dd625cb7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SignBlockActor((nint)handle);

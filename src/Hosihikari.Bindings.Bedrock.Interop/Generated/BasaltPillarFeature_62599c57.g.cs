@@ -44,12 +44,12 @@ public sealed unsafe partial class BasaltPillarFeature : global::System.IDisposa
     public bool _place(nint region, nint pos, nint random) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BasaltPillarFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.BasaltPillarFeature arg0)
+    public static BasaltPillarFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.BasaltPillarFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_05965952((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BasaltPillarFeature((nint)handle);

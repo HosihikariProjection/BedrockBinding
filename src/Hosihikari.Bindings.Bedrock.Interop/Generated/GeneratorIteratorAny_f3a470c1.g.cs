@@ -48,12 +48,12 @@ public sealed unsafe partial class GeneratorIteratorAny : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GeneratorIteratorAny Create()
+    public static GeneratorIteratorAny? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4dc4a6a8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GeneratorIteratorAny((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class GeneratorIteratorAny : global::System.IDispos
     public static GeneratorIteratorAny Create(nint runtime, nint contextId, nint scope, nint generatorIteratorHandle, nint inspector) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GeneratorIteratorAny Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GeneratorIteratorAny arg0)
+    public static GeneratorIteratorAny? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GeneratorIteratorAny arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ad26776d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GeneratorIteratorAny((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class GeneratorIteratorAny : global::System.IDispos
     public nint operator_assign(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GeneratorIteratorAny operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GeneratorIteratorAny arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GeneratorIteratorAny? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GeneratorIteratorAny arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GeneratorIteratorAny((nint)NativeMethods.TablePtr->C3.hs_method_50326458((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_50326458((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GeneratorIteratorAny((nint)__hs_handle, false) : null;
     }
 
 

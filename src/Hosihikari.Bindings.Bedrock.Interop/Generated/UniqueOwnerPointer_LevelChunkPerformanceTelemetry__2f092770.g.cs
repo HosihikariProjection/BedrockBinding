@@ -40,12 +40,12 @@ public sealed unsafe partial class UniqueOwnerPointer_LevelChunkPerformanceTelem
         return __hs_handle;
     }
 
-    public static UniqueOwnerPointer_LevelChunkPerformanceTelemetry_ Create()
+    public static UniqueOwnerPointer_LevelChunkPerformanceTelemetry_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_12893431();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_LevelChunkPerformanceTelemetry_((nint)handle);
@@ -55,12 +55,12 @@ public sealed unsafe partial class UniqueOwnerPointer_LevelChunkPerformanceTelem
     public static UniqueOwnerPointer_LevelChunkPerformanceTelemetry_ Create_09690496(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static UniqueOwnerPointer_LevelChunkPerformanceTelemetry_ Create_e92a0699()
+    public static UniqueOwnerPointer_LevelChunkPerformanceTelemetry_? Create_e92a0699()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e92a0699();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_LevelChunkPerformanceTelemetry_((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class UniqueOwnerPointer_LevelChunkPerformanceTelem
         return NativeMethods.TablePtr->C0.hs_method_68a4a6b1((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkPerformanceTelemetry operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkPerformanceTelemetry? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkPerformanceTelemetry((nint)NativeMethods.TablePtr->C0.hs_method_8b6c5551((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8b6c5551((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkPerformanceTelemetry((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkPerformanceTelemetry? operator_operator__()
@@ -113,9 +114,10 @@ public sealed unsafe partial class UniqueOwnerPointer_LevelChunkPerformanceTelem
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelChunkPerformanceTelemetry_ operator_assign()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelChunkPerformanceTelemetry_? operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelChunkPerformanceTelemetry_((nint)NativeMethods.TablePtr->C0.hs_method_0d1feb0f((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_0d1feb0f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelChunkPerformanceTelemetry_((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelChunkPerformanceTelemetry_ other)

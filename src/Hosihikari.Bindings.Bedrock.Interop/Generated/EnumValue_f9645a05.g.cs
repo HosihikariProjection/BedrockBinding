@@ -44,23 +44,23 @@ public sealed unsafe partial class EnumValue : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EnumValue Create()
+    public static EnumValue? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7b015957();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EnumValue((nint)handle);
     }
 
-    public static EnumValue Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.EnumBinding_Nested.EnumValue arg0)
+    public static EnumValue? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.EnumBinding_Nested.EnumValue arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e842ad95((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EnumValue((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class EnumValue : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_a11638b4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.EnumBinding_Nested.EnumValue operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.EnumBinding_Nested.EnumValue arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.EnumBinding_Nested.EnumValue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.EnumBinding_Nested.EnumValue arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.EnumBinding_Nested.EnumValue((nint)NativeMethods.TablePtr->C3.hs_method_fabeef77((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fabeef77((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.EnumBinding_Nested.EnumValue((nint)__hs_handle, false) : null;
     }
 
 

@@ -122,23 +122,23 @@ public sealed unsafe partial class BeaconBlockActor : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_16e2d621((void*)__hosihikari_shim_handle, (void*)region.Handle);
     }
 
-    public static BeaconBlockActor Create()
+    public static BeaconBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_af11a06b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BeaconBlockActor((nint)handle);
     }
 
-    public static BeaconBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool permanentlyRendered)
+    public static BeaconBlockActor? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool permanentlyRendered)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ae999b6c((void*)pos.Handle, permanentlyRendered);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BeaconBlockActor((nint)handle);
@@ -178,9 +178,10 @@ public sealed unsafe partial class BeaconBlockActor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_49cd9021((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C0.hs_method_0c0b0e93((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_0c0b0e93((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int getMaxStackSize()

@@ -64,12 +64,12 @@ public sealed unsafe partial class HorseEquipContainerValidation : global::Syste
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static HorseEquipContainerValidation Create()
+    public static HorseEquipContainerValidation? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c624bf99();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HorseEquipContainerValidation((nint)handle);
@@ -79,12 +79,12 @@ public sealed unsafe partial class HorseEquipContainerValidation : global::Syste
     public static HorseEquipContainerValidation Create(nint screenContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static HorseEquipContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.HorseEquipContainerValidation arg0)
+    public static HorseEquipContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.HorseEquipContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_92eaf64e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HorseEquipContainerValidation((nint)handle);

@@ -44,23 +44,23 @@ public sealed unsafe partial class BlockMaterialInstancesComponent : global::Sys
     public nint _ctor(nint blockMaterialInstancesDescription) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockMaterialInstancesComponent Create()
+    public static BlockMaterialInstancesComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f4f89d6f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockMaterialInstancesComponent((nint)handle);
     }
 
-    public static BlockMaterialInstancesComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesComponent arg0)
+    public static BlockMaterialInstancesComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_37e2e662((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockMaterialInstancesComponent((nint)handle);

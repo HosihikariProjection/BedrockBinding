@@ -40,23 +40,23 @@ public sealed unsafe partial class RemoteClient : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static RemoteClient Create()
+    public static RemoteClient? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_86c9f5f4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RemoteClient((nint)handle);
     }
 
-    public static RemoteClient Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RemoteClient arg0)
+    public static RemoteClient? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RemoteClient arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fe731882((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RemoteClient((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class RemoteClient : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_0978a8cd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RemoteClient operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RemoteClient arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RemoteClient? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RemoteClient arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RemoteClient((nint)NativeMethods.TablePtr->C3.hs_method_7ad77ec2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7ad77ec2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RemoteClient((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

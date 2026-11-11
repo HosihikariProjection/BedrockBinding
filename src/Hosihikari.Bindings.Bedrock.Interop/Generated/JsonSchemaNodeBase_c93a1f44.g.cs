@@ -48,23 +48,23 @@ public sealed unsafe partial class JsonSchemaNodeBase : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JsonSchemaNodeBase Create()
+    public static JsonSchemaNodeBase? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_06a3f71e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JsonSchemaNodeBase((nint)handle);
     }
 
-    public static JsonSchemaNodeBase Create(global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.JsonSchemaNodeBase arg0)
+    public static JsonSchemaNodeBase? Create(global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.JsonSchemaNodeBase arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9b955b62((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JsonSchemaNodeBase((nint)handle);
@@ -124,9 +124,10 @@ public sealed unsafe partial class JsonSchemaNodeBase : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C2.hs_get_7bdc041a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.JsonSchemaNodeBase operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.JsonSchemaNodeBase arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.JsonSchemaNodeBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.JsonSchemaNodeBase arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.JsonSchemaNodeBase((nint)NativeMethods.TablePtr->C2.hs_method_a7a62282((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a7a62282((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.JsonSchemaNodeBase((nint)__hs_handle, false) : null;
     }
 
 

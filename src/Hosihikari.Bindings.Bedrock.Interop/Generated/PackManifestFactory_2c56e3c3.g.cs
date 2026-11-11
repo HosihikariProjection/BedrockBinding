@@ -62,12 +62,12 @@ public sealed unsafe partial class PackManifestFactory : global::System.IDisposa
     public static nint MANIFEST_PACK_UUID_UPGRADE_SALT() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PackManifestFactory Create()
+    public static PackManifestFactory? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_42ea9be3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackManifestFactory((nint)handle);
@@ -77,12 +77,12 @@ public sealed unsafe partial class PackManifestFactory : global::System.IDisposa
     public static PackManifestFactory Create(nint packCapabilityRegistry, nint impl, nint context, nint loc) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PackManifestFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.PackManifestFactory arg0)
+    public static PackManifestFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.PackManifestFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_53a1c4ad((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackManifestFactory((nint)handle);
@@ -130,9 +130,10 @@ public sealed unsafe partial class PackManifestFactory : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C2.hs_get_2c9d2c4a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PackManifestFactory operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackManifestFactory arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PackManifestFactory? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackManifestFactory arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackManifestFactory((nint)NativeMethods.TablePtr->C2.hs_method_80594f8d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_80594f8d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackManifestFactory((nint)__hs_handle, false) : null;
     }
 
 

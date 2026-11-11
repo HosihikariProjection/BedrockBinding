@@ -40,12 +40,12 @@ public sealed unsafe partial class IActorManagerProxy : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static IActorManagerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.IActorManagerProxy arg0)
+    public static IActorManagerProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.IActorManagerProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7ff94b20((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IActorManagerProxy((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class IActorManagerProxy : global::System.IDisposab
         NativeMethods.TablePtr->C1.hs_method_20d69b65((void*)__hosihikari_shim_handle, (void*)actor.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__ActorValidationError_ validate(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__ActorValidationError_? validate(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__ActorValidationError_((nint)NativeMethods.TablePtr->C1.hs_method_d34bef77((void*)__hosihikari_shim_handle, (void*)actor.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d34bef77((void*)__hosihikari_shim_handle, (void*)actor.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__ActorValidationError_((nint)__hs_handle) : null;
     }
 
 

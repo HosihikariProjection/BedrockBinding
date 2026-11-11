@@ -52,12 +52,12 @@ public sealed unsafe partial class RemovedIntState : global::System.IDisposable
     public ulong _valueCount() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RemovedIntState Create(global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.RemovedIntState arg0)
+    public static RemovedIntState? Create(global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.RemovedIntState arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7e635595((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RemovedIntState((nint)handle);

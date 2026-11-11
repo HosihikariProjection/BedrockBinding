@@ -48,23 +48,23 @@ public sealed unsafe partial class ParameterList : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ParameterList Create()
+    public static ParameterList? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a89c17d0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ParameterList((nint)handle);
     }
 
-    public static ParameterList Create(global::Hosihikari.Bindings.Bedrock.Interop.ParameterList arg0)
+    public static ParameterList? Create(global::Hosihikari.Bindings.Bedrock.Interop.ParameterList arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1fcc3bbd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ParameterList((nint)handle);

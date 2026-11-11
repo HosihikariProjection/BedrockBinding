@@ -44,23 +44,23 @@ public sealed unsafe partial class FilterInputs : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FilterInputs Create()
+    public static FilterInputs? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4e67fdac();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilterInputs((nint)handle);
     }
 
-    public static FilterInputs Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs arg0)
+    public static FilterInputs? Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_40eab7a4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilterInputs((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class FilterInputs : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_db8bd672((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs((nint)NativeMethods.TablePtr->C1.hs_method_deef21b0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_deef21b0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs((nint)__hs_handle, false) : null;
     }
 
 

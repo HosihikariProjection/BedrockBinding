@@ -40,23 +40,23 @@ public sealed unsafe partial class ApplyArguments : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ApplyArguments Create()
+    public static ApplyArguments? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_94685342();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ApplyArguments((nint)handle);
     }
 
-    public static ApplyArguments Create(global::Hosihikari.Bindings.Bedrock.Interop.LootItemFunction_Nested.ApplyArguments arg0)
+    public static ApplyArguments? Create(global::Hosihikari.Bindings.Bedrock.Interop.LootItemFunction_Nested.ApplyArguments arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e48fb1d8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ApplyArguments((nint)handle);
@@ -91,9 +91,10 @@ public sealed unsafe partial class ApplyArguments : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_705fe97c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LootItemFunction_Nested.ApplyArguments operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemFunction_Nested.ApplyArguments arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LootItemFunction_Nested.ApplyArguments? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemFunction_Nested.ApplyArguments arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LootItemFunction_Nested.ApplyArguments((nint)NativeMethods.TablePtr->C2.hs_method_3a9a5cf4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3a9a5cf4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LootItemFunction_Nested.ApplyArguments((nint)__hs_handle, false) : null;
     }
 
 

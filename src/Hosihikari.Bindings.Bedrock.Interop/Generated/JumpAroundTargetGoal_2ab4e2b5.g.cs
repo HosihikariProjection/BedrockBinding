@@ -90,12 +90,12 @@ public sealed unsafe partial class JumpAroundTargetGoal : global::System.IDispos
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JumpAroundTargetGoal Create()
+    public static JumpAroundTargetGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_44866c56();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JumpAroundTargetGoal((nint)handle);
@@ -105,12 +105,12 @@ public sealed unsafe partial class JumpAroundTargetGoal : global::System.IDispos
     public static JumpAroundTargetGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JumpAroundTargetGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal arg0)
+    public static JumpAroundTargetGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_618c871e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JumpAroundTargetGoal((nint)handle);
@@ -305,9 +305,10 @@ public sealed unsafe partial class JumpAroundTargetGoal : global::System.IDispos
         set => NativeMethods.TablePtr->C2.hs_set_f0bb81bf((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal((nint)NativeMethods.TablePtr->C2.hs_method_9e22d082((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9e22d082((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

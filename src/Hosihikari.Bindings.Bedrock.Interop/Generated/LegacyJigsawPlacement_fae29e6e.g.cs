@@ -44,23 +44,23 @@ public sealed unsafe partial class LegacyJigsawPlacement : global::System.IDispo
     public nint _ctor(int maxDepth, nint factory) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::unique_ptr<PoolElementStructurePiece>' is not supported.");
 
-    public static LegacyJigsawPlacement Create()
+    public static LegacyJigsawPlacement? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b41efae7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyJigsawPlacement((nint)handle);
     }
 
-    public static LegacyJigsawPlacement Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyJigsawPlacement arg0)
+    public static LegacyJigsawPlacement? Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyJigsawPlacement arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_48f9ffec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyJigsawPlacement((nint)handle);

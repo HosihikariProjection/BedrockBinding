@@ -40,12 +40,12 @@ public sealed unsafe partial class ITickingAreaView : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ITickingAreaView Create(global::Hosihikari.Bindings.Bedrock.Interop.ITickingAreaView arg0)
+    public static ITickingAreaView? Create(global::Hosihikari.Bindings.Bedrock.Interop.ITickingAreaView arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_694c7ad0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ITickingAreaView((nint)handle);
@@ -71,14 +71,16 @@ public sealed unsafe partial class ITickingAreaView : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bounds getBoundsCopy()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bounds? getBoundsCopy()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bounds((nint)NativeMethods.TablePtr->C1.hs_method_a75612d2((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a75612d2((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bounds((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType getDimensionId()
+    public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? getDimensionId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C1.hs_method_1158aa83((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1158aa83((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
     }
 
     public void init(global::Hosihikari.Bindings.Bedrock.Interop.Bounds bounds, bool isCircle)

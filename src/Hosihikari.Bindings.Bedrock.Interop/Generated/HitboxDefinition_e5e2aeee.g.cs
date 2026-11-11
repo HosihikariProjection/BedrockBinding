@@ -40,12 +40,12 @@ public sealed unsafe partial class HitboxDefinition : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static HitboxDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.HitboxDefinition arg0)
+    public static HitboxDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.HitboxDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3d864e4a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HitboxDefinition((nint)handle);

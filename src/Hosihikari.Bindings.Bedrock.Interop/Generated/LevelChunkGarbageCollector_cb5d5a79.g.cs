@@ -40,23 +40,23 @@ public sealed unsafe partial class LevelChunkGarbageCollector : global::System.I
         return __hs_handle;
     }
 
-    public static LevelChunkGarbageCollector Create()
+    public static LevelChunkGarbageCollector? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_10303fb5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunkGarbageCollector((nint)handle);
     }
 
-    public static LevelChunkGarbageCollector Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkGarbageCollector arg0)
+    public static LevelChunkGarbageCollector? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkGarbageCollector arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_93f30aac((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunkGarbageCollector((nint)handle);
@@ -94,9 +94,10 @@ public sealed unsafe partial class LevelChunkGarbageCollector : global::System.I
         get => (nint)NativeMethods.TablePtr->C2.hs_get_bc094eea((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkGarbageCollector operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkGarbageCollector arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkGarbageCollector? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkGarbageCollector arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkGarbageCollector((nint)NativeMethods.TablePtr->C2.hs_method_2524c2fd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2524c2fd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkGarbageCollector((nint)__hs_handle, false) : null;
     }
 
 

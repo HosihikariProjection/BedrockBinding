@@ -40,12 +40,12 @@ public sealed unsafe partial class ToastRequestPacketPayload : global::System.ID
         return __hs_handle;
     }
 
-    public static ToastRequestPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ToastRequestPacketPayload arg0)
+    public static ToastRequestPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.ToastRequestPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_516516c9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ToastRequestPacketPayload((nint)handle);

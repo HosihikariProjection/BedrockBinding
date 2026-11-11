@@ -80,23 +80,23 @@ public sealed unsafe partial class MobEffect : global::System.IDisposable
     public static nint DEFAULT_COLOR() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MobEffect Create()
+    public static MobEffect? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6f3575fc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEffect((nint)handle);
     }
 
-    public static MobEffect Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEffect arg0)
+    public static MobEffect? Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEffect arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9dfe6930((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEffect((nint)handle);

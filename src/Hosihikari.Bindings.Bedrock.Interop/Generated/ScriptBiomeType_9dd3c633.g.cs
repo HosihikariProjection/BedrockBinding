@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptBiomeType : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ScriptBiomeType Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBiomeType arg0)
+    public static ScriptBiomeType? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBiomeType arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d3fac24a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBiomeType((nint)handle);

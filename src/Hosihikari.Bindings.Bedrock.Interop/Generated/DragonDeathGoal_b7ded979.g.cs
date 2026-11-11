@@ -86,23 +86,23 @@ public sealed unsafe partial class DragonDeathGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DragonDeathGoal Create()
+    public static DragonDeathGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8f21dea0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DragonDeathGoal((nint)handle);
     }
 
-    public static DragonDeathGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.DragonDeathGoal arg0)
+    public static DragonDeathGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.DragonDeathGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_95fa3d32((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DragonDeathGoal((nint)handle);
@@ -150,9 +150,10 @@ public sealed unsafe partial class DragonDeathGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_7038e2ec((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DragonDeathGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DragonDeathGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DragonDeathGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DragonDeathGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DragonDeathGoal((nint)NativeMethods.TablePtr->C1.hs_method_8f1c4a60((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8f1c4a60((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DragonDeathGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

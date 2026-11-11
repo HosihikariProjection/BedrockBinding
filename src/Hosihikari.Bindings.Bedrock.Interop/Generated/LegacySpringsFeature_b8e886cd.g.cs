@@ -72,12 +72,12 @@ public sealed unsafe partial class LegacySpringsFeature : global::System.IDispos
     public bool _place(nint region, nint origin, nint random) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacySpringsFeature Create()
+    public static LegacySpringsFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b866e445();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacySpringsFeature((nint)handle);
@@ -87,12 +87,12 @@ public sealed unsafe partial class LegacySpringsFeature : global::System.IDispos
     public static LegacySpringsFeature Create(nint registry, nint baseGameVersion) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LegacySpringsFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacySpringsFeature arg0)
+    public static LegacySpringsFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacySpringsFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c6643b19((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacySpringsFeature((nint)handle);

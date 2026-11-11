@@ -66,12 +66,12 @@ public sealed unsafe partial class IsWaterLoggedTest : global::System.IDisposabl
     public nint _getName() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IsWaterLoggedTest Create(global::Hosihikari.Bindings.Bedrock.Interop.IsWaterLoggedTest arg0)
+    public static IsWaterLoggedTest? Create(global::Hosihikari.Bindings.Bedrock.Interop.IsWaterLoggedTest arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_283586a0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IsWaterLoggedTest((nint)handle);

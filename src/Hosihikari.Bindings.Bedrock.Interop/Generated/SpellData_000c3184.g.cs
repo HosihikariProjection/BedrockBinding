@@ -48,12 +48,12 @@ public sealed unsafe partial class SpellData : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpellData Create()
+    public static SpellData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_02cd53f6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpellData((nint)handle);
@@ -127,9 +127,10 @@ public sealed unsafe partial class SpellData : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_d5da0cd0((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellData((nint)NativeMethods.TablePtr->C3.hs_method_6938d370((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6938d370((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellData((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

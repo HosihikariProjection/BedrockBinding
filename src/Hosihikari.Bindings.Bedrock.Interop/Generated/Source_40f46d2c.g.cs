@@ -50,12 +50,12 @@ public sealed unsafe partial class Source : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_11f609b6((void*)__hosihikari_shim_handle);
     }
 
-    public static Source Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioMixer_Nested.Source arg0)
+    public static Source? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioMixer_Nested.Source arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_178bdd88((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Source((nint)handle);

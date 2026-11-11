@@ -40,12 +40,12 @@ public sealed unsafe partial class HomeRestrictionInfo : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static HomeRestrictionInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData_Nested.HomeRestrictionInfo arg0)
+    public static HomeRestrictionInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData_Nested.HomeRestrictionInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ad8b30d5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HomeRestrictionInfo((nint)handle);

@@ -68,23 +68,23 @@ public sealed unsafe partial class Potion : global::System.IDisposable
     public static nint Poison() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Potion Create()
+    public static Potion? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a6714c77();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Potion((nint)handle);
     }
 
-    public static Potion Create(global::Hosihikari.Bindings.Bedrock.Interop.Potion arg0)
+    public static Potion? Create(global::Hosihikari.Bindings.Bedrock.Interop.Potion arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c3755163((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Potion((nint)handle);

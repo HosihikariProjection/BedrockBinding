@@ -40,34 +40,40 @@ public sealed unsafe partial class associative_adapter_Bedrock__typeid_t_void___
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9 begin_d4425280()
+    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9? begin_d4425280()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9((nint)NativeMethods.TablePtr->C4.hs_method_d4425280((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d4425280((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t_void___35ccfb98 begin_3ea0ceef()
+    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t_void___35ccfb98? begin_3ea0ceef()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t_void___35ccfb98((nint)NativeMethods.TablePtr->C4.hs_method_3ea0ceef((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3ea0ceef((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t_void___35ccfb98((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9 cbegin()
+    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9? cbegin()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9((nint)NativeMethods.TablePtr->C4.hs_method_f36b702f((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f36b702f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9 cend()
+    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9? cend()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9((nint)NativeMethods.TablePtr->C4.hs_method_ed75a5ad((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ed75a5ad((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9 end_16f6aca9()
+    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9? end_16f6aca9()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9((nint)NativeMethods.TablePtr->C4.hs_method_16f6aca9((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_16f6aca9((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_const_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t__30eeaff9((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t_void___35ccfb98 end_856cd213()
+    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t_void___35ccfb98? end_856cd213()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t_void___35ccfb98((nint)NativeMethods.TablePtr->C4.hs_method_856cd213((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_856cd213((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_Bedrock__typeid_t_void___std__unique_ptr_BlockCompon_3d58a188.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_Bedrock__typeid_t_void___35ccfb98((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

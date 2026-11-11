@@ -193,12 +193,12 @@ public sealed unsafe partial class RandomizableBlockActorContainer : global::Sys
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RandomizableBlockActorContainer Create()
+    public static RandomizableBlockActorContainer? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0f906fcd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RandomizableBlockActorContainer((nint)handle);

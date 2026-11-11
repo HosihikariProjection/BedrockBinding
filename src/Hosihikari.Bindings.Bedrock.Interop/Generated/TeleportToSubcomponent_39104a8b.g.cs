@@ -56,12 +56,12 @@ public sealed unsafe partial class TeleportToSubcomponent : global::System.IDisp
     public void _writetoJSON(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TeleportToSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.TeleportToSubcomponent arg0)
+    public static TeleportToSubcomponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.TeleportToSubcomponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_82ff2001((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TeleportToSubcomponent((nint)handle);

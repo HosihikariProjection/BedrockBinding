@@ -49,12 +49,12 @@ public sealed unsafe partial class EnableNonOwnerReferences : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EnableNonOwnerReferences Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.EnableNonOwnerReferences arg0)
+    public static EnableNonOwnerReferences? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.EnableNonOwnerReferences arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6f760c8d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EnableNonOwnerReferences((nint)handle);

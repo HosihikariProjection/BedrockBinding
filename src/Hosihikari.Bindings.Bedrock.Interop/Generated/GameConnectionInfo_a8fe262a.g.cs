@@ -77,12 +77,12 @@ public sealed unsafe partial class GameConnectionInfo : global::System.IDisposab
     public static GameConnectionInfo Create(nint connectionType, nint netherNetId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GameConnectionInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo arg0)
+    public static GameConnectionInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b69d4340((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameConnectionInfo((nint)handle);

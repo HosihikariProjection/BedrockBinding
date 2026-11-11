@@ -40,12 +40,12 @@ public sealed unsafe partial class IActorManagerConnector : global::System.IDisp
         return __hs_handle;
     }
 
-    public static IActorManagerConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.IActorManagerConnector arg0)
+    public static IActorManagerConnector? Create(global::Hosihikari.Bindings.Bedrock.Interop.IActorManagerConnector arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_48d7b0ca((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IActorManagerConnector((nint)handle);

@@ -86,12 +86,12 @@ public sealed unsafe partial class PageContent : global::System.IDisposable
     public static nint BLANK_PAGE() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PageContent Create()
+    public static PageContent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c1eb0ce0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PageContent((nint)handle);
@@ -101,7 +101,7 @@ public sealed unsafe partial class PageContent : global::System.IDisposable
     public static PageContent Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PageContent Create(string nText, string? nFilteredText)
+    public static PageContent? Create(string nText, string? nFilteredText)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nText);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -132,7 +132,7 @@ public sealed unsafe partial class PageContent : global::System.IDisposable
                 var handle = NativeMethods.TablePtr->C2.hs_create_fec601a6(__hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, nFilteredText is not null);
                 if (handle == null)
                 {
-                    throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                    return null;
                 }
 
                 return new PageContent((nint)handle);

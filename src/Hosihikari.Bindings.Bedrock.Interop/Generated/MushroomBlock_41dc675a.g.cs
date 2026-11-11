@@ -411,12 +411,12 @@ public sealed unsafe partial class MushroomBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MushroomBlock Create()
+    public static MushroomBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cf4f7885();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MushroomBlock((nint)handle);

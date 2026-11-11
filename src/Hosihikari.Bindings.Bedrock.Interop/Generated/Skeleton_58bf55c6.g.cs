@@ -756,12 +756,12 @@ public sealed unsafe partial class Skeleton : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Skeleton Create()
+    public static Skeleton? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5c23633f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Skeleton((nint)handle);
@@ -781,9 +781,10 @@ public sealed unsafe partial class Skeleton : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_d5005d5b((void*)__hosihikari_shim_handle, (void*)source.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult doHurtTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor? target, nint cause)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? doHurtTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor? target, nint cause)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C3.hs_method_e958b418((void*)__hosihikari_shim_handle, (void*)(target?.Handle ?? 0), (void*)cause));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e958b418((void*)__hosihikari_shim_handle, (void*)(target?.Handle ?? 0), (void*)cause);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public void getDebugText(string[] outputInfo)

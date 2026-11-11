@@ -49,23 +49,23 @@ public sealed unsafe partial class Parameter : global::System.IDisposable
     public nint _ctor(float min, float max) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Parameter Create()
+    public static Parameter? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_300abcf3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Parameter((nint)handle);
     }
 
-    public static Parameter Create(nint min, nint max)
+    public static Parameter? Create(nint min, nint max)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_151a6b5a((void*)min, (void*)max);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Parameter((nint)handle);

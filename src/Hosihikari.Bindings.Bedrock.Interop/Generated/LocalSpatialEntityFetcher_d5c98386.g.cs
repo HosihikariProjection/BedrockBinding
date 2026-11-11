@@ -40,23 +40,23 @@ public sealed unsafe partial class LocalSpatialEntityFetcher : global::System.ID
         return __hs_handle;
     }
 
-    public static LocalSpatialEntityFetcher Create()
+    public static LocalSpatialEntityFetcher? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f7b70a13();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LocalSpatialEntityFetcher((nint)handle);
     }
 
-    public static LocalSpatialEntityFetcher Create(global::Hosihikari.Bindings.Bedrock.Interop.LocalSpatialEntityFetcher arg0)
+    public static LocalSpatialEntityFetcher? Create(global::Hosihikari.Bindings.Bedrock.Interop.LocalSpatialEntityFetcher arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_af820b24((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LocalSpatialEntityFetcher((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class LocalSpatialEntityFetcher : global::System.ID
         get => (nint)NativeMethods.TablePtr->C2.hs_get_405c3ed1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LocalSpatialEntityFetcher operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LocalSpatialEntityFetcher arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LocalSpatialEntityFetcher? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LocalSpatialEntityFetcher arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LocalSpatialEntityFetcher((nint)NativeMethods.TablePtr->C2.hs_method_4a88a033((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4a88a033((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LocalSpatialEntityFetcher((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

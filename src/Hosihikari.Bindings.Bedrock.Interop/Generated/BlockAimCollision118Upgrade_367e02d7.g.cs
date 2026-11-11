@@ -48,12 +48,12 @@ public sealed unsafe partial class BlockAimCollision118Upgrade : global::System.
     public void _upgradeToNext(nint document, nint arg1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockAimCollision118Upgrade Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSelectionBoxVersioning.BlockAimCollision118Upgrade arg0)
+    public static BlockAimCollision118Upgrade? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSelectionBoxVersioning.BlockAimCollision118Upgrade arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_aede26c7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockAimCollision118Upgrade((nint)handle);

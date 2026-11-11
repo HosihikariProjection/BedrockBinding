@@ -48,12 +48,12 @@ public sealed unsafe partial class Text : global::System.IDisposable
     public static nint SIGN_PERSIST_FORMATTING_TAG() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Text Create(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.Text arg0)
+    public static Text? Create(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.Text arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_92d3dd65((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Text((nint)handle);

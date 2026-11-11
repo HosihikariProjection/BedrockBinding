@@ -56,12 +56,12 @@ public sealed unsafe partial class CompressedNetworkPeer : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CompressedNetworkPeer Create(global::Hosihikari.Bindings.Bedrock.Interop.CompressedNetworkPeer arg0)
+    public static CompressedNetworkPeer? Create(global::Hosihikari.Bindings.Bedrock.Interop.CompressedNetworkPeer arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_58f93f47((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CompressedNetworkPeer((nint)handle);
@@ -94,9 +94,10 @@ public sealed unsafe partial class CompressedNetworkPeer : global::System.IDispo
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus getNetworkStatus()
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus? getNetworkStatus()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)NativeMethods.TablePtr->C0.hs_method_2d7c192c((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2d7c192c((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)__hs_handle) : null;
     }
 
     public bool mCompressionEnabled

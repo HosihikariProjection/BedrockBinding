@@ -40,12 +40,12 @@ public sealed unsafe partial class FixedSpawnPositionData_DEPRECATED : global::S
         return __hs_handle;
     }
 
-    public static FixedSpawnPositionData_DEPRECATED Create(global::Hosihikari.Bindings.Bedrock.Interop.Player_Nested.FixedSpawnPositionData_DEPRECATED arg0)
+    public static FixedSpawnPositionData_DEPRECATED? Create(global::Hosihikari.Bindings.Bedrock.Interop.Player_Nested.FixedSpawnPositionData_DEPRECATED arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e37ed0d1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FixedSpawnPositionData_DEPRECATED((nint)handle);

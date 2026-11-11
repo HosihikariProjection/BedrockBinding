@@ -40,20 +40,21 @@ public sealed unsafe partial class IFileStorageAreaFetcher : global::System.IDis
         return __hs_handle;
     }
 
-    public static IFileStorageAreaFetcher Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.IFileStorageAreaFetcher arg0)
+    public static IFileStorageAreaFetcher? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.IFileStorageAreaFetcher arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_80e3b55c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IFileStorageAreaFetcher((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result getStorageAreaForPath(global::Hosihikari.Bindings.Abi.SharedHandle? fileStorageArea, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? getStorageAreaForPath(global::Hosihikari.Bindings.Abi.SharedHandle? fileStorageArea, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_1270868a((void*)__hosihikari_shim_handle, fileStorageArea?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)path.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1270868a((void*)__hosihikari_shim_handle, fileStorageArea?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)path.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
 

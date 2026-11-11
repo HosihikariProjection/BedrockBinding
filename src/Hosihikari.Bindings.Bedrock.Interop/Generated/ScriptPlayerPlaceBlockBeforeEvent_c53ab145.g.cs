@@ -56,12 +56,12 @@ public sealed unsafe partial class ScriptPlayerPlaceBlockBeforeEvent : global::S
     public nint _ctor(nint player, nint dimension, nint pos, byte face, nint faceLocation, nint permutationToPlace, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptPlayerPlaceBlockBeforeEvent Create()
+    public static ScriptPlayerPlaceBlockBeforeEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_95862be6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPlayerPlaceBlockBeforeEvent((nint)handle);
@@ -71,12 +71,12 @@ public sealed unsafe partial class ScriptPlayerPlaceBlockBeforeEvent : global::S
     public static ScriptPlayerPlaceBlockBeforeEvent Create(nint player, nint dimension, nint pos, byte face, nint faceLocation, nint permutationToPlace, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptPlayerPlaceBlockBeforeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerPlaceBlockBeforeEvent arg0)
+    public static ScriptPlayerPlaceBlockBeforeEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerPlaceBlockBeforeEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b36f4b69((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPlayerPlaceBlockBeforeEvent((nint)handle);

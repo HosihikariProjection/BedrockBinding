@@ -56,12 +56,12 @@ public sealed unsafe partial class SummonActorGoalDefinition : global::System.ID
     public static nint NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SummonActorGoalDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition arg0)
+    public static SummonActorGoalDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9ca87023((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SummonActorGoalDefinition((nint)handle);

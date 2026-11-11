@@ -40,23 +40,23 @@ public sealed unsafe partial class ServerNetworkHandlerFactoryArguments : global
         return __hs_handle;
     }
 
-    public static ServerNetworkHandlerFactoryArguments Create()
+    public static ServerNetworkHandlerFactoryArguments? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0153a24b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerNetworkHandlerFactoryArguments((nint)handle);
     }
 
-    public static ServerNetworkHandlerFactoryArguments Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.ServerNetworkHandlerFactoryArguments arg0)
+    public static ServerNetworkHandlerFactoryArguments? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.ServerNetworkHandlerFactoryArguments arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_09e8e78b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerNetworkHandlerFactoryArguments((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class ServerNetworkHandlerFactoryArguments : global
         get => (nint)NativeMethods.TablePtr->C2.hs_get_120a59c0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.ServerNetworkHandlerFactoryArguments operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.ServerNetworkHandlerFactoryArguments arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.ServerNetworkHandlerFactoryArguments? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.ServerNetworkHandlerFactoryArguments arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.ServerNetworkHandlerFactoryArguments((nint)NativeMethods.TablePtr->C2.hs_method_cc0bf38a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cc0bf38a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.ServerNetworkHandlerFactoryArguments((nint)__hs_handle, false) : null;
     }
 
 

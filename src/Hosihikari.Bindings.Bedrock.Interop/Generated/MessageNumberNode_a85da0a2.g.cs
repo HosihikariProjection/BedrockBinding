@@ -40,23 +40,23 @@ public sealed unsafe partial class MessageNumberNode : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static MessageNumberNode Create()
+    public static MessageNumberNode? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_946d3edc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MessageNumberNode((nint)handle);
     }
 
-    public static MessageNumberNode Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode arg0)
+    public static MessageNumberNode? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cbebb771((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MessageNumberNode((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class MessageNumberNode : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C3.hs_get_3078124a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode((nint)NativeMethods.TablePtr->C3.hs_method_7563993e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7563993e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -40,12 +40,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ClientPlayerEventCoordinat
         return __hs_handle;
     }
 
-    public static UniqueOwnerPointer_ClientPlayerEventCoordinator_ Create()
+    public static UniqueOwnerPointer_ClientPlayerEventCoordinator_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_946dedb3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_ClientPlayerEventCoordinator_((nint)handle);
@@ -55,12 +55,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ClientPlayerEventCoordinat
     public static UniqueOwnerPointer_ClientPlayerEventCoordinator_ Create_10a680b7(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static UniqueOwnerPointer_ClientPlayerEventCoordinator_ Create_2601e44a()
+    public static UniqueOwnerPointer_ClientPlayerEventCoordinator_? Create_2601e44a()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2601e44a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_ClientPlayerEventCoordinator_((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class UniqueOwnerPointer_ClientPlayerEventCoordinat
         return NativeMethods.TablePtr->C0.hs_method_30f797c0((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ClientPlayerEventCoordinator operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ClientPlayerEventCoordinator? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ClientPlayerEventCoordinator((nint)NativeMethods.TablePtr->C0.hs_method_340d3796((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_340d3796((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ClientPlayerEventCoordinator((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ClientPlayerEventCoordinator? operator_operator__()
@@ -113,9 +114,10 @@ public sealed unsafe partial class UniqueOwnerPointer_ClientPlayerEventCoordinat
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ClientPlayerEventCoordinator_ operator_assign()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ClientPlayerEventCoordinator_? operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ClientPlayerEventCoordinator_((nint)NativeMethods.TablePtr->C0.hs_method_cb82c3c0((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_cb82c3c0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ClientPlayerEventCoordinator_((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ClientPlayerEventCoordinator_ other)

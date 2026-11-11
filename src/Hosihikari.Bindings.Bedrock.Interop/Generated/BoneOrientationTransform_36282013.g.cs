@@ -40,12 +40,12 @@ public sealed unsafe partial class BoneOrientationTransform : global::System.IDi
         return __hs_handle;
     }
 
-    public static BoneOrientationTransform Create(global::Hosihikari.Bindings.Bedrock.Interop.BoneOrientationTransform arg0)
+    public static BoneOrientationTransform? Create(global::Hosihikari.Bindings.Bedrock.Interop.BoneOrientationTransform arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_70629be3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BoneOrientationTransform((nint)handle);

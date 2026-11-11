@@ -74,23 +74,23 @@ public sealed unsafe partial class SlimeFloatGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SlimeFloatGoal Create()
+    public static SlimeFloatGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a02c8c38();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SlimeFloatGoal((nint)handle);
     }
 
-    public static SlimeFloatGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SlimeFloatGoal arg0)
+    public static SlimeFloatGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.SlimeFloatGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6a1d9e82((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SlimeFloatGoal((nint)handle);
@@ -139,9 +139,10 @@ public sealed unsafe partial class SlimeFloatGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_4d40e13a((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SlimeFloatGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SlimeFloatGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SlimeFloatGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SlimeFloatGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SlimeFloatGoal((nint)NativeMethods.TablePtr->C3.hs_method_019770aa((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_019770aa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SlimeFloatGoal((nint)__hs_handle, false) : null;
     }
 
     public void tick()

@@ -52,12 +52,12 @@ public sealed unsafe partial class CompositeDefinition : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C0.hs_get_df4e471d((void*)__hosihikari_shim_handle);
     }
 
-    public static CompositeDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.CompositeDefinition arg0)
+    public static CompositeDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.CompositeDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_cf34422b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CompositeDefinition((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class TrackedInstance : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TrackedInstance Create()
+    public static TrackedInstance? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e727c330();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TrackedInstance((nint)handle);
     }
 
-    public static TrackedInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.TrackedInstance arg0)
+    public static TrackedInstance? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.TrackedInstance arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_248501b6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TrackedInstance((nint)handle);
@@ -104,9 +104,10 @@ public sealed unsafe partial class TrackedInstance : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_e3cf8f7c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.TrackedInstance operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.TrackedInstance arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.TrackedInstance? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.TrackedInstance arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.TrackedInstance((nint)NativeMethods.TablePtr->C3.hs_method_9915b532((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9915b532((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.TrackedInstance((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -55,12 +55,12 @@ public sealed unsafe partial class RNS2EventHandler : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_ba53359c((void*)__hosihikari_shim_handle, (void*)recvStruct);
     }
 
-    public static RNS2EventHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2EventHandler arg0)
+    public static RNS2EventHandler? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2EventHandler arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9f819a03((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RNS2EventHandler((nint)handle);

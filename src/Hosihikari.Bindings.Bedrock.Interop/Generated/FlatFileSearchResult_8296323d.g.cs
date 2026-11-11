@@ -44,23 +44,23 @@ public sealed unsafe partial class FlatFileSearchResult : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FlatFileSearchResult Create()
+    public static FlatFileSearchResult? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f2abdd84();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FlatFileSearchResult((nint)handle);
     }
 
-    public static FlatFileSearchResult Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileSearchResult arg0)
+    public static FlatFileSearchResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileSearchResult arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_dc63a256((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FlatFileSearchResult((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class FlatFileSearchResult : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_f97f1cd3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileSearchResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileSearchResult arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileSearchResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileSearchResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileSearchResult((nint)NativeMethods.TablePtr->C1.hs_method_c03f72b8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c03f72b8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileSearchResult((nint)__hs_handle, false) : null;
     }
 
 

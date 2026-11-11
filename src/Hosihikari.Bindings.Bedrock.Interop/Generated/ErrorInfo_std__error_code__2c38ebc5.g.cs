@@ -40,12 +40,12 @@ public sealed unsafe partial class ErrorInfo_std__error_code_ : global::System.I
         return __hs_handle;
     }
 
-    public static ErrorInfo_std__error_code_ Create()
+    public static ErrorInfo_std__error_code_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_43de24bd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ErrorInfo_std__error_code_((nint)handle);
@@ -55,23 +55,23 @@ public sealed unsafe partial class ErrorInfo_std__error_code_ : global::System.I
     public static ErrorInfo_std__error_code_ Create_be0a74ff(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static ErrorInfo_std__error_code_ Create_c742d41d(nint arg0)
+    public static ErrorInfo_std__error_code_? Create_c742d41d(nint arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c742d41d((void*)arg0);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ErrorInfo_std__error_code_((nint)handle);
     }
 
-    public static ErrorInfo_std__error_code_ Create_d2a52198(nint error)
+    public static ErrorInfo_std__error_code_? Create_d2a52198(nint error)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d2a52198((void*)error);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ErrorInfo_std__error_code_((nint)handle);

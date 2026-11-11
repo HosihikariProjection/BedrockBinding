@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptDimensionType : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static ScriptDimensionType Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimensionType arg0)
+    public static ScriptDimensionType? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimensionType arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_724fbe76((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptDimensionType((nint)handle);

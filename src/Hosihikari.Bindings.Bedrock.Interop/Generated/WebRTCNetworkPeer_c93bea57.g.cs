@@ -78,12 +78,12 @@ public sealed unsafe partial class WebRTCNetworkPeer : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WebRTCNetworkPeer Create(global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer arg0)
+    public static WebRTCNetworkPeer? Create(global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_d4604375((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WebRTCNetworkPeer((nint)handle);
@@ -116,9 +116,10 @@ public sealed unsafe partial class WebRTCNetworkPeer : global::System.IDisposabl
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus getNetworkStatus()
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus? getNetworkStatus()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)NativeMethods.TablePtr->C4.hs_method_49935ac4((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_49935ac4((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)__hs_handle) : null;
     }
 
     public bool isEncrypted()

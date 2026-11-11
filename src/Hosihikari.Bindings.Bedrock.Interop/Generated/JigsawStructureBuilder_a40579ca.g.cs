@@ -52,23 +52,23 @@ public sealed unsafe partial class JigsawStructureBuilder : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JigsawStructureBuilder Create()
+    public static JigsawStructureBuilder? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6b998966();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JigsawStructureBuilder((nint)handle);
     }
 
-    public static JigsawStructureBuilder Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawStructureBuilder arg0)
+    public static JigsawStructureBuilder? Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawStructureBuilder arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2e6af16a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JigsawStructureBuilder((nint)handle);

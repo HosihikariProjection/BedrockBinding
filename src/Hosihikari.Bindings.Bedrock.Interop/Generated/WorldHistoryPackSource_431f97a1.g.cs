@@ -84,12 +84,12 @@ public sealed unsafe partial class WorldHistoryPackSource : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorldHistoryPackSource Create()
+    public static WorldHistoryPackSource? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2bf378b8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldHistoryPackSource((nint)handle);
@@ -99,12 +99,12 @@ public sealed unsafe partial class WorldHistoryPackSource : global::System.IDisp
     public static WorldHistoryPackSource Create(nint options) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorldHistoryPackSource Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource arg0)
+    public static WorldHistoryPackSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ea828ff9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorldHistoryPackSource((nint)handle);
@@ -148,9 +148,10 @@ public sealed unsafe partial class WorldHistoryPackSource : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C4.hs_get_1c58bde1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource((nint)NativeMethods.TablePtr->C4.hs_method_93303c7a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_93303c7a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource((nint)__hs_handle, false) : null;
     }
 
 

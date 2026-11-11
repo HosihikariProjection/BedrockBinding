@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ActorUpgradeStartedEvent_ : 
     public static ValueOrRef_const_ActorUpgradeStartedEvent_ Create_f0512e00(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ActorUpgradeStartedEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeStartedEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeStartedEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeStartedEvent((nint)NativeMethods.TablePtr->C1.hs_method_6f6c5db8((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6f6c5db8((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeStartedEvent((nint)__hs_handle, false) : null;
     }
 
 

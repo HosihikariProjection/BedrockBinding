@@ -44,12 +44,12 @@ public sealed unsafe partial class EntityInsideViews : global::System.IDisposabl
     public nint _ctor(nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EntityInsideViews Create()
+    public static EntityInsideViews? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_cc683803();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityInsideViews((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class EntityInsideViews : global::System.IDisposabl
     public static EntityInsideViews Create(nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EntityInsideViews Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityInsideSystemImpl.EntityInsideViews arg0)
+    public static EntityInsideViews? Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityInsideSystemImpl.EntityInsideViews arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b08336b6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityInsideViews((nint)handle);

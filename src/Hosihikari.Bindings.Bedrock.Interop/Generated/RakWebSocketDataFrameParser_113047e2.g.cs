@@ -40,23 +40,23 @@ public sealed unsafe partial class RakWebSocketDataFrameParser : global::System.
         return __hs_handle;
     }
 
-    public static RakWebSocketDataFrameParser Create()
+    public static RakWebSocketDataFrameParser? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_11610498();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakWebSocketDataFrameParser((nint)handle);
     }
 
-    public static RakWebSocketDataFrameParser Create(global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser arg0)
+    public static RakWebSocketDataFrameParser? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_25365321((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakWebSocketDataFrameParser((nint)handle);
@@ -96,9 +96,10 @@ public sealed unsafe partial class RakWebSocketDataFrameParser : global::System.
         get => (nint)NativeMethods.TablePtr->C3.hs_get_42eb2331((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser((nint)NativeMethods.TablePtr->C3.hs_method_3ccc4784((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3ccc4784((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

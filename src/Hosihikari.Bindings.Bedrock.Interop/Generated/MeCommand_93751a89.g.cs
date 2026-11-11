@@ -73,12 +73,12 @@ public sealed unsafe partial class MeCommand : global::System.IDisposable
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MeCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.MeCommand arg0)
+    public static MeCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.MeCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_2acdfdf2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MeCommand((nint)handle);

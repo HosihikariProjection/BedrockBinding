@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerDropItemEvent : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static PlayerDropItemEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDropItemEvent arg0)
+    public static PlayerDropItemEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDropItemEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_aa8b2d0a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerDropItemEvent((nint)handle);

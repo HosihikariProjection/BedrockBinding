@@ -152,12 +152,12 @@ public sealed unsafe partial class TransactionalWorldBlockTarget : global::Syste
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TransactionalWorldBlockTarget Create(global::Hosihikari.Bindings.Bedrock.Interop.TransactionalWorldBlockTarget arg0)
+    public static TransactionalWorldBlockTarget? Create(global::Hosihikari.Bindings.Bedrock.Interop.TransactionalWorldBlockTarget arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ab214a7b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TransactionalWorldBlockTarget((nint)handle);
@@ -193,24 +193,28 @@ public sealed unsafe partial class TransactionalWorldBlockTarget : global::Syste
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_27c9a243((void*)__hosihikari_shim_handle, (void*)pos.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_27c9a243((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getBlockNoBoundsCheck(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlockNoBoundsCheck(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_32ab54b7((void*)__hosihikari_shim_handle, (void*)pos.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_32ab54b7((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext getContext()
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext? getContext()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext((nint)NativeMethods.TablePtr->C4.hs_method_a800605f((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a800605f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getExtraBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getExtraBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_b88e460e((void*)__hosihikari_shim_handle, (void*)pos.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b88e460e((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public short getHeightmap(int x, int z)
@@ -218,9 +222,10 @@ public sealed unsafe partial class TransactionalWorldBlockTarget : global::Syste
         return NativeMethods.TablePtr->C4.hs_method_c36ab79b((void*)__hosihikari_shim_handle, x, z);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelData getLevelData()
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelData? getLevelData()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelData((nint)NativeMethods.TablePtr->C4.hs_method_f68a3fde((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f68a3fde((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelData((nint)__hs_handle, false) : null;
     }
 
     public short getLocalWaterLevel(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

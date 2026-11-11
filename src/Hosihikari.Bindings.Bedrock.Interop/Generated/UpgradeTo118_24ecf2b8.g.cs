@@ -72,12 +72,12 @@ public sealed unsafe partial class UpgradeTo118 : global::System.IDisposable
     public void _upgradeToNext(nint document, nint arg1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UpgradeTo118 Create(global::Hosihikari.Bindings.Bedrock.Interop.RepairableItemComponentVersioning.UpgradeTo118 arg0)
+    public static UpgradeTo118? Create(global::Hosihikari.Bindings.Bedrock.Interop.RepairableItemComponentVersioning.UpgradeTo118 arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_97192bb0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UpgradeTo118((nint)handle);

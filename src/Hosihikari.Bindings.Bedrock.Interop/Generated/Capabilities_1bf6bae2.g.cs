@@ -40,23 +40,23 @@ public sealed unsafe partial class Capabilities : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Capabilities Create()
+    public static Capabilities? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6db49deb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Capabilities((nint)handle);
     }
 
-    public static Capabilities Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Capabilities arg0)
+    public static Capabilities? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Capabilities arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2040a765((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Capabilities((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class Capabilities : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_ac55ab69((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Capabilities operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Capabilities arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Capabilities? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Capabilities arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Capabilities((nint)NativeMethods.TablePtr->C3.hs_method_83118c82((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_83118c82((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Capabilities((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

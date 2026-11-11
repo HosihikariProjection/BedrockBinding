@@ -40,23 +40,23 @@ public sealed unsafe partial class RiverInit : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static RiverInit Create()
+    public static RiverInit? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e9d98ac5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RiverInit((nint)handle);
     }
 
-    public static RiverInit Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.RiverInit arg0)
+    public static RiverInit? Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.RiverInit arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8318c4f9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RiverInit((nint)handle);

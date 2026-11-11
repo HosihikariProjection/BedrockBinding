@@ -62,12 +62,12 @@ public sealed unsafe partial class OnHurtByPlayerDefinition : global::System.IDi
     public static nint NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OnHurtByPlayerDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.OnHurtByPlayerDefinition arg0)
+    public static OnHurtByPlayerDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.OnHurtByPlayerDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b5b97cb0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OnHurtByPlayerDefinition((nint)handle);

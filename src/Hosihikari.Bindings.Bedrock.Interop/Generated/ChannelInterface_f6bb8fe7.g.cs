@@ -52,12 +52,12 @@ public sealed unsafe partial class ChannelInterface : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel((nint)__hs_handle, false) : null;
     }
 
-    public static ChannelInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.ChannelInterface arg0)
+    public static ChannelInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.ChannelInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_532919e0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChannelInterface((nint)handle);

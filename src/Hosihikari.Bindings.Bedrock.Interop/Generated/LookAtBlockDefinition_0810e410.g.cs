@@ -56,12 +56,12 @@ public sealed unsafe partial class LookAtBlockDefinition : global::System.IDispo
     public void _load(nint value, nint factory) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LookAtBlockDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.LookAtBlockDefinition arg0)
+    public static LookAtBlockDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.LookAtBlockDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a24fad57((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LookAtBlockDefinition((nint)handle);

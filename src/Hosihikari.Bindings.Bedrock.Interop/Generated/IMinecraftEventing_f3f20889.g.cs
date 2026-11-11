@@ -50,12 +50,12 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
     public void _updatePlayerUndergroundStatus(nint player, bool isUnderground) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IMinecraftEventing Create(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing arg0)
+    public static IMinecraftEventing? Create(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2628559f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IMinecraftEventing((nint)handle);
@@ -6119,9 +6119,10 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
     public nint getCrashTelemetryProcessor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'gsl::not_null<Bedrock::CrashTelemetryProcessor *>' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager getEventManager()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager? getEventManager()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager((nint)NativeMethods.TablePtr->C1.hs_method_f5ead2dc((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f5ead2dc((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager((nint)__hs_handle, false) : null;
     }
 
     public string getExperienceId()
@@ -6202,9 +6203,10 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         NativeMethods.TablePtr->C1.hs_method_3e8dabaa((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value propertiesAsJsonValue()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? propertiesAsJsonValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_adc27fd2((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_adc27fd2((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'Bedrock::PubSub::Subscription' is not supported.", false)]

@@ -40,12 +40,12 @@ public sealed unsafe partial class LegacyEventItemComponentData : global::System
         return __hs_handle;
     }
 
-    public static LegacyEventItemComponentData Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyEventItemComponentData arg0)
+    public static LegacyEventItemComponentData? Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyEventItemComponentData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4e51c8f5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyEventItemComponentData((nint)handle);

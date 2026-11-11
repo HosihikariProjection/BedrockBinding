@@ -40,23 +40,23 @@ public sealed unsafe partial class WalkAnimationSpeedDefinition : global::System
         return __hs_handle;
     }
 
-    public static WalkAnimationSpeedDefinition Create()
+    public static WalkAnimationSpeedDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6c3bcaa3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WalkAnimationSpeedDefinition((nint)handle);
     }
 
-    public static WalkAnimationSpeedDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.WalkAnimationSpeedDefinition arg0)
+    public static WalkAnimationSpeedDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.WalkAnimationSpeedDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_55deca74((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WalkAnimationSpeedDefinition((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class WalkAnimationSpeedDefinition : global::System
         get => (nint)NativeMethods.TablePtr->C4.hs_get_f2438795((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WalkAnimationSpeedDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WalkAnimationSpeedDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WalkAnimationSpeedDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WalkAnimationSpeedDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WalkAnimationSpeedDefinition((nint)NativeMethods.TablePtr->C4.hs_method_026559ad((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_026559ad((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WalkAnimationSpeedDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

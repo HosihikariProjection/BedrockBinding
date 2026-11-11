@@ -40,12 +40,12 @@ public sealed unsafe partial class StructureSetRegistry : global::System.IDispos
         return __hs_handle;
     }
 
-    public static StructureSetRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureSetRegistry arg0)
+    public static StructureSetRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureSetRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2c8158e8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureSetRegistry((nint)handle);

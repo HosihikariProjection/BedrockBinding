@@ -40,23 +40,23 @@ public sealed unsafe partial class ChatMessage : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ChatMessage Create()
+    public static ChatMessage? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f8de3e66();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChatMessage((nint)handle);
     }
 
-    public static ChatMessage Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage arg0)
+    public static ChatMessage? Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8a6750b3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChatMessage((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class ChatMessage : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_a6525d14((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage((nint)NativeMethods.TablePtr->C0.hs_method_441bfb64((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_441bfb64((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

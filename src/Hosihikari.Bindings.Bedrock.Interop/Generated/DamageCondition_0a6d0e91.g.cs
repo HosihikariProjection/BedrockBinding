@@ -40,23 +40,23 @@ public sealed unsafe partial class DamageCondition : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static DamageCondition Create()
+    public static DamageCondition? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_393f2e51();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DamageCondition((nint)handle);
     }
 
-    public static DamageCondition Create(global::Hosihikari.Bindings.Bedrock.Interop.DamageCondition arg0)
+    public static DamageCondition? Create(global::Hosihikari.Bindings.Bedrock.Interop.DamageCondition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_81a69db0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DamageCondition((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class DamageCondition : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_6bf61640((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DamageCondition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DamageCondition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DamageCondition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DamageCondition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DamageCondition((nint)NativeMethods.TablePtr->C1.hs_method_a1508760((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a1508760((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DamageCondition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -94,12 +94,12 @@ public sealed unsafe partial class FollowFlockGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FollowFlockGoal Create()
+    public static FollowFlockGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a241f271();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FollowFlockGoal((nint)handle);
@@ -109,12 +109,12 @@ public sealed unsafe partial class FollowFlockGoal : global::System.IDisposable
     public static FollowFlockGoal Create(nint mob, float speed, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FollowFlockGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.FollowFlockGoal arg0)
+    public static FollowFlockGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.FollowFlockGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_76add5f9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FollowFlockGoal((nint)handle);
@@ -179,9 +179,10 @@ public sealed unsafe partial class FollowFlockGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_ffe985c5((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FollowFlockGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FollowFlockGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FollowFlockGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FollowFlockGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FollowFlockGoal((nint)NativeMethods.TablePtr->C1.hs_method_dc104b37((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_dc104b37((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FollowFlockGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

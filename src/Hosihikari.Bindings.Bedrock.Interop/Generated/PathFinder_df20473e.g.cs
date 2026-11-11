@@ -52,12 +52,12 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
     public static nint DEFAULT_DESC() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PathFinder Create()
+    public static PathFinder? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e74646d2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PathFinder((nint)handle);
@@ -67,12 +67,12 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
     public static PathFinder Create(nint region, nint navigation) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PathFinder Create(global::Hosihikari.Bindings.Bedrock.Interop.PathFinder arg0)
+    public static PathFinder? Create(global::Hosihikari.Bindings.Bedrock.Interop.PathFinder arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_19641432((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PathFinder((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class StructureElementId : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static StructureElementId Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureUtils.StructureElementId arg0)
+    public static StructureElementId? Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureUtils.StructureElementId arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_51a849e0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureElementId((nint)handle);

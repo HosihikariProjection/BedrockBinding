@@ -40,12 +40,12 @@ public sealed unsafe partial class Key : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Key Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimensionType_Nested.Key arg0)
+    public static Key? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimensionType_Nested.Key arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_099c6c76((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Key((nint)handle);

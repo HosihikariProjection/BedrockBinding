@@ -40,23 +40,23 @@ public sealed unsafe partial class ScriptBindingReleaseList : global::System.IDi
         return __hs_handle;
     }
 
-    public static ScriptBindingReleaseList Create()
+    public static ScriptBindingReleaseList? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e54bf8b4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBindingReleaseList((nint)handle);
     }
 
-    public static ScriptBindingReleaseList Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList arg0)
+    public static ScriptBindingReleaseList? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_28abc25c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBindingReleaseList((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class ScriptBindingReleaseList : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C3.hs_get_fbf78078((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList((nint)NativeMethods.TablePtr->C3.hs_method_ad148cc5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ad148cc5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptBindingReleaseList((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

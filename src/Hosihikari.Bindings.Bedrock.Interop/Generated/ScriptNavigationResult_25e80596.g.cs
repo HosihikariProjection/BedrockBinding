@@ -45,12 +45,12 @@ public sealed unsafe partial class ScriptNavigationResult : global::System.IDisp
         NativeMethods.TablePtr->C3.hs_method_ff34a33b((void*)__hosihikari_shim_handle);
     }
 
-    public static ScriptNavigationResult Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult arg0)
+    public static ScriptNavigationResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7d2a208f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptNavigationResult((nint)handle);

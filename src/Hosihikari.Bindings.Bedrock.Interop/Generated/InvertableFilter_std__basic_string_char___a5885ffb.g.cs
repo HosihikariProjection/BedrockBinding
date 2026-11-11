@@ -40,12 +40,12 @@ public sealed unsafe partial class InvertableFilter_std__basic_string_char__ : g
         return __hs_handle;
     }
 
-    public static InvertableFilter_std__basic_string_char__ Create(global::Hosihikari.Bindings.Bedrock.Interop.InvertableFilter_std__basic_string_char__ arg0)
+    public static InvertableFilter_std__basic_string_char__? Create(global::Hosihikari.Bindings.Bedrock.Interop.InvertableFilter_std__basic_string_char__ arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_88eb0d97((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InvertableFilter_std__basic_string_char__((nint)handle);

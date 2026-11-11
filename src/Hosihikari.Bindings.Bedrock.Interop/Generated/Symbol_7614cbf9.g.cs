@@ -54,56 +54,56 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
 
     public const int SoftEnumBit = 67108864;
 
-    public static Symbol Create()
+    public static Symbol? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_369e7b1f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Symbol((nint)handle);
     }
 
-    public static Symbol Create_f766d7a4(int data)
+    public static Symbol? Create_f766d7a4(int data)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f766d7a4(data);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Symbol((nint)handle);
     }
 
-    public static Symbol Create_0e9f30a4(int data)
+    public static Symbol? Create_0e9f30a4(int data)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0e9f30a4(data);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Symbol((nint)handle);
     }
 
-    public static Symbol Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol other)
+    public static Symbol? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol other)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_51027e26((void*)other.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Symbol((nint)handle);
     }
 
-    public static Symbol Create_b985b882(int val)
+    public static Symbol? Create_b985b882(int val)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b985b882(val);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Symbol((nint)handle);
@@ -115,9 +115,10 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_8476e4ab((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol other)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol other)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol((nint)NativeMethods.TablePtr->C0.hs_method_734990f6((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_734990f6((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol other)

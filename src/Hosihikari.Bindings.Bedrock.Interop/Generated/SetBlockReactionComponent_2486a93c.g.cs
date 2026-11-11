@@ -44,23 +44,23 @@ public sealed unsafe partial class SetBlockReactionComponent : global::System.ID
     public void __onEnd(nint owner, nint region) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SetBlockReactionComponent Create()
+    public static SetBlockReactionComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_818b3279();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetBlockReactionComponent((nint)handle);
     }
 
-    public static SetBlockReactionComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SetBlockReactionComponent arg0)
+    public static SetBlockReactionComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.SetBlockReactionComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_04d6256b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetBlockReactionComponent((nint)handle);
@@ -83,9 +83,10 @@ public sealed unsafe partial class SetBlockReactionComponent : global::System.ID
         get => (nint)NativeMethods.TablePtr->C3.hs_get_1ba475c0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SetBlockReactionComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SetBlockReactionComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SetBlockReactionComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SetBlockReactionComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SetBlockReactionComponent((nint)NativeMethods.TablePtr->C3.hs_method_a96e82fd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a96e82fd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SetBlockReactionComponent((nint)__hs_handle, false) : null;
     }
 
 

@@ -40,23 +40,23 @@ public sealed unsafe partial class ExcludedPath : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ExcludedPath Create()
+    public static ExcludedPath? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8b6373b3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExcludedPath((nint)handle);
     }
 
-    public static ExcludedPath Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.ExcludedPath arg0)
+    public static ExcludedPath? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.ExcludedPath arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7f60190b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExcludedPath((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class ExcludedPath : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_6990e2a3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.ExcludedPath operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.ExcludedPath arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.ExcludedPath? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.ExcludedPath arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.ExcludedPath((nint)NativeMethods.TablePtr->C1.hs_method_44a0068b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_44a0068b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.ExcludedPath((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

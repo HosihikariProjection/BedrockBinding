@@ -40,12 +40,12 @@ public sealed unsafe partial class IDependencyLoader : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static IDependencyLoader Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IDependencyLoader arg0)
+    public static IDependencyLoader? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IDependencyLoader arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c4e41ad1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IDependencyLoader((nint)handle);

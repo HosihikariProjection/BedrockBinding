@@ -44,23 +44,23 @@ public sealed unsafe partial class Explosion : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Explosion Create()
+    public static Explosion? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4221cafa();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Explosion((nint)handle);
     }
 
-    public static Explosion Create(global::Hosihikari.Bindings.Bedrock.Interop.Explosion arg0)
+    public static Explosion? Create(global::Hosihikari.Bindings.Bedrock.Interop.Explosion arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6bd835ef((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Explosion((nint)handle);
@@ -177,9 +177,10 @@ public sealed unsafe partial class Explosion : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_7f87fd25((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Explosion operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Explosion arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Explosion? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Explosion arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Explosion((nint)NativeMethods.TablePtr->C1.hs_method_948367cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_948367cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Explosion((nint)__hs_handle, false) : null;
     }
 
 

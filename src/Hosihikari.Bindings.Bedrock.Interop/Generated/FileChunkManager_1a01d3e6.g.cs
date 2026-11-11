@@ -40,12 +40,12 @@ public sealed unsafe partial class FileChunkManager : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static FileChunkManager Create(global::Hosihikari.Bindings.Bedrock.Interop.FileChunkManager arg0)
+    public static FileChunkManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.FileChunkManager arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_563ce75b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileChunkManager((nint)handle);

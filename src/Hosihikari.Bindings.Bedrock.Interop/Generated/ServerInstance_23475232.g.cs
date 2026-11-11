@@ -158,12 +158,12 @@ public sealed unsafe partial class ServerInstance : global::System.IDisposable
     public static nint PACK_SOURCE_LOADING_ERROR() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerInstance Create()
+    public static ServerInstance? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1bb2b881();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerInstance((nint)handle);

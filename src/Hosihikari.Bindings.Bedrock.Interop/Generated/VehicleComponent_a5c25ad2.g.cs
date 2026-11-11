@@ -45,12 +45,12 @@ public sealed unsafe partial class VehicleComponent : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_b2c77fa9((void*)__hosihikari_shim_handle);
     }
 
-    public static VehicleComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.VehicleComponent arg0)
+    public static VehicleComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.VehicleComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_9ab17de0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VehicleComponent((nint)handle);

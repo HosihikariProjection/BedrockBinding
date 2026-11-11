@@ -48,14 +48,16 @@ public sealed unsafe partial class ValueOrRef_ActorDefinitionStartedEvent_ : glo
     public static ValueOrRef_ActorDefinitionStartedEvent_ Create_246237ae(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<ActorDefinitionStartedEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionStartedEvent value_655595d9()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionStartedEvent? value_655595d9()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionStartedEvent((nint)NativeMethods.TablePtr->C1.hs_method_655595d9((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_655595d9((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionStartedEvent((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionStartedEvent value_a9dfdb32()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionStartedEvent? value_a9dfdb32()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionStartedEvent((nint)NativeMethods.TablePtr->C1.hs_method_a9dfdb32((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a9dfdb32((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionStartedEvent((nint)__hs_handle, false) : null;
     }
 
 

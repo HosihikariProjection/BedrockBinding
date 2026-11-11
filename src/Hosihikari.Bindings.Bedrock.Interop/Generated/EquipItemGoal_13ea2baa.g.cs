@@ -78,23 +78,23 @@ public sealed unsafe partial class EquipItemGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EquipItemGoal Create()
+    public static EquipItemGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1f1b096b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EquipItemGoal((nint)handle);
     }
 
-    public static EquipItemGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.EquipItemGoal arg0)
+    public static EquipItemGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.EquipItemGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ac83e0c6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EquipItemGoal((nint)handle);
@@ -144,9 +144,10 @@ public sealed unsafe partial class EquipItemGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_a0b1b6fe((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EquipItemGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EquipItemGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EquipItemGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EquipItemGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EquipItemGoal((nint)NativeMethods.TablePtr->C1.hs_method_6e03b0fb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6e03b0fb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EquipItemGoal((nint)__hs_handle, false) : null;
     }
 
     public void tick()

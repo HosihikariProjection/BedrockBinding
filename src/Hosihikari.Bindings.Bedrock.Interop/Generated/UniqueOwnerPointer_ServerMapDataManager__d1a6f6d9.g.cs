@@ -40,12 +40,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ServerMapDataManager_ : gl
         return __hs_handle;
     }
 
-    public static UniqueOwnerPointer_ServerMapDataManager_ Create()
+    public static UniqueOwnerPointer_ServerMapDataManager_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0a28ba8c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_ServerMapDataManager_((nint)handle);
@@ -55,12 +55,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ServerMapDataManager_ : gl
     public static UniqueOwnerPointer_ServerMapDataManager_ Create_412fd824(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static UniqueOwnerPointer_ServerMapDataManager_ Create_cabbd0f4()
+    public static UniqueOwnerPointer_ServerMapDataManager_? Create_cabbd0f4()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_cabbd0f4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_ServerMapDataManager_((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class UniqueOwnerPointer_ServerMapDataManager_ : gl
         return NativeMethods.TablePtr->C0.hs_method_adec41e5((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerMapDataManager operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerMapDataManager? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerMapDataManager((nint)NativeMethods.TablePtr->C0.hs_method_c7aa190e((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c7aa190e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerMapDataManager((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerMapDataManager? operator_operator__()
@@ -113,9 +114,10 @@ public sealed unsafe partial class UniqueOwnerPointer_ServerMapDataManager_ : gl
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerMapDataManager_ operator_assign()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerMapDataManager_? operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerMapDataManager_((nint)NativeMethods.TablePtr->C0.hs_method_3a170ac4((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3a170ac4((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerMapDataManager_((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerMapDataManager_ other)

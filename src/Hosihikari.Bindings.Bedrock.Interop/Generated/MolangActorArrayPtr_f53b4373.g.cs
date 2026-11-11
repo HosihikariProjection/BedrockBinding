@@ -44,23 +44,23 @@ public sealed unsafe partial class MolangActorArrayPtr : global::System.IDisposa
     public nint _ctor(nint actors) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MolangActorArrayPtr Create()
+    public static MolangActorArrayPtr? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bed16e00();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangActorArrayPtr((nint)handle);
     }
 
-    public static MolangActorArrayPtr Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangActorArrayPtr arg0)
+    public static MolangActorArrayPtr? Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangActorArrayPtr arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9fa66882((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangActorArrayPtr((nint)handle);

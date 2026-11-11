@@ -40,12 +40,12 @@ public sealed unsafe partial class ISystemInterface : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ISystemInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Asymmetric.ISystemInterface arg0)
+    public static ISystemInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Asymmetric.ISystemInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_55c49396((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ISystemInterface((nint)handle);
@@ -85,9 +85,10 @@ public sealed unsafe partial class ISystemInterface : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_ constructPublicKey(nint components)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_? constructPublicKey(nint components)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_f7f42819((void*)__hosihikari_shim_handle, (void*)components));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f7f42819((void*)__hosihikari_shim_handle, (void*)components);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Result<std::variant<Crypto::Asymmetric::RsaPublicKeyComponents, Crypto::Asymmetric::EcPublicKeyComponents>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -128,7 +129,7 @@ public sealed unsafe partial class ISystemInterface : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_ derivePublicKey(string privateKey)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_? derivePublicKey(string privateKey)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(privateKey);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -143,7 +144,8 @@ public sealed unsafe partial class ISystemInterface : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(privateKey, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_37f6be72((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_37f6be72((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)__hs_handle) : null;
         }
     }
 
@@ -185,7 +187,7 @@ public sealed unsafe partial class ISystemInterface : global::System.IDisposable
     public bool generateKeyPair(nint privateKey, nint publicKey) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: multiple mutable string references are not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_ parsePrivateKey(string privateKey, int format)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_? parsePrivateKey(string privateKey, int format)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(privateKey);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -200,7 +202,8 @@ public sealed unsafe partial class ISystemInterface : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(privateKey, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_60178d59((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, format));
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_60178d59((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, format);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)__hs_handle) : null;
         }
     }
 

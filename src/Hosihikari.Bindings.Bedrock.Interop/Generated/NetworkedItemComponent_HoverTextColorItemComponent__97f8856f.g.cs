@@ -46,12 +46,12 @@ public sealed unsafe partial class NetworkedItemComponent_HoverTextColorItemComp
         set => NativeMethods.TablePtr->C2.hs_set_668556ec((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    public static NetworkedItemComponent_HoverTextColorItemComponent_ Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkedItemComponent_HoverTextColorItemComponent_ arg0)
+    public static NetworkedItemComponent_HoverTextColorItemComponent_? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkedItemComponent_HoverTextColorItemComponent_ arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_04e8045a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkedItemComponent_HoverTextColorItemComponent_((nint)handle);

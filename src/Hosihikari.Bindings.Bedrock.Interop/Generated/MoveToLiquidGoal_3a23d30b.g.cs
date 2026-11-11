@@ -196,12 +196,12 @@ public sealed unsafe partial class MoveToLiquidGoal : global::System.IDisposable
     public bool _isValidTarget(nint region, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveToLiquidGoal Create()
+    public static MoveToLiquidGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f000418f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveToLiquidGoal((nint)handle);
@@ -211,12 +211,12 @@ public sealed unsafe partial class MoveToLiquidGoal : global::System.IDisposable
     public static MoveToLiquidGoal Create(nint mob, nint name, nint goalId, nint materialType) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveToLiquidGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveToLiquidGoal arg0)
+    public static MoveToLiquidGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveToLiquidGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e56ce42b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveToLiquidGoal((nint)handle);

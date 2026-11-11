@@ -194,12 +194,12 @@ public sealed unsafe partial class MoveToPOIGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveToPOIGoal Create()
+    public static MoveToPOIGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8c209e26();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveToPOIGoal((nint)handle);
@@ -219,9 +219,10 @@ public sealed unsafe partial class MoveToPOIGoal : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 _getTargetPosition()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? _getTargetPosition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_03e1e594((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_03e1e594((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public void _moveToBlock()

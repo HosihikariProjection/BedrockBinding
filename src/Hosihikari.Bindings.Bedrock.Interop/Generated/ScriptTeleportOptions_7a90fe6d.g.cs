@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptTeleportOptions : global::System.IDispo
         return __hs_handle;
     }
 
-    public static ScriptTeleportOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTeleportOptions arg0)
+    public static ScriptTeleportOptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTeleportOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7ec6ce69((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptTeleportOptions((nint)handle);

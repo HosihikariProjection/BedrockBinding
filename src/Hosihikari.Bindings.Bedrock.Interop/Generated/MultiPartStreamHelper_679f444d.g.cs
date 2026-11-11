@@ -40,12 +40,12 @@ public sealed unsafe partial class MultiPartStreamHelper : global::System.IDispo
         return __hs_handle;
     }
 
-    public static MultiPartStreamHelper Create(global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager_Nested.MultiPartStreamHelper arg0)
+    public static MultiPartStreamHelper? Create(global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager_Nested.MultiPartStreamHelper arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f2d5ce06((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MultiPartStreamHelper((nint)handle);

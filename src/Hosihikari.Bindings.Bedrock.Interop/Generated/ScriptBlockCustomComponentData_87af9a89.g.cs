@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptBlockCustomComponentData : global::Syst
         return __hs_handle;
     }
 
-    public static ScriptBlockCustomComponentData Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry_Nested.ScriptBlockCustomComponentData arg0)
+    public static ScriptBlockCustomComponentData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry_Nested.ScriptBlockCustomComponentData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f4d53848((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockCustomComponentData((nint)handle);

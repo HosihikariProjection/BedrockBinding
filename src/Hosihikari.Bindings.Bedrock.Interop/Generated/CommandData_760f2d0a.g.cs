@@ -50,23 +50,23 @@ public sealed unsafe partial class CommandData : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_267295fa((void*)__hosihikari_shim_handle);
     }
 
-    public static CommandData Create()
+    public static CommandData? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ebf1a478();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandData((nint)handle);
     }
 
-    public static CommandData Create(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.CommandData arg0)
+    public static CommandData? Create(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.CommandData arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2fb922df((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandData((nint)handle);

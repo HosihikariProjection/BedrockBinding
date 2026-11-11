@@ -50,12 +50,12 @@ public sealed unsafe partial class PlayerMovementSettings : global::System.IDisp
     public static nint INVALID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerMovementSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings arg0)
+    public static PlayerMovementSettings? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b5ea6f2b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerMovementSettings((nint)handle);

@@ -52,23 +52,23 @@ public sealed unsafe partial class AllowListEntry : global::System.IDisposable
     public nint _serialize() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AllowListEntry Create()
+    public static AllowListEntry? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_df9fe28d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AllowListEntry((nint)handle);
     }
 
-    public static AllowListEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.AllowListEntry arg0)
+    public static AllowListEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.AllowListEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_78944740((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AllowListEntry((nint)handle);
@@ -119,9 +119,10 @@ public sealed unsafe partial class AllowListEntry : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_d341fbba((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value serialize()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? serialize()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C0.hs_method_59d7de43((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_59d7de43((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
 

@@ -118,12 +118,12 @@ public sealed unsafe partial class LookAtPlayerGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_1e786ab2((void*)__hosihikari_shim_handle);
     }
 
-    public static LookAtPlayerGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.LookAtPlayerGoal arg0)
+    public static LookAtPlayerGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.LookAtPlayerGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d5a90269((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LookAtPlayerGoal((nint)handle);

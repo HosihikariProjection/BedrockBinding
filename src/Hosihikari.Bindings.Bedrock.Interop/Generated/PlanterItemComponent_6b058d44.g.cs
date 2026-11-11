@@ -70,12 +70,12 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlanterItemComponent Create()
+    public static PlanterItemComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e66cea9c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlanterItemComponent((nint)handle);
@@ -85,12 +85,12 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
     public static PlanterItemComponent Create(nint component) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlanterItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponent arg0)
+    public static PlanterItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a7d95955((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlanterItemComponent((nint)handle);
@@ -113,9 +113,10 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
     public bool calculatePlacePos(nint instance, nint entity, nint face, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponent_Nested.BlockPlacementContext getBlockPlacementContext(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponent_Nested.BlockPlacementContext? getBlockPlacementContext(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponent_Nested.BlockPlacementContext((nint)NativeMethods.TablePtr->C2.hs_method_2bcacd3e((void*)item.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2bcacd3e((void*)item.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponent_Nested.BlockPlacementContext((nint)__hs_handle) : null;
     }
 
     public void handleVersionBasedInitialization(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion originalJsonVersion)

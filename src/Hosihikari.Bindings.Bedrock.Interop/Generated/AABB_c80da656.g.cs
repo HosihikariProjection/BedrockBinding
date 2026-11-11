@@ -44,34 +44,34 @@ public sealed unsafe partial class AABB : global::System.IDisposable
     public nint _ctor(nint min, nint max) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AABB Create()
+    public static AABB? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d5c9e897();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AABB((nint)handle);
     }
 
-    public static AABB Create(global::Hosihikari.Bindings.Bedrock.Interop.AABB k)
+    public static AABB? Create(global::Hosihikari.Bindings.Bedrock.Interop.AABB k)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_be10d5b5((void*)k.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AABB((nint)handle);
     }
 
-    public static AABB Create(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 min, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 max)
+    public static AABB? Create(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 min, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 max)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8952a5b4((void*)min.Handle, (void*)max.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AABB((nint)handle);
@@ -95,23 +95,26 @@ public sealed unsafe partial class AABB : global::System.IDisposable
     public static nint BLOCK_SHAPE() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.AABB BOX_AT_ORIGIN_WITH_NO_VOLUME()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.AABB? BOX_AT_ORIGIN_WITH_NO_VOLUME()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_21c615b4(), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_21c615b4();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint aroundRadius(nint point, float radius) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 center()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? center()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C0.hs_method_d97c01b9((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d97c01b9((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABBHitResult clip(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 a, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABBHitResult? clip(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 a, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABBHitResult((nint)NativeMethods.TablePtr->C0.hs_method_e34dc2fa((void*)__hosihikari_shim_handle, (void*)a.Handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e34dc2fa((void*)__hosihikari_shim_handle, (void*)a.Handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABBHitResult((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -122,14 +125,16 @@ public sealed unsafe partial class AABB : global::System.IDisposable
     public nint cloneAndFloor(float offsetMin, float offsetMax) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB cloneAndGrow(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 distance)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? cloneAndGrow(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 distance)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_5c4231f3((void*)__hosihikari_shim_handle, (void*)distance.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5c4231f3((void*)__hosihikari_shim_handle, (void*)distance.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB cloneAndGrow(float radius)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? cloneAndGrow(float radius)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_86ebe622((void*)__hosihikari_shim_handle, radius));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_86ebe622((void*)__hosihikari_shim_handle, radius);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -172,34 +177,40 @@ public sealed unsafe partial class AABB : global::System.IDisposable
     public bool intersects(nint segmentBegin, nint segmentEnd) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB merge(global::Hosihikari.Bindings.Bedrock.Interop.AABB a)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? merge(global::Hosihikari.Bindings.Bedrock.Interop.AABB a)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_d4cb3d3a((void*)__hosihikari_shim_handle, (void*)a.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d4cb3d3a((void*)__hosihikari_shim_handle, (void*)a.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB merge(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 a)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? merge(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 a)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_d46db3b9((void*)__hosihikari_shim_handle, (void*)a.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d46db3b9((void*)__hosihikari_shim_handle, (void*)a.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox operator_BoundingBox()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? operator_BoundingBox()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)NativeMethods.TablePtr->C0.hs_method_c2f005e3((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c2f005e3((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AABB arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AABB arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_fbc45c95((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_fbc45c95((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB shrink(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 offset)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? shrink(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 offset)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_61c31cb3((void*)__hosihikari_shim_handle, (void*)offset.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_61c31cb3((void*)__hosihikari_shim_handle, (void*)offset.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB shrink(float f)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? shrink(float f)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_80417424((void*)__hosihikari_shim_handle, f), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_80417424((void*)__hosihikari_shim_handle, f);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

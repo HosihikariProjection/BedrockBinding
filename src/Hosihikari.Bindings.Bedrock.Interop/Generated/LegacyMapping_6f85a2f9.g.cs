@@ -40,23 +40,23 @@ public sealed unsafe partial class LegacyMapping : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static LegacyMapping Create()
+    public static LegacyMapping? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_63dc40d2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyMapping((nint)handle);
     }
 
-    public static LegacyMapping Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorFilterGroup_Nested.LegacyMapping arg0)
+    public static LegacyMapping? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorFilterGroup_Nested.LegacyMapping arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ee948ec9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LegacyMapping((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class LegacyMapping : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_d978891d((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorFilterGroup_Nested.LegacyMapping operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorFilterGroup_Nested.LegacyMapping arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorFilterGroup_Nested.LegacyMapping? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorFilterGroup_Nested.LegacyMapping arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorFilterGroup_Nested.LegacyMapping((nint)NativeMethods.TablePtr->C0.hs_method_cb032edc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_cb032edc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorFilterGroup_Nested.LegacyMapping((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

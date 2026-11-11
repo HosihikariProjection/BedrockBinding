@@ -44,12 +44,12 @@ public sealed unsafe partial class AgentDetectCommandSystem : global::System.IDi
     public void _tick(nint registry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AgentDetectCommandSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentDetectCommandSystem arg0)
+    public static AgentDetectCommandSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentDetectCommandSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7d5e8ed0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AgentDetectCommandSystem((nint)handle);

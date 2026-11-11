@@ -44,12 +44,12 @@ public sealed unsafe partial class QueueItem : global::System.IDisposable
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static QueueItem Create()
+    public static QueueItem? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4a990580();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new QueueItem((nint)handle);
@@ -77,9 +77,10 @@ public sealed unsafe partial class QueueItem : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_d041c746((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.QueueItem operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.QueueItem arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.QueueItem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.QueueItem arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.QueueItem((nint)NativeMethods.TablePtr->C0.hs_method_58f4ef3c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_58f4ef3c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.QueueItem((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

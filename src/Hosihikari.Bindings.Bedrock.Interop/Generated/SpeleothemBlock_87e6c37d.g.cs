@@ -461,23 +461,23 @@ public sealed unsafe partial class SpeleothemBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpeleothemBlock Create()
+    public static SpeleothemBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5bfd5a66();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpeleothemBlock((nint)handle);
     }
 
-    public static SpeleothemBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SpeleothemBlock arg0)
+    public static SpeleothemBlock? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpeleothemBlock arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b9137748((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpeleothemBlock((nint)handle);
@@ -549,9 +549,10 @@ public sealed unsafe partial class SpeleothemBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_4ae93519((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getDustColor(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getDustColor(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C3.hs_method_ff726ce1((void*)__hosihikari_shim_handle, (void*)arg0.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ff726ce1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public string getDustParticleName(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
@@ -560,14 +561,16 @@ public sealed unsafe partial class SpeleothemBlock : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getInitialDefaultState()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getInitialDefaultState()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C3.hs_method_34b79323((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_34b79323((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C3.hs_method_60cd9295((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, face, (void*)clickPos.Handle, itemValue), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_60cd9295((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, face, (void*)clickPos.Handle, itemValue);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public int getVariant(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
@@ -575,9 +578,10 @@ public sealed unsafe partial class SpeleothemBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_3c32957f((void*)__hosihikari_shim_handle, (void*)block.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getVisualShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferAABB)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getVisualShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferAABB)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C3.hs_method_ef31be39((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)bufferAABB.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ef31be39((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)bufferAABB.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -640,9 +644,10 @@ public sealed unsafe partial class SpeleothemBlock : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_17a0c68b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)projectile.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SpeleothemBlock operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpeleothemBlock arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SpeleothemBlock? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpeleothemBlock arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpeleothemBlock((nint)NativeMethods.TablePtr->C3.hs_method_640ac194((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_640ac194((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SpeleothemBlock((nint)__hs_handle, false) : null;
     }
 
     public void randomTick(global::Hosihikari.Bindings.Bedrock.Interop.BlockEvents.BlockRandomTickEvent eventData)

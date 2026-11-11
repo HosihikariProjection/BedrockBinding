@@ -40,23 +40,23 @@ public sealed unsafe partial class Entry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Entry Create()
+    public static Entry? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d03a3943();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Entry((nint)handle);
     }
 
-    public static Entry Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ShadowBanList_Nested.Entry arg0)
+    public static Entry? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ShadowBanList_Nested.Entry arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_34d50e01((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Entry((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class Entry : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_084c2859((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ShadowBanList_Nested.Entry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ShadowBanList_Nested.Entry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ShadowBanList_Nested.Entry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ShadowBanList_Nested.Entry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ShadowBanList_Nested.Entry((nint)NativeMethods.TablePtr->C3.hs_method_56788879((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_56788879((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ShadowBanList_Nested.Entry((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

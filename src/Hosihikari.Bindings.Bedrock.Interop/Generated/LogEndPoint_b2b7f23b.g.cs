@@ -40,12 +40,12 @@ public sealed unsafe partial class LogEndPoint : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static LogEndPoint Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.LogEndPoint arg0)
+    public static LogEndPoint? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.LogEndPoint arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_62f78208((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LogEndPoint((nint)handle);

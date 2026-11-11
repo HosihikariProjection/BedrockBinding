@@ -90,23 +90,23 @@ public sealed unsafe partial class InvalidArgumentError : global::System.IDispos
     public nint _ctor(nint argTypeName, int index_) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static InvalidArgumentError Create()
+    public static InvalidArgumentError? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ba53b089();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InvalidArgumentError((nint)handle);
     }
 
-    public static InvalidArgumentError Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InvalidArgumentError arg0)
+    public static InvalidArgumentError? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InvalidArgumentError arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9c5dae07((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InvalidArgumentError((nint)handle);
@@ -132,9 +132,10 @@ public sealed unsafe partial class InvalidArgumentError : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C3.hs_get_8b456f09((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InvalidArgumentError operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InvalidArgumentError arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InvalidArgumentError? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InvalidArgumentError arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InvalidArgumentError((nint)NativeMethods.TablePtr->C3.hs_method_d7219762((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d7219762((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InvalidArgumentError((nint)__hs_handle, false) : null;
     }
 
 

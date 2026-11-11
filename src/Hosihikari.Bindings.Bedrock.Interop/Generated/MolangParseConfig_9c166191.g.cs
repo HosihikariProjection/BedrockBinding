@@ -40,12 +40,12 @@ public sealed unsafe partial class MolangParseConfig : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static MolangParseConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangParseConfig arg0)
+    public static MolangParseConfig? Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangParseConfig arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7efa3960((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangParseConfig((nint)handle);

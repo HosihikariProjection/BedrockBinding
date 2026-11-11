@@ -48,12 +48,12 @@ public sealed unsafe partial class UpdateVerticalHalfGetPlacementBlockCallback :
     public nint _getPlacementBlock(nint block, nint arg1, nint arg2, byte face, nint clickPos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UpdateVerticalHalfGetPlacementBlockCallback Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTrait.PlacementPosition_Nested.UpdateVerticalHalfGetPlacementBlockCallback arg0)
+    public static UpdateVerticalHalfGetPlacementBlockCallback? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTrait.PlacementPosition_Nested.UpdateVerticalHalfGetPlacementBlockCallback arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_bb176f3b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UpdateVerticalHalfGetPlacementBlockCallback((nint)handle);

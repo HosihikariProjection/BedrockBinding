@@ -48,12 +48,12 @@ public sealed unsafe partial class ServerConfigurationJoinInfo : global::System.
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerConfigurationJoinInfo Create()
+    public static ServerConfigurationJoinInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_216c93cf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerConfigurationJoinInfo((nint)handle);

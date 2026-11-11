@@ -40,12 +40,12 @@ public sealed unsafe partial class UniqueOwnerPointer_JigsawStructureRegistry_ :
         return __hs_handle;
     }
 
-    public static UniqueOwnerPointer_JigsawStructureRegistry_ Create()
+    public static UniqueOwnerPointer_JigsawStructureRegistry_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f4330c88();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_JigsawStructureRegistry_((nint)handle);
@@ -55,12 +55,12 @@ public sealed unsafe partial class UniqueOwnerPointer_JigsawStructureRegistry_ :
     public static UniqueOwnerPointer_JigsawStructureRegistry_ Create_5126e4ad(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static UniqueOwnerPointer_JigsawStructureRegistry_ Create_fcd42ddc()
+    public static UniqueOwnerPointer_JigsawStructureRegistry_? Create_fcd42ddc()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fcd42ddc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_JigsawStructureRegistry_((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class UniqueOwnerPointer_JigsawStructureRegistry_ :
         return NativeMethods.TablePtr->C0.hs_method_cc053299((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureRegistry operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureRegistry? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureRegistry((nint)NativeMethods.TablePtr->C0.hs_method_dc383a35((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dc383a35((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureRegistry((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureRegistry? operator_operator__()
@@ -113,9 +114,10 @@ public sealed unsafe partial class UniqueOwnerPointer_JigsawStructureRegistry_ :
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_JigsawStructureRegistry_ operator_assign()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_JigsawStructureRegistry_? operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_JigsawStructureRegistry_((nint)NativeMethods.TablePtr->C0.hs_method_4ae4171b((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4ae4171b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_JigsawStructureRegistry_((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_JigsawStructureRegistry_ other)

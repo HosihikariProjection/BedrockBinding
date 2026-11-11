@@ -40,12 +40,12 @@ public sealed unsafe partial class Async_void_ : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Async_void_ Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_ arg0)
+    public static Async_void_? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_ arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_76deb625((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Async_void_((nint)handle);

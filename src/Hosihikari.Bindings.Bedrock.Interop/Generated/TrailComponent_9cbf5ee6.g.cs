@@ -44,23 +44,23 @@ public sealed unsafe partial class TrailComponent : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TrailComponent Create()
+    public static TrailComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ca3d48d6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TrailComponent((nint)handle);
     }
 
-    public static TrailComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.TrailComponent arg0)
+    public static TrailComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.TrailComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2f9989dd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TrailComponent((nint)handle);
@@ -109,9 +109,10 @@ public sealed unsafe partial class TrailComponent : global::System.IDisposable
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TrailComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TrailComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.TrailComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TrailComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TrailComponent((nint)NativeMethods.TablePtr->C4.hs_method_5884bad7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5884bad7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TrailComponent((nint)__hs_handle, false) : null;
     }
 
 

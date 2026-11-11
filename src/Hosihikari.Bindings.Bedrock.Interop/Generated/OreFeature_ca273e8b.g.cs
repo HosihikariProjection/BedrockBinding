@@ -63,12 +63,12 @@ public sealed unsafe partial class OreFeature : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OreFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.OreFeature arg0)
+    public static OreFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.OreFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f6e1bcb1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OreFeature((nint)handle);

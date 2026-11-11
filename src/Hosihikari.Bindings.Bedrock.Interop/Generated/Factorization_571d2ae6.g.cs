@@ -40,12 +40,12 @@ public sealed unsafe partial class Factorization : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Factorization Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Factorization arg0)
+    public static Factorization? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Factorization arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a106d185((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Factorization((nint)handle);

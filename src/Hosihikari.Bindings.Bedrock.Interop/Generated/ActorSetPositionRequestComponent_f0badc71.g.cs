@@ -40,12 +40,12 @@ public sealed unsafe partial class ActorSetPositionRequestComponent : global::Sy
         return __hs_handle;
     }
 
-    public static ActorSetPositionRequestComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorSetPositionRequestComponent arg0)
+    public static ActorSetPositionRequestComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorSetPositionRequestComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3111adf0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorSetPositionRequestComponent((nint)handle);

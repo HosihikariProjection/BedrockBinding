@@ -40,12 +40,12 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static IconItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.IconItemComponent arg0)
+    public static IconItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.IconItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_009bf2e5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IconItemComponent((nint)handle);

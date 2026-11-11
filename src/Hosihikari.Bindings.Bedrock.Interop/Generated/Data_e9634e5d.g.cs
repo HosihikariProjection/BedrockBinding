@@ -40,23 +40,23 @@ public sealed unsafe partial class Data : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Data Create()
+    public static Data? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ae1d1586();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Data((nint)handle);
     }
 
-    public static Data Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockCollisionEvaluationQueueComponent_Nested.Data arg0)
+    public static Data? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockCollisionEvaluationQueueComponent_Nested.Data arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6500ef45((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Data((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class Data : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_a2ea7335((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockCollisionEvaluationQueueComponent_Nested.Data operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockCollisionEvaluationQueueComponent_Nested.Data arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockCollisionEvaluationQueueComponent_Nested.Data? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockCollisionEvaluationQueueComponent_Nested.Data arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockCollisionEvaluationQueueComponent_Nested.Data((nint)NativeMethods.TablePtr->C0.hs_method_3a37d44e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3a37d44e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockCollisionEvaluationQueueComponent_Nested.Data((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

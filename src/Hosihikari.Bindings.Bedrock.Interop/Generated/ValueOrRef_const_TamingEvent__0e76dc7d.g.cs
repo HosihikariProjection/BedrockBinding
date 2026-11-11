@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_TamingEvent_ : global::Syste
     public static ValueOrRef_const_TamingEvent_ Create_cb745675(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const TamingEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TamingEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.TamingEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TamingEvent((nint)NativeMethods.TablePtr->C1.hs_method_df63dff1((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_df63dff1((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TamingEvent((nint)__hs_handle, false) : null;
     }
 
 

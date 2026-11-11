@@ -40,45 +40,45 @@ public sealed unsafe partial class NonOwnerPointer_PackCommand__IPackCommandPipe
         return __hs_handle;
     }
 
-    public static NonOwnerPointer_PackCommand__IPackCommandPipeline_ Create()
+    public static NonOwnerPointer_PackCommand__IPackCommandPipeline_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8b6d26e4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_PackCommand__IPackCommandPipeline_((nint)handle);
     }
 
-    public static NonOwnerPointer_PackCommand__IPackCommandPipeline_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    public static NonOwnerPointer_PackCommand__IPackCommandPipeline_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1169747b(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_PackCommand__IPackCommandPipeline_((nint)handle);
     }
 
-    public static NonOwnerPointer_PackCommand__IPackCommandPipeline_ Create_046336a1()
+    public static NonOwnerPointer_PackCommand__IPackCommandPipeline_? Create_046336a1()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_046336a1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_PackCommand__IPackCommandPipeline_((nint)handle);
     }
 
-    public static NonOwnerPointer_PackCommand__IPackCommandPipeline_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, nint p)
+    public static NonOwnerPointer_PackCommand__IPackCommandPipeline_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, nint p)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_119487ca(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)p);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_PackCommand__IPackCommandPipeline_((nint)handle);

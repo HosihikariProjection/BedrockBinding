@@ -72,23 +72,23 @@ public sealed unsafe partial class DtlsTransport : global::System.IDisposable
     public void Clear() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DtlsTransport Create()
+    public static DtlsTransport? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_61e2a767();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DtlsTransport((nint)handle);
     }
 
-    public static DtlsTransport Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransport arg0)
+    public static DtlsTransport? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransport arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e416e5f4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DtlsTransport((nint)handle);
@@ -156,9 +156,10 @@ public sealed unsafe partial class DtlsTransport : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_be35111d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransport operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransport arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransport? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransport arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransport((nint)NativeMethods.TablePtr->C4.hs_method_7a0c18b4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_7a0c18b4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransport((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

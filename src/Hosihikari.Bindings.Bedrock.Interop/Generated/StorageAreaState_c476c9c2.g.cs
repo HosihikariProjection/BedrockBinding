@@ -48,12 +48,12 @@ public sealed unsafe partial class StorageAreaState : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StorageAreaState Create()
+    public static StorageAreaState? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_57e53cda();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StorageAreaState((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class StorageAreaState : global::System.IDisposable
     public static StorageAreaState Create(nint storageAreaRootPath) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StorageAreaState Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreaState arg0)
+    public static StorageAreaState? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreaState arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5ea1eda4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StorageAreaState((nint)handle);
@@ -124,9 +124,10 @@ public sealed unsafe partial class StorageAreaState : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_71fe4512((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreaState operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreaState arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreaState? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreaState arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreaState((nint)NativeMethods.TablePtr->C1.hs_method_84f267d7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_84f267d7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreaState((nint)__hs_handle, false) : null;
     }
 
 

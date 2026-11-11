@@ -44,12 +44,12 @@ public sealed unsafe partial class ISystem : global::System.IDisposable
     public void _registerEvents(nint dispatcher) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ISystem Create(global::Hosihikari.Bindings.Bedrock.Interop.ISystem arg0)
+    public static ISystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.ISystem arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_02395030((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ISystem((nint)handle);

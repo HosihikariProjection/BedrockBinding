@@ -44,12 +44,12 @@ public sealed unsafe partial class SurfaceBuilderComponent : global::System.IDis
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SurfaceBuilderComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceBuilderComponent arg0)
+    public static SurfaceBuilderComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceBuilderComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_96904ff6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SurfaceBuilderComponent((nint)handle);

@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptPlayAnimationOptions : global::System.I
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptPlayAnimationOptions Create()
+    public static ScriptPlayAnimationOptions? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_eba58a4f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPlayAnimationOptions((nint)handle);

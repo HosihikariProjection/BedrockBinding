@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_IncomingPacketEvent_ : globa
     public static ValueOrRef_const_IncomingPacketEvent_ Create_8d92f8a5(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const IncomingPacketEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.IncomingPacketEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.IncomingPacketEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IncomingPacketEvent((nint)NativeMethods.TablePtr->C1.hs_method_def2d6fb((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_def2d6fb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IncomingPacketEvent((nint)__hs_handle, false) : null;
     }
 
 

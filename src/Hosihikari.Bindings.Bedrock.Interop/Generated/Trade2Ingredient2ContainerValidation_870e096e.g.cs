@@ -44,12 +44,12 @@ public sealed unsafe partial class Trade2Ingredient2ContainerValidation : global
     public int _getContainerOffset(nint screenContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Trade2Ingredient2ContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.Trade2Ingredient2ContainerValidation arg0)
+    public static Trade2Ingredient2ContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.Trade2Ingredient2ContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_9a3af701((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Trade2Ingredient2ContainerValidation((nint)handle);

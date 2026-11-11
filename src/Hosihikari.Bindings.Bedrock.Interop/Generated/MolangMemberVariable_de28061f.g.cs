@@ -45,12 +45,12 @@ public sealed unsafe partial class MolangMemberVariable : global::System.IDispos
         NativeMethods.TablePtr->C2.hs_method_be2ad9b1((void*)__hosihikari_shim_handle);
     }
 
-    public static MolangMemberVariable Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangMemberVariable arg0)
+    public static MolangMemberVariable? Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangMemberVariable arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0dafd3b6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangMemberVariable((nint)handle);

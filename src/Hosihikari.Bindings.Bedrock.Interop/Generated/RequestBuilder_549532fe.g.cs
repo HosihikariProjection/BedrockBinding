@@ -44,23 +44,23 @@ public sealed unsafe partial class RequestBuilder : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RequestBuilder Create()
+    public static RequestBuilder? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_46fec7c9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RequestBuilder((nint)handle);
     }
 
-    public static RequestBuilder Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RequestBuilder arg0)
+    public static RequestBuilder? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RequestBuilder arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_be1e48ba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RequestBuilder((nint)handle);
@@ -82,9 +82,10 @@ public sealed unsafe partial class RequestBuilder : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_4c1e5486((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RequestBuilder operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RequestBuilder arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RequestBuilder? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RequestBuilder arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RequestBuilder((nint)NativeMethods.TablePtr->C0.hs_method_535e5a4e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_535e5a4e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.RequestBuilder((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

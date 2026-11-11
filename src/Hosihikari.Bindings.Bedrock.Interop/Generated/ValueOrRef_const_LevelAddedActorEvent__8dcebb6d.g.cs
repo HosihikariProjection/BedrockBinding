@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_LevelAddedActorEvent_ : glob
     public static ValueOrRef_const_LevelAddedActorEvent_ Create_0aff48cf(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const LevelAddedActorEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelAddedActorEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelAddedActorEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelAddedActorEvent((nint)NativeMethods.TablePtr->C1.hs_method_ba226004((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ba226004((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelAddedActorEvent((nint)__hs_handle, false) : null;
     }
 
 

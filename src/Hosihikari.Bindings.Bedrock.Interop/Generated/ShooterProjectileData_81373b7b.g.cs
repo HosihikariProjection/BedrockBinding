@@ -40,12 +40,12 @@ public sealed unsafe partial class ShooterProjectileData : global::System.IDispo
         return __hs_handle;
     }
 
-    public static ShooterProjectileData Create(global::Hosihikari.Bindings.Bedrock.Interop.ShooterProjectileData arg0)
+    public static ShooterProjectileData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShooterProjectileData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_85f89072((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShooterProjectileData((nint)handle);

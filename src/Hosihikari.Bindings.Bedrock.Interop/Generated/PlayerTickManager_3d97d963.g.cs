@@ -48,12 +48,12 @@ public sealed unsafe partial class PlayerTickManager : global::System.IDisposabl
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerTickManager Create()
+    public static PlayerTickManager? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_71699597();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerTickManager((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class SFrame : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static SFrame Create()
+    public static SFrame? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c469a952();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SFrame((nint)handle);
     }
 
-    public static SFrame Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions_Nested.SFrame arg0)
+    public static SFrame? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions_Nested.SFrame arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_89fe55ab((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SFrame((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class SFrame : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_2e87a77a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions_Nested.SFrame operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions_Nested.SFrame arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions_Nested.SFrame? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions_Nested.SFrame arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions_Nested.SFrame((nint)NativeMethods.TablePtr->C4.hs_method_72c5134c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_72c5134c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions_Nested.SFrame((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

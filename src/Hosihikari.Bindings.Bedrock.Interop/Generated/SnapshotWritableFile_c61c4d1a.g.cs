@@ -60,46 +60,50 @@ public sealed unsafe partial class SnapshotWritableFile : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Append(nint data)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Append(nint data)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_e6770b9c((void*)__hosihikari_shim_handle, (void*)data));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e6770b9c((void*)__hosihikari_shim_handle, (void*)data);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Close()
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Close()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_48d2bf71((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_48d2bf71((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Flush()
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Flush()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_16113c26((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_16113c26((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
-    public static SnapshotWritableFile Create()
+    public static SnapshotWritableFile? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_bc083aa5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SnapshotWritableFile((nint)handle);
     }
 
-    public static SnapshotWritableFile Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile arg0)
+    public static SnapshotWritableFile? Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_361b0fb0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SnapshotWritableFile((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Sync()
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Sync()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_7aff401b((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7aff401b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -114,9 +118,10 @@ public sealed unsafe partial class SnapshotWritableFile : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C3.hs_get_4634fa3e((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile((nint)NativeMethods.TablePtr->C3.hs_method_603d5326((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_603d5326((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile((nint)__hs_handle, false) : null;
     }
 
 

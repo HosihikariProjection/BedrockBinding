@@ -40,23 +40,23 @@ public sealed unsafe partial class AddBiomeIsland : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static AddBiomeIsland Create()
+    public static AddBiomeIsland? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_303d352a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddBiomeIsland((nint)handle);
     }
 
-    public static AddBiomeIsland Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.AddBiomeIsland arg0)
+    public static AddBiomeIsland? Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.AddBiomeIsland arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1302fb37((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AddBiomeIsland((nint)handle);

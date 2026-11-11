@@ -44,12 +44,12 @@ public sealed unsafe partial class CommandPropertyBag : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CommandPropertyBag Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandPropertyBag arg0)
+    public static CommandPropertyBag? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandPropertyBag arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_080f95e1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandPropertyBag((nint)handle);

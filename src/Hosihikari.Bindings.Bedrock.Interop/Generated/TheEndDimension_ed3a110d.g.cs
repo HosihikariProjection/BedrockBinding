@@ -531,19 +531,22 @@ public sealed unsafe partial class TheEndDimension : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_35fca922((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType getDefaultBiomeId()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType? getDefaultBiomeId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)NativeMethods.TablePtr->C3.hs_method_e2312e52((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e2312e52((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState getDimensionDirectionalLightSourceState(float a)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState? getDimensionDirectionalLightSourceState(float a)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState((nint)NativeMethods.TablePtr->C3.hs_method_b7bc973c((void*)__hosihikari_shim_handle, a));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b7bc973c((void*)__hosihikari_shim_handle, a);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getSpawnPos()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSpawnPos()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C3.hs_method_a62eb463((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a62eb463((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public int getSpawnYPosition()
@@ -619,9 +622,10 @@ public sealed unsafe partial class TheEndDimension : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_da0220bf((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 translatePosAcrossDimension(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originalPos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromId)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? translatePosAcrossDimension(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originalPos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromId)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C3.hs_method_cd63d97e((void*)__hosihikari_shim_handle, (void*)originalPos.Handle, (void*)fromId.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cd63d97e((void*)__hosihikari_shim_handle, (void*)originalPos.Handle, (void*)fromId.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public void upgradeLevelChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk generatedChunk)

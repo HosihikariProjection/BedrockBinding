@@ -150,23 +150,23 @@ public sealed unsafe partial class ChunkViewSource : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ChunkViewSource Create()
+    public static ChunkViewSource? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d9eabd03();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkViewSource((nint)handle);
     }
 
-    public static ChunkViewSource Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource otherChunkViewSource)
+    public static ChunkViewSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource otherChunkViewSource)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6975496a((void*)otherChunkViewSource.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkViewSource((nint)handle);
@@ -235,9 +235,10 @@ public sealed unsafe partial class ChunkViewSource : global::System.IDisposable
     public void move(nint bounds, bool isCircle, nint chunkViewGenerateMode, nint add, nint serverBuildRatio) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource((nint)NativeMethods.TablePtr->C0.hs_method_1e7935da((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1e7935da((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

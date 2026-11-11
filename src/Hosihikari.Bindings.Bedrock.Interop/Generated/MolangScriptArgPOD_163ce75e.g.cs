@@ -40,89 +40,89 @@ public sealed unsafe partial class MolangScriptArgPOD : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static MolangScriptArgPOD Create()
+    public static MolangScriptArgPOD? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_55b0373b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangScriptArgPOD((nint)handle);
     }
 
-    public static MolangScriptArgPOD Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID val)
+    public static MolangScriptArgPOD? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID val)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a3b3a16e((void*)val.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangScriptArgPOD((nint)handle);
     }
 
-    public static MolangScriptArgPOD Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangLoopBreak val)
+    public static MolangScriptArgPOD? Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangLoopBreak val)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e1120d28((void*)val.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangScriptArgPOD((nint)handle);
     }
 
-    public static MolangScriptArgPOD Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangLoopContinue val)
+    public static MolangScriptArgPOD? Create(global::Hosihikari.Bindings.Bedrock.Interop.MolangLoopContinue val)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4c5333fe((void*)val.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangScriptArgPOD((nint)handle);
     }
 
-    public static MolangScriptArgPOD Create(global::Hosihikari.Bindings.Bedrock.Interop.Actor? val)
+    public static MolangScriptArgPOD? Create(global::Hosihikari.Bindings.Bedrock.Interop.Actor? val)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_23ff407d((void*)(val?.Handle ?? 0));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangScriptArgPOD((nint)handle);
     }
 
-    public static MolangScriptArgPOD Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase? val)
+    public static MolangScriptArgPOD? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase? val)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_74bf4c64((void*)(val?.Handle ?? 0));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangScriptArgPOD((nint)handle);
     }
 
-    public static MolangScriptArgPOD Create(float val)
+    public static MolangScriptArgPOD? Create(float val)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bbda53a0(val);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangScriptArgPOD((nint)handle);
     }
 
-    public static MolangScriptArgPOD Create(ulong val)
+    public static MolangScriptArgPOD? Create(ulong val)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3679e556(val);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangScriptArgPOD((nint)handle);
@@ -181,9 +181,10 @@ public sealed unsafe partial class MolangScriptArgPOD : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C2.hs_get_1c673070((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArgPOD operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArgPOD other)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArgPOD? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArgPOD other)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArgPOD((nint)NativeMethods.TablePtr->C2.hs_method_52d82156((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_52d82156((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArgPOD((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArgPOD rhs)

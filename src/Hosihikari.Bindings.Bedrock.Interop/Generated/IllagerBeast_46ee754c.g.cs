@@ -598,12 +598,12 @@ public sealed unsafe partial class IllagerBeast : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IllagerBeast Create()
+    public static IllagerBeast? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e1c1867a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IllagerBeast((nint)handle);

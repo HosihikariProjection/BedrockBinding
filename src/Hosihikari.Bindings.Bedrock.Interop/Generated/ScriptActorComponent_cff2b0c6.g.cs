@@ -56,12 +56,12 @@ public sealed unsafe partial class ScriptActorComponent : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptActorComponent Create()
+    public static ScriptActorComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_535cdc17();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptActorComponent((nint)handle);
@@ -107,9 +107,10 @@ public sealed unsafe partial class ScriptActorComponent : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C3.hs_get_794150e0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorComponent((nint)NativeMethods.TablePtr->C3.hs_method_d381013d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d381013d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorComponent((nint)__hs_handle, false) : null;
     }
 
 

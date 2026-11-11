@@ -40,12 +40,12 @@ public sealed unsafe partial class ServerLocatorBar : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ServerLocatorBar Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerLocatorBar arg0)
+    public static ServerLocatorBar? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerLocatorBar arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4589a2a2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerLocatorBar((nint)handle);

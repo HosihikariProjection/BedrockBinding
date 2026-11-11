@@ -127,12 +127,12 @@ public sealed unsafe partial class BrushableBlockActor : global::System.IDisposa
     public void _stopOpen(nint actor) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BrushableBlockActor Create()
+    public static BrushableBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_37f40549();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BrushableBlockActor((nint)handle);
@@ -168,9 +168,10 @@ public sealed unsafe partial class BrushableBlockActor : global::System.IDisposa
         return NativeMethods.TablePtr->C0.hs_method_1b7e7b9c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C0.hs_method_24d2f993((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_24d2f993((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

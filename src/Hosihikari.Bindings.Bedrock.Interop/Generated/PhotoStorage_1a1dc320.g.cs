@@ -64,12 +64,12 @@ public sealed unsafe partial class PhotoStorage : global::System.IDisposable
     public static nint PHOTO_DIR() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PhotoStorage Create()
+    public static PhotoStorage? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bf75800e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PhotoStorage((nint)handle);
@@ -79,12 +79,12 @@ public sealed unsafe partial class PhotoStorage : global::System.IDisposable
     public static PhotoStorage Create(nint baseDir) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PhotoStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.PhotoStorage arg0)
+    public static PhotoStorage? Create(global::Hosihikari.Bindings.Bedrock.Interop.PhotoStorage arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_eef43e77((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PhotoStorage((nint)handle);

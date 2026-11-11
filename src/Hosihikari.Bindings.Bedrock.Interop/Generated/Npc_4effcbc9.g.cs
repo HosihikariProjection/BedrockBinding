@@ -774,12 +774,12 @@ public sealed unsafe partial class Npc : global::System.IDisposable
     public void _reloadHardcoded(nint method, nint @params) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Npc Create()
+    public static Npc? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f0c6c203();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Npc((nint)handle);
@@ -797,9 +797,10 @@ public sealed unsafe partial class Npc : global::System.IDisposable
     public static nint Skins() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C2.hs_method_899ed874((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_899ed874((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public string buildDebugInfo(string @out)
@@ -847,9 +848,10 @@ public sealed unsafe partial class Npc : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_75a1a728((void*)__hosihikari_shim_handle, (void*)source.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getNameTagTextColor()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getNameTagTextColor()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C2.hs_method_7ddb0a96((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7ddb0a96((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public void initializeComponents(byte method, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList @params)

@@ -90,12 +90,12 @@ public sealed unsafe partial class RiverFollowingGoal : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RiverFollowingGoal Create()
+    public static RiverFollowingGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_55ed691f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RiverFollowingGoal((nint)handle);
@@ -105,12 +105,12 @@ public sealed unsafe partial class RiverFollowingGoal : global::System.IDisposab
     public static RiverFollowingGoal Create(nint mob, nint name, nint goalId, float lookAhead, float speed) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RiverFollowingGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.RiverFollowingGoal arg0)
+    public static RiverFollowingGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.RiverFollowingGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_caaf6cb3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RiverFollowingGoal((nint)handle);
@@ -170,9 +170,10 @@ public sealed unsafe partial class RiverFollowingGoal : global::System.IDisposab
         set => NativeMethods.TablePtr->C3.hs_set_811f45b2((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RiverFollowingGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RiverFollowingGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RiverFollowingGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RiverFollowingGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RiverFollowingGoal((nint)NativeMethods.TablePtr->C3.hs_method_3397fe9e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3397fe9e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RiverFollowingGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

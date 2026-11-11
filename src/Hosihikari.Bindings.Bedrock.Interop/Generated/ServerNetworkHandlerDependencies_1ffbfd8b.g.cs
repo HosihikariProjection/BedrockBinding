@@ -44,23 +44,23 @@ public sealed unsafe partial class ServerNetworkHandlerDependencies : global::Sy
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerNetworkHandlerDependencies Create()
+    public static ServerNetworkHandlerDependencies? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_044b3aec();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerNetworkHandlerDependencies((nint)handle);
     }
 
-    public static ServerNetworkHandlerDependencies Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandlerDependencies arg0)
+    public static ServerNetworkHandlerDependencies? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandlerDependencies arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_698fdaef((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerNetworkHandlerDependencies((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class ServerNetworkHandlerDependencies : global::Sy
         get => (nint)NativeMethods.TablePtr->C3.hs_get_51d57b13((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandlerDependencies operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandlerDependencies arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandlerDependencies? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandlerDependencies arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandlerDependencies((nint)NativeMethods.TablePtr->C3.hs_method_63b89568((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_63b89568((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandlerDependencies((nint)__hs_handle, false) : null;
     }
 
 

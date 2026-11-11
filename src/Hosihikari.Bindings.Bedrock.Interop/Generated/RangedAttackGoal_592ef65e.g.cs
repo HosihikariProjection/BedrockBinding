@@ -86,12 +86,12 @@ public sealed unsafe partial class RangedAttackGoal : global::System.IDisposable
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RangedAttackGoal Create()
+    public static RangedAttackGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3865c78e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RangedAttackGoal((nint)handle);
@@ -101,12 +101,12 @@ public sealed unsafe partial class RangedAttackGoal : global::System.IDisposable
     public static RangedAttackGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RangedAttackGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.RangedAttackGoal arg0)
+    public static RangedAttackGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.RangedAttackGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d4d281fe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RangedAttackGoal((nint)handle);
@@ -302,9 +302,10 @@ public sealed unsafe partial class RangedAttackGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_eb34636b((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RangedAttackGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RangedAttackGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RangedAttackGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RangedAttackGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RangedAttackGoal((nint)NativeMethods.TablePtr->C3.hs_method_f332744b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f332744b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RangedAttackGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

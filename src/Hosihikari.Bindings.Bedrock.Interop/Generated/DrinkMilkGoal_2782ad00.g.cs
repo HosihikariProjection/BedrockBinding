@@ -86,23 +86,23 @@ public sealed unsafe partial class DrinkMilkGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DrinkMilkGoal Create()
+    public static DrinkMilkGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_880f6db6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DrinkMilkGoal((nint)handle);
     }
 
-    public static DrinkMilkGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.DrinkMilkGoal arg0)
+    public static DrinkMilkGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.DrinkMilkGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ff12fc0a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DrinkMilkGoal((nint)handle);
@@ -168,9 +168,10 @@ public sealed unsafe partial class DrinkMilkGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_b7df670a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DrinkMilkGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DrinkMilkGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DrinkMilkGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DrinkMilkGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DrinkMilkGoal((nint)NativeMethods.TablePtr->C1.hs_method_1895e1a5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1895e1a5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DrinkMilkGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

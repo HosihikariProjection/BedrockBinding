@@ -40,12 +40,12 @@ public sealed unsafe partial class CommandVersion : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CommandVersion Create(int from, int to)
+    public static CommandVersion? Create(int from, int to)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_374beced(from, to);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandVersion((nint)handle);

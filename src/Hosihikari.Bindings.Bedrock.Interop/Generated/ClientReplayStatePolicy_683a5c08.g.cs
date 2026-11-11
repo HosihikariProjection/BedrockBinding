@@ -56,12 +56,12 @@ public sealed unsafe partial class ClientReplayStatePolicy : global::System.IDis
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ClientReplayStatePolicy Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientReplayStatePolicy arg0)
+    public static ClientReplayStatePolicy? Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientReplayStatePolicy arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e5889a08((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClientReplayStatePolicy((nint)handle);
@@ -89,9 +89,10 @@ public sealed unsafe partial class ClientReplayStatePolicy : global::System.IDis
         NativeMethods.TablePtr->C0.hs_method_0acc1113((void*)__hosihikari_shim_handle, arg0);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection shouldCorrectMovement(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacket arg1, ulong arg2, byte arg3, bool arg4)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection? shouldCorrectMovement(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacket arg1, ulong arg2, byte arg3, bool arg4)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)NativeMethods.TablePtr->C0.hs_method_943f2afc((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2, arg3, arg4));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_943f2afc((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2, arg3, arg4);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)__hs_handle) : null;
     }
 
 

@@ -56,12 +56,12 @@ public sealed unsafe partial class JigsawEditorData : global::System.IDisposable
     public static nint JOINT_TYPE_TO_NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JigsawEditorData Create()
+    public static JigsawEditorData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_13983fca();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JigsawEditorData((nint)handle);

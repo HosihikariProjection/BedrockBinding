@@ -72,23 +72,23 @@ public sealed unsafe partial class IcePatchFeature : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IcePatchFeature Create()
+    public static IcePatchFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_194a0400();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IcePatchFeature((nint)handle);
     }
 
-    public static IcePatchFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.IcePatchFeature arg0)
+    public static IcePatchFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.IcePatchFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c29fbbdf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IcePatchFeature((nint)handle);
@@ -106,9 +106,10 @@ public sealed unsafe partial class IcePatchFeature : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_1e1700e0((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.IcePatchFeature operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IcePatchFeature arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.IcePatchFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IcePatchFeature arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IcePatchFeature((nint)NativeMethods.TablePtr->C1.hs_method_064b8d98((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_064b8d98((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IcePatchFeature((nint)__hs_handle, false) : null;
     }
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)

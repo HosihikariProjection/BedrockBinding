@@ -44,12 +44,12 @@ public sealed unsafe partial class HeartbeatServerSystem : global::System.IDispo
     public void _tick(nint registry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static HeartbeatServerSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerSystem arg0)
+    public static HeartbeatServerSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_bcf08040((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HeartbeatServerSystem((nint)handle);

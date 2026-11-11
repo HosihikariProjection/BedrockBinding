@@ -46,12 +46,12 @@ public sealed unsafe partial class SpawnerData : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_5efcb457((void*)__hosihikari_shim_handle, value);
     }
 
-    public static SpawnerData Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.SpawnerData arg0)
+    public static SpawnerData? Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.SpawnerData arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e5ee2292((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnerData((nint)handle);

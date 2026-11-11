@@ -99,9 +99,10 @@ public sealed unsafe partial class VariantParameterList : global::System.IDispos
         set => NativeMethods.TablePtr->C4.hs_set_f6d5ca86((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterListConst operator_VariantParameterListConst()
+    public global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterListConst? operator_VariantParameterListConst()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterListConst((nint)NativeMethods.TablePtr->C4.hs_method_b5717783((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b5717783((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterListConst((nint)__hs_handle) : null;
     }
 
     public void Dispose()

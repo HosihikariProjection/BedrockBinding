@@ -62,12 +62,12 @@ public sealed unsafe partial class ReflectionCtx : global::System.IDisposable
     public static ReflectionCtx Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ReflectionCtx Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx arg0)
+    public static ReflectionCtx? Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6392cd7a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReflectionCtx((nint)handle);

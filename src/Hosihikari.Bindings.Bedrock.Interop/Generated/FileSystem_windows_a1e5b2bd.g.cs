@@ -164,12 +164,12 @@ public sealed unsafe partial class FileSystem_windows : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileSystem_windows Create()
+    public static FileSystem_windows? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5ad3c9f0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileSystem_windows((nint)handle);
@@ -179,35 +179,39 @@ public sealed unsafe partial class FileSystem_windows : global::System.IDisposab
     public static FileSystem_windows Create(nint accessType, nint storageArea, nint manifestTracker) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileSystem_windows Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_windows arg0)
+    public static FileSystem_windows? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_windows arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e5dc853c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileSystem_windows((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _copyTimeAndAccessRights(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView sourceEntryPath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView targetEntryPath)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _copyTimeAndAccessRights(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView sourceEntryPath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView targetEntryPath)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_64598c1a((void*)__hosihikari_shim_handle, (void*)sourceEntryPath.Handle, (void*)targetEntryPath.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_64598c1a((void*)__hosihikari_shim_handle, (void*)sourceEntryPath.Handle, (void*)targetEntryPath.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _createOneDirectory(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView directoryPath)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _createOneDirectory(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView directoryPath)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_f5ffbb95((void*)__hosihikari_shim_handle, (void*)directoryPath.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f5ffbb95((void*)__hosihikari_shim_handle, (void*)directoryPath.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _deleteEmptyDirectory(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView directoryPath)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _deleteEmptyDirectory(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView directoryPath)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_aad3900f((void*)__hosihikari_shim_handle, (void*)directoryPath.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_aad3900f((void*)__hosihikari_shim_handle, (void*)directoryPath.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _deleteFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _deleteFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_29941071((void*)__hosihikari_shim_handle, (void*)path.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_29941071((void*)__hosihikari_shim_handle, (void*)path.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
     public bool _directoryExists(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView directoryPath)
@@ -225,19 +229,22 @@ public sealed unsafe partial class FileSystem_windows : global::System.IDisposab
         return NativeMethods.TablePtr->C1.hs_method_aa8452ef((void*)__hosihikari_shim_handle, (void*)entryPath.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _getEntryType(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView entryPath, nint fileTypeOut)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _getEntryType(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView entryPath, nint fileTypeOut)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_b787c94d((void*)__hosihikari_shim_handle, (void*)entryPath.Handle, (void*)fileTypeOut));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b787c94d((void*)__hosihikari_shim_handle, (void*)entryPath.Handle, (void*)fileTypeOut);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _getFileSize(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath, nint pFileSizeOut)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _getFileSize(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath, nint pFileSizeOut)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_8392a58e((void*)__hosihikari_shim_handle, (void*)filePath.Handle, (void*)pFileSizeOut));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8392a58e((void*)__hosihikari_shim_handle, (void*)filePath.Handle, (void*)pFileSizeOut);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _getLastModificationTime(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath, nint pModificationTime)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _getLastModificationTime(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath, nint pModificationTime)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_1467c431((void*)__hosihikari_shim_handle, (void*)filePath.Handle, (void*)pModificationTime));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1467c431((void*)__hosihikari_shim_handle, (void*)filePath.Handle, (void*)pModificationTime);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'Core::Result' is not supported.", false)]
@@ -248,19 +255,22 @@ public sealed unsafe partial class FileSystem_windows : global::System.IDisposab
     public nint _makeFailureFromFileSystemResult(nint errorCode, nint function, nint fileContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _openFile(nint uptFileOut, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filename, global::Hosihikari.Bindings.Bedrock.Interop.Core.FileOpenMode fileOpenMode, int bufferingMode)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _openFile(nint uptFileOut, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filename, global::Hosihikari.Bindings.Bedrock.Interop.Core.FileOpenMode fileOpenMode, int bufferingMode)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_1c760280((void*)__hosihikari_shim_handle, (void*)uptFileOut, (void*)filename.Handle, (void*)fileOpenMode.Handle, bufferingMode));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1c760280((void*)__hosihikari_shim_handle, (void*)uptFileOut, (void*)filename.Handle, (void*)fileOpenMode.Handle, bufferingMode);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _renameDirectory(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView sourceDirectoryPath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView targetDirectoryPath)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _renameDirectory(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView sourceDirectoryPath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView targetDirectoryPath)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_6dae04de((void*)__hosihikari_shim_handle, (void*)sourceDirectoryPath.Handle, (void*)targetDirectoryPath.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6dae04de((void*)__hosihikari_shim_handle, (void*)sourceDirectoryPath.Handle, (void*)targetDirectoryPath.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _renameFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView sourceFilePath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView targetFilePath)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _renameFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView sourceFilePath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView targetFilePath)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_863b9e63((void*)__hosihikari_shim_handle, (void*)sourceFilePath.Handle, (void*)targetFilePath.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_863b9e63((void*)__hosihikari_shim_handle, (void*)sourceFilePath.Handle, (void*)targetFilePath.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
 

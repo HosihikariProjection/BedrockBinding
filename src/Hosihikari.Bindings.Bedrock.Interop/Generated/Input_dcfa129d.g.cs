@@ -44,30 +44,33 @@ public sealed unsafe partial class Input : global::System.IDisposable
     public nint _getErrors() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Input Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input arg0)
+    public static Input? Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ee64e4a5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Input((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input_Nested.Data data()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input_Nested.Data? data()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input_Nested.Data((nint)NativeMethods.TablePtr->C2.hs_method_52ccd1bc((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_52ccd1bc((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input_Nested.Data((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger getErrors()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger? getErrors()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger((nint)NativeMethods.TablePtr->C2.hs_method_c94ef929((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c94ef929((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SemVersion version()
+    public global::Hosihikari.Bindings.Bedrock.Interop.SemVersion? version()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SemVersion((nint)NativeMethods.TablePtr->C2.hs_method_97e78f3c((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_97e78f3c((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SemVersion((nint)__hs_handle) : null;
     }
 
 

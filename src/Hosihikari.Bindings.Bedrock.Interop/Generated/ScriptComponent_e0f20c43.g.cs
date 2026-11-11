@@ -52,23 +52,23 @@ public sealed unsafe partial class ScriptComponent : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptComponent Create()
+    public static ScriptComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_023f756a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptComponent((nint)handle);
     }
 
-    public static ScriptComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptComponent arg0)
+    public static ScriptComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fdcdfaf9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptComponent((nint)handle);

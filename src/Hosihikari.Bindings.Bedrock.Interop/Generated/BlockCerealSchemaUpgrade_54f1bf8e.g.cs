@@ -48,12 +48,12 @@ public sealed unsafe partial class BlockCerealSchemaUpgrade : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockCerealSchemaUpgrade Create()
+    public static BlockCerealSchemaUpgrade? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5a88fcab();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockCerealSchemaUpgrade((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class BlockCerealSchemaUpgrade : global::System.IDi
     public static BlockCerealSchemaUpgrade Create(nint targetVersion, nint mSchemaKey, nint mJsonMemberName) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockCerealSchemaUpgrade Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockCerealSchemaUpgrade arg0)
+    public static BlockCerealSchemaUpgrade? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockCerealSchemaUpgrade arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b0b09ffc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockCerealSchemaUpgrade((nint)handle);

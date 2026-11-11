@@ -116,9 +116,10 @@ public sealed unsafe partial class ShapedRecipe : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_b150b427((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient _getIngredient(int x, int y)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? _getIngredient(int x, int y)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)NativeMethods.TablePtr->C3.hs_method_57be19a7((void*)__hosihikari_shim_handle, x, y), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_57be19a7((void*)__hosihikari_shim_handle, x, y);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
     }
 
     public bool _isShapeless()
@@ -140,12 +141,12 @@ public sealed unsafe partial class ShapedRecipe : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static ShapedRecipe Create(global::Hosihikari.Bindings.Bedrock.Interop.ShapedRecipe arg0)
+    public static ShapedRecipe? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShapedRecipe arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_da132fb5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShapedRecipe((nint)handle);
@@ -161,9 +162,10 @@ public sealed unsafe partial class ShapedRecipe : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_a06225c6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient getIngredient(int x, int y)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? getIngredient(int x, int y)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)NativeMethods.TablePtr->C3.hs_method_2ca6f536((void*)__hosihikari_shim_handle, x, y), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2ca6f536((void*)__hosihikari_shim_handle, x, y);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
     }
 
     public bool isShapeless()

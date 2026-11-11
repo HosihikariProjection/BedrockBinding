@@ -62,34 +62,34 @@ public sealed unsafe partial class ShipwreckFeature : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_499c89a8((void*)__hosihikari_shim_handle, (void*)biomeSource.Handle, (void*)random.Handle, (void*)pos.Handle, levelSeed, (void*)preliminarySurfaceLevel.Handle, (void*)dimension.Handle) != 0;
     }
 
-    public static ShipwreckFeature Create()
+    public static ShipwreckFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c3d92034();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShipwreckFeature((nint)handle);
     }
 
-    public static ShipwreckFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.OceanMonumentFeature monument, uint seed, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion)
+    public static ShipwreckFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.OceanMonumentFeature monument, uint seed, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0d821ee6((void*)monument.Handle, seed, (void*)baseGameVersion.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShipwreckFeature((nint)handle);
     }
 
-    public static ShipwreckFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckFeature arg0)
+    public static ShipwreckFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e4864e42((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShipwreckFeature((nint)handle);
@@ -147,9 +147,10 @@ public sealed unsafe partial class ShipwreckFeature : global::System.IDisposable
         get => NativeMethods.TablePtr->C3.hs_get_4a45327d((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckFeature operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckFeature arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckFeature arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckFeature((nint)NativeMethods.TablePtr->C3.hs_method_bfa33772((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_bfa33772((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckFeature((nint)__hs_handle, false) : null;
     }
 
 

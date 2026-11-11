@@ -52,36 +52,38 @@ public sealed unsafe partial class InMemorySequentialFile : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static InMemorySequentialFile Create()
+    public static InMemorySequentialFile? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_eef75078();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InMemorySequentialFile((nint)handle);
     }
 
-    public static InMemorySequentialFile Create(global::Hosihikari.Bindings.Bedrock.Interop.InMemorySequentialFile arg0)
+    public static InMemorySequentialFile? Create(global::Hosihikari.Bindings.Bedrock.Interop.InMemorySequentialFile arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f2ff9ca0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InMemorySequentialFile((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Read(ulong n, nint result, nint scratch)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Read(ulong n, nint result, nint scratch)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_6fa1f541((void*)__hosihikari_shim_handle, n, (void*)result, (void*)scratch));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6fa1f541((void*)__hosihikari_shim_handle, n, (void*)result, (void*)scratch);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Skip(ulong n)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Skip(ulong n)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_7de68bd1((void*)__hosihikari_shim_handle, n));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7de68bd1((void*)__hosihikari_shim_handle, n);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -96,9 +98,10 @@ public sealed unsafe partial class InMemorySequentialFile : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C1.hs_get_a6859894((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InMemorySequentialFile operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemorySequentialFile arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InMemorySequentialFile? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemorySequentialFile arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemorySequentialFile((nint)NativeMethods.TablePtr->C1.hs_method_927883e7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_927883e7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InMemorySequentialFile((nint)__hs_handle, false) : null;
     }
 
 

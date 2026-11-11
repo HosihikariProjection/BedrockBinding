@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerInputPermissionCategoryChangeEvent : gl
         return __hs_handle;
     }
 
-    public static PlayerInputPermissionCategoryChangeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerInputPermissionCategoryChangeEvent arg0)
+    public static PlayerInputPermissionCategoryChangeEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerInputPermissionCategoryChangeEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_94cb9d4c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerInputPermissionCategoryChangeEvent((nint)handle);

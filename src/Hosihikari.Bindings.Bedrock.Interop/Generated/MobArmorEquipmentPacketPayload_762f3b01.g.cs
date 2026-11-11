@@ -58,12 +58,12 @@ public sealed unsafe partial class MobArmorEquipmentPacketPayload : global::Syst
         NativeMethods.TablePtr->C2.hs_method_43a2854b((void*)__hosihikari_shim_handle);
     }
 
-    public static MobArmorEquipmentPacketPayload Create()
+    public static MobArmorEquipmentPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7fd23324();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobArmorEquipmentPacketPayload((nint)handle);
@@ -77,12 +77,12 @@ public sealed unsafe partial class MobArmorEquipmentPacketPayload : global::Syst
     public static MobArmorEquipmentPacketPayload Create_909c50cf(nint e) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MobArmorEquipmentPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.MobArmorEquipmentPacketPayload arg0)
+    public static MobArmorEquipmentPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.MobArmorEquipmentPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d1107109((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobArmorEquipmentPacketPayload((nint)handle);
@@ -124,9 +124,10 @@ public sealed unsafe partial class MobArmorEquipmentPacketPayload : global::Syst
         get => (nint)NativeMethods.TablePtr->C2.hs_get_580b11c7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MobArmorEquipmentPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MobArmorEquipmentPacketPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MobArmorEquipmentPacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MobArmorEquipmentPacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MobArmorEquipmentPacketPayload((nint)NativeMethods.TablePtr->C2.hs_method_2ce9d3e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2ce9d3e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MobArmorEquipmentPacketPayload((nint)__hs_handle, false) : null;
     }
 
 

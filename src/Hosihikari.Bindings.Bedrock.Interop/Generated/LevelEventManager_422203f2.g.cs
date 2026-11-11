@@ -48,12 +48,12 @@ public sealed unsafe partial class LevelEventManager : global::System.IDisposabl
     public nint _getLevelEventDataConnector() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelEventManager Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelEventManager arg0)
+    public static LevelEventManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelEventManager arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0e5f0f9c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelEventManager((nint)handle);

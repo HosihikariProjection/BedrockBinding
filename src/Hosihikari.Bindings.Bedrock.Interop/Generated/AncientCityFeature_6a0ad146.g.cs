@@ -66,34 +66,34 @@ public sealed unsafe partial class AncientCityFeature : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AncientCityFeature Create()
+    public static AncientCityFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ff399b37();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AncientCityFeature((nint)handle);
     }
 
-    public static AncientCityFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.AncientCityFeature arg0)
+    public static AncientCityFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.AncientCityFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d2a7324c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AncientCityFeature((nint)handle);
     }
 
-    public static AncientCityFeature Create(uint seed, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion arg1)
+    public static AncientCityFeature? Create(uint seed, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion arg1)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b59b5673(seed, (void*)arg1.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AncientCityFeature((nint)handle);

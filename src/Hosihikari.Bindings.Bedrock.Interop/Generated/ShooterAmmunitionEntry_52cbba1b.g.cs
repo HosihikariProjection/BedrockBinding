@@ -40,12 +40,12 @@ public sealed unsafe partial class ShooterAmmunitionEntry : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ShooterAmmunitionEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.ShooterItemComponentLegacyFactoryData_Nested.ShooterAmmunitionEntry arg0)
+    public static ShooterAmmunitionEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShooterItemComponentLegacyFactoryData_Nested.ShooterAmmunitionEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_36d42a5b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShooterAmmunitionEntry((nint)handle);

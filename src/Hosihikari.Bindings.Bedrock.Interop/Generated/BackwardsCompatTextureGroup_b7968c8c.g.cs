@@ -40,23 +40,23 @@ public sealed unsafe partial class BackwardsCompatTextureGroup : global::System.
         return __hs_handle;
     }
 
-    public static BackwardsCompatTextureGroup Create()
+    public static BackwardsCompatTextureGroup? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1ca2e7c4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BackwardsCompatTextureGroup((nint)handle);
     }
 
-    public static BackwardsCompatTextureGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureGroup arg0)
+    public static BackwardsCompatTextureGroup? Create(global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureGroup arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0acaeb26((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BackwardsCompatTextureGroup((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class BackwardsCompatTextureGroup : global::System.
         get => (nint)NativeMethods.TablePtr->C0.hs_get_d7413c61((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureGroup operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureGroup arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureGroup? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureGroup arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureGroup((nint)NativeMethods.TablePtr->C0.hs_method_e15af61c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e15af61c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureGroup((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

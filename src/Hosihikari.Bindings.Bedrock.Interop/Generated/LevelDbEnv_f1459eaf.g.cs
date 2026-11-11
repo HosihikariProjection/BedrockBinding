@@ -138,7 +138,7 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
     public static nint _vftableForEnv() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status CreateDir(string path)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? CreateDir(string path)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(path);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -153,7 +153,8 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(path, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_53249234((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_53249234((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
         }
     }
 
@@ -176,7 +177,7 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status GetChildren(string dir, string[] pChildrenOut)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? GetChildren(string dir, string[] pChildrenOut)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(dir);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -211,12 +212,13 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
             }
             fixed (byte* __hs_stringData0 = __hs_stringBytes0)
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_bac3aab9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_vectorData1, (nuint)(pChildrenOut?.Length ?? 0)));
+                var __hs_handle = NativeMethods.TablePtr->C2.hs_method_bac3aab9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_vectorData1, (nuint)(pChildrenOut?.Length ?? 0));
+                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
             }
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status GetFileSize(string fname, nint size)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? GetFileSize(string fname, nint size)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fname);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -231,32 +233,34 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(fname, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_015e4864((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)size));
+            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_015e4864((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)size);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status GetTestDirectory(nint result)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? GetTestDirectory(nint result)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_42dd4b07((void*)__hosihikari_shim_handle, (void*)result));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_42dd4b07((void*)__hosihikari_shim_handle, (void*)result);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
-    public static LevelDbEnv Create()
+    public static LevelDbEnv? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f879c899();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelDbEnv((nint)handle);
     }
 
-    public static LevelDbEnv Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv arg0)
+    public static LevelDbEnv? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8a107bea((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelDbEnv((nint)handle);
@@ -295,7 +299,7 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_e5d1601c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status RemoveDir(string name)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? RemoveDir(string name)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -310,11 +314,12 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_8dd91b6c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8dd91b6c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status RemoveFile(string fname)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? RemoveFile(string fname)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fname);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -329,11 +334,12 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(fname, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_4a75851a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4a75851a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status RenameFile(string src, string target)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? RenameFile(string src, string target)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(src);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -361,7 +367,8 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_a7927dec((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1));
+                var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a7927dec((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
             }
         }
     }
@@ -379,9 +386,10 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
     public void StartThread(nint function, nint arg) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: parameter type 'void (*)(void *)' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status UnlockFile(nint @lock)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? UnlockFile(nint @lock)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_85e43bc7((void*)__hosihikari_shim_handle, (void*)@lock));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_85e43bc7((void*)__hosihikari_shim_handle, (void*)@lock);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -396,9 +404,10 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_87f06630((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)NativeMethods.TablePtr->C2.hs_method_f1056835((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f1056835((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

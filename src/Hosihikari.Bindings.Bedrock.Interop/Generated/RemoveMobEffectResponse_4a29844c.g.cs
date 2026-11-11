@@ -60,23 +60,23 @@ public sealed unsafe partial class RemoveMobEffectResponse : global::System.IDis
     public static nint NameID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RemoveMobEffectResponse Create()
+    public static RemoveMobEffectResponse? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_84420b11();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RemoveMobEffectResponse((nint)handle);
     }
 
-    public static RemoveMobEffectResponse Create(global::Hosihikari.Bindings.Bedrock.Interop.RemoveMobEffectResponse arg0)
+    public static RemoveMobEffectResponse? Create(global::Hosihikari.Bindings.Bedrock.Interop.RemoveMobEffectResponse arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3d1603a6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RemoveMobEffectResponse((nint)handle);
@@ -110,9 +110,10 @@ public sealed unsafe partial class RemoveMobEffectResponse : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C3.hs_get_28a69642((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RemoveMobEffectResponse operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RemoveMobEffectResponse arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RemoveMobEffectResponse? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RemoveMobEffectResponse arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RemoveMobEffectResponse((nint)NativeMethods.TablePtr->C3.hs_method_c1556329((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c1556329((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RemoveMobEffectResponse((nint)__hs_handle, false) : null;
     }
 
 

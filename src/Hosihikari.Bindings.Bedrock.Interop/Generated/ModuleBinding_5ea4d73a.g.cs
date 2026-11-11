@@ -52,12 +52,12 @@ public sealed unsafe partial class ModuleBinding : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ModuleBinding Create()
+    public static ModuleBinding? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3b0a22ee();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ModuleBinding((nint)handle);
@@ -71,12 +71,12 @@ public sealed unsafe partial class ModuleBinding : global::System.IDisposable
     public static ModuleBinding Create(nint descriptor_, nint dependencies_, nint javaScript_) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ModuleBinding Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBinding arg0)
+    public static ModuleBinding? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBinding arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1b38dd32((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ModuleBinding((nint)handle);
@@ -148,9 +148,10 @@ public sealed unsafe partial class ModuleBinding : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_6141b72d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBinding operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBinding arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBinding? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBinding arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBinding((nint)NativeMethods.TablePtr->C3.hs_method_56b62371((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_56b62371((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBinding((nint)__hs_handle, false) : null;
     }
 
     public bool requireDynamicImport

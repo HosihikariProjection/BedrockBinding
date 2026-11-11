@@ -80,12 +80,12 @@ public sealed unsafe partial class ItemUsedOnEvent : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemUsedOnEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent arg0)
+    public static ItemUsedOnEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d20701e4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemUsedOnEvent((nint)handle);

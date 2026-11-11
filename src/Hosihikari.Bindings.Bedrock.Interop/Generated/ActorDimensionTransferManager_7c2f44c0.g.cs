@@ -48,12 +48,12 @@ public sealed unsafe partial class ActorDimensionTransferManager : global::Syste
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorDimensionTransferManager Create()
+    public static ActorDimensionTransferManager? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d75d66fa();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDimensionTransferManager((nint)handle);

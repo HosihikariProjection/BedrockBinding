@@ -40,12 +40,12 @@ public sealed unsafe partial class StopSoundPacketPayload : global::System.IDisp
         return __hs_handle;
     }
 
-    public static StopSoundPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.StopSoundPacketPayload arg0)
+    public static StopSoundPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.StopSoundPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1441e0e0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StopSoundPacketPayload((nint)handle);

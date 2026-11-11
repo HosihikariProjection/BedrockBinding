@@ -48,23 +48,23 @@ public sealed unsafe partial class ContextScopeListener : global::System.IDispos
     public void _onPreLifetimeScopeDestroy(nint registry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ContextScopeListener Create()
+    public static ContextScopeListener? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_afa1890b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContextScopeListener((nint)handle);
     }
 
-    public static ContextScopeListener Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextScopeListener arg0)
+    public static ContextScopeListener? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextScopeListener arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_62dc855f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContextScopeListener((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class ContextScopeListener : global::System.IDispos
         NativeMethods.TablePtr->C3.hs_method_9b5279dc((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextScopeListener operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextScopeListener arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextScopeListener? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextScopeListener arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextScopeListener((nint)NativeMethods.TablePtr->C3.hs_method_bb4450f0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_bb4450f0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextScopeListener((nint)__hs_handle, false) : null;
     }
 
 

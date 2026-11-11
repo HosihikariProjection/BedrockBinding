@@ -48,23 +48,23 @@ public sealed unsafe partial class ScriptWatchdog : global::System.IDisposable
     public static nint SCRIPT_WATCHDOG_JOB_QUEUE_PHASE_NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptWatchdog Create()
+    public static ScriptWatchdog? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8e4f5af8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptWatchdog((nint)handle);
     }
 
-    public static ScriptWatchdog Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptWatchdog arg0)
+    public static ScriptWatchdog? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptWatchdog arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d2dcec0a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptWatchdog((nint)handle);

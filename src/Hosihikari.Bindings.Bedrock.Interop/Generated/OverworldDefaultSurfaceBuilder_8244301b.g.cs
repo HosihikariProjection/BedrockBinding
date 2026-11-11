@@ -60,12 +60,12 @@ public sealed unsafe partial class OverworldDefaultSurfaceBuilder : global::Syst
     public bool _isBestBuilder(nint surfaceBuilderData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OverworldDefaultSurfaceBuilder Create(global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.OverworldDefaultSurfaceBuilder arg0)
+    public static OverworldDefaultSurfaceBuilder? Create(global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.OverworldDefaultSurfaceBuilder arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1f16e1c3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OverworldDefaultSurfaceBuilder((nint)handle);

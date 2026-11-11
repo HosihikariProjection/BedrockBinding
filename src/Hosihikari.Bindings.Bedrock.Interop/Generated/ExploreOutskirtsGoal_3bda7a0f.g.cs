@@ -86,23 +86,23 @@ public sealed unsafe partial class ExploreOutskirtsGoal : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExploreOutskirtsGoal Create()
+    public static ExploreOutskirtsGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e1999664();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExploreOutskirtsGoal((nint)handle);
     }
 
-    public static ExploreOutskirtsGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.ExploreOutskirtsGoal arg0)
+    public static ExploreOutskirtsGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.ExploreOutskirtsGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7065de74((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExploreOutskirtsGoal((nint)handle);
@@ -246,9 +246,10 @@ public sealed unsafe partial class ExploreOutskirtsGoal : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_ede7540c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ExploreOutskirtsGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExploreOutskirtsGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ExploreOutskirtsGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExploreOutskirtsGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ExploreOutskirtsGoal((nint)NativeMethods.TablePtr->C1.hs_method_07d396da((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_07d396da((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ExploreOutskirtsGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

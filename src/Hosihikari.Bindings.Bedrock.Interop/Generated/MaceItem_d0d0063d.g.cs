@@ -336,23 +336,23 @@ public sealed unsafe partial class MaceItem : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MaceItem Create()
+    public static MaceItem? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d6c49678();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MaceItem((nint)handle);
     }
 
-    public static MaceItem Create(global::Hosihikari.Bindings.Bedrock.Interop.MaceItem arg0)
+    public static MaceItem? Create(global::Hosihikari.Bindings.Bedrock.Interop.MaceItem arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_334a7c39((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MaceItem((nint)handle);

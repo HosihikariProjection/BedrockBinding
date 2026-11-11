@@ -70,12 +70,12 @@ public sealed unsafe partial class SerializerContext : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C4.hs_get_dc2da599((void*)__hosihikari_shim_handle);
     }
 
-    public static SerializerContext Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SerializerContext arg0)
+    public static SerializerContext? Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SerializerContext arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3ee0e6dd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SerializerContext((nint)handle);

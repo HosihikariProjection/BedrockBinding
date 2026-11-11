@@ -188,9 +188,10 @@ public sealed unsafe partial class RtpVideoSender : global::System.IDisposable
     public void OnBitrateUpdated(nint update, int framerate) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::BitrateAllocationUpdate' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result OnEncodedImage(nint encoded_image, nint codec_specific_info)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result? OnEncodedImage(nint encoded_image, nint codec_specific_info)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result((nint)NativeMethods.TablePtr->C4.hs_method_c774c73d((void*)__hosihikari_shim_handle, (void*)encoded_image, (void*)codec_specific_info));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c774c73d((void*)__hosihikari_shim_handle, (void*)encoded_image, (void*)codec_specific_info);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result((nint)__hs_handle) : null;
     }
 
     public void OnNetworkAvailability(bool network_available)
@@ -217,12 +218,12 @@ public sealed unsafe partial class RtpVideoSender : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_a6b19ba8((void*)__hosihikari_shim_handle, (void*)delta_params, (void*)key_params, (void*)sent_video_rate_bps, (void*)sent_nack_rate_bps, (void*)sent_fec_rate_bps);
     }
 
-    public static RtpVideoSender Create()
+    public static RtpVideoSender? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_921ca9e6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RtpVideoSender((nint)handle);
@@ -232,12 +233,12 @@ public sealed unsafe partial class RtpVideoSender : global::System.IDisposable
     public static RtpVideoSender Create(nint env, nint transport_queue, nint suspended_ssrcs, nint states, nint rtp_config, int rtcp_report_interval_ms, nint send_transport, nint observers, nint transport, nint retransmission_limiter, nint fec_controller, nint frame_encryptor, nint crypto_options, nint frame_transformer) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RtpVideoSender Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSender arg0)
+    public static RtpVideoSender? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSender arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a741fd0a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RtpVideoSender((nint)handle);
@@ -419,9 +420,10 @@ public sealed unsafe partial class RtpVideoSender : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_61ea83f5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSender operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSender arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSender? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSender arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSender((nint)NativeMethods.TablePtr->C4.hs_method_03f82357((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_03f82357((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSender((nint)__hs_handle, false) : null;
     }
 
 

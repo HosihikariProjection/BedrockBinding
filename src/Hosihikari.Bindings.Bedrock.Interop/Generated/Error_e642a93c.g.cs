@@ -86,23 +86,23 @@ public sealed unsafe partial class Error : global::System.IDisposable
     public nint _ctor(nint message_) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Error Create()
+    public static Error? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_488a36b0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Error((nint)handle);
     }
 
-    public static Error Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Error arg0)
+    public static Error? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Error arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3cf74750((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Error((nint)handle);

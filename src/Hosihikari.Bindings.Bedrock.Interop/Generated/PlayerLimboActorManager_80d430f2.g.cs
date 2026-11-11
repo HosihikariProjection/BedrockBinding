@@ -48,23 +48,23 @@ public sealed unsafe partial class PlayerLimboActorManager : global::System.IDis
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerLimboActorManager Create()
+    public static PlayerLimboActorManager? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_43c373c3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerLimboActorManager((nint)handle);
     }
 
-    public static PlayerLimboActorManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerLimboActorManager arg0)
+    public static PlayerLimboActorManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerLimboActorManager arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9d3dae7e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerLimboActorManager((nint)handle);

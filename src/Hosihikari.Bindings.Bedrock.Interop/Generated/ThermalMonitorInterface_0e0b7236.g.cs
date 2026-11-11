@@ -40,12 +40,12 @@ public sealed unsafe partial class ThermalMonitorInterface : global::System.IDis
         return __hs_handle;
     }
 
-    public static ThermalMonitorInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.ThermalMonitorInterface arg0)
+    public static ThermalMonitorInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.ThermalMonitorInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d92ac067((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ThermalMonitorInterface((nint)handle);

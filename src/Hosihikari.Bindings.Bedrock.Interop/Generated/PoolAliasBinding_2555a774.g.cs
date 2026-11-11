@@ -40,12 +40,12 @@ public sealed unsafe partial class PoolAliasBinding : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PoolAliasBinding Create(global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBinding arg0)
+    public static PoolAliasBinding? Create(global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBinding arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_dc03474c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PoolAliasBinding((nint)handle);

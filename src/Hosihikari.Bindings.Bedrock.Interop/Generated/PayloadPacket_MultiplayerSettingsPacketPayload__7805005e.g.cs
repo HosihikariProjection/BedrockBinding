@@ -87,12 +87,12 @@ public sealed unsafe partial class PayloadPacket_MultiplayerSettingsPacketPayloa
         set => NativeMethods.TablePtr->C4.hs_set_ca66e084((void*)__hosihikari_shim_handle, value);
     }
 
-    public static PayloadPacket_MultiplayerSettingsPacketPayload_ Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_MultiplayerSettingsPacketPayload_ arg0)
+    public static PayloadPacket_MultiplayerSettingsPacketPayload_? Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_MultiplayerSettingsPacketPayload_ arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5efe0c58((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PayloadPacket_MultiplayerSettingsPacketPayload_((nint)handle);

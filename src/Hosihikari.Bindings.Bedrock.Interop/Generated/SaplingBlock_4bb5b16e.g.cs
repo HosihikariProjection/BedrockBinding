@@ -397,12 +397,12 @@ public sealed unsafe partial class SaplingBlock : global::System.IDisposable
     public bool _onFertilized(nint region, nint pos, nint actor, nint fertilizerType) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SaplingBlock Create()
+    public static SaplingBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_71e032b7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SaplingBlock((nint)handle);

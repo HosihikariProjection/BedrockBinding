@@ -44,23 +44,23 @@ public sealed unsafe partial class ActorRuntimeIDManager : global::System.IDispo
     public nint _ctor(nint gameplayUserManager) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorRuntimeIDManager Create()
+    public static ActorRuntimeIDManager? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6a155fdc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorRuntimeIDManager((nint)handle);
     }
 
-    public static ActorRuntimeIDManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager arg0)
+    public static ActorRuntimeIDManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3c1db634((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorRuntimeIDManager((nint)handle);

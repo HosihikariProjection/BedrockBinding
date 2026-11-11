@@ -74,12 +74,12 @@ public sealed unsafe partial class OwnerHurtTargetGoal : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OwnerHurtTargetGoal Create()
+    public static OwnerHurtTargetGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ce041d2f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OwnerHurtTargetGoal((nint)handle);
@@ -89,12 +89,12 @@ public sealed unsafe partial class OwnerHurtTargetGoal : global::System.IDisposa
     public static OwnerHurtTargetGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OwnerHurtTargetGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.OwnerHurtTargetGoal arg0)
+    public static OwnerHurtTargetGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.OwnerHurtTargetGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8a2ce87f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OwnerHurtTargetGoal((nint)handle);
@@ -123,9 +123,10 @@ public sealed unsafe partial class OwnerHurtTargetGoal : global::System.IDisposa
         set => NativeMethods.TablePtr->C2.hs_set_96f0be15((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OwnerHurtTargetGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OwnerHurtTargetGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OwnerHurtTargetGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OwnerHurtTargetGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OwnerHurtTargetGoal((nint)NativeMethods.TablePtr->C2.hs_method_57bd2892((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_57bd2892((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OwnerHurtTargetGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

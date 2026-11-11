@@ -70,12 +70,12 @@ public sealed unsafe partial class HealthAttributeDelegate : global::System.IDis
     public bool _willChange(float oldValue, float newValue, nint buff) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static HealthAttributeDelegate Create(global::Hosihikari.Bindings.Bedrock.Interop.HealthAttributeDelegate arg0)
+    public static HealthAttributeDelegate? Create(global::Hosihikari.Bindings.Bedrock.Interop.HealthAttributeDelegate arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8c3b06df((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HealthAttributeDelegate((nint)handle);

@@ -44,12 +44,12 @@ public sealed unsafe partial class NetworkItemInstanceDescriptorData : global::S
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetworkItemInstanceDescriptorData Create()
+    public static NetworkItemInstanceDescriptorData? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f8c86711();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkItemInstanceDescriptorData((nint)handle);
@@ -83,9 +83,10 @@ public sealed unsafe partial class NetworkItemInstanceDescriptorData : global::S
         get => (nint)NativeMethods.TablePtr->C1.hs_get_1ee6a835((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.NetworkItemInstanceDescriptorData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.NetworkItemInstanceDescriptorData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.NetworkItemInstanceDescriptorData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.NetworkItemInstanceDescriptorData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.NetworkItemInstanceDescriptorData((nint)NativeMethods.TablePtr->C1.hs_method_5b57af88((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5b57af88((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.NetworkItemInstanceDescriptorData((nint)__hs_handle, false) : null;
     }
 
 

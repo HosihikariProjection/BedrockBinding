@@ -87,12 +87,12 @@ public sealed unsafe partial class PayloadPacket_SetActorLinkPacketPayload_ : gl
         get => (nint)NativeMethods.TablePtr->C4.hs_get_e37a0275((void*)__hosihikari_shim_handle);
     }
 
-    public static PayloadPacket_SetActorLinkPacketPayload_ Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_SetActorLinkPacketPayload_ arg0)
+    public static PayloadPacket_SetActorLinkPacketPayload_? Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_SetActorLinkPacketPayload_ arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_50c8234d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PayloadPacket_SetActorLinkPacketPayload_((nint)handle);

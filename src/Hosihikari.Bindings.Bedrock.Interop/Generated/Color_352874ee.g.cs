@@ -112,28 +112,30 @@ public sealed unsafe partial class Color : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_9bea4c3c((void*)__hosihikari_shim_handle, value);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color BLACK()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? BLACK()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_485f43af(), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_485f43af();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle, false) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color BLUE()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? BLUE()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_db1631ed(), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_db1631ed();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle, false) : null;
     }
 
-    public static Color Create()
+    public static Color? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ad9db3fd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Color((nint)handle);
     }
 
-    public static Color Create(string hex)
+    public static Color? Create(string hex)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(hex);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -151,81 +153,92 @@ public sealed unsafe partial class Color : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C4.hs_create_7f8f1879(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new Color((nint)handle);
         }
     }
 
-    public static Color Create(uint hex)
+    public static Color? Create(uint hex)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_001a5057(hex);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Color((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color GREEN()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? GREEN()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_8adb19af(), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8adb19af();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color LMSToLinear()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? LMSToLinear()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_1eda70b0((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1eda70b0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color LMSToOklab()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? LMSToOklab()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_89df8891((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_89df8891((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color LabToXYZ()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? LabToXYZ()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_ae313992((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ae313992((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint NIL() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color OklabToLMS()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? OklabToLMS()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_24b2a766((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_24b2a766((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color PURPLE()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? PURPLE()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_289eba76(), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_289eba76();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle, false) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color RED()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? RED()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_0c169c34(), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0c169c34();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle, false) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color WHITE()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? WHITE()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_30d961ec(), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_30d961ec();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color XYZToLab()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? XYZToLab()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_5b9ba0ac((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5b9ba0ac((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color XYZToLinear()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? XYZToLinear()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_1e94e711((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1e94e711((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color YELLOW()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? YELLOW()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_c8d348aa(), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c8d348aa();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle, false) : null;
     }
 
     public double deltaE00(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color dst)
@@ -248,7 +261,7 @@ public sealed unsafe partial class Color : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_70f0f0e4((void*)__hosihikari_shim_handle, (void*)dst.Handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color fromHexString(string hexStr)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? fromHexString(string hexStr)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(hexStr);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -263,7 +276,8 @@ public sealed unsafe partial class Color : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(hexStr, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_3d42aff9(__hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3d42aff9(__hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
         }
     }
 
@@ -271,24 +285,28 @@ public sealed unsafe partial class Color : global::System.IDisposable
     public static nint fromRGBHexString(nint hexStr) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color linearToLMS()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? linearToLMS()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_ae105ef6((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ae105ef6((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color linearToXYZ()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? linearToXYZ()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_f8c93820((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f8c93820((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color linearTosRGB()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? linearTosRGB()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_1df1e128((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1df1e128((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color sRGBToLinear()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? sRGBToLinear()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_e6618e89((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e6618e89((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public uint toARGB()
@@ -296,9 +314,10 @@ public sealed unsafe partial class Color : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_6f664b0b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 toVec3()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? toVec3()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C4.hs_method_7b58537b((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_7b58537b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public void Dispose()

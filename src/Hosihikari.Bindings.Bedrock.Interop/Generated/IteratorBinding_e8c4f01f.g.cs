@@ -48,23 +48,23 @@ public sealed unsafe partial class IteratorBinding : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IteratorBinding Create()
+    public static IteratorBinding? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a001bb71();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IteratorBinding((nint)handle);
     }
 
-    public static IteratorBinding Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IteratorBinding arg0)
+    public static IteratorBinding? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IteratorBinding arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_893fb9fc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IteratorBinding((nint)handle);
@@ -118,9 +118,10 @@ public sealed unsafe partial class IteratorBinding : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_7e7746bd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IteratorBinding operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IteratorBinding arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IteratorBinding? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IteratorBinding arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IteratorBinding((nint)NativeMethods.TablePtr->C3.hs_method_33efe4a0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_33efe4a0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IteratorBinding((nint)__hs_handle, false) : null;
     }
 
 

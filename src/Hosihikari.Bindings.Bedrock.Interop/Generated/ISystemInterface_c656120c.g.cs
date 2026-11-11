@@ -40,12 +40,12 @@ public sealed unsafe partial class ISystemInterface : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ISystemInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Symmetric.ISystemInterface arg0)
+    public static ISystemInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Symmetric.ISystemInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_aec2dc0e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ISystemInterface((nint)handle);

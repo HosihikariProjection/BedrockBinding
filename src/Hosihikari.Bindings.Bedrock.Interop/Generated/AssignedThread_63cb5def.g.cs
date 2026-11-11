@@ -40,12 +40,12 @@ public sealed unsafe partial class AssignedThread : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static AssignedThread Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.AssignedThread arg0)
+    public static AssignedThread? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.AssignedThread arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_51ecf6b7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AssignedThread((nint)handle);

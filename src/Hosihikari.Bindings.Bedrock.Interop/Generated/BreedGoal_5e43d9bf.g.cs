@@ -86,12 +86,12 @@ public sealed unsafe partial class BreedGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BreedGoal Create()
+    public static BreedGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_dca7f114();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BreedGoal((nint)handle);
@@ -101,12 +101,12 @@ public sealed unsafe partial class BreedGoal : global::System.IDisposable
     public static BreedGoal Create(nint animal, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BreedGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.BreedGoal arg0)
+    public static BreedGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.BreedGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2bc7dd5f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BreedGoal((nint)handle);
@@ -179,9 +179,10 @@ public sealed unsafe partial class BreedGoal : global::System.IDisposable
         get => NativeMethods.TablePtr->C0.hs_get_c04571ed((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BreedGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BreedGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BreedGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BreedGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BreedGoal((nint)NativeMethods.TablePtr->C0.hs_method_500d55ac((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_500d55ac((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BreedGoal((nint)__hs_handle, false) : null;
     }
 
     public void stop()

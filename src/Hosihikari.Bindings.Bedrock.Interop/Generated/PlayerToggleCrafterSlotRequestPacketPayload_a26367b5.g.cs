@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerToggleCrafterSlotRequestPacketPayload :
         return __hs_handle;
     }
 
-    public static PlayerToggleCrafterSlotRequestPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerToggleCrafterSlotRequestPacketPayload arg0)
+    public static PlayerToggleCrafterSlotRequestPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerToggleCrafterSlotRequestPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b593e8cd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerToggleCrafterSlotRequestPacketPayload((nint)handle);

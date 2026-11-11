@@ -44,8 +44,9 @@ public sealed unsafe partial class BlockDescriptorProxyConstraint
     public nint _doDescription(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription doDescription(byte arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription? doDescription(byte arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription((nint)NativeMethods.TablePtr->C3.hs_method_166af445((void*)__hosihikari_shim_handle, arg0));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_166af445((void*)__hosihikari_shim_handle, arg0);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription((nint)__hs_handle) : null;
     }
 }

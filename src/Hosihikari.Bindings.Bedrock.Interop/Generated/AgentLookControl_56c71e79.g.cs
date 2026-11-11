@@ -48,12 +48,12 @@ public sealed unsafe partial class AgentLookControl : global::System.IDisposable
     public void _tick(nint mob) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AgentLookControl Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentLookControl arg0)
+    public static AgentLookControl? Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentLookControl arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b7ac6061((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AgentLookControl((nint)handle);

@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ActorEquippedArmorEvent_ : g
     public static ValueOrRef_const_ActorEquippedArmorEvent_ Create_ea864c77(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ActorEquippedArmorEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorEquippedArmorEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorEquippedArmorEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorEquippedArmorEvent((nint)NativeMethods.TablePtr->C1.hs_method_837391a0((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_837391a0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorEquippedArmorEvent((nint)__hs_handle, false) : null;
     }
 
 

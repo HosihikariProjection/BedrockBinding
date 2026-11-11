@@ -40,12 +40,12 @@ public sealed unsafe partial class InteractPacketPayload : global::System.IDispo
         return __hs_handle;
     }
 
-    public static InteractPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.InteractPacketPayload arg0)
+    public static InteractPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.InteractPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_77e09b36((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InteractPacketPayload((nint)handle);

@@ -439,12 +439,12 @@ public sealed unsafe partial class TorchflowerCropBlock : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TorchflowerCropBlock Create()
+    public static TorchflowerCropBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0fba087c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TorchflowerCropBlock((nint)handle);
@@ -454,14 +454,16 @@ public sealed unsafe partial class TorchflowerCropBlock : global::System.IDispos
     public static TorchflowerCropBlock Create(nint nameId, int id) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance getBaseSeed()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? getBaseSeed()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C4.hs_method_665c9555((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_665c9555((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getOutline(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferValue)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getOutline(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferValue)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C4.hs_method_81ec4064((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)bufferValue.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_81ec4064((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)bufferValue.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
     public int getVariant(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
@@ -474,9 +476,10 @@ public sealed unsafe partial class TorchflowerCropBlock : global::System.IDispos
         return NativeMethods.TablePtr->C4.hs_method_fb30fc71((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)(actor?.Handle ?? 0), fType) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block setGrowth(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block baseBlock, ushort newGrowth, int updateFlags)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? setGrowth(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block baseBlock, ushort newGrowth, int updateFlags)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_4b0e5982((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)baseBlock.Handle, newGrowth, updateFlags), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4b0e5982((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)baseBlock.Handle, newGrowth, updateFlags);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
 

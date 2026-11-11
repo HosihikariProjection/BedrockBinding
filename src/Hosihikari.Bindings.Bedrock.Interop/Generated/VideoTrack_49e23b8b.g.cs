@@ -149,23 +149,23 @@ public sealed unsafe partial class VideoTrack : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_a264aa61((void*)__hosihikari_shim_handle);
     }
 
-    public static VideoTrack Create()
+    public static VideoTrack? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_bad4036b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VideoTrack((nint)handle);
     }
 
-    public static VideoTrack Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoTrack arg0)
+    public static VideoTrack? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoTrack arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4df6efb2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VideoTrack((nint)handle);
@@ -217,9 +217,10 @@ public sealed unsafe partial class VideoTrack : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_060baef8((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoTrack operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoTrack arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoTrack? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoTrack arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoTrack((nint)NativeMethods.TablePtr->C4.hs_method_392df310((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_392df310((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoTrack((nint)__hs_handle, false) : null;
     }
 
     public void set_content_hint(int hint)

@@ -45,12 +45,12 @@ public sealed unsafe partial class HeaderCollection : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_4cb43cb2((void*)__hosihikari_shim_handle);
     }
 
-    public static HeaderCollection Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.HeaderCollection arg0)
+    public static HeaderCollection? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.HeaderCollection arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2bfba5d2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HeaderCollection((nint)handle);

@@ -124,12 +124,12 @@ public sealed unsafe partial class ScriptPlayer : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptPlayer Create()
+    public static ScriptPlayer? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9f563853();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPlayer((nint)handle);
@@ -143,20 +143,21 @@ public sealed unsafe partial class ScriptPlayer : global::System.IDisposable
     public static ScriptPlayer Create_2ac41f88(nint playerData, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptPlayer Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayer arg0)
+    public static ScriptPlayer? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayer arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f84e2baf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPlayer((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId _getScoreboardId(global::Hosihikari.Bindings.Bedrock.Interop.Scoreboard scoreboard)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId? _getScoreboardId(global::Hosihikari.Bindings.Bedrock.Interop.Scoreboard scoreboard)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)NativeMethods.TablePtr->C3.hs_method_5364fbf2((void*)__hosihikari_shim_handle, (void*)scoreboard.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5364fbf2((void*)__hosihikari_shim_handle, (void*)scoreboard.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -284,9 +285,10 @@ public sealed unsafe partial class ScriptPlayer : global::System.IDisposable
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayer arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayer((nint)NativeMethods.TablePtr->C3.hs_method_010a79d9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_010a79d9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayer((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

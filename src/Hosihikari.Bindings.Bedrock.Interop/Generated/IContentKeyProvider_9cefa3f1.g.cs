@@ -54,12 +54,12 @@ public sealed unsafe partial class IContentKeyProvider : global::System.IDisposa
     public bool _requireEncryptedReads() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IContentKeyProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.IContentKeyProvider arg0)
+    public static IContentKeyProvider? Create(global::Hosihikari.Bindings.Bedrock.Interop.IContentKeyProvider arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_74655fdb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IContentKeyProvider((nint)handle);

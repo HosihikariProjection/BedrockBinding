@@ -40,12 +40,12 @@ public sealed unsafe partial class SchemaWriter : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static SchemaWriter Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaWriter arg0)
+    public static SchemaWriter? Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaWriter arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_af81e5ef((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SchemaWriter((nint)handle);

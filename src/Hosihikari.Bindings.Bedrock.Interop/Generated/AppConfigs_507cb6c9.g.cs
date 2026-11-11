@@ -216,12 +216,12 @@ public sealed unsafe partial class AppConfigs : global::System.IDisposable
     public bool _worldsAreSingleUse() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AppConfigs Create()
+    public static AppConfigs? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ea7bdea1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AppConfigs((nint)handle);
@@ -274,9 +274,10 @@ public sealed unsafe partial class AppConfigs : global::System.IDisposable
     public nint getAdditionalClientPacks(bool shouldIncludeEduResourcePacks) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'PackIdVersion' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition getConnectionDefinition()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition? getConnectionDefinition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition((nint)NativeMethods.TablePtr->C0.hs_method_3fc3009a((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3fc3009a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition((nint)__hs_handle) : null;
     }
 
     public uint getEducationEditionOffering()

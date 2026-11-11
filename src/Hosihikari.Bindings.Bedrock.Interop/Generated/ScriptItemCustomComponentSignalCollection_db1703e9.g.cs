@@ -72,12 +72,12 @@ public sealed unsafe partial class ScriptItemCustomComponentSignalCollection : g
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptItemCustomComponentSignalCollection Create()
+    public static ScriptItemCustomComponentSignalCollection? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_bb4c9825();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemCustomComponentSignalCollection((nint)handle);
@@ -87,12 +87,12 @@ public sealed unsafe partial class ScriptItemCustomComponentSignalCollection : g
     public static ScriptItemCustomComponentSignalCollection Create(nint parameterCache) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptItemCustomComponentSignalCollection Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentSignalCollection arg0)
+    public static ScriptItemCustomComponentSignalCollection? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentSignalCollection arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_336ba1b0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemCustomComponentSignalCollection((nint)handle);

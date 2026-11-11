@@ -40,12 +40,12 @@ public sealed unsafe partial class TokenHolder : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TokenHolder Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.BasicSerializerContext_Nested.TokenHolder arg0)
+    public static TokenHolder? Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.BasicSerializerContext_Nested.TokenHolder arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0a15d19f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TokenHolder((nint)handle);

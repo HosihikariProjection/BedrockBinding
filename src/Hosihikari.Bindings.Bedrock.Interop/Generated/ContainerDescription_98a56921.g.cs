@@ -48,12 +48,12 @@ public sealed unsafe partial class ContainerDescription : global::System.IDispos
     public nint _getJsonName() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ContainerDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerDescription arg0)
+    public static ContainerDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c5a40fba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContainerDescription((nint)handle);

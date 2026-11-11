@@ -62,34 +62,34 @@ public sealed unsafe partial class OceanRuinFeature : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_7e6d7225((void*)__hosihikari_shim_handle, (void*)biomeSource.Handle, (void*)random.Handle, (void*)lc.Handle, levelSeed, (void*)preliminarySurfaceLevel.Handle, (void*)dimension.Handle) != 0;
     }
 
-    public static OceanRuinFeature Create()
+    public static OceanRuinFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bd972630();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OceanRuinFeature((nint)handle);
     }
 
-    public static OceanRuinFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.OceanMonumentFeature monument, uint seed, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion)
+    public static OceanRuinFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.OceanMonumentFeature monument, uint seed, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_18bb6411((void*)monument.Handle, seed, (void*)baseGameVersion.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OceanRuinFeature((nint)handle);
     }
 
-    public static OceanRuinFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.OceanRuinFeature arg0)
+    public static OceanRuinFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.OceanRuinFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c913f0e1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OceanRuinFeature((nint)handle);
@@ -147,9 +147,10 @@ public sealed unsafe partial class OceanRuinFeature : global::System.IDisposable
         get => NativeMethods.TablePtr->C2.hs_get_c76de5a0((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OceanRuinFeature operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OceanRuinFeature arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OceanRuinFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OceanRuinFeature arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OceanRuinFeature((nint)NativeMethods.TablePtr->C2.hs_method_b216bfe4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b216bfe4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OceanRuinFeature((nint)__hs_handle, false) : null;
     }
 
 

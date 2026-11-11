@@ -44,12 +44,12 @@ public sealed unsafe partial class SpawnSettings : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpawnSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings arg0)
+    public static SpawnSettings? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_df77c774((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnSettings((nint)handle);

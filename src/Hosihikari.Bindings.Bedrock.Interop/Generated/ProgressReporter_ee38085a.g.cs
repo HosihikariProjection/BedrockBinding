@@ -68,12 +68,12 @@ public sealed unsafe partial class ProgressReporter : global::System.IDisposable
     public void _clear() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ProgressReporter Create(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.ProgressReporter arg0)
+    public static ProgressReporter? Create(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.ProgressReporter arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_eb1664f5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ProgressReporter((nint)handle);

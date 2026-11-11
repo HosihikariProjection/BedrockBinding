@@ -94,52 +94,60 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public void _forEachPlayer(nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry _getBiomeRegistry_fb16af4c()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry? _getBiomeRegistry_fb16af4c()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)NativeMethods.TablePtr->C1.hs_method_fb16af4c((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_fb16af4c((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry _getBiomeRegistry_7547e819()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry? _getBiomeRegistry_7547e819()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)NativeMethods.TablePtr->C1.hs_method_7547e819((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7547e819((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource _getBlockSourceFromMainChunkSource()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? _getBlockSourceFromMainChunkSource()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)NativeMethods.TablePtr->C1.hs_method_f013c308((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f013c308((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getBrightnessDependentFogColor(nint baseColor, float brightness) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp _getBrightnessRamp()
+    public global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp? _getBrightnessRamp()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp((nint)NativeMethods.TablePtr->C1.hs_method_744c57bf((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_744c57bf((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public short _getCloudHeight() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType _getDefaultBiomeId()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType? _getDefaultBiomeId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)NativeMethods.TablePtr->C1.hs_method_524dd369((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_524dd369((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState _getDimensionDirectionalLightSourceState(float a)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState? _getDimensionDirectionalLightSourceState(float a)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState((nint)NativeMethods.TablePtr->C1.hs_method_b6eb9939((void*)__hosihikari_shim_handle, a));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b6eb9939((void*)__hosihikari_shim_handle, a);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType _getDimensionId()
+    public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? _getDimensionId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C1.hs_method_f404eec8((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f404eec8((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos _getSpawnPos()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _getSpawnPos()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_4b1e62d3((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4b1e62d3((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public int _getSpawnYPosition()
@@ -299,12 +307,12 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
         get => NativeMethods.TablePtr->C1.hs_get_c99bed8a((void*)__hosihikari_shim_handle);
     }
 
-    public static Dimension Create()
+    public static Dimension? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_58c0b3c5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Dimension((nint)handle);
@@ -314,12 +322,12 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public static Dimension Create(nint args) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static Dimension Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension arg0)
+    public static Dimension? Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_eff006e7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Dimension((nint)handle);
@@ -418,29 +426,34 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public void forEachPlayer(nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry getBiomeRegistry_ac75e0b1()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry? getBiomeRegistry_ac75e0b1()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)NativeMethods.TablePtr->C1.hs_method_ac75e0b1((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ac75e0b1((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry getBiomeRegistry_cb5b8ea0()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry? getBiomeRegistry_cb5b8ea0()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)NativeMethods.TablePtr->C1.hs_method_cb5b8ea0((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cb5b8ea0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource getBlockSourceFromMainChunkSource()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? getBlockSourceFromMainChunkSource()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)NativeMethods.TablePtr->C1.hs_method_3ec7a1bb((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3ec7a1bb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getBrightnessDependentFogColor(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color baseColor, float brightness)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getBrightnessDependentFogColor(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color baseColor, float brightness)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C1.hs_method_ea325197((void*)__hosihikari_shim_handle, (void*)baseColor.Handle, brightness));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ea325197((void*)__hosihikari_shim_handle, (void*)baseColor.Handle, brightness);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp getBrightnessRamp()
+    public global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp? getBrightnessRamp()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp((nint)NativeMethods.TablePtr->C1.hs_method_691ea60b((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_691ea60b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp((nint)__hs_handle, false) : null;
     }
 
     public short getCloudHeight()
@@ -448,19 +461,22 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_7584810f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType getDefaultBiomeId()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType? getDefaultBiomeId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)NativeMethods.TablePtr->C1.hs_method_a660b152((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a660b152((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState getDimensionDirectionalLightSourceState(float a)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState? getDimensionDirectionalLightSourceState(float a)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState((nint)NativeMethods.TablePtr->C1.hs_method_f068e929((void*)__hosihikari_shim_handle, a));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f068e929((void*)__hosihikari_shim_handle, a);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType getDimensionId()
+    public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? getDimensionId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C1.hs_method_ccea58d9((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ccea58d9((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
     }
 
     public ushort getHeightInSubchunks()
@@ -468,9 +484,10 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_88de40e0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getSpawnPos()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSpawnPos()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_a7786669((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a7786669((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public int getSpawnYPosition()
@@ -924,9 +941,10 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Dimension operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Dimension arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Dimension? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Dimension arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)NativeMethods.TablePtr->C1.hs_method_acd225cf((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_acd225cf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -40,12 +40,12 @@ public sealed unsafe partial class OpenSignRequest : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static OpenSignRequest Create(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.OpenSignRequest arg0)
+    public static OpenSignRequest? Create(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.OpenSignRequest arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_829fb205((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OpenSignRequest((nint)handle);

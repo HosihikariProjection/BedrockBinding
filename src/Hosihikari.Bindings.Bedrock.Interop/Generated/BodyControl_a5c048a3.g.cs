@@ -44,12 +44,12 @@ public sealed unsafe partial class BodyControl : global::System.IDisposable
     public void _clientTick(nint mob) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BodyControl Create(global::Hosihikari.Bindings.Bedrock.Interop.BodyControl arg0)
+    public static BodyControl? Create(global::Hosihikari.Bindings.Bedrock.Interop.BodyControl arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7daaa955((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BodyControl((nint)handle);

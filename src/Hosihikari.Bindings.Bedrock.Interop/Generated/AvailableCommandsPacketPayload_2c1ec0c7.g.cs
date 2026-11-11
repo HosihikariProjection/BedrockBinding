@@ -54,23 +54,23 @@ public sealed unsafe partial class AvailableCommandsPacketPayload : global::Syst
         NativeMethods.TablePtr->C0.hs_method_799d4727((void*)__hosihikari_shim_handle);
     }
 
-    public static AvailableCommandsPacketPayload Create()
+    public static AvailableCommandsPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ff804422();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AvailableCommandsPacketPayload((nint)handle);
     }
 
-    public static AvailableCommandsPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload arg0)
+    public static AvailableCommandsPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_73846524((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AvailableCommandsPacketPayload((nint)handle);
@@ -128,9 +128,10 @@ public sealed unsafe partial class AvailableCommandsPacketPayload : global::Syst
         get => (nint)NativeMethods.TablePtr->C0.hs_get_582d0646((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload((nint)NativeMethods.TablePtr->C0.hs_method_8194e2b1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8194e2b1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload((nint)__hs_handle, false) : null;
     }
 
 

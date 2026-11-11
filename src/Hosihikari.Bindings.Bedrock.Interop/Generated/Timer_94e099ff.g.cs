@@ -44,23 +44,23 @@ public sealed unsafe partial class Timer : global::System.IDisposable
     public nint _ctor(float ticksPerSecond, nint getTimeMSCallback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Timer Create()
+    public static Timer? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_69fcb4e7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Timer((nint)handle);
     }
 
-    public static Timer Create(global::Hosihikari.Bindings.Bedrock.Interop.Timer arg0)
+    public static Timer? Create(global::Hosihikari.Bindings.Bedrock.Interop.Timer arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_990d7ef2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Timer((nint)handle);

@@ -40,45 +40,45 @@ public sealed unsafe partial class NonOwnerPointer_ContentLogEndPoint_ : global:
         return __hs_handle;
     }
 
-    public static NonOwnerPointer_ContentLogEndPoint_ Create()
+    public static NonOwnerPointer_ContentLogEndPoint_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a76d69db();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_ContentLogEndPoint_((nint)handle);
     }
 
-    public static NonOwnerPointer_ContentLogEndPoint_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    public static NonOwnerPointer_ContentLogEndPoint_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_83ebb6c1(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_ContentLogEndPoint_((nint)handle);
     }
 
-    public static NonOwnerPointer_ContentLogEndPoint_ Create_91e585a0()
+    public static NonOwnerPointer_ContentLogEndPoint_? Create_91e585a0()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_91e585a0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_ContentLogEndPoint_((nint)handle);
     }
 
-    public static NonOwnerPointer_ContentLogEndPoint_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint? p)
+    public static NonOwnerPointer_ContentLogEndPoint_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint? p)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4efd063e(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NonOwnerPointer_ContentLogEndPoint_((nint)handle);
@@ -113,9 +113,10 @@ public sealed unsafe partial class NonOwnerPointer_ContentLogEndPoint_ : global:
         return NativeMethods.TablePtr->C0.hs_method_dc34267b((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint((nint)NativeMethods.TablePtr->C0.hs_method_2bd4dbb2((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2bd4dbb2((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint? operator_operator__()

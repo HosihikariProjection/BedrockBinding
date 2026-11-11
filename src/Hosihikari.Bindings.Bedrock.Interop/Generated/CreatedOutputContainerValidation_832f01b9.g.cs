@@ -56,12 +56,12 @@ public sealed unsafe partial class CreatedOutputContainerValidation : global::Sy
     public bool _isItemAllowedInSlot(nint screenContext, nint slot, nint item, nint amount, bool arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CreatedOutputContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.CreatedOutputContainerValidation arg0)
+    public static CreatedOutputContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.CreatedOutputContainerValidation arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9ff6ae39((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreatedOutputContainerValidation((nint)handle);

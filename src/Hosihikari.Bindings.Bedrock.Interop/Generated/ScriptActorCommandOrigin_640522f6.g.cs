@@ -66,12 +66,12 @@ public sealed unsafe partial class ScriptActorCommandOrigin : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptActorCommandOrigin Create()
+    public static ScriptActorCommandOrigin? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d8b89956();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptActorCommandOrigin((nint)handle);
@@ -81,12 +81,12 @@ public sealed unsafe partial class ScriptActorCommandOrigin : global::System.IDi
     public static ScriptActorCommandOrigin Create(nint actor, nint outputCallback, nint permissionLevel) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptActorCommandOrigin Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptActorCommandOrigin arg0)
+    public static ScriptActorCommandOrigin? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptActorCommandOrigin arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_70aa57de((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptActorCommandOrigin((nint)handle);
@@ -108,9 +108,10 @@ public sealed unsafe partial class ScriptActorCommandOrigin : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C3.hs_get_b437aff5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptActorCommandOrigin operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptActorCommandOrigin arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptActorCommandOrigin? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptActorCommandOrigin arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptActorCommandOrigin((nint)NativeMethods.TablePtr->C3.hs_method_0c1bbc5d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0c1bbc5d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptActorCommandOrigin((nint)__hs_handle, false) : null;
     }
 
 

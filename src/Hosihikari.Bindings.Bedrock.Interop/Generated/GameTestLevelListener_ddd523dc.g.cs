@@ -52,23 +52,23 @@ public sealed unsafe partial class GameTestLevelListener : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GameTestLevelListener Create()
+    public static GameTestLevelListener? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2cfedd3d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameTestLevelListener((nint)handle);
     }
 
-    public static GameTestLevelListener Create(global::Hosihikari.Bindings.Bedrock.Interop.GameTestLevelListener arg0)
+    public static GameTestLevelListener? Create(global::Hosihikari.Bindings.Bedrock.Interop.GameTestLevelListener arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_642b8a4d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameTestLevelListener((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class GameTestLevelListener : global::System.IDispo
         return NativeMethods.TablePtr->C1.hs_method_2929b597((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameTestLevelListener operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GameTestLevelListener arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameTestLevelListener? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GameTestLevelListener arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameTestLevelListener((nint)NativeMethods.TablePtr->C1.hs_method_9ac6c2e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9ac6c2e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameTestLevelListener((nint)__hs_handle, false) : null;
     }
 
 

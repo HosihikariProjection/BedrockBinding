@@ -110,12 +110,12 @@ public sealed unsafe partial class TridentRiptideEnchant : global::System.IDispo
     public bool _isCompatibleWith(nint type) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TridentRiptideEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.TridentRiptideEnchant arg0)
+    public static TridentRiptideEnchant? Create(global::Hosihikari.Bindings.Bedrock.Interop.TridentRiptideEnchant arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_7279b7d7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TridentRiptideEnchant((nint)handle);

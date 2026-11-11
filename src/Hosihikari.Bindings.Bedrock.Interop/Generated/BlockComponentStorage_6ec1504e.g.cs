@@ -44,12 +44,12 @@ public sealed unsafe partial class BlockComponentStorage : global::System.IDispo
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockComponentStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentStorage arg0)
+    public static BlockComponentStorage? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentStorage arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0cc2da6f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockComponentStorage((nint)handle);

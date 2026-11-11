@@ -40,12 +40,12 @@ public sealed unsafe partial class DefaultLocalAddressProvider : global::System.
         return __hs_handle;
     }
 
-    public static DefaultLocalAddressProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DefaultLocalAddressProvider arg0)
+    public static DefaultLocalAddressProvider? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DefaultLocalAddressProvider arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5c32ae09((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DefaultLocalAddressProvider((nint)handle);

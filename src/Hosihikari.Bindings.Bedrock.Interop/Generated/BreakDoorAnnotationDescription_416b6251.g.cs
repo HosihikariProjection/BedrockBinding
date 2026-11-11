@@ -48,12 +48,12 @@ public sealed unsafe partial class BreakDoorAnnotationDescription : global::Syst
     public nint _getJsonName() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BreakDoorAnnotationDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.BreakDoorAnnotationDescription arg0)
+    public static BreakDoorAnnotationDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.BreakDoorAnnotationDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1812f7cf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BreakDoorAnnotationDescription((nint)handle);

@@ -52,12 +52,12 @@ public sealed unsafe partial class Pack : global::System.IDisposable
     public static nint EDUCATION_METADATA_FILE() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Pack Create()
+    public static Pack? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8a7f2bef();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Pack((nint)handle);

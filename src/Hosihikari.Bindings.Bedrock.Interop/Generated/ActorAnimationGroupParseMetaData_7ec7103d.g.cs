@@ -40,12 +40,12 @@ public sealed unsafe partial class ActorAnimationGroupParseMetaData : global::Sy
         return __hs_handle;
     }
 
-    public static ActorAnimationGroupParseMetaData Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationGroupParseMetaData arg0)
+    public static ActorAnimationGroupParseMetaData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationGroupParseMetaData arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d14ca7de((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorAnimationGroupParseMetaData((nint)handle);

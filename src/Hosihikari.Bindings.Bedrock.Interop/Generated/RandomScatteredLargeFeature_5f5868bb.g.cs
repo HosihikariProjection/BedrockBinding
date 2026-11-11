@@ -80,34 +80,34 @@ public sealed unsafe partial class RandomScatteredLargeFeature : global::System.
         return NativeMethods.TablePtr->C3.hs_method_7f463e86((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public static RandomScatteredLargeFeature Create()
+    public static RandomScatteredLargeFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_862bc12f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RandomScatteredLargeFeature((nint)handle);
     }
 
-    public static RandomScatteredLargeFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomScatteredLargeFeature arg0)
+    public static RandomScatteredLargeFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomScatteredLargeFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f35ab857((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RandomScatteredLargeFeature((nint)handle);
     }
 
-    public static RandomScatteredLargeFeature Create(uint seed)
+    public static RandomScatteredLargeFeature? Create(uint seed)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b6876c78(seed);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RandomScatteredLargeFeature((nint)handle);

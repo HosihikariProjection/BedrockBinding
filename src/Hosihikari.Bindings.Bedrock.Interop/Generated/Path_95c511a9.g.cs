@@ -40,17 +40,18 @@ public sealed unsafe partial class Path : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Core.Path EMPTY()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Core.Path? EMPTY()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Path((nint)NativeMethods.TablePtr->C1.hs_method_8486e753(), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8486e753();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Path((nint)__hs_handle, false) : null;
     }
 
-    public static Path Create()
+    public static Path? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ba19ddfb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Path((nint)handle);
@@ -60,40 +61,40 @@ public sealed unsafe partial class Path : global::System.IDisposable
     public static Path Create_1c5076c8(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static Path Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path other)
+    public static Path? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path other)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3d71ece4((void*)other.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Path((nint)handle);
     }
 
-    public static Path Create_41bbb082(nint path)
+    public static Path? Create_41bbb082(nint path)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_41bbb082((void*)path);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Path((nint)handle);
     }
 
-    public static Path Create_4bbd1bf0(nint path)
+    public static Path? Create_4bbd1bf0(nint path)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4bbd1bf0((void*)path);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Path((nint)handle);
     }
 
-    public static Path Create_eb029255(string path)
+    public static Path? Create_eb029255(string path)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(path);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -111,7 +112,7 @@ public sealed unsafe partial class Path : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_eb029255(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new Path((nint)handle);
@@ -126,7 +127,7 @@ public sealed unsafe partial class Path : global::System.IDisposable
     public static Path Create_53cb7e9a(nint path) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static Path Create_7920e5b6(string path)
+    public static Path? Create_7920e5b6(string path)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(path);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -144,7 +145,7 @@ public sealed unsafe partial class Path : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_7920e5b6(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new Path((nint)handle);
@@ -192,9 +193,10 @@ public sealed unsafe partial class Path : global::System.IDisposable
     public nint operator_assign(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Path operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path other)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Path? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path other)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Path((nint)NativeMethods.TablePtr->C1.hs_method_ab963fec((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ab963fec((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Path((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path rhs)

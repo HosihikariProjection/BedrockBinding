@@ -120,20 +120,21 @@ public sealed unsafe partial class DispenserContainerManagerModel : global::Syst
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DispenserContainerManagerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.DispenserContainerManagerModel arg0)
+    public static DispenserContainerManagerModel? Create(global::Hosihikari.Bindings.Bedrock.Interop.DispenserContainerManagerModel arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_23a57120((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DispenserContainerManagerModel((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext _postInit()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext? _postInit()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C1.hs_method_aebd1664((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_aebd1664((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle) : null;
     }
 
 

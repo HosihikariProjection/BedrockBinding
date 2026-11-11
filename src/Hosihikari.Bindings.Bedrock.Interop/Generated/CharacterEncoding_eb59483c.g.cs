@@ -40,23 +40,23 @@ public sealed unsafe partial class CharacterEncoding : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static CharacterEncoding Create()
+    public static CharacterEncoding? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0cc71e99();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CharacterEncoding((nint)handle);
     }
 
-    public static CharacterEncoding Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree_Nested.CharacterEncoding arg0)
+    public static CharacterEncoding? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree_Nested.CharacterEncoding arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5a92aa1d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CharacterEncoding((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class CharacterEncoding : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_dcfe35b0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree_Nested.CharacterEncoding operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree_Nested.CharacterEncoding arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree_Nested.CharacterEncoding? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree_Nested.CharacterEncoding arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree_Nested.CharacterEncoding((nint)NativeMethods.TablePtr->C2.hs_method_4c285358((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4c285358((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree_Nested.CharacterEncoding((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

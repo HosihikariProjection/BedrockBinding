@@ -56,12 +56,12 @@ public sealed unsafe partial class IPrinter : global::System.IDisposable
     public bool _shouldPrintException(nint contextId, nint error, nint errorAny) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IPrinter Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IPrinter arg0)
+    public static IPrinter? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IPrinter arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2d60fb56((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IPrinter((nint)handle);

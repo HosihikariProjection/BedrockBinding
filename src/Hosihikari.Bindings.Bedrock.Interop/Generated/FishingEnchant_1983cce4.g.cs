@@ -106,12 +106,12 @@ public sealed unsafe partial class FishingEnchant : global::System.IDisposable
     public int _getMinCost(int level) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FishingEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.FishingEnchant arg0)
+    public static FishingEnchant? Create(global::Hosihikari.Bindings.Bedrock.Interop.FishingEnchant arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_69d79f4b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FishingEnchant((nint)handle);

@@ -52,12 +52,12 @@ public sealed unsafe partial class CommonModuleFactory : global::System.IDisposa
     public static CommonModuleFactory Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CommonModuleFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.CommonModuleFactory arg0)
+    public static CommonModuleFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.CommonModuleFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5ccd7337((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommonModuleFactory((nint)handle);

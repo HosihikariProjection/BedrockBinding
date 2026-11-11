@@ -46,12 +46,12 @@ public sealed unsafe partial class ScriptPlayerInteractWithEntityEvent : global:
         get => (nint)NativeMethods.TablePtr->C3.hs_get_a88b164e((void*)__hosihikari_shim_handle);
     }
 
-    public static ScriptPlayerInteractWithEntityEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerInteractWithEntityEvent arg0)
+    public static ScriptPlayerInteractWithEntityEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerInteractWithEntityEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a48abdae((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPlayerInteractWithEntityEvent((nint)handle);

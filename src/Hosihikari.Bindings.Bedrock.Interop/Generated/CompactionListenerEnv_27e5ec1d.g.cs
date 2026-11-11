@@ -44,23 +44,23 @@ public sealed unsafe partial class CompactionListenerEnv : global::System.IDispo
     public void _Schedule(nint function, nint arg) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CompactionListenerEnv Create()
+    public static CompactionListenerEnv? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f09ed1e0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CompactionListenerEnv((nint)handle);
     }
 
-    public static CompactionListenerEnv Create(global::Hosihikari.Bindings.Bedrock.Interop.CompactionListenerEnv arg0)
+    public static CompactionListenerEnv? Create(global::Hosihikari.Bindings.Bedrock.Interop.CompactionListenerEnv arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_83b2818c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CompactionListenerEnv((nint)handle);
@@ -94,9 +94,10 @@ public sealed unsafe partial class CompactionListenerEnv : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_d0a3eae9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompactionListenerEnv operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompactionListenerEnv arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompactionListenerEnv? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompactionListenerEnv arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompactionListenerEnv((nint)NativeMethods.TablePtr->C0.hs_method_f219f597((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f219f597((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompactionListenerEnv((nint)__hs_handle, false) : null;
     }
 
 

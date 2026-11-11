@@ -52,23 +52,23 @@ public sealed unsafe partial class EmitVibrationResponse : global::System.IDispo
     public nint _getName() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EmitVibrationResponse Create()
+    public static EmitVibrationResponse? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7b1687a7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EmitVibrationResponse((nint)handle);
     }
 
-    public static EmitVibrationResponse Create(global::Hosihikari.Bindings.Bedrock.Interop.EmitVibrationResponse arg0)
+    public static EmitVibrationResponse? Create(global::Hosihikari.Bindings.Bedrock.Interop.EmitVibrationResponse arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_965d41e9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EmitVibrationResponse((nint)handle);
@@ -100,9 +100,10 @@ public sealed unsafe partial class EmitVibrationResponse : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C1.hs_get_96228e74((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EmitVibrationResponse operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EmitVibrationResponse arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EmitVibrationResponse? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EmitVibrationResponse arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EmitVibrationResponse((nint)NativeMethods.TablePtr->C1.hs_method_87f30037((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_87f30037((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EmitVibrationResponse((nint)__hs_handle, false) : null;
     }
 
 

@@ -40,23 +40,23 @@ public sealed unsafe partial class RequiredResourceOrBehaviorPackType : global::
         return __hs_handle;
     }
 
-    public static RequiredResourceOrBehaviorPackType Create()
+    public static RequiredResourceOrBehaviorPackType? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a509f0df();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RequiredResourceOrBehaviorPackType((nint)handle);
     }
 
-    public static RequiredResourceOrBehaviorPackType Create(global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType arg0)
+    public static RequiredResourceOrBehaviorPackType? Create(global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_abdb0ba0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RequiredResourceOrBehaviorPackType((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class RequiredResourceOrBehaviorPackType : global::
         get => (nint)NativeMethods.TablePtr->C2.hs_get_e255842a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType((nint)NativeMethods.TablePtr->C2.hs_method_a5598598((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a5598598((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

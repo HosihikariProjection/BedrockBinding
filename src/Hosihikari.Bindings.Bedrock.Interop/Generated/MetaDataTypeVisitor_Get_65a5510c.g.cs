@@ -44,23 +44,23 @@ public sealed unsafe partial class MetaDataTypeVisitor_Get : global::System.IDis
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MetaDataTypeVisitor_Get Create()
+    public static MetaDataTypeVisitor_Get? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7131fb1b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MetaDataTypeVisitor_Get((nint)handle);
     }
 
-    public static MetaDataTypeVisitor_Get Create(global::Hosihikari.Bindings.Bedrock.Interop.MetaDataTypeVisitor_Get arg0)
+    public static MetaDataTypeVisitor_Get? Create(global::Hosihikari.Bindings.Bedrock.Interop.MetaDataTypeVisitor_Get arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_45ea5dc9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MetaDataTypeVisitor_Get((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class MetaDataTypeVisitor_Get : global::System.IDis
     public nint operator_call_18c89576(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MetaDataTypeVisitor_Get operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MetaDataTypeVisitor_Get arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MetaDataTypeVisitor_Get? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MetaDataTypeVisitor_Get arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MetaDataTypeVisitor_Get((nint)NativeMethods.TablePtr->C2.hs_method_5096d3e6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5096d3e6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MetaDataTypeVisitor_Get((nint)__hs_handle, false) : null;
     }
 
 

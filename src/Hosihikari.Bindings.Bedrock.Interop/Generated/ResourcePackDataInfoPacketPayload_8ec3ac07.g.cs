@@ -44,23 +44,23 @@ public sealed unsafe partial class ResourcePackDataInfoPacketPayload : global::S
     public nint _ctor(nint name, uint chunkSize, int nbChunk, ulong fileSize, nint fileHash, bool isPremium, nint packType) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ResourcePackDataInfoPacketPayload Create()
+    public static ResourcePackDataInfoPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d1ebb7d0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePackDataInfoPacketPayload((nint)handle);
     }
 
-    public static ResourcePackDataInfoPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackDataInfoPacketPayload arg0)
+    public static ResourcePackDataInfoPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackDataInfoPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c6a1171d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePackDataInfoPacketPayload((nint)handle);

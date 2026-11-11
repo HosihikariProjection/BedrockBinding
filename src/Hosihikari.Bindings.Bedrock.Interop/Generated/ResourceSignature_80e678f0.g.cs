@@ -40,23 +40,23 @@ public sealed unsafe partial class ResourceSignature : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static ResourceSignature Create()
+    public static ResourceSignature? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a1ac8020();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourceSignature((nint)handle);
     }
 
-    public static ResourceSignature Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceSignature arg0)
+    public static ResourceSignature? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceSignature arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3df37d08((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourceSignature((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class ResourceSignature : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C3.hs_get_b7cdfbf4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResourceSignature operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourceSignature arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResourceSignature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourceSignature arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceSignature((nint)NativeMethods.TablePtr->C3.hs_method_cc07f3b4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cc07f3b4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourceSignature((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

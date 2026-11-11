@@ -40,23 +40,23 @@ public sealed unsafe partial class LevelAnimateTickHelper : global::System.IDisp
         return __hs_handle;
     }
 
-    public static LevelAnimateTickHelper Create()
+    public static LevelAnimateTickHelper? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7094daef();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelAnimateTickHelper((nint)handle);
     }
 
-    public static LevelAnimateTickHelper Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper arg0)
+    public static LevelAnimateTickHelper? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5090ab1f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelAnimateTickHelper((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class LevelAnimateTickHelper : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C2.hs_get_81b117e5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper((nint)NativeMethods.TablePtr->C2.hs_method_1ee6dbd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1ee6dbd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

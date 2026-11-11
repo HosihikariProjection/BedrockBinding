@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptMinecraftNetModuleFactory : global::Sys
     public static nint ModuleUUID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptMinecraftNetModuleFactory Create()
+    public static ScriptMinecraftNetModuleFactory? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1a2562ea();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptMinecraftNetModuleFactory((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class ScriptMinecraftNetModuleFactory : global::Sys
     public static ScriptMinecraftNetModuleFactory Create(nint serverScheduler, nint packConfigManager, nint level, nint webSocketFactory) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptMinecraftNetModuleFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftNetModuleFactory arg0)
+    public static ScriptMinecraftNetModuleFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftNetModuleFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_604f9356((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptMinecraftNetModuleFactory((nint)handle);
@@ -108,9 +108,10 @@ public sealed unsafe partial class ScriptMinecraftNetModuleFactory : global::Sys
         get => (nint)NativeMethods.TablePtr->C3.hs_get_d85b9578((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftNetModuleFactory operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftNetModuleFactory arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftNetModuleFactory? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftNetModuleFactory arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftNetModuleFactory((nint)NativeMethods.TablePtr->C3.hs_method_213c787e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_213c787e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftNetModuleFactory((nint)__hs_handle, false) : null;
     }
 
 

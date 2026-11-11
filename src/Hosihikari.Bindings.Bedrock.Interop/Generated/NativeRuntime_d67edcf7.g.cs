@@ -40,23 +40,23 @@ public sealed unsafe partial class NativeRuntime : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static NativeRuntime Create()
+    public static NativeRuntime? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a057f3ca();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NativeRuntime((nint)handle);
     }
 
-    public static NativeRuntime Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.NativeRuntime arg0)
+    public static NativeRuntime? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.NativeRuntime arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4e6cd81a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NativeRuntime((nint)handle);
@@ -143,9 +143,10 @@ public sealed unsafe partial class NativeRuntime : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_bd3d516a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.NativeRuntime operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.NativeRuntime arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.NativeRuntime? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.NativeRuntime arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.NativeRuntime((nint)NativeMethods.TablePtr->C3.hs_method_97291fe1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_97291fe1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.NativeRuntime((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Scripting::TypedObjectHandle<Scripting::PromiseType>' is not a known bindable declaration.", false)]
@@ -156,9 +157,10 @@ public sealed unsafe partial class NativeRuntime : global::System.IDisposable
     public nint resolve(nint arg0, nint arg1, nint arg2) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Scripting::TypedObjectHandle<Scripting::PromiseType>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny run(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IPayload? payload, byte? privilege)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny? run(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IPayload? payload, byte? privilege)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)NativeMethods.TablePtr->C3.hs_method_37c60ec1((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)(payload?.Handle ?? 0), privilege ?? default(byte), privilege.HasValue));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_37c60ec1((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)(payload?.Handle ?? 0), privilege ?? default(byte), privilege.HasValue);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)__hs_handle) : null;
     }
 
     public void startProfiler()

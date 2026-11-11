@@ -56,12 +56,12 @@ public sealed unsafe partial class CerealSchemaDeprecate : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CerealSchemaDeprecate Create()
+    public static CerealSchemaDeprecate? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f96ea554();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CerealSchemaDeprecate((nint)handle);
@@ -71,12 +71,12 @@ public sealed unsafe partial class CerealSchemaDeprecate : global::System.IDispo
     public static CerealSchemaDeprecate Create(nint deprecateVersion, nint schemaKey, nint jsonMemberName) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CerealSchemaDeprecate Create(global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaDeprecate arg0)
+    public static CerealSchemaDeprecate? Create(global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaDeprecate arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_bdcacc98((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CerealSchemaDeprecate((nint)handle);
@@ -88,9 +88,10 @@ public sealed unsafe partial class CerealSchemaDeprecate : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_9dbe32cd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaDeprecate operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaDeprecate arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaDeprecate? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaDeprecate arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaDeprecate((nint)NativeMethods.TablePtr->C0.hs_method_7ddc1ce5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7ddc1ce5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaDeprecate((nint)__hs_handle, false) : null;
     }
 
     public bool previousSchema(nint arg0)

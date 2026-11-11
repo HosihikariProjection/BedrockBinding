@@ -40,20 +40,21 @@ public sealed unsafe partial class BlockSelector : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static BlockSelector Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSelector arg0)
+    public static BlockSelector? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSelector arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1aa18662((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockSelector((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block next(global::Hosihikari.Bindings.Bedrock.Interop.Random arg0, int arg1, int arg2, int arg3, bool arg4)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? next(global::Hosihikari.Bindings.Bedrock.Interop.Random arg0, int arg1, int arg2, int arg3, bool arg4)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C0.hs_method_b85147a8((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1, arg2, arg3, arg4), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b85147a8((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1, arg2, arg3, arg4);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
 

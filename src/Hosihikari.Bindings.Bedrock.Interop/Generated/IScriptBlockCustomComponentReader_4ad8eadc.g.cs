@@ -40,12 +40,12 @@ public sealed unsafe partial class IScriptBlockCustomComponentReader : global::S
         return __hs_handle;
     }
 
-    public static IScriptBlockCustomComponentReader Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.IScriptBlockCustomComponentReader arg0)
+    public static IScriptBlockCustomComponentReader? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.IScriptBlockCustomComponentReader arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_912dbecd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IScriptBlockCustomComponentReader((nint)handle);

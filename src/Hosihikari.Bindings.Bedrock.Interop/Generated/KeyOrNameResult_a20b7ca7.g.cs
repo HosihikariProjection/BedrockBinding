@@ -44,12 +44,12 @@ public sealed unsafe partial class KeyOrNameResult : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static KeyOrNameResult Create(global::Hosihikari.Bindings.Bedrock.Interop.KeyOrNameResult arg0)
+    public static KeyOrNameResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.KeyOrNameResult arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a982a095((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new KeyOrNameResult((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class LootItemCondition : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static LootItemCondition Create()
+    public static LootItemCondition? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b99b7a08();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LootItemCondition((nint)handle);
     }
 
-    public static LootItemCondition Create(global::Hosihikari.Bindings.Bedrock.Interop.LootItemCondition arg0)
+    public static LootItemCondition? Create(global::Hosihikari.Bindings.Bedrock.Interop.LootItemCondition arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9bb3b6db((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LootItemCondition((nint)handle);
@@ -82,9 +82,10 @@ public sealed unsafe partial class LootItemCondition : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_22022ac6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LootItemCondition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemCondition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LootItemCondition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemCondition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LootItemCondition((nint)NativeMethods.TablePtr->C2.hs_method_6f56723c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6f56723c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LootItemCondition((nint)__hs_handle, false) : null;
     }
 
 

@@ -82,12 +82,12 @@ public sealed unsafe partial class NpcEventCoordinator : global::System.IDisposa
         set => NativeMethods.TablePtr->C2.hs_set_bb5bdb72((void*)__hosihikari_shim_handle, value);
     }
 
-    public static NpcEventCoordinator Create(global::Hosihikari.Bindings.Bedrock.Interop.NpcEventCoordinator arg0)
+    public static NpcEventCoordinator? Create(global::Hosihikari.Bindings.Bedrock.Interop.NpcEventCoordinator arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_73155c6a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NpcEventCoordinator((nint)handle);

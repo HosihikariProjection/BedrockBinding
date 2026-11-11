@@ -44,12 +44,12 @@ public sealed unsafe partial class MoveActorAbsoluteData : global::System.IDispo
     public nint _ctor(nint entity) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveActorAbsoluteData Create()
+    public static MoveActorAbsoluteData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f1897438();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveActorAbsoluteData((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class MoveActorAbsoluteData : global::System.IDispo
     public static MoveActorAbsoluteData Create(nint entity) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveActorAbsoluteData Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveActorAbsoluteData arg0)
+    public static MoveActorAbsoluteData? Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveActorAbsoluteData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5b717f03((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveActorAbsoluteData((nint)handle);

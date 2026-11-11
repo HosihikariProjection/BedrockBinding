@@ -40,23 +40,23 @@ public sealed unsafe partial class SnapshotAccessor : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static SnapshotAccessor Create()
+    public static SnapshotAccessor? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_28e55152();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SnapshotAccessor((nint)handle);
     }
 
-    public static SnapshotAccessor Create(global::Hosihikari.Bindings.Bedrock.Interop.MovementDataExtractionUtility.SnapshotAccessor arg0)
+    public static SnapshotAccessor? Create(global::Hosihikari.Bindings.Bedrock.Interop.MovementDataExtractionUtility.SnapshotAccessor arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c619ce26((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SnapshotAccessor((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class SnapshotAccessor : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_929e3567((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MovementDataExtractionUtility.SnapshotAccessor operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MovementDataExtractionUtility.SnapshotAccessor arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MovementDataExtractionUtility.SnapshotAccessor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MovementDataExtractionUtility.SnapshotAccessor arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MovementDataExtractionUtility.SnapshotAccessor((nint)NativeMethods.TablePtr->C2.hs_method_c70a4aed((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c70a4aed((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MovementDataExtractionUtility.SnapshotAccessor((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

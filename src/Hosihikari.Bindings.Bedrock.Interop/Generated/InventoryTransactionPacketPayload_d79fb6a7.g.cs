@@ -49,12 +49,12 @@ public sealed unsafe partial class InventoryTransactionPacketPayload : global::S
         NativeMethods.TablePtr->C1.hs_method_100d8c89((void*)__hosihikari_shim_handle);
     }
 
-    public static InventoryTransactionPacketPayload Create()
+    public static InventoryTransactionPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_70472f72();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventoryTransactionPacketPayload((nint)handle);

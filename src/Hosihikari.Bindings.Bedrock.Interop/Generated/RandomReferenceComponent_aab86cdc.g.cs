@@ -40,12 +40,12 @@ public sealed unsafe partial class RandomReferenceComponent : global::System.IDi
         return __hs_handle;
     }
 
-    public static RandomReferenceComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomReferenceComponent arg0)
+    public static RandomReferenceComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomReferenceComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e4ae7eaf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RandomReferenceComponent((nint)handle);

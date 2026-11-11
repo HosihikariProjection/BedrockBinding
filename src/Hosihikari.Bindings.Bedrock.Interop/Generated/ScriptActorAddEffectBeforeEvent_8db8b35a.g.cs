@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptActorAddEffectBeforeEvent : global::Sys
         return __hs_handle;
     }
 
-    public static ScriptActorAddEffectBeforeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorAddEffectBeforeEvent arg0)
+    public static ScriptActorAddEffectBeforeEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorAddEffectBeforeEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d8c48238((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptActorAddEffectBeforeEvent((nint)handle);

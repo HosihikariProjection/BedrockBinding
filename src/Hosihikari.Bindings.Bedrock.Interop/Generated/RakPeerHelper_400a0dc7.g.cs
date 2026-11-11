@@ -40,23 +40,23 @@ public sealed unsafe partial class RakPeerHelper : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static RakPeerHelper Create()
+    public static RakPeerHelper? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5463bf6c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakPeerHelper((nint)handle);
     }
 
-    public static RakPeerHelper Create(global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper arg0)
+    public static RakPeerHelper? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8575f841((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakPeerHelper((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class RakPeerHelper : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_8132d522((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper((nint)NativeMethods.TablePtr->C3.hs_method_0e7bd98c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0e7bd98c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

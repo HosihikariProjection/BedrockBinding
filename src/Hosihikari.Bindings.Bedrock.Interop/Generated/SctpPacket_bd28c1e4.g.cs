@@ -44,23 +44,23 @@ public sealed unsafe partial class SctpPacket : global::System.IDisposable
     public static nint Parse(nint data, nint options) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SctpPacket Create()
+    public static SctpPacket? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f0061b92();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SctpPacket((nint)handle);
     }
 
-    public static SctpPacket Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket arg0)
+    public static SctpPacket? Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_93bf8b53((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SctpPacket((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class SctpPacket : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_727084b5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket((nint)NativeMethods.TablePtr->C4.hs_method_e2dec4be((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e2dec4be((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

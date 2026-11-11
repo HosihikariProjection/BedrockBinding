@@ -40,12 +40,12 @@ public sealed unsafe partial class PostGameEventRequestComponent : global::Syste
         return __hs_handle;
     }
 
-    public static PostGameEventRequestComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PostGameEventRequestComponent arg0)
+    public static PostGameEventRequestComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PostGameEventRequestComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_2e004abf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PostGameEventRequestComponent((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class BuiltInActorComponents : global::System.IDisp
         return __hs_handle;
     }
 
-    public static BuiltInActorComponents Create(global::Hosihikari.Bindings.Bedrock.Interop.BuiltInActorComponents arg0)
+    public static BuiltInActorComponents? Create(global::Hosihikari.Bindings.Bedrock.Interop.BuiltInActorComponents arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d9b13b74((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BuiltInActorComponents((nint)handle);

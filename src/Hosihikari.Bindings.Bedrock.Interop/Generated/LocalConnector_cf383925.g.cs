@@ -86,12 +86,12 @@ public sealed unsafe partial class LocalConnector : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LocalConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.LocalConnector arg0)
+    public static LocalConnector? Create(global::Hosihikari.Bindings.Bedrock.Interop.LocalConnector arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_adffa9ab((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LocalConnector((nint)handle);
@@ -101,9 +101,10 @@ public sealed unsafe partial class LocalConnector : global::System.IDisposable
     public void disconnect(bool skipMessage) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo getConnectedGameInfo()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo? getConnectedGameInfo()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)NativeMethods.TablePtr->C2.hs_method_d20f64f8((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d20f64f8((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)__hs_handle, false) : null;
     }
 
     public ushort getIPv4Port()

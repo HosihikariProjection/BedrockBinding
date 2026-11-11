@@ -44,23 +44,23 @@ public sealed unsafe partial class ServerAudioContentRegistry : global::System.I
     public nint _ctor(nint serverSoundDefinitionRegistry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerAudioContentRegistry Create()
+    public static ServerAudioContentRegistry? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4fc4ad0a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerAudioContentRegistry((nint)handle);
     }
 
-    public static ServerAudioContentRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry arg0)
+    public static ServerAudioContentRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ef69cdd1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerAudioContentRegistry((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class ServerAudioContentRegistry : global::System.I
         get => (nint)NativeMethods.TablePtr->C3.hs_get_93f18b05((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry((nint)NativeMethods.TablePtr->C3.hs_method_ff07a926((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ff07a926((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

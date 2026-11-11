@@ -40,12 +40,12 @@ public sealed unsafe partial class AngryDefinition : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static AngryDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.AngryDefinition arg0)
+    public static AngryDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.AngryDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_53db99f7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AngryDefinition((nint)handle);

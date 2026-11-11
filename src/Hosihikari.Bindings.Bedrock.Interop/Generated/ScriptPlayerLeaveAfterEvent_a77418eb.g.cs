@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptPlayerLeaveAfterEvent : global::System.
     public nint _ctor(nint eventData, nint arg1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptPlayerLeaveAfterEvent Create()
+    public static ScriptPlayerLeaveAfterEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a5b52033();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptPlayerLeaveAfterEvent((nint)handle);
@@ -91,9 +91,10 @@ public sealed unsafe partial class ScriptPlayerLeaveAfterEvent : global::System.
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerLeaveAfterEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerLeaveAfterEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerLeaveAfterEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerLeaveAfterEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerLeaveAfterEvent((nint)NativeMethods.TablePtr->C3.hs_method_a7264375((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a7264375((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerLeaveAfterEvent((nint)__hs_handle, false) : null;
     }
 
 

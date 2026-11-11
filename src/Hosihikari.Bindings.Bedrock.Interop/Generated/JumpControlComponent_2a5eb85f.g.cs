@@ -44,12 +44,12 @@ public sealed unsafe partial class JumpControlComponent : global::System.IDispos
     public nint _ctor(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JumpControlComponent Create()
+    public static JumpControlComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c36eccc1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JumpControlComponent((nint)handle);
@@ -99,9 +99,10 @@ public sealed unsafe partial class JumpControlComponent : global::System.IDispos
         set => NativeMethods.TablePtr->C2.hs_set_32429dd4((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.JumpControlComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JumpControlComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.JumpControlComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JumpControlComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JumpControlComponent((nint)NativeMethods.TablePtr->C2.hs_method_7c3f2765((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7c3f2765((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.JumpControlComponent((nint)__hs_handle, false) : null;
     }
 
 

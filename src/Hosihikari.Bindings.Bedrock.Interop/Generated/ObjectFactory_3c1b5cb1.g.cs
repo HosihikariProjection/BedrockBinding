@@ -48,23 +48,23 @@ public sealed unsafe partial class ObjectFactory : global::System.IDisposable
     public nint _makePromise() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ObjectFactory Create()
+    public static ObjectFactory? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f3df2c8d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ObjectFactory((nint)handle);
     }
 
-    public static ObjectFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectFactory arg0)
+    public static ObjectFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_050d1d54((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ObjectFactory((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class ObjectFactory : global::System.IDisposable
     public nint makePromise() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::StrongTypedObjectHandle<Scripting::PromiseType>' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectFactory operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectFactory arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectFactory? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectFactory arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectFactory((nint)NativeMethods.TablePtr->C3.hs_method_e42cb832((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e42cb832((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectFactory((nint)__hs_handle, false) : null;
     }
 
 

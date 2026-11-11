@@ -40,12 +40,12 @@ public sealed unsafe partial class BiomeDefinitionListPacketPayload : global::Sy
         return __hs_handle;
     }
 
-    public static BiomeDefinitionListPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.BiomeDefinitionListPacketPayload arg0)
+    public static BiomeDefinitionListPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.BiomeDefinitionListPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1a14af65((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BiomeDefinitionListPacketPayload((nint)handle);

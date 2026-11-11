@@ -40,12 +40,12 @@ public sealed unsafe partial class IScriptPluginSource : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static IScriptPluginSource Create(global::Hosihikari.Bindings.Bedrock.Interop.IScriptPluginSource arg0)
+    public static IScriptPluginSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.IScriptPluginSource arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d0706be6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IScriptPluginSource((nint)handle);
@@ -77,9 +77,10 @@ public sealed unsafe partial class IScriptPluginSource : global::System.IDisposa
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PackManifest getManifest()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PackManifest? getManifest()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackManifest((nint)NativeMethods.TablePtr->C1.hs_method_82fdff86((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_82fdff86((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackManifest((nint)__hs_handle, false) : null;
     }
 
     public string? loadScript(string path)

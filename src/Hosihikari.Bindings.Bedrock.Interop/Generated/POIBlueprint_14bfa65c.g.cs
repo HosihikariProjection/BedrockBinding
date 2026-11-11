@@ -44,23 +44,23 @@ public sealed unsafe partial class POIBlueprint : global::System.IDisposable
     public nint _ctor(nint name, nint type, float radius, bool useBoundingBox, ulong capacity, ulong weight, nint soundEvent, nint initEvent, nint endEvent) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static POIBlueprint Create()
+    public static POIBlueprint? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7a988906();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new POIBlueprint((nint)handle);
     }
 
-    public static POIBlueprint Create(global::Hosihikari.Bindings.Bedrock.Interop.POIBlueprint arg0)
+    public static POIBlueprint? Create(global::Hosihikari.Bindings.Bedrock.Interop.POIBlueprint arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_82613d06((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new POIBlueprint((nint)handle);

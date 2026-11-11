@@ -60,12 +60,12 @@ public sealed unsafe partial class ScriptBlockCustomComponentPlayerPlaceBeforeEv
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptBlockCustomComponentPlayerPlaceBeforeEvent Create()
+    public static ScriptBlockCustomComponentPlayerPlaceBeforeEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ce89f16a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockCustomComponentPlayerPlaceBeforeEvent((nint)handle);
@@ -107,9 +107,10 @@ public sealed unsafe partial class ScriptBlockCustomComponentPlayerPlaceBeforeEv
         get => (nint)NativeMethods.TablePtr->C3.hs_get_7ded5be5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentPlayerPlaceBeforeEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentPlayerPlaceBeforeEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentPlayerPlaceBeforeEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentPlayerPlaceBeforeEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentPlayerPlaceBeforeEvent((nint)NativeMethods.TablePtr->C3.hs_method_dcb9fd56((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_dcb9fd56((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentPlayerPlaceBeforeEvent((nint)__hs_handle, false) : null;
     }
 
     public bool shouldCancel()

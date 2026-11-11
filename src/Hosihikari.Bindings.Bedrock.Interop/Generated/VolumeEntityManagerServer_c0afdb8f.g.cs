@@ -70,23 +70,23 @@ public sealed unsafe partial class VolumeEntityManagerServer : global::System.ID
         get => (nint)NativeMethods.TablePtr->C4.hs_get_d7ca4f61((void*)__hosihikari_shim_handle);
     }
 
-    public static VolumeEntityManagerServer Create()
+    public static VolumeEntityManagerServer? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e51e6e30();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VolumeEntityManagerServer((nint)handle);
     }
 
-    public static VolumeEntityManagerServer Create(global::Hosihikari.Bindings.Bedrock.Interop.VolumeEntityManagerServer arg0)
+    public static VolumeEntityManagerServer? Create(global::Hosihikari.Bindings.Bedrock.Interop.VolumeEntityManagerServer arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a8ce5eda((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VolumeEntityManagerServer((nint)handle);
@@ -112,9 +112,10 @@ public sealed unsafe partial class VolumeEntityManagerServer : global::System.ID
         get => (nint)NativeMethods.TablePtr->C4.hs_get_1b212cc6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.VolumeEntityManagerServer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VolumeEntityManagerServer arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.VolumeEntityManagerServer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VolumeEntityManagerServer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.VolumeEntityManagerServer((nint)NativeMethods.TablePtr->C4.hs_method_db09b42b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_db09b42b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VolumeEntityManagerServer((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -40,12 +40,12 @@ public sealed unsafe partial class ContentLogEndPointData : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ContentLogEndPointData Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLog_Nested.ContentLogEndPointData arg0)
+    public static ContentLogEndPointData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLog_Nested.ContentLogEndPointData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5167015c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContentLogEndPointData((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class GetCollisionShapeInterface : global::System.I
         return __hs_handle;
     }
 
-    public static GetCollisionShapeInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface arg0)
+    public static GetCollisionShapeInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_29f0535d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GetCollisionShapeInterface((nint)handle);
@@ -61,9 +61,10 @@ public sealed unsafe partial class GetCollisionShapeInterface : global::System.I
         return NativeMethods.TablePtr->C1.hs_method_74e104b5((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getAABB()
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getAABB()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C1.hs_method_d1811cd2((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d1811cd2((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
     public int getEntityTypeId()

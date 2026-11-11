@@ -276,20 +276,21 @@ public sealed unsafe partial class IScriptWorldAfterEvents : global::System.IDis
     public void _onWorldClockTimeModified(nint clockTimeModifiedEvent) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IScriptWorldAfterEvents Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.IScriptWorldAfterEvents arg0)
+    public static IScriptWorldAfterEvents? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.IScriptWorldAfterEvents arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_58f45cd4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IScriptWorldAfterEvents((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Level getLevel()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Level? getLevel()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)NativeMethods.TablePtr->C3.hs_method_8192a4c0((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8192a4c0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false) : null;
     }
 
     public void onActivateLever(global::Hosihikari.Bindings.Abi.SharedHandle? leverEvent)

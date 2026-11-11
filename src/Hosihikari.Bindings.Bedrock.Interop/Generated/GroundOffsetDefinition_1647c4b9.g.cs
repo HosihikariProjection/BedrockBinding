@@ -40,23 +40,23 @@ public sealed unsafe partial class GroundOffsetDefinition : global::System.IDisp
         return __hs_handle;
     }
 
-    public static GroundOffsetDefinition Create()
+    public static GroundOffsetDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a3d5ed62();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GroundOffsetDefinition((nint)handle);
     }
 
-    public static GroundOffsetDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.GroundOffsetDefinition arg0)
+    public static GroundOffsetDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.GroundOffsetDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_545f9efe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GroundOffsetDefinition((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class GroundOffsetDefinition : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C1.hs_get_c388a045((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GroundOffsetDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GroundOffsetDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GroundOffsetDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GroundOffsetDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GroundOffsetDefinition((nint)NativeMethods.TablePtr->C1.hs_method_6a8fd027((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6a8fd027((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GroundOffsetDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

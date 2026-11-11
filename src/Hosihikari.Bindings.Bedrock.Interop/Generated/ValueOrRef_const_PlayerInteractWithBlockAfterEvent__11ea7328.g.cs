@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerInteractWithBlockAfter
     public static ValueOrRef_const_PlayerInteractWithBlockAfterEvent_ Create_0bd68a8a(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerInteractWithBlockAfterEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerInteractWithBlockAfterEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerInteractWithBlockAfterEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerInteractWithBlockAfterEvent((nint)NativeMethods.TablePtr->C1.hs_method_283134d9((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_283134d9((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerInteractWithBlockAfterEvent((nint)__hs_handle, false) : null;
     }
 
 

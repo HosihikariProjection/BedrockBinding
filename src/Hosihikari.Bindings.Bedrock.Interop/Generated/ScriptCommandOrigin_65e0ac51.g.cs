@@ -110,23 +110,23 @@ public sealed unsafe partial class ScriptCommandOrigin : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptCommandOrigin Create()
+    public static ScriptCommandOrigin? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c95b36bd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptCommandOrigin((nint)handle);
     }
 
-    public static ScriptCommandOrigin Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandOrigin arg0)
+    public static ScriptCommandOrigin? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandOrigin arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_59dd4bdd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptCommandOrigin((nint)handle);
@@ -141,9 +141,10 @@ public sealed unsafe partial class ScriptCommandOrigin : global::System.IDisposa
     public nint clone() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CommandOrigin' has no accessible destructor.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getBlockPosition()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getBlockPosition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C3.hs_method_2da19a8b((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2da19a8b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Dimension? getDimension()
@@ -193,9 +194,10 @@ public sealed unsafe partial class ScriptCommandOrigin : global::System.IDisposa
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getWorldPosition()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getWorldPosition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C3.hs_method_71f76729((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_71f76729((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public void handleCommandOutputCallback(int successCount, string messages)
@@ -251,9 +253,10 @@ public sealed unsafe partial class ScriptCommandOrigin : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_1fb5942a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandOrigin operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandOrigin arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandOrigin? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandOrigin arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandOrigin((nint)NativeMethods.TablePtr->C3.hs_method_7f57de92((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7f57de92((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptCommandOrigin((nint)__hs_handle, false) : null;
     }
 
 

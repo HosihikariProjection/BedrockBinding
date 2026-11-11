@@ -48,23 +48,23 @@ public sealed unsafe partial class TestSummaryDisplayer : global::System.IDispos
     public void _onTestPassed(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TestSummaryDisplayer Create()
+    public static TestSummaryDisplayer? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a7cde9dd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TestSummaryDisplayer((nint)handle);
     }
 
-    public static TestSummaryDisplayer Create(global::Hosihikari.Bindings.Bedrock.Interop.TestSummaryDisplayer arg0)
+    public static TestSummaryDisplayer? Create(global::Hosihikari.Bindings.Bedrock.Interop.TestSummaryDisplayer arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_65cd3494((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TestSummaryDisplayer((nint)handle);
@@ -100,9 +100,10 @@ public sealed unsafe partial class TestSummaryDisplayer : global::System.IDispos
         NativeMethods.TablePtr->C3.hs_method_8233183d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TestSummaryDisplayer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TestSummaryDisplayer arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.TestSummaryDisplayer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TestSummaryDisplayer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TestSummaryDisplayer((nint)NativeMethods.TablePtr->C3.hs_method_33411a28((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_33411a28((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TestSummaryDisplayer((nint)__hs_handle, false) : null;
     }
 
 

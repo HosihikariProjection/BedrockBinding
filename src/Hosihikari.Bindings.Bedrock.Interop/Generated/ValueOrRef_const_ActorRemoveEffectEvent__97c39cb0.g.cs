@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ActorRemoveEffectEvent_ : gl
     public static ValueOrRef_const_ActorRemoveEffectEvent_ Create_59ad28c1(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ActorRemoveEffectEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorRemoveEffectEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorRemoveEffectEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorRemoveEffectEvent((nint)NativeMethods.TablePtr->C1.hs_method_8ef45998((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8ef45998((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorRemoveEffectEvent((nint)__hs_handle, false) : null;
     }
 
 

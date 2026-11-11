@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ItemDefinitionEventTriggered
     public static ValueOrRef_const_ItemDefinitionEventTriggeredEvent_ Create_104337d5(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ItemDefinitionEventTriggeredEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemDefinitionEventTriggeredEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemDefinitionEventTriggeredEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDefinitionEventTriggeredEvent((nint)NativeMethods.TablePtr->C1.hs_method_20a49bb9((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_20a49bb9((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemDefinitionEventTriggeredEvent((nint)__hs_handle, false) : null;
     }
 
 

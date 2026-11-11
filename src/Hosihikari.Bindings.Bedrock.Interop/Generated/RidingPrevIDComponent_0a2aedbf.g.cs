@@ -40,12 +40,12 @@ public sealed unsafe partial class RidingPrevIDComponent : global::System.IDispo
         return __hs_handle;
     }
 
-    public static RidingPrevIDComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.RidingPrevIDComponent arg0)
+    public static RidingPrevIDComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.RidingPrevIDComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fc8f2a2d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RidingPrevIDComponent((nint)handle);

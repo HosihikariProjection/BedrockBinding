@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptItemCustomComponentBeforeDurabilityDama
     public void _updateEngineEvent(nint durabilityDamage, nint item, nint arg2, nint arg3) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptItemCustomComponentBeforeDurabilityDamageEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentBeforeDurabilityDamageEvent arg0)
+    public static ScriptItemCustomComponentBeforeDurabilityDamageEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentBeforeDurabilityDamageEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6782f677((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemCustomComponentBeforeDurabilityDamageEvent((nint)handle);

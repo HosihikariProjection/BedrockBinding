@@ -40,12 +40,12 @@ public sealed unsafe partial class Raid : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Raid Create(global::Hosihikari.Bindings.Bedrock.Interop.Raid arg0)
+    public static Raid? Create(global::Hosihikari.Bindings.Bedrock.Interop.Raid arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_256b3ee5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Raid((nint)handle);

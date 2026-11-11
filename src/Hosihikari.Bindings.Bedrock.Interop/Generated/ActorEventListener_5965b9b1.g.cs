@@ -104,12 +104,12 @@ public sealed unsafe partial class ActorEventListener : global::System.IDisposab
     public nint _onPlayerAuthInputReceived(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorEventListener Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorEventListener arg0)
+    public static ActorEventListener? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorEventListener arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_37a5ee9a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorEventListener((nint)handle);

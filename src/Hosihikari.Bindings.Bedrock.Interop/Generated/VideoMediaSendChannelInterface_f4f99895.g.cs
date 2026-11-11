@@ -108,12 +108,12 @@ public sealed unsafe partial class VideoMediaSendChannelInterface : global::Syst
         return NativeMethods.TablePtr->C4.hs_method_58bd721f((void*)__hosihikari_shim_handle, arg0, (void*)arg1, (void*)(arg2?.Handle ?? 0)) != 0;
     }
 
-    public static VideoMediaSendChannelInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface arg0)
+    public static VideoMediaSendChannelInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_caac4edb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VideoMediaSendChannelInterface((nint)handle);

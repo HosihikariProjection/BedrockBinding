@@ -72,23 +72,23 @@ public sealed unsafe partial class SandFeature : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SandFeature Create()
+    public static SandFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3d802ad9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SandFeature((nint)handle);
     }
 
-    public static SandFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.SandFeature arg0)
+    public static SandFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.SandFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_87bb74b9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SandFeature((nint)handle);
@@ -106,9 +106,10 @@ public sealed unsafe partial class SandFeature : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_4312fb5d((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SandFeature operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SandFeature arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SandFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SandFeature arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SandFeature((nint)NativeMethods.TablePtr->C3.hs_method_30b42c22((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_30b42c22((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SandFeature((nint)__hs_handle, false) : null;
     }
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)

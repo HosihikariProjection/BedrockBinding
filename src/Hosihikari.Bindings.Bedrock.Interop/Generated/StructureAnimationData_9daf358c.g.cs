@@ -52,12 +52,12 @@ public sealed unsafe partial class StructureAnimationData : global::System.IDisp
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StructureAnimationData Create()
+    public static StructureAnimationData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2bc4ae26();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureAnimationData((nint)handle);
@@ -67,12 +67,12 @@ public sealed unsafe partial class StructureAnimationData : global::System.IDisp
     public static StructureAnimationData Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StructureAnimationData Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData arg0)
+    public static StructureAnimationData? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_49814f81((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureAnimationData((nint)handle);
@@ -146,9 +146,10 @@ public sealed unsafe partial class StructureAnimationData : global::System.IDisp
         set => NativeMethods.TablePtr->C3.hs_set_48ec856f((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData((nint)NativeMethods.TablePtr->C3.hs_method_ce7f51cf((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ce7f51cf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

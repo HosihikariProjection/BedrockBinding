@@ -44,23 +44,23 @@ public sealed unsafe partial class CopyableDataList : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CopyableDataList Create()
+    public static CopyableDataList? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_55a0b53b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CopyableDataList((nint)handle);
     }
 
-    public static CopyableDataList Create(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData_Nested.CopyableDataList arg0)
+    public static CopyableDataList? Create(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData_Nested.CopyableDataList arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_82d44b49((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CopyableDataList((nint)handle);

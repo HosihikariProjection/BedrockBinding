@@ -52,12 +52,12 @@ public sealed unsafe partial class ITreeFeature : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_15ee8841((void*)__hosihikari_shim_handle, value);
     }
 
-    public static ITreeFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.ITreeFeature arg0)
+    public static ITreeFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.ITreeFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9cfd1016((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ITreeFeature((nint)handle);

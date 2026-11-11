@@ -40,12 +40,12 @@ public sealed unsafe partial class ItemStackResponseInfo : global::System.IDispo
         return __hs_handle;
     }
 
-    public static ItemStackResponseInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackResponseInfo arg0)
+    public static ItemStackResponseInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackResponseInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1811b201((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackResponseInfo((nint)handle);

@@ -60,12 +60,12 @@ public sealed unsafe partial class AllayVibrationConfig : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AllayVibrationConfig Create()
+    public static AllayVibrationConfig? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9fdaa929();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AllayVibrationConfig((nint)handle);
@@ -75,12 +75,12 @@ public sealed unsafe partial class AllayVibrationConfig : global::System.IDispos
     public static AllayVibrationConfig Create(nint actor, ushort arg1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AllayVibrationConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.AllayVibrationConfig arg0)
+    public static AllayVibrationConfig? Create(global::Hosihikari.Bindings.Bedrock.Interop.AllayVibrationConfig arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e6f7e166((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AllayVibrationConfig((nint)handle);

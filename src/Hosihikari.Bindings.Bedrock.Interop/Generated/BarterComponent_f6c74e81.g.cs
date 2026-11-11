@@ -40,12 +40,12 @@ public sealed unsafe partial class BarterComponent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static BarterComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BarterComponent arg0)
+    public static BarterComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BarterComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_8c4681c1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BarterComponent((nint)handle);

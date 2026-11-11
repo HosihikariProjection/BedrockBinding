@@ -45,23 +45,23 @@ public sealed unsafe partial class ChangeFakePlayerScore : global::System.IDispo
         return (nint)NativeMethods.TablePtr->C0.hs_method_455c42ff((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
-    public static ChangeFakePlayerScore Create()
+    public static ChangeFakePlayerScore? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_11321524();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChangeFakePlayerScore((nint)handle);
     }
 
-    public static ChangeFakePlayerScore Create(global::Hosihikari.Bindings.Bedrock.Interop.ChangeFakePlayerScore arg0)
+    public static ChangeFakePlayerScore? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChangeFakePlayerScore arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2b7f6d0f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChangeFakePlayerScore((nint)handle);
@@ -91,9 +91,10 @@ public sealed unsafe partial class ChangeFakePlayerScore : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_902ab8f9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChangeFakePlayerScore operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ChangeFakePlayerScore arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChangeFakePlayerScore? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ChangeFakePlayerScore arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChangeFakePlayerScore((nint)NativeMethods.TablePtr->C0.hs_method_8db75d33((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8db75d33((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChangeFakePlayerScore((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

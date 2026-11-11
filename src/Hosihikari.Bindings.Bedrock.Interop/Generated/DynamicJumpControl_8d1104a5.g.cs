@@ -76,12 +76,12 @@ public sealed unsafe partial class DynamicJumpControl : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DynamicJumpControl Create(global::Hosihikari.Bindings.Bedrock.Interop.DynamicJumpControl arg0)
+    public static DynamicJumpControl? Create(global::Hosihikari.Bindings.Bedrock.Interop.DynamicJumpControl arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_908cfc40((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DynamicJumpControl((nint)handle);

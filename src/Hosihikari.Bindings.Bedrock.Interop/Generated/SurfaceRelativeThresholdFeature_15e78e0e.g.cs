@@ -60,12 +60,12 @@ public sealed unsafe partial class SurfaceRelativeThresholdFeature : global::Sys
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SurfaceRelativeThresholdFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceRelativeThresholdFeature arg0)
+    public static SurfaceRelativeThresholdFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceRelativeThresholdFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_510d0b3b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SurfaceRelativeThresholdFeature((nint)handle);

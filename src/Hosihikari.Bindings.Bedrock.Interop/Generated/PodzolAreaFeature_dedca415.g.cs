@@ -68,12 +68,12 @@ public sealed unsafe partial class PodzolAreaFeature : global::System.IDisposabl
     public bool _place(nint region, nint origin, nint random) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PodzolAreaFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.PodzolAreaFeature arg0)
+    public static PodzolAreaFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.PodzolAreaFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f9a2349a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PodzolAreaFeature((nint)handle);

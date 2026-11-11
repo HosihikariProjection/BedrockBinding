@@ -45,14 +45,16 @@ public sealed unsafe partial class FloatN_mce__Color__float__float__float__float
         return NativeMethods.TablePtr->C4.hs_method_ea30ba38((void*)__hosihikari_shim_handle, (void*)b.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color cross(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color b)
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? cross(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color b)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_839c4c64((void*)__hosihikari_shim_handle, (void*)b.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_839c4c64((void*)__hosihikari_shim_handle, (void*)b.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color normalize()
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? normalize()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C4.hs_method_e3fca69f((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e3fca69f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
     }
 
     public void Dispose()

@@ -84,23 +84,23 @@ public sealed unsafe partial class GetCollisionShapeActorProxy : global::System.
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static GetCollisionShapeActorProxy Create()
+    public static GetCollisionShapeActorProxy? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b99bfd86();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GetCollisionShapeActorProxy((nint)handle);
     }
 
-    public static GetCollisionShapeActorProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeActorProxy arg0)
+    public static GetCollisionShapeActorProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeActorProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_94675964((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GetCollisionShapeActorProxy((nint)handle);
@@ -116,9 +116,10 @@ public sealed unsafe partial class GetCollisionShapeActorProxy : global::System.
         return NativeMethods.TablePtr->C1.hs_method_5314dbc9((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getAABB()
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getAABB()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C1.hs_method_3483a8e4((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3483a8e4((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
     }
 
     public int getEntityTypeId()
@@ -162,9 +163,10 @@ public sealed unsafe partial class GetCollisionShapeActorProxy : global::System.
         get => (nint)NativeMethods.TablePtr->C1.hs_get_68dd2f9e((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeActorProxy operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeActorProxy arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeActorProxy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeActorProxy arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeActorProxy((nint)NativeMethods.TablePtr->C1.hs_method_7d7d29ec((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7d7d29ec((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeActorProxy((nint)__hs_handle, false) : null;
     }
 
 

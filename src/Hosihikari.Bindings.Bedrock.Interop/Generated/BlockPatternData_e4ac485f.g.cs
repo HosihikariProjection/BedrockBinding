@@ -40,12 +40,12 @@ public sealed unsafe partial class BlockPatternData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static BlockPatternData Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPatternData arg0)
+    public static BlockPatternData? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPatternData arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_edc339a0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockPatternData((nint)handle);

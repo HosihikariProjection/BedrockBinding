@@ -40,12 +40,12 @@ public sealed unsafe partial class BatchEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static BatchEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageWriteBatch_Nested.BatchEntry arg0)
+    public static BatchEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageWriteBatch_Nested.BatchEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1b11e63f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BatchEntry((nint)handle);

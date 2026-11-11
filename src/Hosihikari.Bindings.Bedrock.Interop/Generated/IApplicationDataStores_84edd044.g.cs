@@ -46,12 +46,12 @@ public sealed unsafe partial class IApplicationDataStores : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C0.hs_get_97f86a21((void*)__hosihikari_shim_handle);
     }
 
-    public static IApplicationDataStores Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.IApplicationDataStores arg0)
+    public static IApplicationDataStores? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.IApplicationDataStores arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_687bd66f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IApplicationDataStores((nint)handle);

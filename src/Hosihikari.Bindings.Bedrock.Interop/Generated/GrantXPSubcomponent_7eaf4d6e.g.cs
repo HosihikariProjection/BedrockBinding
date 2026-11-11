@@ -56,12 +56,12 @@ public sealed unsafe partial class GrantXPSubcomponent : global::System.IDisposa
     public void _writetoJSON(nint component) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GrantXPSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.GrantXPSubcomponent arg0)
+    public static GrantXPSubcomponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.GrantXPSubcomponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_0179922b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GrantXPSubcomponent((nint)handle);

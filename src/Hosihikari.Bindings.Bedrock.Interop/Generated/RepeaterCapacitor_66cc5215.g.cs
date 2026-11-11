@@ -212,12 +212,12 @@ public sealed unsafe partial class RepeaterCapacitor : global::System.IDisposabl
     public static RepeaterCapacitor Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RepeaterCapacitor Create(global::Hosihikari.Bindings.Bedrock.Interop.RepeaterCapacitor arg0)
+    public static RepeaterCapacitor? Create(global::Hosihikari.Bindings.Bedrock.Interop.RepeaterCapacitor arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e8daef08((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RepeaterCapacitor((nint)handle);

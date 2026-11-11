@@ -40,23 +40,23 @@ public sealed unsafe partial class ResourceMetadata : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ResourceMetadata Create()
+    public static ResourceMetadata? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3e791fa7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourceMetadata((nint)handle);
     }
 
-    public static ResourceMetadata Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceMetadata arg0)
+    public static ResourceMetadata? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceMetadata arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8ed60875((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourceMetadata((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class ResourceMetadata : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_0d26daa9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResourceMetadata operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourceMetadata arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResourceMetadata? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourceMetadata arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceMetadata((nint)NativeMethods.TablePtr->C3.hs_method_3971d7b8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3971d7b8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourceMetadata((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -93,12 +93,12 @@ public sealed unsafe partial class PayloadPacket_PositionTrackingDBClientRequest
         get => (nint)NativeMethods.TablePtr->C4.hs_get_722c9519((void*)__hosihikari_shim_handle);
     }
 
-    public static PayloadPacket_PositionTrackingDBClientRequestPacketPayload_ Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_PositionTrackingDBClientRequestPacketPayload_ arg0)
+    public static PayloadPacket_PositionTrackingDBClientRequestPacketPayload_? Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_PositionTrackingDBClientRequestPacketPayload_ arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_d4aa81c5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PayloadPacket_PositionTrackingDBClientRequestPacketPayload_((nint)handle);

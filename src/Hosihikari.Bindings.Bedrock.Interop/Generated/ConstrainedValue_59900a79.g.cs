@@ -40,12 +40,12 @@ public sealed unsafe partial class ConstrainedValue : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ConstrainedValue Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ConstrainedValue arg0)
+    public static ConstrainedValue? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ConstrainedValue arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_604874a3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ConstrainedValue((nint)handle);

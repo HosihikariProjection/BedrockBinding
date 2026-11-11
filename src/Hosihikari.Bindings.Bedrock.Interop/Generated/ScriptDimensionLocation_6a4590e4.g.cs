@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptDimensionLocation : global::System.IDis
         return __hs_handle;
     }
 
-    public static ScriptDimensionLocation Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimensionLocation arg0)
+    public static ScriptDimensionLocation? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptDimensionLocation arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0b9e30ee((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptDimensionLocation((nint)handle);

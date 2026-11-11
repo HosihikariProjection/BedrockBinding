@@ -45,34 +45,34 @@ public sealed unsafe partial class MobEquipmentPacketPayload : global::System.ID
         return (nint)NativeMethods.TablePtr->C2.hs_method_64f55711((void*)__hosihikari_shim_handle, (void*)runtimeId.Handle, (void*)item.Handle, slot, selectedSlot, containerId);
     }
 
-    public static MobEquipmentPacketPayload Create()
+    public static MobEquipmentPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_61824c14();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEquipmentPacketPayload((nint)handle);
     }
 
-    public static MobEquipmentPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID runtimeId, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, int slot, int selectedSlot, sbyte containerId)
+    public static MobEquipmentPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID runtimeId, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, int slot, int selectedSlot, sbyte containerId)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_80129a34((void*)runtimeId.Handle, (void*)item.Handle, slot, selectedSlot, containerId);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEquipmentPacketPayload((nint)handle);
     }
 
-    public static MobEquipmentPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEquipmentPacketPayload arg0)
+    public static MobEquipmentPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEquipmentPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f865855d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEquipmentPacketPayload((nint)handle);

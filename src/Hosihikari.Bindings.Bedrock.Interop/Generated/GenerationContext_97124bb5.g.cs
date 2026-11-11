@@ -40,23 +40,23 @@ public sealed unsafe partial class GenerationContext : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static GenerationContext Create()
+    public static GenerationContext? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f6b4ac96();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GenerationContext((nint)handle);
     }
 
-    public static GenerationContext Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext arg0)
+    public static GenerationContext? Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b749ba0b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GenerationContext((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class GenerationContext : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C4.hs_get_913f6f29((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext((nint)NativeMethods.TablePtr->C4.hs_method_c2216d19((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c2216d19((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext((nint)__hs_handle, false) : null;
     }
 
 

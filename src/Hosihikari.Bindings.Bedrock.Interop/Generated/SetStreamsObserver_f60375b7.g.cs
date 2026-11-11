@@ -45,12 +45,12 @@ public sealed unsafe partial class SetStreamsObserver : global::System.IDisposab
         NativeMethods.TablePtr->C4.hs_method_66dd33e5((void*)__hosihikari_shim_handle);
     }
 
-    public static SetStreamsObserver Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderBase_Nested.SetStreamsObserver arg0)
+    public static SetStreamsObserver? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderBase_Nested.SetStreamsObserver arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_aaa51bc1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetStreamsObserver((nint)handle);

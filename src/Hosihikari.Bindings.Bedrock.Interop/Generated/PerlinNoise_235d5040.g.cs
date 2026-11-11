@@ -52,12 +52,12 @@ public sealed unsafe partial class PerlinNoise : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PerlinNoise Create()
+    public static PerlinNoise? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6bcc6da6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PerlinNoise((nint)handle);
@@ -67,12 +67,12 @@ public sealed unsafe partial class PerlinNoise : global::System.IDisposable
     public static PerlinNoise Create(nint random, int levels) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PerlinNoise Create(global::Hosihikari.Bindings.Bedrock.Interop.PerlinNoise arg0)
+    public static PerlinNoise? Create(global::Hosihikari.Bindings.Bedrock.Interop.PerlinNoise arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bfb7d932((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PerlinNoise((nint)handle);

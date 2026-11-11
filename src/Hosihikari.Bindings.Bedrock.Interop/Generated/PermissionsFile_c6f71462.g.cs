@@ -40,12 +40,12 @@ public sealed unsafe partial class PermissionsFile : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PermissionsFile Create(global::Hosihikari.Bindings.Bedrock.Interop.PermissionsFile arg0)
+    public static PermissionsFile? Create(global::Hosihikari.Bindings.Bedrock.Interop.PermissionsFile arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_edbe3d55((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PermissionsFile((nint)handle);

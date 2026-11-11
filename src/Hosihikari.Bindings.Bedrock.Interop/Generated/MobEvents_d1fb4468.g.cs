@@ -48,12 +48,12 @@ public sealed unsafe partial class MobEvents : global::System.IDisposable
     public static nint EVENTS_ENABLED_STRING() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MobEvents Create()
+    public static MobEvents? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e3812250();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEvents((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class MobEvents : global::System.IDisposable
     public static MobEvents Create(nint levelStorage) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MobEvents Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEvents arg0)
+    public static MobEvents? Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEvents arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b47b0eba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobEvents((nint)handle);
@@ -128,9 +128,10 @@ public sealed unsafe partial class MobEvents : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_8c108677((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MobEvents operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MobEvents arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MobEvents? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MobEvents arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MobEvents((nint)NativeMethods.TablePtr->C2.hs_method_df8c195d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_df8c195d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MobEvents((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

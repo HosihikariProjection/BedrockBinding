@@ -752,12 +752,12 @@ public sealed unsafe partial class Silverfish : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Silverfish Create()
+    public static Silverfish? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_95d8655b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Silverfish((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class ChangeEntityScore : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static ChangeEntityScore Create(global::Hosihikari.Bindings.Bedrock.Interop.ChangeEntityScore arg0)
+    public static ChangeEntityScore? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChangeEntityScore arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f45aac8d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChangeEntityScore((nint)handle);

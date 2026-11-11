@@ -60,23 +60,23 @@ public sealed unsafe partial class PlaySoundResponse : global::System.IDisposabl
     public static nint NameID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlaySoundResponse Create()
+    public static PlaySoundResponse? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_560b0c3f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlaySoundResponse((nint)handle);
     }
 
-    public static PlaySoundResponse Create(global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundResponse arg0)
+    public static PlaySoundResponse? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundResponse arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ac6584e2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlaySoundResponse((nint)handle);
@@ -110,9 +110,10 @@ public sealed unsafe partial class PlaySoundResponse : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_7f1d6d08((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundResponse operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundResponse arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundResponse? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundResponse arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundResponse((nint)NativeMethods.TablePtr->C2.hs_method_d73fe3f2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d73fe3f2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundResponse((nint)__hs_handle, false) : null;
     }
 
 

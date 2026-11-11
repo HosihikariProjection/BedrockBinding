@@ -52,12 +52,12 @@ public sealed unsafe partial class ClosureAny : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ClosureAny Create()
+    public static ClosureAny? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_da273b89();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClosureAny((nint)handle);
@@ -67,12 +67,12 @@ public sealed unsafe partial class ClosureAny : global::System.IDisposable
     public static ClosureAny Create(nint runtime, nint contextId, nint scope, nint handle, nint inspector) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ClosureAny Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClosureAny arg0)
+    public static ClosureAny? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClosureAny arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d2f7fdba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClosureAny((nint)handle);

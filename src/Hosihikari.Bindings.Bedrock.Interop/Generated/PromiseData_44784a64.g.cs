@@ -40,23 +40,23 @@ public sealed unsafe partial class PromiseData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PromiseData Create()
+    public static PromiseData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_504c443a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PromiseData((nint)handle);
     }
 
-    public static PromiseData Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.PromiseData arg0)
+    public static PromiseData? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.PromiseData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4caf9a0a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PromiseData((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class PromiseData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_d61401eb((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.PromiseData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.PromiseData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.PromiseData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.PromiseData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.PromiseData((nint)NativeMethods.TablePtr->C3.hs_method_519aa552((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_519aa552((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ScriptObjRef_Nested.PromiseData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

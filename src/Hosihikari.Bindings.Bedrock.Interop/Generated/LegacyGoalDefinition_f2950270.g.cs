@@ -1358,9 +1358,10 @@ public sealed unsafe partial class LegacyGoalDefinition : global::System.IDispos
         set => NativeMethods.TablePtr->C2.hs_set_e7ba3c87((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyGoalDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LegacyGoalDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyGoalDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LegacyGoalDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LegacyGoalDefinition((nint)NativeMethods.TablePtr->C2.hs_method_30424bee((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_30424bee((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LegacyGoalDefinition((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

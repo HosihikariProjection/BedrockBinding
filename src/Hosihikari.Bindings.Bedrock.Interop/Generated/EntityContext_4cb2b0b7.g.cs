@@ -40,23 +40,23 @@ public sealed unsafe partial class EntityContext : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static EntityContext Create()
+    public static EntityContext? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_adf38203();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityContext((nint)handle);
     }
 
-    public static EntityContext Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0)
+    public static EntityContext? Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c1f496fb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityContext((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class EntityContext : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C1.hs_method_357c472d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WeakEntityRef getWeakRef()
+    public global::Hosihikari.Bindings.Bedrock.Interop.WeakEntityRef? getWeakRef()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WeakEntityRef((nint)NativeMethods.TablePtr->C1.hs_method_24cbca66((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_24cbca66((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WeakEntityRef((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -95,9 +96,10 @@ public sealed unsafe partial class EntityContext : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_f2400127((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EntityContext operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EntityContext? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EntityContext((nint)NativeMethods.TablePtr->C1.hs_method_fa0313d9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_fa0313d9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EntityContext((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

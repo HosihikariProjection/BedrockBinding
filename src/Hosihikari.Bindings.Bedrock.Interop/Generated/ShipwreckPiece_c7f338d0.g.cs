@@ -52,12 +52,12 @@ public sealed unsafe partial class ShipwreckPiece : global::System.IDisposable
     public static nint STRUCTURE_SHIPWRECK_TYPES() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'const std::basic_string<char> (&)[20]' is not supported.");
 
-    public static ShipwreckPiece Create(global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckPiece arg0)
+    public static ShipwreckPiece? Create(global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckPiece arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c32e9a44((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ShipwreckPiece((nint)handle);

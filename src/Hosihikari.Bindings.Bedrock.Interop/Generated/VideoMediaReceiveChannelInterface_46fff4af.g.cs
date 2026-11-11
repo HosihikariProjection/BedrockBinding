@@ -101,12 +101,12 @@ public sealed unsafe partial class VideoMediaReceiveChannelInterface : global::S
         return NativeMethods.TablePtr->C4.hs_method_b99c36e7((void*)__hosihikari_shim_handle, arg0, (void*)arg1) != 0;
     }
 
-    public static VideoMediaReceiveChannelInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface arg0)
+    public static VideoMediaReceiveChannelInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_31ea9c41((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VideoMediaReceiveChannelInterface((nint)handle);

@@ -60,12 +60,12 @@ public sealed unsafe partial class ActorDimensionTransferer : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorDimensionTransferer Create()
+    public static ActorDimensionTransferer? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2a54b6ac();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDimensionTransferer((nint)handle);
@@ -75,9 +75,10 @@ public sealed unsafe partial class ActorDimensionTransferer : global::System.IDi
     public static ActorDimensionTransferer Create(nint actorDimensionTransferProxy, nint actorManager) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 findTargetPositionAndSetPosition(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint actorDimensionTransferRequest, global::Hosihikari.Bindings.Bedrock.Interop.IDimension toDimension, global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer portalForcer)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? findTargetPositionAndSetPosition(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint actorDimensionTransferRequest, global::Hosihikari.Bindings.Bedrock.Interop.IDimension toDimension, global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer portalForcer)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C0.hs_method_f5a16b2e((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)actorDimensionTransferRequest, (void*)toDimension.Handle, (void*)portalForcer.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f5a16b2e((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)actorDimensionTransferRequest, (void*)toDimension.Handle, (void*)portalForcer.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

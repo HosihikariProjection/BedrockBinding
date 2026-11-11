@@ -48,23 +48,23 @@ public sealed unsafe partial class AnimateEntityPacketPayload : global::System.I
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AnimateEntityPacketPayload Create()
+    public static AnimateEntityPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fc1e89b7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AnimateEntityPacketPayload((nint)handle);
     }
 
-    public static AnimateEntityPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.AnimateEntityPacketPayload arg0)
+    public static AnimateEntityPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.AnimateEntityPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_69c373a5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AnimateEntityPacketPayload((nint)handle);

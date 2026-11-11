@@ -106,23 +106,23 @@ public sealed unsafe partial class SparseContainer : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_9a58ea5b((void*)__hosihikari_shim_handle);
     }
 
-    public static SparseContainer Create()
+    public static SparseContainer? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6ed0565a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SparseContainer((nint)handle);
     }
 
-    public static SparseContainer Create(global::Hosihikari.Bindings.Bedrock.Interop.SparseContainer arg0)
+    public static SparseContainer? Create(global::Hosihikari.Bindings.Bedrock.Interop.SparseContainer arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5696cd3f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SparseContainer((nint)handle);
@@ -142,9 +142,10 @@ public sealed unsafe partial class SparseContainer : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_908a5991((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_1ae03ffd((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1ae03ffd((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int getMaxStackSize()
@@ -233,9 +234,10 @@ public sealed unsafe partial class SparseContainer : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_e2a3fa6b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SparseContainer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SparseContainer arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SparseContainer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SparseContainer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SparseContainer((nint)NativeMethods.TablePtr->C3.hs_method_4bfa5cd1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4bfa5cd1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SparseContainer((nint)__hs_handle, false) : null;
     }
 
     public void removeItem(int slot, int count)

@@ -44,12 +44,12 @@ public sealed unsafe partial class TradeTableData : global::System.IDisposable
     public nint _ctor(nint parsedData, nint itemRegistry, bool usingUpcomingCreatorFeaturesExperiment, nint jsonVersion) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TradeTableData Create()
+    public static TradeTableData? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a5718147();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TradeTableData((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class TradeTableData : global::System.IDisposable
     public static TradeTableData Create(nint parsedData, nint itemRegistry, bool usingUpcomingCreatorFeaturesExperiment, nint jsonVersion) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TradeTableData Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeTableData arg0)
+    public static TradeTableData? Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeTableData arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_9ee3397b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TradeTableData((nint)handle);

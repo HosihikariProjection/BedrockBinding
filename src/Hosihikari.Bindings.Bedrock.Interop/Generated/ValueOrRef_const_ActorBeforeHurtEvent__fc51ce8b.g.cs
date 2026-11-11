@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ActorBeforeHurtEvent_ : glob
     public static ValueOrRef_const_ActorBeforeHurtEvent_ Create_fd20bc6a(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ActorBeforeHurtEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHurtEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHurtEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHurtEvent((nint)NativeMethods.TablePtr->C1.hs_method_921ae9d5((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_921ae9d5((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHurtEvent((nint)__hs_handle, false) : null;
     }
 
 

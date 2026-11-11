@@ -48,23 +48,23 @@ public sealed unsafe partial class LevelCrashDumpManager : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelCrashDumpManager Create()
+    public static LevelCrashDumpManager? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_00b07cd7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelCrashDumpManager((nint)handle);
     }
 
-    public static LevelCrashDumpManager Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelCrashDumpManager arg0)
+    public static LevelCrashDumpManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelCrashDumpManager arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_18ad0953((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelCrashDumpManager((nint)handle);
@@ -82,9 +82,10 @@ public sealed unsafe partial class LevelCrashDumpManager : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C2.hs_get_c5fb2c86((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelCrashDumpManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelCrashDumpManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelCrashDumpManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelCrashDumpManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelCrashDumpManager((nint)NativeMethods.TablePtr->C2.hs_method_e22a7089((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e22a7089((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelCrashDumpManager((nint)__hs_handle, false) : null;
     }
 
     public void setCrashDumpLogStringID(ushort crashDumpLogStringID)

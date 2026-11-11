@@ -40,12 +40,12 @@ public sealed unsafe partial class ILevelCrashDumpManager : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ILevelCrashDumpManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevelCrashDumpManager arg0)
+    public static ILevelCrashDumpManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevelCrashDumpManager arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4f10c277((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ILevelCrashDumpManager((nint)handle);

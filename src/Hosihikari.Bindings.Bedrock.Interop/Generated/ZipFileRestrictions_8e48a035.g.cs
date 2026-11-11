@@ -48,12 +48,12 @@ public sealed unsafe partial class ZipFileRestrictions : global::System.IDisposa
     public static ZipFileRestrictions Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ZipFileRestrictions Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.ZipUtils.ZipFileRestrictions arg0)
+    public static ZipFileRestrictions? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.ZipUtils.ZipFileRestrictions arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_be245648((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ZipFileRestrictions((nint)handle);

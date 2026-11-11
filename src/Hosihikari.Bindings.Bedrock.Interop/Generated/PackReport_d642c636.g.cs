@@ -52,12 +52,12 @@ public sealed unsafe partial class PackReport : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PackReport Create()
+    public static PackReport? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_944853cf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackReport((nint)handle);

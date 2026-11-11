@@ -60,12 +60,12 @@ public sealed unsafe partial class PlayerTickProxy : global::System.IDisposable
     public void _processDimensionPlayerReplication(nint dimension) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerTickProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerTickProxy arg0)
+    public static PlayerTickProxy? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerTickProxy arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_db6cbd9b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerTickProxy((nint)handle);

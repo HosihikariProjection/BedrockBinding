@@ -406,9 +406,10 @@ public sealed unsafe partial class StonecutterBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_6e5082eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle, face, arg2) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getInitialDefaultState()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getInitialDefaultState()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C3.hs_method_978c7b8a((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_978c7b8a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public bool isCraftingBlock()

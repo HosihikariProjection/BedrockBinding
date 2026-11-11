@@ -44,34 +44,34 @@ public sealed unsafe partial class StructureTemplateRegistrationContext : global
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StructureTemplateRegistrationContext Create()
+    public static StructureTemplateRegistrationContext? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_58039a92();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureTemplateRegistrationContext((nint)handle);
     }
 
-    public static StructureTemplateRegistrationContext Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateRegistrationContext arg0)
+    public static StructureTemplateRegistrationContext? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateRegistrationContext arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cf3fb76f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureTemplateRegistrationContext((nint)handle);
     }
 
-    public static StructureTemplateRegistrationContext Create(global::Hosihikari.Bindings.Abi.SharedHandle? manager, global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureElementRegistry structureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry featureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
+    public static StructureTemplateRegistrationContext? Create(global::Hosihikari.Bindings.Abi.SharedHandle? manager, global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureElementRegistry structureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry featureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a491ce0e(manager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)structureRegistry.Handle, (void*)featureRegistry.Handle, (void*)baseGameVersion.Handle, (void*)experiments.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureTemplateRegistrationContext((nint)handle);
@@ -107,9 +107,10 @@ public sealed unsafe partial class StructureTemplateRegistrationContext : global
         get => (nint)NativeMethods.TablePtr->C3.hs_get_3627006c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateRegistrationContext operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateRegistrationContext arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateRegistrationContext? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateRegistrationContext arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateRegistrationContext((nint)NativeMethods.TablePtr->C3.hs_method_0bc39185((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0bc39185((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateRegistrationContext((nint)__hs_handle, false) : null;
     }
 
 

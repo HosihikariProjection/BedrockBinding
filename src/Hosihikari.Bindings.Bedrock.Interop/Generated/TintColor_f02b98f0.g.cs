@@ -40,23 +40,23 @@ public sealed unsafe partial class TintColor : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TintColor Create()
+    public static TintColor? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_df365a2a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TintColor((nint)handle);
     }
 
-    public static TintColor Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.PersonaPieceMetaDef.TintColor arg0)
+    public static TintColor? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.PersonaPieceMetaDef.TintColor arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3bc7fb39((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TintColor((nint)handle);

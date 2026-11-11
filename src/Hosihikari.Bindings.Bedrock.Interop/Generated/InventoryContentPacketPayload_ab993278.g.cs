@@ -49,12 +49,12 @@ public sealed unsafe partial class InventoryContentPacketPayload : global::Syste
         NativeMethods.TablePtr->C1.hs_method_1b20d573((void*)__hosihikari_shim_handle);
     }
 
-    public static InventoryContentPacketPayload Create()
+    public static InventoryContentPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_387ced4a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventoryContentPacketPayload((nint)handle);
@@ -64,12 +64,12 @@ public sealed unsafe partial class InventoryContentPacketPayload : global::Syste
     public static InventoryContentPacketPayload Create(nint id, nint items, nint fullContainerName, nint storageItem) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
-    public static InventoryContentPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContentPacketPayload arg0)
+    public static InventoryContentPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContentPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c7ada27f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventoryContentPacketPayload((nint)handle);

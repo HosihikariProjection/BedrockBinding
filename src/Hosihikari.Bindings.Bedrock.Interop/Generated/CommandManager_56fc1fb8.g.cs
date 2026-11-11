@@ -40,23 +40,23 @@ public sealed unsafe partial class CommandManager : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CommandManager Create()
+    public static CommandManager? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7031464c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandManager((nint)handle);
     }
 
-    public static CommandManager Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandManager arg0)
+    public static CommandManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandManager arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_25ed87e8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandManager((nint)handle);
@@ -88,9 +88,10 @@ public sealed unsafe partial class CommandManager : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_45d97b7f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandManager((nint)NativeMethods.TablePtr->C0.hs_method_75952833((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_75952833((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandManager((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

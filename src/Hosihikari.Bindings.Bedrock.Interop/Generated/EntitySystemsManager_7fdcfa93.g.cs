@@ -44,12 +44,12 @@ public sealed unsafe partial class EntitySystemsManager : global::System.IDispos
     public nint _ctor(bool isClientSide, nint subClientId, nint entityRegistry, nint pauseManager) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EntitySystemsManager Create()
+    public static EntitySystemsManager? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e5553db4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntitySystemsManager((nint)handle);

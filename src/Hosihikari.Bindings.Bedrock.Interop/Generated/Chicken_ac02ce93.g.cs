@@ -590,12 +590,12 @@ public sealed unsafe partial class Chicken : global::System.IDisposable
     public nint _ctor(nint definitions, nint definitionName, nint entityContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Chicken Create()
+    public static Chicken? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ff0cbde2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Chicken((nint)handle);

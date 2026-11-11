@@ -48,12 +48,12 @@ public sealed unsafe partial class BlockSelectionBox11920Upgrade : global::Syste
     public void _upgradeToNext(nint document, nint arg1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockSelectionBox11920Upgrade Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSelectionBoxVersioning.BlockSelectionBox11920Upgrade arg0)
+    public static BlockSelectionBox11920Upgrade? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSelectionBoxVersioning.BlockSelectionBox11920Upgrade arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e0c233c1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockSelectionBox11920Upgrade((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class FilterStringMap : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static FilterStringMap Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterStringMap arg0)
+    public static FilterStringMap? Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterStringMap arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b1d0499a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FilterStringMap((nint)handle);

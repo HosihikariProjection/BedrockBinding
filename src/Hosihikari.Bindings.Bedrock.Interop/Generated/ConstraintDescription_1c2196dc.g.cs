@@ -52,12 +52,12 @@ public sealed unsafe partial class ConstraintDescription : global::System.IDispo
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ConstraintDescription Create()
+    public static ConstraintDescription? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_cc408652();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ConstraintDescription((nint)handle);
@@ -217,9 +217,10 @@ public sealed unsafe partial class ConstraintDescription : global::System.IDispo
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription((nint)NativeMethods.TablePtr->C4.hs_method_551248bb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_551248bb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription((nint)__hs_handle, false) : null;
     }
 
 

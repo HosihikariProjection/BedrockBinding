@@ -60,12 +60,12 @@ public sealed unsafe partial class FileUploadManager : global::System.IDisposabl
     public static nint BOUNDARY() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileUploadManager Create()
+    public static FileUploadManager? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_79958410();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileUploadManager((nint)handle);
@@ -75,12 +75,12 @@ public sealed unsafe partial class FileUploadManager : global::System.IDisposabl
     public static FileUploadManager Create(nint taskGroup, nint fileUploader) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileUploadManager Create(global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager arg0)
+    public static FileUploadManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9dd5563b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileUploadManager((nint)handle);
@@ -198,9 +198,10 @@ public sealed unsafe partial class FileUploadManager : global::System.IDisposabl
         set => NativeMethods.TablePtr->C1.hs_set_38d6a28b((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager((nint)NativeMethods.TablePtr->C1.hs_method_502f8a4c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_502f8a4c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

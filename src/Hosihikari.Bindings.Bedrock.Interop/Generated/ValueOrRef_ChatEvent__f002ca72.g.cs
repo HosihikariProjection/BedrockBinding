@@ -48,14 +48,16 @@ public sealed unsafe partial class ValueOrRef_ChatEvent_ : global::System.IDispo
     public static ValueOrRef_ChatEvent_ Create_f70c631b(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<ChatEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChatEvent value_0e6db423()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChatEvent? value_0e6db423()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChatEvent((nint)NativeMethods.TablePtr->C1.hs_method_0e6db423((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0e6db423((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChatEvent((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChatEvent value_b1535793()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChatEvent? value_b1535793()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChatEvent((nint)NativeMethods.TablePtr->C1.hs_method_b1535793((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b1535793((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChatEvent((nint)__hs_handle, false) : null;
     }
 
 

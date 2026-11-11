@@ -40,23 +40,23 @@ public sealed unsafe partial class PredictionDbgData : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static PredictionDbgData Create()
+    public static PredictionDbgData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6e5182d1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PredictionDbgData((nint)handle);
     }
 
-    public static PredictionDbgData Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.PredictionDbgData arg0)
+    public static PredictionDbgData? Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.PredictionDbgData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_89ebd59d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PredictionDbgData((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class PredictionDbgData : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_40c8f6a5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.PredictionDbgData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.PredictionDbgData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.PredictionDbgData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.PredictionDbgData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.PredictionDbgData((nint)NativeMethods.TablePtr->C2.hs_method_77255f78((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_77255f78((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.PredictionDbgData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

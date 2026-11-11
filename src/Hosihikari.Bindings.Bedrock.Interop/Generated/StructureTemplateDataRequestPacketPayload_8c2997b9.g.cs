@@ -40,23 +40,23 @@ public sealed unsafe partial class StructureTemplateDataRequestPacketPayload : g
         return __hs_handle;
     }
 
-    public static StructureTemplateDataRequestPacketPayload Create()
+    public static StructureTemplateDataRequestPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d36394d6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureTemplateDataRequestPacketPayload((nint)handle);
     }
 
-    public static StructureTemplateDataRequestPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateDataRequestPacketPayload arg0)
+    public static StructureTemplateDataRequestPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateDataRequestPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7ecc6b2c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureTemplateDataRequestPacketPayload((nint)handle);

@@ -44,23 +44,23 @@ public sealed unsafe partial class ScriptUnloadedChunksError : global::System.ID
     public nint _ctor(ulong unloadedChunks, ulong totalChunks) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptUnloadedChunksError Create()
+    public static ScriptUnloadedChunksError? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cf9bdd06();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptUnloadedChunksError((nint)handle);
     }
 
-    public static ScriptUnloadedChunksError Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptUnloadedChunksError arg0)
+    public static ScriptUnloadedChunksError? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptUnloadedChunksError arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b6c310f5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptUnloadedChunksError((nint)handle);

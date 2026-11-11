@@ -44,12 +44,12 @@ public sealed unsafe partial class BlockStateMeta : global::System.IDisposable
     public nint _ctor(nint blockState, nint def) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockStateMeta Create()
+    public static BlockStateMeta? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ad83eaf7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockStateMeta((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class BlockStateMeta : global::System.IDisposable
     public static BlockStateMeta Create(nint blockState, nint def) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockStateMeta Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockStateMeta arg0)
+    public static BlockStateMeta? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockStateMeta arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_05760f13((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockStateMeta((nint)handle);
@@ -112,9 +112,10 @@ public sealed unsafe partial class BlockStateMeta : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_9a1cb4d4((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockStateMeta operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockStateMeta arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockStateMeta? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockStateMeta arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockStateMeta((nint)NativeMethods.TablePtr->C0.hs_method_fc00a8ed((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_fc00a8ed((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockStateMeta((nint)__hs_handle, false) : null;
     }
 
 

@@ -62,23 +62,23 @@ public sealed unsafe partial class ExperienceRewardCommitObject : global::System
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExperienceRewardCommitObject Create()
+    public static ExperienceRewardCommitObject? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5bd671fd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExperienceRewardCommitObject((nint)handle);
     }
 
-    public static ExperienceRewardCommitObject Create(global::Hosihikari.Bindings.Bedrock.Interop.ExperienceRewardCommitObject arg0)
+    public static ExperienceRewardCommitObject? Create(global::Hosihikari.Bindings.Bedrock.Interop.ExperienceRewardCommitObject arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_855bd613((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExperienceRewardCommitObject((nint)handle);
@@ -105,9 +105,10 @@ public sealed unsafe partial class ExperienceRewardCommitObject : global::System
         get => (nint)NativeMethods.TablePtr->C1.hs_get_4b30584b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ExperienceRewardCommitObject operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExperienceRewardCommitObject arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ExperienceRewardCommitObject? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExperienceRewardCommitObject arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ExperienceRewardCommitObject((nint)NativeMethods.TablePtr->C1.hs_method_cbd1e3e8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cbd1e3e8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ExperienceRewardCommitObject((nint)__hs_handle, false) : null;
     }
 
 

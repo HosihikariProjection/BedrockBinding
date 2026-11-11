@@ -64,23 +64,23 @@ public sealed unsafe partial class EncryptedProxyEnv : global::System.IDisposabl
     public nint _ctor(nint env, nint contentIdentity, nint contentKey, nint mode) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EncryptedProxyEnv Create()
+    public static EncryptedProxyEnv? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_10190453();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EncryptedProxyEnv((nint)handle);
     }
 
-    public static EncryptedProxyEnv Create(global::Hosihikari.Bindings.Bedrock.Interop.EncryptedProxyEnv arg0)
+    public static EncryptedProxyEnv? Create(global::Hosihikari.Bindings.Bedrock.Interop.EncryptedProxyEnv arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b352edec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EncryptedProxyEnv((nint)handle);
@@ -102,7 +102,7 @@ public sealed unsafe partial class EncryptedProxyEnv : global::System.IDisposabl
     public nint NewWritableFile(nint f, nint r) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status RemoveFile(string f)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? RemoveFile(string f)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(f);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -117,11 +117,12 @@ public sealed unsafe partial class EncryptedProxyEnv : global::System.IDisposabl
         global::System.Text.Encoding.UTF8.GetBytes(f, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_a0763983((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a0763983((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status RenameFile(string from, string to)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? RenameFile(string from, string to)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(from);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -149,7 +150,8 @@ public sealed unsafe partial class EncryptedProxyEnv : global::System.IDisposabl
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_4477cc0c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1));
+                var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4477cc0c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
             }
         }
     }
@@ -178,9 +180,10 @@ public sealed unsafe partial class EncryptedProxyEnv : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C1.hs_get_010b58e0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EncryptedProxyEnv operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EncryptedProxyEnv arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EncryptedProxyEnv? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EncryptedProxyEnv arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EncryptedProxyEnv((nint)NativeMethods.TablePtr->C1.hs_method_6442d257((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6442d257((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EncryptedProxyEnv((nint)__hs_handle, false) : null;
     }
 
 

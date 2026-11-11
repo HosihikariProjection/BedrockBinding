@@ -44,12 +44,12 @@ public sealed unsafe partial class BroadcastInfo : global::System.IDisposable
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BroadcastInfo Create()
+    public static BroadcastInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_69e1cf0f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BroadcastInfo((nint)handle);
@@ -111,9 +111,10 @@ public sealed unsafe partial class BroadcastInfo : global::System.IDisposable
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastInfo((nint)NativeMethods.TablePtr->C3.hs_method_7ede84b7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7ede84b7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastInfo((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

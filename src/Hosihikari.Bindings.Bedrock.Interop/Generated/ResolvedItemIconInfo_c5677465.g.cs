@@ -49,23 +49,23 @@ public sealed unsafe partial class ResolvedItemIconInfo : global::System.IDispos
         NativeMethods.TablePtr->C3.hs_method_6ad5614e((void*)__hosihikari_shim_handle);
     }
 
-    public static ResolvedItemIconInfo Create()
+    public static ResolvedItemIconInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0c161c7d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResolvedItemIconInfo((nint)handle);
     }
 
-    public static ResolvedItemIconInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo arg0)
+    public static ResolvedItemIconInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_50ceaa4e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResolvedItemIconInfo((nint)handle);

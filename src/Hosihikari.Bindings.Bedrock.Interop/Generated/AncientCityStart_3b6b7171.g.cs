@@ -48,12 +48,12 @@ public sealed unsafe partial class AncientCityStart : global::System.IDisposable
     public bool _isValid() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AncientCityStart Create(global::Hosihikari.Bindings.Bedrock.Interop.AncientCityStart arg0)
+    public static AncientCityStart? Create(global::Hosihikari.Bindings.Bedrock.Interop.AncientCityStart arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_336acf55((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AncientCityStart((nint)handle);

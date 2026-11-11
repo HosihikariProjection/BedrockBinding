@@ -52,23 +52,23 @@ public sealed unsafe partial class RakDataInput : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RakDataInput Create()
+    public static RakDataInput? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_63d5110e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakDataInput((nint)handle);
     }
 
-    public static RakDataInput Create(global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput arg0)
+    public static RakDataInput? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ee7a44e4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakDataInput((nint)handle);
@@ -85,14 +85,16 @@ public sealed unsafe partial class RakDataInput : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_d7eb45af((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput((nint)NativeMethods.TablePtr->C2.hs_method_3e20525b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3e20525b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ readBytesResult(nint data, ulong bytes)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? readBytesResult(nint data, ulong bytes)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C2.hs_method_38f4fb68((void*)__hosihikari_shim_handle, (void*)data, bytes));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_38f4fb68((void*)__hosihikari_shim_handle, (void*)data, bytes);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
     }
 
 

@@ -40,12 +40,12 @@ public sealed unsafe partial class PassengerRenderingRidingOffsetComponent : glo
         return __hs_handle;
     }
 
-    public static PassengerRenderingRidingOffsetComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PassengerRenderingRidingOffsetComponent arg0)
+    public static PassengerRenderingRidingOffsetComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PassengerRenderingRidingOffsetComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ab4618e1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PassengerRenderingRidingOffsetComponent((nint)handle);

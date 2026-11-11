@@ -128,12 +128,12 @@ public sealed unsafe partial class QuickJSRuntime : global::System.IDisposable
     public void _stopProfiler(nint captureCb, nint savePathOpt) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static QuickJSRuntime Create()
+    public static QuickJSRuntime? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7da6b6c3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new QuickJSRuntime((nint)handle);
@@ -143,12 +143,12 @@ public sealed unsafe partial class QuickJSRuntime : global::System.IDisposable
     public static QuickJSRuntime Create(nint registryManager, nint metadata, nint locator, nint mallocFns, nint normalizerFn) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static QuickJSRuntime Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.QuickJSRuntime arg0)
+    public static QuickJSRuntime? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.QuickJSRuntime arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2e5881a6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new QuickJSRuntime((nint)handle);
@@ -321,9 +321,10 @@ public sealed unsafe partial class QuickJSRuntime : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_ba301178((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.QuickJSRuntime operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.QuickJSRuntime arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.QuickJSRuntime? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.QuickJSRuntime arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.QuickJSRuntime((nint)NativeMethods.TablePtr->C3.hs_method_fe50dfbe((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fe50dfbe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.QuickJSRuntime((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Scripting::TypedObjectHandle<Scripting::PromiseType>' is not a known bindable declaration.", false)]
@@ -334,7 +335,7 @@ public sealed unsafe partial class QuickJSRuntime : global::System.IDisposable
     public nint resolve(nint contextId, nint promise, nint arg) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Scripting::TypedObjectHandle<Scripting::PromiseType>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny runString(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, string scriptName, string scriptData, byte? privilege)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny? runString(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, string scriptName, string scriptData, byte? privilege)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(scriptName);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -362,7 +363,8 @@ public sealed unsafe partial class QuickJSRuntime : global::System.IDisposable
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)NativeMethods.TablePtr->C3.hs_method_1929b3b4((void*)__hosihikari_shim_handle, (void*)contextId.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, privilege ?? default(byte), privilege.HasValue));
+                var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1929b3b4((void*)__hosihikari_shim_handle, (void*)contextId.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, privilege ?? default(byte), privilege.HasValue);
+                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)__hs_handle) : null;
             }
         }
     }

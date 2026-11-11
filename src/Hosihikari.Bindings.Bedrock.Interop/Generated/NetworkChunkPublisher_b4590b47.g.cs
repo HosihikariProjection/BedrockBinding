@@ -48,12 +48,12 @@ public sealed unsafe partial class NetworkChunkPublisher : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetworkChunkPublisher Create()
+    public static NetworkChunkPublisher? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1aa00c23();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkChunkPublisher((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class NetworkChunkPublisher : global::System.IDispo
     public static NetworkChunkPublisher Create(nint level, nint owner, nint subClientId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetworkChunkPublisher Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkChunkPublisher arg0)
+    public static NetworkChunkPublisher? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkChunkPublisher arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ddd90d3a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkChunkPublisher((nint)handle);
@@ -208,9 +208,10 @@ public sealed unsafe partial class NetworkChunkPublisher : global::System.IDispo
     public void moveRegion(nint position, uint blockRadius, nint direction, bool notifyBroadcastSounds, float minDistance) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkChunkPublisher operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkChunkPublisher arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkChunkPublisher? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkChunkPublisher arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkChunkPublisher((nint)NativeMethods.TablePtr->C2.hs_method_792adc14((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_792adc14((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkChunkPublisher((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

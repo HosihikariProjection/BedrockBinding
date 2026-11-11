@@ -44,23 +44,23 @@ public sealed unsafe partial class BlockComplexAliasBlockState : global::System.
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockComplexAliasBlockState Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.BlockComplexAliasBlockState arg0)
+    public static BlockComplexAliasBlockState? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.BlockComplexAliasBlockState arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_cdde865a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockComplexAliasBlockState((nint)handle);
     }
 
-    public static BlockComplexAliasBlockState Create(global::Hosihikari.Bindings.Bedrock.Interop.HashedString stateName, int value)
+    public static BlockComplexAliasBlockState? Create(global::Hosihikari.Bindings.Bedrock.Interop.HashedString stateName, int value)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_32c65c34((void*)stateName.Handle, value);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockComplexAliasBlockState((nint)handle);

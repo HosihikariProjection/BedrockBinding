@@ -635,12 +635,12 @@ public sealed unsafe partial class Boat : global::System.IDisposable
     public void _reloadHardcodedClient(nint method) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Boat Create()
+    public static Boat? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_3a0a9c0e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Boat((nint)handle);
@@ -650,9 +650,10 @@ public sealed unsafe partial class Boat : global::System.IDisposable
     public static Boat Create(nint definitions, nint definitionName, nint entityContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint arg2)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint arg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C0.hs_method_dd9a7569((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)arg2));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dd9a7569((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)arg2);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public bool canAddPassenger(global::Hosihikari.Bindings.Bedrock.Interop.Actor passenger)
@@ -665,9 +666,10 @@ public sealed unsafe partial class Boat : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_9e894bd2((void*)__hosihikari_shim_handle, (void*)(source?.Handle ?? 0));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getControllingPlayer()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getControllingPlayer()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C0.hs_method_192f369d((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_192f369d((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     public string getExitTip(string kind, uint mode, int scheme)

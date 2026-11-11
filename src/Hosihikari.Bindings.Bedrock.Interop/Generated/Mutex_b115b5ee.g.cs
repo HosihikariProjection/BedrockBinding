@@ -44,23 +44,23 @@ public sealed unsafe partial class Mutex : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Mutex Create()
+    public static Mutex? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_707027dd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Mutex((nint)handle);
     }
 
-    public static Mutex Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex arg0)
+    public static Mutex? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5f8c25a9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Mutex((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class Mutex : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_48848e06((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex((nint)NativeMethods.TablePtr->C4.hs_method_af792af5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_af792af5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex((nint)__hs_handle, false) : null;
     }
 
 

@@ -40,12 +40,12 @@ public sealed unsafe partial class CachedSpawnData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CachedSpawnData Create(global::Hosihikari.Bindings.Bedrock.Interop.Player_Nested.CachedSpawnData arg0)
+    public static CachedSpawnData? Create(global::Hosihikari.Bindings.Bedrock.Interop.Player_Nested.CachedSpawnData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_79360209((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CachedSpawnData((nint)handle);

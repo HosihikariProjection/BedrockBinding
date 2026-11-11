@@ -67,12 +67,12 @@ public sealed unsafe partial class ScriptBlockSignComponent : global::System.IDi
     public static nint ComponentId() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptBlockSignComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockSignComponent arg0)
+    public static ScriptBlockSignComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockSignComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3ad037ce((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockSignComponent((nint)handle);

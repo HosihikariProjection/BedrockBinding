@@ -44,23 +44,23 @@ public sealed unsafe partial class OverloadSyntaxInformation : global::System.ID
     public nint _ctor(nint _text, uint _start, uint _end) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OverloadSyntaxInformation Create()
+    public static OverloadSyntaxInformation? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_06eb87b3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OverloadSyntaxInformation((nint)handle);
     }
 
-    public static OverloadSyntaxInformation Create(global::Hosihikari.Bindings.Bedrock.Interop.OverloadSyntaxInformation arg0)
+    public static OverloadSyntaxInformation? Create(global::Hosihikari.Bindings.Bedrock.Interop.OverloadSyntaxInformation arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_beeae428((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OverloadSyntaxInformation((nint)handle);

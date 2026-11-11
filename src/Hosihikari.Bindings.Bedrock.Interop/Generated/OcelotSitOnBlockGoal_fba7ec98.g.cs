@@ -208,12 +208,12 @@ public sealed unsafe partial class OcelotSitOnBlockGoal : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OcelotSitOnBlockGoal Create()
+    public static OcelotSitOnBlockGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_21819829();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OcelotSitOnBlockGoal((nint)handle);
@@ -223,12 +223,12 @@ public sealed unsafe partial class OcelotSitOnBlockGoal : global::System.IDispos
     public static OcelotSitOnBlockGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OcelotSitOnBlockGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.OcelotSitOnBlockGoal arg0)
+    public static OcelotSitOnBlockGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.OcelotSitOnBlockGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_2cf6727e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OcelotSitOnBlockGoal((nint)handle);
@@ -275,9 +275,10 @@ public sealed unsafe partial class OcelotSitOnBlockGoal : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C2.hs_get_62d1c37b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OcelotSitOnBlockGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OcelotSitOnBlockGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OcelotSitOnBlockGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OcelotSitOnBlockGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OcelotSitOnBlockGoal((nint)NativeMethods.TablePtr->C2.hs_method_862f376f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_862f376f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OcelotSitOnBlockGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

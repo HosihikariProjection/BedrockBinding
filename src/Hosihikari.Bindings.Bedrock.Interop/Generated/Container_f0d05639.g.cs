@@ -40,23 +40,23 @@ public sealed unsafe partial class Container : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Container Create()
+    public static Container? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_966be377();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Container((nint)handle);
     }
 
-    public static Container Create(global::Hosihikari.Bindings.Bedrock.Interop.Poi.detail.Container arg0)
+    public static Container? Create(global::Hosihikari.Bindings.Bedrock.Interop.Poi.detail.Container arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f44553e7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Container((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class Container : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_f07c3fa6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Poi.detail.Container operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Poi.detail.Container arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Poi.detail.Container? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Poi.detail.Container arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Poi.detail.Container((nint)NativeMethods.TablePtr->C2.hs_method_e774827b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e774827b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Poi.detail.Container((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

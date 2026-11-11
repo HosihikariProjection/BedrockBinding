@@ -40,12 +40,12 @@ public sealed unsafe partial class ContentIdentity : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ContentIdentity Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity arg0)
+    public static ContentIdentity? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e7e3b85b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContentIdentity((nint)handle);

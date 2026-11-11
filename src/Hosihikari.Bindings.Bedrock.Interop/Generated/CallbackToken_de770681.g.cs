@@ -40,12 +40,12 @@ public sealed unsafe partial class CallbackToken : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CallbackToken Create(global::Hosihikari.Bindings.Bedrock.Interop.CallbackToken arg0)
+    public static CallbackToken? Create(global::Hosihikari.Bindings.Bedrock.Interop.CallbackToken arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a1a365e9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CallbackToken((nint)handle);

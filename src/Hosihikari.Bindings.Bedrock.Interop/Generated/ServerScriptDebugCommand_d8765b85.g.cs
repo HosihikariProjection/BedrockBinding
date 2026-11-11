@@ -73,12 +73,12 @@ public sealed unsafe partial class ServerScriptDebugCommand : global::System.IDi
     public void _execute(nint arg0, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerScriptDebugCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptDebugCommand arg0)
+    public static ServerScriptDebugCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptDebugCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ea883fa1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerScriptDebugCommand((nint)handle);

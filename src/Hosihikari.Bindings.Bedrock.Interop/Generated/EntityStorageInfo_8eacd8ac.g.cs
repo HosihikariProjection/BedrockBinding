@@ -40,12 +40,12 @@ public sealed unsafe partial class EntityStorageInfo : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static EntityStorageInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityStorageBlockActorComponent_Nested.EntityStorageInfo arg0)
+    public static EntityStorageInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityStorageBlockActorComponent_Nested.EntityStorageInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7f1e6e5e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityStorageInfo((nint)handle);

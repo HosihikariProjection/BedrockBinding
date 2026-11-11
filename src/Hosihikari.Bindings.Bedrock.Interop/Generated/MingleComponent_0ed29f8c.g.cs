@@ -40,12 +40,12 @@ public sealed unsafe partial class MingleComponent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static MingleComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.MingleComponent arg0)
+    public static MingleComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.MingleComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_452015c7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MingleComponent((nint)handle);

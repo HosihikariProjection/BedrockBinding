@@ -40,12 +40,12 @@ public sealed unsafe partial class MapDecoration : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static MapDecoration Create(global::Hosihikari.Bindings.Bedrock.Interop.MapDecoration arg0)
+    public static MapDecoration? Create(global::Hosihikari.Bindings.Bedrock.Interop.MapDecoration arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f591c5e3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MapDecoration((nint)handle);

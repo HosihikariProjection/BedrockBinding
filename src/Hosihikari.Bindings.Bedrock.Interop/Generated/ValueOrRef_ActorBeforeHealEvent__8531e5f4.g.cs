@@ -48,14 +48,16 @@ public sealed unsafe partial class ValueOrRef_ActorBeforeHealEvent_ : global::Sy
     public static ValueOrRef_ActorBeforeHealEvent_ Create_5c60dff2(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<ActorBeforeHealEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent value_e05dd67b()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent? value_e05dd67b()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent((nint)NativeMethods.TablePtr->C1.hs_method_e05dd67b((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e05dd67b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent value_c352cbb8()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent? value_c352cbb8()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent((nint)NativeMethods.TablePtr->C1.hs_method_c352cbb8((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c352cbb8((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent((nint)__hs_handle, false) : null;
     }
 
 

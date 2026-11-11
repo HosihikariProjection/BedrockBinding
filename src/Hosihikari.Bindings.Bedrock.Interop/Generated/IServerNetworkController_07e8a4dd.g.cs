@@ -40,12 +40,12 @@ public sealed unsafe partial class IServerNetworkController : global::System.IDi
         return __hs_handle;
     }
 
-    public static IServerNetworkController Create(global::Hosihikari.Bindings.Bedrock.Interop.IServerNetworkController arg0)
+    public static IServerNetworkController? Create(global::Hosihikari.Bindings.Bedrock.Interop.IServerNetworkController arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_167e78d8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IServerNetworkController((nint)handle);

@@ -52,23 +52,23 @@ public sealed unsafe partial class NetherFortressPiece : global::System.IDisposa
     public bool _postProcess(nint region, nint random, nint chunkBB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static NetherFortressPiece Create()
+    public static NetherFortressPiece? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b3c7bd6a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetherFortressPiece((nint)handle);
     }
 
-    public static NetherFortressPiece Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece arg0)
+    public static NetherFortressPiece? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0d0ce7d8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetherFortressPiece((nint)handle);

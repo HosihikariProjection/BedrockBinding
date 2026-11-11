@@ -118,23 +118,23 @@ public sealed unsafe partial class ResourcePackFileUploadManager : global::Syste
     public void _uploadFileToRealmStorage(nint uploadId, nint path, nint slotIndex) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ResourcePackFileUploadManager Create()
+    public static ResourcePackFileUploadManager? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_538189b0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePackFileUploadManager((nint)handle);
     }
 
-    public static ResourcePackFileUploadManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackFileUploadManager arg0)
+    public static ResourcePackFileUploadManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackFileUploadManager arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_109dc826((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePackFileUploadManager((nint)handle);
@@ -212,9 +212,10 @@ public sealed unsafe partial class ResourcePackFileUploadManager : global::Syste
         get => (nint)NativeMethods.TablePtr->C3.hs_get_dfc8f915((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackFileUploadManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackFileUploadManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackFileUploadManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackFileUploadManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackFileUploadManager((nint)NativeMethods.TablePtr->C3.hs_method_b714eca1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b714eca1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackFileUploadManager((nint)__hs_handle, false) : null;
     }
 
     public void uploadFileToRealmStorage(string uploadId, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, int slotIndex)

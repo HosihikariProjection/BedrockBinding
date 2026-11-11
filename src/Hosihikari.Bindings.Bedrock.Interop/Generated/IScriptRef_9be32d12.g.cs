@@ -40,12 +40,12 @@ public sealed unsafe partial class IScriptRef : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IScriptRef Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IScriptRef arg0)
+    public static IScriptRef? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IScriptRef arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_83f6e8d6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IScriptRef((nint)handle);

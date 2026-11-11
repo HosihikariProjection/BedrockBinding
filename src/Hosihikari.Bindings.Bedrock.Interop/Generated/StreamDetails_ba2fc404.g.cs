@@ -40,23 +40,23 @@ public sealed unsafe partial class StreamDetails : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static StreamDetails Create()
+    public static StreamDetails? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6e044624();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StreamDetails((nint)handle);
     }
 
-    public static StreamDetails Create(global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess_Nested.StreamDetails arg0)
+    public static StreamDetails? Create(global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess_Nested.StreamDetails arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_93956c35((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StreamDetails((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class StreamDetails : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_1acf497d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess_Nested.StreamDetails operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess_Nested.StreamDetails arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess_Nested.StreamDetails? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess_Nested.StreamDetails arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess_Nested.StreamDetails((nint)NativeMethods.TablePtr->C2.hs_method_5ca00b47((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5ca00b47((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess_Nested.StreamDetails((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

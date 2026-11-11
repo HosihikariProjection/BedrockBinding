@@ -56,23 +56,23 @@ public sealed unsafe partial class EndCityPiece : global::System.IDisposable
     public void _postProcessMobsAt(nint region, nint random, nint chunkBB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EndCityPiece Create()
+    public static EndCityPiece? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_56c291b9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EndCityPiece((nint)handle);
     }
 
-    public static EndCityPiece Create(global::Hosihikari.Bindings.Bedrock.Interop.EndCityPieces_Nested.EndCityPiece arg0)
+    public static EndCityPiece? Create(global::Hosihikari.Bindings.Bedrock.Interop.EndCityPieces_Nested.EndCityPiece arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f1c9df2f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EndCityPiece((nint)handle);

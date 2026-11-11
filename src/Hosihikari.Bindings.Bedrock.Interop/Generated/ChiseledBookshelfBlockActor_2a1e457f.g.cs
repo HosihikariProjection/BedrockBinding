@@ -155,12 +155,12 @@ public sealed unsafe partial class ChiseledBookshelfBlockActor : global::System.
     public void _stopOpen(nint actor) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ChiseledBookshelfBlockActor Create()
+    public static ChiseledBookshelfBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_885d7bcd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChiseledBookshelfBlockActor((nint)handle);
@@ -219,9 +219,10 @@ public sealed unsafe partial class ChiseledBookshelfBlockActor : global::System.
         return NativeMethods.TablePtr->C0.hs_method_f2d78004((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C0.hs_method_ddf80e44((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ddf80e44((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int getMaxStackSize()

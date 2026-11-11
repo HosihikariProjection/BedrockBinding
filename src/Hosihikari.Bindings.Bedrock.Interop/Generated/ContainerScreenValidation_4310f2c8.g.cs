@@ -56,12 +56,12 @@ public sealed unsafe partial class ContainerScreenValidation : global::System.ID
     public nint _tryCraft(nint craftInputs, nint numCrafts) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ContainerScreenValidation Create()
+    public static ContainerScreenValidation? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5932fecc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContainerScreenValidation((nint)handle);
@@ -159,9 +159,10 @@ public sealed unsafe partial class ContainerScreenValidation : global::System.ID
     public static nint makeContainerScreenValidation(nint screenContext, nint caller, nint predictiveContainers) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult tryActivate()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult? tryActivate()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult((nint)NativeMethods.TablePtr->C1.hs_method_27e4024a((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_27e4024a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

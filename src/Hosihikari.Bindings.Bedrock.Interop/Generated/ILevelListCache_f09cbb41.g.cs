@@ -46,12 +46,12 @@ public sealed unsafe partial class ILevelListCache : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_f3fc20f6((void*)__hosihikari_shim_handle);
     }
 
-    public static ILevelListCache Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevelListCache arg0)
+    public static ILevelListCache? Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevelListCache arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_95d15d5c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ILevelListCache((nint)handle);
@@ -201,9 +201,10 @@ public sealed unsafe partial class ILevelListCache : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getBasePath()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getBasePath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C1.hs_method_c8da35ac((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c8da35ac((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelData? getLevelData(string levelId)
@@ -302,7 +303,7 @@ public sealed unsafe partial class ILevelListCache : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelSummary((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPathToLevel(string levelId)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getPathToLevel(string levelId)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(levelId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -317,7 +318,8 @@ public sealed unsafe partial class ILevelListCache : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(levelId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C1.hs_method_4a4a97fd((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4a4a97fd((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
         }
     }
 

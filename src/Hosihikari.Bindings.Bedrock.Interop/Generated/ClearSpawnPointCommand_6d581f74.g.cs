@@ -44,12 +44,12 @@ public sealed unsafe partial class ClearSpawnPointCommand : global::System.IDisp
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ClearSpawnPointCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.ClearSpawnPointCommand arg0)
+    public static ClearSpawnPointCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.ClearSpawnPointCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c39cc51e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ClearSpawnPointCommand((nint)handle);

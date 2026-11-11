@@ -40,23 +40,23 @@ public sealed unsafe partial class LibHttpClientInstance : global::System.IDispo
         return __hs_handle;
     }
 
-    public static LibHttpClientInstance Create()
+    public static LibHttpClientInstance? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c00dd127();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LibHttpClientInstance((nint)handle);
     }
 
-    public static LibHttpClientInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance arg0)
+    public static LibHttpClientInstance? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4a4bf1b4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LibHttpClientInstance((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class LibHttpClientInstance : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_5718e6fc((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance((nint)NativeMethods.TablePtr->C0.hs_method_3a0f8a0a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3a0f8a0a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

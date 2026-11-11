@@ -66,34 +66,34 @@ public sealed unsafe partial class BuriedTreasureFeature : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BuriedTreasureFeature Create()
+    public static BuriedTreasureFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e31196d3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BuriedTreasureFeature((nint)handle);
     }
 
-    public static BuriedTreasureFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.BuriedTreasureFeature arg0)
+    public static BuriedTreasureFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.BuriedTreasureFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d5dbc004((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BuriedTreasureFeature((nint)handle);
     }
 
-    public static BuriedTreasureFeature Create(uint seed)
+    public static BuriedTreasureFeature? Create(uint seed)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7b9c6b0c(seed);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BuriedTreasureFeature((nint)handle);

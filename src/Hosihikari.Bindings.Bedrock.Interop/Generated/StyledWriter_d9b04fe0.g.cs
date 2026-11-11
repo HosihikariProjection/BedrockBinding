@@ -60,12 +60,12 @@ public sealed unsafe partial class StyledWriter : global::System.IDisposable
     public static StyledWriter Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StyledWriter Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.StyledWriter arg0)
+    public static StyledWriter? Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.StyledWriter arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bd6dbeda((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StyledWriter((nint)handle);

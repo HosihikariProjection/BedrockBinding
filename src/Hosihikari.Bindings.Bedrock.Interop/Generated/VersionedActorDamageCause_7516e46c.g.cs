@@ -44,23 +44,23 @@ public sealed unsafe partial class VersionedActorDamageCause : global::System.ID
     public nint _ctor(nint name, nint cause, nint version, nint deprecatedMajorVersion) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VersionedActorDamageCause Create()
+    public static VersionedActorDamageCause? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_32040b5b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VersionedActorDamageCause((nint)handle);
     }
 
-    public static VersionedActorDamageCause Create(global::Hosihikari.Bindings.Bedrock.Interop.VersionedActorDamageCause arg0)
+    public static VersionedActorDamageCause? Create(global::Hosihikari.Bindings.Bedrock.Interop.VersionedActorDamageCause arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4d31eb57((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VersionedActorDamageCause((nint)handle);

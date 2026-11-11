@@ -44,12 +44,12 @@ public sealed unsafe partial class AnnounceServerData : global::System.IDisposab
     public nint _ctor(nint announceData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AnnounceServerData Create()
+    public static AnnounceServerData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c4f73fa6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AnnounceServerData((nint)handle);
@@ -113,9 +113,10 @@ public sealed unsafe partial class AnnounceServerData : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C3.hs_get_1791c841((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.AnnounceServerData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.AnnounceServerData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.AnnounceServerData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.AnnounceServerData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.AnnounceServerData((nint)NativeMethods.TablePtr->C3.hs_method_7d388a8f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7d388a8f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.AnnounceServerData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

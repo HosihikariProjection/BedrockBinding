@@ -40,12 +40,12 @@ public sealed unsafe partial class BlockCraftingTableComponent : global::System.
         return __hs_handle;
     }
 
-    public static BlockCraftingTableComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockCraftingTableComponent arg0)
+    public static BlockCraftingTableComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockCraftingTableComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4425f30f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockCraftingTableComponent((nint)handle);

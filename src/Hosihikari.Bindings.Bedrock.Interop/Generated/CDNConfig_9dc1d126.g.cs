@@ -46,12 +46,12 @@ public sealed unsafe partial class CDNConfig : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_d976d04c((void*)__hosihikari_shim_handle);
     }
 
-    public static CDNConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.CDNConfig arg0)
+    public static CDNConfig? Create(global::Hosihikari.Bindings.Bedrock.Interop.CDNConfig arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f9a7b5f6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CDNConfig((nint)handle);

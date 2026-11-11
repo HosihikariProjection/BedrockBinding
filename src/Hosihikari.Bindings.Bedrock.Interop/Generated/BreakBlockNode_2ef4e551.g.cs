@@ -95,12 +95,12 @@ public sealed unsafe partial class BreakBlockNode : global::System.IDisposable
     public static BreakBlockNode Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BreakBlockNode Create(global::Hosihikari.Bindings.Bedrock.Interop.BreakBlockNode arg0)
+    public static BreakBlockNode? Create(global::Hosihikari.Bindings.Bedrock.Interop.BreakBlockNode arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f59e7e43((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BreakBlockNode((nint)handle);

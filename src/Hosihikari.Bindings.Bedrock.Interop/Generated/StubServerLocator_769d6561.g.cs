@@ -88,12 +88,12 @@ public sealed unsafe partial class StubServerLocator : global::System.IDisposabl
     public void _update() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StubServerLocator Create(global::Hosihikari.Bindings.Bedrock.Interop.StubServerLocator arg0)
+    public static StubServerLocator? Create(global::Hosihikari.Bindings.Bedrock.Interop.StubServerLocator arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6088ec0e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StubServerLocator((nint)handle);

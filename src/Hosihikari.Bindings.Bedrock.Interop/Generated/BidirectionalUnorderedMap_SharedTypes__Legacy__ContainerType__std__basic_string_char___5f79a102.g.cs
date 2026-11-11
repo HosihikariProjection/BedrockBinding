@@ -40,12 +40,12 @@ public sealed unsafe partial class BidirectionalUnorderedMap_SharedTypes__Legacy
         return __hs_handle;
     }
 
-    public static BidirectionalUnorderedMap_SharedTypes__Legacy__ContainerType__std__basic_string_char__ Create(global::Hosihikari.Bindings.Bedrock.Interop.BidirectionalUnorderedMap_SharedTypes__Legacy__ContainerType__std__basic_string_char__ arg0)
+    public static BidirectionalUnorderedMap_SharedTypes__Legacy__ContainerType__std__basic_string_char__? Create(global::Hosihikari.Bindings.Bedrock.Interop.BidirectionalUnorderedMap_SharedTypes__Legacy__ContainerType__std__basic_string_char__ arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_baf3d937((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BidirectionalUnorderedMap_SharedTypes__Legacy__ContainerType__std__basic_string_char__((nint)handle);

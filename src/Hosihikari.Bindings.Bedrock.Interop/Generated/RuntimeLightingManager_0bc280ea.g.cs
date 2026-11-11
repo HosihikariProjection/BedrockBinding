@@ -44,23 +44,23 @@ public sealed unsafe partial class RuntimeLightingManager : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RuntimeLightingManager Create()
+    public static RuntimeLightingManager? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_55aaedbd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RuntimeLightingManager((nint)handle);
     }
 
-    public static RuntimeLightingManager Create(global::Hosihikari.Bindings.Bedrock.Interop.RuntimeLightingManager arg0)
+    public static RuntimeLightingManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.RuntimeLightingManager arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_663f99e4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RuntimeLightingManager((nint)handle);
@@ -114,9 +114,10 @@ public sealed unsafe partial class RuntimeLightingManager : global::System.IDisp
         set => NativeMethods.TablePtr->C3.hs_set_222ad4f1((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RuntimeLightingManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RuntimeLightingManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RuntimeLightingManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RuntimeLightingManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RuntimeLightingManager((nint)NativeMethods.TablePtr->C3.hs_method_8c1a2e7c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8c1a2e7c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RuntimeLightingManager((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -40,20 +40,21 @@ public sealed unsafe partial class LevelGameplayHandler : global::System.IDispos
         return __hs_handle;
     }
 
-    public static LevelGameplayHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelGameplayHandler arg0)
+    public static LevelGameplayHandler? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelGameplayHandler arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8f35c12b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelGameplayHandler((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.MutableLevelGameplayEvent_CoordinatorResult_ @event)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.MutableLevelGameplayEvent_CoordinatorResult_ @event)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C2.hs_method_2e0e4ced((void*)__hosihikari_shim_handle, (void*)@event.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2e0e4ced((void*)__hosihikari_shim_handle, (void*)@event.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
     }
 
     public int handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.LevelGameplayEvent_void_ arg0)

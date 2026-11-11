@@ -104,23 +104,23 @@ public sealed unsafe partial class ActorSkeletalAnimationPlayer : global::System
     public void _visit(nint dispatcher) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorSkeletalAnimationPlayer Create()
+    public static ActorSkeletalAnimationPlayer? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_91f4467c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorSkeletalAnimationPlayer((nint)handle);
     }
 
-    public static ActorSkeletalAnimationPlayer Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorSkeletalAnimationPlayer arg0)
+    public static ActorSkeletalAnimationPlayer? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorSkeletalAnimationPlayer arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_95fabea7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorSkeletalAnimationPlayer((nint)handle);
@@ -158,9 +158,10 @@ public sealed unsafe partial class ActorSkeletalAnimationPlayer : global::System
         return NativeMethods.TablePtr->C0.hs_method_497d0617((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString getRawName()
+    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getRawName()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C0.hs_method_b2a88e8b((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b2a88e8b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false) : null;
     }
 
     public bool hasAnimationFinished()

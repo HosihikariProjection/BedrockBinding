@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptEffects : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ScriptEffects Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptEffects arg0)
+    public static ScriptEffects? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptEffects arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c201a874((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptEffects((nint)handle);

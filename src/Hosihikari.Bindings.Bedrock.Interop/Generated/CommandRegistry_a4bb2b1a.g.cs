@@ -57,12 +57,12 @@ public sealed unsafe partial class CommandRegistry : global::System.IDisposable
     public static nint COMMAND_NAME_ENUM_NAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CommandRegistry Create()
+    public static CommandRegistry? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c7cc355f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandRegistry((nint)handle);
@@ -278,7 +278,7 @@ public sealed unsafe partial class CommandRegistry : global::System.IDisposable
     public nint getCommandName(nint commandLine) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandSyntaxInformation getCommandOverloadSyntaxInformation(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, string commandName)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandSyntaxInformation? getCommandOverloadSyntaxInformation(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, string commandName)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(commandName);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -293,7 +293,8 @@ public sealed unsafe partial class CommandRegistry : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(commandName, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.CommandSyntaxInformation((nint)NativeMethods.TablePtr->C0.hs_method_43a509cd((void*)__hosihikari_shim_handle, (void*)origin.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1));
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_43a509cd((void*)__hosihikari_shim_handle, (void*)origin.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandSyntaxInformation((nint)__hs_handle) : null;
         }
     }
 
@@ -619,9 +620,10 @@ public sealed unsafe partial class CommandRegistry : global::System.IDisposable
     public void removeSoftEnumValues(nint enumName, nint values) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacket serializeAvailableCommands()
+    public global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacket? serializeAvailableCommands()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacket((nint)NativeMethods.TablePtr->C0.hs_method_c2d39663((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c2d39663((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacket((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

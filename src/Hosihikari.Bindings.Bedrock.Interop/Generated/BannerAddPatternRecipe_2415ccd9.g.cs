@@ -69,12 +69,12 @@ public sealed unsafe partial class BannerAddPatternRecipe : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static BannerAddPatternRecipe Create(global::Hosihikari.Bindings.Bedrock.Interop.BannerAddPatternRecipe arg0)
+    public static BannerAddPatternRecipe? Create(global::Hosihikari.Bindings.Bedrock.Interop.BannerAddPatternRecipe arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2c345dbe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BannerAddPatternRecipe((nint)handle);
@@ -94,9 +94,10 @@ public sealed unsafe partial class BannerAddPatternRecipe : global::System.IDisp
         return NativeMethods.TablePtr->C0.hs_method_a50c1c86((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient getIngredient(int arg0, int arg1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? getIngredient(int arg0, int arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)NativeMethods.TablePtr->C0.hs_method_94da9255((void*)__hosihikari_shim_handle, arg0, arg1), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_94da9255((void*)__hosihikari_shim_handle, arg0, arg1);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
     }
 
     public nint getResultItems()

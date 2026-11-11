@@ -40,23 +40,23 @@ public sealed unsafe partial class CommandAreaFactory : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static CommandAreaFactory Create()
+    public static CommandAreaFactory? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d87245ba();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandAreaFactory((nint)handle);
     }
 
-    public static CommandAreaFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory arg0)
+    public static CommandAreaFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e53218c8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandAreaFactory((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class CommandAreaFactory : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C0.hs_get_03907492((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory((nint)NativeMethods.TablePtr->C0.hs_method_7ab02f29((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7ab02f29((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

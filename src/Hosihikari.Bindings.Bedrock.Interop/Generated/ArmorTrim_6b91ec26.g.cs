@@ -48,12 +48,12 @@ public sealed unsafe partial class ArmorTrim : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ArmorTrim Create()
+    public static ArmorTrim? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9a2b8ba8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ArmorTrim((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class ArmorTrim : global::System.IDisposable
     public static ArmorTrim Create(nint patternId, nint materialId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ArmorTrim Create(global::Hosihikari.Bindings.Bedrock.Interop.ArmorTrim arg0)
+    public static ArmorTrim? Create(global::Hosihikari.Bindings.Bedrock.Interop.ArmorTrim arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_11b0410d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ArmorTrim((nint)handle);

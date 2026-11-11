@@ -40,23 +40,23 @@ public sealed unsafe partial class LocalRegistry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static LocalRegistry Create()
+    public static LocalRegistry? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fbad990e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LocalRegistry((nint)handle);
     }
 
-    public static LocalRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece_Nested.LocalRegistry arg0)
+    public static LocalRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece_Nested.LocalRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e75f2f22((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LocalRegistry((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class LocalRegistry : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_10befe81((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece_Nested.LocalRegistry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece_Nested.LocalRegistry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece_Nested.LocalRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece_Nested.LocalRegistry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece_Nested.LocalRegistry((nint)NativeMethods.TablePtr->C2.hs_method_d166916b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d166916b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece_Nested.LocalRegistry((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

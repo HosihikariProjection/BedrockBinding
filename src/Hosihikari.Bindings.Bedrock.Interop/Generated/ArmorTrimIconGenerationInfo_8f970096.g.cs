@@ -40,23 +40,23 @@ public sealed unsafe partial class ArmorTrimIconGenerationInfo : global::System.
         return __hs_handle;
     }
 
-    public static ArmorTrimIconGenerationInfo Create()
+    public static ArmorTrimIconGenerationInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a60992d1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ArmorTrimIconGenerationInfo((nint)handle);
     }
 
-    public static ArmorTrimIconGenerationInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.ArmorTrimIconGenerationInfo arg0)
+    public static ArmorTrimIconGenerationInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.ArmorTrimIconGenerationInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_252049a9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ArmorTrimIconGenerationInfo((nint)handle);

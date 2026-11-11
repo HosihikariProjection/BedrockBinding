@@ -48,23 +48,23 @@ public sealed unsafe partial class AttributeData : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AttributeData Create()
+    public static AttributeData? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fcd117a1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AttributeData((nint)handle);
     }
 
-    public static AttributeData Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeData arg0)
+    public static AttributeData? Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeData arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2c34fe4a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AttributeData((nint)handle);

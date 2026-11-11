@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptScoreboardObjectiveDisplayOptions : glo
         return __hs_handle;
     }
 
-    public static ScriptScoreboardObjectiveDisplayOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptScoreboardObjectiveDisplayOptions arg0)
+    public static ScriptScoreboardObjectiveDisplayOptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptScoreboardObjectiveDisplayOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d877db16((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptScoreboardObjectiveDisplayOptions((nint)handle);

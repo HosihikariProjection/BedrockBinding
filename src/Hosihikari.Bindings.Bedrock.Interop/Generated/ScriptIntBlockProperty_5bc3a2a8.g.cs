@@ -65,23 +65,23 @@ public sealed unsafe partial class ScriptIntBlockProperty : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptIntBlockProperty Create()
+    public static ScriptIntBlockProperty? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6954289c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptIntBlockProperty((nint)handle);
     }
 
-    public static ScriptIntBlockProperty Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptIntBlockProperty arg0)
+    public static ScriptIntBlockProperty? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptIntBlockProperty arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_729fead9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptIntBlockProperty((nint)handle);
@@ -105,9 +105,10 @@ public sealed unsafe partial class ScriptIntBlockProperty : global::System.IDisp
     public nint operator_assign(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptIntBlockProperty operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptIntBlockProperty arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptIntBlockProperty? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptIntBlockProperty arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptIntBlockProperty((nint)NativeMethods.TablePtr->C3.hs_method_9032612d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9032612d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptIntBlockProperty((nint)__hs_handle, false) : null;
     }
 
 

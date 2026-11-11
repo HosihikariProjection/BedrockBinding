@@ -82,23 +82,23 @@ public sealed unsafe partial class CroakGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CroakGoal Create()
+    public static CroakGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_30bf3e55();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CroakGoal((nint)handle);
     }
 
-    public static CroakGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.CroakGoal arg0)
+    public static CroakGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.CroakGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8ff5c648((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CroakGoal((nint)handle);
@@ -170,9 +170,10 @@ public sealed unsafe partial class CroakGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_6469531d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CroakGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CroakGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CroakGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CroakGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CroakGoal((nint)NativeMethods.TablePtr->C1.hs_method_43fd0f3b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_43fd0f3b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CroakGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

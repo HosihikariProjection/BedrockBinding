@@ -752,12 +752,12 @@ public sealed unsafe partial class Zombie : global::System.IDisposable
     public static nint SPAWN_REINFORCEMENTS_CHANCE() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Zombie Create()
+    public static Zombie? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6ef1c895();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Zombie((nint)handle);

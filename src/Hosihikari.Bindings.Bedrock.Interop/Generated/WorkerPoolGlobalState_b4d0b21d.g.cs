@@ -40,23 +40,23 @@ public sealed unsafe partial class WorkerPoolGlobalState : global::System.IDispo
         return __hs_handle;
     }
 
-    public static WorkerPoolGlobalState Create()
+    public static WorkerPoolGlobalState? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_78b7f383();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorkerPoolGlobalState((nint)handle);
     }
 
-    public static WorkerPoolGlobalState Create(global::Hosihikari.Bindings.Bedrock.Interop.WorkerPoolGlobalState arg0)
+    public static WorkerPoolGlobalState? Create(global::Hosihikari.Bindings.Bedrock.Interop.WorkerPoolGlobalState arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f11990f0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorkerPoolGlobalState((nint)handle);
@@ -128,9 +128,10 @@ public sealed unsafe partial class WorkerPoolGlobalState : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C4.hs_get_5cc18e9b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorkerPoolGlobalState operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorkerPoolGlobalState arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorkerPoolGlobalState? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorkerPoolGlobalState arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorkerPoolGlobalState((nint)NativeMethods.TablePtr->C4.hs_method_7a4246b3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_7a4246b3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorkerPoolGlobalState((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

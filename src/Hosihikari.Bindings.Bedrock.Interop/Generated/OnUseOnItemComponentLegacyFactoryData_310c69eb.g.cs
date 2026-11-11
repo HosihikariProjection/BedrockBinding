@@ -48,12 +48,12 @@ public sealed unsafe partial class OnUseOnItemComponentLegacyFactoryData : globa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OnUseOnItemComponentLegacyFactoryData Create()
+    public static OnUseOnItemComponentLegacyFactoryData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_54d167ce();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OnUseOnItemComponentLegacyFactoryData((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class OnUseOnItemComponentLegacyFactoryData : globa
     public static OnUseOnItemComponentLegacyFactoryData Create(nint data) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OnUseOnItemComponentLegacyFactoryData Create(global::Hosihikari.Bindings.Bedrock.Interop.OnUseOnItemComponentLegacyFactoryData arg0)
+    public static OnUseOnItemComponentLegacyFactoryData? Create(global::Hosihikari.Bindings.Bedrock.Interop.OnUseOnItemComponentLegacyFactoryData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_959c3ce7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OnUseOnItemComponentLegacyFactoryData((nint)handle);

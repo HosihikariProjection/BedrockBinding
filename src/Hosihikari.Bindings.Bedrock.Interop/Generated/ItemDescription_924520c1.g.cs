@@ -44,23 +44,23 @@ public sealed unsafe partial class ItemDescription : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemDescription Create()
+    public static ItemDescription? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_add8e99a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemDescription((nint)handle);
     }
 
-    public static ItemDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_110.ItemDescription arg0)
+    public static ItemDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_110.ItemDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7c9e16b2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemDescription((nint)handle);

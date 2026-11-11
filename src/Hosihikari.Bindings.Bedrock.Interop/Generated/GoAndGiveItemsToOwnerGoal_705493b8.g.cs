@@ -86,23 +86,23 @@ public sealed unsafe partial class GoAndGiveItemsToOwnerGoal : global::System.ID
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GoAndGiveItemsToOwnerGoal Create()
+    public static GoAndGiveItemsToOwnerGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7324cb33();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GoAndGiveItemsToOwnerGoal((nint)handle);
     }
 
-    public static GoAndGiveItemsToOwnerGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToOwnerGoal arg0)
+    public static GoAndGiveItemsToOwnerGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToOwnerGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f1ad7e5b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GoAndGiveItemsToOwnerGoal((nint)handle);
@@ -202,9 +202,10 @@ public sealed unsafe partial class GoAndGiveItemsToOwnerGoal : global::System.ID
         set => NativeMethods.TablePtr->C1.hs_set_9db9dd96((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToOwnerGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToOwnerGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToOwnerGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToOwnerGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToOwnerGoal((nint)NativeMethods.TablePtr->C1.hs_method_cee2f8e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cee2f8e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToOwnerGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

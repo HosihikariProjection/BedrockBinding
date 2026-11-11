@@ -622,12 +622,12 @@ public sealed unsafe partial class Fireball : global::System.IDisposable
     public bool _shouldBurn() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Fireball Create()
+    public static Fireball? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_118e75cf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Fireball((nint)handle);
@@ -656,9 +656,10 @@ public sealed unsafe partial class Fireball : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_ab9aa47a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getSourceUniqueID()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getSourceUniqueID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C1.hs_method_55b696ae((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_55b696ae((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
     }
 
     public int getTrailParticle()

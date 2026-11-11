@@ -40,12 +40,12 @@ public sealed unsafe partial class FromCenter : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static FromCenter Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPosIterator_Nested.FromCenter arg0)
+    public static FromCenter? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPosIterator_Nested.FromCenter arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0427de64((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FromCenter((nint)handle);

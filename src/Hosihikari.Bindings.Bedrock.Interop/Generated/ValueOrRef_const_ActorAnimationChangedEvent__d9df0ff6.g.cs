@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ActorAnimationChangedEvent_ 
     public static ValueOrRef_const_ActorAnimationChangedEvent_ Create_a6aa697e(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ActorAnimationChangedEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationChangedEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationChangedEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationChangedEvent((nint)NativeMethods.TablePtr->C1.hs_method_41f888c1((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_41f888c1((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationChangedEvent((nint)__hs_handle, false) : null;
     }
 
 

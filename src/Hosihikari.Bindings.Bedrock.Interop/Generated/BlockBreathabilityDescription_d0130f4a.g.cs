@@ -60,12 +60,12 @@ public sealed unsafe partial class BlockBreathabilityDescription : global::Syste
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockBreathabilityDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockBreathabilityDescription arg0)
+    public static BlockBreathabilityDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockBreathabilityDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b4c01737((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockBreathabilityDescription((nint)handle);

@@ -45,12 +45,12 @@ public sealed unsafe partial class PlayerInventoryItemChangeEvent : global::Syst
         NativeMethods.TablePtr->C2.hs_method_00936519((void*)__hosihikari_shim_handle);
     }
 
-    public static PlayerInventoryItemChangeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerInventoryItemChangeEvent arg0)
+    public static PlayerInventoryItemChangeEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerInventoryItemChangeEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_12bf245a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerInventoryItemChangeEvent((nint)handle);

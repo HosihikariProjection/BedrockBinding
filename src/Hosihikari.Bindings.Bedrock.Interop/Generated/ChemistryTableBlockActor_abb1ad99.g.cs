@@ -131,12 +131,12 @@ public sealed unsafe partial class ChemistryTableBlockActor : global::System.IDi
     public void _tick(nint region) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ChemistryTableBlockActor Create()
+    public static ChemistryTableBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4457e21c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChemistryTableBlockActor((nint)handle);
@@ -163,9 +163,10 @@ public sealed unsafe partial class ChemistryTableBlockActor : global::System.IDi
         return NativeMethods.TablePtr->C0.hs_method_c15a401a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C0.hs_method_e18eca0e((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e18eca0e((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int getMaxStackSize()

@@ -56,23 +56,23 @@ public sealed unsafe partial class ScriptDebuggerWatchdog : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptDebuggerWatchdog Create()
+    public static ScriptDebuggerWatchdog? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_bc10a32a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptDebuggerWatchdog((nint)handle);
     }
 
-    public static ScriptDebuggerWatchdog Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerWatchdog arg0)
+    public static ScriptDebuggerWatchdog? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerWatchdog arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7b59cb6d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptDebuggerWatchdog((nint)handle);
@@ -95,9 +95,10 @@ public sealed unsafe partial class ScriptDebuggerWatchdog : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C3.hs_get_599a13b9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerWatchdog operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerWatchdog arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerWatchdog? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerWatchdog arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerWatchdog((nint)NativeMethods.TablePtr->C3.hs_method_a4009ec4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a4009ec4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerWatchdog((nint)__hs_handle, false) : null;
     }
 
     public bool requireClose()

@@ -393,23 +393,23 @@ public sealed unsafe partial class LiquidBlockDynamic : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LiquidBlockDynamic Create()
+    public static LiquidBlockDynamic? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7f51df1e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LiquidBlockDynamic((nint)handle);
     }
 
-    public static LiquidBlockDynamic Create(global::Hosihikari.Bindings.Bedrock.Interop.LiquidBlockDynamic arg0)
+    public static LiquidBlockDynamic? Create(global::Hosihikari.Bindings.Bedrock.Interop.LiquidBlockDynamic arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_af1145f8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LiquidBlockDynamic((nint)handle);
@@ -434,9 +434,10 @@ public sealed unsafe partial class LiquidBlockDynamic : global::System.IDisposab
     public void onPlace(nint eventData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LiquidBlockDynamic operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LiquidBlockDynamic arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LiquidBlockDynamic? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LiquidBlockDynamic arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LiquidBlockDynamic((nint)NativeMethods.TablePtr->C2.hs_method_8af1e648((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8af1e648((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LiquidBlockDynamic((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

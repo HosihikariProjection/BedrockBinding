@@ -50,23 +50,23 @@ public sealed unsafe partial class DispatchQueue : global::System.IDisposable
     public nint _send(nint request) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DispatchQueue Create()
+    public static DispatchQueue? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ee251979();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DispatchQueue((nint)handle);
     }
 
-    public static DispatchQueue Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatchQueue arg0)
+    public static DispatchQueue? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatchQueue arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_be5f3968((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DispatchQueue((nint)handle);
@@ -106,9 +106,10 @@ public sealed unsafe partial class DispatchQueue : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_ea0ded98((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatchQueue operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatchQueue arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatchQueue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatchQueue arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatchQueue((nint)NativeMethods.TablePtr->C0.hs_method_7510d392((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7510d392((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatchQueue((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<Bedrock::Http::Response>' requires --link-carrier or --virtual-dispatch.", false)]

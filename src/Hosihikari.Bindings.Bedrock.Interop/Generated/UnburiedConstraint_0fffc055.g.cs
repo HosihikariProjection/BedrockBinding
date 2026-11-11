@@ -48,12 +48,12 @@ public sealed unsafe partial class UnburiedConstraint : global::System.IDisposab
     public bool _isSatisfied(nint target, nint structurePos, nint structureRot, nint centeringOffset) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UnburiedConstraint Create()
+    public static UnburiedConstraint? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_67c59912();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UnburiedConstraint((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class UnburiedConstraint : global::System.IDisposab
     public static UnburiedConstraint Create(nint structure) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UnburiedConstraint Create(global::Hosihikari.Bindings.Bedrock.Interop.UnburiedConstraint arg0)
+    public static UnburiedConstraint? Create(global::Hosihikari.Bindings.Bedrock.Interop.UnburiedConstraint arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_db584fc4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UnburiedConstraint((nint)handle);

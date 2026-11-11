@@ -64,29 +64,29 @@ public sealed unsafe partial class SlotData : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_67e42359((void*)__hosihikari_shim_handle);
     }
 
-    public static SlotData Create()
+    public static SlotData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cf5be92e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SlotData((nint)handle);
     }
 
-    public static SlotData Create(global::Hosihikari.Bindings.Bedrock.Interop.SlotData arg0)
+    public static SlotData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SlotData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_414ac33b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SlotData((nint)handle);
     }
 
-    public static SlotData Create(string collectionName, int collectionIndex)
+    public static SlotData? Create(string collectionName, int collectionIndex)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(collectionName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -104,7 +104,7 @@ public sealed unsafe partial class SlotData : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C3.hs_create_017052c2(__hs_stringData0, (nuint)__hs_stringByteCount0, collectionIndex);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new SlotData((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class LocalConstBlockSource : global::System.IDispo
         return __hs_handle;
     }
 
-    public static LocalConstBlockSource Create()
+    public static LocalConstBlockSource? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5306c8ba();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LocalConstBlockSource((nint)handle);
     }
 
-    public static LocalConstBlockSource Create(global::Hosihikari.Bindings.Bedrock.Interop.LocalConstBlockSource arg0)
+    public static LocalConstBlockSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.LocalConstBlockSource arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_326b5e74((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LocalConstBlockSource((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class LocalConstBlockSource : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C2.hs_get_563a2ae5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LocalConstBlockSource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LocalConstBlockSource arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LocalConstBlockSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LocalConstBlockSource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LocalConstBlockSource((nint)NativeMethods.TablePtr->C2.hs_method_ca661563((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ca661563((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LocalConstBlockSource((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

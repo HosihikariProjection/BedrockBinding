@@ -82,23 +82,23 @@ public sealed unsafe partial class MakeLoveGoal : global::System.IDisposable
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MakeLoveGoal Create()
+    public static MakeLoveGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b4e6fdb4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MakeLoveGoal((nint)handle);
     }
 
-    public static MakeLoveGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.MakeLoveGoal arg0)
+    public static MakeLoveGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.MakeLoveGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ef09de69((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MakeLoveGoal((nint)handle);
@@ -150,9 +150,10 @@ public sealed unsafe partial class MakeLoveGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_30ca69d0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MakeLoveGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MakeLoveGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MakeLoveGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MakeLoveGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MakeLoveGoal((nint)NativeMethods.TablePtr->C2.hs_method_eea44942((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_eea44942((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MakeLoveGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

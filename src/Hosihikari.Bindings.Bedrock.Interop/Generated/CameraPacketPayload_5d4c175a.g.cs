@@ -40,12 +40,12 @@ public sealed unsafe partial class CameraPacketPayload : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static CameraPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.CameraPacketPayload arg0)
+    public static CameraPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.CameraPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9dab2115((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CameraPacketPayload((nint)handle);

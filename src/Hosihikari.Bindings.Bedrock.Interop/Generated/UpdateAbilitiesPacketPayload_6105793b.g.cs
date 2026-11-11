@@ -40,12 +40,12 @@ public sealed unsafe partial class UpdateAbilitiesPacketPayload : global::System
         return __hs_handle;
     }
 
-    public static UpdateAbilitiesPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.UpdateAbilitiesPacketPayload arg0)
+    public static UpdateAbilitiesPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.UpdateAbilitiesPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_18968701((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UpdateAbilitiesPacketPayload((nint)handle);

@@ -80,12 +80,12 @@ public sealed unsafe partial class FoodItemComponent : global::System.IDisposabl
     public static nint _vftableForNetworkedItemComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FoodItemComponent Create()
+    public static FoodItemComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_df634229();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FoodItemComponent((nint)handle);

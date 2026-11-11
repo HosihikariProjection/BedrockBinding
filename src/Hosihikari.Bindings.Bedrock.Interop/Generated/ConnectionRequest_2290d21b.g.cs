@@ -75,23 +75,23 @@ public sealed unsafe partial class ConnectionRequest : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ConnectionRequest Create()
+    public static ConnectionRequest? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2628462c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ConnectionRequest((nint)handle);
     }
 
-    public static ConnectionRequest Create(global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest arg0)
+    public static ConnectionRequest? Create(global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b25d6221((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ConnectionRequest((nint)handle);

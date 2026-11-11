@@ -56,23 +56,23 @@ public sealed unsafe partial class ScriptTickListener : global::System.IDisposab
     public void _onScriptTickStart() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptTickListener Create()
+    public static ScriptTickListener? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cf0cce61();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptTickListener((nint)handle);
     }
 
-    public static ScriptTickListener Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptTickListener arg0)
+    public static ScriptTickListener? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptTickListener arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fcef8f04((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptTickListener((nint)handle);
@@ -162,9 +162,10 @@ public sealed unsafe partial class ScriptTickListener : global::System.IDisposab
         NativeMethods.TablePtr->C3.hs_method_2b04ce3e((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptTickListener operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptTickListener arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptTickListener? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptTickListener arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptTickListener((nint)NativeMethods.TablePtr->C3.hs_method_3b9f3834((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3b9f3834((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptTickListener((nint)__hs_handle, false) : null;
     }
 
 

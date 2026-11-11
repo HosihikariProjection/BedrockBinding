@@ -40,23 +40,23 @@ public sealed unsafe partial class EntityEnterVolumeSystem : global::System.IDis
         return __hs_handle;
     }
 
-    public static EntityEnterVolumeSystem Create()
+    public static EntityEnterVolumeSystem? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fd81e9d7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityEnterVolumeSystem((nint)handle);
     }
 
-    public static EntityEnterVolumeSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityEnterVolumeSystem arg0)
+    public static EntityEnterVolumeSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityEnterVolumeSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_cc9f2abb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityEnterVolumeSystem((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class EntityEnterVolumeSystem : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C1.hs_get_427ea440((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EntityEnterVolumeSystem operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EntityEnterVolumeSystem arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EntityEnterVolumeSystem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EntityEnterVolumeSystem arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EntityEnterVolumeSystem((nint)NativeMethods.TablePtr->C1.hs_method_bbb88d3c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_bbb88d3c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EntityEnterVolumeSystem((nint)__hs_handle, false) : null;
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry arg0)

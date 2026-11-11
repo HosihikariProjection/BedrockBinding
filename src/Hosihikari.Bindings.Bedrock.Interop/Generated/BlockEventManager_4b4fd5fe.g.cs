@@ -40,12 +40,12 @@ public sealed unsafe partial class BlockEventManager : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static BlockEventManager Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockEvents.BlockEventManager arg0)
+    public static BlockEventManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockEvents.BlockEventManager arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0f9188a1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockEventManager((nint)handle);

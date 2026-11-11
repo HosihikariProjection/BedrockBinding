@@ -40,12 +40,12 @@ public sealed unsafe partial class InsideBlockNotifierDefinition : global::Syste
         return __hs_handle;
     }
 
-    public static InsideBlockNotifierDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockNotifierDefinition arg0)
+    public static InsideBlockNotifierDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockNotifierDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_352b0859((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InsideBlockNotifierDefinition((nint)handle);

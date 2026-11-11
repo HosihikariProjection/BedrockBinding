@@ -96,9 +96,10 @@ public sealed unsafe partial class PeerConnectionSdpMethods : global::System.IDi
         NativeMethods.TablePtr->C4.hs_method_ca26c913((void*)__hosihikari_shim_handle, (void*)error.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions GetCryptoOptions()
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions? GetCryptoOptions()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)NativeMethods.TablePtr->C4.hs_method_4ee8fd44((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4ee8fd44((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)__hs_handle) : null;
     }
 
     public int? GetSctpSslRole_n()
@@ -142,12 +143,12 @@ public sealed unsafe partial class PeerConnectionSdpMethods : global::System.IDi
         NativeMethods.TablePtr->C4.hs_method_6896925e((void*)__hosihikari_shim_handle, @event);
     }
 
-    public static PeerConnectionSdpMethods Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionSdpMethods arg0)
+    public static PeerConnectionSdpMethods? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionSdpMethods arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3da4fe10((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PeerConnectionSdpMethods((nint)handle);
@@ -177,9 +178,10 @@ public sealed unsafe partial class PeerConnectionSdpMethods : global::System.IDi
         NativeMethods.TablePtr->C4.hs_method_a2f32049((void*)__hosihikari_shim_handle, local_port, remote_port, max_message_size);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError StartSctpTransport(nint options)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? StartSctpTransport(nint options)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_dab5797f((void*)__hosihikari_shim_handle, (void*)options));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_dab5797f((void*)__hosihikari_shim_handle, (void*)options);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
     }
 
     public bool ValidateBundleSettings(nint desc, nint bundle_groups_by_mid)

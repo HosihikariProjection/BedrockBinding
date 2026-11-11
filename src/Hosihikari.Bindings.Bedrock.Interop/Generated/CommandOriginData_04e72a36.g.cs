@@ -45,12 +45,12 @@ public sealed unsafe partial class CommandOriginData : global::System.IDisposabl
         NativeMethods.TablePtr->C0.hs_method_c73db0d4((void*)__hosihikari_shim_handle);
     }
 
-    public static CommandOriginData Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginData arg0)
+    public static CommandOriginData? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginData arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_26fc6577((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandOriginData((nint)handle);

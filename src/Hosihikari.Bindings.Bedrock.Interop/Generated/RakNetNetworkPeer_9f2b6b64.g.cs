@@ -70,23 +70,23 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
     public void _update() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RakNetNetworkPeer Create()
+    public static RakNetNetworkPeer? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_1771026b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakNetNetworkPeer((nint)handle);
     }
 
-    public static RakNetNetworkPeer Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer arg0)
+    public static RakNetNetworkPeer? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6800f07b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RakNetNetworkPeer((nint)handle);
@@ -119,9 +119,10 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus getNetworkStatus()
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus? getNetworkStatus()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)NativeMethods.TablePtr->C3.hs_method_bcb1a054((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_bcb1a054((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)__hs_handle) : null;
     }
 
     public bool isEncrypted()
@@ -176,9 +177,10 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C3.hs_get_ec3e04d4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer((nint)NativeMethods.TablePtr->C3.hs_method_99f78cf1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_99f78cf1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer((nint)__hs_handle, false) : null;
     }
 
     public void sendPacket(string data, int reliability, int arg2)

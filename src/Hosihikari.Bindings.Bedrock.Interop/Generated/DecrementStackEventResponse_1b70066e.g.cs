@@ -56,12 +56,12 @@ public sealed unsafe partial class DecrementStackEventResponse : global::System.
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DecrementStackEventResponse Create(global::Hosihikari.Bindings.Bedrock.Interop.DecrementStackEventResponse arg0)
+    public static DecrementStackEventResponse? Create(global::Hosihikari.Bindings.Bedrock.Interop.DecrementStackEventResponse arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3e1a3c9b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DecrementStackEventResponse((nint)handle);

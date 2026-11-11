@@ -194,12 +194,12 @@ public sealed unsafe partial class MoveToVillageGoal : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveToVillageGoal Create()
+    public static MoveToVillageGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_850af459();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveToVillageGoal((nint)handle);
@@ -209,12 +209,12 @@ public sealed unsafe partial class MoveToVillageGoal : global::System.IDisposabl
     public static MoveToVillageGoal Create(nint mob, nint name, nint goalId, float speedModifier, float goalRadius, float cooldown, int searchRange) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MoveToVillageGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveToVillageGoal arg0)
+    public static MoveToVillageGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveToVillageGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_dc23c109((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MoveToVillageGoal((nint)handle);
@@ -225,9 +225,10 @@ public sealed unsafe partial class MoveToVillageGoal : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_1514ce31((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos _selectRandomPosInVillage()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _selectRandomPosInVillage()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C2.hs_method_c918f117((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c918f117((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -40,23 +40,23 @@ public sealed unsafe partial class TerrainData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TerrainData Create()
+    public static TerrainData? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4e73b22f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TerrainData((nint)handle);
     }
 
-    public static TerrainData Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.TerrainData arg0)
+    public static TerrainData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.TerrainData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5fb650f9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TerrainData((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class TerrainData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_4f09ab44((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.TerrainData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.TerrainData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.TerrainData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.TerrainData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.TerrainData((nint)NativeMethods.TablePtr->C2.hs_method_46dfd0ac((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_46dfd0ac((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.TerrainData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

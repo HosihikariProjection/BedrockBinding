@@ -82,23 +82,23 @@ public sealed unsafe partial class CircleAroundAnchorGoal : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CircleAroundAnchorGoal Create()
+    public static CircleAroundAnchorGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9c116ee6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CircleAroundAnchorGoal((nint)handle);
     }
 
-    public static CircleAroundAnchorGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.CircleAroundAnchorGoal arg0)
+    public static CircleAroundAnchorGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.CircleAroundAnchorGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7174167c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CircleAroundAnchorGoal((nint)handle);
@@ -227,9 +227,10 @@ public sealed unsafe partial class CircleAroundAnchorGoal : global::System.IDisp
         set => NativeMethods.TablePtr->C0.hs_set_5b6a150d((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CircleAroundAnchorGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CircleAroundAnchorGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CircleAroundAnchorGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CircleAroundAnchorGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CircleAroundAnchorGoal((nint)NativeMethods.TablePtr->C0.hs_method_ff91fd73((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ff91fd73((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CircleAroundAnchorGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

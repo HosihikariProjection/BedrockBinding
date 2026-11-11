@@ -53,12 +53,12 @@ public sealed unsafe partial class NetworkBinderInterface : global::System.IDisp
         return NativeMethods.TablePtr->C4.hs_method_06497f10((void*)__hosihikari_shim_handle, socket_fd, (void*)address);
     }
 
-    public static NetworkBinderInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkBinderInterface arg0)
+    public static NetworkBinderInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkBinderInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_74fe12ae((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkBinderInterface((nint)handle);

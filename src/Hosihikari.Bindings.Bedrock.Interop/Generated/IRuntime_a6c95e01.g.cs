@@ -40,12 +40,12 @@ public sealed unsafe partial class IRuntime : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IRuntime Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IRuntime arg0)
+    public static IRuntime? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IRuntime arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e46df2a1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IRuntime((nint)handle);
@@ -138,9 +138,10 @@ public sealed unsafe partial class IRuntime : global::System.IDisposable
     public nint resolve(nint contextId, nint promise, nint arg) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Scripting::TypedObjectHandle<Scripting::PromiseType>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny run(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IPayload? payload, byte? privilege)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny? run(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IPayload? payload, byte? privilege)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)NativeMethods.TablePtr->C3.hs_method_7e86dbf5((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)(payload?.Handle ?? 0), privilege ?? default(byte), privilege.HasValue));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7e86dbf5((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)(payload?.Handle ?? 0), privilege ?? default(byte), privilege.HasValue);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)__hs_handle) : null;
     }
 
     public void startProfiler()

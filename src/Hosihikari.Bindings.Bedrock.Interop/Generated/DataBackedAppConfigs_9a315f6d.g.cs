@@ -70,23 +70,23 @@ public sealed unsafe partial class DataBackedAppConfigs : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_4a792077((void*)__hosihikari_shim_handle);
     }
 
-    public static DataBackedAppConfigs Create()
+    public static DataBackedAppConfigs? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1332eeab();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DataBackedAppConfigs((nint)handle);
     }
 
-    public static DataBackedAppConfigs Create(global::Hosihikari.Bindings.Bedrock.Interop.DataBackedAppConfigs arg0)
+    public static DataBackedAppConfigs? Create(global::Hosihikari.Bindings.Bedrock.Interop.DataBackedAppConfigs arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_18902e24((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DataBackedAppConfigs((nint)handle);
@@ -126,9 +126,10 @@ public sealed unsafe partial class DataBackedAppConfigs : global::System.IDispos
     public nint getAdditionalClientPacks(bool shouldIncludeEduResourcePacks) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'PackIdVersion' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition getConnectionDefinition()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition? getConnectionDefinition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition((nint)NativeMethods.TablePtr->C1.hs_method_bea88c70((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_bea88c70((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition((nint)__hs_handle) : null;
     }
 
     public uint getEducationEditionOffering()
@@ -205,9 +206,10 @@ public sealed unsafe partial class DataBackedAppConfigs : global::System.IDispos
         return NativeMethods.TablePtr->C1.hs_method_d972df98((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DataBackedAppConfigs operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DataBackedAppConfigs arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.DataBackedAppConfigs? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DataBackedAppConfigs arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DataBackedAppConfigs((nint)NativeMethods.TablePtr->C1.hs_method_2f7e1803((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2f7e1803((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DataBackedAppConfigs((nint)__hs_handle, false) : null;
     }
 
     public bool requireEduLevelSettings()

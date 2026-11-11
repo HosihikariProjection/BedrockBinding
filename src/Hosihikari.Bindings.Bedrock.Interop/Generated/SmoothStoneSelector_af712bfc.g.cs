@@ -44,12 +44,12 @@ public sealed unsafe partial class SmoothStoneSelector : global::System.IDisposa
     public nint _next(nint random, int arg1, int arg2, int arg3, bool isEdge) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SmoothStoneSelector Create(global::Hosihikari.Bindings.Bedrock.Interop.SmoothStoneSelector arg0)
+    public static SmoothStoneSelector? Create(global::Hosihikari.Bindings.Bedrock.Interop.SmoothStoneSelector arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cb8437ac((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SmoothStoneSelector((nint)handle);
@@ -61,9 +61,10 @@ public sealed unsafe partial class SmoothStoneSelector : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_4eaa1dbd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block next(global::Hosihikari.Bindings.Bedrock.Interop.Random random, int arg1, int arg2, int arg3, bool isEdge)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? next(global::Hosihikari.Bindings.Bedrock.Interop.Random random, int arg1, int arg2, int arg3, bool isEdge)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C3.hs_method_ac1fec97((void*)__hosihikari_shim_handle, (void*)random.Handle, arg1, arg2, arg3, isEdge), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ac1fec97((void*)__hosihikari_shim_handle, (void*)random.Handle, arg1, arg2, arg3, isEdge);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
 

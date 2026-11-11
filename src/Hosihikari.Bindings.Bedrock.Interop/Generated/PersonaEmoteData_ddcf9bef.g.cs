@@ -40,23 +40,23 @@ public sealed unsafe partial class PersonaEmoteData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PersonaEmoteData Create()
+    public static PersonaEmoteData? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_bc8d5cf3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PersonaEmoteData((nint)handle);
     }
 
-    public static PersonaEmoteData Create(global::Hosihikari.Bindings.Bedrock.Interop.EventingRequest_Nested.PersonaEmoteData arg0)
+    public static PersonaEmoteData? Create(global::Hosihikari.Bindings.Bedrock.Interop.EventingRequest_Nested.PersonaEmoteData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_83818fc3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PersonaEmoteData((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class PersonaEmoteData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_dc74e6b1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EventingRequest_Nested.PersonaEmoteData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EventingRequest_Nested.PersonaEmoteData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EventingRequest_Nested.PersonaEmoteData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EventingRequest_Nested.PersonaEmoteData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EventingRequest_Nested.PersonaEmoteData((nint)NativeMethods.TablePtr->C1.hs_method_9306ebfe((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9306ebfe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EventingRequest_Nested.PersonaEmoteData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

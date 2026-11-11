@@ -722,12 +722,12 @@ public sealed unsafe partial class PolarBear : global::System.IDisposable
     public nint _ctor(nint definitions, nint definitionName, nint entityContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PolarBear Create()
+    public static PolarBear? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d95347bd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PolarBear((nint)handle);

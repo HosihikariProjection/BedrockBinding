@@ -52,12 +52,12 @@ public sealed unsafe partial class AttackDescription : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AttackDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.AttackDescription arg0)
+    public static AttackDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.AttackDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2d266339((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AttackDescription((nint)handle);

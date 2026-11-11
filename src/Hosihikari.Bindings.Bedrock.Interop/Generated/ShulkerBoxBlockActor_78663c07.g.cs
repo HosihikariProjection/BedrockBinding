@@ -417,9 +417,10 @@ public sealed unsafe partial class ShulkerBoxBlockActor : global::System.IDispos
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getObstructionAABB()
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getObstructionAABB()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C3.hs_method_fd0bfbd5((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fd0bfbd5((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
     public uint getOpenSound()

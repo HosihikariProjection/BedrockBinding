@@ -40,12 +40,12 @@ public sealed unsafe partial class ImplBase_Bedrock__Resources__Archive__Builder
         return __hs_handle;
     }
 
-    public static ImplBase_Bedrock__Resources__Archive__Builder_ Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ImplBase_Bedrock__Resources__Archive__Builder_ arg0)
+    public static ImplBase_Bedrock__Resources__Archive__Builder_? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ImplBase_Bedrock__Resources__Archive__Builder_ arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_fb04c122((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ImplBase_Bedrock__Resources__Archive__Builder_((nint)handle);

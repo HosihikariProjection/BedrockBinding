@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptTitleDisplayOptions : global::System.ID
         return __hs_handle;
     }
 
-    public static ScriptTitleDisplayOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTitleDisplayOptions arg0)
+    public static ScriptTitleDisplayOptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptTitleDisplayOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f2a3a51d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptTitleDisplayOptions((nint)handle);

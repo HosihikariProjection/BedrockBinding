@@ -40,12 +40,12 @@ public sealed unsafe partial class AlteredStateCollection : global::System.IDisp
         return __hs_handle;
     }
 
-    public static AlteredStateCollection Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockType_Nested.AlteredStateCollection arg0)
+    public static AlteredStateCollection? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockType_Nested.AlteredStateCollection arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_91526006((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AlteredStateCollection((nint)handle);

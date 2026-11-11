@@ -40,12 +40,12 @@ public sealed unsafe partial class IObjectFactory : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IObjectFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IObjectFactory arg0)
+    public static IObjectFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IObjectFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_20e764fe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IObjectFactory((nint)handle);

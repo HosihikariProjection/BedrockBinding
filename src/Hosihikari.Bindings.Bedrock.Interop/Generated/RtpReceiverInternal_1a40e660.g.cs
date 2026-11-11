@@ -62,12 +62,12 @@ public sealed unsafe partial class RtpReceiverInternal : global::System.IDisposa
         NativeMethods.TablePtr->C4.hs_method_e9b31b1e((void*)__hosihikari_shim_handle);
     }
 
-    public static RtpReceiverInternal Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpReceiverInternal arg0)
+    public static RtpReceiverInternal? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpReceiverInternal arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_41d27a31((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RtpReceiverInternal((nint)handle);

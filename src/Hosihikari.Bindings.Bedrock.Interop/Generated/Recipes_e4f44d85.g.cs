@@ -49,12 +49,12 @@ public sealed unsafe partial class Recipes : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_74144e5f((void*)__hosihikari_shim_handle);
     }
 
-    public static Recipes Create()
+    public static Recipes? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0b258725();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Recipes((nint)handle);
@@ -64,12 +64,12 @@ public sealed unsafe partial class Recipes : global::System.IDisposable
     public static Recipes Create(nint level) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Recipes Create(global::Hosihikari.Bindings.Bedrock.Interop.Recipes arg0)
+    public static Recipes? Create(global::Hosihikari.Bindings.Bedrock.Interop.Recipes arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7bc6b3c9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Recipes((nint)handle);
@@ -156,9 +156,10 @@ public sealed unsafe partial class Recipes : global::System.IDisposable
     public void forEachUnlockableRecipeForIngredients(nint ingredients, nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance getFurnaceRecipeResult(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.HashedString tag)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? getFurnaceRecipeResult(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.HashedString tag)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C3.hs_method_9cdc66df((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)tag.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9cdc66df((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)tag.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Recipe? getRecipeByNetId(nint netId)

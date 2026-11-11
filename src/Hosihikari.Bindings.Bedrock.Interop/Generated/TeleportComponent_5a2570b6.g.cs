@@ -40,12 +40,12 @@ public sealed unsafe partial class TeleportComponent : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static TeleportComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.TeleportComponent arg0)
+    public static TeleportComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.TeleportComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e9ef9b59((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TeleportComponent((nint)handle);

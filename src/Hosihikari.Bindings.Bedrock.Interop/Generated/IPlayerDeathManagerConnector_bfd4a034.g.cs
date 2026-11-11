@@ -40,12 +40,12 @@ public sealed unsafe partial class IPlayerDeathManagerConnector : global::System
         return __hs_handle;
     }
 
-    public static IPlayerDeathManagerConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.IPlayerDeathManagerConnector arg0)
+    public static IPlayerDeathManagerConnector? Create(global::Hosihikari.Bindings.Bedrock.Interop.IPlayerDeathManagerConnector arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_42d6ac24((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IPlayerDeathManagerConnector((nint)handle);

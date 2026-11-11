@@ -57,12 +57,12 @@ public sealed unsafe partial class ItemTag : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_a549a5d9((void*)__hosihikari_shim_handle, value);
     }
 
-    public static ItemTag Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemTag arg0)
+    public static ItemTag? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemTag arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a7b4876c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemTag((nint)handle);

@@ -48,12 +48,12 @@ public sealed unsafe partial class TradeItem : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TradeItem Create()
+    public static TradeItem? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f27f501b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TradeItem((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class TradeItem : global::System.IDisposable
     public static TradeItem Create(nint item) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TradeItem Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeItem arg0)
+    public static TradeItem? Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeItem arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f540b073((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TradeItem((nint)handle);
@@ -114,9 +114,10 @@ public sealed unsafe partial class TradeItem : global::System.IDisposable
     public nint operator_assign(nint item) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TradeItem operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TradeItem arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.TradeItem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TradeItem arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TradeItem((nint)NativeMethods.TablePtr->C4.hs_method_ad40525e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ad40525e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TradeItem((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -110,23 +110,23 @@ public sealed unsafe partial class PluginInterface2 : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_484a4551((void*)__hosihikari_shim_handle, (void*)arg0, arg1, (void*)arg2.Handle, arg3);
     }
 
-    public static PluginInterface2 Create()
+    public static PluginInterface2? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_b9cb0b4a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PluginInterface2((nint)handle);
     }
 
-    public static PluginInterface2 Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.PluginInterface2 arg0)
+    public static PluginInterface2? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.PluginInterface2 arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cf4930b7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PluginInterface2((nint)handle);
@@ -154,9 +154,10 @@ public sealed unsafe partial class PluginInterface2 : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_07a1b644((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.PluginInterface2 operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.PluginInterface2 arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.PluginInterface2? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.PluginInterface2 arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.PluginInterface2((nint)NativeMethods.TablePtr->C2.hs_method_db8853d7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_db8853d7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.PluginInterface2((nint)__hs_handle, false) : null;
     }
 
 

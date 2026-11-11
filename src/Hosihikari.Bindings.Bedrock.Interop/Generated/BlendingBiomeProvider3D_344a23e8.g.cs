@@ -40,23 +40,23 @@ public sealed unsafe partial class BlendingBiomeProvider3D : global::System.IDis
         return __hs_handle;
     }
 
-    public static BlendingBiomeProvider3D Create()
+    public static BlendingBiomeProvider3D? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1d9c029e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlendingBiomeProvider3D((nint)handle);
     }
 
-    public static BlendingBiomeProvider3D Create(global::Hosihikari.Bindings.Bedrock.Interop.BlendingBiomeProvider3D arg0)
+    public static BlendingBiomeProvider3D? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlendingBiomeProvider3D arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_bf46b479((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlendingBiomeProvider3D((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class BlendingBiomeProvider3D : global::System.IDis
         set => NativeMethods.TablePtr->C0.hs_set_71bf11d9((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlendingBiomeProvider3D operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlendingBiomeProvider3D arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlendingBiomeProvider3D? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlendingBiomeProvider3D arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlendingBiomeProvider3D((nint)NativeMethods.TablePtr->C0.hs_method_a8485201((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a8485201((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlendingBiomeProvider3D((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -40,12 +40,12 @@ public sealed unsafe partial class DwellerData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static DwellerData Create(global::Hosihikari.Bindings.Bedrock.Interop.Village_Nested.DwellerData arg0)
+    public static DwellerData? Create(global::Hosihikari.Bindings.Bedrock.Interop.Village_Nested.DwellerData arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6048160d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DwellerData((nint)handle);

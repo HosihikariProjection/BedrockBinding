@@ -623,12 +623,12 @@ public sealed unsafe partial class ExperienceOrb : global::System.IDisposable
     public void _reloadHardcoded(nint method, nint @params) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ExperienceOrb Create()
+    public static ExperienceOrb? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_bef44dde();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExperienceOrb((nint)handle);
@@ -638,9 +638,10 @@ public sealed unsafe partial class ExperienceOrb : global::System.IDisposable
     public static ExperienceOrb Create(nint definitions, nint definitionName, nint entityContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource arg0, float damage, nint arg2)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource arg0, float damage, nint arg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C1.hs_method_a40826f5((void*)__hosihikari_shim_handle, (void*)arg0.Handle, damage, (void*)arg2));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a40826f5((void*)__hosihikari_shim_handle, (void*)arg0.Handle, damage, (void*)arg2);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
     }
 
     public static void _spawnOrb(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int orbXPValue)

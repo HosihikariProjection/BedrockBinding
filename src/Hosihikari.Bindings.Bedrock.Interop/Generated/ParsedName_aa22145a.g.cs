@@ -40,12 +40,12 @@ public sealed unsafe partial class ParsedName : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ParsedName Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistry_Nested.ParsedName arg0)
+    public static ParsedName? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistry_Nested.ParsedName arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6cb84263((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ParsedName((nint)handle);

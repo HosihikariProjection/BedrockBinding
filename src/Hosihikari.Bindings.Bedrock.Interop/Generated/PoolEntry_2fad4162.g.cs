@@ -40,23 +40,23 @@ public sealed unsafe partial class PoolEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PoolEntry Create()
+    public static PoolEntry? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_82d3bd00();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PoolEntry((nint)handle);
     }
 
-    public static PoolEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl_Nested.PoolEntry arg0)
+    public static PoolEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl_Nested.PoolEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_33e4c12d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PoolEntry((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class PoolEntry : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_bc2c1873((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl_Nested.PoolEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl_Nested.PoolEntry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl_Nested.PoolEntry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl_Nested.PoolEntry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl_Nested.PoolEntry((nint)NativeMethods.TablePtr->C0.hs_method_7fa750bc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7fa750bc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolManagerImpl_Nested.PoolEntry((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

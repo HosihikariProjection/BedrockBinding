@@ -70,23 +70,23 @@ public sealed unsafe partial class ScriptContentLogEndPoint : global::System.IDi
     public void _setEnabled(bool newState) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptContentLogEndPoint Create()
+    public static ScriptContentLogEndPoint? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5dbd2cf6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptContentLogEndPoint((nint)handle);
     }
 
-    public static ScriptContentLogEndPoint Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptContentLogEndPoint arg0)
+    public static ScriptContentLogEndPoint? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptContentLogEndPoint arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6723e173((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptContentLogEndPoint((nint)handle);
@@ -124,9 +124,10 @@ public sealed unsafe partial class ScriptContentLogEndPoint : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C3.hs_get_b37c4ea2((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptContentLogEndPoint operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptContentLogEndPoint arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptContentLogEndPoint? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptContentLogEndPoint arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptContentLogEndPoint((nint)NativeMethods.TablePtr->C3.hs_method_cf8994c2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cf8994c2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptContentLogEndPoint((nint)__hs_handle, false) : null;
     }
 
     public void setEnabled(bool newState)

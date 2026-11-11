@@ -45,34 +45,34 @@ public sealed unsafe partial class PlayerShootArrowEvent : global::System.IDispo
         NativeMethods.TablePtr->C2.hs_method_fefbff69((void*)__hosihikari_shim_handle);
     }
 
-    public static PlayerShootArrowEvent Create()
+    public static PlayerShootArrowEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_da84f1ae();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerShootArrowEvent((nint)handle);
     }
 
-    public static PlayerShootArrowEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerShootArrowEvent arg0)
+    public static PlayerShootArrowEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerShootArrowEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_11fdd7fc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerShootArrowEvent((nint)handle);
     }
 
-    public static PlayerShootArrowEvent Create(global::Hosihikari.Bindings.Abi.SharedHandle? player, global::Hosihikari.Bindings.Abi.SharedHandle? arrow, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack weaponItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack arrowItem)
+    public static PlayerShootArrowEvent? Create(global::Hosihikari.Bindings.Abi.SharedHandle? player, global::Hosihikari.Bindings.Abi.SharedHandle? arrow, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack weaponItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack arrowItem)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fe43131b(player?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), arrow?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)weaponItem.Handle, (void*)arrowItem.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerShootArrowEvent((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class PlayerShootArrowEvent : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C2.hs_get_c68e1f7e((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerShootArrowEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerShootArrowEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerShootArrowEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerShootArrowEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerShootArrowEvent((nint)NativeMethods.TablePtr->C2.hs_method_1b89d0c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1b89d0c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerShootArrowEvent((nint)__hs_handle, false) : null;
     }
 
 

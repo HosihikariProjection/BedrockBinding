@@ -40,12 +40,12 @@ public sealed unsafe partial class ObjectiveCriteria : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static ObjectiveCriteria Create(global::Hosihikari.Bindings.Bedrock.Interop.ObjectiveCriteria arg0)
+    public static ObjectiveCriteria? Create(global::Hosihikari.Bindings.Bedrock.Interop.ObjectiveCriteria arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f2cf9423((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ObjectiveCriteria((nint)handle);

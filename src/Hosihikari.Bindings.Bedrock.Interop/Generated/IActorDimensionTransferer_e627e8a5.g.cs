@@ -40,20 +40,21 @@ public sealed unsafe partial class IActorDimensionTransferer : global::System.ID
         return __hs_handle;
     }
 
-    public static IActorDimensionTransferer Create(global::Hosihikari.Bindings.Bedrock.Interop.IActorDimensionTransferer arg0)
+    public static IActorDimensionTransferer? Create(global::Hosihikari.Bindings.Bedrock.Interop.IActorDimensionTransferer arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_edf9b0c2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IActorDimensionTransferer((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 findTargetPositionAndSetPosition(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint actorDimensionTransferRequest, global::Hosihikari.Bindings.Bedrock.Interop.IDimension toDimension, global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer portalForcer)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? findTargetPositionAndSetPosition(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint actorDimensionTransferRequest, global::Hosihikari.Bindings.Bedrock.Interop.IDimension toDimension, global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer portalForcer)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C1.hs_method_dedeca99((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)actorDimensionTransferRequest, (void*)toDimension.Handle, (void*)portalForcer.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_dedeca99((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)actorDimensionTransferRequest, (void*)toDimension.Handle, (void*)portalForcer.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public void setupActorForTransfer(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)

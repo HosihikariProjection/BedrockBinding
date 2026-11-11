@@ -48,12 +48,12 @@ public sealed unsafe partial class BuriedTreasurePiece : global::System.IDisposa
     public bool _postProcess(nint region, nint random, nint chunkBB) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BuriedTreasurePiece Create(global::Hosihikari.Bindings.Bedrock.Interop.BuriedTreasurePiece arg0)
+    public static BuriedTreasurePiece? Create(global::Hosihikari.Bindings.Bedrock.Interop.BuriedTreasurePiece arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b28e82cf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BuriedTreasurePiece((nint)handle);

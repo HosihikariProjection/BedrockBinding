@@ -40,23 +40,23 @@ public sealed unsafe partial class LoopCount : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static LoopCount Create()
+    public static LoopCount? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e98cf19c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LoopCount((nint)handle);
     }
 
-    public static LoopCount Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper_Nested.LoopCount arg0)
+    public static LoopCount? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper_Nested.LoopCount arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e9e0b216((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LoopCount((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class LoopCount : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_eb75d943((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper_Nested.LoopCount operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper_Nested.LoopCount arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper_Nested.LoopCount? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper_Nested.LoopCount arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper_Nested.LoopCount((nint)NativeMethods.TablePtr->C2.hs_method_b4139910((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b4139910((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelAnimateTickHelper_Nested.LoopCount((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

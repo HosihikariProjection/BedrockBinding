@@ -63,12 +63,12 @@ public sealed unsafe partial class UnderwaterCanyonFeature : global::System.IDis
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UnderwaterCanyonFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.UnderwaterCanyonFeature arg0)
+    public static UnderwaterCanyonFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.UnderwaterCanyonFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_7f091972((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UnderwaterCanyonFeature((nint)handle);

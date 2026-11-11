@@ -44,23 +44,23 @@ public sealed unsafe partial class BlockBreakSensorComponent : global::System.ID
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockBreakSensorComponent Create()
+    public static BlockBreakSensorComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_aa68bfb1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockBreakSensorComponent((nint)handle);
     }
 
-    public static BlockBreakSensorComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockBreakSensorComponent arg0)
+    public static BlockBreakSensorComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockBreakSensorComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4f7b5ac7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockBreakSensorComponent((nint)handle);
@@ -104,9 +104,10 @@ public sealed unsafe partial class BlockBreakSensorComponent : global::System.ID
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockBreakSensorComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockBreakSensorComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockBreakSensorComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockBreakSensorComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockBreakSensorComponent((nint)NativeMethods.TablePtr->C0.hs_method_afc69d43((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_afc69d43((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockBreakSensorComponent((nint)__hs_handle, false) : null;
     }
 
 

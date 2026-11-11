@@ -44,12 +44,12 @@ public sealed unsafe partial class OwnedContainer : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static OwnedContainer Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerOwner_Nested.OwnedContainer arg0)
+    public static OwnedContainer? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerOwner_Nested.OwnedContainer arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fe2bcf7c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OwnedContainer((nint)handle);

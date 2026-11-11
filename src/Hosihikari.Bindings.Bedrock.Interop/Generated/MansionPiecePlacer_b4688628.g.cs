@@ -40,23 +40,23 @@ public sealed unsafe partial class MansionPiecePlacer : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static MansionPiecePlacer Create()
+    public static MansionPiecePlacer? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_47507032();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MansionPiecePlacer((nint)handle);
     }
 
-    public static MansionPiecePlacer Create(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.MansionPiecePlacer arg0)
+    public static MansionPiecePlacer? Create(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.MansionPiecePlacer arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a7013ef0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MansionPiecePlacer((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class MansionPiecePlacer : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_70f7ce93((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.MansionPiecePlacer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.MansionPiecePlacer arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.MansionPiecePlacer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.MansionPiecePlacer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.MansionPiecePlacer((nint)NativeMethods.TablePtr->C4.hs_method_a73a144d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a73a144d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.MansionPiecePlacer((nint)__hs_handle, false) : null;
     }
 
 

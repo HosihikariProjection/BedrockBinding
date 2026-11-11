@@ -64,23 +64,23 @@ public sealed unsafe partial class SwampSurfaceBuilder : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SwampSurfaceBuilder Create()
+    public static SwampSurfaceBuilder? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f1f4f881();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SwampSurfaceBuilder((nint)handle);
     }
 
-    public static SwampSurfaceBuilder Create(global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.SwampSurfaceBuilder arg0)
+    public static SwampSurfaceBuilder? Create(global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.SwampSurfaceBuilder arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c0cb83e3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SwampSurfaceBuilder((nint)handle);
@@ -123,9 +123,10 @@ public sealed unsafe partial class SwampSurfaceBuilder : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C4.hs_get_08a55c48((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.SwampSurfaceBuilder operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.SwampSurfaceBuilder arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.SwampSurfaceBuilder? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.SwampSurfaceBuilder arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.SwampSurfaceBuilder((nint)NativeMethods.TablePtr->C4.hs_method_16116254((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_16116254((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.SwampSurfaceBuilder((nint)__hs_handle, false) : null;
     }
 
 

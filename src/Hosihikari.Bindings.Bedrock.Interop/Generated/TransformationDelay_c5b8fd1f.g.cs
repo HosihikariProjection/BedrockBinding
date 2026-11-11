@@ -40,12 +40,12 @@ public sealed unsafe partial class TransformationDelay : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static TransformationDelay Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TransformationComponentDefinition_Nested.TransformationDelay arg0)
+    public static TransformationDelay? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TransformationComponentDefinition_Nested.TransformationDelay arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6a4046b1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TransformationDelay((nint)handle);

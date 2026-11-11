@@ -48,12 +48,12 @@ public sealed unsafe partial class EntityStorageKeyComponent : global::System.ID
     public nint _ctor_542b3d95(nint storageKey) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EntityStorageKeyComponent Create()
+    public static EntityStorageKeyComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_632a9a9d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntityStorageKeyComponent((nint)handle);
@@ -93,9 +93,10 @@ public sealed unsafe partial class EntityStorageKeyComponent : global::System.ID
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EntityStorageKeyComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EntityStorageKeyComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EntityStorageKeyComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EntityStorageKeyComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EntityStorageKeyComponent((nint)NativeMethods.TablePtr->C1.hs_method_f48f5b65((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f48f5b65((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EntityStorageKeyComponent((nint)__hs_handle, false) : null;
     }
 
 

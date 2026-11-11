@@ -48,12 +48,12 @@ public sealed unsafe partial class DryingOutTimerDefinition : global::System.IDi
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DryingOutTimerDefinition Create()
+    public static DryingOutTimerDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_90eec756();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DryingOutTimerDefinition((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class DryingOutTimerDefinition : global::System.IDi
     public static DryingOutTimerDefinition Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DryingOutTimerDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.DryingOutTimerComponent_Nested.DryingOutTimerDefinition arg0)
+    public static DryingOutTimerDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.DryingOutTimerComponent_Nested.DryingOutTimerDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d16b84be((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DryingOutTimerDefinition((nint)handle);

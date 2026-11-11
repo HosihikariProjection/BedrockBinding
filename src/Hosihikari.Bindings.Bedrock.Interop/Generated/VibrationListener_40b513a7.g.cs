@@ -69,9 +69,10 @@ public sealed unsafe partial class VibrationListener : global::System.IDisposabl
     public bool _tryAdvanceInFlightVibration(nint region) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource getPositionSource()
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource? getPositionSource()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource((nint)NativeMethods.TablePtr->C4.hs_method_5536409f((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5536409f((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource((nint)__hs_handle, false) : null;
     }
 
     public uint getRange()

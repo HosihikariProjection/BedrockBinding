@@ -40,23 +40,23 @@ public sealed unsafe partial class CerealDocumentUpgrader : global::System.IDisp
         return __hs_handle;
     }
 
-    public static CerealDocumentUpgrader Create()
+    public static CerealDocumentUpgrader? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c312357a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CerealDocumentUpgrader((nint)handle);
     }
 
-    public static CerealDocumentUpgrader Create(global::Hosihikari.Bindings.Bedrock.Interop.CerealDocumentUpgrader arg0)
+    public static CerealDocumentUpgrader? Create(global::Hosihikari.Bindings.Bedrock.Interop.CerealDocumentUpgrader arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4b3089c5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CerealDocumentUpgrader((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class CerealDocumentUpgrader : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C0.hs_get_4cef549c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CerealDocumentUpgrader operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealDocumentUpgrader arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CerealDocumentUpgrader? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealDocumentUpgrader arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CerealDocumentUpgrader((nint)NativeMethods.TablePtr->C0.hs_method_140279eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_140279eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CerealDocumentUpgrader((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

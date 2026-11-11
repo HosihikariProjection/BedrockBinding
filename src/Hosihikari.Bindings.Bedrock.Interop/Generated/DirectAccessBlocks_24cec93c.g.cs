@@ -40,23 +40,23 @@ public sealed unsafe partial class DirectAccessBlocks : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static DirectAccessBlocks Create()
+    public static DirectAccessBlocks? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_89d5b907();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DirectAccessBlocks((nint)handle);
     }
 
-    public static DirectAccessBlocks Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks arg0)
+    public static DirectAccessBlocks? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_421c3b0a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DirectAccessBlocks((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class DirectAccessBlocks : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c8e354f1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks((nint)NativeMethods.TablePtr->C0.hs_method_6151b3a8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6151b3a8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

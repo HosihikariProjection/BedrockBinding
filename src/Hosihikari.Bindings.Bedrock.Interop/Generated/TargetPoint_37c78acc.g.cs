@@ -44,23 +44,23 @@ public sealed unsafe partial class TargetPoint : global::System.IDisposable
     public nint _ctor(float temperature, float humidity, float continentalness, float erosion, float depth, float weirdness) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TargetPoint Create()
+    public static TargetPoint? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_aa69ed16();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TargetPoint((nint)handle);
     }
 
-    public static TargetPoint Create(global::Hosihikari.Bindings.Bedrock.Interop.TargetPoint arg0)
+    public static TargetPoint? Create(global::Hosihikari.Bindings.Bedrock.Interop.TargetPoint arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e9a1972c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TargetPoint((nint)handle);

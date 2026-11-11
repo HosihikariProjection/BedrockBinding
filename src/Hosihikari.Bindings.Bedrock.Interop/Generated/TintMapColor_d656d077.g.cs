@@ -40,12 +40,12 @@ public sealed unsafe partial class TintMapColor : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TintMapColor Create(global::Hosihikari.Bindings.Bedrock.Interop.TintMapColor arg0)
+    public static TintMapColor? Create(global::Hosihikari.Bindings.Bedrock.Interop.TintMapColor arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b2f71566((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TintMapColor((nint)handle);

@@ -68,23 +68,23 @@ public sealed unsafe partial class DelegatingRandom : global::System.IDisposable
     public long _nextLong() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DelegatingRandom Create()
+    public static DelegatingRandom? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_359a9261();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DelegatingRandom((nint)handle);
     }
 
-    public static DelegatingRandom Create(global::Hosihikari.Bindings.Bedrock.Interop.NoiseUtils.DelegatingRandom arg0)
+    public static DelegatingRandom? Create(global::Hosihikari.Bindings.Bedrock.Interop.NoiseUtils.DelegatingRandom arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f6bdebec((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DelegatingRandom((nint)handle);
@@ -136,9 +136,10 @@ public sealed unsafe partial class DelegatingRandom : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_9072a347((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NoiseUtils.DelegatingRandom operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NoiseUtils.DelegatingRandom arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NoiseUtils.DelegatingRandom? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NoiseUtils.DelegatingRandom arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NoiseUtils.DelegatingRandom((nint)NativeMethods.TablePtr->C2.hs_method_d212b716((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d212b716((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NoiseUtils.DelegatingRandom((nint)__hs_handle, false) : null;
     }
 
 

@@ -40,23 +40,23 @@ public sealed unsafe partial class ItemStackNetIdVariant : global::System.IDispo
         return __hs_handle;
     }
 
-    public static ItemStackNetIdVariant Create()
+    public static ItemStackNetIdVariant? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_0306207d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackNetIdVariant((nint)handle);
     }
 
-    public static ItemStackNetIdVariant Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetIdVariant arg0)
+    public static ItemStackNetIdVariant? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetIdVariant arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_30e63cd3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackNetIdVariant((nint)handle);

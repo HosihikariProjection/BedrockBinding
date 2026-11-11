@@ -46,12 +46,12 @@ public sealed unsafe partial class PacketSender : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_62a6c715((void*)__hosihikari_shim_handle);
     }
 
-    public static PacketSender Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketSender arg0)
+    public static PacketSender? Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketSender arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7d152e43((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PacketSender((nint)handle);

@@ -220,12 +220,12 @@ public sealed unsafe partial class WorkGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorkGoal Create()
+    public static WorkGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_8302239f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WorkGoal((nint)handle);

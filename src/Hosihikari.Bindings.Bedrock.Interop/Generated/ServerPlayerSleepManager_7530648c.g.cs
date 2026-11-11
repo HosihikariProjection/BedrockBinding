@@ -64,12 +64,12 @@ public sealed unsafe partial class ServerPlayerSleepManager : global::System.IDi
     public void _updateSleepingPlayerList() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerPlayerSleepManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerSleepManager arg0)
+    public static ServerPlayerSleepManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerSleepManager arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8a1ebeff((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerPlayerSleepManager((nint)handle);

@@ -44,23 +44,23 @@ public sealed unsafe partial class EventMessage : global::System.IDisposable
     public nint _ctor(nint @event) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EventMessage Create()
+    public static EventMessage? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1a4d58c6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EventMessage((nint)handle);
     }
 
-    public static EventMessage Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EventMessage arg0)
+    public static EventMessage? Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EventMessage arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f24412cd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EventMessage((nint)handle);
@@ -82,9 +82,10 @@ public sealed unsafe partial class EventMessage : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_6d8215f4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EventMessage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EventMessage arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EventMessage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EventMessage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EventMessage((nint)NativeMethods.TablePtr->C0.hs_method_979d16de((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_979d16de((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EventMessage((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

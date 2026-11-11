@@ -48,23 +48,23 @@ public sealed unsafe partial class LevelChunkSaveManager : global::System.IDispo
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelChunkSaveManager Create()
+    public static LevelChunkSaveManager? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_34c287a0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunkSaveManager((nint)handle);
     }
 
-    public static LevelChunkSaveManager Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkSaveManager arg0)
+    public static LevelChunkSaveManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkSaveManager arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bac0ac18((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelChunkSaveManager((nint)handle);

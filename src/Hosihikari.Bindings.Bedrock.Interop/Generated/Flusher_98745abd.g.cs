@@ -40,20 +40,21 @@ public sealed unsafe partial class Flusher : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Flusher Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.FlushingIOController_Nested.Flusher arg0)
+    public static Flusher? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.FlushingIOController_Nested.Flusher arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_91cec5e1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Flusher((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _flushBuffer(nint data, ulong amount)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _flushBuffer(nint data, ulong amount)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C0.hs_method_c882605d((void*)__hosihikari_shim_handle, (void*)data, amount));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c882605d((void*)__hosihikari_shim_handle, (void*)data, amount);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
 

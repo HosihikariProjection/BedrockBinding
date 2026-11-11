@@ -40,12 +40,12 @@ public sealed unsafe partial class GameEventListenerRegistry : global::System.ID
         return __hs_handle;
     }
 
-    public static GameEventListenerRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.GameEventListenerRegistry arg0)
+    public static GameEventListenerRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.GameEventListenerRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9fc6f87d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameEventListenerRegistry((nint)handle);

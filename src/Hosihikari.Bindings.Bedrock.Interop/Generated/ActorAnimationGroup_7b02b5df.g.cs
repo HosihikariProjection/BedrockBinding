@@ -52,12 +52,12 @@ public sealed unsafe partial class ActorAnimationGroup : global::System.IDisposa
     public static ActorAnimationGroup Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorAnimationGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationGroup arg0)
+    public static ActorAnimationGroup? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationGroup arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_49e624bb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorAnimationGroup((nint)handle);

@@ -64,20 +64,21 @@ public sealed unsafe partial class GenericPathNavigation : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GenericPathNavigation Create(global::Hosihikari.Bindings.Bedrock.Interop.GenericPathNavigation arg0)
+    public static GenericPathNavigation? Create(global::Hosihikari.Bindings.Bedrock.Interop.GenericPathNavigation arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2dd40fe7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GenericPathNavigation((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getTempMobPos(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getTempMobPos(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C1.hs_method_253772ed((void*)__hosihikari_shim_handle, (void*)mob.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_253772ed((void*)__hosihikari_shim_handle, (void*)mob.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.NavigationDescription? description)

@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptItemCustomComponentConsumeEvent : globa
         return __hs_handle;
     }
 
-    public static ScriptItemCustomComponentConsumeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentConsumeEvent arg0)
+    public static ScriptItemCustomComponentConsumeEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentConsumeEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e6439045((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptItemCustomComponentConsumeEvent((nint)handle);

@@ -55,45 +55,45 @@ public sealed unsafe partial class ResourceLocation : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_dfef0501((void*)__hosihikari_shim_handle);
     }
 
-    public static ResourceLocation Create()
+    public static ResourceLocation? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c4726a54();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourceLocation((nint)handle);
     }
 
-    public static ResourceLocation Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
+    public static ResourceLocation? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c577677a((void*)path.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourceLocation((nint)handle);
     }
 
-    public static ResourceLocation Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path, int fileSystem)
+    public static ResourceLocation? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path, int fileSystem)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a3d74214((void*)path.Handle, fileSystem);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourceLocation((nint)handle);
     }
 
-    public static ResourceLocation Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation arg0)
+    public static ResourceLocation? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d44f9b44((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourceLocation((nint)handle);
@@ -127,9 +127,10 @@ public sealed unsafe partial class ResourceLocation : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_deab2ce1((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)NativeMethods.TablePtr->C3.hs_method_01d36abc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_01d36abc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

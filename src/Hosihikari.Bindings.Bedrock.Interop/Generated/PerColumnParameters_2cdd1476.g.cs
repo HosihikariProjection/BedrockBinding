@@ -40,23 +40,23 @@ public sealed unsafe partial class PerColumnParameters : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static PerColumnParameters Create()
+    public static PerColumnParameters? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_c92046ff();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PerColumnParameters((nint)handle);
     }
 
-    public static PerColumnParameters Create(global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.PerColumnParameters arg0)
+    public static PerColumnParameters? Create(global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.PerColumnParameters arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_2fcd7124((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PerColumnParameters((nint)handle);
@@ -92,9 +92,10 @@ public sealed unsafe partial class PerColumnParameters : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_62a4a681((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.PerColumnParameters operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.PerColumnParameters arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.PerColumnParameters? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.PerColumnParameters arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.PerColumnParameters((nint)NativeMethods.TablePtr->C1.hs_method_e3625840((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e3625840((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.PerColumnParameters((nint)__hs_handle, false) : null;
     }
 
 

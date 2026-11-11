@@ -56,12 +56,12 @@ public sealed unsafe partial class SearchFeature : global::System.IDisposable
     public nint _place(nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SearchFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.SearchFeature arg0)
+    public static SearchFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.SearchFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c01a3b70((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SearchFeature((nint)handle);

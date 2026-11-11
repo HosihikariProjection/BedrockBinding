@@ -40,23 +40,23 @@ public sealed unsafe partial class CameraShakeTypeQueue : global::System.IDispos
         return __hs_handle;
     }
 
-    public static CameraShakeTypeQueue Create()
+    public static CameraShakeTypeQueue? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_93a9b201();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CameraShakeTypeQueue((nint)handle);
     }
 
-    public static CameraShakeTypeQueue Create(global::Hosihikari.Bindings.Bedrock.Interop.CameraShakeTypeQueue arg0)
+    public static CameraShakeTypeQueue? Create(global::Hosihikari.Bindings.Bedrock.Interop.CameraShakeTypeQueue arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2b9dbd36((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CameraShakeTypeQueue((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class CameraShakeTypeQueue : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c8053678((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CameraShakeTypeQueue operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CameraShakeTypeQueue arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CameraShakeTypeQueue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CameraShakeTypeQueue arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CameraShakeTypeQueue((nint)NativeMethods.TablePtr->C0.hs_method_1bfb1260((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1bfb1260((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CameraShakeTypeQueue((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

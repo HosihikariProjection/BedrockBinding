@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerTitleCommandEvent_ : g
     public static ValueOrRef_const_PlayerTitleCommandEvent_ Create_23f3c0d9(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerTitleCommandEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerTitleCommandEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerTitleCommandEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerTitleCommandEvent((nint)NativeMethods.TablePtr->C1.hs_method_37954e1e((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_37954e1e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerTitleCommandEvent((nint)__hs_handle, false) : null;
     }
 
 

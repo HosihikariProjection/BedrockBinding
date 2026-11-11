@@ -64,12 +64,12 @@ public sealed unsafe partial class BlockHashPalette : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockHashPalette Create()
+    public static BlockHashPalette? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c43172cb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockHashPalette((nint)handle);
@@ -79,12 +79,12 @@ public sealed unsafe partial class BlockHashPalette : global::System.IDisposable
     public static BlockHashPalette Create(nint level) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockHashPalette Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockHashPalette arg0)
+    public static BlockHashPalette? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockHashPalette arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_59b2410a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockHashPalette((nint)handle);
@@ -100,9 +100,10 @@ public sealed unsafe partial class BlockHashPalette : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_d0763061((void*)__hosihikari_shim_handle, (void*)block.Handle, networkId);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getBlock(nint networkId)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlock(nint networkId)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C0.hs_method_e0d985d0((void*)__hosihikari_shim_handle, (void*)networkId), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e0d985d0((void*)__hosihikari_shim_handle, (void*)networkId);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public int getPaletteType()

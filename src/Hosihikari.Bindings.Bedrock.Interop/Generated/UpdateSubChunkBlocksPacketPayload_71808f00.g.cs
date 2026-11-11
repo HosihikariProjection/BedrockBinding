@@ -40,12 +40,12 @@ public sealed unsafe partial class UpdateSubChunkBlocksPacketPayload : global::S
         return __hs_handle;
     }
 
-    public static UpdateSubChunkBlocksPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.UpdateSubChunkBlocksPacketPayload arg0)
+    public static UpdateSubChunkBlocksPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.UpdateSubChunkBlocksPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a604ffba((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UpdateSubChunkBlocksPacketPayload((nint)handle);

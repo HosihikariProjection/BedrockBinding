@@ -40,28 +40,29 @@ public sealed unsafe partial class NetworkIdentifier : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier INVALID_ID()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier? INVALID_ID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)NativeMethods.TablePtr->C2.hs_method_8652d579(), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8652d579();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle, false) : null;
     }
 
-    public static NetworkIdentifier Create()
+    public static NetworkIdentifier? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5748c1c3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkIdentifier((nint)handle);
     }
 
-    public static NetworkIdentifier Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier other)
+    public static NetworkIdentifier? Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier other)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f5977d39((void*)other.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NetworkIdentifier((nint)handle);

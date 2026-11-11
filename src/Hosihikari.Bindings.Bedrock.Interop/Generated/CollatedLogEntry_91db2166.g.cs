@@ -40,12 +40,12 @@ public sealed unsafe partial class CollatedLogEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CollatedLogEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkAndSubChunkLoggingData_Nested.CollatedLogEntry arg0)
+    public static CollatedLogEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkAndSubChunkLoggingData_Nested.CollatedLogEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1d93fde7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CollatedLogEntry((nint)handle);

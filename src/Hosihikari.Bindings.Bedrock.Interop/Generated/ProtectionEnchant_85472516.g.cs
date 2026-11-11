@@ -122,12 +122,12 @@ public sealed unsafe partial class ProtectionEnchant : global::System.IDisposabl
     public bool _isProtectionEnchant() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ProtectionEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.ProtectionEnchant arg0)
+    public static ProtectionEnchant? Create(global::Hosihikari.Bindings.Bedrock.Interop.ProtectionEnchant arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d2434277((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ProtectionEnchant((nint)handle);

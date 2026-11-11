@@ -48,23 +48,23 @@ public sealed unsafe partial class VersionRange : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VersionRange Create()
+    public static VersionRange? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_68d1dd75();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VersionRange((nint)handle);
     }
 
-    public static VersionRange Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange arg0)
+    public static VersionRange? Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0db6903a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VersionRange((nint)handle);
@@ -102,9 +102,10 @@ public sealed unsafe partial class VersionRange : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_a15b6bef((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange((nint)NativeMethods.TablePtr->C2.hs_method_52dd5fad((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_52dd5fad((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange((nint)__hs_handle, false) : null;
     }
 
 

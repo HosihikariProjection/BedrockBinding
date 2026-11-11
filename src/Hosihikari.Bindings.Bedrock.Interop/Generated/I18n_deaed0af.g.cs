@@ -40,12 +40,12 @@ public sealed unsafe partial class I18n : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static I18n Create(global::Hosihikari.Bindings.Bedrock.Interop.I18n arg0)
+    public static I18n? Create(global::Hosihikari.Bindings.Bedrock.Interop.I18n arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_64f8b8a9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new I18n((nint)handle);
@@ -392,7 +392,7 @@ public sealed unsafe partial class I18n : global::System.IDisposable
     public void loadLanguageKeywordsFromPack(nint manifest, nint accessStrategy, nint languageCodes, nint additionalLocKeys) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'std::vector<std::basic_string<char>>' is abstract or not copy-constructible.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_ loadLanguages(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, global::Hosihikari.Bindings.Abi.SharedHandle? resourceLoadManager, string initLang)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_? loadLanguages(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, global::Hosihikari.Bindings.Abi.SharedHandle? resourceLoadManager, string initLang)
     {
         var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(initLang);
         scoped global::System.Span<byte> __hs_stringBytes2;
@@ -407,7 +407,8 @@ public sealed unsafe partial class I18n : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(initLang, __hs_stringBytes2);
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)NativeMethods.TablePtr->C1.hs_method_a96e4a6f((void*)__hosihikari_shim_handle, (void*)resourcePackManager.Handle, resourceLoadManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), __hs_stringData2, (nuint)__hs_stringByteCount2));
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a96e4a6f((void*)__hosihikari_shim_handle, (void*)resourcePackManager.Handle, resourceLoadManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), __hs_stringData2, (nuint)__hs_stringByteCount2);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle) : null;
         }
     }
 

@@ -64,12 +64,12 @@ public sealed unsafe partial class ThreadingPublisherBase_Bedrock__PubSub__Threa
         get => (nint)NativeMethods.TablePtr->C0.hs_get_950544a5((void*)__hosihikari_shim_handle);
     }
 
-    public static ThreadingPublisherBase_Bedrock__PubSub__ThreadModel__MultiThreaded_ Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail.ThreadingPublisherBase_Bedrock__PubSub__ThreadModel__MultiThreaded_ arg0)
+    public static ThreadingPublisherBase_Bedrock__PubSub__ThreadModel__MultiThreaded_? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail.ThreadingPublisherBase_Bedrock__PubSub__ThreadModel__MultiThreaded_ arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5dfeb193((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ThreadingPublisherBase_Bedrock__PubSub__ThreadModel__MultiThreaded_((nint)handle);

@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptProjectileComponentFactory : global::Sy
     public bool _hasComponent(nint entity) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptProjectileComponentFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptProjectileComponentFactory arg0)
+    public static ScriptProjectileComponentFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptProjectileComponentFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_60b2b7c0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptProjectileComponentFactory((nint)handle);

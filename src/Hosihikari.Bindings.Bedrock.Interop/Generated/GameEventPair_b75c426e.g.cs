@@ -40,23 +40,23 @@ public sealed unsafe partial class GameEventPair : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static GameEventPair Create()
+    public static GameEventPair? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_12b1fe5f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameEventPair((nint)handle);
     }
 
-    public static GameEventPair Create(global::Hosihikari.Bindings.Bedrock.Interop.GameEventPair arg0)
+    public static GameEventPair? Create(global::Hosihikari.Bindings.Bedrock.Interop.GameEventPair arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_0ad1deb3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameEventPair((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class GameEventPair : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_61d92aec((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameEventPair operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GameEventPair arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameEventPair? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GameEventPair arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameEventPair((nint)NativeMethods.TablePtr->C1.hs_method_f9ac5f0d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f9ac5f0d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameEventPair((nint)__hs_handle, false) : null;
     }
 
 

@@ -48,12 +48,12 @@ public sealed unsafe partial class AngryComponent : global::System.IDisposable
     public nint _ctor_7be9ef9d(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AngryComponent Create()
+    public static AngryComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ceaa1ab0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new AngryComponent((nint)handle);
@@ -135,9 +135,10 @@ public sealed unsafe partial class AngryComponent : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_e16f4e74((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AngryComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AngryComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AngryComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AngryComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AngryComponent((nint)NativeMethods.TablePtr->C0.hs_method_77f80716((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_77f80716((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AngryComponent((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -40,23 +40,23 @@ public sealed unsafe partial class ChunkPos : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ChunkPos Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos bp)
+    public static ChunkPos? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos bp)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_915436a9((void*)bp.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkPos((nint)handle);
     }
 
-    public static ChunkPos Create(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos)
+    public static ChunkPos? Create(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c9a4146a((void*)pos.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkPos((nint)handle);

@@ -80,31 +80,32 @@ public sealed unsafe partial class Connector : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Connector Create()
+    public static Connector? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_355ec35a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Connector((nint)handle);
     }
 
-    public static Connector Create(global::Hosihikari.Bindings.Bedrock.Interop.Connector arg0)
+    public static Connector? Create(global::Hosihikari.Bindings.Bedrock.Interop.Connector arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2a80e48e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Connector((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo getConnectedGameInfo()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo? getConnectedGameInfo()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)NativeMethods.TablePtr->C0.hs_method_28ce3e20((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_28ce3e20((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)__hs_handle, false) : null;
     }
 
     public ushort getIPv4Port()
@@ -149,9 +150,10 @@ public sealed unsafe partial class Connector : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_f5156698((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Connector operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Connector arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Connector? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Connector arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Connector((nint)NativeMethods.TablePtr->C0.hs_method_1c723902((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1c723902((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Connector((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

@@ -73,12 +73,12 @@ public sealed unsafe partial class ReloadCommand : global::System.IDisposable
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ReloadCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.ReloadCommand arg0)
+    public static ReloadCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.ReloadCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6231325c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ReloadCommand((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class JigsawBlockInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static JigsawBlockInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawBlockInfo arg0)
+    public static JigsawBlockInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawBlockInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_d3d8140a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new JigsawBlockInfo((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class FileTransferProgress : global::System.IDispos
         return __hs_handle;
     }
 
-    public static FileTransferProgress Create()
+    public static FileTransferProgress? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d68afbe0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileTransferProgress((nint)handle);
     }
 
-    public static FileTransferProgress Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_Nested.FileTransferProgress arg0)
+    public static FileTransferProgress? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_Nested.FileTransferProgress arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1198e8d4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileTransferProgress((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class FileTransferProgress : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_0614cfde((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_Nested.FileTransferProgress operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_Nested.FileTransferProgress arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_Nested.FileTransferProgress? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_Nested.FileTransferProgress arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_Nested.FileTransferProgress((nint)NativeMethods.TablePtr->C1.hs_method_e70d16b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e70d16b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_Nested.FileTransferProgress((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

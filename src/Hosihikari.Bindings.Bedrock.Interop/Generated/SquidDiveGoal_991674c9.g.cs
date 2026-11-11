@@ -86,23 +86,23 @@ public sealed unsafe partial class SquidDiveGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SquidDiveGoal Create()
+    public static SquidDiveGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6f1d0d98();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SquidDiveGoal((nint)handle);
     }
 
-    public static SquidDiveGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SquidDiveGoal arg0)
+    public static SquidDiveGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.SquidDiveGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_10e68b11((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SquidDiveGoal((nint)handle);
@@ -144,9 +144,10 @@ public sealed unsafe partial class SquidDiveGoal : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_10c7558e((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SquidDiveGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SquidDiveGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SquidDiveGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SquidDiveGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SquidDiveGoal((nint)NativeMethods.TablePtr->C3.hs_method_2fd4688d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2fd4688d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SquidDiveGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

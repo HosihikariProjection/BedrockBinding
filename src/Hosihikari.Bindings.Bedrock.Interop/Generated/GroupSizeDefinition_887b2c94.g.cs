@@ -40,23 +40,23 @@ public sealed unsafe partial class GroupSizeDefinition : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static GroupSizeDefinition Create()
+    public static GroupSizeDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_db866a9a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GroupSizeDefinition((nint)handle);
     }
 
-    public static GroupSizeDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.GroupSizeDefinition arg0)
+    public static GroupSizeDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.GroupSizeDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_903ccafb((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GroupSizeDefinition((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class GroupSizeDefinition : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_db091864((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GroupSizeDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GroupSizeDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GroupSizeDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GroupSizeDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GroupSizeDefinition((nint)NativeMethods.TablePtr->C1.hs_method_6e8cd741((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6e8cd741((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GroupSizeDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

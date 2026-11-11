@@ -56,23 +56,23 @@ public sealed unsafe partial class ScriptGameTestModuleFactory : global::System.
     public static nint ModuleUUID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptGameTestModuleFactory Create()
+    public static ScriptGameTestModuleFactory? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_936482c8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptGameTestModuleFactory((nint)handle);
     }
 
-    public static ScriptGameTestModuleFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptGameTestModuleFactory arg0)
+    public static ScriptGameTestModuleFactory? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptGameTestModuleFactory arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_306f1a9d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptGameTestModuleFactory((nint)handle);
@@ -96,9 +96,10 @@ public sealed unsafe partial class ScriptGameTestModuleFactory : global::System.
         get => (nint)NativeMethods.TablePtr->C3.hs_get_e9ba798f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptGameTestModuleFactory operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptGameTestModuleFactory arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptGameTestModuleFactory? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptGameTestModuleFactory arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptGameTestModuleFactory((nint)NativeMethods.TablePtr->C3.hs_method_05d38650((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_05d38650((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptGameTestModuleFactory((nint)__hs_handle, false) : null;
     }
 
 

@@ -64,34 +64,34 @@ public sealed unsafe partial class PoolElementStructurePiece : global::System.ID
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PoolElementStructurePiece Create()
+    public static PoolElementStructurePiece? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0c589200();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PoolElementStructurePiece((nint)handle);
     }
 
-    public static PoolElementStructurePiece Create(global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece arg0)
+    public static PoolElementStructurePiece? Create(global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0b7683e0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PoolElementStructurePiece((nint)handle);
     }
 
-    public static PoolElementStructurePiece Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement element, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, byte rotation, int genDepth, global::Hosihikari.Bindings.Bedrock.Interop.JigsawJunction junction, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox box, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos refPos)
+    public static PoolElementStructurePiece? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement element, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, byte rotation, int genDepth, global::Hosihikari.Bindings.Bedrock.Interop.JigsawJunction junction, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox box, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos refPos)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c51e59a2((void*)element.Handle, (void*)position.Handle, rotation, genDepth, (void*)junction.Handle, (void*)box.Handle, (void*)refPos.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PoolElementStructurePiece((nint)handle);
@@ -106,9 +106,10 @@ public sealed unsafe partial class PoolElementStructurePiece : global::System.ID
     public int generateHeightAtPosition(nint pos, nint dim, nint box, nint chunkHeightCache) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: map key type 'ChunkPos' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getBeardStabilizeBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block foundationBlock)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBeardStabilizeBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block foundationBlock)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C2.hs_method_b1f416eb((void*)__hosihikari_shim_handle, (void*)foundationBlock.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b1f416eb((void*)__hosihikari_shim_handle, (void*)foundationBlock.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getSupportBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block aboveBlock)
@@ -193,9 +194,10 @@ public sealed unsafe partial class PoolElementStructurePiece : global::System.ID
         NativeMethods.TablePtr->C2.hs_method_48bd0086((void*)__hosihikari_shim_handle, dx, dy, dz);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece((nint)NativeMethods.TablePtr->C2.hs_method_af795111((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_af795111((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece((nint)__hs_handle, false) : null;
     }
 
     public bool postProcess(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)

@@ -80,12 +80,12 @@ public sealed unsafe partial class LakeFeature : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LakeFeature Create()
+    public static LakeFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9d968760();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LakeFeature((nint)handle);
@@ -95,12 +95,12 @@ public sealed unsafe partial class LakeFeature : global::System.IDisposable
     public static LakeFeature Create(nint fluidBlock, nint barrierBlock, nint prohibitedBlocks) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LakeFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.LakeFeature arg0)
+    public static LakeFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.LakeFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e57cdfa6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LakeFeature((nint)handle);

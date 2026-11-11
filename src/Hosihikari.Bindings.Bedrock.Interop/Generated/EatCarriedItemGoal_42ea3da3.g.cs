@@ -86,23 +86,23 @@ public sealed unsafe partial class EatCarriedItemGoal : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EatCarriedItemGoal Create()
+    public static EatCarriedItemGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_eaebd16c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EatCarriedItemGoal((nint)handle);
     }
 
-    public static EatCarriedItemGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.EatCarriedItemGoal arg0)
+    public static EatCarriedItemGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.EatCarriedItemGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_dbd18781((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EatCarriedItemGoal((nint)handle);
@@ -156,9 +156,10 @@ public sealed unsafe partial class EatCarriedItemGoal : global::System.IDisposab
         set => NativeMethods.TablePtr->C1.hs_set_11733259((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EatCarriedItemGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EatCarriedItemGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EatCarriedItemGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EatCarriedItemGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EatCarriedItemGoal((nint)NativeMethods.TablePtr->C1.hs_method_6ee10988((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6ee10988((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EatCarriedItemGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

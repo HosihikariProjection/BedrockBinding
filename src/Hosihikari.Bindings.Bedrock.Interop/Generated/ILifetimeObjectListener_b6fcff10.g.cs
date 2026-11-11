@@ -40,12 +40,12 @@ public sealed unsafe partial class ILifetimeObjectListener : global::System.IDis
         return __hs_handle;
     }
 
-    public static ILifetimeObjectListener Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ILifetimeObjectListener arg0)
+    public static ILifetimeObjectListener? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ILifetimeObjectListener arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5a80e4b4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ILifetimeObjectListener((nint)handle);

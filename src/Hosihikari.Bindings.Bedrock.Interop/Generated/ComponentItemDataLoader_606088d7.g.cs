@@ -44,12 +44,12 @@ public sealed unsafe partial class ComponentItemDataLoader : global::System.IDis
     public nint _ctor(nint bedrockLoadContext, nint packLoadInfo, nint ctx, nint validatorFn) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ComponentItemDataLoader Create()
+    public static ComponentItemDataLoader? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b9969174();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComponentItemDataLoader((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class ComponentItemDataLoader : global::System.IDis
     public static ComponentItemDataLoader Create(nint bedrockLoadContext, nint packLoadInfo, nint ctx, nint validatorFn) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ComponentItemDataLoader Create(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemDataLoader arg0)
+    public static ComponentItemDataLoader? Create(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemDataLoader arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_361bcf4f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ComponentItemDataLoader((nint)handle);

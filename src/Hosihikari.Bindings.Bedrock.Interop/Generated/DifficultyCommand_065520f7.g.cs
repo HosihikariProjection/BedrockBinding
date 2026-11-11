@@ -73,12 +73,12 @@ public sealed unsafe partial class DifficultyCommand : global::System.IDisposabl
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DifficultyCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.DifficultyCommand arg0)
+    public static DifficultyCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.DifficultyCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_32e5f329((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DifficultyCommand((nint)handle);

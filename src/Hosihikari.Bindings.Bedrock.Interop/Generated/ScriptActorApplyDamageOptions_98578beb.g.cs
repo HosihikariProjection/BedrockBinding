@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptActorApplyDamageOptions : global::Syste
         return __hs_handle;
     }
 
-    public static ScriptActorApplyDamageOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorApplyDamageOptions arg0)
+    public static ScriptActorApplyDamageOptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorApplyDamageOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cf23590c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptActorApplyDamageOptions((nint)handle);

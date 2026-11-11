@@ -602,9 +602,10 @@ public sealed unsafe partial class Axolotl : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB _getAdjustedAABBForSpawnCheck(global::Hosihikari.Bindings.Bedrock.Interop.AABB aabb, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 mobPos)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? _getAdjustedAABBForSpawnCheck(global::Hosihikari.Bindings.Bedrock.Interop.AABB aabb, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 mobPos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_b343bb26((void*)__hosihikari_shim_handle, (void*)aabb.Handle, (void*)mobPos.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b343bb26((void*)__hosihikari_shim_handle, (void*)aabb.Handle, (void*)mobPos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
     }
 
     public float _getWalkTargetValue(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

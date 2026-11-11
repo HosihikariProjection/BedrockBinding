@@ -40,23 +40,23 @@ public sealed unsafe partial class ActorDefinitionEndedEvent : global::System.ID
         return __hs_handle;
     }
 
-    public static ActorDefinitionEndedEvent Create()
+    public static ActorDefinitionEndedEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9b1fd319();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionEndedEvent((nint)handle);
     }
 
-    public static ActorDefinitionEndedEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEndedEvent arg0)
+    public static ActorDefinitionEndedEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEndedEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_79fd00e7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionEndedEvent((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class ActorDefinitionEndedEvent : global::System.ID
         get => (nint)NativeMethods.TablePtr->C0.hs_get_436ae535((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEndedEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEndedEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEndedEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEndedEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEndedEvent((nint)NativeMethods.TablePtr->C0.hs_method_f397cafd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f397cafd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEndedEvent((nint)__hs_handle, false) : null;
     }
 
 

@@ -133,9 +133,10 @@ public sealed unsafe partial class SculkCatalystBlockActor : global::System.IDis
         return NativeMethods.TablePtr->C3.hs_method_c1842af5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource getPositionSource()
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource? getPositionSource()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource((nint)NativeMethods.TablePtr->C3.hs_method_416d9caf((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_416d9caf((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource((nint)__hs_handle, false) : null;
     }
 
     public uint getRange()

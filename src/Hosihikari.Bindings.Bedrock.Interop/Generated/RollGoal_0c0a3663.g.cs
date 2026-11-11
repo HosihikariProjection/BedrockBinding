@@ -90,23 +90,23 @@ public sealed unsafe partial class RollGoal : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RollGoal Create()
+    public static RollGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e9cf396f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RollGoal((nint)handle);
     }
 
-    public static RollGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.RollGoal arg0)
+    public static RollGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.RollGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6bc0fa59((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RollGoal((nint)handle);
@@ -175,9 +175,10 @@ public sealed unsafe partial class RollGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_bda50508((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RollGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RollGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RollGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RollGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RollGoal((nint)NativeMethods.TablePtr->C3.hs_method_35fa8148((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_35fa8148((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RollGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

@@ -48,12 +48,12 @@ public sealed unsafe partial class EduSharedUriResource : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EduSharedUriResource Create()
+    public static EduSharedUriResource? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e5b6a7d0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EduSharedUriResource((nint)handle);
@@ -83,9 +83,10 @@ public sealed unsafe partial class EduSharedUriResource : global::System.IDispos
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource((nint)NativeMethods.TablePtr->C1.hs_method_a6bfbcd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a6bfbcd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -74,23 +74,23 @@ public sealed unsafe partial class SlimeKeepOnJumpingGoal : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SlimeKeepOnJumpingGoal Create()
+    public static SlimeKeepOnJumpingGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_35f00ee2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SlimeKeepOnJumpingGoal((nint)handle);
     }
 
-    public static SlimeKeepOnJumpingGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal arg0)
+    public static SlimeKeepOnJumpingGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b6b10a7c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SlimeKeepOnJumpingGoal((nint)handle);
@@ -133,9 +133,10 @@ public sealed unsafe partial class SlimeKeepOnJumpingGoal : global::System.IDisp
         set => NativeMethods.TablePtr->C3.hs_set_a390ed6c((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal((nint)NativeMethods.TablePtr->C3.hs_method_c5999a63((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c5999a63((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal((nint)__hs_handle, false) : null;
     }
 
     public void tick()

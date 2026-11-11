@@ -388,9 +388,10 @@ public sealed unsafe partial class ShieldItem : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_426ade7b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)container.Handle, slot, (void*)pos.Handle, arg4) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString getCooldownCategory()
+    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getCooldownCategory()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C3.hs_method_93e20c3a((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_93e20c3a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false) : null;
     }
 
     public int getCooldownDuration()
@@ -446,9 +447,10 @@ public sealed unsafe partial class ShieldItem : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_9fa76612((void*)__hosihikari_shim_handle, (void*)stack.Handle, (void*)input.Handle, (void*)underlyingStream.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_8aca1af8((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8aca1af8((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public void writeUserData(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack, global::Hosihikari.Bindings.Bedrock.Interop.IDataOutput output)

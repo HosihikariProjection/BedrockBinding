@@ -100,23 +100,23 @@ public sealed unsafe partial class StorageArea_windows : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StorageArea_windows Create()
+    public static StorageArea_windows? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_070a3a7c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StorageArea_windows((nint)handle);
     }
 
-    public static StorageArea_windows Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageArea_windows arg0)
+    public static StorageArea_windows? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageArea_windows arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8a7bf62c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StorageArea_windows((nint)handle);
@@ -141,14 +141,16 @@ public sealed unsafe partial class StorageArea_windows : global::System.IDisposa
         return NativeMethods.TablePtr->C1.hs_method_fb5ec9ae((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result getExtendSizeThreshold(nint outExtendSizeThreshold)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? getExtendSizeThreshold(nint outExtendSizeThreshold)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_c6f8f3f9((void*)__hosihikari_shim_handle, (void*)outExtendSizeThreshold));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c6f8f3f9((void*)__hosihikari_shim_handle, (void*)outExtendSizeThreshold);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo getStorageAreaSpaceInfo()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo? getStorageAreaSpaceInfo()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo((nint)NativeMethods.TablePtr->C1.hs_method_db7bad42((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_db7bad42((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo((nint)__hs_handle) : null;
     }
 
     public ulong getTotalSize()
@@ -156,9 +158,10 @@ public sealed unsafe partial class StorageArea_windows : global::System.IDisposa
         return NativeMethods.TablePtr->C1.hs_method_a94aea68((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result getUsedSize(nint outUsedSize)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? getUsedSize(nint outUsedSize)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_4bf552a8((void*)__hosihikari_shim_handle, (void*)outUsedSize));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4bf552a8((void*)__hosihikari_shim_handle, (void*)outUsedSize);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -167,9 +170,10 @@ public sealed unsafe partial class StorageArea_windows : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_fe33f3fa((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageArea_windows operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageArea_windows arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageArea_windows? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageArea_windows arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageArea_windows((nint)NativeMethods.TablePtr->C1.hs_method_bd3b41f8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_bd3b41f8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageArea_windows((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

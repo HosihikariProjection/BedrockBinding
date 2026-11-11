@@ -73,12 +73,12 @@ public sealed unsafe partial class WSServerCommand : global::System.IDisposable
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WSServerCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.WSServerCommand arg0)
+    public static WSServerCommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.WSServerCommand arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_de17d818((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WSServerCommand((nint)handle);

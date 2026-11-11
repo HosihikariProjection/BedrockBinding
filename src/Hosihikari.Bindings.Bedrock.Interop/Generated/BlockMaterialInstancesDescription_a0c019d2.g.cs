@@ -106,29 +106,29 @@ public sealed unsafe partial class BlockMaterialInstancesDescription : global::S
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockMaterialInstancesDescription Create()
+    public static BlockMaterialInstancesDescription? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_14af31e0();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockMaterialInstancesDescription((nint)handle);
     }
 
-    public static BlockMaterialInstancesDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesDescription arg0)
+    public static BlockMaterialInstancesDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0100dba7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockMaterialInstancesDescription((nint)handle);
     }
 
-    public static BlockMaterialInstancesDescription Create(string textureName, byte renderLayer, float ambientOcclusion, bool faceDimming, byte tintMethod, bool randomizeUVRotation, bool supportsTextureVariations, bool alphaMaskedTint, bool dithering)
+    public static BlockMaterialInstancesDescription? Create(string textureName, byte renderLayer, float ambientOcclusion, bool faceDimming, byte tintMethod, bool randomizeUVRotation, bool supportsTextureVariations, bool alphaMaskedTint, bool dithering)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(textureName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -146,7 +146,7 @@ public sealed unsafe partial class BlockMaterialInstancesDescription : global::S
             var handle = NativeMethods.TablePtr->C0.hs_create_d7e71b0c(__hs_stringData0, (nuint)__hs_stringByteCount0, renderLayer, ambientOcclusion, faceDimming, tintMethod, randomizeUVRotation, supportsTextureVariations, alphaMaskedTint, dithering);
             if (handle == null)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                return null;
             }
 
             return new BlockMaterialInstancesDescription((nint)handle);

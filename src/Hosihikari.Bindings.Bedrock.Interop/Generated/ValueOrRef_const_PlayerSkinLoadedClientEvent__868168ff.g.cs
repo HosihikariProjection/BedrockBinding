@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerSkinLoadedClientEvent_
     public static ValueOrRef_const_PlayerSkinLoadedClientEvent_ Create_b7c9ebab(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerSkinLoadedClientEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinLoadedClientEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinLoadedClientEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinLoadedClientEvent((nint)NativeMethods.TablePtr->C1.hs_method_889922ee((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_889922ee((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinLoadedClientEvent((nint)__hs_handle, false) : null;
     }
 
 

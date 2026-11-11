@@ -90,12 +90,12 @@ public sealed unsafe partial class PickupItemsGoal : global::System.IDisposable
     public void _tick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PickupItemsGoal Create()
+    public static PickupItemsGoal? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9a47f1e5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PickupItemsGoal((nint)handle);
@@ -105,12 +105,12 @@ public sealed unsafe partial class PickupItemsGoal : global::System.IDisposable
     public static PickupItemsGoal Create(nint mob, nint name, nint goalId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PickupItemsGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.PickupItemsGoal arg0)
+    public static PickupItemsGoal? Create(global::Hosihikari.Bindings.Bedrock.Interop.PickupItemsGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_dedcf749((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PickupItemsGoal((nint)handle);
@@ -288,9 +288,10 @@ public sealed unsafe partial class PickupItemsGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_2cec4e43((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PickupItemsGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PickupItemsGoal arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PickupItemsGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PickupItemsGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PickupItemsGoal((nint)NativeMethods.TablePtr->C2.hs_method_1e3df667((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1e3df667((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PickupItemsGoal((nint)__hs_handle, false) : null;
     }
 
     public void start()

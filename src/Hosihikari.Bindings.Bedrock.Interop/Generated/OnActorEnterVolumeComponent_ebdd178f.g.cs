@@ -40,12 +40,12 @@ public sealed unsafe partial class OnActorEnterVolumeComponent : global::System.
         return __hs_handle;
     }
 
-    public static OnActorEnterVolumeComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.OnActorEnterVolumeComponent arg0)
+    public static OnActorEnterVolumeComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.OnActorEnterVolumeComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fef741f0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OnActorEnterVolumeComponent((nint)handle);

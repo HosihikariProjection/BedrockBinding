@@ -48,23 +48,23 @@ public sealed unsafe partial class ScriptProjectileHitInfoAfterEvent : global::S
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptProjectileHitInfoAfterEvent Create()
+    public static ScriptProjectileHitInfoAfterEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b4f015f3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptProjectileHitInfoAfterEvent((nint)handle);
     }
 
-    public static ScriptProjectileHitInfoAfterEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptProjectileHitInfoAfterEvent arg0)
+    public static ScriptProjectileHitInfoAfterEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptProjectileHitInfoAfterEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a1c06651((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptProjectileHitInfoAfterEvent((nint)handle);

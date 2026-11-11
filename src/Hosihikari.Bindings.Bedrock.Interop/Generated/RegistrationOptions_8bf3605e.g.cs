@@ -40,23 +40,23 @@ public sealed unsafe partial class RegistrationOptions : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static RegistrationOptions Create()
+    public static RegistrationOptions? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a1e03a6d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RegistrationOptions((nint)handle);
     }
 
-    public static RegistrationOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.ECSModule.RegistrationOptions arg0)
+    public static RegistrationOptions? Create(global::Hosihikari.Bindings.Bedrock.Interop.ECSModule.RegistrationOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_85642350((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RegistrationOptions((nint)handle);
@@ -122,9 +122,10 @@ public sealed unsafe partial class RegistrationOptions : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_7cfe87bd((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ECSModule.RegistrationOptions operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ECSModule.RegistrationOptions arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ECSModule.RegistrationOptions? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ECSModule.RegistrationOptions arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ECSModule.RegistrationOptions((nint)NativeMethods.TablePtr->C1.hs_method_625e80f4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_625e80f4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ECSModule.RegistrationOptions((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

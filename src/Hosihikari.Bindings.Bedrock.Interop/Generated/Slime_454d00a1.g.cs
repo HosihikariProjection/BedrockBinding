@@ -773,12 +773,12 @@ public sealed unsafe partial class Slime : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_faf0289b((void*)__hosihikari_shim_handle);
     }
 
-    public static Slime Create()
+    public static Slime? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fc0162f3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Slime((nint)handle);

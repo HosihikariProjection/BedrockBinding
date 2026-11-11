@@ -40,12 +40,12 @@ public sealed unsafe partial class SpawnActorEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static SpawnActorEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorEntry arg0)
+    public static SpawnActorEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fc62a6d0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnActorEntry((nint)handle);

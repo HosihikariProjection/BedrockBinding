@@ -48,12 +48,12 @@ public sealed unsafe partial class StructureTemplateDataResponsePacketPayload : 
     public nint _ctor(nint structureName, nint structureTag, nint type) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StructureTemplateDataResponsePacketPayload Create()
+    public static StructureTemplateDataResponsePacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_61ee4103();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StructureTemplateDataResponsePacketPayload((nint)handle);

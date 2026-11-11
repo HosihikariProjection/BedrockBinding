@@ -40,12 +40,12 @@ public sealed unsafe partial class BannerPatternRegistry : global::System.IDispo
         return __hs_handle;
     }
 
-    public static BannerPatternRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.BannerPatternRegistry arg0)
+    public static BannerPatternRegistry? Create(global::Hosihikari.Bindings.Bedrock.Interop.BannerPatternRegistry arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_948bda19((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BannerPatternRegistry((nint)handle);

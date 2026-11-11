@@ -40,23 +40,23 @@ public sealed unsafe partial class BeforeMountTamingEvent : global::System.IDisp
         return __hs_handle;
     }
 
-    public static BeforeMountTamingEvent Create()
+    public static BeforeMountTamingEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_61002e11();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BeforeMountTamingEvent((nint)handle);
     }
 
-    public static BeforeMountTamingEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.BeforeMountTamingEvent arg0)
+    public static BeforeMountTamingEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BeforeMountTamingEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_70eb44b1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BeforeMountTamingEvent((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class BeforeMountTamingEvent : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C0.hs_get_cb355894((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BeforeMountTamingEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BeforeMountTamingEvent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BeforeMountTamingEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BeforeMountTamingEvent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BeforeMountTamingEvent((nint)NativeMethods.TablePtr->C0.hs_method_fae35327((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_fae35327((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BeforeMountTamingEvent((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

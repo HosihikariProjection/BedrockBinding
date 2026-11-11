@@ -40,12 +40,12 @@ public sealed unsafe partial class ChunkTickRangeManager : global::System.IDispo
         return __hs_handle;
     }
 
-    public static ChunkTickRangeManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkTickRangeManager arg0)
+    public static ChunkTickRangeManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkTickRangeManager arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9051a0ca((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkTickRangeManager((nint)handle);

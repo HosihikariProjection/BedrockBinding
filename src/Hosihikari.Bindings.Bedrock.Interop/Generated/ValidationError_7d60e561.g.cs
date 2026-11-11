@@ -40,12 +40,12 @@ public sealed unsafe partial class ValidationError : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ValidationError Create(global::Hosihikari.Bindings.Bedrock.Interop.GameRule_Nested.ValidationError arg0)
+    public static ValidationError? Create(global::Hosihikari.Bindings.Bedrock.Interop.GameRule_Nested.ValidationError arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7a28e0c1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ValidationError((nint)handle);

@@ -50,23 +50,23 @@ public sealed unsafe partial class Objective : global::System.IDisposable
     public nint _ctor(nint name, nint criteria) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Objective Create()
+    public static Objective? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ce50e7ac();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Objective((nint)handle);
     }
 
-    public static Objective Create(global::Hosihikari.Bindings.Bedrock.Interop.Objective arg0)
+    public static Objective? Create(global::Hosihikari.Bindings.Bedrock.Interop.Objective arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_07aa1842((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Objective((nint)handle);
@@ -76,9 +76,10 @@ public sealed unsafe partial class Objective : global::System.IDisposable
     public static Objective Create(nint name, nint criteria) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreInfo getPlayerScore(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId id)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreInfo? getPlayerScore(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId id)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreInfo((nint)NativeMethods.TablePtr->C2.hs_method_de22c28a((void*)__hosihikari_shim_handle, (void*)id.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_de22c28a((void*)__hosihikari_shim_handle, (void*)id.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScoreInfo((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,9 +106,10 @@ public sealed unsafe partial class Objective : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_87e5f4f6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Objective operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Objective arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Objective? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Objective arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Objective((nint)NativeMethods.TablePtr->C2.hs_method_f5f7f284((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f5f7f284((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Objective((nint)__hs_handle, false) : null;
     }
 
 

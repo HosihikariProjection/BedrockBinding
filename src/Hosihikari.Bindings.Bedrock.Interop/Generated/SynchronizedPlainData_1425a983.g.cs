@@ -40,23 +40,23 @@ public sealed unsafe partial class SynchronizedPlainData : global::System.IDispo
         return __hs_handle;
     }
 
-    public static SynchronizedPlainData Create()
+    public static SynchronizedPlainData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8815625e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SynchronizedPlainData((nint)handle);
     }
 
-    public static SynchronizedPlainData Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SynchronizedPlainData arg0)
+    public static SynchronizedPlainData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SynchronizedPlainData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b216f8a9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SynchronizedPlainData((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class SynchronizedPlainData : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C3.hs_get_0ba10781((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SynchronizedPlainData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SynchronizedPlainData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SynchronizedPlainData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SynchronizedPlainData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SynchronizedPlainData((nint)NativeMethods.TablePtr->C3.hs_method_47bc4d38((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_47bc4d38((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SynchronizedPlainData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

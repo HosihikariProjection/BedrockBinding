@@ -44,23 +44,23 @@ public sealed unsafe partial class ScriptContextResult : global::System.IDisposa
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptContextResult Create()
+    public static ScriptContextResult? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_405016aa();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptContextResult((nint)handle);
     }
 
-    public static ScriptContextResult Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptContextResult arg0)
+    public static ScriptContextResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptContextResult arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7027b389((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptContextResult((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class ScriptContextResult : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_24de7a05((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptContextResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptContextResult arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptContextResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptContextResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptContextResult((nint)NativeMethods.TablePtr->C3.hs_method_e37f938a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e37f938a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptContextResult((nint)__hs_handle, false) : null;
     }
 
 

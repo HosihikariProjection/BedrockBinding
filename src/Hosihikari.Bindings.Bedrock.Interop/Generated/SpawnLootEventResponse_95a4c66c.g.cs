@@ -56,12 +56,12 @@ public sealed unsafe partial class SpawnLootEventResponse : global::System.IDisp
     public static nint NameID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpawnLootEventResponse Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnLootEventResponse arg0)
+    public static SpawnLootEventResponse? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnLootEventResponse arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2b3c4087((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SpawnLootEventResponse((nint)handle);

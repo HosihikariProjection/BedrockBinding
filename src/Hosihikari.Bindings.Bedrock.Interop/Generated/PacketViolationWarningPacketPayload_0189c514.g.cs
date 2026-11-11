@@ -44,23 +44,23 @@ public sealed unsafe partial class PacketViolationWarningPacketPayload : global:
     public nint _ctor(nint error_code, nint violationResponse, nint violatingPacketId, nint violationContext) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PacketViolationWarningPacketPayload Create()
+    public static PacketViolationWarningPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_020f2675();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PacketViolationWarningPacketPayload((nint)handle);
     }
 
-    public static PacketViolationWarningPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationWarningPacketPayload arg0)
+    public static PacketViolationWarningPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationWarningPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_7346bddf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PacketViolationWarningPacketPayload((nint)handle);

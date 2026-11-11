@@ -40,12 +40,12 @@ public sealed unsafe partial class WeakStorageEntity : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static WeakStorageEntity Create()
+    public static WeakStorageEntity? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_d10c6967();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakStorageEntity((nint)handle);
@@ -55,12 +55,12 @@ public sealed unsafe partial class WeakStorageEntity : global::System.IDisposabl
     public static WeakStorageEntity Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static WeakStorageEntity Create(global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity arg0)
+    public static WeakStorageEntity? Create(global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_7bc6342e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakStorageEntity((nint)handle);
@@ -82,9 +82,10 @@ public sealed unsafe partial class WeakStorageEntity : global::System.IDisposabl
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity((nint)NativeMethods.TablePtr->C4.hs_method_e05d2daa((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e05d2daa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity((nint)__hs_handle, false) : null;
     }
 
 

@@ -40,12 +40,12 @@ public sealed unsafe partial class BlockShapeComponentData : global::System.IDis
         return __hs_handle;
     }
 
-    public static BlockShapeComponentData Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockShapeComponentData arg0)
+    public static BlockShapeComponentData? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockShapeComponentData arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_de1461da((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockShapeComponentData((nint)handle);

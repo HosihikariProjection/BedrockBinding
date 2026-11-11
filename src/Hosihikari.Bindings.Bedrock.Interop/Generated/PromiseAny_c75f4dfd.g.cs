@@ -48,23 +48,23 @@ public sealed unsafe partial class PromiseAny : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PromiseAny Create()
+    public static PromiseAny? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_460016ba();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PromiseAny((nint)handle);
     }
 
-    public static PromiseAny Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PromiseAny arg0)
+    public static PromiseAny? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PromiseAny arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e5c2ccb5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PromiseAny((nint)handle);

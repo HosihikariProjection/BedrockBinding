@@ -52,12 +52,12 @@ public sealed unsafe partial class ResourcePack : global::System.IDisposable
     public static nint RESOURCE_PACK_ICON_PATH() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ResourcePack Create()
+    public static ResourcePack? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6e0e3cd8();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResourcePack((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class IRequestBody : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static IRequestBody Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody arg0)
+    public static IRequestBody? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ea9a42d7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IRequestBody((nint)handle);
@@ -78,11 +78,12 @@ public sealed unsafe partial class IRequestBody : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_e59eeb09((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody_Nested.ReadResult read(byte[] destination)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody_Nested.ReadResult? read(byte[] destination)
     {
         fixed (byte* __hs_vectorData0 = destination)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody_Nested.ReadResult((nint)NativeMethods.TablePtr->C0.hs_method_a0aaedf4((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(destination?.Length ?? 0)));
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a0aaedf4((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(destination?.Length ?? 0));
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody_Nested.ReadResult((nint)__hs_handle) : null;
         }
     }
 

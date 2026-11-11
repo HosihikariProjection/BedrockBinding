@@ -64,12 +64,12 @@ public sealed unsafe partial class IFeature : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_677a147a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
-    public static IFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.IFeature arg0)
+    public static IFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.IFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9e44c522((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IFeature((nint)handle);

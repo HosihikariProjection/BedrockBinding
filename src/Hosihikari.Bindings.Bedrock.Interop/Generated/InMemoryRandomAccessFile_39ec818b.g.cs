@@ -44,31 +44,32 @@ public sealed unsafe partial class InMemoryRandomAccessFile : global::System.IDi
     public nint _Read(ulong offset, ulong n, nint result, nint scratch) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static InMemoryRandomAccessFile Create()
+    public static InMemoryRandomAccessFile? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5fd03480();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InMemoryRandomAccessFile((nint)handle);
     }
 
-    public static InMemoryRandomAccessFile Create(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile arg0)
+    public static InMemoryRandomAccessFile? Create(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_dae8c97b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InMemoryRandomAccessFile((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Read(ulong offset, ulong n, nint result, nint scratch)
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Read(ulong offset, ulong n, nint result, nint scratch)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_d5b43e46((void*)__hosihikari_shim_handle, offset, n, (void*)result, (void*)scratch));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d5b43e46((void*)__hosihikari_shim_handle, offset, n, (void*)result, (void*)scratch);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -77,9 +78,10 @@ public sealed unsafe partial class InMemoryRandomAccessFile : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C1.hs_get_d87e1bf4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile((nint)NativeMethods.TablePtr->C1.hs_method_f297abbc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f297abbc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile((nint)__hs_handle, false) : null;
     }
 
 

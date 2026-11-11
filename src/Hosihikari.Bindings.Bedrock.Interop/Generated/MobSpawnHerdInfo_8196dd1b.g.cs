@@ -52,12 +52,12 @@ public sealed unsafe partial class MobSpawnHerdInfo : global::System.IDisposable
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MobSpawnHerdInfo Create()
+    public static MobSpawnHerdInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_42c6542e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MobSpawnHerdInfo((nint)handle);
@@ -107,9 +107,10 @@ public sealed unsafe partial class MobSpawnHerdInfo : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_492f94c7((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo((nint)NativeMethods.TablePtr->C2.hs_method_b62b3e1f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b62b3e1f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo((nint)__hs_handle, false) : null;
     }
 
 

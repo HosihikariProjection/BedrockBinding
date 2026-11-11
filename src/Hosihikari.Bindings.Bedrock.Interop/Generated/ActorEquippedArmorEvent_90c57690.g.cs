@@ -40,12 +40,12 @@ public sealed unsafe partial class ActorEquippedArmorEvent : global::System.IDis
         return __hs_handle;
     }
 
-    public static ActorEquippedArmorEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorEquippedArmorEvent arg0)
+    public static ActorEquippedArmorEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorEquippedArmorEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_bb977bee((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorEquippedArmorEvent((nint)handle);

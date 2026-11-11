@@ -60,23 +60,23 @@ public sealed unsafe partial class MinecraftScriptTelemetryLogger : global::Syst
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinecraftScriptTelemetryLogger Create()
+    public static MinecraftScriptTelemetryLogger? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_69223c60();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftScriptTelemetryLogger((nint)handle);
     }
 
-    public static MinecraftScriptTelemetryLogger Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftScriptTelemetryLogger arg0)
+    public static MinecraftScriptTelemetryLogger? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftScriptTelemetryLogger arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5d4cb08b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinecraftScriptTelemetryLogger((nint)handle);
@@ -114,9 +114,10 @@ public sealed unsafe partial class MinecraftScriptTelemetryLogger : global::Syst
         NativeMethods.TablePtr->C2.hs_method_22dd7995((void*)__hosihikari_shim_handle, (void*)pluginManagerResult.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftScriptTelemetryLogger operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftScriptTelemetryLogger arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftScriptTelemetryLogger? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftScriptTelemetryLogger arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftScriptTelemetryLogger((nint)NativeMethods.TablePtr->C2.hs_method_0a11aaff((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0a11aaff((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftScriptTelemetryLogger((nint)__hs_handle, false) : null;
     }
 
 

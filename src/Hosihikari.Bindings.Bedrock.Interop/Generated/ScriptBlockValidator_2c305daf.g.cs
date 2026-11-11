@@ -40,23 +40,23 @@ public sealed unsafe partial class ScriptBlockValidator : global::System.IDispos
         return __hs_handle;
     }
 
-    public static ScriptBlockValidator Create()
+    public static ScriptBlockValidator? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_04b46595();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockValidator((nint)handle);
     }
 
-    public static ScriptBlockValidator Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockValidator arg0)
+    public static ScriptBlockValidator? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockValidator arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7b5997dd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockValidator((nint)handle);
@@ -82,9 +82,10 @@ public sealed unsafe partial class ScriptBlockValidator : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C3.hs_get_b554d222((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockValidator operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockValidator arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockValidator? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockValidator arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockValidator((nint)NativeMethods.TablePtr->C3.hs_method_c68e40d9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c68e40d9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockValidator((nint)__hs_handle, false) : null;
     }
 
 

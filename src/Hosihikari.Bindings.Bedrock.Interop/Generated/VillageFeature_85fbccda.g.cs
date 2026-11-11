@@ -145,34 +145,34 @@ public sealed unsafe partial class VillageFeature : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VillageFeature Create()
+    public static VillageFeature? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_44cda593();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VillageFeature((nint)handle);
     }
 
-    public static VillageFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.VillageFeature arg0)
+    public static VillageFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.VillageFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_792fb022((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VillageFeature((nint)handle);
     }
 
-    public static VillageFeature Create(uint seed, int townSpacing, int minTownSeparation, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry biomeRegistry)
+    public static VillageFeature? Create(uint seed, int townSpacing, int minTownSeparation, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry biomeRegistry)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2a5c9148(seed, townSpacing, minTownSeparation, (void*)biomeRegistry.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VillageFeature((nint)handle);

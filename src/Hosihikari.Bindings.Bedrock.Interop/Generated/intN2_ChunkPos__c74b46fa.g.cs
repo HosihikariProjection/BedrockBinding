@@ -52,23 +52,23 @@ public sealed unsafe partial class intN2_ChunkPos_ : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_988162fd((void*)__hosihikari_shim_handle, value);
     }
 
-    public static intN2_ChunkPos_ Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.intN2_ChunkPos_ arg0)
+    public static intN2_ChunkPos_? Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.intN2_ChunkPos_ arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e31db114((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new intN2_ChunkPos_((nint)handle);
     }
 
-    public static intN2_ChunkPos_ Create(int all)
+    public static intN2_ChunkPos_? Create(int all)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_121a57c8(all);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new intN2_ChunkPos_((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class intN2_ChunkPos_ : global::System.IDisposable
     public static intN2_ChunkPos_ Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ll.math.intN2_ChunkPos_ operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.intN2_ChunkPos_ arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ll.math.intN2_ChunkPos_? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.intN2_ChunkPos_ arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ll.math.intN2_ChunkPos_((nint)NativeMethods.TablePtr->C4.hs_method_e58154d2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e58154d2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ll.math.intN2_ChunkPos_((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

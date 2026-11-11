@@ -951,31 +951,32 @@ public sealed unsafe partial class ServerLevel : global::System.IDisposable
     public nint _tryGetVolumeEntityManagerServer() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerLevel Create()
+    public static ServerLevel? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_468ce83a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerLevel((nint)handle);
     }
 
-    public static ServerLevel Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel arg0)
+    public static ServerLevel? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_88f04d85((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerLevel((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager _getMapDataManager_f1b8b6df()
+    public global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager? _getMapDataManager_f1b8b6df()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager((nint)NativeMethods.TablePtr->C3.hs_method_f1b8b6df((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f1b8b6df((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerDeathManager? _getPlayerDeathManager()
@@ -984,14 +985,16 @@ public sealed unsafe partial class ServerLevel : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerDeathManager((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TickTimeManager _getTickTimeManager_42794bd2()
+    public global::Hosihikari.Bindings.Bedrock.Interop.TickTimeManager? _getTickTimeManager_42794bd2()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickTimeManager((nint)NativeMethods.TablePtr->C3.hs_method_42794bd2((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_42794bd2((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TickTimeManager((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TickTimeManager _getTickTimeManager_e92ae9eb()
+    public global::Hosihikari.Bindings.Bedrock.Interop.TickTimeManager? _getTickTimeManager_e92ae9eb()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickTimeManager((nint)NativeMethods.TablePtr->C3.hs_method_e92ae9eb((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e92ae9eb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TickTimeManager((nint)__hs_handle, false) : null;
     }
 
     public void _initializeMapDataManager()
@@ -1070,14 +1073,16 @@ public sealed unsafe partial class ServerLevel : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerSleepManager getPlayerSleepManager_ca421eb1()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerSleepManager? getPlayerSleepManager_ca421eb1()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSleepManager((nint)NativeMethods.TablePtr->C3.hs_method_ca421eb1((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ca421eb1((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSleepManager((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerSleepManager getPlayerSleepManager_45ae135b()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerSleepManager? getPlayerSleepManager_45ae135b()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSleepManager((nint)NativeMethods.TablePtr->C3.hs_method_45ae135b((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_45ae135b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSleepManager((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBServer? getPositionTrackerDBServer()
@@ -1116,9 +1121,10 @@ public sealed unsafe partial class ServerLevel : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Random getThreadRandom()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Random? getThreadRandom()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Random((nint)NativeMethods.TablePtr->C3.hs_method_cee818fd((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cee818fd((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Random((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.TradeTables? getTradeTables()
@@ -1291,9 +1297,10 @@ public sealed unsafe partial class ServerLevel : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_c1f0b53f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel((nint)NativeMethods.TablePtr->C3.hs_method_5652373b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5652373b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel((nint)__hs_handle, false) : null;
     }
 
     public void runCommand(global::Hosihikari.Bindings.Bedrock.Interop.Command command, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, int originSystem)

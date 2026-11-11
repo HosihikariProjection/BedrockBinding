@@ -40,20 +40,21 @@ public sealed unsafe partial class CommandMessage : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static CommandMessage Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandMessage arg0)
+    public static CommandMessage? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandMessage arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1bd69992((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandMessage((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GenerateMessageResult generateMessage(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, int maxLength)
+    public global::Hosihikari.Bindings.Bedrock.Interop.GenerateMessageResult? generateMessage(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, int maxLength)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GenerateMessageResult((nint)NativeMethods.TablePtr->C0.hs_method_78b7e9c4((void*)__hosihikari_shim_handle, (void*)origin.Handle, maxLength));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_78b7e9c4((void*)__hosihikari_shim_handle, (void*)origin.Handle, maxLength);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GenerateMessageResult((nint)__hs_handle) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

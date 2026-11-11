@@ -40,12 +40,12 @@ public sealed unsafe partial class StringRepresentation : global::System.IDispos
         return __hs_handle;
     }
 
-    public static StringRepresentation Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.ExpressionNode_Nested.StringRepresentation arg0)
+    public static StringRepresentation? Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.ExpressionNode_Nested.StringRepresentation arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3df2b149((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new StringRepresentation((nint)handle);

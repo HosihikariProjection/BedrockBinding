@@ -40,23 +40,23 @@ public sealed unsafe partial class MolangProgramBuildState : global::System.IDis
         return __hs_handle;
     }
 
-    public static MolangProgramBuildState Create()
+    public static MolangProgramBuildState? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0c516c49();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangProgramBuildState((nint)handle);
     }
 
-    public static MolangProgramBuildState Create(global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.MolangProgramBuildState arg0)
+    public static MolangProgramBuildState? Create(global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.MolangProgramBuildState arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_abac43b4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MolangProgramBuildState((nint)handle);
@@ -88,9 +88,10 @@ public sealed unsafe partial class MolangProgramBuildState : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C2.hs_get_a8f48243((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.MolangProgramBuildState operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.MolangProgramBuildState arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.MolangProgramBuildState? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.MolangProgramBuildState arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.MolangProgramBuildState((nint)NativeMethods.TablePtr->C2.hs_method_81c17cef((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_81c17cef((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.MolangProgramBuildState((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

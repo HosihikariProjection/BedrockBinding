@@ -40,23 +40,23 @@ public sealed unsafe partial class GameTestSequence : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static GameTestSequence Create()
+    public static GameTestSequence? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c7805ffc();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameTestSequence((nint)handle);
     }
 
-    public static GameTestSequence Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestSequence arg0)
+    public static GameTestSequence? Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestSequence arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_304c4be3((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GameTestSequence((nint)handle);
@@ -88,9 +88,10 @@ public sealed unsafe partial class GameTestSequence : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_9dbcbdfe((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestSequence operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestSequence arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestSequence? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestSequence arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestSequence((nint)NativeMethods.TablePtr->C4.hs_method_2919694e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2919694e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestSequence((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -72,12 +72,12 @@ public sealed unsafe partial class FoodItem118Upgrade : global::System.IDisposab
     public void _upgradeToNext(nint document, nint arg1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FoodItem118Upgrade Create(global::Hosihikari.Bindings.Bedrock.Interop.FoodItemVersioning.FoodItem118Upgrade arg0)
+    public static FoodItem118Upgrade? Create(global::Hosihikari.Bindings.Bedrock.Interop.FoodItemVersioning.FoodItem118Upgrade arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b2f738b9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FoodItem118Upgrade((nint)handle);

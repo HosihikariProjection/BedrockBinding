@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_ActorAddEffectEvent_ : globa
     public static ValueOrRef_const_ActorAddEffectEvent_ Create_aa332653(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const ActorAddEffectEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorAddEffectEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorAddEffectEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorAddEffectEvent((nint)NativeMethods.TablePtr->C1.hs_method_f834de78((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f834de78((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorAddEffectEvent((nint)__hs_handle, false) : null;
     }
 
 

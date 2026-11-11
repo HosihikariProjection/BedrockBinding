@@ -44,12 +44,12 @@ public sealed unsafe partial class FunctionEntry : global::System.IDisposable
     public void _execute(nint functionManager, nint origin, nint order) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FunctionEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.FunctionEntry arg0)
+    public static FunctionEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.FunctionEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_eccf99fc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FunctionEntry((nint)handle);

@@ -54,23 +54,23 @@ public sealed unsafe partial class LootItemMatchToolCondition : global::System.I
     public nint _getConditionType() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LootItemMatchToolCondition Create()
+    public static LootItemMatchToolCondition? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e23a3029();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LootItemMatchToolCondition((nint)handle);
     }
 
-    public static LootItemMatchToolCondition Create(global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition arg0)
+    public static LootItemMatchToolCondition? Create(global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c5a0aab9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LootItemMatchToolCondition((nint)handle);
@@ -136,9 +136,10 @@ public sealed unsafe partial class LootItemMatchToolCondition : global::System.I
         get => (nint)NativeMethods.TablePtr->C2.hs_get_ac0b21c6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition((nint)NativeMethods.TablePtr->C2.hs_method_dabd0ff4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_dabd0ff4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition((nint)__hs_handle, false) : null;
     }
 
 

@@ -44,23 +44,23 @@ public sealed unsafe partial class ScriptLocationInUnloadedChunkError : global::
     public nint _ctor(nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptLocationInUnloadedChunkError Create()
+    public static ScriptLocationInUnloadedChunkError? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_feb05168();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptLocationInUnloadedChunkError((nint)handle);
     }
 
-    public static ScriptLocationInUnloadedChunkError Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptLocationInUnloadedChunkError arg0)
+    public static ScriptLocationInUnloadedChunkError? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptLocationInUnloadedChunkError arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_562a68b9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptLocationInUnloadedChunkError((nint)handle);

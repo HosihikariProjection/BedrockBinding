@@ -40,12 +40,12 @@ public sealed unsafe partial class WeightedBlockDescriptor : global::System.IDis
         return __hs_handle;
     }
 
-    public static WeightedBlockDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.SingleBlockFeature_Nested.WeightedBlockDescriptor arg0)
+    public static WeightedBlockDescriptor? Create(global::Hosihikari.Bindings.Bedrock.Interop.SingleBlockFeature_Nested.WeightedBlockDescriptor arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_74691f22((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeightedBlockDescriptor((nint)handle);

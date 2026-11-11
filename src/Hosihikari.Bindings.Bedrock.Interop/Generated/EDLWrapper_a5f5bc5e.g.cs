@@ -40,12 +40,12 @@ public sealed unsafe partial class EDLWrapper : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static EDLWrapper Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup_Nested.EDLWrapper arg0)
+    public static EDLWrapper? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup_Nested.EDLWrapper arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9f9a0d3a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EDLWrapper((nint)handle);

@@ -221,12 +221,12 @@ public sealed unsafe partial class LecternBlockActor : global::System.IDisposabl
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LecternBlockActor Create()
+    public static LecternBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9b0ae145();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LecternBlockActor((nint)handle);
@@ -266,9 +266,10 @@ public sealed unsafe partial class LecternBlockActor : global::System.IDisposabl
         return NativeMethods.TablePtr->C2.hs_method_10e50f13((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItem(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_990535f5((void*)__hosihikari_shim_handle, slot), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_990535f5((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
     public int getMaxStackSize()

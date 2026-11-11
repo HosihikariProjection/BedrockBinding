@@ -173,12 +173,12 @@ public sealed unsafe partial class ServerNetherNetConnector : global::System.IDi
     public nint OnSessionResponse(nint arg0, ulong arg1, nint arg2, nint arg3, bool arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<bool>' requires --link-carrier or --virtual-dispatch.");
 
-    public static ServerNetherNetConnector Create()
+    public static ServerNetherNetConnector? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0c2cd577();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerNetherNetConnector((nint)handle);
@@ -188,12 +188,12 @@ public sealed unsafe partial class ServerNetherNetConnector : global::System.IDi
     public static ServerNetherNetConnector Create(nint factory, nint callbacks, nint httpLibrary, nint isNetworkAllowed, nint clientIdentityVerifier, nint networkID) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerNetherNetConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetherNetConnector arg0)
+    public static ServerNetherNetConnector? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetherNetConnector arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_9f180e77((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerNetherNetConnector((nint)handle);
@@ -220,9 +220,10 @@ public sealed unsafe partial class ServerNetherNetConnector : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C3.hs_get_aaa66dd4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerNetherNetConnector operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetherNetConnector arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerNetherNetConnector? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetherNetConnector arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetherNetConnector((nint)NativeMethods.TablePtr->C3.hs_method_9eed1cff((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9eed1cff((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetherNetConnector((nint)__hs_handle, false) : null;
     }
 
 

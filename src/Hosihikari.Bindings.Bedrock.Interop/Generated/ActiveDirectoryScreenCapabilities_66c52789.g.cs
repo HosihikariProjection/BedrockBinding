@@ -48,23 +48,23 @@ public sealed unsafe partial class ActiveDirectoryScreenCapabilities : global::S
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActiveDirectoryScreenCapabilities Create()
+    public static ActiveDirectoryScreenCapabilities? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_629f7675();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActiveDirectoryScreenCapabilities((nint)handle);
     }
 
-    public static ActiveDirectoryScreenCapabilities Create(global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryScreenCapabilities arg0)
+    public static ActiveDirectoryScreenCapabilities? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryScreenCapabilities arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_221cd837((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActiveDirectoryScreenCapabilities((nint)handle);
@@ -82,9 +82,10 @@ public sealed unsafe partial class ActiveDirectoryScreenCapabilities : global::S
         get => (nint)NativeMethods.TablePtr->C0.hs_get_fbae1516((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryScreenCapabilities operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryScreenCapabilities arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryScreenCapabilities? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryScreenCapabilities arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryScreenCapabilities((nint)NativeMethods.TablePtr->C0.hs_method_b9762c7e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b9762c7e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryScreenCapabilities((nint)__hs_handle, false) : null;
     }
 
 

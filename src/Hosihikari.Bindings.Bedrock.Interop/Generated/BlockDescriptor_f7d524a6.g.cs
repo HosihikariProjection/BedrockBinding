@@ -67,12 +67,12 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_c83d3c0d((void*)__hosihikari_shim_handle);
     }
 
-    public static BlockDescriptor Create()
+    public static BlockDescriptor? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c3ea8c5b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockDescriptor((nint)handle);
@@ -86,23 +86,23 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
     public static BlockDescriptor Create_324d67a0(nint desc) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor rhs)
+    public static BlockDescriptor? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor rhs)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_baacec20((void*)rhs.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockDescriptor((nint)handle);
     }
 
-    public static BlockDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.HashedString fullName)
+    public static BlockDescriptor? Create(global::Hosihikari.Bindings.Bedrock.Interop.HashedString fullName)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_78ec8ccb((void*)fullName.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockDescriptor((nint)handle);
@@ -148,9 +148,10 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
     public static nint fromTagExpression(nint tagExpression, nint molangVersion) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getBlockOrUnknownBlock()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlockOrUnknownBlock()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C0.hs_method_179b4dc0((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_179b4dc0((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

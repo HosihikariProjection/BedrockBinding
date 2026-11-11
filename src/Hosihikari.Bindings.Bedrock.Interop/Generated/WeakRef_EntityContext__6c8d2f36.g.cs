@@ -44,34 +44,34 @@ public sealed unsafe partial class WeakRef_EntityContext_ : global::System.IDisp
     public static WeakRef_EntityContext_ Create(nint ptr) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static WeakRef_EntityContext_ Create(global::Hosihikari.Bindings.Bedrock.Interop.StackResultStorageEntity ptr)
+    public static WeakRef_EntityContext_? Create(global::Hosihikari.Bindings.Bedrock.Interop.StackResultStorageEntity ptr)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_2366f897((void*)ptr.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakRef_EntityContext_((nint)handle);
     }
 
-    public static WeakRef_EntityContext_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    public static WeakRef_EntityContext_? Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a8fc75d9(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakRef_EntityContext_((nint)handle);
     }
 
-    public static WeakRef_EntityContext_ Create(global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity ptr)
+    public static WeakRef_EntityContext_? Create(global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity ptr)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_38241be0((void*)ptr.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakRef_EntityContext_((nint)handle);

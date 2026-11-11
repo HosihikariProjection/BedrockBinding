@@ -48,12 +48,12 @@ public sealed unsafe partial class UpdateAttributesPacketPayload : global::Syste
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UpdateAttributesPacketPayload Create()
+    public static UpdateAttributesPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_4f321654();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UpdateAttributesPacketPayload((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class UpdateAttributesPacketPayload : global::Syste
     public static UpdateAttributesPacketPayload Create(nint id, nint map, nint dirtyData, nint tick) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static UpdateAttributesPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.UpdateAttributesPacketPayload arg0)
+    public static UpdateAttributesPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.UpdateAttributesPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f59a7c14((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UpdateAttributesPacketPayload((nint)handle);

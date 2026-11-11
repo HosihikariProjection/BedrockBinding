@@ -40,23 +40,23 @@ public sealed unsafe partial class DependencyLocator : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static DependencyLocator Create()
+    public static DependencyLocator? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ebbaccd4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DependencyLocator((nint)handle);
     }
 
-    public static DependencyLocator Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyLocator arg0)
+    public static DependencyLocator? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyLocator arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3e5788df((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DependencyLocator((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class DependencyLocator : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C3.hs_get_45a1f4f4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyLocator operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyLocator arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyLocator? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyLocator arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyLocator((nint)NativeMethods.TablePtr->C3.hs_method_c1d033b4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c1d033b4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyLocator((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

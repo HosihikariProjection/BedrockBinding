@@ -40,12 +40,12 @@ public sealed unsafe partial class LodestoneCompassComponent : global::System.ID
         return __hs_handle;
     }
 
-    public static LodestoneCompassComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.LodestoneCompassComponent arg0)
+    public static LodestoneCompassComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.LodestoneCompassComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3a2f9abc((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LodestoneCompassComponent((nint)handle);

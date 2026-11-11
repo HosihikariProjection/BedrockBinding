@@ -40,23 +40,23 @@ public sealed unsafe partial class OnActorLeaveVolumeDefinition : global::System
         return __hs_handle;
     }
 
-    public static OnActorLeaveVolumeDefinition Create()
+    public static OnActorLeaveVolumeDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8eb9420d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OnActorLeaveVolumeDefinition((nint)handle);
     }
 
-    public static OnActorLeaveVolumeDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.OnActorLeaveVolumeDefinition arg0)
+    public static OnActorLeaveVolumeDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.OnActorLeaveVolumeDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_4fee66cd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new OnActorLeaveVolumeDefinition((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class OnActorLeaveVolumeDefinition : global::System
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d49f68ca((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.OnActorLeaveVolumeDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OnActorLeaveVolumeDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.OnActorLeaveVolumeDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OnActorLeaveVolumeDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OnActorLeaveVolumeDefinition((nint)NativeMethods.TablePtr->C2.hs_method_37a5302e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_37a5302e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OnActorLeaveVolumeDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

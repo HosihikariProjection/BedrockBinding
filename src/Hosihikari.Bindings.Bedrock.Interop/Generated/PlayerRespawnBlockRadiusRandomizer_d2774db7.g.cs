@@ -44,12 +44,12 @@ public sealed unsafe partial class PlayerRespawnBlockRadiusRandomizer : global::
     public nint _ctor(uint spawnRadius, nint random) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlayerRespawnBlockRadiusRandomizer Create()
+    public static PlayerRespawnBlockRadiusRandomizer? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_291825ae();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlayerRespawnBlockRadiusRandomizer((nint)handle);

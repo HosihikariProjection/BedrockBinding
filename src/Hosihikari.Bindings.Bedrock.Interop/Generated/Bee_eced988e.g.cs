@@ -598,12 +598,12 @@ public sealed unsafe partial class Bee : global::System.IDisposable
     public void _reloadHardcodedClient(nint method) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Bee Create()
+    public static Bee? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_9c37efd9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Bee((nint)handle);

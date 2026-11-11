@@ -53,12 +53,12 @@ public sealed unsafe partial class DtmfProviderInterface : global::System.IDispo
         return NativeMethods.TablePtr->C4.hs_method_1d0dd8c2((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public static DtmfProviderInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtmfProviderInterface arg0)
+    public static DtmfProviderInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtmfProviderInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_1110fb3d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DtmfProviderInterface((nint)handle);

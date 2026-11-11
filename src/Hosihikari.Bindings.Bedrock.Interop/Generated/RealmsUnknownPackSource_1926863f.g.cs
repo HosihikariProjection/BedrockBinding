@@ -76,23 +76,23 @@ public sealed unsafe partial class RealmsUnknownPackSource : global::System.IDis
     public nint _getPackType() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RealmsUnknownPackSource Create()
+    public static RealmsUnknownPackSource? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_974d010f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RealmsUnknownPackSource((nint)handle);
     }
 
-    public static RealmsUnknownPackSource Create(global::Hosihikari.Bindings.Bedrock.Interop.RealmsUnknownPackSource arg0)
+    public static RealmsUnknownPackSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.RealmsUnknownPackSource arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_71571172((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RealmsUnknownPackSource((nint)handle);
@@ -124,9 +124,10 @@ public sealed unsafe partial class RealmsUnknownPackSource : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C3.hs_get_b2671a65((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RealmsUnknownPackSource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RealmsUnknownPackSource arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.RealmsUnknownPackSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RealmsUnknownPackSource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RealmsUnknownPackSource((nint)NativeMethods.TablePtr->C3.hs_method_c7b4cdea((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c7b4cdea((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RealmsUnknownPackSource((nint)__hs_handle, false) : null;
     }
 
 

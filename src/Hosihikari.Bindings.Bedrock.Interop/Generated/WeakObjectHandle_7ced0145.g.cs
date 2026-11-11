@@ -40,23 +40,23 @@ public sealed unsafe partial class WeakObjectHandle : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static WeakObjectHandle Create()
+    public static WeakObjectHandle? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a0c7e067();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakObjectHandle((nint)handle);
     }
 
-    public static WeakObjectHandle Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakObjectHandle arg0)
+    public static WeakObjectHandle? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakObjectHandle arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ec04c2e9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WeakObjectHandle((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class WeakObjectHandle : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_793fc65a((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakObjectHandle operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakObjectHandle arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakObjectHandle? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakObjectHandle arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakObjectHandle((nint)NativeMethods.TablePtr->C3.hs_method_5d87162f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5d87162f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakObjectHandle((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -40,12 +40,12 @@ public sealed unsafe partial class VillageInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static VillageInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.VillageManager_Nested.VillageInfo arg0)
+    public static VillageInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.VillageManager_Nested.VillageInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_f8b0ee8e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VillageInfo((nint)handle);

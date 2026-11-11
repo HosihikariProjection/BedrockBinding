@@ -40,12 +40,12 @@ public sealed unsafe partial class SetHudPacketPayload : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static SetHudPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SetHudPacketPayload arg0)
+    public static SetHudPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.SetHudPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_890ce8c7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetHudPacketPayload((nint)handle);

@@ -48,12 +48,12 @@ public sealed unsafe partial class IFileChunkUploader : global::System.IDisposab
     public bool _useFileSizeLimit() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static IFileChunkUploader Create(global::Hosihikari.Bindings.Bedrock.Interop.IFileChunkUploader arg0)
+    public static IFileChunkUploader? Create(global::Hosihikari.Bindings.Bedrock.Interop.IFileChunkUploader arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9c6f7eb6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IFileChunkUploader((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class IFileChunkUploader : global::System.IDisposab
         NativeMethods.TablePtr->C1.hs_method_85b038b5((void*)__hosihikari_shim_handle, (void*)file.Handle, (void*)chunk.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo getChunkInfo(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo file, int chunkID)
+    public global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo? getChunkInfo(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo file, int chunkID)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo((nint)NativeMethods.TablePtr->C1.hs_method_1257b67f((void*)__hosihikari_shim_handle, (void*)file.Handle, chunkID));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1257b67f((void*)__hosihikari_shim_handle, (void*)file.Handle, chunkID);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo((nint)__hs_handle) : null;
     }
 
     public int getInitErrorCode()

@@ -276,12 +276,12 @@ public sealed unsafe partial class SmokerBlockActor : global::System.IDisposable
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SmokerBlockActor Create()
+    public static SmokerBlockActor? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d4fafb22();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SmokerBlockActor((nint)handle);
@@ -291,12 +291,12 @@ public sealed unsafe partial class SmokerBlockActor : global::System.IDisposable
     public static SmokerBlockActor Create(nint blockPos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SmokerBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.SmokerBlockActor arg0)
+    public static SmokerBlockActor? Create(global::Hosihikari.Bindings.Bedrock.Interop.SmokerBlockActor arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f92e2578((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SmokerBlockActor((nint)handle);

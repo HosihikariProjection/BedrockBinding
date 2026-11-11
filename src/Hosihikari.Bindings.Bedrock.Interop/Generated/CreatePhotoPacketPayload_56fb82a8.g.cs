@@ -40,23 +40,23 @@ public sealed unsafe partial class CreatePhotoPacketPayload : global::System.IDi
         return __hs_handle;
     }
 
-    public static CreatePhotoPacketPayload Create()
+    public static CreatePhotoPacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_9e871a3e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreatePhotoPacketPayload((nint)handle);
     }
 
-    public static CreatePhotoPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.CreatePhotoPacketPayload arg0)
+    public static CreatePhotoPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.CreatePhotoPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_6e4979fe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CreatePhotoPacketPayload((nint)handle);

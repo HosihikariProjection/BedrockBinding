@@ -40,23 +40,23 @@ public sealed unsafe partial class ScriptGameTestHelper : global::System.IDispos
         return __hs_handle;
     }
 
-    public static ScriptGameTestHelper Create()
+    public static ScriptGameTestHelper? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_633dc70f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptGameTestHelper((nint)handle);
     }
 
-    public static ScriptGameTestHelper Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestHelper arg0)
+    public static ScriptGameTestHelper? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestHelper arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5d5fb819((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptGameTestHelper((nint)handle);
@@ -210,9 +210,10 @@ public sealed unsafe partial class ScriptGameTestHelper : global::System.IDispos
     public nint onPlayerJump(nint mob, int jumpAmount) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestHelper operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestHelper arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestHelper? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestHelper arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestHelper((nint)NativeMethods.TablePtr->C3.hs_method_d5c13dbb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d5c13dbb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestHelper((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

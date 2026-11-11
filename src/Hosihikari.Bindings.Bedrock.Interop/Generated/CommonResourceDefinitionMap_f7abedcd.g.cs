@@ -40,12 +40,12 @@ public sealed unsafe partial class CommonResourceDefinitionMap : global::System.
         return __hs_handle;
     }
 
-    public static CommonResourceDefinitionMap Create(global::Hosihikari.Bindings.Bedrock.Interop.CommonResourceDefinitionMap arg0)
+    public static CommonResourceDefinitionMap? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommonResourceDefinitionMap arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_0f3273b5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommonResourceDefinitionMap((nint)handle);

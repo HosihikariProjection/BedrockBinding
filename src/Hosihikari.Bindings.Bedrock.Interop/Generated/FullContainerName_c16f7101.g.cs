@@ -40,12 +40,12 @@ public sealed unsafe partial class FullContainerName : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static FullContainerName Create(global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName arg0)
+    public static FullContainerName? Create(global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_98f8e864((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FullContainerName((nint)handle);

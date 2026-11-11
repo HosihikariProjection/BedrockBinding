@@ -52,23 +52,23 @@ public sealed unsafe partial class WaterMovementDescription : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WaterMovementDescription Create()
+    public static WaterMovementDescription? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_0ed0a355();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WaterMovementDescription((nint)handle);
     }
 
-    public static WaterMovementDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.WaterMovementDescription arg0)
+    public static WaterMovementDescription? Create(global::Hosihikari.Bindings.Bedrock.Interop.WaterMovementDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e9f2ac81((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WaterMovementDescription((nint)handle);
@@ -90,9 +90,10 @@ public sealed unsafe partial class WaterMovementDescription : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C4.hs_get_41d42481((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WaterMovementDescription operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WaterMovementDescription arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WaterMovementDescription? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WaterMovementDescription arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WaterMovementDescription((nint)NativeMethods.TablePtr->C4.hs_method_75ad8bb8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_75ad8bb8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WaterMovementDescription((nint)__hs_handle, false) : null;
     }
 
 

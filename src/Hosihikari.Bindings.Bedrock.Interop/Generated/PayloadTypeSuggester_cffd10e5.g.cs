@@ -48,12 +48,12 @@ public sealed unsafe partial class PayloadTypeSuggester : global::System.IDispos
     public nint AddLocalMapping(nint mid, nint payload_type, nint codec) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::PayloadType' is not a known bindable declaration.");
 
-    public static PayloadTypeSuggester Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PayloadTypeSuggester arg0)
+    public static PayloadTypeSuggester? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PayloadTypeSuggester arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_aaf7eb87((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PayloadTypeSuggester((nint)handle);

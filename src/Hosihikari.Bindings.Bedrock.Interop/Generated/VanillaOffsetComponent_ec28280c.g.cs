@@ -40,12 +40,12 @@ public sealed unsafe partial class VanillaOffsetComponent : global::System.IDisp
         return __hs_handle;
     }
 
-    public static VanillaOffsetComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.VanillaOffsetComponent arg0)
+    public static VanillaOffsetComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.VanillaOffsetComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_825e2b8a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new VanillaOffsetComponent((nint)handle);

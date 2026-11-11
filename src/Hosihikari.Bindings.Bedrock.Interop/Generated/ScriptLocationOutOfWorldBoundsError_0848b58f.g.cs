@@ -48,23 +48,23 @@ public sealed unsafe partial class ScriptLocationOutOfWorldBoundsError : global:
     public nint _ctor(nint details, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptLocationOutOfWorldBoundsError Create()
+    public static ScriptLocationOutOfWorldBoundsError? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4bf5ea41();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptLocationOutOfWorldBoundsError((nint)handle);
     }
 
-    public static ScriptLocationOutOfWorldBoundsError Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptLocationOutOfWorldBoundsError arg0)
+    public static ScriptLocationOutOfWorldBoundsError? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptLocationOutOfWorldBoundsError arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0acbc095((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptLocationOutOfWorldBoundsError((nint)handle);

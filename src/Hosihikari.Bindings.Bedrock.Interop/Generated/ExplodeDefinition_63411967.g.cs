@@ -40,12 +40,12 @@ public sealed unsafe partial class ExplodeDefinition : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static ExplodeDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.ExplodeDefinition arg0)
+    public static ExplodeDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.ExplodeDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d432d720((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ExplodeDefinition((nint)handle);

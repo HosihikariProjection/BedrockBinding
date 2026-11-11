@@ -40,12 +40,12 @@ public sealed unsafe partial class PassengersToPositionComponent : global::Syste
         return __hs_handle;
     }
 
-    public static PassengersToPositionComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PassengersToPositionComponent arg0)
+    public static PassengersToPositionComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PassengersToPositionComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fe4a668e((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PassengersToPositionComponent((nint)handle);

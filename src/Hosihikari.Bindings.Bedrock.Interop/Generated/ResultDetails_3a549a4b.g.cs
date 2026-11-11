@@ -40,12 +40,12 @@ public sealed unsafe partial class ResultDetails : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ResultDetails Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnClimateFinder_Nested.ResultDetails arg0)
+    public static ResultDetails? Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnClimateFinder_Nested.ResultDetails arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_fcb2684d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ResultDetails((nint)handle);

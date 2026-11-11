@@ -40,23 +40,23 @@ public sealed unsafe partial class PacketStats : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PacketStats Create()
+    public static PacketStats? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_f807be89();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PacketStats((nint)handle);
     }
 
-    public static PacketStats Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketObserver_Nested.PacketStats arg0)
+    public static PacketStats? Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketObserver_Nested.PacketStats arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3de38f03((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PacketStats((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class PacketStats : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_6aff1348((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PacketObserver_Nested.PacketStats operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PacketObserver_Nested.PacketStats arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PacketObserver_Nested.PacketStats? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PacketObserver_Nested.PacketStats arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PacketObserver_Nested.PacketStats((nint)NativeMethods.TablePtr->C2.hs_method_06262aa4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_06262aa4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PacketObserver_Nested.PacketStats((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

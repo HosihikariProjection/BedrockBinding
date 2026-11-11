@@ -48,12 +48,12 @@ public sealed unsafe partial class SessionInfo : global::System.IDisposable
     public static SessionInfo Create() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SessionInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SessionInfo arg0)
+    public static SessionInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SessionInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c654d9d8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SessionInfo((nint)handle);
@@ -125,9 +125,10 @@ public sealed unsafe partial class SessionInfo : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_53e21b02((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SessionInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SessionInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SessionInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SessionInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SessionInfo((nint)NativeMethods.TablePtr->C0.hs_method_6b93b567((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6b93b567((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.SessionInfo((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

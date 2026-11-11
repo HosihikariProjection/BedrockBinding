@@ -40,23 +40,23 @@ public sealed unsafe partial class ScaleDefinition : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ScaleDefinition Create()
+    public static ScaleDefinition? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_df5a49a6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScaleDefinition((nint)handle);
     }
 
-    public static ScaleDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.ScaleDefinition arg0)
+    public static ScaleDefinition? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScaleDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5ff2d1bf((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScaleDefinition((nint)handle);
@@ -72,9 +72,10 @@ public sealed unsafe partial class ScaleDefinition : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_6521039e((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScaleDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScaleDefinition arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScaleDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScaleDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScaleDefinition((nint)NativeMethods.TablePtr->C3.hs_method_2c146eaf((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2c146eaf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScaleDefinition((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

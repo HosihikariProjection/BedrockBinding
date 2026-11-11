@@ -44,12 +44,12 @@ public sealed unsafe partial class ScriptContainerRules : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptContainerRules Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptContainerRules arg0)
+    public static ScriptContainerRules? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptContainerRules arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ec7f82d5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptContainerRules((nint)handle);

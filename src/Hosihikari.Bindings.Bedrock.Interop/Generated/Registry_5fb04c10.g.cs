@@ -40,23 +40,23 @@ public sealed unsafe partial class Registry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Registry Create()
+    public static Registry? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ccf3dd23();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Registry((nint)handle);
     }
 
-    public static Registry Create(global::Hosihikari.Bindings.Bedrock.Interop.Poi.Registry arg0)
+    public static Registry? Create(global::Hosihikari.Bindings.Bedrock.Interop.Poi.Registry arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c5b5f3e7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Registry((nint)handle);
@@ -84,9 +84,10 @@ public sealed unsafe partial class Registry : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_1d1fe5d0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Poi.Registry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Poi.Registry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Poi.Registry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Poi.Registry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Poi.Registry((nint)NativeMethods.TablePtr->C2.hs_method_e76121c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e76121c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Poi.Registry((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

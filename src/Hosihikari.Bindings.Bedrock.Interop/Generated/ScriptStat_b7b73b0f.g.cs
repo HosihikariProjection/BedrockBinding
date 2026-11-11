@@ -40,12 +40,12 @@ public sealed unsafe partial class ScriptStat : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static ScriptStat Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleDebugUtilities.ScriptStat arg0)
+    public static ScriptStat? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleDebugUtilities.ScriptStat arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0ce6e565((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptStat((nint)handle);

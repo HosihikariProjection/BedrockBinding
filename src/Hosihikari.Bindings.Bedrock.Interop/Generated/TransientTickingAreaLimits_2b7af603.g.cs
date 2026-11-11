@@ -40,12 +40,12 @@ public sealed unsafe partial class TransientTickingAreaLimits : global::System.I
         return __hs_handle;
     }
 
-    public static TransientTickingAreaLimits Create(global::Hosihikari.Bindings.Bedrock.Interop.TransientTickingAreaLimits arg0)
+    public static TransientTickingAreaLimits? Create(global::Hosihikari.Bindings.Bedrock.Interop.TransientTickingAreaLimits arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3c422730((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TransientTickingAreaLimits((nint)handle);

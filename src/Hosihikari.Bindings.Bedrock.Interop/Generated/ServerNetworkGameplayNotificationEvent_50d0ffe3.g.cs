@@ -40,12 +40,12 @@ public sealed unsafe partial class ServerNetworkGameplayNotificationEvent : glob
         return __hs_handle;
     }
 
-    public static ServerNetworkGameplayNotificationEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkGameplayNotificationEvent arg0)
+    public static ServerNetworkGameplayNotificationEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkGameplayNotificationEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_35632b13((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerNetworkGameplayNotificationEvent((nint)handle);

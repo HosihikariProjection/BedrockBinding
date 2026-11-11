@@ -40,23 +40,23 @@ public sealed unsafe partial class LexicalToken : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static LexicalToken Create()
+    public static LexicalToken? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c47b9efd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LexicalToken((nint)handle);
     }
 
-    public static LexicalToken Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken arg0)
+    public static LexicalToken? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a4030fe1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LexicalToken((nint)handle);
@@ -95,9 +95,10 @@ public sealed unsafe partial class LexicalToken : global::System.IDisposable
     public nint operator_assign(nint token) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken((nint)NativeMethods.TablePtr->C0.hs_method_8ba66f09((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8ba66f09((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

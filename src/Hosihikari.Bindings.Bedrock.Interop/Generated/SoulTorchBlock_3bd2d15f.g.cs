@@ -393,12 +393,12 @@ public sealed unsafe partial class SoulTorchBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SoulTorchBlock Create()
+    public static SoulTorchBlock? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f4849efd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SoulTorchBlock((nint)handle);

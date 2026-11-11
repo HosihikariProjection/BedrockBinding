@@ -44,12 +44,12 @@ public sealed unsafe partial class ActorDefinitionDiffList : global::System.IDis
     public nint _ctor(nint definitions) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorDefinitionDiffList Create()
+    public static ActorDefinitionDiffList? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4d8408e5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionDiffList((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class ActorDefinitionDiffList : global::System.IDis
     public static ActorDefinitionDiffList Create(nint definitions) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorDefinitionDiffList Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionDiffList arg0)
+    public static ActorDefinitionDiffList? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionDiffList arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_79c5243b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDefinitionDiffList((nint)handle);
@@ -150,9 +150,10 @@ public sealed unsafe partial class ActorDefinitionDiffList : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c6aefdd3((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionDiffList operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionDiffList arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionDiffList? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionDiffList arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionDiffList((nint)NativeMethods.TablePtr->C0.hs_method_4a411a52((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4a411a52((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionDiffList((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

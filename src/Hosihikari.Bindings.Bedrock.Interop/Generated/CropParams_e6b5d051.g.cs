@@ -45,12 +45,12 @@ public sealed unsafe partial class CropParams : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_b8ebf967((void*)__hosihikari_shim_handle);
     }
 
-    public static CropParams Create(global::Hosihikari.Bindings.Bedrock.Interop.CropParams arg0)
+    public static CropParams? Create(global::Hosihikari.Bindings.Bedrock.Interop.CropParams arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1ed81d6c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CropParams((nint)handle);

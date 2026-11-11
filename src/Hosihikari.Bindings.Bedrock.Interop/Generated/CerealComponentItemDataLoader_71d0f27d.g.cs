@@ -44,12 +44,12 @@ public sealed unsafe partial class CerealComponentItemDataLoader : global::Syste
     public nint _ctor(nint bedrockLoadContext, nint ctx) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CerealComponentItemDataLoader Create()
+    public static CerealComponentItemDataLoader? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_259b87a9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CerealComponentItemDataLoader((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class CerealComponentItemDataLoader : global::Syste
     public static CerealComponentItemDataLoader Create(nint bedrockLoadContext, nint ctx) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CerealComponentItemDataLoader Create(global::Hosihikari.Bindings.Bedrock.Interop.CerealComponentItemDataLoader arg0)
+    public static CerealComponentItemDataLoader? Create(global::Hosihikari.Bindings.Bedrock.Interop.CerealComponentItemDataLoader arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_28fa48b6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CerealComponentItemDataLoader((nint)handle);

@@ -44,23 +44,23 @@ public sealed unsafe partial class ChannelTransform : global::System.IDisposable
     public nint _ctor(nint expression, int axisIndex) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ChannelTransform Create()
+    public static ChannelTransform? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2681c36a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChannelTransform((nint)handle);
     }
 
-    public static ChannelTransform Create(global::Hosihikari.Bindings.Bedrock.Interop.ChannelTransform arg0)
+    public static ChannelTransform? Create(global::Hosihikari.Bindings.Bedrock.Interop.ChannelTransform arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_49e5683f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChannelTransform((nint)handle);

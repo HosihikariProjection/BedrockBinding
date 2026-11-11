@@ -40,12 +40,12 @@ public sealed unsafe partial class Deleter : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Deleter Create()
+    public static Deleter? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_8ef32100();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Deleter((nint)handle);

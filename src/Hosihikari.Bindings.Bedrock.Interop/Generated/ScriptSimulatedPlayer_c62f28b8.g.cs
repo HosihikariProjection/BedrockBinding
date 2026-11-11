@@ -52,12 +52,12 @@ public sealed unsafe partial class ScriptSimulatedPlayer : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptSimulatedPlayer Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptSimulatedPlayer arg0)
+    public static ScriptSimulatedPlayer? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptSimulatedPlayer arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d792f7ca((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptSimulatedPlayer((nint)handle);
@@ -79,9 +79,10 @@ public sealed unsafe partial class ScriptSimulatedPlayer : global::System.IDispo
     public nint attackEntity(nint self, nint scriptActor) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding? bind()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)NativeMethods.TablePtr->C3.hs_method_286a8cb8());
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_286a8cb8();
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

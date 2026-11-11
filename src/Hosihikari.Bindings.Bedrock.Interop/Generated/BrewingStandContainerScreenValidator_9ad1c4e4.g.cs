@@ -40,12 +40,12 @@ public sealed unsafe partial class BrewingStandContainerScreenValidator : global
         return __hs_handle;
     }
 
-    public static BrewingStandContainerScreenValidator Create(global::Hosihikari.Bindings.Bedrock.Interop.BrewingStandContainerScreenValidator arg0)
+    public static BrewingStandContainerScreenValidator? Create(global::Hosihikari.Bindings.Bedrock.Interop.BrewingStandContainerScreenValidator arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_1180ecb9((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BrewingStandContainerScreenValidator((nint)handle);

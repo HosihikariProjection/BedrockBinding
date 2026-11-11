@@ -70,12 +70,12 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
     }
 
-    public static Spawner Create(global::Hosihikari.Bindings.Bedrock.Interop.Spawner arg0)
+    public static Spawner? Create(global::Hosihikari.Bindings.Bedrock.Interop.Spawner arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3e732e40((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Spawner((nint)handle);
@@ -118,9 +118,10 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings getSpawnSettings()
+    public global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings? getSpawnSettings()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings((nint)NativeMethods.TablePtr->C3.hs_method_ae9637ad((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ae9637ad((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings((nint)__hs_handle, false) : null;
     }
 
     public uint getSpawnableTickedMobCountPrevious()

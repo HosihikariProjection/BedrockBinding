@@ -40,12 +40,12 @@ public sealed unsafe partial class PerfContext : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static PerfContext Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageWriteBatch_Nested.PerfContext arg0)
+    public static PerfContext? Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageWriteBatch_Nested.PerfContext arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_accd45c7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PerfContext((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class RealtimeFrameData : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static RealtimeFrameData Create(global::Hosihikari.Bindings.Bedrock.Interop.ProfilerLite_Nested.RealtimeFrameData arg0)
+    public static RealtimeFrameData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ProfilerLite_Nested.RealtimeFrameData arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_6c63a5ac((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RealtimeFrameData((nint)handle);

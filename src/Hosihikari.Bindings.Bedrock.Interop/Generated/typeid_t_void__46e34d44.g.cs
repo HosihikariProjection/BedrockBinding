@@ -57,12 +57,12 @@ public sealed unsafe partial class typeid_t_void_ : global::System.IDisposable
     public bool operator_equal(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public static typeid_t_void_ Create()
+    public static typeid_t_void_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7b4a87bf();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new typeid_t_void_((nint)handle);
@@ -72,12 +72,12 @@ public sealed unsafe partial class typeid_t_void_ : global::System.IDisposable
     public static typeid_t_void_ Create(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public static typeid_t_void_ Create(ushort value)
+    public static typeid_t_void_? Create(ushort value)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_736d1905(value);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new typeid_t_void_((nint)handle);

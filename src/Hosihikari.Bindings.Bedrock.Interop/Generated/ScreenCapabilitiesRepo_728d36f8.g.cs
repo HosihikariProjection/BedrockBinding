@@ -40,23 +40,23 @@ public sealed unsafe partial class ScreenCapabilitiesRepo : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ScreenCapabilitiesRepo Create()
+    public static ScreenCapabilitiesRepo? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5bfd90c9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScreenCapabilitiesRepo((nint)handle);
     }
 
-    public static ScreenCapabilitiesRepo Create(global::Hosihikari.Bindings.Bedrock.Interop.ScreenCapabilitiesRepo arg0)
+    public static ScreenCapabilitiesRepo? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScreenCapabilitiesRepo arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0201f6e1((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScreenCapabilitiesRepo((nint)handle);
@@ -120,9 +120,10 @@ public sealed unsafe partial class ScreenCapabilitiesRepo : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C3.hs_get_9ba29959((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScreenCapabilitiesRepo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScreenCapabilitiesRepo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScreenCapabilitiesRepo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScreenCapabilitiesRepo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScreenCapabilitiesRepo((nint)NativeMethods.TablePtr->C3.hs_method_57f626fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_57f626fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScreenCapabilitiesRepo((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

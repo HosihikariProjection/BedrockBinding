@@ -40,23 +40,23 @@ public sealed unsafe partial class CompoundTagEditHelper : global::System.IDispo
         return __hs_handle;
     }
 
-    public static CompoundTagEditHelper Create()
+    public static CompoundTagEditHelper? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2634a19c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CompoundTagEditHelper((nint)handle);
     }
 
-    public static CompoundTagEditHelper Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagEditHelper arg0)
+    public static CompoundTagEditHelper? Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagEditHelper arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5e27a597((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CompoundTagEditHelper((nint)handle);
@@ -80,9 +80,10 @@ public sealed unsafe partial class CompoundTagEditHelper : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_7441b3d6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagEditHelper operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagEditHelper arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagEditHelper? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagEditHelper arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagEditHelper((nint)NativeMethods.TablePtr->C0.hs_method_f71cdebd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f71cdebd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagEditHelper((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

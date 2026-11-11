@@ -40,23 +40,23 @@ public sealed unsafe partial class TaskGroupState : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static TaskGroupState Create()
+    public static TaskGroupState? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f1e63c5f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TaskGroupState((nint)handle);
     }
 
-    public static TaskGroupState Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoadManager_Nested.TaskGroupState arg0)
+    public static TaskGroupState? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoadManager_Nested.TaskGroupState arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_19870c0a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TaskGroupState((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class TaskGroupState : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_2c631b98((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoadManager_Nested.TaskGroupState operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoadManager_Nested.TaskGroupState arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoadManager_Nested.TaskGroupState? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoadManager_Nested.TaskGroupState arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoadManager_Nested.TaskGroupState((nint)NativeMethods.TablePtr->C3.hs_method_b68f0c1e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b68f0c1e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoadManager_Nested.TaskGroupState((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

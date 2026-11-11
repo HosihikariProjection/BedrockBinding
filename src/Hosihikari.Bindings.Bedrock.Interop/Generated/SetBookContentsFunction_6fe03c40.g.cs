@@ -54,12 +54,12 @@ public sealed unsafe partial class SetBookContentsFunction : global::System.IDis
     public nint _getFunctionType() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SetBookContentsFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetBookContentsFunction arg0)
+    public static SetBookContentsFunction? Create(global::Hosihikari.Bindings.Bedrock.Interop.SetBookContentsFunction arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7b36f535((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetBookContentsFunction((nint)handle);

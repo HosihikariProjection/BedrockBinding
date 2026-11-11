@@ -44,23 +44,23 @@ public sealed unsafe partial class PlatformRuntimeInfo : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PlatformRuntimeInfo Create()
+    public static PlatformRuntimeInfo? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a6184a2d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlatformRuntimeInfo((nint)handle);
     }
 
-    public static PlatformRuntimeInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformRuntimeInfo arg0)
+    public static PlatformRuntimeInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformRuntimeInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f2ee6459((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PlatformRuntimeInfo((nint)handle);
@@ -402,9 +402,10 @@ public sealed unsafe partial class PlatformRuntimeInfo : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c3348fec((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformRuntimeInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformRuntimeInfo arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformRuntimeInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformRuntimeInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformRuntimeInfo((nint)NativeMethods.TablePtr->C0.hs_method_8a172602((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8a172602((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformRuntimeInfo((nint)__hs_handle, false) : null;
     }
 
 

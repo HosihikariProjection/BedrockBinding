@@ -64,12 +64,12 @@ public sealed unsafe partial class ScriptServerStateMonitor : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptServerStateMonitor Create()
+    public static ScriptServerStateMonitor? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a05ca986();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptServerStateMonitor((nint)handle);
@@ -79,12 +79,12 @@ public sealed unsafe partial class ScriptServerStateMonitor : global::System.IDi
     public static ScriptServerStateMonitor Create(nint events) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptServerStateMonitor Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptServerStateMonitor arg0)
+    public static ScriptServerStateMonitor? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptServerStateMonitor arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d54124d8((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptServerStateMonitor((nint)handle);

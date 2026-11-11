@@ -122,9 +122,10 @@ public sealed unsafe partial class PeerConnectionInterface : global::System.IDis
     public nint CreateSender(nint a1, nint a2) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::RtpSenderInterface>' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration GetConfiguration()
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration? GetConfiguration()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration((nint)NativeMethods.TablePtr->C4.hs_method_486c098a((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_486c098a((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration((nint)__hs_handle) : null;
     }
 
     public nint GetNetworkController()
@@ -170,12 +171,12 @@ public sealed unsafe partial class PeerConnectionInterface : global::System.IDis
     public nint LookupDtlsTransportByMid(nint a1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::DtlsTransportInterface>' requires --link-carrier or --virtual-dispatch.");
 
-    public static PeerConnectionInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface arg0)
+    public static PeerConnectionInterface? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_60a39bf5((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PeerConnectionInterface((nint)handle);
@@ -219,14 +220,16 @@ public sealed unsafe partial class PeerConnectionInterface : global::System.IDis
         NativeMethods.TablePtr->C4.hs_method_a3dda725((void*)__hosihikari_shim_handle, a1);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError SetBitrate(nint a1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? SetBitrate(nint a1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_5439abc8((void*)__hosihikari_shim_handle, (void*)a1));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5439abc8((void*)__hosihikari_shim_handle, (void*)a1);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError SetConfiguration(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration a1)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? SetConfiguration(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration a1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_4b704c37((void*)__hosihikari_shim_handle, (void*)a1.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4b704c37((void*)__hosihikari_shim_handle, (void*)a1.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'webrtc::DataChannelEventObserverInterface' has no generated wrapper.", false)]

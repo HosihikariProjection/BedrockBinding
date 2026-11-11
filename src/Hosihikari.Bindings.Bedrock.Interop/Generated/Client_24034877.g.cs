@@ -40,23 +40,23 @@ public sealed unsafe partial class Client : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Client Create()
+    public static Client? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b9553891();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Client((nint)handle);
     }
 
-    public static Client Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.Client arg0)
+    public static Client? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.Client arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3b124754((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Client((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class Client : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_f79efc1f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.Client operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.Client arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.Client? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.Client arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.Client((nint)NativeMethods.TablePtr->C1.hs_method_50151fb2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_50151fb2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.Client((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -40,23 +40,23 @@ public sealed unsafe partial class CrashDumpGlobalData : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static CrashDumpGlobalData Create()
+    public static CrashDumpGlobalData? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_dd7e9117();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CrashDumpGlobalData((nint)handle);
     }
 
-    public static CrashDumpGlobalData Create(global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpGlobalData arg0)
+    public static CrashDumpGlobalData? Create(global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpGlobalData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7fac47fd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CrashDumpGlobalData((nint)handle);
@@ -150,9 +150,10 @@ public sealed unsafe partial class CrashDumpGlobalData : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_5ae5717c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpGlobalData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpGlobalData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpGlobalData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpGlobalData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpGlobalData((nint)NativeMethods.TablePtr->C1.hs_method_2d2728ff((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2d2728ff((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpGlobalData((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

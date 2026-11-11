@@ -44,12 +44,12 @@ public sealed unsafe partial class PropertyComponent : global::System.IDisposabl
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PropertyComponent Create()
+    public static PropertyComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_49e6a0d6();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PropertyComponent((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class PropertyComponent : global::System.IDisposabl
     public static PropertyComponent Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PropertyComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent arg0)
+    public static PropertyComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_110fc060((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PropertyComponent((nint)handle);
@@ -128,9 +128,10 @@ public sealed unsafe partial class PropertyComponent : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_f7e7c37f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent((nint)NativeMethods.TablePtr->C2.hs_method_8c10048d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8c10048d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

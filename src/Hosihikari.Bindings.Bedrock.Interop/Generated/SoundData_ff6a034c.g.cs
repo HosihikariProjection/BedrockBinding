@@ -40,23 +40,23 @@ public sealed unsafe partial class SoundData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static SoundData Create()
+    public static SoundData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_db28598f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SoundData((nint)handle);
     }
 
-    public static SoundData Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SoundData arg0)
+    public static SoundData? Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SoundData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_5b43b877((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SoundData((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class SoundData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_cdff0ab5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SoundData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SoundData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SoundData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SoundData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SoundData((nint)NativeMethods.TablePtr->C3.hs_method_9b8cbe50((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9b8cbe50((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SoundData((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -40,23 +40,23 @@ public sealed unsafe partial class EncryptedZipExtractSource : global::System.ID
         return __hs_handle;
     }
 
-    public static EncryptedZipExtractSource Create()
+    public static EncryptedZipExtractSource? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_41ffda3a();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EncryptedZipExtractSource((nint)handle);
     }
 
-    public static EncryptedZipExtractSource Create(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedZipExtractSource arg0)
+    public static EncryptedZipExtractSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedZipExtractSource arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8d48200a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EncryptedZipExtractSource((nint)handle);
@@ -86,9 +86,10 @@ public sealed unsafe partial class EncryptedZipExtractSource : global::System.ID
         get => (nint)NativeMethods.TablePtr->C3.hs_get_c1b3c6ac((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedZipExtractSource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedZipExtractSource arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedZipExtractSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedZipExtractSource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedZipExtractSource((nint)NativeMethods.TablePtr->C3.hs_method_cb6270f7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cb6270f7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedZipExtractSource((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

@@ -40,23 +40,23 @@ public sealed unsafe partial class UnhandledPromiseRejectionEntry : global::Syst
         return __hs_handle;
     }
 
-    public static UnhandledPromiseRejectionEntry Create()
+    public static UnhandledPromiseRejectionEntry? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f492701f();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UnhandledPromiseRejectionEntry((nint)handle);
     }
 
-    public static UnhandledPromiseRejectionEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject_Nested.UnhandledPromiseRejectionEntry arg0)
+    public static UnhandledPromiseRejectionEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject_Nested.UnhandledPromiseRejectionEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_51045e31((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UnhandledPromiseRejectionEntry((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class UnhandledPromiseRejectionEntry : global::Syst
         get => (nint)NativeMethods.TablePtr->C3.hs_get_45ce2716((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject_Nested.UnhandledPromiseRejectionEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject_Nested.UnhandledPromiseRejectionEntry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject_Nested.UnhandledPromiseRejectionEntry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject_Nested.UnhandledPromiseRejectionEntry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject_Nested.UnhandledPromiseRejectionEntry((nint)NativeMethods.TablePtr->C3.hs_method_2d58915e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2d58915e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject_Nested.UnhandledPromiseRejectionEntry((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

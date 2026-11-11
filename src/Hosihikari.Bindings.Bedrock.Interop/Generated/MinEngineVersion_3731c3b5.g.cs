@@ -44,23 +44,23 @@ public sealed unsafe partial class MinEngineVersion : global::System.IDisposable
     public nint _ctor(nint version) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MinEngineVersion Create()
+    public static MinEngineVersion? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_48a731fd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinEngineVersion((nint)handle);
     }
 
-    public static MinEngineVersion Create(global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion arg0)
+    public static MinEngineVersion? Create(global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_a29ca85d((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MinEngineVersion((nint)handle);
@@ -74,7 +74,7 @@ public sealed unsafe partial class MinEngineVersion : global::System.IDisposable
     public nint createJsonValue() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion fromString(string @string)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion? fromString(string @string)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(@string);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -89,7 +89,8 @@ public sealed unsafe partial class MinEngineVersion : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(@string, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion((nint)NativeMethods.TablePtr->C2.hs_method_2adac2a5(__hs_stringData0, (nuint)__hs_stringByteCount0));
+            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2adac2a5(__hs_stringData0, (nuint)__hs_stringByteCount0);
+            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion((nint)__hs_handle) : null;
         }
     }
 

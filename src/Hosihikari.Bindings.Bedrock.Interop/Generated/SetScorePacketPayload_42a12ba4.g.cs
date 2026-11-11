@@ -40,20 +40,21 @@ public sealed unsafe partial class SetScorePacketPayload : global::System.IDispo
         return __hs_handle;
     }
 
-    public static SetScorePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SetScorePacketPayload arg0)
+    public static SetScorePacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.SetScorePacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3c6dd7f0((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SetScorePacketPayload((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.SetScorePacketPayload change(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId id, global::Hosihikari.Bindings.Bedrock.Interop.Objective objective)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.SetScorePacketPayload? change(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId id, global::Hosihikari.Bindings.Bedrock.Interop.Objective objective)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SetScorePacketPayload((nint)NativeMethods.TablePtr->C3.hs_method_879790e2((void*)id.Handle, (void*)objective.Handle));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_879790e2((void*)id.Handle, (void*)objective.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SetScorePacketPayload((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

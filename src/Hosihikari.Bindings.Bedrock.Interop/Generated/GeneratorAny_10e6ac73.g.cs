@@ -52,12 +52,12 @@ public sealed unsafe partial class GeneratorAny : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GeneratorAny Create()
+    public static GeneratorAny? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7e66aad2();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GeneratorAny((nint)handle);
@@ -67,12 +67,12 @@ public sealed unsafe partial class GeneratorAny : global::System.IDisposable
     public static GeneratorAny Create(nint runtime, nint contextId, nint scope, nint generatorHandle) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static GeneratorAny Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GeneratorAny arg0)
+    public static GeneratorAny? Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GeneratorAny arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2e5b1ce7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GeneratorAny((nint)handle);

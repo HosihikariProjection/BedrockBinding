@@ -52,12 +52,12 @@ public sealed unsafe partial class PackSettingsFactory : global::System.IDisposa
     public static nint GLOBAL_RESOURCE_PACK_SETTINGS_FILENAME() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PackSettingsFactory Create()
+    public static PackSettingsFactory? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cd7883ab();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PackSettingsFactory((nint)handle);

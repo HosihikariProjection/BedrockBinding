@@ -40,23 +40,23 @@ public sealed unsafe partial class CommandParseTableEntry : global::System.IDisp
         return __hs_handle;
     }
 
-    public static CommandParseTableEntry Create()
+    public static CommandParseTableEntry? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_545d1a2c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandParseTableEntry((nint)handle);
     }
 
-    public static CommandParseTableEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry arg0)
+    public static CommandParseTableEntry? Create(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_7b01e024((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandParseTableEntry((nint)handle);
@@ -74,9 +74,10 @@ public sealed unsafe partial class CommandParseTableEntry : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C1.hs_get_4cc63d8d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry((nint)NativeMethods.TablePtr->C1.hs_method_fbc31d72((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_fbc31d72((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

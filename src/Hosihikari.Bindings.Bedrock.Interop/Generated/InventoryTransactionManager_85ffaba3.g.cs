@@ -44,23 +44,23 @@ public sealed unsafe partial class InventoryTransactionManager : global::System.
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static InventoryTransactionManager Create()
+    public static InventoryTransactionManager? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_43171f8e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventoryTransactionManager((nint)handle);
     }
 
-    public static InventoryTransactionManager Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransactionManager arg0)
+    public static InventoryTransactionManager? Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransactionManager arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_08835eae((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InventoryTransactionManager((nint)handle);
@@ -99,9 +99,10 @@ public sealed unsafe partial class InventoryTransactionManager : global::System.
         get => (nint)NativeMethods.TablePtr->C1.hs_get_2a22a90b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransactionManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransactionManager arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransactionManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransactionManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransactionManager((nint)NativeMethods.TablePtr->C1.hs_method_7f46209b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7f46209b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransactionManager((nint)__hs_handle, false) : null;
     }
 
 

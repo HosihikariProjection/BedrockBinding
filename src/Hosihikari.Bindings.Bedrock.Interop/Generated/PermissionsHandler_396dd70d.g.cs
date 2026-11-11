@@ -44,12 +44,12 @@ public sealed unsafe partial class PermissionsHandler : global::System.IDisposab
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static PermissionsHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.PermissionsHandler arg0)
+    public static PermissionsHandler? Create(global::Hosihikari.Bindings.Bedrock.Interop.PermissionsHandler arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_5234245f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PermissionsHandler((nint)handle);

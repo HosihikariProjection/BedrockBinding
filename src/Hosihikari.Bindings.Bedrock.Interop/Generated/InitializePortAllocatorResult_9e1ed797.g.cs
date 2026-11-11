@@ -40,23 +40,23 @@ public sealed unsafe partial class InitializePortAllocatorResult : global::Syste
         return __hs_handle;
     }
 
-    public static InitializePortAllocatorResult Create()
+    public static InitializePortAllocatorResult? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_3b13fcd5();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InitializePortAllocatorResult((nint)handle);
     }
 
-    public static InitializePortAllocatorResult Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnection_Nested.InitializePortAllocatorResult arg0)
+    public static InitializePortAllocatorResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnection_Nested.InitializePortAllocatorResult arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_7f151c7c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new InitializePortAllocatorResult((nint)handle);
@@ -68,9 +68,10 @@ public sealed unsafe partial class InitializePortAllocatorResult : global::Syste
         get => (nint)NativeMethods.TablePtr->C4.hs_get_55dabe18((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnection_Nested.InitializePortAllocatorResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnection_Nested.InitializePortAllocatorResult arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnection_Nested.InitializePortAllocatorResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnection_Nested.InitializePortAllocatorResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnection_Nested.InitializePortAllocatorResult((nint)NativeMethods.TablePtr->C4.hs_method_44f8aa0d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_44f8aa0d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnection_Nested.InitializePortAllocatorResult((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

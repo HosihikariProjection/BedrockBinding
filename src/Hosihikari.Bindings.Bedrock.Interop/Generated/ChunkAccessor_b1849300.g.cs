@@ -50,23 +50,23 @@ public sealed unsafe partial class ChunkAccessor : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_2717e017((void*)__hosihikari_shim_handle);
     }
 
-    public static ChunkAccessor Create()
+    public static ChunkAccessor? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_41a0b6d9();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkAccessor((nint)handle);
     }
 
-    public static ChunkAccessor Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource)
+    public static ChunkAccessor? Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_d3166bd8((void*)dimension.Handle, (void*)biomeSource.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChunkAccessor((nint)handle);

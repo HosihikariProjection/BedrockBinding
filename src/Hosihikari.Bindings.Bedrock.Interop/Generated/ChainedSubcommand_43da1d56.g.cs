@@ -40,12 +40,12 @@ public sealed unsafe partial class ChainedSubcommand : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static ChainedSubcommand Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ChainedSubcommand arg0)
+    public static ChainedSubcommand? Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ChainedSubcommand arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c50ccf76((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChainedSubcommand((nint)handle);

@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerAddExpEvent_ : global:
     public static ValueOrRef_const_PlayerAddExpEvent_ Create_1a7a9b5b(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerAddExpEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerAddExpEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerAddExpEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAddExpEvent((nint)NativeMethods.TablePtr->C1.hs_method_0577826b((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0577826b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAddExpEvent((nint)__hs_handle, false) : null;
     }
 
 

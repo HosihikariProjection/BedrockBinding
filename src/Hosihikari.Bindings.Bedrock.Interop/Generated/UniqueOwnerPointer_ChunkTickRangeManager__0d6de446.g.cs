@@ -40,12 +40,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ChunkTickRangeManager_ : g
         return __hs_handle;
     }
 
-    public static UniqueOwnerPointer_ChunkTickRangeManager_ Create()
+    public static UniqueOwnerPointer_ChunkTickRangeManager_? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e90eced1();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_ChunkTickRangeManager_((nint)handle);
@@ -55,12 +55,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ChunkTickRangeManager_ : g
     public static UniqueOwnerPointer_ChunkTickRangeManager_ Create_8c33daed(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static UniqueOwnerPointer_ChunkTickRangeManager_ Create_4df00899()
+    public static UniqueOwnerPointer_ChunkTickRangeManager_? Create_4df00899()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4df00899();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new UniqueOwnerPointer_ChunkTickRangeManager_((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class UniqueOwnerPointer_ChunkTickRangeManager_ : g
         return NativeMethods.TablePtr->C0.hs_method_a57b787e((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkTickRangeManager operator_multiply()
+    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkTickRangeManager? operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkTickRangeManager((nint)NativeMethods.TablePtr->C0.hs_method_4bea0326((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4bea0326((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkTickRangeManager((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ChunkTickRangeManager? operator_operator__()
@@ -113,9 +114,10 @@ public sealed unsafe partial class UniqueOwnerPointer_ChunkTickRangeManager_ : g
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ChunkTickRangeManager_ operator_assign()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ChunkTickRangeManager_? operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ChunkTickRangeManager_((nint)NativeMethods.TablePtr->C0.hs_method_ea0c19bb((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ea0c19bb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ChunkTickRangeManager_((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ChunkTickRangeManager_ other)

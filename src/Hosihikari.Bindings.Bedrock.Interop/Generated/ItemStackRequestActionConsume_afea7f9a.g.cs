@@ -50,23 +50,23 @@ public sealed unsafe partial class ItemStackRequestActionConsume : global::Syste
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemStackRequestActionConsume Create()
+    public static ItemStackRequestActionConsume? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_deaf59e7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackRequestActionConsume((nint)handle);
     }
 
-    public static ItemStackRequestActionConsume Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionConsume arg0)
+    public static ItemStackRequestActionConsume? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionConsume arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_be0649e4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ItemStackRequestActionConsume((nint)handle);

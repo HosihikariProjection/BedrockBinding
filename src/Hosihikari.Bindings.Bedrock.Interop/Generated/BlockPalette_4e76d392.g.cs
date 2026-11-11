@@ -68,12 +68,12 @@ public sealed unsafe partial class BlockPalette : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockPalette Create()
+    public static BlockPalette? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f945afcd();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockPalette((nint)handle);
@@ -83,12 +83,12 @@ public sealed unsafe partial class BlockPalette : global::System.IDisposable
     public static BlockPalette Create(nint level) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockPalette Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette arg0)
+    public static BlockPalette? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_e5414e4b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockPalette((nint)handle);
@@ -117,9 +117,10 @@ public sealed unsafe partial class BlockPalette : global::System.IDisposable
     public static bool convertLegacyBlocks(nint dst, nint blockIDs, nint data, ulong volume) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getBlock(nint networkId)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlock(nint networkId)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C0.hs_method_76adba23((void*)__hosihikari_shim_handle, (void*)networkId), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_76adba23((void*)__hosihikari_shim_handle, (void*)networkId);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

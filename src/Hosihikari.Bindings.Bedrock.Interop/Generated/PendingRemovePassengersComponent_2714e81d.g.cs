@@ -40,12 +40,12 @@ public sealed unsafe partial class PendingRemovePassengersComponent : global::Sy
         return __hs_handle;
     }
 
-    public static PendingRemovePassengersComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PendingRemovePassengersComponent arg0)
+    public static PendingRemovePassengersComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.PendingRemovePassengersComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_c281bf78((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new PendingRemovePassengersComponent((nint)handle);

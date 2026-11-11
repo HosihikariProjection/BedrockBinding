@@ -40,12 +40,12 @@ public sealed unsafe partial class RemoveScore : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static RemoveScore Create(global::Hosihikari.Bindings.Bedrock.Interop.RemoveScore arg0)
+    public static RemoveScore? Create(global::Hosihikari.Bindings.Bedrock.Interop.RemoveScore arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_577a9a8f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RemoveScore((nint)handle);

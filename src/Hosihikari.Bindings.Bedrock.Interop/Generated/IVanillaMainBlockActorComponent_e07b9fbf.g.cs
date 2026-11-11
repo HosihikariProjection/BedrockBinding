@@ -65,9 +65,10 @@ public sealed unsafe partial class IVanillaMainBlockActorComponent
         NativeMethods.TablePtr->C1.hs_method_48f16559((void*)__hosihikari_shim_handle, (void*)lc.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockActor getBlockActor()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? getBlockActor()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockActor((nint)NativeMethods.TablePtr->C1.hs_method_14c07690((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_14c07690((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockActor((nint)__hs_handle, false) : null;
     }
 
     public byte getBlockActorType()
@@ -87,14 +88,16 @@ public sealed unsafe partial class IVanillaMainBlockActorComponent
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString getCustomName()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString? getCustomName()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)NativeMethods.TablePtr->C1.hs_method_f7f16feb((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f7f16feb((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString getDisplayName()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString? getDisplayName()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)NativeMethods.TablePtr->C1.hs_method_456ab8ff((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_456ab8ff((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)__hs_handle) : null;
     }
 
     public string getFilteredNameTag()

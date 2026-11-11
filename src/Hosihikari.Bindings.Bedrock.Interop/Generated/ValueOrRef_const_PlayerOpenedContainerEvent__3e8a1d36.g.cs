@@ -48,9 +48,10 @@ public sealed unsafe partial class ValueOrRef_const_PlayerOpenedContainerEvent_ 
     public static ValueOrRef_const_PlayerOpenedContainerEvent_ Create_f9702469(nint @ref) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<const PlayerOpenedContainerEvent>' is not a known bindable declaration.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerOpenedContainerEvent value()
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerOpenedContainerEvent? value()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerOpenedContainerEvent((nint)NativeMethods.TablePtr->C1.hs_method_225edd7b((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_225edd7b((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerOpenedContainerEvent((nint)__hs_handle, false) : null;
     }
 
 

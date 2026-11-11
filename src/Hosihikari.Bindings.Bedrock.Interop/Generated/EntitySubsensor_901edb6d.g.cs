@@ -44,12 +44,12 @@ public sealed unsafe partial class EntitySubsensor : global::System.IDisposable
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static EntitySubsensor Create()
+    public static EntitySubsensor? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_50637ece();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new EntitySubsensor((nint)handle);
@@ -113,9 +113,10 @@ public sealed unsafe partial class EntitySubsensor : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_b7bd99fc((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EntitySubsensor operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EntitySubsensor arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.EntitySubsensor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EntitySubsensor arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EntitySubsensor((nint)NativeMethods.TablePtr->C1.hs_method_64c04f3c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_64c04f3c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EntitySubsensor((nint)__hs_handle, false) : null;
     }
 
 

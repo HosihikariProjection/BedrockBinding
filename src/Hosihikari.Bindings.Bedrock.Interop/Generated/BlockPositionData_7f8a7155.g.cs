@@ -48,12 +48,12 @@ public sealed unsafe partial class BlockPositionData : global::System.IDisposabl
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockPositionData Create()
+    public static BlockPositionData? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7e4928d4();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockPositionData((nint)handle);
@@ -87,9 +87,10 @@ public sealed unsafe partial class BlockPositionData : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C3.hs_get_54a81f0c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.BlockPositionData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.BlockPositionData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.BlockPositionData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.BlockPositionData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.BlockPositionData((nint)NativeMethods.TablePtr->C3.hs_method_ee1f0048((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ee1f0048((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.BlockPositionData((nint)__hs_handle, false) : null;
     }
 
 

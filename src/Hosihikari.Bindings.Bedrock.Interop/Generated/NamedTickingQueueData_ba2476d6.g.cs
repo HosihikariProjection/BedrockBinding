@@ -40,12 +40,12 @@ public sealed unsafe partial class NamedTickingQueueData : global::System.IDispo
         return __hs_handle;
     }
 
-    public static NamedTickingQueueData Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.NamedTickingQueueData arg0)
+    public static NamedTickingQueueData? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.NamedTickingQueueData arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_b757e7f6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new NamedTickingQueueData((nint)handle);

@@ -44,23 +44,23 @@ public sealed unsafe partial class MountTamingComponent : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MountTamingComponent Create()
+    public static MountTamingComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_35e81bde();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MountTamingComponent((nint)handle);
     }
 
-    public static MountTamingComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.MountTamingComponent arg0)
+    public static MountTamingComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.MountTamingComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_ce16a1f4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MountTamingComponent((nint)handle);

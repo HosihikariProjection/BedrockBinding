@@ -40,12 +40,12 @@ public sealed unsafe partial class HurtArmorPacketPayload : global::System.IDisp
         return __hs_handle;
     }
 
-    public static HurtArmorPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.HurtArmorPacketPayload arg0)
+    public static HurtArmorPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.HurtArmorPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_26e236bd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new HurtArmorPacketPayload((nint)handle);

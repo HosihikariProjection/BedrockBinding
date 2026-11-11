@@ -44,12 +44,12 @@ public sealed unsafe partial class ScriptBlockRaycastHit : global::System.IDispo
     public nint _ctor(nint source, nint pos, byte face, nint faceLocation, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptBlockRaycastHit Create()
+    public static ScriptBlockRaycastHit? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_4dab1e83();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockRaycastHit((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class ScriptBlockRaycastHit : global::System.IDispo
     public static ScriptBlockRaycastHit Create(nint source, nint pos, byte face, nint faceLocation, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptBlockRaycastHit Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockRaycastHit arg0)
+    public static ScriptBlockRaycastHit? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockRaycastHit arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_17abf31b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptBlockRaycastHit((nint)handle);

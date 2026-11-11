@@ -44,12 +44,12 @@ public sealed unsafe partial class ChainedSubcommandData : global::System.IDispo
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ChainedSubcommandData Create()
+    public static ChainedSubcommandData? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_66c2880c();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ChainedSubcommandData((nint)handle);
@@ -69,9 +69,10 @@ public sealed unsafe partial class ChainedSubcommandData : global::System.IDispo
     public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.ChainedSubcommandData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.ChainedSubcommandData arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.ChainedSubcommandData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.ChainedSubcommandData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.ChainedSubcommandData((nint)NativeMethods.TablePtr->C0.hs_method_e919100e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e919100e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.ChainedSubcommandData((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -40,12 +40,12 @@ public sealed unsafe partial class Pos2d : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Pos2d Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    public static Pos2d? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_94c3ac08((void*)pos.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Pos2d((nint)handle);

@@ -40,23 +40,23 @@ public sealed unsafe partial class WriteBudgetTelemetryPeriodState : global::Sys
         return __hs_handle;
     }
 
-    public static WriteBudgetTelemetryPeriodState Create()
+    public static WriteBudgetTelemetryPeriodState? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5916dddb();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WriteBudgetTelemetryPeriodState((nint)handle);
     }
 
-    public static WriteBudgetTelemetryPeriodState Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetTelemetryPeriodState arg0)
+    public static WriteBudgetTelemetryPeriodState? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetTelemetryPeriodState arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_542d97c7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new WriteBudgetTelemetryPeriodState((nint)handle);
@@ -98,9 +98,10 @@ public sealed unsafe partial class WriteBudgetTelemetryPeriodState : global::Sys
         get => (nint)NativeMethods.TablePtr->C1.hs_get_1bd062a0((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetTelemetryPeriodState operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetTelemetryPeriodState arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetTelemetryPeriodState? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetTelemetryPeriodState arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetTelemetryPeriodState((nint)NativeMethods.TablePtr->C1.hs_method_f433b2f8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f433b2f8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics_Nested.WriteBudgetTelemetryPeriodState((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

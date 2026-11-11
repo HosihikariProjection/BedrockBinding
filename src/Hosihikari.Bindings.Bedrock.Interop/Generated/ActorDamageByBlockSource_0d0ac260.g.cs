@@ -52,12 +52,12 @@ public sealed unsafe partial class ActorDamageByBlockSource : global::System.IDi
     public bool _isBlockSource() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ActorDamageByBlockSource Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageByBlockSource arg0)
+    public static ActorDamageByBlockSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageByBlockSource arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_45f998bd((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ActorDamageByBlockSource((nint)handle);

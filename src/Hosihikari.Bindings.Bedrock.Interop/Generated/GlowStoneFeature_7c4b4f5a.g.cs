@@ -57,12 +57,12 @@ public sealed unsafe partial class GlowStoneFeature : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_0261dfb9((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
     }
 
-    public static GlowStoneFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.GlowStoneFeature arg0)
+    public static GlowStoneFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.GlowStoneFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_89593c56((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new GlowStoneFeature((nint)handle);

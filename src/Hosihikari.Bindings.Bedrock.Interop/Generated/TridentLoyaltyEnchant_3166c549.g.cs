@@ -106,12 +106,12 @@ public sealed unsafe partial class TridentLoyaltyEnchant : global::System.IDispo
     public int _getMinCost(int level) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TridentLoyaltyEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.TridentLoyaltyEnchant arg0)
+    public static TridentLoyaltyEnchant? Create(global::Hosihikari.Bindings.Bedrock.Interop.TridentLoyaltyEnchant arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_a11966a7((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new TridentLoyaltyEnchant((nint)handle);

@@ -40,12 +40,12 @@ public sealed unsafe partial class MovePriorityQueue_BlockTickingQueue__BlockTic
         return __hs_handle;
     }
 
-    public static MovePriorityQueue_BlockTickingQueue__BlockTick__std__greater_BlockTickingQueue__BlockTick__ Create(global::Hosihikari.Bindings.Bedrock.Interop.MovePriorityQueue_BlockTickingQueue__BlockTick__std__greater_BlockTickingQueue__BlockTick__ arg0)
+    public static MovePriorityQueue_BlockTickingQueue__BlockTick__std__greater_BlockTickingQueue__BlockTick__? Create(global::Hosihikari.Bindings.Bedrock.Interop.MovePriorityQueue_BlockTickingQueue__BlockTick__std__greater_BlockTickingQueue__BlockTick__ arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8438e85a((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MovePriorityQueue_BlockTickingQueue__BlockTick__std__greater_BlockTickingQueue__BlockTick__((nint)handle);
@@ -88,9 +88,10 @@ public sealed unsafe partial class MovePriorityQueue_BlockTickingQueue__BlockTic
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d9d6d5d4((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick pop()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick? pop()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)NativeMethods.TablePtr->C2.hs_method_84e74fcd((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_84e74fcd((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)__hs_handle) : null;
     }
 
     public void resort()
@@ -103,14 +104,16 @@ public sealed unsafe partial class MovePriorityQueue_BlockTickingQueue__BlockTic
         return NativeMethods.TablePtr->C2.hs_method_00faff90((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick top_2f65d4fc()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick? top_2f65d4fc()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)NativeMethods.TablePtr->C2.hs_method_2f65d4fc((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2f65d4fc((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick top_2d8ff382()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick? top_2d8ff382()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)NativeMethods.TablePtr->C2.hs_method_2d8ff382((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2d8ff382((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)__hs_handle, false) : null;
     }
 
 

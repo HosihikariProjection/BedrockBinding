@@ -44,12 +44,12 @@ public sealed unsafe partial class Inspect : global::System.IDisposable
     public void _execute(nint origin, nint output) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Inspect Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.Inspect arg0)
+    public static Inspect? Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.Inspect arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_89676b0b((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Inspect((nint)handle);

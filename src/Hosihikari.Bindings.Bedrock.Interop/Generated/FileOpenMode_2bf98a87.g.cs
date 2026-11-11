@@ -44,23 +44,23 @@ public sealed unsafe partial class FileOpenMode : global::System.IDisposable
     public nint _ctor(int openMode) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileOpenMode Create()
+    public static FileOpenMode? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_80d0f064();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileOpenMode((nint)handle);
     }
 
-    public static FileOpenMode Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileOpenMode arg0)
+    public static FileOpenMode? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileOpenMode arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_b904854f((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new FileOpenMode((nint)handle);
@@ -128,9 +128,10 @@ public sealed unsafe partial class FileOpenMode : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_82ab961c((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileOpenMode operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileOpenMode arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileOpenMode? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileOpenMode arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileOpenMode((nint)NativeMethods.TablePtr->C1.hs_method_765086b3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_765086b3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileOpenMode((nint)__hs_handle, false) : null;
     }
 
     public void Dispose()

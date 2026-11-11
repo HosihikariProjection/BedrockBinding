@@ -44,12 +44,12 @@ public sealed unsafe partial class SoundEventIdentifier : global::System.IDispos
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SoundEventIdentifier Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier arg0)
+    public static SoundEventIdentifier? Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a9ba3bb2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new SoundEventIdentifier((nint)handle);

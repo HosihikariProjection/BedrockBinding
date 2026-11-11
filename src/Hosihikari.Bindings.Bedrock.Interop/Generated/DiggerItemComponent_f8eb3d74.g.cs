@@ -48,12 +48,12 @@ public sealed unsafe partial class DiggerItemComponent : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DiggerItemComponent Create()
+    public static DiggerItemComponent? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_ff61f525();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DiggerItemComponent((nint)handle);
@@ -63,12 +63,12 @@ public sealed unsafe partial class DiggerItemComponent : global::System.IDisposa
     public static DiggerItemComponent Create(nint component) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DiggerItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.DiggerItemComponent arg0)
+    public static DiggerItemComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.DiggerItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_89fbf367((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new DiggerItemComponent((nint)handle);

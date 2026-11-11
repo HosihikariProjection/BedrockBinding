@@ -48,12 +48,12 @@ public sealed unsafe partial class CommandBlockUpdatePacketPayload : global::Sys
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CommandBlockUpdatePacketPayload Create()
+    public static CommandBlockUpdatePacketPayload? Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_691c78c3();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new CommandBlockUpdatePacketPayload((nint)handle);
@@ -113,9 +113,10 @@ public sealed unsafe partial class CommandBlockUpdatePacketPayload : global::Sys
         set => NativeMethods.TablePtr->C0.hs_set_5775db0b((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockUpdatePacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockUpdatePacketPayload arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockUpdatePacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockUpdatePacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockUpdatePacketPayload((nint)NativeMethods.TablePtr->C0.hs_method_6f1826b2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6f1826b2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockUpdatePacketPayload((nint)__hs_handle, false) : null;
     }
 
 

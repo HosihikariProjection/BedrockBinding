@@ -40,12 +40,12 @@ public sealed unsafe partial class ContainerValidationResult : global::System.ID
         return __hs_handle;
     }
 
-    public static ContainerValidationResult Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult arg0)
+    public static ContainerValidationResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_aee3dfa4((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ContainerValidationResult((nint)handle);

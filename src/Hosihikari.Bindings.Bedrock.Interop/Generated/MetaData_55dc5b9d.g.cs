@@ -44,12 +44,12 @@ public sealed unsafe partial class MetaData : global::System.IDisposable
     public nint _ctor(nint path, bool isHidden, nint packCategory) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MetaData Create()
+    public static MetaData? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_34d7cf1b();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MetaData((nint)handle);
@@ -59,12 +59,12 @@ public sealed unsafe partial class MetaData : global::System.IDisposable
     public static MetaData Create(nint path, bool isHidden, nint packCategory) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MetaData Create(global::Hosihikari.Bindings.Bedrock.Interop.IInPackagePacks_Nested.MetaData arg0)
+    public static MetaData? Create(global::Hosihikari.Bindings.Bedrock.Interop.IInPackagePacks_Nested.MetaData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d205a332((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MetaData((nint)handle);

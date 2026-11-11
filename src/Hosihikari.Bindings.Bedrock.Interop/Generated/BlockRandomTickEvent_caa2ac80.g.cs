@@ -46,40 +46,42 @@ public sealed unsafe partial class BlockRandomTickEvent : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C0.hs_get_166ddc24((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource _getBlockSource()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? _getBlockSource()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)NativeMethods.TablePtr->C0.hs_method_166c718e((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_166c718e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockRandomTickEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockEvents.BlockRandomTickEvent arg0)
+    public static BlockRandomTickEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockEvents.BlockRandomTickEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_902eb86c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockRandomTickEvent((nint)handle);
     }
 
-    public static BlockRandomTickEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
+    public static BlockRandomTickEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_cdfb7cd2((void*)pos.Handle, (void*)region.Handle, (void*)random.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BlockRandomTickEvent((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource getBlockSource()
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? getBlockSource()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)NativeMethods.TablePtr->C0.hs_method_15d15348((void*)__hosihikari_shim_handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_15d15348((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.

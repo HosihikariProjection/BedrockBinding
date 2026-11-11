@@ -48,12 +48,12 @@ public sealed unsafe partial class ScriptProjectileHitEntityAfterEvent : global:
     public nint _ctor(nint projectileHitEvent, nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptProjectileHitEntityAfterEvent Create()
+    public static ScriptProjectileHitEntityAfterEvent? Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e9d6c106();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptProjectileHitEntityAfterEvent((nint)handle);

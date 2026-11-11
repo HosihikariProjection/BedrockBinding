@@ -40,12 +40,12 @@ public sealed unsafe partial class Url : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Url Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Url arg0)
+    public static Url? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Url arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_4a41ae64((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Url((nint)handle);

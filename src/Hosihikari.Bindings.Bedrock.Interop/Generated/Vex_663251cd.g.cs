@@ -744,12 +744,12 @@ public sealed unsafe partial class Vex : global::System.IDisposable
     public void _reloadHardcoded(nint method, nint @params) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static Vex Create()
+    public static Vex? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_372765d7();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new Vex((nint)handle);

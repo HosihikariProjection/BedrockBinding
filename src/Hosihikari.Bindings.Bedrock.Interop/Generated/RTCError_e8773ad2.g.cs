@@ -56,23 +56,23 @@ public sealed unsafe partial class RTCError : global::System.IDisposable
     public static nint OK() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static RTCError Create()
+    public static RTCError? Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c2d6263e();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RTCError((nint)handle);
     }
 
-    public static RTCError Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError arg0)
+    public static RTCError? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_ebe2fb86((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new RTCError((nint)handle);
@@ -114,9 +114,10 @@ public sealed unsafe partial class RTCError : global::System.IDisposable
     public nint message() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_7e11d4e8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_7e11d4e8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle, false) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

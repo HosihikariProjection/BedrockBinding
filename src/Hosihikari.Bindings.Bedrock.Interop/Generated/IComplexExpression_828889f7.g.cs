@@ -40,12 +40,12 @@ public sealed unsafe partial class IComplexExpression : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static IComplexExpression Create(global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.IComplexExpression arg0)
+    public static IComplexExpression? Create(global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.IComplexExpression arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_2cc3cafe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new IComplexExpression((nint)handle);
@@ -55,9 +55,10 @@ public sealed unsafe partial class IComplexExpression : global::System.IDisposab
     public nint clone() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Molang::details::IComplexExpression' has no accessible destructor.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg evalGeneric(global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
+    public global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg? evalGeneric(global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)NativeMethods.TablePtr->C2.hs_method_02a350a5((void*)__hosihikari_shim_handle, (void*)@params.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_02a350a5((void*)__hosihikari_shim_handle, (void*)@params.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle, false) : null;
     }
 
     public string getExpressionString()
@@ -117,9 +118,10 @@ public sealed unsafe partial class IComplexExpression : global::System.IDisposab
     public void replaceArrayVariables(nint dataMap) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: map key type 'HashedString' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value toJson()
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? toJson()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C2.hs_method_84282015((void*)__hosihikari_shim_handle));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_84282015((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
     }
 
     public void validateArrayVariables()

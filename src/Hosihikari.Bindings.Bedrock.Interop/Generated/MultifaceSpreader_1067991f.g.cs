@@ -64,23 +64,23 @@ public sealed unsafe partial class MultifaceSpreader : global::System.IDisposabl
     public static nint ALL_SPREAD_TYPES() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MultifaceSpreader Create()
+    public static MultifaceSpreader? Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_fd733c81();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MultifaceSpreader((nint)handle);
     }
 
-    public static MultifaceSpreader Create(global::Hosihikari.Bindings.Bedrock.Interop.MultifaceSpreader arg0)
+    public static MultifaceSpreader? Create(global::Hosihikari.Bindings.Bedrock.Interop.MultifaceSpreader arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_41704016((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new MultifaceSpreader((nint)handle);

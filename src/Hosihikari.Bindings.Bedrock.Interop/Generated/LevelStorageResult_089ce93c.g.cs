@@ -44,23 +44,23 @@ public sealed unsafe partial class LevelStorageResult : global::System.IDisposab
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelStorageResult Create()
+    public static LevelStorageResult? Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_19a8073d();
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelStorageResult((nint)handle);
     }
 
-    public static LevelStorageResult Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult arg0)
+    public static LevelStorageResult? Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fdb201f6((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new LevelStorageResult((nint)handle);
@@ -78,9 +78,10 @@ public sealed unsafe partial class LevelStorageResult : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C1.hs_get_cc49a16d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)NativeMethods.TablePtr->C1.hs_method_fbe69090((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_fbe69090((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)__hs_handle, false) : null;
     }
 
 

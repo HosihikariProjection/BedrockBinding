@@ -56,12 +56,12 @@ public sealed unsafe partial class ServerPlayerMovementComponent : global::Syste
     public static ServerPlayerMovementComponent Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerPlayerMovementComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerMovementComponent arg0)
+    public static ServerPlayerMovementComponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerMovementComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6f5423f2((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ServerPlayerMovementComponent((nint)handle);
@@ -119,9 +119,10 @@ public sealed unsafe partial class ServerPlayerMovementComponent : global::Syste
         get => (nint)NativeMethods.TablePtr->C3.hs_get_96c945e5((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerMovementComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerMovementComponent arg0)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerMovementComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerMovementComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerMovementComponent((nint)NativeMethods.TablePtr->C3.hs_method_7c8a0d7c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7c8a0d7c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerMovementComponent((nint)__hs_handle, false) : null;
     }
 
 

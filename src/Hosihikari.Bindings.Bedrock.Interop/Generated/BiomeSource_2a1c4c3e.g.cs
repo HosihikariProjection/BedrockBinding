@@ -52,12 +52,12 @@ public sealed unsafe partial class BiomeSource : global::System.IDisposable
     public nint _getBiomeVolumeToFill(short chunkHeight, nint chunkMin, uint levelSeed, nint chunkLocalNoiseCache) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'ChunkVolume::VolumeOf<Biome>' requires --link-carrier or --virtual-dispatch.");
 
-    public static BiomeSource Create(global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource arg0)
+    public static BiomeSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_be4acdfe((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new BiomeSource((nint)handle);
@@ -93,14 +93,16 @@ public sealed unsafe partial class BiomeSource : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_a84a331e((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle, (void*)(chunkLocalNoiseCache?.Handle ?? 0));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox area, uint scale)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea? getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox area, uint scale)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)NativeMethods.TablePtr->C0.hs_method_d89a103a((void*)__hosihikari_shim_handle, (void*)area.Handle, scale));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d89a103a((void*)__hosihikari_shim_handle, (void*)area.Handle, scale);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox area, uint scale, nint getBiomeOptionsIn)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea? getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox area, uint scale, nint getBiomeOptionsIn)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)NativeMethods.TablePtr->C0.hs_method_f00d6eda((void*)__hosihikari_shim_handle, (void*)area.Handle, scale, (void*)getBiomeOptionsIn));
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f00d6eda((void*)__hosihikari_shim_handle, (void*)area.Handle, scale, (void*)getBiomeOptionsIn);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle) : null;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'OperationGraphResult<const Biome *>' is not supported.", false)]

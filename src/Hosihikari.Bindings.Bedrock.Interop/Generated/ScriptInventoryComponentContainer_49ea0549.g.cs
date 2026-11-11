@@ -68,20 +68,21 @@ public sealed unsafe partial class ScriptInventoryComponentContainer : global::S
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptInventoryComponentContainer Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptInventoryComponentContainer arg0)
+    public static ScriptInventoryComponentContainer? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptInventoryComponentContainer arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6c94be9c((void*)arg0.Handle);
         if (handle == null)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            return null;
         }
 
         return new ScriptInventoryComponentContainer((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemContext _getItemContext(int slot)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemContext? _getItemContext(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemContext((nint)NativeMethods.TablePtr->C3.hs_method_19d0ab71((void*)__hosihikari_shim_handle, slot));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_19d0ab71((void*)__hosihikari_shim_handle, slot);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemContext((nint)__hs_handle) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? _tryGetContainer()
