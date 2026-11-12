@@ -72,15 +72,27 @@ public sealed unsafe partial class associative_adapter_int__int__std__less_int__
     public nint find_d4b3ae4e(nint key) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, int &>>' requires --link-carrier or --virtual-dispatch.");
 
-    public nint keys()
+    public nint? keys()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_311b5960((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_311b5960((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public const bool no_mapped_container = false;
 
-    public nint values()
+    public nint? values()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_5a74d184((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5a74d184((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 }

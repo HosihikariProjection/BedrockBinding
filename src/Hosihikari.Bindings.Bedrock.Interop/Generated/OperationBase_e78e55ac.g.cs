@@ -52,9 +52,15 @@ public sealed unsafe partial class OperationBase : global::System.IDisposable
         return new OperationBase((nint)handle);
     }
 
-    public nint getDescription()
+    public nint? getDescription()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_961f0dd2((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_961f0dd2((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool isAsync()

@@ -54,9 +54,15 @@ public sealed unsafe partial class TickingAreaView : global::System.IDisposable
     public nint _createChildSource() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'ChunkViewSource' has no accessible destructor.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource parent)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource parent)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_03f54c4e((void*)__hosihikari_shim_handle, (void*)parent.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_03f54c4e((void*)__hosihikari_shim_handle, (void*)parent.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _getAvailableChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp)

@@ -40,14 +40,26 @@ public sealed unsafe partial class CommandOutput : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(int type)
+    public nint? _ctor(int type)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_91f18fa1((void*)__hosihikari_shim_handle, type);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_91f18fa1((void*)__hosihikari_shim_handle, type);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput rhs)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput rhs)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_d2442b59((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d2442b59((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static CommandOutput? Create()

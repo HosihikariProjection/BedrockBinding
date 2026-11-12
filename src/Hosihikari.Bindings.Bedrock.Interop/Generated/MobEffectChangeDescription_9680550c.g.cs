@@ -69,9 +69,15 @@ public sealed unsafe partial class MobEffectChangeDescription : global::System.I
         NativeMethods.TablePtr->C2.hs_method_8398edb9((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
     }
 
-    public nint getJsonName()
+    public nint? getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_dc737ba7((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_dc737ba7((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.

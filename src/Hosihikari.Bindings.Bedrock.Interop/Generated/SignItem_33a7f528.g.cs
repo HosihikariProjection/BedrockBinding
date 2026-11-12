@@ -318,7 +318,7 @@ public sealed unsafe partial class SignItem : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle);
     }
 
-    public nint _ctor(string name, int id, int type)
+    public nint? _ctor(string name, int id, int type)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -333,7 +333,13 @@ public sealed unsafe partial class SignItem : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_035d12c9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, type);
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_035d12c9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, type);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

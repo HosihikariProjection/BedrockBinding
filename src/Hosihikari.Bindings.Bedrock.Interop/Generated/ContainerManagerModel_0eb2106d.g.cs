@@ -49,9 +49,15 @@ public sealed unsafe partial class ContainerManagerModel : global::System.IDispo
         NativeMethods.TablePtr->C1.hs_method_bc6475e0((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public nint? _ctor(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_1c03dad7((void*)__hosihikari_shim_handle, containerId, (void*)player.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1c03dad7((void*)__hosihikari_shim_handle, containerId, (void*)player.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _debitPlayerLevels(int levels)

@@ -61,9 +61,15 @@ public sealed unsafe partial class Description : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_811a616b((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
     }
 
-    public nint getJsonName()
+    public nint? getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_4500630b((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4500630b((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -168,9 +168,15 @@ public sealed unsafe partial class Path : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_94e6b556((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public nint getUtf8CString()
+    public nint? getUtf8CString()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_45915f0e((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_45915f0e((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public string getUtf8StdString()

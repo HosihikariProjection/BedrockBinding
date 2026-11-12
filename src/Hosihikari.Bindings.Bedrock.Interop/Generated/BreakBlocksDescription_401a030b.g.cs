@@ -69,9 +69,15 @@ public sealed unsafe partial class BreakBlocksDescription : global::System.IDisp
         NativeMethods.TablePtr->C0.hs_method_bd9ff39a((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
     }
 
-    public nint getJsonName()
+    public nint? getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_ca97024a((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ca97024a((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.

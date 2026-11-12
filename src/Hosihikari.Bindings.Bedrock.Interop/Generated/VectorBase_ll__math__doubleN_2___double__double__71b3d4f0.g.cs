@@ -63,14 +63,26 @@ public sealed unsafe partial class VectorBase_ll__math__doubleN_2___double__doub
         return NativeMethods.TablePtr->C4.hs_method_2904f007((void*)__hosihikari_shim_handle, (void*)b) != 0;
     }
 
-    public nint operator_index_3d751b26(ulong index)
+    public nint? operator_index_3d751b26(ulong index)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_3d751b26((void*)__hosihikari_shim_handle, index);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3d751b26((void*)__hosihikari_shim_handle, index);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint operator_index_36d96d3c(ulong index)
+    public nint? operator_index_36d96d3c(ulong index)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_36d96d3c((void*)__hosihikari_shim_handle, index);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_36d96d3c((void*)__hosihikari_shim_handle, index);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: consteval methods cannot be called at runtime.", false)]

@@ -72,9 +72,15 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerPermissionsSynchroni
     public static UniqueOwnerPointer_PlayerPermissionsSynchroniser_ Create_c191e749(nint ptr) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'PlayerPermissionsSynchroniser' has no generated wrapper.");
 
-    public nint get()
+    public nint? get()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_cfa9c03f((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_cfa9c03f((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool isValid()
@@ -99,14 +105,26 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerPermissionsSynchroni
         return NativeMethods.TablePtr->C0.hs_method_2015e0f4((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public nint operator_multiply()
+    public nint? operator_multiply()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_4238a566((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4238a566((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint operator_operator__()
+    public nint? operator_operator__()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_4bd739e2((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4bd739e2((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

@@ -40,9 +40,15 @@ public sealed unsafe partial class MinEngineVersion : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion version)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion version)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_14175cd3((void*)__hosihikari_shim_handle, (void*)version.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_14175cd3((void*)__hosihikari_shim_handle, (void*)version.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static MinEngineVersion? Create()

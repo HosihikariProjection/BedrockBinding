@@ -40,9 +40,15 @@ public sealed unsafe partial class Parameter : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(nint min, nint max)
+    public nint? _ctor(nint min, nint max)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_5db49eff((void*)__hosihikari_shim_handle, (void*)min, (void*)max);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5db49eff((void*)__hosihikari_shim_handle, (void*)min, (void*)max);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

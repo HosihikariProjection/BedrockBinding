@@ -40,9 +40,15 @@ public sealed unsafe partial class CommandRequestPacketPayload : global::System.
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CommandContext context, bool internalSource)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CommandContext context, bool internalSource)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_6176c0dd((void*)__hosihikari_shim_handle, (void*)context.Handle, internalSource);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6176c0dd((void*)__hosihikari_shim_handle, (void*)context.Handle, internalSource);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

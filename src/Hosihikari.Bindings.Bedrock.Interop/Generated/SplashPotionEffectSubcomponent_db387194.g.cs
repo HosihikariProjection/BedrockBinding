@@ -57,9 +57,15 @@ public sealed unsafe partial class SplashPotionEffectSubcomponent : global::Syst
         NativeMethods.TablePtr->C3.hs_method_e1d9a341((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)component.Handle);
     }
 
-    public nint getName()
+    public nint? getName()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_d81da007((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d81da007((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public int mPotionEffect

@@ -8076,9 +8076,15 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         return NativeMethods.TablePtr->C2.hs_method_b0122a80((void*)__hosihikari_shim_handle);
     }
 
-    public nint getPurchaseEventing()
+    public nint? getPurchaseEventing()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_67e8a673((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_67e8a673((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public string getSessionId()
@@ -8112,9 +8118,15 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         }
     }
 
-    public nint getWorldLoadPerformanceEventing()
+    public nint? getWorldLoadPerformanceEventing()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_0f405323((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0f405323((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]

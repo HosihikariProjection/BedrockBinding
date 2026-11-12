@@ -194,9 +194,15 @@ public sealed unsafe partial class HashedString : global::System.IDisposable
         return new HashedString((nint)handle);
     }
 
-    public nint c_str()
+    public nint? c_str()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_2296be94((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2296be94((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void clear()

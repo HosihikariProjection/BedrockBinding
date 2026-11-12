@@ -40,9 +40,15 @@ public sealed unsafe partial class UpdateSubChunkBlocksChangedInfo : global::Sys
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.UpdateSubChunkBlocksChangedInfo arg0)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.UpdateSubChunkBlocksChangedInfo arg0)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_b84b2636((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b84b2636((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]

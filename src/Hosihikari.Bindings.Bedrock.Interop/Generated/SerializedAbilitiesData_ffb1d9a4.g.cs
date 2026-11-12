@@ -40,9 +40,15 @@ public sealed unsafe partial class SerializedAbilitiesData : global::System.IDis
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID targetPlayer, global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities layeredAbilities)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID targetPlayer, global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities layeredAbilities)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_5bed3c5e((void*)__hosihikari_shim_handle, (void*)targetPlayer.Handle, (void*)layeredAbilities.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5bed3c5e((void*)__hosihikari_shim_handle, (void*)targetPlayer.Handle, (void*)layeredAbilities.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

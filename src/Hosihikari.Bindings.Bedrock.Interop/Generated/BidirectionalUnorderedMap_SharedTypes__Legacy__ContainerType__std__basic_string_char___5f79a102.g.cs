@@ -52,7 +52,7 @@ public sealed unsafe partial class BidirectionalUnorderedMap_SharedTypes__Legacy
         return new BidirectionalUnorderedMap_SharedTypes__Legacy__ContainerType__std__basic_string_char__((nint)handle);
     }
 
-    public nint at_268158a1(string a)
+    public nint? at_268158a1(string a)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(a);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -67,11 +67,17 @@ public sealed unsafe partial class BidirectionalUnorderedMap_SharedTypes__Legacy
         global::System.Text.Encoding.UTF8.GetBytes(a, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_268158a1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_268158a1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
-    public nint at_fc06a761(string a)
+    public nint? at_fc06a761(string a)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(a);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -86,7 +92,13 @@ public sealed unsafe partial class BidirectionalUnorderedMap_SharedTypes__Legacy
         global::System.Text.Encoding.UTF8.GetBytes(a, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_fc06a761((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_fc06a761((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
@@ -102,7 +114,7 @@ public sealed unsafe partial class BidirectionalUnorderedMap_SharedTypes__Legacy
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public nint atl_d6219ce2(string a)
+    public nint? atl_d6219ce2(string a)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(a);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -117,11 +129,17 @@ public sealed unsafe partial class BidirectionalUnorderedMap_SharedTypes__Legacy
         global::System.Text.Encoding.UTF8.GetBytes(a, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_d6219ce2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d6219ce2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
-    public nint atl_f029482e(string a)
+    public nint? atl_f029482e(string a)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(a);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -136,7 +154,13 @@ public sealed unsafe partial class BidirectionalUnorderedMap_SharedTypes__Legacy
         global::System.Text.Encoding.UTF8.GetBytes(a, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_f029482e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f029482e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
@@ -274,7 +298,7 @@ public sealed unsafe partial class BidirectionalUnorderedMap_SharedTypes__Legacy
         get => (nint)NativeMethods.TablePtr->C0.hs_get_a5660544((void*)__hosihikari_shim_handle);
     }
 
-    public nint operator_call_940b3e20(string value)
+    public nint? operator_call_940b3e20(string value)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(value);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -289,11 +313,17 @@ public sealed unsafe partial class BidirectionalUnorderedMap_SharedTypes__Legacy
         global::System.Text.Encoding.UTF8.GetBytes(value, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_940b3e20((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_940b3e20((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
-    public nint operator_call_2171e5f8(string value)
+    public nint? operator_call_2171e5f8(string value)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(value);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -308,7 +338,13 @@ public sealed unsafe partial class BidirectionalUnorderedMap_SharedTypes__Legacy
         global::System.Text.Encoding.UTF8.GetBytes(value, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_2171e5f8((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2171e5f8((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

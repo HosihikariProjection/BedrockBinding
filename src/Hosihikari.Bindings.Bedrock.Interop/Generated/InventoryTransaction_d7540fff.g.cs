@@ -74,9 +74,15 @@ public sealed unsafe partial class InventoryTransaction : global::System.IDispos
     public void forceBalanceTransaction() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint getActions(global::Hosihikari.Bindings.Bedrock.Interop.InventorySource source)
+    public nint? getActions(global::Hosihikari.Bindings.Bedrock.Interop.InventorySource source)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_113da8ae((void*)__hosihikari_shim_handle, (void*)source.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_113da8ae((void*)__hosihikari_shim_handle, (void*)source.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

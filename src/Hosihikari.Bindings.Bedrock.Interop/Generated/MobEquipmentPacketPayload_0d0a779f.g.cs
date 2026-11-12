@@ -40,9 +40,15 @@ public sealed unsafe partial class MobEquipmentPacketPayload : global::System.ID
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID runtimeId, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, int slot, int selectedSlot, sbyte containerId)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID runtimeId, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, int slot, int selectedSlot, sbyte containerId)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_64f55711((void*)__hosihikari_shim_handle, (void*)runtimeId.Handle, (void*)item.Handle, slot, selectedSlot, containerId);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_64f55711((void*)__hosihikari_shim_handle, (void*)runtimeId.Handle, (void*)item.Handle, slot, selectedSlot, containerId);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static MobEquipmentPacketPayload? Create()

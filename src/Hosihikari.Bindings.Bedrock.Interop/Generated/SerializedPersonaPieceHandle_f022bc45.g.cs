@@ -40,12 +40,18 @@ public sealed unsafe partial class SerializedPersonaPieceHandle : global::System
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SerializedPersonaPieceHandle arg0)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SerializedPersonaPieceHandle arg0)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_4d6a3e3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4d6a3e3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(string pieceId, uint pieceType, global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID packId, bool isDefaultPiece, string productId)
+    public nint? _ctor(string pieceId, uint pieceType, global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID packId, bool isDefaultPiece, string productId)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(pieceId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -73,7 +79,13 @@ public sealed unsafe partial class SerializedPersonaPieceHandle : global::System
         {
             fixed (byte* __hs_stringData4 = __hs_stringBytes4)
             {
-                return (nint)NativeMethods.TablePtr->C3.hs_method_7b946063((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, pieceType, (void*)packId.Handle, isDefaultPiece, __hs_stringData4, (nuint)__hs_stringByteCount4);
+                var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7b946063((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, pieceType, (void*)packId.Handle, isDefaultPiece, __hs_stringData4, (nuint)__hs_stringByteCount4);
+                if (__hs_handle == null)
+                {
+                    NativeMethods.GetLastError();
+                    return null;
+                }
+                return (nint)__hs_handle;
             }
         }
     }

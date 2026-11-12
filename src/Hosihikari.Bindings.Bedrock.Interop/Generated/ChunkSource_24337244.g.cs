@@ -134,9 +134,15 @@ public sealed unsafe partial class ChunkSource : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_2ab0ac2f((void*)__hosihikari_shim_handle);
     }
 
-    public nint _getChunkMap()
+    public nint? _getChunkMap()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_909fdd7c((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_909fdd7c((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _getExistingChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos)
@@ -157,9 +163,15 @@ public sealed unsafe partial class ChunkSource : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public nint _getStorage()
+    public nint? _getStorage()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_9b0e782c((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9b0e782c((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _hintDiscardBatchBegin()
@@ -386,9 +398,15 @@ public sealed unsafe partial class ChunkSource : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public nint getChunkMap()
+    public nint? getChunkMap()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_cf1edcee((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_cf1edcee((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getExistingChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos)
@@ -409,9 +427,15 @@ public sealed unsafe partial class ChunkSource : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public nint getStorage()
+    public nint? getStorage()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_4eca629a((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4eca629a((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void hintDiscardBatchBegin()

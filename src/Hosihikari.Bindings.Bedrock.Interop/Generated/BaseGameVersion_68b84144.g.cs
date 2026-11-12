@@ -40,9 +40,15 @@ public sealed unsafe partial class BaseGameVersion : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion rhs)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion rhs)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_42fece83((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_42fece83((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

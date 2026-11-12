@@ -40,9 +40,15 @@ public sealed unsafe partial class ChangeFakePlayerScore : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ChangeFakePlayerScore arg0)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ChangeFakePlayerScore arg0)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_455c42ff((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_455c42ff((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static ChangeFakePlayerScore? Create()

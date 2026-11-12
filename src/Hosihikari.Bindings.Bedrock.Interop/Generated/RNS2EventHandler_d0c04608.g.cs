@@ -40,9 +40,15 @@ public sealed unsafe partial class RNS2EventHandler : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint AllocRNS2RecvStruct(nint file, uint line)
+    public nint? AllocRNS2RecvStruct(nint file, uint line)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_d7fbcb33((void*)__hosihikari_shim_handle, (void*)file, line);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d7fbcb33((void*)__hosihikari_shim_handle, (void*)file, line);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void DeallocRNS2RecvStruct(nint s, nint file, uint line)

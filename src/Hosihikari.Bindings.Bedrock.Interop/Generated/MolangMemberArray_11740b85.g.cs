@@ -56,9 +56,15 @@ public sealed unsafe partial class MolangMemberArray : global::System.IDisposabl
     public nint _ctor(nint arg0, nint color) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.mce.Color color)
+    public nint? _ctor(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.mce.Color color)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_482a03ec((void*)__hosihikari_shim_handle, arg0, (void*)color.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_482a03ec((void*)__hosihikari_shim_handle, arg0, (void*)color.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -81,14 +87,26 @@ public sealed unsafe partial class MolangMemberArray : global::System.IDisposabl
     public nint _ctor_a26e468d(nint arg0, float u, float v) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.Vec2 vec)
+    public nint? _ctor(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.Vec2 vec)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_0818599d((void*)__hosihikari_shim_handle, arg0, (void*)vec.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0818599d((void*)__hosihikari_shim_handle, arg0, (void*)vec.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 vec)
+    public nint? _ctor(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 vec)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_b37cacf0((void*)__hosihikari_shim_handle, arg0, (void*)vec.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b37cacf0((void*)__hosihikari_shim_handle, arg0, (void*)vec.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static MolangMemberArray? Create()

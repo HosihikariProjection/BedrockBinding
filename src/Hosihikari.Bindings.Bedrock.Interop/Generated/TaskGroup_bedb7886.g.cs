@@ -44,7 +44,7 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
     public bool __workerPoolIsAsync() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.WorkerPool workers, global::Hosihikari.Bindings.Bedrock.Interop.Scheduler context, string name)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.WorkerPool workers, global::Hosihikari.Bindings.Bedrock.Interop.Scheduler context, string name)
     {
         var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes2;
@@ -59,7 +59,13 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes2);
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_192d7ca2((void*)__hosihikari_shim_handle, (void*)workers.Handle, (void*)context.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2);
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_192d7ca2((void*)__hosihikari_shim_handle, (void*)workers.Handle, (void*)context.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

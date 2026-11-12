@@ -113,9 +113,15 @@ public sealed unsafe partial class IRuntime : global::System.IDisposable
     public nint getFutureStatus(nint contextId, nint futureHandle) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Scripting::TypedObjectHandle<Scripting::FutureType>' is not a known bindable declaration.");
 
-    public nint getMetadata()
+    public nint? getMetadata()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_2f959f19((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2f959f19((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo? getNameForType(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, nint type, bool allowUnknownTypes)

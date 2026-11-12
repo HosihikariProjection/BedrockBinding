@@ -182,9 +182,15 @@ public sealed unsafe partial class NavigationSwimDescription : global::System.ID
         return new NavigationSwimDescription((nint)handle);
     }
 
-    public nint getJsonName()
+    public nint? getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_66013590((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_66013590((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool mAllowRiverFollow

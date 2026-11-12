@@ -40,9 +40,15 @@ public sealed unsafe partial class BuildInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Common.BuildInfo arg0)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Common.BuildInfo arg0)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_1c78d575((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1c78d575((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

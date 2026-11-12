@@ -40,14 +40,26 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter rhs)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter rhs)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_0b48fb0a((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_0b48fb0a((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor_6f714c6d(nint entities)
+    public nint? _ctor_6f714c6d(nint entities)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_6f714c6d((void*)__hosihikari_shim_handle, (void*)entities);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6f714c6d((void*)__hosihikari_shim_handle, (void*)entities);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -58,7 +70,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
     public nint _ctor_3343d302(nint text) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(string text)
+    public nint? _ctor(string text)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(text);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -73,7 +85,13 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         global::System.Text.Encoding.UTF8.GetBytes(text, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_c97cbcc6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c97cbcc6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

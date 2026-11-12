@@ -106,9 +106,15 @@ public sealed unsafe partial class SmithingTransformRecipe : global::System.IDis
         set => NativeMethods.TablePtr->C3.hs_set_d3a2171a((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint _assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
+    public nint? _assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_6d430860((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)arg1.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6d430860((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)arg1.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool _matches(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
@@ -151,9 +157,15 @@ public sealed unsafe partial class SmithingTransformRecipe : global::System.IDis
         return new SmithingTransformRecipe((nint)handle);
     }
 
-    public nint assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
+    public nint? assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_6f59328e((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)arg1.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6f59328e((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)arg1.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -88,9 +88,15 @@ public sealed unsafe partial class FireworksRecipe : global::System.IDisposable
     public static nint ID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer arg0, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
+    public nint? assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer arg0, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_9de7ad5d((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9de7ad5d((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public int getCraftingSize()
@@ -109,9 +115,15 @@ public sealed unsafe partial class FireworksRecipe : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false);
     }
 
-    public nint getResultItems()
+    public nint? getResultItems()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_f5df5c53((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f5df5c53((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool isShapeless()

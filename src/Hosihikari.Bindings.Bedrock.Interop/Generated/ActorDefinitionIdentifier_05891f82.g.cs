@@ -40,7 +40,7 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
         return __hs_handle;
     }
 
-    public nint _ctor(int type, string initEvent)
+    public nint? _ctor(int type, string initEvent)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(initEvent);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -55,21 +55,39 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
         global::System.Text.Encoding.UTF8.GetBytes(initEvent, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_8fd3d426((void*)__hosihikari_shim_handle, type, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8fd3d426((void*)__hosihikari_shim_handle, type, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier other)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier other)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_ad4ea5fd((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ad4ea5fd((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(nint fullName)
+    public nint? _ctor(nint fullName)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_cfe47faa((void*)__hosihikari_shim_handle, (void*)fullName);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_cfe47faa((void*)__hosihikari_shim_handle, (void*)fullName);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor_e82e18f2(string fullName)
+    public nint? _ctor_e82e18f2(string fullName)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fullName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -84,11 +102,17 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
         global::System.Text.Encoding.UTF8.GetBytes(fullName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_e82e18f2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e82e18f2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
-    public nint _ctor(string nameSpace, string identifier, string initEvent)
+    public nint? _ctor(string nameSpace, string identifier, string initEvent)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameSpace);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -129,13 +153,19 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    return (nint)NativeMethods.TablePtr->C0.hs_method_56ff26b1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    var __hs_handle = NativeMethods.TablePtr->C0.hs_method_56ff26b1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    if (__hs_handle == null)
+                    {
+                        NativeMethods.GetLastError();
+                        return null;
+                    }
+                    return (nint)__hs_handle;
                 }
             }
         }
     }
 
-    public nint _ctor_92bf44c7(string fullName)
+    public nint? _ctor_92bf44c7(string fullName)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fullName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -150,7 +180,13 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
         global::System.Text.Encoding.UTF8.GetBytes(fullName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_92bf44c7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_92bf44c7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

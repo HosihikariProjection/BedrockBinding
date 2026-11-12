@@ -40,9 +40,15 @@ public sealed unsafe partial class FastWriter : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor()
+    public nint? _ctor()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_6d6a96c3((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6d6a96c3((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

@@ -40,9 +40,15 @@ public sealed unsafe partial class FeatureRegistry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? validator)
+    public nint? _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? validator)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_cda2bf1c((void*)__hosihikari_shim_handle, validator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cda2bf1c((void*)__hosihikari_shim_handle, validator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

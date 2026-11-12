@@ -72,9 +72,15 @@ public sealed unsafe partial class associative_adapter_int__brstd__no_value_t__s
     public nint find_13d1a872(nint key) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, brstd::no_value_t, std::less<int>, std::vector<int>, brstd::no_mapped_container_t>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, brstd::associative_adapter<int, brstd::no_value_t, std::less<int>, std::vector<int>, brstd::no_mapped_container_t>::no_mapped_iterator, const int &>' requires --link-carrier or --virtual-dispatch.");
 
-    public nint keys()
+    public nint? keys()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_d36b22d0((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d36b22d0((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public const bool no_mapped_container = true;

@@ -48,9 +48,15 @@ public sealed unsafe partial class InventoryContentPacket : global::System.IDisp
     public nint __read(nint stream, nint reflectionCtx) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContentPacketPayload payload)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContentPacketPayload payload)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_8ee88ee9((void*)__hosihikari_shim_handle, (void*)payload.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8ee88ee9((void*)__hosihikari_shim_handle, (void*)payload.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

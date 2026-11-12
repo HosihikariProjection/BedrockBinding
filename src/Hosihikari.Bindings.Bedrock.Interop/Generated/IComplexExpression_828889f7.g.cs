@@ -83,9 +83,15 @@ public sealed unsafe partial class IComplexExpression : global::System.IDisposab
         return NativeMethods.TablePtr->C2.hs_method_0362893f((void*)__hosihikari_shim_handle);
     }
 
-    public nint getSource()
+    public nint? getSource()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_03b69df9((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_03b69df9((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg? getValueIfConstant()

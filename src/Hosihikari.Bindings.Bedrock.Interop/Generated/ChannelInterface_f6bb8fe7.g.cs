@@ -151,9 +151,15 @@ public sealed unsafe partial class ChannelInterface : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_1d7968a9((void*)__hosihikari_shim_handle, (void*)rtp_transport) != 0;
     }
 
-    public nint local_streams()
+    public nint? local_streams()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_89166bea((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_89166bea((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaReceiveChannelInterface? media_receive_channel()
@@ -189,9 +195,15 @@ public sealed unsafe partial class ChannelInterface : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public nint remote_streams()
+    public nint? remote_streams()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_af14d103((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_af14d103((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public string transport_name()

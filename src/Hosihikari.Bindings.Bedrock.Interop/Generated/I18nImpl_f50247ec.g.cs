@@ -539,9 +539,15 @@ public sealed unsafe partial class I18nImpl : global::System.IDisposable
         }
     }
 
-    public nint getSupportedLanguageCodes()
+    public nint? getSupportedLanguageCodes()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_edd9119b((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_edd9119b((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool hasPackKeyEntry(global::Hosihikari.Bindings.Bedrock.Interop.PackManifest manifest, string key)

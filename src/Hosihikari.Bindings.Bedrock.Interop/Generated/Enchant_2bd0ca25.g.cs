@@ -272,9 +272,15 @@ public sealed unsafe partial class Enchant : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_eb743314((void*)__hosihikari_shim_handle);
     }
 
-    public static nint mEnchantNameToType()
+    public static nint? mEnchantNameToType()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_2800c30b();
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2800c30b();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -290,9 +296,15 @@ public sealed unsafe partial class Enchant : global::System.IDisposable
         get => NativeMethods.TablePtr->C1.hs_get_cbeedf5e((void*)__hosihikari_shim_handle);
     }
 
-    public static nint mEnchants()
+    public static nint? mEnchants()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_00e214b3();
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_00e214b3();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public int mFrequency

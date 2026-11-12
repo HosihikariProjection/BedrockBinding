@@ -124,9 +124,15 @@ public sealed unsafe partial class FurnaceContainerManagerModel : global::System
     public void _broadcastChanges() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.HashedString recipeTag, sbyte containerType, byte blockActorType, sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.HashedString recipeTag, sbyte containerType, byte blockActorType, sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_d783219c((void*)__hosihikari_shim_handle, (void*)recipeTag.Handle, containerType, blockActorType, containerId, (void*)player.Handle, (void*)blockPos.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d783219c((void*)__hosihikari_shim_handle, (void*)recipeTag.Handle, containerType, blockActorType, containerId, (void*)player.Handle, (void*)blockPos.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

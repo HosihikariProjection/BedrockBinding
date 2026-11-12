@@ -40,7 +40,7 @@ public sealed unsafe partial class AttributeModifier : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID id, string name, float amount, int operation, int operand, bool serializable)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID id, string name, float amount, int operation, int operand, bool serializable)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -55,7 +55,13 @@ public sealed unsafe partial class AttributeModifier : global::System.IDisposabl
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_46c6aa47((void*)__hosihikari_shim_handle, (void*)id.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, amount, operation, operand, serializable);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_46c6aa47((void*)__hosihikari_shim_handle, (void*)id.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, amount, operation, operand, serializable);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

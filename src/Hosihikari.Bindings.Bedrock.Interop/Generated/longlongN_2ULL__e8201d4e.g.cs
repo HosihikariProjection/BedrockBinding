@@ -87,9 +87,15 @@ public sealed unsafe partial class longlongN_2ULL_ : global::System.IDisposable
         return new longlongN_2ULL_((nint)handle);
     }
 
-    public nint operator_assign_a936f4a0(nint arg0)
+    public nint? operator_assign_a936f4a0(nint arg0)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_a936f4a0((void*)__hosihikari_shim_handle, (void*)arg0);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a936f4a0((void*)__hosihikari_shim_handle, (void*)arg0);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

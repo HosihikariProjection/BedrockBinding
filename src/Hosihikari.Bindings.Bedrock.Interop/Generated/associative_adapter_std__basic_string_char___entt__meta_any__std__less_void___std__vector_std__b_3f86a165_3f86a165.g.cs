@@ -72,15 +72,27 @@ public sealed unsafe partial class associative_adapter_std__basic_string_char___
     public nint find_28db9e93(nint key) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, entt::meta_any &>>' requires --link-carrier or --virtual-dispatch.");
 
-    public nint keys()
+    public nint? keys()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_58674101((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_58674101((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public const bool no_mapped_container = false;
 
-    public nint values()
+    public nint? values()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_fda3e32a((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fda3e32a((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 }

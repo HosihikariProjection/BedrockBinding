@@ -88,9 +88,15 @@ public sealed unsafe partial class NonOwnerPointer_PackCommand__IPackCommandPipe
         return new NonOwnerPointer_PackCommand__IPackCommandPipeline_((nint)handle);
     }
 
-    public nint get()
+    public nint? get()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_91f4e08c((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_91f4e08c((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,9 +111,15 @@ public sealed unsafe partial class NonOwnerPointer_PackCommand__IPackCommandPipe
         set => NativeMethods.TablePtr->C0.hs_set_4ad959e8((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    public nint operator_PackCommand__IPackCommandPipeline__()
+    public nint? operator_PackCommand__IPackCommandPipeline__()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_3492ef36((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3492ef36((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool operator_bool()
@@ -115,14 +127,26 @@ public sealed unsafe partial class NonOwnerPointer_PackCommand__IPackCommandPipe
         return NativeMethods.TablePtr->C0.hs_method_168fb7e8((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public nint operator_multiply()
+    public nint? operator_multiply()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_2fc5da25((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2fc5da25((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint operator_operator__()
+    public nint? operator_operator__()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_b246a593((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b246a593((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool operator_equal()

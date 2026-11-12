@@ -40,9 +40,15 @@ public sealed unsafe partial class GroundedConstraint : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate structure, int groundLevel)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate structure, int groundLevel)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_b439eabb((void*)__hosihikari_shim_handle, (void*)structure.Handle, groundLevel);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b439eabb((void*)__hosihikari_shim_handle, (void*)structure.Handle, groundLevel);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

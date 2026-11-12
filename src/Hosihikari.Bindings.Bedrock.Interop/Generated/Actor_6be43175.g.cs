@@ -670,9 +670,15 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public nint _drop(nint item, bool randomly) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _getAllEffectsNonConst()
+    public nint? _getAllEffectsNonConst()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_daf1e2a9((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_daf1e2a9((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -1190,9 +1196,15 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false);
     }
 
-    public nint getAllEffects()
+    public nint? getAllEffects()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_eb75ecb9((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_eb75ecb9((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public uint getAmbientSound()

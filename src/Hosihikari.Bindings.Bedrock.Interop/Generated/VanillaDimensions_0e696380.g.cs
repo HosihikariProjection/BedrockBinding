@@ -40,9 +40,15 @@ public sealed unsafe partial class VanillaDimensions : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static nint DimensionMap()
+    public static nint? DimensionMap()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_d32f5d1a();
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d32f5d1a();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? Nether()

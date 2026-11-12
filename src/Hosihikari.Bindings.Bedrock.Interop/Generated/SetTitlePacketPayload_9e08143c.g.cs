@@ -40,7 +40,7 @@ public sealed unsafe partial class SetTitlePacketPayload : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(int type, string titleText, string? filteredTitleText)
+    public nint? _ctor(int type, string titleText, string? filteredTitleText)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(titleText);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -68,14 +68,26 @@ public sealed unsafe partial class SetTitlePacketPayload : global::System.IDispo
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                return (nint)NativeMethods.TablePtr->C3.hs_method_1c37b2cd((void*)__hosihikari_shim_handle, type, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, filteredTitleText is not null);
+                var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1c37b2cd((void*)__hosihikari_shim_handle, type, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, filteredTitleText is not null);
+                if (__hs_handle == null)
+                {
+                    NativeMethods.GetLastError();
+                    return null;
+                }
+                return (nint)__hs_handle;
             }
         }
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SetTitlePacketPayload arg0)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SetTitlePacketPayload arg0)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_1f26e93d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1f26e93d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

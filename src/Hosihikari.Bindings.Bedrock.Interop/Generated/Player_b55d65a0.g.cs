@@ -2110,9 +2110,15 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public nint getChatDisplayName() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint getClientSubId()
+    public nint? getClientSubId()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_40b127a7((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_40b127a7((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public byte getCommandPermissionLevel()
@@ -2454,9 +2460,15 @@ public sealed unsafe partial class Player : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_2535e007((void*)__hosihikari_shim_handle);
     }
 
-    public nint getTickingOffsets()
+    public nint? getTickingOffsets()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_4740ccce((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4740ccce((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent? getUserEntityIdentifier_8c183776()

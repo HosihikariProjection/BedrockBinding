@@ -96,29 +96,59 @@ public sealed unsafe partial class Blob : global::System.IDisposable
         return new Blob((nint)handle);
     }
 
-    public nint begin()
+    public nint? begin()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_b5efc221((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b5efc221((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint cbegin()
+    public nint? cbegin()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_d9a88842((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d9a88842((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint cend()
+    public nint? cend()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_368d7e7b((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_368d7e7b((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint data_797ea4c1()
+    public nint? data_797ea4c1()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_797ea4c1((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_797ea4c1((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint data_0e186050()
+    public nint? data_0e186050()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_0e186050((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0e186050((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool empty()
@@ -126,9 +156,15 @@ public sealed unsafe partial class Blob : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_26686cac((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public nint end()
+    public nint? end()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_adb6ba3d((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_adb6ba3d((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void fillBlob(byte val)
@@ -136,14 +172,26 @@ public sealed unsafe partial class Blob : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_6ccebd18((void*)__hosihikari_shim_handle, val);
     }
 
-    public nint get_aa898d5a()
+    public nint? get_aa898d5a()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_aa898d5a((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_aa898d5a((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint get_24c2c917()
+    public nint? get_24c2c917()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_24c2c917((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_24c2c917((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public byte[] getSpan_823fcd53()

@@ -40,14 +40,26 @@ public sealed unsafe partial class bitset_base_brstd__bitset_7__unsigned_char___
         return __hs_handle;
     }
 
-    public nint set(ulong pos)
+    public nint? set(ulong pos)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_e75c89a0((void*)__hosihikari_shim_handle, pos);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e75c89a0((void*)__hosihikari_shim_handle, pos);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint set(ulong pos, bool value)
+    public nint? set(ulong pos, bool value)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_3d52ca56((void*)__hosihikari_shim_handle, pos, value);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3d52ca56((void*)__hosihikari_shim_handle, pos, value);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool test(ulong pos)

@@ -40,9 +40,15 @@ public sealed unsafe partial class MolangScriptArg : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg other)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg other)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_61246b96((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_61246b96((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static MolangScriptArg? Create()

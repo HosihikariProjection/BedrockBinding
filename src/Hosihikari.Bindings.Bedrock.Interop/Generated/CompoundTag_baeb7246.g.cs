@@ -381,7 +381,7 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         }
     }
 
-    public nint getByteArray(string name)
+    public nint? getByteArray(string name)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -396,7 +396,13 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_59630b3a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_59630b3a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
@@ -542,7 +548,7 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         }
     }
 
-    public nint putByte(string name, byte value)
+    public nint? putByte(string name, byte value)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -557,7 +563,13 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_e27c7aba((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, value);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e27c7aba((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, value);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
@@ -594,7 +606,7 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
     public nint putCompound(nint name, nint value) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public nint putFloat(string name, float value)
+    public nint? putFloat(string name, float value)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -609,11 +621,17 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_fcd5bb2f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, value);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_fcd5bb2f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, value);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
-    public nint putInt(string name, int value)
+    public nint? putInt(string name, int value)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -628,11 +646,17 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_58dfb0d6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, value);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_58dfb0d6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, value);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
-    public nint putInt64(string name, long value)
+    public nint? putInt64(string name, long value)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -647,11 +671,17 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_cb0b0b05((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, value);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_cb0b0b05((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, value);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
-    public nint putShort(string name, short value)
+    public nint? putShort(string name, short value)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -666,7 +696,13 @@ public sealed unsafe partial class CompoundTag : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_7c70b436((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, value);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7c70b436((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, value);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

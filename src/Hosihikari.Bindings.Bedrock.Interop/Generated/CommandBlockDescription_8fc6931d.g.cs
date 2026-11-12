@@ -65,9 +65,15 @@ public sealed unsafe partial class CommandBlockDescription : global::System.IDis
         NativeMethods.TablePtr->C0.hs_method_2b09de43((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
     }
 
-    public nint getJsonName()
+    public nint? getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_4a42fa41((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4a42fa41((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public int mCurrentTickCount

@@ -64,9 +64,15 @@ public sealed unsafe partial class TemplateStructurePiece : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C3.hs_get_9a09e387((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(int depth)
+    public nint? _ctor(int depth)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_8863ac65((void*)__hosihikari_shim_handle, depth);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8863ac65((void*)__hosihikari_shim_handle, depth);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

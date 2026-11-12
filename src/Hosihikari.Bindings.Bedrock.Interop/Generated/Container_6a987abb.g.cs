@@ -80,12 +80,18 @@ public sealed unsafe partial class Container : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_701dc3bd((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(sbyte type)
+    public nint? _ctor(sbyte type)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_3ff2b495((void*)__hosihikari_shim_handle, type);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3ff2b495((void*)__hosihikari_shim_handle, type);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(sbyte type, string name, bool customName)
+    public nint? _ctor(sbyte type, string name, bool customName)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -100,7 +106,13 @@ public sealed unsafe partial class Container : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_c746d8a5((void*)__hosihikari_shim_handle, type, __hs_stringData1, (nuint)__hs_stringByteCount1, customName);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c746d8a5((void*)__hosihikari_shim_handle, type, __hs_stringData1, (nuint)__hs_stringByteCount1, customName);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

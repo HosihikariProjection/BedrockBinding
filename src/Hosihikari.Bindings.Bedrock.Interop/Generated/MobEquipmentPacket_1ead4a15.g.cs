@@ -62,9 +62,15 @@ public sealed unsafe partial class MobEquipmentPacket : global::System.IDisposab
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.MobEquipmentPacketPayload payload)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.MobEquipmentPacketPayload payload)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_fd182d8f((void*)__hosihikari_shim_handle, (void*)payload.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_fd182d8f((void*)__hosihikari_shim_handle, (void*)payload.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool _disallowBatching()

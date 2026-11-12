@@ -86,9 +86,15 @@ public sealed unsafe partial class DestroyOperation : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_c55e89a3((void*)__hosihikari_shim_handle, arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)arg1.Handle) != 0;
     }
 
-    public nint getDescription()
+    public nint? getDescription()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_7dde7067((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7dde7067((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.

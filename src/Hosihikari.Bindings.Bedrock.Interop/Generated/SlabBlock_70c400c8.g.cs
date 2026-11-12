@@ -484,9 +484,15 @@ public sealed unsafe partial class SlabBlock : global::System.IDisposable
     public nint getDoubleSlab() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint getMobToSpawn(global::Hosihikari.Bindings.Bedrock.Interop.SpawnConditions conditions, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
+    public nint? getMobToSpawn(global::Hosihikari.Bindings.Bedrock.Interop.SpawnConditions conditions, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_a69d6f61((void*)__hosihikari_shim_handle, (void*)conditions.Handle, (void*)region.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a69d6f61((void*)__hosihikari_shim_handle, (void*)conditions.Handle, (void*)region.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getVisualShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferAABB)

@@ -40,9 +40,15 @@ public sealed unsafe partial class ClimateParameters : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter temperature, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter humidity, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter continentalness, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter erosion, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter depth, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter weirdness, float offset)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter temperature, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter humidity, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter continentalness, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter erosion, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter depth, global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter weirdness, float offset)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_bc77fc87((void*)__hosihikari_shim_handle, (void*)temperature.Handle, (void*)humidity.Handle, (void*)continentalness.Handle, (void*)erosion.Handle, (void*)depth.Handle, (void*)weirdness.Handle, offset);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_bc77fc87((void*)__hosihikari_shim_handle, (void*)temperature.Handle, (void*)humidity.Handle, (void*)continentalness.Handle, (void*)erosion.Handle, (void*)depth.Handle, (void*)weirdness.Handle, offset);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static ClimateParameters? Create()

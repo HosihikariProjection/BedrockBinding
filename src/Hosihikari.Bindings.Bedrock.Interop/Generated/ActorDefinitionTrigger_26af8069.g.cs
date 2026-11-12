@@ -40,9 +40,15 @@ public sealed unsafe partial class ActorDefinitionTrigger : global::System.IDisp
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger arg0)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger arg0)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_f8057803((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f8057803((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

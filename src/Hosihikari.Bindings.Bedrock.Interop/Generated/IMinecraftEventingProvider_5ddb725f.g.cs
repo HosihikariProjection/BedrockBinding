@@ -52,14 +52,26 @@ public sealed unsafe partial class IMinecraftEventingProvider : global::System.I
         return new IMinecraftEventingProvider((nint)handle);
     }
 
-    public nint getPurchaseEventing()
+    public nint? getPurchaseEventing()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_b11a7d2e((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b11a7d2e((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint getWorldLoadPerformanceEventing()
+    public nint? getWorldLoadPerformanceEventing()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_08162866((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_08162866((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
 

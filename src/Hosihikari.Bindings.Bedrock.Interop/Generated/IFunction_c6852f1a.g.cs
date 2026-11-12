@@ -92,9 +92,15 @@ public sealed unsafe partial class IFunction : global::System.IDisposable
     public nint getArgType(uint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'entt::meta_type' requires --link-carrier or --virtual-dispatch.");
 
-    public nint getDefaultArg(uint arg0)
+    public nint? getDefaultArg(uint arg0)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_8320eafe((void*)__hosihikari_shim_handle, arg0);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8320eafe((void*)__hosihikari_shim_handle, arg0);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'entt::meta_type' is not supported.", false)]

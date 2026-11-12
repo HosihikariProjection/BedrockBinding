@@ -191,34 +191,70 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
     public static nint array(nint values) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'cereal::DynamicValue' is not supported.");
 
-    public nint asArray_07229c1e()
+    public nint? asArray_07229c1e()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_07229c1e((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_07229c1e((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint asArray_f433b15c()
+    public nint? asArray_f433b15c()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_f433b15c((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f433b15c((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint asBool_5195afec()
+    public nint? asBool_5195afec()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_5195afec((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5195afec((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint asBool_fd6f5262()
+    public nint? asBool_fd6f5262()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_fd6f5262((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fd6f5262((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint asInteger_d690a175()
+    public nint? asInteger_d690a175()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_d690a175((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d690a175((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint asInteger_13c1eafb()
+    public nint? asInteger_13c1eafb()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_13c1eafb((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_13c1eafb((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.cereal.NullType? asNull_1bb2fbe0()
@@ -243,24 +279,48 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.NullType((nint)__hs_handle, false);
     }
 
-    public nint asNumber_bbdc22d8()
+    public nint? asNumber_bbdc22d8()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_bbdc22d8((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_bbdc22d8((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint asNumber_99584602()
+    public nint? asNumber_99584602()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_99584602((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_99584602((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint asObject_3909a67c()
+    public nint? asObject_3909a67c()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_3909a67c((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3909a67c((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint asObject_badbe1b2()
+    public nint? asObject_badbe1b2()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_badbe1b2((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_badbe1b2((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public string asString_f6f0c4a6()
@@ -614,18 +674,30 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_0f379feb((void*)__hosihikari_shim_handle);
     }
 
-    public nint value_776ab08a()
+    public nint? value_776ab08a()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_776ab08a((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_776ab08a((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public nint value_00dbead4() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public nint value_8d2a1ec6()
+    public nint? value_8d2a1ec6()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_8d2a1ec6((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8d2a1ec6((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
 

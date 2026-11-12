@@ -400,14 +400,26 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
         return NativeMethods.TablePtr->C0.hs_method_fc34d010((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public nint items_bd45cf2b()
+    public nint? items_bd45cf2b()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_bd45cf2b((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_bd45cf2b((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint items_2c8962db()
+    public nint? items_2c8962db()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_2c8962db((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2c8962db((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.

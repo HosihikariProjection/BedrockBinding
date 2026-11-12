@@ -161,9 +161,15 @@ public sealed unsafe partial class VanillaBlockActor : global::System.IDisposabl
         return NativeMethods.TablePtr->C4.hs_method_f8e0c52f((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public nint _ctor(byte type, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte rendererId)
+    public nint? _ctor(byte type, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte rendererId)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_dd3eeabf((void*)__hosihikari_shim_handle, type, (void*)pos.Handle, rendererId);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_dd3eeabf((void*)__hosihikari_shim_handle, type, (void*)pos.Handle, rendererId);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

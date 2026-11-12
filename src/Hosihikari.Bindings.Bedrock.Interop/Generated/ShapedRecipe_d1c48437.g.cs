@@ -106,9 +106,15 @@ public sealed unsafe partial class ShapedRecipe : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_4b8ec7c2((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint _assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer arg0, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
+    public nint? _assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer arg0, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_1e92f4b9((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1e92f4b9((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public int _getCraftingSize()
@@ -158,9 +164,15 @@ public sealed unsafe partial class ShapedRecipe : global::System.IDisposable
         return new ShapedRecipe((nint)handle);
     }
 
-    public nint assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer arg0, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
+    public nint? assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer arg0, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_d9cd9c03((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d9cd9c03((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public int getCraftingSize()

@@ -64,7 +64,7 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
     public nint _ctor(nint temp, nint unknownBlockRegistry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(string name, global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
+    public nint? _ctor(string name, global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -79,7 +79,13 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_0adcaafa((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0adcaafa((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

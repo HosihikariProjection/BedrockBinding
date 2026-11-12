@@ -40,9 +40,15 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(uint id, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration duration)
+    public nint? _ctor(uint id, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration duration)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_e7d8d443((void*)__hosihikari_shim_handle, id, (void*)duration.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e7d8d443((void*)__hosihikari_shim_handle, id, (void*)duration.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()
@@ -208,9 +214,15 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
     public nint save() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
 
-    public static nint splashDurationMultiplier()
+    public static nint? splashDurationMultiplier()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_37118c3d();
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_37118c3d();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

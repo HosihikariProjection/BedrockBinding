@@ -85,9 +85,15 @@ public sealed unsafe partial class IAppPlatform : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public nint getHardwareMemoryTierUtil()
+    public nint? getHardwareMemoryTierUtil()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_b53c5fb6((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b53c5fb6((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getLoggingPath()

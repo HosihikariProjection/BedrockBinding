@@ -44,9 +44,15 @@ public sealed unsafe partial class ShipwreckFeature : global::System.IDisposable
     public nint _createStructureStart(nint generator, nint biomeSource, nint random, nint lc, nint arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.OceanMonumentFeature monument, uint seed, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.OceanMonumentFeature monument, uint seed, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_f6e38d2a((void*)__hosihikari_shim_handle, (void*)monument.Handle, seed, (void*)baseGameVersion.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f6e38d2a((void*)__hosihikari_shim_handle, (void*)monument.Handle, seed, (void*)baseGameVersion.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

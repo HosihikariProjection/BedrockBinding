@@ -62,9 +62,15 @@ public sealed unsafe partial class ContainerModel : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_c1af7a87((void*)__hosihikari_shim_handle, slot);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName fullContainerName, int containerSize, int containerCategory, bool isClientSide)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName fullContainerName, int containerSize, int containerCategory, bool isClientSide)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_d9af1d9a((void*)__hosihikari_shim_handle, (void*)fullContainerName.Handle, containerSize, containerCategory, isClientSide);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d9af1d9a((void*)__hosihikari_shim_handle, (void*)fullContainerName.Handle, containerSize, containerCategory, isClientSide);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()
@@ -316,9 +322,15 @@ public sealed unsafe partial class ContainerModel : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase((nint)__hs_handle, false);
     }
 
-    public nint getItems()
+    public nint? getItems()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_8c6ff073((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8c6ff073((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool isExpanableItemFiltered(int index)

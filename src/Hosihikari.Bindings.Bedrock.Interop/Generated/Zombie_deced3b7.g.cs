@@ -732,9 +732,15 @@ public sealed unsafe partial class Zombie : global::System.IDisposable
     public bool _checkSpawnRules(bool fromSpawner) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_eab575b7((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_eab575b7((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

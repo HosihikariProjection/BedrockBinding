@@ -204,9 +204,15 @@ public sealed unsafe partial class SocketDispatcher : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_0e1f4799((void*)__hosihikari_shim_handle);
     }
 
-    public nint GetWSAEvent()
+    public nint? GetWSAEvent()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_5541bba7((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5541bba7((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void OnEvent(uint ff, int err)

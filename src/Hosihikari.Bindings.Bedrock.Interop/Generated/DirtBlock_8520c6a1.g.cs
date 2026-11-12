@@ -399,7 +399,7 @@ public sealed unsafe partial class DirtBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_af178f7c((void*)__hosihikari_shim_handle, arg0) != 0;
     }
 
-    public nint _ctor(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor blockToTillInto)
+    public nint? _ctor(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor blockToTillInto)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -414,7 +414,13 @@ public sealed unsafe partial class DirtBlock : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C1.hs_method_9a940ddb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, (void*)blockToTillInto.Handle);
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9a940ddb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, (void*)blockToTillInto.Handle);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

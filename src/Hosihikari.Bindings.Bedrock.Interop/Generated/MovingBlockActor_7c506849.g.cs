@@ -83,9 +83,15 @@ public sealed unsafe partial class MovingBlockActor : global::System.IDisposable
     public void __onUpdatePacket(nint data, nint region) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_18954b0b((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_18954b0b((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

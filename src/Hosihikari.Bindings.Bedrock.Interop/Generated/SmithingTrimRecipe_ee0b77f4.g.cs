@@ -106,9 +106,15 @@ public sealed unsafe partial class SmithingTrimRecipe : global::System.IDisposab
         set => NativeMethods.TablePtr->C3.hs_set_a04cc96d((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint _assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
+    public nint? _assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_ced376f6((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ced376f6((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool _hasDataDrivenResult()
@@ -156,9 +162,15 @@ public sealed unsafe partial class SmithingTrimRecipe : global::System.IDisposab
         return new SmithingTrimRecipe((nint)handle);
     }
 
-    public nint assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
+    public nint? assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_26a5809f((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_26a5809f((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool hasDataDrivenResult()

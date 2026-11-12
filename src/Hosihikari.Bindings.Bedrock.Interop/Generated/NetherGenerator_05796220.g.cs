@@ -100,9 +100,15 @@ public sealed unsafe partial class NetherGenerator : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_5ed1ad74((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, uint seed, global::Hosihikari.Bindings.Bedrock.Interop.Biome? biomeOverride)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, uint seed, global::Hosihikari.Bindings.Bedrock.Interop.Biome? biomeOverride)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_8622904a((void*)__hosihikari_shim_handle, (void*)dimension.Handle, seed, (void*)(biomeOverride?.Handle ?? 0));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8622904a((void*)__hosihikari_shim_handle, (void*)dimension.Handle, seed, (void*)(biomeOverride?.Handle ?? 0));
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

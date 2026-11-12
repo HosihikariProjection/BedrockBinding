@@ -62,7 +62,7 @@ public sealed unsafe partial class BlockItem : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public nint _ctor(string name, int id, global::Hosihikari.Bindings.Bedrock.Interop.HashedString blockName)
+    public nint? _ctor(string name, int id, global::Hosihikari.Bindings.Bedrock.Interop.HashedString blockName)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -77,7 +77,13 @@ public sealed unsafe partial class BlockItem : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_7250e380((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, (void*)blockName.Handle);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7250e380((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, (void*)blockName.Handle);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

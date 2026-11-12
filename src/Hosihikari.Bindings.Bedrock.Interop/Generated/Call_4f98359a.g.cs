@@ -169,9 +169,15 @@ public sealed unsafe partial class Call : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats((nint)__hs_handle);
     }
 
-    public nint GetTransportControllerSend()
+    public nint? GetTransportControllerSend()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_2c7741b8((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2c7741b8((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void OnAudioTransportOverheadChanged(int arg0)
@@ -218,9 +224,15 @@ public sealed unsafe partial class Call : global::System.IDisposable
         }
     }
 
-    public nint Receiver()
+    public nint? Receiver()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_1c4204a4((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1c4204a4((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void SetClientBitratePreferences(nint arg0)

@@ -166,9 +166,15 @@ public sealed unsafe partial class MainChunkSource : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public nint getChunkMap()
+    public nint? getChunkMap()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_9bc7a06d((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9bc7a06d((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getExistingChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp)
@@ -183,9 +189,15 @@ public sealed unsafe partial class MainChunkSource : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public nint getStorage()
+    public nint? getStorage()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_00e46617((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_00e46617((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool isChunkKnown(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos)

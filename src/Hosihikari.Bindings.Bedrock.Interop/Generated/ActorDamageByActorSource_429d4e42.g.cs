@@ -48,9 +48,15 @@ public sealed unsafe partial class ActorDamageByActorSource : global::System.IDi
     public nint _clone() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int cause)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int cause)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_dd0f79b7((void*)__hosihikari_shim_handle, (void*)actor.Handle, cause);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dd0f79b7((void*)__hosihikari_shim_handle, (void*)actor.Handle, cause);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

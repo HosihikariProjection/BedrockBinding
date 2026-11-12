@@ -40,9 +40,15 @@ public sealed unsafe partial class MinecraftWorkerPool : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static nint ASYNC()
+    public static nint? ASYNC()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_9b58da14();
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9b58da14();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -95,14 +95,26 @@ public sealed unsafe partial class PotionBrewing : global::System.IDisposable
     public static nint mContainerMixes() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mPotionMixes()
+    public static nint? mPotionMixes()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_b9e660fc();
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b9e660fc();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public static nint mValidContainers()
+    public static nint? mValidContainers()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_067c881f();
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_067c881f();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

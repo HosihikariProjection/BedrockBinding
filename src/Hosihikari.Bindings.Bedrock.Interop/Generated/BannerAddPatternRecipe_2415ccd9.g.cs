@@ -85,9 +85,15 @@ public sealed unsafe partial class BannerAddPatternRecipe : global::System.IDisp
     public static nint ID() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftSlots, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
+    public nint? assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftSlots, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_471736f1((void*)__hosihikari_shim_handle, (void*)craftSlots.Handle, (void*)arg1.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_471736f1((void*)__hosihikari_shim_handle, (void*)craftSlots.Handle, (void*)arg1.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public int getCraftingSize()
@@ -106,9 +112,15 @@ public sealed unsafe partial class BannerAddPatternRecipe : global::System.IDisp
         return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false);
     }
 
-    public nint getResultItems()
+    public nint? getResultItems()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_ff96d811((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ff96d811((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.

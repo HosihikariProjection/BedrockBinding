@@ -437,38 +437,74 @@ public sealed unsafe partial class MultifaceBlock : global::System.IDisposable
     public static nint MULTIFACE_ALL() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint MULTIFACE_DOWN()
+    public static nint? MULTIFACE_DOWN()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_ad93058f();
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ad93058f();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public static nint MULTIFACE_EAST()
+    public static nint? MULTIFACE_EAST()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_cfa5586c();
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cfa5586c();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public static nint MULTIFACE_NORTH()
+    public static nint? MULTIFACE_NORTH()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_f0f4f2b9();
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f0f4f2b9();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint MULTIFACE_SIDES() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint MULTIFACE_SOUTH()
+    public static nint? MULTIFACE_SOUTH()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_70a4739a();
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_70a4739a();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public static nint MULTIFACE_UP()
+    public static nint? MULTIFACE_UP()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_26ad2f1b();
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_26ad2f1b();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public static nint MULTIFACE_WEST()
+    public static nint? MULTIFACE_WEST()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_28b2040c();
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_28b2040c();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static MultifaceBlock? Create()

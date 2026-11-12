@@ -52,9 +52,15 @@ public sealed unsafe partial class CommonResourceDefinitionMap : global::System.
         return new CommonResourceDefinitionMap((nint)handle);
     }
 
-    public nint getAnimateScriptArray()
+    public nint? getAnimateScriptArray()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_58c02c4b((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_58c02c4b((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.

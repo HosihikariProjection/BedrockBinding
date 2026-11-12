@@ -129,9 +129,15 @@ public sealed unsafe partial class VideoTrack : global::System.IDisposable
     public static nint Create(nint id, nint source, nint worker_thread) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint GetSource()
+    public nint? GetSource()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_b24e1b0b((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b24e1b0b((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void OnChanged()

@@ -40,19 +40,37 @@ public sealed unsafe partial class PlayerListEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor()
+    public nint? _ctor()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_edffaa9a((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_edffaa9a((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_c240696d((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c240696d((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry arg0)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry arg0)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_265e7740((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_265e7740((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

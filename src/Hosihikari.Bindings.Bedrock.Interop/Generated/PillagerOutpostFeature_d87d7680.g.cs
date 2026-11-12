@@ -44,9 +44,15 @@ public sealed unsafe partial class PillagerOutpostFeature : global::System.IDisp
     public nint _createStructureStart(nint generator, nint arg1, nint random, nint lc, nint arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(uint seed)
+    public nint? _ctor(uint seed)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_3ba4522c((void*)__hosihikari_shim_handle, seed);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3ba4522c((void*)__hosihikari_shim_handle, seed);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

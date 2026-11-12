@@ -73,9 +73,15 @@ public sealed unsafe partial class FreezeOnHitSubcomponent : global::System.IDis
         NativeMethods.TablePtr->C1.hs_method_8d598dc5((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)component.Handle);
     }
 
-    public nint getName()
+    public nint? getName()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_0ac839b4((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0ac839b4((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileOnHitSubcomponent component)

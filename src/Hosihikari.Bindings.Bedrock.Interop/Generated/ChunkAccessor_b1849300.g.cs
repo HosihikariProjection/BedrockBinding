@@ -40,9 +40,15 @@ public sealed unsafe partial class ChunkAccessor : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_397741e3((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)biomeSource.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_397741e3((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)biomeSource.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

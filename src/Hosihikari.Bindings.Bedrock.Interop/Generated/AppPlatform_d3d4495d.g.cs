@@ -1458,9 +1458,15 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
     public nint getGraphicsDeviceTier() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint getHardwareMemoryTierUtil()
+    public nint? getHardwareMemoryTierUtil()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_06888370((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_06888370((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public ulong getHighPerformanceThreadsCount()
@@ -1699,9 +1705,15 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_3951450c((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
-    public nint getPlatformShim()
+    public nint? getPlatformShim()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_65e3986a((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_65e3986a((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public string getPlatformStringVar(int arg0)

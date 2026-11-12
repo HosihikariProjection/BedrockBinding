@@ -78,9 +78,15 @@ public sealed unsafe partial class MovePriorityQueue_DelayRequest__std__greater_
     public nint end_962e1982() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<DelayRequest>>>' requires --link-carrier or --virtual-dispatch.");
 
-    public nint getInternalContainer()
+    public nint? getInternalContainer()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_30ad5fc4((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_30ad5fc4((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.

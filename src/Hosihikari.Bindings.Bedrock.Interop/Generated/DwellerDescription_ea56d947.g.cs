@@ -73,9 +73,15 @@ public sealed unsafe partial class DwellerDescription : global::System.IDisposab
         NativeMethods.TablePtr->C1.hs_method_f7a3f0c9((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
     }
 
-    public nint getJsonName()
+    public nint? getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_3fd161da((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3fd161da((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool mCanFindPOI

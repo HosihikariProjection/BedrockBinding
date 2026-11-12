@@ -282,7 +282,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentsRegistry : global:
         return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry((nint)__hs_handle, false);
     }
 
-    public nint tryGetCustomComponentParametersForBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block, string componentName, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope)
+    public nint? tryGetCustomComponentParametersForBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block, string componentName, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(componentName);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -297,7 +297,13 @@ public sealed unsafe partial class ScriptBlockCustomComponentsRegistry : global:
         global::System.Text.Encoding.UTF8.GetBytes(componentName, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_a3bf5348((void*)__hosihikari_shim_handle, (void*)block.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)scope.Handle);
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a3bf5348((void*)__hosihikari_shim_handle, (void*)block.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)scope.Handle);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

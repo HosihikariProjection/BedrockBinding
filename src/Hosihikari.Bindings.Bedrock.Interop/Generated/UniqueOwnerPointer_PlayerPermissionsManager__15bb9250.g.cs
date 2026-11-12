@@ -72,9 +72,15 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerPermissionsManager_ 
     public static UniqueOwnerPointer_PlayerPermissionsManager_ Create_c299f90c(nint ptr) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'PlayerPermissionsManager' has no generated wrapper.");
 
-    public nint get()
+    public nint? get()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_d4d53cdb((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d4d53cdb((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool isValid()
@@ -99,14 +105,26 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerPermissionsManager_ 
         return NativeMethods.TablePtr->C0.hs_method_2d41f7f9((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public nint operator_multiply()
+    public nint? operator_multiply()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_118ee3e8((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_118ee3e8((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint operator_operator__()
+    public nint? operator_operator__()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_d2b984be((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d2b984be((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

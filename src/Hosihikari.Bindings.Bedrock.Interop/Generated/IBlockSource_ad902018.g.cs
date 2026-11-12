@@ -102,9 +102,15 @@ public sealed unsafe partial class IBlockSource : global::System.IDisposable
     public nint clip(nint A, nint B, bool checkAgainstLiquid, nint shapeType, int maxDistance, bool ignoreBorderBlocks, bool fullOnly, nint actor, nint shouldCheckBlock, bool stopOnFirstLiquidHit) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public nint fetchAABBs(global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, bool withUnloadedChunks)
+    public nint? fetchAABBs(global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, bool withUnloadedChunks)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_25ee5c3c((void*)__hosihikari_shim_handle, (void*)intersectTestBox.Handle, withUnloadedChunks);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_25ee5c3c((void*)__hosihikari_shim_handle, (void*)intersectTestBox.Handle, withUnloadedChunks);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

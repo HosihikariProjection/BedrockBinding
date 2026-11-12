@@ -69,9 +69,15 @@ public sealed unsafe partial class Observer_WebviewObserver__Core__SingleThreade
         NativeMethods.TablePtr->C1.hs_method_967278df((void*)__hosihikari_shim_handle);
     }
 
-    public nint getSubject()
+    public nint? getSubject()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_11f1ed9e((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_11f1ed9e((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public nint mpSubject

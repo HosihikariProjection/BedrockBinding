@@ -40,9 +40,15 @@ public sealed unsafe partial class SetActorDataPacketPayload : global::System.ID
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID id, global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorDataEntityWrapper entityData, global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent? propertyComponent, ulong tick, bool packAll)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID id, global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorDataEntityWrapper entityData, global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent? propertyComponent, ulong tick, bool packAll)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_0918aa78((void*)__hosihikari_shim_handle, (void*)id.Handle, (void*)entityData.Handle, (void*)(propertyComponent?.Handle ?? 0), tick, packAll);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0918aa78((void*)__hosihikari_shim_handle, (void*)id.Handle, (void*)entityData.Handle, (void*)(propertyComponent?.Handle ?? 0), tick, packAll);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

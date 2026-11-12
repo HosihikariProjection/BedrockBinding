@@ -40,9 +40,15 @@ public sealed unsafe partial class typeid_t_void_ : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static nint _getCounter()
+    public static nint? _getCounter()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_98e0c1f4();
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_98e0c1f4();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

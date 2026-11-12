@@ -267,9 +267,15 @@ public sealed unsafe partial class MobEffect : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_ed8fe937((void*)__hosihikari_shim_handle, value);
     }
 
-    public static nint mMobEffects()
+    public static nint? mMobEffects()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_36afe9f4();
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_36afe9f4();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.

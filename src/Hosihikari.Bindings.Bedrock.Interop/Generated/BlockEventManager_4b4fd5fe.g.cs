@@ -52,9 +52,15 @@ public sealed unsafe partial class BlockEventManager : global::System.IDisposabl
         return new BlockEventManager((nint)handle);
     }
 
-    public nint _tryGetExecutor(byte type)
+    public nint? _tryGetExecutor(byte type)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_10669fec((void*)__hosihikari_shim_handle, type);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_10669fec((void*)__hosihikari_shim_handle, type);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool hasExecutor(byte type)

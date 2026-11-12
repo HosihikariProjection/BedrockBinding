@@ -40,9 +40,15 @@ public sealed unsafe partial class TlsSlot : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor()
+    public nint? _ctor()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_65f3a9aa((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_65f3a9aa((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()
@@ -74,9 +80,15 @@ public sealed unsafe partial class TlsSlot : global::System.IDisposable
         return new TlsSlot((nint)handle);
     }
 
-    public nint getValue()
+    public nint? getValue()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_ce2e5f49((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ce2e5f49((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public uint mKey

@@ -80,14 +80,26 @@ public sealed unsafe partial class ErrorInfo_ActorValidationError_ : global::Sys
         return new ErrorInfo_ActorValidationError_((nint)handle);
     }
 
-    public nint code_e6f00c49()
+    public nint? code_e6f00c49()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_e6f00c49((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e6f00c49((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint code_e3a1c1d1()
+    public nint? code_e3a1c1d1()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_e3a1c1d1((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e3a1c1d1((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.

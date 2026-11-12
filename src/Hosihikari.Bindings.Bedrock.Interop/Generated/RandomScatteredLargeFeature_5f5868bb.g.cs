@@ -44,9 +44,15 @@ public sealed unsafe partial class RandomScatteredLargeFeature : global::System.
     public nint _createStructureStart(nint dimension, nint biomeSource, nint random, nint cp, nint preliminarySurfaceLevel) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'StructureStart' has no accessible destructor.");
 
-    public nint _ctor(uint seed)
+    public nint? _ctor(uint seed)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_1e63a2f3((void*)__hosihikari_shim_handle, seed);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1e63a2f3((void*)__hosihikari_shim_handle, seed);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

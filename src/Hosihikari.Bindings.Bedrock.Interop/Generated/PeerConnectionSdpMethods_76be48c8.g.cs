@@ -222,9 +222,15 @@ public sealed unsafe partial class PeerConnectionSdpMethods : global::System.IDi
         return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration((nint)__hs_handle, false);
     }
 
-    public nint data_channel_controller()
+    public nint? data_channel_controller()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_bd4d4a77((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_bd4d4a77((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool dtls_enabled()
@@ -237,14 +243,26 @@ public sealed unsafe partial class PeerConnectionSdpMethods : global::System.IDi
         return NativeMethods.TablePtr->C4.hs_method_4cd273d1((void*)__hosihikari_shim_handle);
     }
 
-    public nint legacy_stats()
+    public nint? legacy_stats()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_5891ca96((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5891ca96((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint message_handler()
+    public nint? message_handler()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_e65309ee((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e65309ee((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options? options()
@@ -258,24 +276,48 @@ public sealed unsafe partial class PeerConnectionSdpMethods : global::System.IDi
         return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options((nint)__hs_handle, false);
     }
 
-    public nint payload_type_picker()
+    public nint? payload_type_picker()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_2aa97cf3((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2aa97cf3((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint port_allocator()
+    public nint? port_allocator()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_07b1b335((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_07b1b335((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint rtp_manager_49bef7a3()
+    public nint? rtp_manager_49bef7a3()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_49bef7a3((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_49bef7a3((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint rtp_manager_77750ca4()
+    public nint? rtp_manager_77750ca4()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_77750ca4((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_77750ca4((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public string? sctp_mid()
@@ -313,9 +355,15 @@ public sealed unsafe partial class PeerConnectionSdpMethods : global::System.IDi
         return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController((nint)__hs_handle, false);
     }
 
-    public nint trials()
+    public nint? trials()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_cb3d1431((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_cb3d1431((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
 

@@ -77,9 +77,15 @@ public sealed unsafe partial class DouseFireSubcomponent : global::System.IDispo
     public static void douseFire(nint owner, nint region, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint getName()
+    public nint? getName()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_f9ea79ef((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f9ea79ef((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileOnHitSubcomponent arg0)

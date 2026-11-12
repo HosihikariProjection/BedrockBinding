@@ -40,9 +40,15 @@ public sealed unsafe partial class PerlinSimplexNoise : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(uint seed, int levels)
+    public nint? _ctor(uint seed, int levels)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_0c2767ae((void*)__hosihikari_shim_handle, seed, levels);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0c2767ae((void*)__hosihikari_shim_handle, seed, levels);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

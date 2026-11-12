@@ -52,14 +52,26 @@ public sealed unsafe partial class IMemoryAllocator : global::System.IDisposable
         return new IMemoryAllocator((nint)handle);
     }
 
-    public nint _alignedAllocate(ulong size, ulong alignment)
+    public nint? _alignedAllocate(ulong size, ulong alignment)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_90caebe6((void*)__hosihikari_shim_handle, size, alignment);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_90caebe6((void*)__hosihikari_shim_handle, size, alignment);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _alignedRealloc(nint ptr, ulong newSize, ulong alignment)
+    public nint? _alignedRealloc(nint ptr, ulong newSize, ulong alignment)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_b06989ae((void*)__hosihikari_shim_handle, (void*)ptr, newSize, alignment);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b06989ae((void*)__hosihikari_shim_handle, (void*)ptr, newSize, alignment);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _alignedRelease(nint ptr)
@@ -67,9 +79,15 @@ public sealed unsafe partial class IMemoryAllocator : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_69da2cef((void*)__hosihikari_shim_handle, (void*)ptr);
     }
 
-    public nint _allocate(ulong size)
+    public nint? _allocate(ulong size)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_637681b1((void*)__hosihikari_shim_handle, size);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_637681b1((void*)__hosihikari_shim_handle, size);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public ulong _getUsableSize(nint ptr, bool alignedAllocation)
@@ -77,9 +95,15 @@ public sealed unsafe partial class IMemoryAllocator : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_2b897fb1((void*)__hosihikari_shim_handle, (void*)ptr, alignedAllocation);
     }
 
-    public nint _realloc(nint ptr, ulong newSize)
+    public nint? _realloc(nint ptr, ulong newSize)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_6a7e2783((void*)__hosihikari_shim_handle, (void*)ptr, newSize);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6a7e2783((void*)__hosihikari_shim_handle, (void*)ptr, newSize);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _release(nint ptr)

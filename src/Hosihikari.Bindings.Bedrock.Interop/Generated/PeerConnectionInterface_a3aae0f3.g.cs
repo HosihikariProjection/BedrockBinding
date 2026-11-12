@@ -133,9 +133,15 @@ public sealed unsafe partial class PeerConnectionInterface : global::System.IDis
         return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration((nint)__hs_handle);
     }
 
-    public nint GetNetworkController()
+    public nint? GetNetworkController()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_10944531((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_10944531((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'webrtc::scoped_refptr<webrtc::RtpReceiverInterface>' is not supported.", false)]
@@ -304,14 +310,26 @@ public sealed unsafe partial class PeerConnectionInterface : global::System.IDis
         return __hs_hasValue ? __hs_value != 0 : (bool?)null;
     }
 
-    public nint current_local_description()
+    public nint? current_local_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_5d1eeab3((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5d1eeab3((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint current_remote_description()
+    public nint? current_remote_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_af21c64c((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_af21c64c((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public int ice_connection_state()
@@ -324,9 +342,15 @@ public sealed unsafe partial class PeerConnectionInterface : global::System.IDis
         return NativeMethods.TablePtr->C4.hs_method_94000571((void*)__hosihikari_shim_handle);
     }
 
-    public nint local_description()
+    public nint? local_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_688facf2((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_688facf2((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::StreamCollectionInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -338,19 +362,37 @@ public sealed unsafe partial class PeerConnectionInterface : global::System.IDis
         return NativeMethods.TablePtr->C4.hs_method_7d5b187b((void*)__hosihikari_shim_handle);
     }
 
-    public nint pending_local_description()
+    public nint? pending_local_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_da1e56f5((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_da1e56f5((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint pending_remote_description()
+    public nint? pending_remote_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_1dc4951d((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1dc4951d((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint remote_description()
+    public nint? remote_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_31371ad8((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_31371ad8((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::StreamCollectionInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -362,9 +404,15 @@ public sealed unsafe partial class PeerConnectionInterface : global::System.IDis
         return NativeMethods.TablePtr->C4.hs_method_158bd64f((void*)__hosihikari_shim_handle);
     }
 
-    public nint signaling_thread()
+    public nint? signaling_thread()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_3088da2f((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3088da2f((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public int standardized_ice_connection_state()

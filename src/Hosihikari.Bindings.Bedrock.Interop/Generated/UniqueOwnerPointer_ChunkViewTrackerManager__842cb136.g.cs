@@ -72,9 +72,15 @@ public sealed unsafe partial class UniqueOwnerPointer_ChunkViewTrackerManager_ :
     public static UniqueOwnerPointer_ChunkViewTrackerManager_ Create_4e74b066(nint ptr) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'ChunkViewTrackerManager' has no generated wrapper.");
 
-    public nint get()
+    public nint? get()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_d25917e0((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d25917e0((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool isValid()
@@ -99,14 +105,26 @@ public sealed unsafe partial class UniqueOwnerPointer_ChunkViewTrackerManager_ :
         return NativeMethods.TablePtr->C0.hs_method_6b368205((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public nint operator_multiply()
+    public nint? operator_multiply()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_da489988((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_da489988((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint operator_operator__()
+    public nint? operator_operator__()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_47c3b0cb((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_47c3b0cb((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

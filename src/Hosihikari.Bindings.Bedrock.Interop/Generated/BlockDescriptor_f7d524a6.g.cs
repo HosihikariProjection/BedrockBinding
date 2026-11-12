@@ -48,14 +48,26 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
     public nint _ctor_e88b6b58(nint desc) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor rhs)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor rhs)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_9dd6e7b0((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9dd6e7b0((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.HashedString fullName)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.HashedString fullName)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_05a5f0b7((void*)__hosihikari_shim_handle, (void*)fullName.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_05a5f0b7((void*)__hosihikari_shim_handle, (void*)fullName.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -40,9 +40,15 @@ public sealed unsafe partial class MovePlayerPacketPayload : global::System.IDis
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte resetPosition, int cause, int sourceEntityType)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte resetPosition, int cause, int sourceEntityType)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_e9881340((void*)__hosihikari_shim_handle, (void*)player.Handle, resetPosition, cause, sourceEntityType);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e9881340((void*)__hosihikari_shim_handle, (void*)player.Handle, resetPosition, cause, sourceEntityType);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

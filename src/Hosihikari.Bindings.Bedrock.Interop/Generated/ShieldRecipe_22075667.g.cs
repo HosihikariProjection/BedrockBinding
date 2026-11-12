@@ -154,9 +154,15 @@ public sealed unsafe partial class ShieldRecipe : global::System.IDisposable
         return new ShieldRecipe((nint)handle);
     }
 
-    public nint assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftSlots, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
+    public nint? assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftSlots, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext arg1)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_a26a369c((void*)__hosihikari_shim_handle, (void*)craftSlots.Handle, (void*)arg1.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a26a369c((void*)__hosihikari_shim_handle, (void*)craftSlots.Handle, (void*)arg1.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public int getCraftingSize()
@@ -175,9 +181,15 @@ public sealed unsafe partial class ShieldRecipe : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false);
     }
 
-    public nint getResultItems()
+    public nint? getResultItems()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_51d8c324((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_51d8c324((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool isShapeless()

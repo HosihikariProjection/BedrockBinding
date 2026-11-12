@@ -40,19 +40,37 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor()
+    public nint? _ctor()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_0b78810f((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0b78810f((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest connectionRequest)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest connectionRequest)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_ebd0705a((void*)__hosihikari_shim_handle, (void*)connectionRequest.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ebd0705a((void*)__hosihikari_shim_handle, (void*)connectionRequest.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SubClientConnectionRequest request)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SubClientConnectionRequest request)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_1d087975((void*)__hosihikari_shim_handle, (void*)request.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1d087975((void*)__hosihikari_shim_handle, (void*)request.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

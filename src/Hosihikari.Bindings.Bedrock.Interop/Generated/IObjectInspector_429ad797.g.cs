@@ -57,9 +57,15 @@ public sealed unsafe partial class IObjectInspector : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_2ed75620((void*)__hosihikari_shim_handle, (void*)handle.Handle);
     }
 
-    public nint getDataBufferBytes(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectHandle handle)
+    public nint? getDataBufferBytes(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectHandle handle)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_ab55e96a((void*)__hosihikari_shim_handle, (void*)handle.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ab55e96a((void*)__hosihikari_shim_handle, (void*)handle.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public uint getDataBufferLength(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectHandle handle)

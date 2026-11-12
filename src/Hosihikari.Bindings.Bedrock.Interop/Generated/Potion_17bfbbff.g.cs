@@ -212,9 +212,15 @@ public sealed unsafe partial class Potion : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_ecb4cf33((void*)__hosihikari_shim_handle);
     }
 
-    public static nint mPotionsById()
+    public static nint? mPotionsById()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_cfe935c9();
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cfe935c9();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

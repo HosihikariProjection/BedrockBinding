@@ -114,15 +114,27 @@ public sealed unsafe partial class associative_adapter_Bedrock__typeid_t_void___
     public nint find_a1f8eb51(nint key) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public nint keys()
+    public nint? keys()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_07b1c4c9((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_07b1c4c9((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public const bool no_mapped_container = false;
 
-    public nint values()
+    public nint? values()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_0708ac83((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0708ac83((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 }

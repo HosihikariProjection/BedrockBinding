@@ -69,9 +69,15 @@ public sealed unsafe partial class Observer_Social__XboxLiveUserObserver__Core__
         NativeMethods.TablePtr->C1.hs_method_e3330bdb((void*)__hosihikari_shim_handle);
     }
 
-    public nint getSubject()
+    public nint? getSubject()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_3bd1bebe((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3bd1bebe((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public nint mpSubject

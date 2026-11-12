@@ -55,9 +55,15 @@ public sealed unsafe partial class RakPeerInterface : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_e935e3e5((void*)__hosihikari_shim_handle, (void*)host, remotePort, (void*)data, dataLength, connectionSocketIndex) != 0;
     }
 
-    public nint AllocatePacket(uint dataSize)
+    public nint? AllocatePacket(uint dataSize)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_599a4a48((void*)__hosihikari_shim_handle, dataSize);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_599a4a48((void*)__hosihikari_shim_handle, dataSize);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void AllowConnectionResponseIPMigration(bool allow)
@@ -214,9 +220,15 @@ public sealed unsafe partial class RakPeerInterface : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter((nint)__hs_handle, false);
     }
 
-    public nint GetLocalIP(uint index)
+    public nint? GetLocalIP(uint index)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_2ab8ee5b((void*)__hosihikari_shim_handle, index);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2ab8ee5b((void*)__hosihikari_shim_handle, index);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public int GetLowestPing(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.AddressOrGUID systemIdentifier)
@@ -415,9 +427,15 @@ public sealed unsafe partial class RakPeerInterface : global::System.IDisposable
         return new RakPeerInterface((nint)handle);
     }
 
-    public nint Receive()
+    public nint? Receive()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_76920c24((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_76920c24((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void ReleaseSockets(nint sockets)

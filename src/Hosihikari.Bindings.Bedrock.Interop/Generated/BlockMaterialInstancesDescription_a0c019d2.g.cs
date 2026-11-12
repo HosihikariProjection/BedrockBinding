@@ -50,7 +50,7 @@ public sealed unsafe partial class BlockMaterialInstancesDescription : global::S
     public nint _buildNetworkTag(nint ctx) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(string textureName, byte renderLayer, float ambientOcclusion, bool faceDimming, byte tintMethod, bool randomizeUVRotation, bool supportsTextureVariations, bool alphaMaskedTint, bool dithering)
+    public nint? _ctor(string textureName, byte renderLayer, float ambientOcclusion, bool faceDimming, byte tintMethod, bool randomizeUVRotation, bool supportsTextureVariations, bool alphaMaskedTint, bool dithering)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(textureName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -65,7 +65,13 @@ public sealed unsafe partial class BlockMaterialInstancesDescription : global::S
         global::System.Text.Encoding.UTF8.GetBytes(textureName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_1fd55717((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, renderLayer, ambientOcclusion, faceDimming, tintMethod, randomizeUVRotation, supportsTextureVariations, alphaMaskedTint, dithering);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1fd55717((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, renderLayer, ambientOcclusion, faceDimming, tintMethod, randomizeUVRotation, supportsTextureVariations, alphaMaskedTint, dithering);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

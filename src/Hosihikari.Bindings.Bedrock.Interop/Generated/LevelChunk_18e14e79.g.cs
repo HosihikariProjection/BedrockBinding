@@ -40,9 +40,15 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp, bool readOnly, int initBlocks, bool initializeMetaData, int blockActorTrackingMode)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp, bool readOnly, int initBlocks, bool initializeMetaData, int blockActorTrackingMode)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_827e746a((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)cp.Handle, readOnly, initBlocks, initializeMetaData, blockActorTrackingMode);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_827e746a((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)cp.Handle, readOnly, initBlocks, initializeMetaData, blockActorTrackingMode);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

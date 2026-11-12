@@ -40,9 +40,15 @@ public sealed unsafe partial class CommandOutputMessage : global::System.IDispos
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage rhs)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage rhs)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_a37f0d69((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a37f0d69((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static CommandOutputMessage? Create()

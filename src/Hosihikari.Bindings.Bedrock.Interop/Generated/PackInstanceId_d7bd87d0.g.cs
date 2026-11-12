@@ -40,7 +40,7 @@ public sealed unsafe partial class PackInstanceId : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion packId, string subpackName)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion packId, string subpackName)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(subpackName);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -55,13 +55,25 @@ public sealed unsafe partial class PackInstanceId : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(subpackName, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return (nint)NativeMethods.TablePtr->C2.hs_method_8efd159e((void*)__hosihikari_shim_handle, (void*)packId.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8efd159e((void*)__hosihikari_shim_handle, (void*)packId.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId arg0)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId arg0)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_a3841d0c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a3841d0c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

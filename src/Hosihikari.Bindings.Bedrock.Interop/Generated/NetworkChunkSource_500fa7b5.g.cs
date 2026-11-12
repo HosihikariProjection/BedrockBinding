@@ -120,14 +120,26 @@ public sealed unsafe partial class NetworkChunkSource : global::System.IDisposab
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_3549a151((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3549a151((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _getChunkMap()
+    public nint? _getChunkMap()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_5fb8b460((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5fb8b460((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _getExistingChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp)
@@ -142,9 +154,15 @@ public sealed unsafe partial class NetworkChunkSource : global::System.IDisposab
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public nint _getStorage()
+    public nint? _getStorage()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_a2295b03((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a2295b03((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -195,9 +213,15 @@ public sealed unsafe partial class NetworkChunkSource : global::System.IDisposab
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public nint getChunkMap()
+    public nint? getChunkMap()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_22aecb97((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_22aecb97((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getExistingChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp)
@@ -212,9 +236,15 @@ public sealed unsafe partial class NetworkChunkSource : global::System.IDisposab
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public nint getStorage()
+    public nint? getStorage()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_731a94a6((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_731a94a6((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.

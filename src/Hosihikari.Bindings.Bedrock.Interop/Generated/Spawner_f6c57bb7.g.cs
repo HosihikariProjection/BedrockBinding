@@ -111,9 +111,15 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_fe5dd91c((void*)region.Handle, (void*)pos.Handle, materialToSpawnIn ?? default(byte), spawnBlockRequirements, materialToSpawnIn.HasValue) != 0;
     }
 
-    public nint getEntityTypeCache()
+    public nint? getEntityTypeCache()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_dc60974a((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_dc60974a((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry? getSpawnGroupRegistry()
@@ -127,9 +133,15 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry((nint)__hs_handle, false);
     }
 
-    public nint getSpawnPlacements()
+    public nint? getSpawnPlacements()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_8edb0f9c((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8edb0f9c((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup? getSpawnRules()

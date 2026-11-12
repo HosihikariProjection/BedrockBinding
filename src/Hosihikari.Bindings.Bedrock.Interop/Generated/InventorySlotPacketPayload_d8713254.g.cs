@@ -40,14 +40,26 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
         return __hs_handle;
     }
 
-    public nint _ctor(sbyte id, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public nint? _ctor(sbyte id, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_9f857c45((void*)__hosihikari_shim_handle, id, slot, (void*)item.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9f857c45((void*)__hosihikari_shim_handle, id, slot, (void*)item.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(sbyte id, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName fullContainerName, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack storageItem)
+    public nint? _ctor(sbyte id, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName fullContainerName, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack storageItem)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_6fffa2b3((void*)__hosihikari_shim_handle, id, slot, (void*)item.Handle, (void*)fullContainerName.Handle, (void*)storageItem.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6fffa2b3((void*)__hosihikari_shim_handle, id, slot, (void*)item.Handle, (void*)fullContainerName.Handle, (void*)storageItem.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

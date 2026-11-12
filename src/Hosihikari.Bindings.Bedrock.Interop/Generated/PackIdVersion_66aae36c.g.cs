@@ -40,9 +40,15 @@ public sealed unsafe partial class PackIdVersion : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID id, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion version, sbyte packType)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID id, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion version, sbyte packType)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_fb55d655((void*)__hosihikari_shim_handle, (void*)id.Handle, (void*)version.Handle, packType);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_fb55d655((void*)__hosihikari_shim_handle, (void*)id.Handle, (void*)version.Handle, packType);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

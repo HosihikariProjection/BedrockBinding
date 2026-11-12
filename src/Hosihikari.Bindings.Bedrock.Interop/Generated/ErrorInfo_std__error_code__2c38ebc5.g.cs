@@ -80,14 +80,26 @@ public sealed unsafe partial class ErrorInfo_std__error_code_ : global::System.I
         return new ErrorInfo_std__error_code_((nint)handle);
     }
 
-    public nint code_58d8052f()
+    public nint? code_58d8052f()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_58d8052f((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_58d8052f((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint code_27196e4d()
+    public nint? code_27196e4d()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_27196e4d((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_27196e4d((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -112,9 +124,15 @@ public sealed unsafe partial class ErrorInfo_std__error_code_ : global::System.I
     public nint operator_assign_f64d6d8f(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public nint operator_assign_47cbde6e(nint arg0)
+    public nint? operator_assign_47cbde6e(nint arg0)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_47cbde6e((void*)__hosihikari_shim_handle, (void*)arg0);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_47cbde6e((void*)__hosihikari_shim_handle, (void*)arg0);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
 

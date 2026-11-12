@@ -280,9 +280,15 @@ public sealed unsafe partial class TickingArea : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public nint getScope()
+    public nint? getScope()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_0ca4d84b((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0ca4d84b((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ITickingAreaView? getView_78dfc8c7()

@@ -391,7 +391,7 @@ public sealed unsafe partial class FarmBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_b530b328((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
     }
 
-    public nint _ctor(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor baseBlock)
+    public nint? _ctor(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor baseBlock)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -406,7 +406,13 @@ public sealed unsafe partial class FarmBlock : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C1.hs_method_567548f7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, (void*)baseBlock.Handle);
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_567548f7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, (void*)baseBlock.Handle);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

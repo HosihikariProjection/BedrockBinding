@@ -69,9 +69,15 @@ public sealed unsafe partial class AnimationScriptsDescription : global::System.
         NativeMethods.TablePtr->C0.hs_method_7fd0f9e1((void*)__hosihikari_shim_handle, (void*)nonConstDeserializeDataParams.Handle);
     }
 
-    public nint getJsonName()
+    public nint? getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_1d6d5b5d((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1d6d5b5d((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.

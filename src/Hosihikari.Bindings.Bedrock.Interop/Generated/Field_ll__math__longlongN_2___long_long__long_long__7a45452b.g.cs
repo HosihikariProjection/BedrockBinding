@@ -97,18 +97,30 @@ public sealed unsafe partial class Field_ll__math__longlongN_2___long_long__long
     public nint operator_multiply(nint b) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::longlongN<2>' requires --link-carrier or --virtual-dispatch.");
 
-    public nint operator_operator___f39d6bf1(nint b)
+    public nint? operator_operator___f39d6bf1(nint b)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_f39d6bf1((void*)__hosihikari_shim_handle, (void*)b);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f39d6bf1((void*)__hosihikari_shim_handle, (void*)b);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::longlongN<2>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint operator_divide(nint b) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::longlongN<2>' requires --link-carrier or --virtual-dispatch.");
 
-    public nint operator_operator___53ffbb52(nint b)
+    public nint? operator_operator___53ffbb52(nint b)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_53ffbb52((void*)__hosihikari_shim_handle, (void*)b);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_53ffbb52((void*)__hosihikari_shim_handle, (void*)b);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool operator_less(nint b)

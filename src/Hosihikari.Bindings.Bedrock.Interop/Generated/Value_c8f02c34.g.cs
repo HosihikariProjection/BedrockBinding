@@ -48,26 +48,44 @@ public sealed unsafe partial class Value : global::System.IDisposable
     public nint _ctor_2f43f870(nint str) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(sbyte type)
+    public nint? _ctor(sbyte type)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_b8701a78((void*)__hosihikari_shim_handle, type);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b8701a78((void*)__hosihikari_shim_handle, type);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(bool value) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value other)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value other)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_7612c6e0((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7612c6e0((void*)__hosihikari_shim_handle, (void*)other.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor_b69dceef(nint value)
+    public nint? _ctor_b69dceef(nint value)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_b69dceef((void*)__hosihikari_shim_handle, (void*)value);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b69dceef((void*)__hosihikari_shim_handle, (void*)value);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(string value)
+    public nint? _ctor(string value)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(value);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -82,7 +100,13 @@ public sealed unsafe partial class Value : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(value, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C2.hs_method_2b927115((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2b927115((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

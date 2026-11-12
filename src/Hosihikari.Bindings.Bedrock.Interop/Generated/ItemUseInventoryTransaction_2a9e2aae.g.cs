@@ -52,9 +52,15 @@ public sealed unsafe partial class ItemUseInventoryTransaction : global::System.
         set => NativeMethods.TablePtr->C2.hs_set_36fbd16a((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ItemUseInventoryTransaction transaction)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ItemUseInventoryTransaction transaction)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_b220a6f8((void*)__hosihikari_shim_handle, (void*)transaction.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b220a6f8((void*)__hosihikari_shim_handle, (void*)transaction.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

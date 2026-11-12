@@ -100,9 +100,15 @@ public sealed unsafe partial class FlatWorldGenerator : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C1.hs_get_160124f1((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, uint arg1, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value generationOptionsJSON)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, uint arg1, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value generationOptionsJSON)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_ad242874((void*)__hosihikari_shim_handle, (void*)dimension.Handle, arg1, (void*)generationOptionsJSON.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ad242874((void*)__hosihikari_shim_handle, (void*)dimension.Handle, arg1, (void*)generationOptionsJSON.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _decorateWorldGenLoadChunk(global::Hosihikari.Bindings.Bedrock.Interop.Biome arg0, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockVolumeTarget arg2, global::Hosihikari.Bindings.Bedrock.Interop.Random arg3, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos arg4)

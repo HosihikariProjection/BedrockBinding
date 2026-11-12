@@ -364,9 +364,15 @@ public sealed unsafe partial class BaseChannel : global::System.IDisposable
     public bool UpdateRemoteStreams_w(nint content, nint type, nint error_desc) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint local_streams()
+    public nint? local_streams()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_b3a182b2((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b3a182b2((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -548,9 +554,15 @@ public sealed unsafe partial class BaseChannel : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BaseChannel((nint)__hs_handle, false);
     }
 
-    public nint remote_streams()
+    public nint? remote_streams()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_9a991fd9((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_9a991fd9((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

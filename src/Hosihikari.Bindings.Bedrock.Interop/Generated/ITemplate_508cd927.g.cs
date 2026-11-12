@@ -52,9 +52,15 @@ public sealed unsafe partial class ITemplate : global::System.IDisposable
         return new ITemplate((nint)handle);
     }
 
-    public nint getJigsawMarkers()
+    public nint? getJigsawMarkers()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_5ed11df7((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5ed11df7((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSize(byte rotation)

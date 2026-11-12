@@ -110,9 +110,15 @@ public sealed unsafe partial class VillageFeature : global::System.IDisposable
     public nint _createStructureStart(nint generator, nint biomeSource, nint random, nint chunkPos, nint preliminarySurfaceLevel) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'StructureStart' has no accessible destructor.");
 
-    public nint _ctor(uint seed, int townSpacing, int minTownSeparation, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry biomeRegistry)
+    public nint? _ctor(uint seed, int townSpacing, int minTownSeparation, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry biomeRegistry)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_30e24614((void*)__hosihikari_shim_handle, seed, townSpacing, minTownSeparation, (void*)biomeRegistry.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_30e24614((void*)__hosihikari_shim_handle, seed, townSpacing, minTownSeparation, (void*)biomeRegistry.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

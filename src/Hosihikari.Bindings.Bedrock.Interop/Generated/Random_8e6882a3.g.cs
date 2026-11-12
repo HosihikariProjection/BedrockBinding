@@ -45,9 +45,15 @@ public sealed unsafe partial class Random : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_d403613b((void*)__hosihikari_shim_handle, count);
     }
 
-    public nint _ctor(uint seed, bool onlyUsedDeterministically)
+    public nint? _ctor(uint seed, bool onlyUsedDeterministically)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_df2b31b2((void*)__hosihikari_shim_handle, seed, onlyUsedDeterministically);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_df2b31b2((void*)__hosihikari_shim_handle, seed, onlyUsedDeterministically);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool _nextBoolean()

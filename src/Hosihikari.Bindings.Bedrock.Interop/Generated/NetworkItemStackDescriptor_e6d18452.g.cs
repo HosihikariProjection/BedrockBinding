@@ -52,14 +52,26 @@ public sealed unsafe partial class NetworkItemStackDescriptor : global::System.I
         set => NativeMethods.TablePtr->C2.hs_set_fe1bb1a0((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_07bb1b3f((void*)__hosihikari_shim_handle, (void*)item.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_07bb1b3f((void*)__hosihikari_shim_handle, (void*)item.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.NetworkItemStackDescriptor arg0)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.NetworkItemStackDescriptor arg0)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_c68d00b8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c68d00b8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

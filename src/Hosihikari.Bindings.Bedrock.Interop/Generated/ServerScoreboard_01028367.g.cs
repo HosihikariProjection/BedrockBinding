@@ -116,9 +116,15 @@ public sealed unsafe partial class ServerScoreboard : global::System.IDisposable
     public nint _createScoreboardId_39f136b6(nint name) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CommandSoftEnumRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage? levelStorage, global::Hosihikari.Bindings.Abi.SharedHandle? gameplayUserManager)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CommandSoftEnumRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage? levelStorage, global::Hosihikari.Bindings.Abi.SharedHandle? gameplayUserManager)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_967ae465((void*)__hosihikari_shim_handle, (void*)registry.Handle, (void*)(levelStorage?.Handle ?? 0), gameplayUserManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_967ae465((void*)__hosihikari_shim_handle, (void*)registry.Handle, (void*)(levelStorage?.Handle ?? 0), gameplayUserManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

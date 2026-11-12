@@ -40,14 +40,26 @@ public sealed unsafe partial class MerchantRecipe : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buy, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance sell)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buy, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance sell)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_d1e81f69((void*)__hosihikari_shim_handle, (void*)buy.Handle, (void*)sell.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d1e81f69((void*)__hosihikari_shim_handle, (void*)buy.Handle, (void*)sell.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyA, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyB, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance sell)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyA, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyB, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance sell)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_29eccb27((void*)__hosihikari_shim_handle, (void*)buyA.Handle, (void*)buyB.Handle, (void*)sell.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_29eccb27((void*)__hosihikari_shim_handle, (void*)buyA.Handle, (void*)buyB.Handle, (void*)sell.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

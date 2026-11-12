@@ -87,9 +87,15 @@ public sealed unsafe partial class boolN_3ULL_ : global::System.IDisposable
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
     }
 
-    public nint operator_assign_89f68916(nint arg0)
+    public nint? operator_assign_89f68916(nint arg0)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_89f68916((void*)__hosihikari_shim_handle, (void*)arg0);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_89f68916((void*)__hosihikari_shim_handle, (void*)arg0);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

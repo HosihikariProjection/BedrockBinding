@@ -151,9 +151,15 @@ public sealed unsafe partial class OverworldGeneratorMultinoise : global::System
     public nint _createNoiseCache(nint chunkPos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64 seed, global::Hosihikari.Bindings.Bedrock.Interop.Biome? biomeOverride)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64 seed, global::Hosihikari.Bindings.Bedrock.Interop.Biome? biomeOverride)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_ffc1cad6((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)seed.Handle, (void*)(biomeOverride?.Handle ?? 0));
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ffc1cad6((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)seed.Handle, (void*)(biomeOverride?.Handle ?? 0));
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _decorateWorldGenPostProcess(global::Hosihikari.Bindings.Bedrock.Interop.Biome arg0, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource source, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
@@ -298,9 +304,15 @@ public sealed unsafe partial class OverworldGeneratorMultinoise : global::System
         return NativeMethods.TablePtr->C2.hs_method_1577265f((void*)__hosihikari_shim_handle);
     }
 
-    public nint getMaterialAdjNoise()
+    public nint? getMaterialAdjNoise()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_453eb212((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_453eb212((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'DividedPos2d<4>' is not a known bindable declaration.", false)]

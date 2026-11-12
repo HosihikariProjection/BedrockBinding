@@ -115,7 +115,7 @@ public sealed unsafe partial class FileSystemFileAccess : global::System.IDispos
         return NativeMethods.TablePtr->C1.hs_method_59fc8aad((void*)__hosihikari_shim_handle, (void*)file);
     }
 
-    public nint fopen(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath, string mode)
+    public nint? fopen(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath, string mode)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(mode);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -130,7 +130,13 @@ public sealed unsafe partial class FileSystemFileAccess : global::System.IDispos
         global::System.Text.Encoding.UTF8.GetBytes(mode, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return (nint)NativeMethods.TablePtr->C1.hs_method_e6fe7772((void*)__hosihikari_shim_handle, (void*)filePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e6fe7772((void*)__hosihikari_shim_handle, (void*)filePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

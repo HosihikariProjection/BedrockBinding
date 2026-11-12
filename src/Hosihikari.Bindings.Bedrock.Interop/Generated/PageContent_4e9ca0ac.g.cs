@@ -44,7 +44,7 @@ public sealed unsafe partial class PageContent : global::System.IDisposable
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(string nText, string? nFilteredText)
+    public nint? _ctor(string nText, string? nFilteredText)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nText);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -72,7 +72,13 @@ public sealed unsafe partial class PageContent : global::System.IDisposable
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                return (nint)NativeMethods.TablePtr->C2.hs_method_8acef29e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, nFilteredText is not null);
+                var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8acef29e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, nFilteredText is not null);
+                if (__hs_handle == null)
+                {
+                    NativeMethods.GetLastError();
+                    return null;
+                }
+                return (nint)__hs_handle;
             }
         }
     }

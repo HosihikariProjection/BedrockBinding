@@ -114,9 +114,15 @@ public sealed unsafe partial class ChunkViewSource : global::System.IDisposable
     public nint _createNewChunk(nint cp, nint lm, bool readOnly) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource otherChunkViewSource)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource otherChunkViewSource)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_5ce7f256((void*)__hosihikari_shim_handle, (void*)otherChunkViewSource.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5ce7f256((void*)__hosihikari_shim_handle, (void*)otherChunkViewSource.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

@@ -64,9 +64,15 @@ public sealed unsafe partial class IMinecraftApp : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public nint getGameModuleShared()
+    public nint? getGameModuleShared()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_8fe2e690((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8fe2e690((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getPrimaryMinecraft()

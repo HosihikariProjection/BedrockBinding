@@ -65,9 +65,15 @@ public sealed unsafe partial class ContainerDescription : global::System.IDispos
         NativeMethods.TablePtr->C1.hs_method_d422cdbf((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
     }
 
-    public nint getJsonName()
+    public nint? getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_222d4c9a((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_222d4c9a((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool mCanBesiphonedFrom

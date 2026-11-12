@@ -44,7 +44,7 @@ public sealed unsafe partial class AutomationPlayerCommandOrigin : global::Syste
     public nint _clone() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(string requestId, global::Hosihikari.Bindings.Bedrock.Interop.Player origin)
+    public nint? _ctor(string requestId, global::Hosihikari.Bindings.Bedrock.Interop.Player origin)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(requestId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -59,7 +59,13 @@ public sealed unsafe partial class AutomationPlayerCommandOrigin : global::Syste
         global::System.Text.Encoding.UTF8.GetBytes(requestId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_b31b2c6b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)origin.Handle);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b31b2c6b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)origin.Handle);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

@@ -40,9 +40,15 @@ public sealed unsafe partial class PlayerInputTick : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_9ad48f27((void*)__hosihikari_shim_handle, (void*)entity.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9ad48f27((void*)__hosihikari_shim_handle, (void*)entity.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static PlayerInputTick? Create()

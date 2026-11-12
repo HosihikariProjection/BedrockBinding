@@ -229,14 +229,26 @@ public sealed unsafe partial class IWorldRegistriesProvider : global::System.IDi
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public nint getStructureSpawnRegistry_78ef780b()
+    public nint? getStructureSpawnRegistry_78ef780b()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_78ef780b((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_78ef780b((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint getStructureSpawnRegistry_3900b27c()
+    public nint? getStructureSpawnRegistry_3900b27c()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_3900b27c((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3900b27c((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SurfaceBuilderRegistry? getSurfaceBuilderRegistry_413ada20()

@@ -69,9 +69,15 @@ public sealed unsafe partial class Observer_I18nObserver__std__mutex_ : global::
         NativeMethods.TablePtr->C1.hs_method_9b03b51f((void*)__hosihikari_shim_handle);
     }
 
-    public nint getSubject()
+    public nint? getSubject()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_ac40fe70((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ac40fe70((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public nint mpSubject

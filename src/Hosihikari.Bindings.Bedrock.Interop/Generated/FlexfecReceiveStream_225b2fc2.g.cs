@@ -52,9 +52,15 @@ public sealed unsafe partial class FlexfecReceiveStream : global::System.IDispos
         return new FlexfecReceiveStream((nint)handle);
     }
 
-    public nint GetStats()
+    public nint? GetStats()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_f9930ecd((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f9930ecd((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void SetPayloadType(int arg0)

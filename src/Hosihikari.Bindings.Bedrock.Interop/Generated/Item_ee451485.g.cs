@@ -166,7 +166,7 @@ public sealed unsafe partial class Item : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
-    public nint _ctor(string nameId, short id)
+    public nint? _ctor(string nameId, short id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -181,7 +181,13 @@ public sealed unsafe partial class Item : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C1.hs_method_6303f4b9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6303f4b9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

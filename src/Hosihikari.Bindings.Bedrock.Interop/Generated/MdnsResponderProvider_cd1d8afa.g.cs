@@ -40,9 +40,15 @@ public sealed unsafe partial class MdnsResponderProvider : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint GetMdnsResponder()
+    public nint? GetMdnsResponder()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_e7b5ee4f((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e7b5ee4f((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static MdnsResponderProvider? Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MdnsResponderProvider arg0)

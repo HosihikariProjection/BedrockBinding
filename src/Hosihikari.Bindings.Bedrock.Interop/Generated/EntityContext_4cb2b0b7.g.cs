@@ -64,14 +64,26 @@ public sealed unsafe partial class EntityContext : global::System.IDisposable
         return new EntityContext((nint)handle);
     }
 
-    public nint getRegistry_f025e308()
+    public nint? getRegistry_f025e308()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_f025e308((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f025e308((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint getRegistry_357c472d()
+    public nint? getRegistry_357c472d()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_357c472d((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_357c472d((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.WeakEntityRef? getWeakRef()

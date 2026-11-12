@@ -87,9 +87,15 @@ public sealed unsafe partial class DebugAssertException : global::System.IDispos
         return new global::Hosihikari.Bindings.Bedrock.Interop.DebugAssertException((nint)__hs_handle, false);
     }
 
-    public nint what()
+    public nint? what()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_fba34b2e((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_fba34b2e((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
 

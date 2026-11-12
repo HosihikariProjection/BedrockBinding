@@ -106,9 +106,15 @@ public sealed unsafe partial class CraftingContainer : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C1.hs_get_339e9304((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(int w, int h)
+    public nint? _ctor(int w, int h)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_5fc73ec1((void*)__hosihikari_shim_handle, w, h);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5fc73ec1((void*)__hosihikari_shim_handle, w, h);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

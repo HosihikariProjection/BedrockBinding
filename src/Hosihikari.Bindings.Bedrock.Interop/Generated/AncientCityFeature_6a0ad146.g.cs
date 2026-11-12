@@ -44,9 +44,15 @@ public sealed unsafe partial class AncientCityFeature : global::System.IDisposab
     public nint _createStructureStart(nint dimension, nint arg1, nint random, nint chunkPos, nint arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(uint seed, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion arg1)
+    public nint? _ctor(uint seed, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion arg1)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_cc530071((void*)__hosihikari_shim_handle, seed, (void*)arg1.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_cc530071((void*)__hosihikari_shim_handle, seed, (void*)arg1.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

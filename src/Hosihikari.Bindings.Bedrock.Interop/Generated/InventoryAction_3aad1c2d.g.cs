@@ -44,9 +44,15 @@ public sealed unsafe partial class InventoryAction : global::System.IDisposable
     public nint _ctor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.InventorySource source, uint slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack fromItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack toItem)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.InventorySource source, uint slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack fromItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack toItem)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_95be235d((void*)__hosihikari_shim_handle, (void*)source.Handle, slot, (void*)fromItem.Handle, (void*)toItem.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_95be235d((void*)__hosihikari_shim_handle, (void*)source.Handle, slot, (void*)fromItem.Handle, (void*)toItem.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

@@ -101,9 +101,15 @@ public sealed unsafe partial class NetworkManager : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_0e2f9936((void*)__hosihikari_shim_handle, family, (void*)ipaddr) != 0;
     }
 
-    public nint GetMdnsResponder()
+    public nint? GetMdnsResponder()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_d7a45b4c((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d7a45b4c((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public nint[] GetNetworks()

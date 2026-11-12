@@ -113,9 +113,15 @@ public sealed unsafe partial class PathView : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_338d54b0((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public nint getUtf8CString()
+    public nint? getUtf8CString()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_753faf1c((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_753faf1c((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public string getUtf8StringView()

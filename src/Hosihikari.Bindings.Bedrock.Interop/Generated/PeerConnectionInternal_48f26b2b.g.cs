@@ -171,9 +171,15 @@ public sealed unsafe partial class PeerConnectionInternal : global::System.IDisp
         return NativeMethods.TablePtr->C4.hs_method_8c671585((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public nint network_thread()
+    public nint? network_thread()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_c35ed65d((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c35ed65d((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public string? sctp_transport_name()
@@ -183,9 +189,15 @@ public sealed unsafe partial class PeerConnectionInternal : global::System.IDisp
         return __hs_hasValue ? global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size)) : null;
     }
 
-    public nint worker_thread()
+    public nint? worker_thread()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_6b73d39a((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6b73d39a((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
 

@@ -398,9 +398,15 @@ public sealed unsafe partial class RakPeer : global::System.IDisposable
     public void _WriteOutOfBandHeader(nint bitStream) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor()
+    public nint? _ctor()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_ea0e3e59((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ea0e3e59((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -430,14 +436,26 @@ public sealed unsafe partial class RakPeer : global::System.IDisposable
     public nint AllocPacket(uint dataSize, nint file, uint line) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint AllocRNS2RecvStruct(nint file, uint line)
+    public nint? AllocRNS2RecvStruct(nint file, uint line)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_fd8e96fa((void*)__hosihikari_shim_handle, (void*)file, line);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fd8e96fa((void*)__hosihikari_shim_handle, (void*)file, line);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint AllocatePacket(uint dataSize)
+    public nint? AllocatePacket(uint dataSize)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_b489d69e((void*)__hosihikari_shim_handle, dataSize);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b489d69e((void*)__hosihikari_shim_handle, dataSize);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void AllowConnectionResponseIPMigration(bool allow)
@@ -631,9 +649,15 @@ public sealed unsafe partial class RakPeer : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter((nint)__hs_handle, false);
     }
 
-    public nint GetLocalIP(uint index)
+    public nint? GetLocalIP(uint index)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_22529b2c((void*)__hosihikari_shim_handle, index);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_22529b2c((void*)__hosihikari_shim_handle, index);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public int GetLowestPing(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.AddressOrGUID systemIdentifier)
@@ -865,9 +889,15 @@ public sealed unsafe partial class RakPeer : global::System.IDisposable
         return new RakPeer((nint)handle);
     }
 
-    public nint Receive()
+    public nint? Receive()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_403a28cd((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_403a28cd((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -40,9 +40,15 @@ public sealed unsafe partial class ItemStackBase : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Block block, int count, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? _userData)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Block block, int count, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? _userData)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_1dde9251((void*)__hosihikari_shim_handle, (void*)block.Handle, count, (void*)(_userData?.Handle ?? 0));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1dde9251((void*)__hosihikari_shim_handle, (void*)block.Handle, count, (void*)(_userData?.Handle ?? 0));
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -57,7 +63,7 @@ public sealed unsafe partial class ItemStackBase : global::System.IDisposable
     public nint _ctor_60f071bc(nint ingredient) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(string name, int count, int auxValue, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? _userData)
+    public nint? _ctor(string name, int count, int auxValue, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? _userData)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -72,7 +78,13 @@ public sealed unsafe partial class ItemStackBase : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C1.hs_method_508795aa((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, count, auxValue, (void*)(_userData?.Handle ?? 0));
+            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_508795aa((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, count, auxValue, (void*)(_userData?.Handle ?? 0));
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

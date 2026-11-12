@@ -65,9 +65,15 @@ public sealed unsafe partial class VideoTrackInterface : global::System.IDisposa
         NativeMethods.TablePtr->C4.hs_method_8301a8f5((void*)__hosihikari_shim_handle, (void*)a1, (void*)a2);
     }
 
-    public nint GetSource()
+    public nint? GetSource()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_621485da((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_621485da((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void RemoveSink(nint a1)

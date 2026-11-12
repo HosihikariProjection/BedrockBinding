@@ -40,14 +40,26 @@ public sealed unsafe partial class ResourceLocation : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_8607eaf7((void*)__hosihikari_shim_handle, (void*)path.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8607eaf7((void*)__hosihikari_shim_handle, (void*)path.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path, int fileSystem)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path, int fileSystem)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_01c06b26((void*)__hosihikari_shim_handle, (void*)path.Handle, fileSystem);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_01c06b26((void*)__hosihikari_shim_handle, (void*)path.Handle, fileSystem);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

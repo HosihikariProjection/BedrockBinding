@@ -89,24 +89,48 @@ public sealed unsafe partial class DataItem2_signed_char_ : global::System.IDisp
         set => NativeMethods.TablePtr->C1.hs_set_4ce3a75a((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint operator_const_signed_char__()
+    public nint? operator_const_signed_char__()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_6e35d899((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6e35d899((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint operator_signed_char__()
+    public nint? operator_signed_char__()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_66b8943b((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_66b8943b((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint value_196b21e2()
+    public nint? value_196b21e2()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_196b21e2((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_196b21e2((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint value_b8ce217e()
+    public nint? value_b8ce217e()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_b8ce217e((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b8ce217e((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
 

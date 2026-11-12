@@ -40,9 +40,15 @@ public sealed unsafe partial class ScopedItemRegistry : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? registry)
+    public nint? _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? registry)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_80b10e9a((void*)__hosihikari_shim_handle, registry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_80b10e9a((void*)__hosihikari_shim_handle, registry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()

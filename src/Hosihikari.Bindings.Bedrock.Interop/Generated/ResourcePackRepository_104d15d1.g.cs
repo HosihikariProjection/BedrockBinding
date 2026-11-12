@@ -484,9 +484,15 @@ public sealed unsafe partial class ResourcePackRepository : global::System.IDisp
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public nint getInvalidPacks()
+    public nint? getInvalidPacks()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_c3ecb645((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c3ecb645((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'InvalidPack' is not supported.", false)]

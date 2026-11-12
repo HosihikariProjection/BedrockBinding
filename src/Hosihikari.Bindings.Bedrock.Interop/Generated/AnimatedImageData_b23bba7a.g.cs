@@ -40,9 +40,15 @@ public sealed unsafe partial class AnimatedImageData : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(uint type, uint animationExpression, global::Hosihikari.Bindings.Bedrock.Interop.mce.Image animatedImage, float frames)
+    public nint? _ctor(uint type, uint animationExpression, global::Hosihikari.Bindings.Bedrock.Interop.mce.Image animatedImage, float frames)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_865d812c((void*)__hosihikari_shim_handle, type, animationExpression, (void*)animatedImage.Handle, frames);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_865d812c((void*)__hosihikari_shim_handle, type, animationExpression, (void*)animatedImage.Handle, frames);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static AnimatedImageData? Create()

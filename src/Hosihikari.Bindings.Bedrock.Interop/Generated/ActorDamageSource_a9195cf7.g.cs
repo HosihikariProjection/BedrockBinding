@@ -48,7 +48,7 @@ public sealed unsafe partial class ActorDamageSource : global::System.IDisposabl
     public nint _clone() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'ActorDamageSource' has no accessible destructor.");
 
-    public nint _ctor(int cause, string deathMessageOverride)
+    public nint? _ctor(int cause, string deathMessageOverride)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(deathMessageOverride);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -63,7 +63,13 @@ public sealed unsafe partial class ActorDamageSource : global::System.IDisposabl
         global::System.Text.Encoding.UTF8.GetBytes(deathMessageOverride, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_30639563((void*)__hosihikari_shim_handle, cause, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_30639563((void*)__hosihikari_shim_handle, cause, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

@@ -40,7 +40,7 @@ public sealed unsafe partial class SlotData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(string collectionName, int collectionIndex)
+    public nint? _ctor(string collectionName, int collectionIndex)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(collectionName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -55,7 +55,13 @@ public sealed unsafe partial class SlotData : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(collectionName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_cac057c1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, collectionIndex);
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cac057c1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, collectionIndex);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 

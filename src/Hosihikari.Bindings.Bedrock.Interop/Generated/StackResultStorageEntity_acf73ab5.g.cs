@@ -40,9 +40,15 @@ public sealed unsafe partial class StackResultStorageEntity : global::System.IDi
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity weakStorage)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity weakStorage)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_4025f5be((void*)__hosihikari_shim_handle, (void*)weakStorage.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4025f5be((void*)__hosihikari_shim_handle, (void*)weakStorage.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public static StackResultStorageEntity? Create()

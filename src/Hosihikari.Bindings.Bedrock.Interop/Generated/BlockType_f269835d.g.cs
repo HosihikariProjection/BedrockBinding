@@ -218,7 +218,7 @@ public sealed unsafe partial class BlockType : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.HitResult((nint)__hs_handle);
     }
 
-    public nint _ctor(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.Material material)
+    public nint? _ctor(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.Material material)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -233,7 +233,13 @@ public sealed unsafe partial class BlockType : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_73a7cf61((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, (void*)material.Handle);
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_73a7cf61((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, (void*)material.Handle);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return (nint)__hs_handle;
         }
     }
 
@@ -389,9 +395,15 @@ public sealed unsafe partial class BlockType : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_19e3d56c((void*)__hosihikari_shim_handle, face, (void*)block.Handle);
     }
 
-    public nint _getMobToSpawn(global::Hosihikari.Bindings.Bedrock.Interop.SpawnConditions conditions, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
+    public nint? _getMobToSpawn(global::Hosihikari.Bindings.Bedrock.Interop.SpawnConditions conditions, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_6fb4551d((void*)__hosihikari_shim_handle, (void*)conditions.Handle, (void*)region.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6fb4551d((void*)__hosihikari_shim_handle, (void*)conditions.Handle, (void*)region.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? _getNextBlockPermutation(global::Hosihikari.Bindings.Bedrock.Interop.Block currentBlock)
@@ -1395,9 +1407,15 @@ public sealed unsafe partial class BlockType : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_cca286b9((void*)__hosihikari_shim_handle, face, (void*)block.Handle);
     }
 
-    public nint getMobToSpawn(global::Hosihikari.Bindings.Bedrock.Interop.SpawnConditions conditions, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
+    public nint? getMobToSpawn(global::Hosihikari.Bindings.Bedrock.Interop.SpawnConditions conditions, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_7fb38fae((void*)__hosihikari_shim_handle, (void*)conditions.Handle, (void*)region.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7fb38fae((void*)__hosihikari_shim_handle, (void*)conditions.Handle, (void*)region.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getNextBlockPermutation(global::Hosihikari.Bindings.Bedrock.Interop.Block currentBlock)

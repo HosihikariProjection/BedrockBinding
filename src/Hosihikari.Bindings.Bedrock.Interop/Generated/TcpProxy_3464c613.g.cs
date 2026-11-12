@@ -120,9 +120,15 @@ public sealed unsafe partial class TcpProxy : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle);
     }
 
-    public nint nextPacket()
+    public nint? nextPacket()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_ae686327((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ae686327((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool packetsAvailable()

@@ -84,9 +84,15 @@ public sealed unsafe partial class MapLockingRecipe : global::System.IDisposable
         return new MapLockingRecipe((nint)handle);
     }
 
-    public nint assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftSlots, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
+    public nint? assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftSlots, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_38a100d0((void*)__hosihikari_shim_handle, (void*)craftSlots.Handle, (void*)craftingContext.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_38a100d0((void*)__hosihikari_shim_handle, (void*)craftSlots.Handle, (void*)craftingContext.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public int getCraftingSize()
@@ -105,9 +111,15 @@ public sealed unsafe partial class MapLockingRecipe : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false);
     }
 
-    public nint getResultItems()
+    public nint? getResultItems()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_1e2c2eff((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1e2c2eff((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.

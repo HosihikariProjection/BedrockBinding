@@ -212,9 +212,15 @@ public sealed unsafe partial class OverworldGenerator2d : global::System.IDispos
         return NativeMethods.TablePtr->C2.hs_method_b8e14325((void*)__hosihikari_shim_handle);
     }
 
-    public nint getMaterialAdjNoise()
+    public nint? getMaterialAdjNoise()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_8aba7cec((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8aba7cec((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PerlinSimplexNoise? getSurfaceNoise()

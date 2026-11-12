@@ -44,9 +44,15 @@ public sealed unsafe partial class StrongholdFeature : global::System.IDisposabl
     public nint _createStructureStart(nint generator, nint arg1, nint random, nint cp, nint arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.VillageFeature? villages, uint seed)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.VillageFeature? villages, uint seed)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_cf178e4a((void*)__hosihikari_shim_handle, (void*)(villages?.Handle ?? 0), seed);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cf178e4a((void*)__hosihikari_shim_handle, (void*)(villages?.Handle ?? 0), seed);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

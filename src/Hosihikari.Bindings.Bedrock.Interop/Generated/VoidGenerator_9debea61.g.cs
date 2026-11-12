@@ -100,9 +100,15 @@ public sealed unsafe partial class VoidGenerator : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_da2949db((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType customDimensionDefaultBiome)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType customDimensionDefaultBiome)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_685dbbb7((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)customDimensionDefaultBiome.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_685dbbb7((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)customDimensionDefaultBiome.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -65,9 +65,15 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_2f53c194((void*)__hosihikari_shim_handle);
     }
 
-    public nint _getResultItems()
+    public nint? _getResultItems()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_594877ae((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_594877ae((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool _hasDataDrivenResult()
@@ -127,9 +133,15 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
         return new Recipe((nint)handle);
     }
 
-    public nint assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftSlots, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
+    public nint? assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftSlots, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_98d821b4((void*)__hosihikari_shim_handle, (void*)craftSlots.Handle, (void*)craftingContext.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_98d821b4((void*)__hosihikari_shim_handle, (void*)craftSlots.Handle, (void*)craftingContext.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -168,9 +180,15 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_f4a79c74((void*)__hosihikari_shim_handle);
     }
 
-    public nint getResultItems()
+    public nint? getResultItems()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_f35e810a((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f35e810a((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool hasDataDrivenResult()

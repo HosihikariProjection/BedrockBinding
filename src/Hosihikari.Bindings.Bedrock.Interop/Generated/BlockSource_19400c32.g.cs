@@ -100,9 +100,15 @@ public sealed unsafe partial class BlockSource : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_ad89341e((void*)__hosihikari_shim_handle, (void*)box.Handle, material) != 0;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, bool publicSource, bool allowUnpopulatedChunks, bool allowClientTickingChanges, bool markChangedBlocksForSaving)
+    public nint? _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, bool publicSource, bool allowUnpopulatedChunks, bool allowClientTickingChanges, bool markChangedBlocksForSaving)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_63060ba6((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)dimension.Handle, (void*)source.Handle, publicSource, allowUnpopulatedChunks, allowClientTickingChanges, markChangedBlocksForSaving);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_63060ba6((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)dimension.Handle, (void*)source.Handle, publicSource, allowUnpopulatedChunks, allowClientTickingChanges, markChangedBlocksForSaving);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _dtor()
@@ -110,9 +116,15 @@ public sealed unsafe partial class BlockSource : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_0906624f((void*)__hosihikari_shim_handle);
     }
 
-    public nint _fetchAABBs(global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, bool withUnloadedChunks)
+    public nint? _fetchAABBs(global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, bool withUnloadedChunks)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_979c9a22((void*)__hosihikari_shim_handle, (void*)intersectTestBox.Handle, withUnloadedChunks);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_979c9a22((void*)__hosihikari_shim_handle, (void*)intersectTestBox.Handle, withUnloadedChunks);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void _fetchAABBs(global::Hosihikari.Bindings.Bedrock.Interop.AABB[] shapes, global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, bool withUnloadedChunks)
@@ -695,9 +707,15 @@ public sealed unsafe partial class BlockSource : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_2f39d3a1((void*)__hosihikari_shim_handle, (void*)blockDescriptor.Handle, (void*)min.Handle, (void*)max.Handle, maxCount);
     }
 
-    public nint fetchAABBs(global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, bool withUnloadedChunks)
+    public nint? fetchAABBs(global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, bool withUnloadedChunks)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_46e70e22((void*)__hosihikari_shim_handle, (void*)intersectTestBox.Handle, withUnloadedChunks);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_46e70e22((void*)__hosihikari_shim_handle, (void*)intersectTestBox.Handle, withUnloadedChunks);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public void fetchAABBs(global::Hosihikari.Bindings.Bedrock.Interop.AABB[] shapes, global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, bool withUnloadedChunks)
@@ -807,9 +825,15 @@ public sealed unsafe partial class BlockSource : global::System.IDisposable
     public nint fetchEntities(nint ignoredEntities, nint bb, bool useHitbox, bool getDisplayEntities, nint selector) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public nint fetchEntities2(int type, global::Hosihikari.Bindings.Bedrock.Interop.AABB aabb, bool ignoreTargetType)
+    public nint? fetchEntities2(int type, global::Hosihikari.Bindings.Bedrock.Interop.AABB aabb, bool ignoreTargetType)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_b58e3645((void*)__hosihikari_shim_handle, type, (void*)aabb.Handle, ignoreTargetType);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b58e3645((void*)__hosihikari_shim_handle, type, (void*)aabb.Handle, ignoreTargetType);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

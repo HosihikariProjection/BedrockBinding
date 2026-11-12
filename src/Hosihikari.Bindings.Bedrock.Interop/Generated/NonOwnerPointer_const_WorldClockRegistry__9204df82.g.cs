@@ -88,9 +88,15 @@ public sealed unsafe partial class NonOwnerPointer_const_WorldClockRegistry_ : g
         return new NonOwnerPointer_const_WorldClockRegistry_((nint)handle);
     }
 
-    public nint get()
+    public nint? get()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_8bca5eec((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8bca5eec((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -109,19 +115,37 @@ public sealed unsafe partial class NonOwnerPointer_const_WorldClockRegistry_ : g
         return NativeMethods.TablePtr->C0.hs_method_0f6f0cf2((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public nint operator_const_WorldClockRegistry__()
+    public nint? operator_const_WorldClockRegistry__()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_3471f289((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3471f289((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint operator_multiply()
+    public nint? operator_multiply()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_d821e44c((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d821e44c((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
-    public nint operator_operator__()
+    public nint? operator_operator__()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_c09d145d((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c09d145d((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
     }
 
     public bool operator_equal()
