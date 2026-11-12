@@ -67,6 +67,7 @@ public sealed unsafe partial class ThrownPotionEffectSubcomponent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_181ac266((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

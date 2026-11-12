@@ -346,6 +346,7 @@ public sealed unsafe partial class PickaxeItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_bf81394d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -357,6 +358,7 @@ public sealed unsafe partial class PickaxeItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f25f62d3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

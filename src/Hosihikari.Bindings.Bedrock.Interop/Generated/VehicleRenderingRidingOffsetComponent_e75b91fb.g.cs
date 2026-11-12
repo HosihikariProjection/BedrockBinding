@@ -45,6 +45,7 @@ public sealed unsafe partial class VehicleRenderingRidingOffsetComponent : globa
         var handle = NativeMethods.TablePtr->C4.hs_create_84b098ea((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

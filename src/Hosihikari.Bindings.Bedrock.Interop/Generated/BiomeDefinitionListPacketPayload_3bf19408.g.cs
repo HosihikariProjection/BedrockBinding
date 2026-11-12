@@ -45,6 +45,7 @@ public sealed unsafe partial class BiomeDefinitionListPacketPayload : global::Sy
         var handle = NativeMethods.TablePtr->C0.hs_create_1a14af65((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

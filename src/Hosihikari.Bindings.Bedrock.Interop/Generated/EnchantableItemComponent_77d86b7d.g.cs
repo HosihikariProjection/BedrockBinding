@@ -53,6 +53,7 @@ public sealed unsafe partial class EnchantableItemComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_be40e6ab((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

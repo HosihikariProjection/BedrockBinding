@@ -45,6 +45,7 @@ public sealed unsafe partial class BarrelContainerScreenValidator : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_8e502a53((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -121,6 +121,7 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_4fbbe2cc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -132,6 +133,7 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_05c4b48c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -197,7 +199,12 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation? getPackLocation()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_57eba825((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)__hs_handle, false);
     }
 
     public string getPackName()
@@ -219,7 +226,12 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_? getStreamableSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView? tempDirectory)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_28769f25((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, (void*)(tempDirectory?.Handle ?? 0), tempDirectory is not null);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)__hs_handle);
     }
 
     public bool hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, bool trustedContentOnly, bool caseSensative)
@@ -275,7 +287,12 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackAccessStrategy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackAccessStrategy arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_97d019aa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackAccessStrategy((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackAccessStrategy((nint)__hs_handle, false);
     }
 
     public void unload()

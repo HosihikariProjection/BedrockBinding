@@ -72,6 +72,7 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_c3ea8c5b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,6 +92,7 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_baacec20((void*)rhs.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +104,7 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_78ec8ccb((void*)fullName.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -151,7 +154,12 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlockOrUnknownBlock()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_179b4dc0((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -265,7 +273,12 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? tryGetBlock()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ba15510b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

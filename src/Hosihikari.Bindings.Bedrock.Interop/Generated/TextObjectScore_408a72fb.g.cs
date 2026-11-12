@@ -69,6 +69,7 @@ public sealed unsafe partial class TextObjectScore : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_668a1145();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,6 +81,7 @@ public sealed unsafe partial class TextObjectScore : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_5b921914((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -89,7 +91,12 @@ public sealed unsafe partial class TextObjectScore : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? asJsonValue()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4bbc7fe6((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle);
     }
 
     public string asString()
@@ -113,13 +120,23 @@ public sealed unsafe partial class TextObjectScore : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_82095862((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? resolve(nint resolveData)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c57a372b((void*)__hosihikari_shim_handle, (void*)resolveData);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle);
     }
 
 

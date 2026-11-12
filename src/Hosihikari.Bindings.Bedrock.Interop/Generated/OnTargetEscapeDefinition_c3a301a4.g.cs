@@ -67,6 +67,7 @@ public sealed unsafe partial class OnTargetEscapeDefinition : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_855b7105((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ChainedSubcommand : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_c50ccf76((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

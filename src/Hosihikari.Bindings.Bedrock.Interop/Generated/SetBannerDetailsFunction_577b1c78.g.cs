@@ -59,6 +59,7 @@ public sealed unsafe partial class SetBannerDetailsFunction : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_982d5f70((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

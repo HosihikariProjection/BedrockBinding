@@ -122,6 +122,7 @@ public sealed unsafe partial class VarIntDataOutput : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_9ac405d8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -133,6 +134,7 @@ public sealed unsafe partial class VarIntDataOutput : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_88ce47b6((void*)bs.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -144,6 +146,7 @@ public sealed unsafe partial class VarIntDataOutput : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_a58e4d9f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -159,7 +162,12 @@ public sealed unsafe partial class VarIntDataOutput : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.VarIntDataOutput? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VarIntDataOutput arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_988b2151((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VarIntDataOutput((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.VarIntDataOutput((nint)__hs_handle, false);
     }
 
     public void writeByte(sbyte v)

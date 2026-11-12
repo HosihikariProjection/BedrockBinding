@@ -45,6 +45,7 @@ public sealed unsafe partial class SoundVolumeDefinition : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_0fd9ec57();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class SoundVolumeDefinition : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_fbfebd10((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -79,7 +81,12 @@ public sealed unsafe partial class SoundVolumeDefinition : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_87e49141((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition((nint)__hs_handle, false);
     }
 
     public void Dispose()

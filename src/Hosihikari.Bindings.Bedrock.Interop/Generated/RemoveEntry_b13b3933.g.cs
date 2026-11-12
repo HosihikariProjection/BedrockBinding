@@ -45,6 +45,7 @@ public sealed unsafe partial class RemoveEntry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_d422ceb4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

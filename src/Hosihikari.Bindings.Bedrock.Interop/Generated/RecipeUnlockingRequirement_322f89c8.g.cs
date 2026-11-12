@@ -50,6 +50,7 @@ public sealed unsafe partial class RecipeUnlockingRequirement : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_a851c2de((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

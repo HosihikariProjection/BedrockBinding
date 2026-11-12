@@ -75,6 +75,7 @@ public sealed unsafe partial class BlockDisplayNameDescription : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_c40de543((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

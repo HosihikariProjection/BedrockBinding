@@ -53,6 +53,7 @@ public sealed unsafe partial class AutonomousActorManager : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_f43df7c7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class AutonomousActorManager : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_5d4fb1b3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

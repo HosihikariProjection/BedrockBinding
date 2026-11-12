@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockGeometry12010Upgrade : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_ea63446b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

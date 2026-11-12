@@ -443,6 +443,7 @@ public sealed unsafe partial class LecternBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_881f69e9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -480,7 +481,12 @@ public sealed unsafe partial class LecternBlock : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4fd7adc8((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, face, (void*)clickPos.Handle, itemValue);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public bool hasComparatorSignal()
@@ -505,7 +511,12 @@ public sealed unsafe partial class LecternBlock : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? playerWillDestroy(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_22b11495((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)pos.Handle, (void*)block.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public bool requiresLegacyRedstoneSetup()

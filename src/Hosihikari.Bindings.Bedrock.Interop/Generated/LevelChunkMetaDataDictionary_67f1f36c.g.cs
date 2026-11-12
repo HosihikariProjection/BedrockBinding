@@ -45,6 +45,7 @@ public sealed unsafe partial class LevelChunkMetaDataDictionary : global::System
         var handle = NativeMethods.TablePtr->C2.hs_create_3566d5e2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

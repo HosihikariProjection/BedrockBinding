@@ -49,6 +49,7 @@ public sealed unsafe partial class SkinData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_990da051();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class SkinData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_cff2023b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class TransferPacketPayload : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_f4e0e24b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

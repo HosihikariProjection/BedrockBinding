@@ -49,6 +49,7 @@ public sealed unsafe partial class ContainerValidationSlotData : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_696be157();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ContainerValidationSlotData : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_4dff3350((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

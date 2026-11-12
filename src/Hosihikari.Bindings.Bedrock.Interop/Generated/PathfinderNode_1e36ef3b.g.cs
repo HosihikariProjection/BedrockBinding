@@ -45,6 +45,7 @@ public sealed unsafe partial class PathfinderNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_5c895ac0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ClientboundDebugRendererPacketPayload : globa
         var handle = NativeMethods.TablePtr->C0.hs_create_2f337612((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

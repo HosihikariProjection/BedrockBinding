@@ -57,6 +57,7 @@ public sealed unsafe partial class ExitVehicleSystemImpl : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_d33c4e21((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

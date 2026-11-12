@@ -45,6 +45,7 @@ public sealed unsafe partial class UpdateSoftEnumPacketPayload : global::System.
         var handle = NativeMethods.TablePtr->C4.hs_create_776f0138((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

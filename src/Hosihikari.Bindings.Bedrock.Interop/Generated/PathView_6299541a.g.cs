@@ -74,6 +74,7 @@ public sealed unsafe partial class PathView : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_76941211(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -99,6 +100,7 @@ public sealed unsafe partial class PathView : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_a64c2ef6(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -134,7 +136,12 @@ public sealed unsafe partial class PathView : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView other)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8fdd43b5((void*)__hosihikari_shim_handle, (void*)other.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView((nint)__hs_handle, false);
     }
 
     public ulong size()

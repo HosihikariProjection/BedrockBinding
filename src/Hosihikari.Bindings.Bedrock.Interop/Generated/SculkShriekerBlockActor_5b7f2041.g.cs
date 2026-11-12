@@ -116,6 +116,7 @@ public sealed unsafe partial class SculkShriekerBlockActor : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_d17a3f6d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

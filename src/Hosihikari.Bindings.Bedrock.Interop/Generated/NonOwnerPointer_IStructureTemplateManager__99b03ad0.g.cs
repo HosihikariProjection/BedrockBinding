@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_IStructureTemplateManager_ : 
         var handle = NativeMethods.TablePtr->C0.hs_create_68fab041();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_IStructureTemplateManager_ : 
         var handle = NativeMethods.TablePtr->C0.hs_create_dbdfdedd(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_IStructureTemplateManager_ : 
         var handle = NativeMethods.TablePtr->C0.hs_create_1def00e9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_IStructureTemplateManager_ : 
         var handle = NativeMethods.TablePtr->C0.hs_create_4c2a7deb(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_IStructureTemplateManager_ : 
     public global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5bc2ea63((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_IStructureTemplateManager_ : 
     public global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager? operator_IStructureTemplateManager__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a064dcae((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_IStructureTemplateManager_ : 
     public global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_152798fa((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c13e7989((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

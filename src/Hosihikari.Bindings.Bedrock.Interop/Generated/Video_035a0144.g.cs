@@ -45,6 +45,7 @@ public sealed unsafe partial class Video : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_f3f2fa92();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class Video : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_7722da27((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -107,7 +109,12 @@ public sealed unsafe partial class Video : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Video? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Video arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_bbde22b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Video((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Video((nint)__hs_handle, false);
     }
 
     public void Dispose()

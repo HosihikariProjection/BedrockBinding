@@ -149,6 +149,7 @@ public sealed unsafe partial class DirectionalProducerComponent : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_6e0bd911((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

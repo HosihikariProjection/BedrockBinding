@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorIsFamilyTest : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_c91a1ace((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

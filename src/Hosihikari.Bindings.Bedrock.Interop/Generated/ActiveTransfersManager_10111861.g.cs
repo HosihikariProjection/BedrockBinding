@@ -59,6 +59,7 @@ public sealed unsafe partial class ActiveTransfersManager : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_9039e914((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

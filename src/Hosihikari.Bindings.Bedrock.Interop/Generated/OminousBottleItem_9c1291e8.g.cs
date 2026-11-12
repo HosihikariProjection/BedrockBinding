@@ -367,7 +367,12 @@ public sealed unsafe partial class OminousBottleItem : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo? getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase arg0, int arg1, bool arg2)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cc02123f((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1, arg2);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)__hs_handle);
     }
 
     public int getPotionType()
@@ -405,7 +410,12 @@ public sealed unsafe partial class OminousBottleItem : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9671c83d((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public int useTimeDepleted(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Level? level, global::Hosihikari.Bindings.Bedrock.Interop.Player? player)

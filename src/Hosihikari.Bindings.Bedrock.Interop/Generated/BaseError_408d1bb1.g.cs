@@ -57,6 +57,7 @@ public sealed unsafe partial class BaseError : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3122a44a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

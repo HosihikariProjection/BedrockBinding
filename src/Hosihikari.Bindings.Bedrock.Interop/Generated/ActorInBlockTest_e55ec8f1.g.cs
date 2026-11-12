@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorInBlockTest : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_4fed486a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -59,6 +59,7 @@ public sealed unsafe partial class LootItemMatchToolCondition : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_e23a3029();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -70,6 +71,7 @@ public sealed unsafe partial class LootItemMatchToolCondition : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_c5a0aab9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -139,7 +141,12 @@ public sealed unsafe partial class LootItemMatchToolCondition : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_dabd0ff4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition((nint)__hs_handle, false);
     }
 
 

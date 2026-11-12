@@ -49,6 +49,7 @@ public sealed unsafe partial class AgentAnimationSystem : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_394cfa72((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

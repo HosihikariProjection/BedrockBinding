@@ -75,6 +75,7 @@ public sealed unsafe partial class BlockCraftingTableDescription : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_d7a2ac3d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

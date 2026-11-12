@@ -45,6 +45,7 @@ public sealed unsafe partial class DefaultPlusExtraBlockRenderer : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_e4f0efd0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

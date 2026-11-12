@@ -45,6 +45,7 @@ public sealed unsafe partial class NewType_std__optional_unsigned_int__ : global
         var handle = NativeMethods.TablePtr->C2.hs_create_ae0b69e5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NewType_std__optional_unsigned_int__ : global
         var handle = NativeMethods.TablePtr->C2.hs_create_b60763e5((void*)other.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NewType_std__optional_unsigned_int__ : global
         var handle = NativeMethods.TablePtr->C2.hs_create_9f7d132b(t ?? default(uint), t.HasValue);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,7 +85,12 @@ public sealed unsafe partial class NewType_std__optional_unsigned_int__ : global
     public global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__ other)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4dcb9cb7((void*)__hosihikari_shim_handle, (void*)other.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__optional_unsigned_int__ other)

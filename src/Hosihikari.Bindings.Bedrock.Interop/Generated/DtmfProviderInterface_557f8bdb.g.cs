@@ -58,6 +58,7 @@ public sealed unsafe partial class DtmfProviderInterface : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_1110fb3d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

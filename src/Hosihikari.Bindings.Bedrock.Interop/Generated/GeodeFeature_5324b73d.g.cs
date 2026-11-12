@@ -49,6 +49,7 @@ public sealed unsafe partial class GeodeFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_157d348b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -185,7 +186,12 @@ public sealed unsafe partial class GeodeFeature : global::System.IDisposable
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_40ef1a71((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
 

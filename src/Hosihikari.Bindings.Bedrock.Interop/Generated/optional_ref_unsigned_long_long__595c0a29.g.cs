@@ -107,13 +107,23 @@ public sealed unsafe partial class optional_ref_unsigned_long_long_ : global::Sy
     public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_? operator_assign_99d2c22e(nint? arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_99d2c22e((void*)__hosihikari_shim_handle, (void*)(arg0 ?? 0), arg0 is not null);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_? operator_assign_c34bc040(nint? arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c34bc040((void*)__hosihikari_shim_handle, (void*)(arg0 ?? 0), arg0 is not null);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_((nint)__hs_handle, false);
     }
 
     public static optional_ref_unsigned_long_long_? Create()
@@ -121,6 +131,7 @@ public sealed unsafe partial class optional_ref_unsigned_long_long_ : global::Sy
         var handle = NativeMethods.TablePtr->C4.hs_create_ec1a9bf2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -132,6 +143,7 @@ public sealed unsafe partial class optional_ref_unsigned_long_long_ : global::Sy
         var handle = NativeMethods.TablePtr->C4.hs_create_ae82d274((void*)(arg0 ?? 0), arg0 is not null);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -143,6 +155,7 @@ public sealed unsafe partial class optional_ref_unsigned_long_long_ : global::Sy
         var handle = NativeMethods.TablePtr->C4.hs_create_13f980b9((void*)(arg0 ?? 0), arg0 is not null);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -154,6 +167,7 @@ public sealed unsafe partial class optional_ref_unsigned_long_long_ : global::Sy
         var handle = NativeMethods.TablePtr->C4.hs_create_45267f06();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -165,6 +179,7 @@ public sealed unsafe partial class optional_ref_unsigned_long_long_ : global::Sy
         var handle = NativeMethods.TablePtr->C4.hs_create_9ccea44a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

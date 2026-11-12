@@ -64,6 +64,7 @@ public sealed unsafe partial class FilterGroup : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_3e7e126b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

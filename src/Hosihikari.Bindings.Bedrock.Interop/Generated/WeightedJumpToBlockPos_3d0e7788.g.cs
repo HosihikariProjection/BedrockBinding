@@ -45,6 +45,7 @@ public sealed unsafe partial class WeightedJumpToBlockPos : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_6d3b342a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

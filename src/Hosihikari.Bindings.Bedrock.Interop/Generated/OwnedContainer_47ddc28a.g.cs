@@ -49,6 +49,7 @@ public sealed unsafe partial class OwnedContainer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_fe2bcf7c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

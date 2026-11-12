@@ -744,6 +744,7 @@ public sealed unsafe partial class VillagerBase : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_b6a8b563();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

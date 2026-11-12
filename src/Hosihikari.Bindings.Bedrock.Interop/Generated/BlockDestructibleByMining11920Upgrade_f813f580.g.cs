@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockDestructibleByMining11920Upgrade : globa
         var handle = NativeMethods.TablePtr->C0.hs_create_91f8f2dc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

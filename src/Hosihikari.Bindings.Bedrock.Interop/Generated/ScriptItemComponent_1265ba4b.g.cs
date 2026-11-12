@@ -77,6 +77,7 @@ public sealed unsafe partial class ScriptItemComponent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_aaadbd97();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -115,7 +116,12 @@ public sealed unsafe partial class ScriptItemComponent : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemComponent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_dc577a3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemComponent((nint)__hs_handle, false);
     }
 
 

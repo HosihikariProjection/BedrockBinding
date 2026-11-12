@@ -53,6 +53,7 @@ public sealed unsafe partial class StructureHeightProvider : global::System.IDis
         var handle = NativeMethods.TablePtr->C4.hs_create_55a4662b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

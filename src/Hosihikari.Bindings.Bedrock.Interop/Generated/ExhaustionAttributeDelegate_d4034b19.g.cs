@@ -60,6 +60,7 @@ public sealed unsafe partial class ExhaustionAttributeDelegate : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_5ad54d93((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

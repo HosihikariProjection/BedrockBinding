@@ -45,6 +45,7 @@ public sealed unsafe partial class OverloadData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_9e269c6f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

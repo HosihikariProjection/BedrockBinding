@@ -52,19 +52,34 @@ public sealed unsafe partial class MerchantRecipeList : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe? _getMatchingRecipeFor(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyA, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyB, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance sell)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ea52ec2b((void*)__hosihikari_shim_handle, (void*)buyA.Handle, (void*)buyB.Handle, (void*)sell.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe? _getMatchingRecipeFor(global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe recipe)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3cf0d878((void*)__hosihikari_shim_handle, (void*)recipe.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe? _getRecipeFor(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyA, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyB, int selectionHint)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ce4fbbe4((void*)__hosihikari_shim_handle, (void*)buyA.Handle, (void*)buyB.Handle, selectionHint);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe((nint)__hs_handle, false);
     }
 
     public void _load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
@@ -81,6 +96,7 @@ public sealed unsafe partial class MerchantRecipeList : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_5e072348((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -99,19 +115,34 @@ public sealed unsafe partial class MerchantRecipeList : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe? getMatchingRecipeFor(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyA, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyB, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance sell)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f3032b13((void*)__hosihikari_shim_handle, (void*)buyA.Handle, (void*)buyB.Handle, (void*)sell.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe? getMatchingRecipeFor(global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe recipe)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4f798d16((void*)__hosihikari_shim_handle, (void*)recipe.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe? getRecipeFor(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyA, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance buyB, int selectionHint)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_80013941((void*)__hosihikari_shim_handle, (void*)buyA.Handle, (void*)buyB.Handle, selectionHint);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe((nint)__hs_handle, false);
     }
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)

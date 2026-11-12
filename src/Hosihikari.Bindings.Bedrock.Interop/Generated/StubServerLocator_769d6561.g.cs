@@ -93,6 +93,7 @@ public sealed unsafe partial class StubServerLocator : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_6088ec0e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ServerInstanceEventHandler : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_f82cb094((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

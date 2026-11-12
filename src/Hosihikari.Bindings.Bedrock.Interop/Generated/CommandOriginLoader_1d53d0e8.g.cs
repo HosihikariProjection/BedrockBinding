@@ -53,6 +53,7 @@ public sealed unsafe partial class CommandOriginLoader : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_64e823d0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class CommandOriginLoader : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_3096a8a7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +89,12 @@ public sealed unsafe partial class CommandOriginLoader : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginLoader? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginLoader arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c1eab88f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginLoader((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginLoader((nint)__hs_handle, false);
     }
 
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class AddBiomeIsland : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_303d352a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class AddBiomeIsland : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_1302fb37((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

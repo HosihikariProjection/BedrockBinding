@@ -131,6 +131,7 @@ public sealed unsafe partial class AudioRtpSender : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_f6f0cdd1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -142,6 +143,7 @@ public sealed unsafe partial class AudioRtpSender : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_f73e61d4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -194,7 +196,12 @@ public sealed unsafe partial class AudioRtpSender : global::System.IDisposable
                 __hs_vectorOffset0 += __hs_length0;
             }
             var __hs_handle = NativeMethods.TablePtr->C4.hs_method_9f02b692((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(rids?.Length ?? 0));
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle);
         }
     }
 
@@ -260,7 +267,12 @@ public sealed unsafe partial class AudioRtpSender : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpSender? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpSender arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_87e25f78((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpSender((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpSender((nint)__hs_handle, false);
     }
 
     public string track_kind()

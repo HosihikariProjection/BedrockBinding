@@ -91,6 +91,7 @@ public sealed unsafe partial class MoveHistoryItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_018d8ffe();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class MoveHistoryItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c62ae58f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -111,13 +113,23 @@ public sealed unsafe partial class MoveHistoryItem : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getPos()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_bdf7deb2((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec2? getRot()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_18c529a7((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle, false);
     }
 
     public float getYHeadRot()
@@ -178,7 +190,12 @@ public sealed unsafe partial class MoveHistoryItem : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MoveHistoryItem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MoveHistoryItem arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_40509506((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MoveHistoryItem((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.MoveHistoryItem((nint)__hs_handle, false);
     }
 
 

@@ -61,6 +61,7 @@ public sealed unsafe partial class ScriptPistonActionAfterEvent : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_9d0bb93b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class ScriptPistonActionAfterEvent : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_bd28f9ff((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

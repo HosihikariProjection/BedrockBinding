@@ -77,6 +77,7 @@ public sealed unsafe partial class LegacyFlowerFeature : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_f99e4ec5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

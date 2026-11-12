@@ -45,6 +45,7 @@ public sealed unsafe partial class FileSizePresetToken : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_4447bfd9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

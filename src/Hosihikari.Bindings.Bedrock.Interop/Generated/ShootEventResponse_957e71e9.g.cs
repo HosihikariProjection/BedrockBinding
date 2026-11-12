@@ -61,6 +61,7 @@ public sealed unsafe partial class ShootEventResponse : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_26e32f17((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class ProjectileSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_0e018992((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

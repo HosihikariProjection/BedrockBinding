@@ -619,6 +619,7 @@ public sealed unsafe partial class IronGolem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_20231a12();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -637,7 +638,12 @@ public sealed unsafe partial class IronGolem : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? doHurtTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor? target, nint cause)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_296c4df0((void*)__hosihikari_shim_handle, (void*)(target?.Handle ?? 0), (void*)cause);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
     public float getShadowRadius()

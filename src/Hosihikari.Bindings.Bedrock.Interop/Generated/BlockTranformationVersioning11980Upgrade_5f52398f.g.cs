@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockTranformationVersioning11980Upgrade : gl
         var handle = NativeMethods.TablePtr->C0.hs_create_afe1efc6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

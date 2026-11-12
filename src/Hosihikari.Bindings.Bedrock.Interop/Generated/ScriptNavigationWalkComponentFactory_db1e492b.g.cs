@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptNavigationWalkComponentFactory : global
         var handle = NativeMethods.TablePtr->C3.hs_create_f20ecdae((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

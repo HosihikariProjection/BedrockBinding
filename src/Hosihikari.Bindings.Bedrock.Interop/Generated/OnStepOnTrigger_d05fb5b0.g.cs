@@ -67,6 +67,7 @@ public sealed unsafe partial class OnStepOnTrigger : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_7c0ac2c4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

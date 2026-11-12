@@ -97,6 +97,7 @@ public sealed unsafe partial class CameraItemComponentLegacy : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_462f003e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

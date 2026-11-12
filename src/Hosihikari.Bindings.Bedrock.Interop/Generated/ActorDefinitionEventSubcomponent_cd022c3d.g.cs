@@ -61,6 +61,7 @@ public sealed unsafe partial class ActorDefinitionEventSubcomponent : global::Sy
         var handle = NativeMethods.TablePtr->C0.hs_create_5d426bc1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

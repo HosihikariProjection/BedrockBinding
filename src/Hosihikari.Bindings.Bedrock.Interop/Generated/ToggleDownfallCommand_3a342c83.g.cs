@@ -78,6 +78,7 @@ public sealed unsafe partial class ToggleDownfallCommand : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_3de04b71((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -69,6 +69,7 @@ public sealed unsafe partial class ServerPlayerSleepManager : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_8a1ebeff((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

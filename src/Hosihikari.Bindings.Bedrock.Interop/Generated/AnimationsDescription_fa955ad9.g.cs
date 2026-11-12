@@ -57,6 +57,7 @@ public sealed unsafe partial class AnimationsDescription : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_3ea2baad((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

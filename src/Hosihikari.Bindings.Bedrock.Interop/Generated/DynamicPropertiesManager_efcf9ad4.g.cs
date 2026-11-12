@@ -53,6 +53,7 @@ public sealed unsafe partial class DynamicPropertiesManager : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_a498728d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -61,6 +61,7 @@ public sealed unsafe partial class BowEnchant : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_d1350b6d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

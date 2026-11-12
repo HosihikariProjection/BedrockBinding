@@ -741,6 +741,7 @@ public sealed unsafe partial class VindicationIllager : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_70aee5a9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

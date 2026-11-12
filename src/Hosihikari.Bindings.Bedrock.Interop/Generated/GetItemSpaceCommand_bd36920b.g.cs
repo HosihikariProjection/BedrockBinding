@@ -87,6 +87,7 @@ public sealed unsafe partial class GetItemSpaceCommand : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_8cc5adba((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

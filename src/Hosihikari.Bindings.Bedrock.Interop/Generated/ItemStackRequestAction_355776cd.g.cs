@@ -61,6 +61,7 @@ public sealed unsafe partial class ItemStackRequestAction : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_e540441d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -70,7 +71,12 @@ public sealed unsafe partial class ItemStackRequestAction : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f1d3b2bf((void*)__hosihikari_shim_handle, (void*)stream.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle);
     }
 
     public void _write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
@@ -89,7 +95,12 @@ public sealed unsafe partial class ItemStackRequestAction : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase? getCraftAction()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7d4caab9((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase((nint)__hs_handle, false);
     }
 
     public int getFilteredStringIndex()

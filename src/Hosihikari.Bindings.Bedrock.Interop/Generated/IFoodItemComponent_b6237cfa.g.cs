@@ -49,6 +49,7 @@ public sealed unsafe partial class IFoodItemComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_2ed83279((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +72,12 @@ public sealed unsafe partial class IFoodItemComponent : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? eatItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Level level)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7a525207((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)level.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false);
     }
 
     public int getNutrition()
@@ -92,7 +98,12 @@ public sealed unsafe partial class IFoodItemComponent : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? useTimeDepleted(nint itemUseMethod, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack initialInstance, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Level level)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2df1570a((void*)__hosihikari_shim_handle, (void*)itemUseMethod, (void*)initialInstance.Handle, (void*)instance.Handle, (void*)player.Handle, (void*)level.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false);
     }
 
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class TeleportData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_118029d8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class BuildContext : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_f6cb7fa1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -98,6 +98,7 @@ public sealed unsafe partial class PayloadPacket_ToastRequestPacketPayload_ : gl
         var handle = NativeMethods.TablePtr->C4.hs_create_0cfa2cd4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

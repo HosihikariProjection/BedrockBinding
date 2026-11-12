@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptTitleDisplayOptions : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_f2a3a51d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

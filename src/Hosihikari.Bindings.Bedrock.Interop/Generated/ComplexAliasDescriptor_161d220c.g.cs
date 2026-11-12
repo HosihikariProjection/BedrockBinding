@@ -93,6 +93,7 @@ public sealed unsafe partial class ComplexAliasDescriptor : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_8e0ed52e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -104,6 +105,7 @@ public sealed unsafe partial class ComplexAliasDescriptor : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_3c313c99((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -136,7 +138,12 @@ public sealed unsafe partial class ComplexAliasDescriptor : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry? getItem()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e49c2bd5((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry((nint)__hs_handle);
     }
 
     public byte getType()
@@ -170,7 +177,12 @@ public sealed unsafe partial class ComplexAliasDescriptor : global::System.IDisp
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_97458604((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle);
     }
 
     public void serialize(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)

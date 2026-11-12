@@ -45,6 +45,7 @@ public sealed unsafe partial class CrashTelemetryProcessor : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_eb240b23((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class PlaySoundPacketPayload : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_c7e0126c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

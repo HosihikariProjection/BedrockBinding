@@ -60,7 +60,12 @@ public sealed unsafe partial class EnderEyeItem : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_240b6691((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, handSlot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorInCloudsTest : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_f6b6dc8b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

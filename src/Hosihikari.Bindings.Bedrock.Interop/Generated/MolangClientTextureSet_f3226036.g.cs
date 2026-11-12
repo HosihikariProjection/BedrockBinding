@@ -45,6 +45,7 @@ public sealed unsafe partial class MolangClientTextureSet : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_fd7d4784();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,7 +73,12 @@ public sealed unsafe partial class MolangClientTextureSet : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.MolangClientTextureSet? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MolangClientTextureSet rhs)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f74b43e6((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangClientTextureSet((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangClientTextureSet((nint)__hs_handle, false);
     }
 
 

@@ -65,6 +65,7 @@ public sealed unsafe partial class MinecraftScriptTelemetryLogger : global::Syst
         var handle = NativeMethods.TablePtr->C2.hs_create_69223c60();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class MinecraftScriptTelemetryLogger : global::Syst
         var handle = NativeMethods.TablePtr->C2.hs_create_5d4cb08b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -117,7 +119,12 @@ public sealed unsafe partial class MinecraftScriptTelemetryLogger : global::Syst
     public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftScriptTelemetryLogger? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftScriptTelemetryLogger arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0a11aaff((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftScriptTelemetryLogger((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftScriptTelemetryLogger((nint)__hs_handle, false);
     }
 
 

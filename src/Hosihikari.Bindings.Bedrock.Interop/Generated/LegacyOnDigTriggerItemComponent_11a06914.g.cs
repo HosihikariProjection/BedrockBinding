@@ -67,6 +67,7 @@ public sealed unsafe partial class LegacyOnDigTriggerItemComponent : global::Sys
         var handle = NativeMethods.TablePtr->C2.hs_create_29b933b1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +79,7 @@ public sealed unsafe partial class LegacyOnDigTriggerItemComponent : global::Sys
         var handle = NativeMethods.TablePtr->C2.hs_create_876d2d02((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

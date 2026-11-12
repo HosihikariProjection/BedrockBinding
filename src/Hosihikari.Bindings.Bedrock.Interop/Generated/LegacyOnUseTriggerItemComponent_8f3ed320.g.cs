@@ -63,6 +63,7 @@ public sealed unsafe partial class LegacyOnUseTriggerItemComponent : global::Sys
         var handle = NativeMethods.TablePtr->C2.hs_create_719a799c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +79,7 @@ public sealed unsafe partial class LegacyOnUseTriggerItemComponent : global::Sys
         var handle = NativeMethods.TablePtr->C2.hs_create_c7604f8e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

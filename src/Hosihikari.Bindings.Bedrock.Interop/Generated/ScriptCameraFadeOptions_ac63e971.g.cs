@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptCameraFadeOptions : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_d7f85d28((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

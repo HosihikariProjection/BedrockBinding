@@ -45,6 +45,7 @@ public sealed unsafe partial class EventListenerDispatcher_BlockEventListener_ :
         var handle = NativeMethods.TablePtr->C1.hs_create_02fbae49((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

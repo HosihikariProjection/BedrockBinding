@@ -53,6 +53,7 @@ public sealed unsafe partial class JSONSchemaBody : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_a198cd95();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class RemoveModifier : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_3b064f2e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class RemoveModifier : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_ffaccecf((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class RemoveModifier : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent_Nested.RemoveModifier? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent_Nested.RemoveModifier arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3bd3e45a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent_Nested.RemoveModifier((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AttributeRequestComponent_Nested.RemoveModifier((nint)__hs_handle, false);
     }
 
     public void Dispose()

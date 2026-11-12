@@ -61,6 +61,7 @@ public sealed unsafe partial class MobEffectSubcomponent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_9e919ba0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

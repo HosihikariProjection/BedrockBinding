@@ -281,6 +281,7 @@ public sealed unsafe partial class IScriptWorldAfterEvents : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_58f45cd4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -290,7 +291,12 @@ public sealed unsafe partial class IScriptWorldAfterEvents : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.Level? getLevel()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8192a4c0((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false);
     }
 
     public void onActivateLever(global::Hosihikari.Bindings.Abi.SharedHandle? leverEvent)

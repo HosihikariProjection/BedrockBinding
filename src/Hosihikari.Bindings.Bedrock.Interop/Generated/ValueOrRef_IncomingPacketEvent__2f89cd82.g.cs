@@ -51,13 +51,23 @@ public sealed unsafe partial class ValueOrRef_IncomingPacketEvent_ : global::Sys
     public global::Hosihikari.Bindings.Bedrock.Interop.IncomingPacketEvent? value_2469905e()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2469905e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IncomingPacketEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IncomingPacketEvent((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IncomingPacketEvent? value_b8e522cc()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b8e522cc((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IncomingPacketEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IncomingPacketEvent((nint)__hs_handle, false);
     }
 
 

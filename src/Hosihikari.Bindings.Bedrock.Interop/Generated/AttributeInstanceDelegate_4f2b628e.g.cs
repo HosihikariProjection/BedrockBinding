@@ -69,6 +69,7 @@ public sealed unsafe partial class AttributeInstanceDelegate : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_7ce208b5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

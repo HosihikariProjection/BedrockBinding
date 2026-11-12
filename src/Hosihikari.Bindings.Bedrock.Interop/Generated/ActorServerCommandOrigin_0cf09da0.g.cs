@@ -81,6 +81,7 @@ public sealed unsafe partial class ActorServerCommandOrigin : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_07b18996((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -115,7 +116,12 @@ public sealed unsafe partial class ActorServerCommandOrigin : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? serialize()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_42d35346((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle);
     }
 
 

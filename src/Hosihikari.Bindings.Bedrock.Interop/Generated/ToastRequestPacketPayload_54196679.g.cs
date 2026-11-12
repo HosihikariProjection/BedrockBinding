@@ -45,6 +45,7 @@ public sealed unsafe partial class ToastRequestPacketPayload : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_516516c9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

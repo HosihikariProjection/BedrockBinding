@@ -54,6 +54,7 @@ public sealed unsafe partial class EndIslandFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_63488a26((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

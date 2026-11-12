@@ -49,6 +49,7 @@ public sealed unsafe partial class BlockTraitFactory : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_fd906d0f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

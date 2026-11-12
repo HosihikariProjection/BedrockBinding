@@ -69,6 +69,7 @@ public sealed unsafe partial class NetworkItemInstanceDescriptor : global::Syste
         var handle = NativeMethods.TablePtr->C2.hs_create_e159059c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

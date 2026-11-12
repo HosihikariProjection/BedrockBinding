@@ -59,6 +59,7 @@ public sealed unsafe partial class NativeFunctionGameTestAction : global::System
         var handle = NativeMethods.TablePtr->C4.hs_create_e70f2cdc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -70,6 +71,7 @@ public sealed unsafe partial class NativeFunctionGameTestAction : global::System
         var handle = NativeMethods.TablePtr->C4.hs_create_d024c0b5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -85,14 +87,24 @@ public sealed unsafe partial class NativeFunctionGameTestAction : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.NativeFunctionGameTestAction? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.NativeFunctionGameTestAction arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_27f067cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.NativeFunctionGameTestAction((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.NativeFunctionGameTestAction((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? run()
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_12f2dbf5((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
 

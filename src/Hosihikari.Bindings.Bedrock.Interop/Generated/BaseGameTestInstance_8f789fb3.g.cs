@@ -73,6 +73,7 @@ public sealed unsafe partial class BaseGameTestInstance : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_a9f21d41();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -88,6 +89,7 @@ public sealed unsafe partial class BaseGameTestInstance : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_1dcbd91d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -131,33 +133,58 @@ public sealed unsafe partial class BaseGameTestInstance : global::System.IDispos
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_398486c7((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getStructureBlockPosPivot()
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_08f09c8d((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? getStructureBoundingBox()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2d9db78c((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getStructureBounds()
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_7633d014((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? getStructureDimension()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a1e2cdfc((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle);
     }
 
     public bool hasStructureBlock()
@@ -353,7 +380,12 @@ public sealed unsafe partial class BaseGameTestInstance : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_96061e81((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

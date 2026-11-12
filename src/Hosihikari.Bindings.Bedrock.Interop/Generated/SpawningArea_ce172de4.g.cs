@@ -45,6 +45,7 @@ public sealed unsafe partial class SpawningArea : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c82cea55((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

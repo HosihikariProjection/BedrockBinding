@@ -93,6 +93,7 @@ public sealed unsafe partial class ScriptDeferredEventListener : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_5e8303a4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

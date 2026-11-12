@@ -49,6 +49,7 @@ public sealed unsafe partial class CanDestroyInCreativeItemComponent : global::S
         var handle = NativeMethods.TablePtr->C0.hs_create_db8b9725((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

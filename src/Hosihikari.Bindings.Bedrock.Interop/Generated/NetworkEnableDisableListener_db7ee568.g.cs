@@ -49,6 +49,7 @@ public sealed unsafe partial class NetworkEnableDisableListener : global::System
         var handle = NativeMethods.TablePtr->C2.hs_create_b8899b8a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class NetworkEnableDisableListener : global::System
         var handle = NativeMethods.TablePtr->C2.hs_create_6226c789((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,7 +93,12 @@ public sealed unsafe partial class NetworkEnableDisableListener : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkEnableDisableListener? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkEnableDisableListener arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_374e33c1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkEnableDisableListener((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkEnableDisableListener((nint)__hs_handle, false);
     }
 
 

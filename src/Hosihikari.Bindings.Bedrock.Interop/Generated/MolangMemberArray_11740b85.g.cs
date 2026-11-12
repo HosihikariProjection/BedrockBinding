@@ -96,6 +96,7 @@ public sealed unsafe partial class MolangMemberArray : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_9c853883();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -123,6 +124,7 @@ public sealed unsafe partial class MolangMemberArray : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_c00239fc(arg0, (void*)color.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -154,6 +156,7 @@ public sealed unsafe partial class MolangMemberArray : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_1a6ecc9b(arg0, (void*)vec.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -165,6 +168,7 @@ public sealed unsafe partial class MolangMemberArray : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_5e3265f0(arg0, (void*)vec.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -176,6 +180,7 @@ public sealed unsafe partial class MolangMemberArray : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_5dc4d7c9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

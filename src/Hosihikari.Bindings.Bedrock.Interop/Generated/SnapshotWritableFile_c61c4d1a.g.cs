@@ -63,19 +63,34 @@ public sealed unsafe partial class SnapshotWritableFile : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Append(nint data)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e6770b9c((void*)__hosihikari_shim_handle, (void*)data);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Close()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_48d2bf71((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Flush()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_16113c26((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
     }
 
     public static SnapshotWritableFile? Create()
@@ -83,6 +98,7 @@ public sealed unsafe partial class SnapshotWritableFile : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_bc083aa5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -94,6 +110,7 @@ public sealed unsafe partial class SnapshotWritableFile : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_361b0fb0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -103,7 +120,12 @@ public sealed unsafe partial class SnapshotWritableFile : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Sync()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7aff401b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -121,7 +143,12 @@ public sealed unsafe partial class SnapshotWritableFile : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_603d5326((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile((nint)__hs_handle, false);
     }
 
 

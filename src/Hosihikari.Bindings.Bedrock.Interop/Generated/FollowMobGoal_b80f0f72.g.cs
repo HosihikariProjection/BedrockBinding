@@ -91,6 +91,7 @@ public sealed unsafe partial class FollowMobGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_50796ee4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class FollowMobGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_11d9c8f2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -205,7 +207,12 @@ public sealed unsafe partial class FollowMobGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.FollowMobGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FollowMobGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3a55a4fc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FollowMobGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FollowMobGoal((nint)__hs_handle, false);
     }
 
     public void start()

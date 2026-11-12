@@ -73,6 +73,7 @@ public sealed unsafe partial class SecondFloorRoomCollection : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_c65a2876((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

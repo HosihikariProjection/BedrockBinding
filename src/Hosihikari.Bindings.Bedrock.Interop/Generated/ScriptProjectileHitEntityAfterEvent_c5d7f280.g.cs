@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptProjectileHitEntityAfterEvent : global:
         var handle = NativeMethods.TablePtr->C3.hs_create_e9d6c106();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

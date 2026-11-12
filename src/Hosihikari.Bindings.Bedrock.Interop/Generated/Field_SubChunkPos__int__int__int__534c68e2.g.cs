@@ -53,7 +53,12 @@ public sealed unsafe partial class Field_SubChunkPos__int__int__int_ : global::S
     public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos? div(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5c78b7cf((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle);
     }
 
     public double dot(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
@@ -94,31 +99,56 @@ public sealed unsafe partial class Field_SubChunkPos__int__int__int_ : global::S
     public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos? mul(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ea36587d((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos? operator_multiply(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e3370113((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos? operator_operator___9a9cad5f(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_9a9cad5f((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos? operator_divide(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e61e1af6((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos? operator_operator___0fe69d6b(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0fe69d6b((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos((nint)__hs_handle, false);
     }
 
     public bool operator_less(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos b)

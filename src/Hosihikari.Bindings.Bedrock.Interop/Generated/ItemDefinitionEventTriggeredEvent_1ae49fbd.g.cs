@@ -45,6 +45,7 @@ public sealed unsafe partial class ItemDefinitionEventTriggeredEvent : global::S
         var handle = NativeMethods.TablePtr->C1.hs_create_c630db67((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

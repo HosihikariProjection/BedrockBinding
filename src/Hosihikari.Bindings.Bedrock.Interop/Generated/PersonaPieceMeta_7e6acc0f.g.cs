@@ -45,6 +45,7 @@ public sealed unsafe partial class PersonaPieceMeta : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_01954826();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class PersonaPieceMeta : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_ca503e86((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class InsomniaSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_2a5c9f9e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

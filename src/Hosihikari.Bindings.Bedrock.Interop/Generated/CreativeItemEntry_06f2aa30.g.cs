@@ -55,6 +55,7 @@ public sealed unsafe partial class CreativeItemEntry : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_89a94a1d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class CreativeItemEntry : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_882f66d5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

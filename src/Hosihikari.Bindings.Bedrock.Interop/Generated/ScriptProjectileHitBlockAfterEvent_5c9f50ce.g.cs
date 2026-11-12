@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptProjectileHitBlockAfterEvent : global::
         var handle = NativeMethods.TablePtr->C3.hs_create_1a253944();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,7 +73,12 @@ public sealed unsafe partial class ScriptProjectileHitBlockAfterEvent : global::
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptProjectileHitBlockAfterEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptProjectileHitBlockAfterEvent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_88db551a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptProjectileHitBlockAfterEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptProjectileHitBlockAfterEvent((nint)__hs_handle, false);
     }
 
 

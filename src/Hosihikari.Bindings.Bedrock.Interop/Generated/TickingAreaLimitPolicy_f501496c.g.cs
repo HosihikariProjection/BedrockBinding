@@ -45,6 +45,7 @@ public sealed unsafe partial class TickingAreaLimitPolicy : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_d9583f68((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

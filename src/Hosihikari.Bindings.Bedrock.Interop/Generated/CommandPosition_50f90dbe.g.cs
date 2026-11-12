@@ -45,6 +45,7 @@ public sealed unsafe partial class CommandPosition : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_e9d15a19((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,13 +55,23 @@ public sealed unsafe partial class CommandPosition : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getBlockPos(int version, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 offset)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_0aff26ff((void*)__hosihikari_shim_handle, version, (void*)origin.Handle, (void*)offset.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getPosition(int version, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 offsetFromBase)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f9c8dd1b((void*)__hosihikari_shim_handle, version, (void*)origin.Handle, (void*)offsetFromBase.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

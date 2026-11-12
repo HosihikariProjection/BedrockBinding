@@ -54,6 +54,7 @@ public sealed unsafe partial class EnableNonOwnerReferences : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_6f760c8d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

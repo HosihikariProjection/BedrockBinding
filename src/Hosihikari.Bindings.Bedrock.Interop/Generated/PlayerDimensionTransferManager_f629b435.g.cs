@@ -53,6 +53,7 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
         var handle = NativeMethods.TablePtr->C2.hs_create_25c2f60c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
         var handle = NativeMethods.TablePtr->C2.hs_create_dd88e61b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

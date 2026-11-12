@@ -73,6 +73,7 @@ public sealed unsafe partial class ProgressReporter : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_eb1664f5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

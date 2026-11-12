@@ -45,6 +45,7 @@ public sealed unsafe partial class DepenetrationComponent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_34481bcf((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

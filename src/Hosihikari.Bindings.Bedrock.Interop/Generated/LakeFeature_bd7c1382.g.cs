@@ -85,6 +85,7 @@ public sealed unsafe partial class LakeFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_9d968760();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -100,6 +101,7 @@ public sealed unsafe partial class LakeFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_e57cdfa6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

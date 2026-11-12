@@ -444,13 +444,23 @@ public sealed unsafe partial class CrystalClusterBlock : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getInitialDefaultState()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_457ba1c6((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getVisualShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferAABB)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_63ffc14a((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)bufferAABB.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false);
     }
 
     public int mAabbOffset

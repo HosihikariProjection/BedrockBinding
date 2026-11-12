@@ -45,6 +45,7 @@ public sealed unsafe partial class ChildAnimationComponentInfo : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_5ec36247((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

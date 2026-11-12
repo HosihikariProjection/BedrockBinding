@@ -49,6 +49,7 @@ public sealed unsafe partial class AgentInspectCommandSystem : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_7f313dc9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

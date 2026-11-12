@@ -71,6 +71,7 @@ public sealed unsafe partial class FilterTestTemperatureValue : global::System.I
         var handle = NativeMethods.TablePtr->C1.hs_create_aa59e084((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

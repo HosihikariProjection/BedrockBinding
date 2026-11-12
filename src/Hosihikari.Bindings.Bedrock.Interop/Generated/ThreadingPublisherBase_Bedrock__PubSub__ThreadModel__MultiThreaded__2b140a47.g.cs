@@ -69,6 +69,7 @@ public sealed unsafe partial class ThreadingPublisherBase_Bedrock__PubSub__Threa
         var handle = NativeMethods.TablePtr->C0.hs_create_5dfeb193((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

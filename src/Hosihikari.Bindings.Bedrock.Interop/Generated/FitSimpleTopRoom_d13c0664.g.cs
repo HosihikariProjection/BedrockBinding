@@ -53,6 +53,7 @@ public sealed unsafe partial class FitSimpleTopRoom : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_78587ed8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

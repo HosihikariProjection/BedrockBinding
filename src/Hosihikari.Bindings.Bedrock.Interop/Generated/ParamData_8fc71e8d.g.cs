@@ -45,6 +45,7 @@ public sealed unsafe partial class ParamData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_90f40c6d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -91,6 +91,7 @@ public sealed unsafe partial class DragonScanningGoal : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_72331349();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class DragonScanningGoal : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_35c82110((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -153,7 +155,12 @@ public sealed unsafe partial class DragonScanningGoal : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.DragonScanningGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DragonScanningGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6cf03342((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DragonScanningGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DragonScanningGoal((nint)__hs_handle, false);
     }
 
     public void start()

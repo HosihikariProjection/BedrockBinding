@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptRGB : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_7dd47c90((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

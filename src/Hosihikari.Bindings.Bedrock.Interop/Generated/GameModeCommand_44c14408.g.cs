@@ -78,6 +78,7 @@ public sealed unsafe partial class GameModeCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_97c27cdf((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

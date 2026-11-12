@@ -101,6 +101,7 @@ public sealed unsafe partial class RakNetServerLocator : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_19ddeda7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -112,6 +113,7 @@ public sealed unsafe partial class RakNetServerLocator : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_678d9b9b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -372,7 +374,12 @@ public sealed unsafe partial class RakNetServerLocator : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_62f4c30b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator((nint)__hs_handle, false);
     }
 
     public void startAnnouncingServer(string playerName, string worldName, int gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore, global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes supportedAuth, global::Hosihikari.Bindings.Bedrock.Interop.Social.Nonce arg9)

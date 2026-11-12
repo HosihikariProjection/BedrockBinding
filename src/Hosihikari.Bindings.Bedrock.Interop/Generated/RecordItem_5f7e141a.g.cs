@@ -417,6 +417,7 @@ public sealed unsafe partial class RecordItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_def89c16();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -436,7 +437,12 @@ public sealed unsafe partial class RecordItem : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo? getIconInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int newAnimationFrame, bool inInventoryPane)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_46d8096c((void*)__hosihikari_shim_handle, (void*)item.Handle, newAnimationFrame, inInventoryPane);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ResolvedItemIconInfo((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RecordItem? setDescriptionId(string descriptionId)
@@ -455,7 +461,12 @@ public sealed unsafe partial class RecordItem : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8537837e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecordItem((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.RecordItem((nint)__hs_handle, false);
         }
     }
 
@@ -475,7 +486,12 @@ public sealed unsafe partial class RecordItem : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fdad455a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false);
         }
     }
 

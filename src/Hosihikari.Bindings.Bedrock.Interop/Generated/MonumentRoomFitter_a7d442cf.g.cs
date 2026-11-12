@@ -45,6 +45,7 @@ public sealed unsafe partial class MonumentRoomFitter : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_d4cc86e6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

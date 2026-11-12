@@ -50,6 +50,7 @@ public sealed unsafe partial class DimensionDefinition : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_829bae14((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

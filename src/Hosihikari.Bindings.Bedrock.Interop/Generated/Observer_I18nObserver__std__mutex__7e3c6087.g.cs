@@ -45,6 +45,7 @@ public sealed unsafe partial class Observer_I18nObserver__std__mutex_ : global::
         var handle = NativeMethods.TablePtr->C1.hs_create_bcd90dda();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class Observer_I18nObserver__std__mutex_ : global::
         var handle = NativeMethods.TablePtr->C1.hs_create_0560e525((void*)subject);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

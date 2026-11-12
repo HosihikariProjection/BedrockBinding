@@ -78,6 +78,7 @@ public sealed unsafe partial class XPCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_b2685e9b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

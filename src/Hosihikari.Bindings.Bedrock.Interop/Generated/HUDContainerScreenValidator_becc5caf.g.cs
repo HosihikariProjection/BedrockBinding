@@ -55,6 +55,7 @@ public sealed unsafe partial class HUDContainerScreenValidator : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_7d3e0a61((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

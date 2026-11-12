@@ -71,6 +71,7 @@ public sealed unsafe partial class DirectoryPackSource : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_ba055ecd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -61,6 +61,7 @@ public sealed unsafe partial class JigsawEditorData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_13983fca();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

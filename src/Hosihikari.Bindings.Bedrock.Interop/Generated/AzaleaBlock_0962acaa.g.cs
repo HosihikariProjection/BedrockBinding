@@ -79,6 +79,7 @@ public sealed unsafe partial class AzaleaBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_d9b123a9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,7 +103,12 @@ public sealed unsafe partial class AzaleaBlock : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_24baf9d0((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)(entity?.Handle ?? 0), entity is not null);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle);
     }
 
     public bool isLavaBlocking()

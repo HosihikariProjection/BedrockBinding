@@ -49,6 +49,7 @@ public sealed unsafe partial class CodeBuilderActorInfoCommand : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_559e12d9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

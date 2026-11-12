@@ -48,13 +48,23 @@ public sealed unsafe partial class FloatN_Vec2__float__float_ : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec2? cross(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d72f52ee((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec2? normalize()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_bf417285((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle);
     }
 
     public void Dispose()

@@ -55,6 +55,7 @@ public sealed unsafe partial class ScriptPlayerInteractWithEntityBeforeEvent : g
         var handle = NativeMethods.TablePtr->C3.hs_create_532162fc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -70,6 +71,7 @@ public sealed unsafe partial class ScriptPlayerInteractWithEntityBeforeEvent : g
         var handle = NativeMethods.TablePtr->C3.hs_create_b55ccc6a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

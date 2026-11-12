@@ -57,6 +57,7 @@ public sealed unsafe partial class DimensionManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_5d822022();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -230,7 +231,12 @@ public sealed unsafe partial class DimensionManager : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C1.hs_method_92c4dd0d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
-            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                if (!__hs_hasValue) { return null; }
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle);
         }
     }
 

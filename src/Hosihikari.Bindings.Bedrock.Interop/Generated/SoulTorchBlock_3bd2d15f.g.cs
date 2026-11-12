@@ -398,6 +398,7 @@ public sealed unsafe partial class SoulTorchBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_f4849efd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

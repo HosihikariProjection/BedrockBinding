@@ -45,6 +45,7 @@ public sealed unsafe partial class SyncedAttribute : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_01bc7637((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

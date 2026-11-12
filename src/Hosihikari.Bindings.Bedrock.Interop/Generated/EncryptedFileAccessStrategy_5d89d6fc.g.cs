@@ -143,6 +143,7 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_4ed57d86();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -154,6 +155,7 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_88aaf1b2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -291,7 +293,12 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_? getStreamableSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView? tempDirectory)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e57be60a((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, (void*)(tempDirectory?.Handle ?? 0), tempDirectory is not null);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)__hs_handle);
     }
 
     public bool hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, bool trustedContentOnly, bool caseSensative)
@@ -339,13 +346,23 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.EncryptedFileAccessStrategy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EncryptedFileAccessStrategy arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d4e4f490((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EncryptedFileAccessStrategy((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.EncryptedFileAccessStrategy((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity? readContentIdentity()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f8b2eaee((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity((nint)__hs_handle);
     }
 
 

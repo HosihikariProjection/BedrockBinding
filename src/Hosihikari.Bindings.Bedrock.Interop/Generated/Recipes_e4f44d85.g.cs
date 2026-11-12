@@ -54,6 +54,7 @@ public sealed unsafe partial class Recipes : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_0b258725();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -69,6 +70,7 @@ public sealed unsafe partial class Recipes : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_7bc6b3c9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -159,13 +161,23 @@ public sealed unsafe partial class Recipes : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? getFurnaceRecipeResult(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.HashedString tag)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9cdc66df((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)tag.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Recipe? getRecipeByNetId(nint netId)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f2fede14((void*)__hosihikari_shim_handle, (void*)netId);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Recipe((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Recipe((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

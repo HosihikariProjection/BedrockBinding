@@ -49,6 +49,7 @@ public sealed unsafe partial class LootTableContext : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c7c6bac9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class PackedItemUseLegacyInventoryTransaction : glo
         var handle = NativeMethods.TablePtr->C2.hs_create_b1a76923((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

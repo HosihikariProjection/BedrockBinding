@@ -73,6 +73,7 @@ public sealed unsafe partial class SeaAnemoneFeature : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_f42c2a4e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

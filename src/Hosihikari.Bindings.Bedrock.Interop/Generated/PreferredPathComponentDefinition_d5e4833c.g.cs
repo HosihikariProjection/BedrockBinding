@@ -49,6 +49,7 @@ public sealed unsafe partial class PreferredPathComponentDefinition : global::Sy
         var handle = NativeMethods.TablePtr->C3.hs_create_ac6bcf95((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -59,6 +59,7 @@ public sealed unsafe partial class Reader : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_e9b8368e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -74,6 +75,7 @@ public sealed unsafe partial class Reader : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_5030eddc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

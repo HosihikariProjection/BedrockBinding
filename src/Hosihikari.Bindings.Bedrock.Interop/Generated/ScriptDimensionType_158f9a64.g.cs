@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptDimensionType : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_724fbe76((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

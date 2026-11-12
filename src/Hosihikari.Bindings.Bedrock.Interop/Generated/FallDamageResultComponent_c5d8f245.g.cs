@@ -45,6 +45,7 @@ public sealed unsafe partial class FallDamageResultComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_04cb5026((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

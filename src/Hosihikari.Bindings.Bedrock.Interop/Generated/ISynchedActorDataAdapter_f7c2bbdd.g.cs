@@ -45,6 +45,7 @@ public sealed unsafe partial class ISynchedActorDataAdapter : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_1c10aced((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

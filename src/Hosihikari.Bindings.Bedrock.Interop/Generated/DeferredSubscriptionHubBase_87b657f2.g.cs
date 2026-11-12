@@ -81,6 +81,7 @@ public sealed unsafe partial class DeferredSubscriptionHubBase : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_50161f78((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

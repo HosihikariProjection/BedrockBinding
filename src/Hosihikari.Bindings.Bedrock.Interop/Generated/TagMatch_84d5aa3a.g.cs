@@ -61,6 +61,7 @@ public sealed unsafe partial class TagMatch : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_57bc24d9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

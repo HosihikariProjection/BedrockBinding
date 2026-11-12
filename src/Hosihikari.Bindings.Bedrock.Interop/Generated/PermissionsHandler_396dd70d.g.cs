@@ -49,6 +49,7 @@ public sealed unsafe partial class PermissionsHandler : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_5234245f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

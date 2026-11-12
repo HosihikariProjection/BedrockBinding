@@ -67,6 +67,7 @@ public sealed unsafe partial class OnFallOnTrigger : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_e47760fb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

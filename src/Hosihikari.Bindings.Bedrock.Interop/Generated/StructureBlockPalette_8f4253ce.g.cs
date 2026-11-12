@@ -49,6 +49,7 @@ public sealed unsafe partial class StructureBlockPalette : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_3567ad66((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -62,7 +63,12 @@ public sealed unsafe partial class StructureBlockPalette : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.BlockPositionData? getBlockPositionData(ulong blockIndex)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ed007965((void*)__hosihikari_shim_handle, blockIndex);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.BlockPositionData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.BlockPositionData((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -80,7 +86,12 @@ public sealed unsafe partial class StructureBlockPalette : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? tryGetBlock(ulong paletteId, global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_104000ff((void*)__hosihikari_shim_handle, paletteId, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
 

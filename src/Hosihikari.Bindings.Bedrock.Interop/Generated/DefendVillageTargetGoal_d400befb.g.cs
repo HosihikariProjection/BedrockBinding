@@ -87,6 +87,7 @@ public sealed unsafe partial class DefendVillageTargetGoal : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_48844604();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class DefendVillageTargetGoal : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_36baebeb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

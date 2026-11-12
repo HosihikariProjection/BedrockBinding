@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_const_IContentTierManager_ : 
         var handle = NativeMethods.TablePtr->C0.hs_create_8c46e7bd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_const_IContentTierManager_ : 
         var handle = NativeMethods.TablePtr->C0.hs_create_c90e7ceb(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_const_IContentTierManager_ : 
         var handle = NativeMethods.TablePtr->C0.hs_create_00948e03();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_const_IContentTierManager_ : 
         var handle = NativeMethods.TablePtr->C0.hs_create_bd1654b2(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_const_IContentTierManager_ : 
     public global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_63739762((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -109,19 +118,34 @@ public sealed unsafe partial class NonOwnerPointer_const_IContentTierManager_ : 
     public global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager? operator_const_IContentTierManager__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_0bd2ce1e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_50a62e9d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b6470d10((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

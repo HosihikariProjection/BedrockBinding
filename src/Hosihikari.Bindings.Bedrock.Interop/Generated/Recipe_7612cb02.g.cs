@@ -52,7 +52,12 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? _getId()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cce68082((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false);
     }
 
     public ulong _getIngredientsHash()
@@ -99,6 +104,7 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_7aa0280c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -114,6 +120,7 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_8b38a3ec((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -137,13 +144,23 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? getId()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_19d612b1((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? getIngredient(int x, int y)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e4154c1a((void*)__hosihikari_shim_handle, x, y);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false);
     }
 
     public ulong getIngredientsHash()

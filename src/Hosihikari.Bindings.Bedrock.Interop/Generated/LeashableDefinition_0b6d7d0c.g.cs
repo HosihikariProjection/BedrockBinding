@@ -45,6 +45,7 @@ public sealed unsafe partial class LeashableDefinition : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_2daa6578((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

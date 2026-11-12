@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockCerealSchemaUpgrade : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_5a88fcab();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class BlockCerealSchemaUpgrade : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_b0b09ffc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

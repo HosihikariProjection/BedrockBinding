@@ -49,6 +49,7 @@ public sealed unsafe partial class Motif : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_27fc0100();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class Motif : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c4dcebbb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

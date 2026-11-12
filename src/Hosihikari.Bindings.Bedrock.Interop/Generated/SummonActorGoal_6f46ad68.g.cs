@@ -91,6 +91,7 @@ public sealed unsafe partial class SummonActorGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_91da2780();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class SummonActorGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_f80ae7f9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -205,7 +207,12 @@ public sealed unsafe partial class SummonActorGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.SummonActorGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SummonActorGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0a777324((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SummonActorGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SummonActorGoal((nint)__hs_handle, false);
     }
 
     public void start()

@@ -53,6 +53,7 @@ public sealed unsafe partial class ITickingSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_7120f54e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

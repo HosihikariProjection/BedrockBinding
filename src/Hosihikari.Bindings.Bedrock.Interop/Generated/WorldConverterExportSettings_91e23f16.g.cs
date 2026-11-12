@@ -45,6 +45,7 @@ public sealed unsafe partial class WorldConverterExportSettings : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_02a75d5b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -58,45 +58,80 @@ public sealed unsafe partial class PlayerCommandOrigin : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _getBlockPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9c740e23((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _getCursorHitBlockPos()
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e078ace2((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? _getCursorHitPos()
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_29666fa2((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Dimension? _getDimension()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_11e7d3de((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? _getEntity()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_13d4de8d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginIdentity? _getIdentity()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e614ef8a((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginIdentity((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginIdentity((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Level? _getLevel()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_83416257((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false);
     }
 
     public string _getName()
@@ -125,13 +160,23 @@ public sealed unsafe partial class PlayerCommandOrigin : global::System.IDisposa
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_dba22a9c((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier? _getSourceId()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_534b0480((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle, false);
     }
 
     public byte _getSourceSubId()
@@ -142,7 +187,12 @@ public sealed unsafe partial class PlayerCommandOrigin : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? _getWorldPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ff6ac7f2((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public bool _isSelectorExpansionAllowed()
@@ -158,7 +208,12 @@ public sealed unsafe partial class PlayerCommandOrigin : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? _serialize()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_28bfa587((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -170,6 +225,7 @@ public sealed unsafe partial class PlayerCommandOrigin : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_89e64641((void*)level.Handle, (void*)playerId.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -181,6 +237,7 @@ public sealed unsafe partial class PlayerCommandOrigin : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_f320ea1d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -199,45 +256,80 @@ public sealed unsafe partial class PlayerCommandOrigin : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getBlockPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8f15c8ce((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getCursorHitBlockPos()
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7bc6dfc2((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getCursorHitPos()
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_70ea88d2((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Dimension? getDimension()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_909f7a17((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? getEntity()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_795741ab((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginIdentity? getIdentity()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_50838006((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginIdentity((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginIdentity((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Level? getLevel()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e9e632b4((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false);
     }
 
     public string getName()
@@ -266,13 +358,23 @@ public sealed unsafe partial class PlayerCommandOrigin : global::System.IDisposa
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5d904afa((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier? getSourceId()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2e3bc2ec((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle, false);
     }
 
     public byte getSourceSubId()
@@ -283,7 +385,12 @@ public sealed unsafe partial class PlayerCommandOrigin : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getWorldPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_dd625f54((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public bool isSelectorExpansionAllowed()
@@ -311,7 +418,12 @@ public sealed unsafe partial class PlayerCommandOrigin : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? serialize()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a0bcd46a((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle);
     }
 
 

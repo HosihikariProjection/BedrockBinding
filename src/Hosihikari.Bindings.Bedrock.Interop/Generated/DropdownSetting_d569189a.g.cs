@@ -53,6 +53,7 @@ public sealed unsafe partial class DropdownSetting : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_c30e656d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

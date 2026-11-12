@@ -45,6 +45,7 @@ public sealed unsafe partial class RuntimeIDComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_081681e4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

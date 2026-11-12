@@ -93,6 +93,7 @@ public sealed unsafe partial class SimpleRandom : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_07184d8d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

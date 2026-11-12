@@ -49,6 +49,7 @@ public sealed unsafe partial class NetworkConnection : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_3806442a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class NetworkConnection : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_dedb8ef0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

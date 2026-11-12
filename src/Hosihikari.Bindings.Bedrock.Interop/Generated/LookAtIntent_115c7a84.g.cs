@@ -45,6 +45,7 @@ public sealed unsafe partial class LookAtIntent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_7b0d42df((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

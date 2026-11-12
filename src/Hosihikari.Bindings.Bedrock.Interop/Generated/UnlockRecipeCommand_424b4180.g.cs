@@ -78,6 +78,7 @@ public sealed unsafe partial class UnlockRecipeCommand : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_8c31531b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

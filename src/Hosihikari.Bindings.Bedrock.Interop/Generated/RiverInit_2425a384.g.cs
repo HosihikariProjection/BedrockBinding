@@ -45,6 +45,7 @@ public sealed unsafe partial class RiverInit : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_e9d98ac5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class RiverInit : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_8318c4f9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class LeashableComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_b68403a3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class LeashableComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_1b8d1972((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -121,7 +123,12 @@ public sealed unsafe partial class LeashableComponent : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e5e216ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent((nint)__hs_handle, false);
     }
 
 

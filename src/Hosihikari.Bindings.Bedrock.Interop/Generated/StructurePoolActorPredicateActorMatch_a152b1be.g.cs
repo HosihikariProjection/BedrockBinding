@@ -57,6 +57,7 @@ public sealed unsafe partial class StructurePoolActorPredicateActorMatch : globa
         var handle = NativeMethods.TablePtr->C3.hs_create_b4b8414c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

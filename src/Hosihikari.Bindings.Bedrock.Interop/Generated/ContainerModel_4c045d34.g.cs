@@ -153,6 +153,7 @@ public sealed unsafe partial class ContainerModel : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d9d58f47();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -164,6 +165,7 @@ public sealed unsafe partial class ContainerModel : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_377d6520((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -177,7 +179,12 @@ public sealed unsafe partial class ContainerModel : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? _getContainer()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7d5376cb((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public int _getContainerOffset()
@@ -212,7 +219,12 @@ public sealed unsafe partial class ContainerModel : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef? getContainerWeakRef()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f86605a8((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)__hs_handle);
     }
 
     public int getFilteredContainerSize()
@@ -234,19 +246,34 @@ public sealed unsafe partial class ContainerModel : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? getItemInstance(int modelSlot)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_75abb561((void*)__hosihikari_shim_handle, modelSlot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItemStack(int modelSlot)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b6636851((void*)__hosihikari_shim_handle, modelSlot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase? getItemStackBase(int modelSlot)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_981d73d9((void*)__hosihikari_shim_handle, modelSlot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase((nint)__hs_handle, false);
     }
 
     public nint getItems()

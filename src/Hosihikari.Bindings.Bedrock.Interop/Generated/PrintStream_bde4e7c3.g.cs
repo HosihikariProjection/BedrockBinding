@@ -45,6 +45,7 @@ public sealed unsafe partial class PrintStream : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_a99259a5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

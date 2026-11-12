@@ -61,6 +61,7 @@ public sealed unsafe partial class SpawnAoECloudSubcomponent : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_0ec2a9ed((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

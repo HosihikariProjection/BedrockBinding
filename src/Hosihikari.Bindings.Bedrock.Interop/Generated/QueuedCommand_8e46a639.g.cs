@@ -45,6 +45,7 @@ public sealed unsafe partial class QueuedCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_ba7a9753((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

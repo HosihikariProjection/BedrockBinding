@@ -49,6 +49,7 @@ public sealed unsafe partial class DanceComponentListener : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_1e52b167((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

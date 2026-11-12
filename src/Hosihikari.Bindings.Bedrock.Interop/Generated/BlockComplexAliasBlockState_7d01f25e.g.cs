@@ -49,6 +49,7 @@ public sealed unsafe partial class BlockComplexAliasBlockState : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_cdde865a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class BlockComplexAliasBlockState : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_32c65c34((void*)stateName.Handle, value);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

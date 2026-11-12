@@ -49,6 +49,7 @@ public sealed unsafe partial class SchedulerSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_2143043d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

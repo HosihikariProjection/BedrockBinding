@@ -66,6 +66,7 @@ public sealed unsafe partial class CraftHandlerBase : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_3568f8b0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,6 +78,7 @@ public sealed unsafe partial class CraftHandlerBase : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_dd28b899((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -86,7 +88,12 @@ public sealed unsafe partial class CraftHandlerBase : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Recipes? _getLevelRecipes()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6a9984cf((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Recipes((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Recipes((nint)__hs_handle, false);
     }
 
     public byte _handleCraftAction(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase requestAction)
@@ -154,7 +161,12 @@ public sealed unsafe partial class CraftHandlerBase : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerBase arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_decc6a3b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerBase((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerBase((nint)__hs_handle, false);
     }
 
     public void postRequest(bool wasSuccess)

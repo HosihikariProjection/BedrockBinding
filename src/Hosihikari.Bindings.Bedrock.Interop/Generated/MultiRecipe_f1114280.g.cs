@@ -65,6 +65,7 @@ public sealed unsafe partial class MultiRecipe : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_3ed9d5e9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class MultiRecipe : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_31c94a4c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

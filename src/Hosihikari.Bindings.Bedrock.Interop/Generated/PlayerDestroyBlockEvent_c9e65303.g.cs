@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerDestroyBlockEvent : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_1c844059((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

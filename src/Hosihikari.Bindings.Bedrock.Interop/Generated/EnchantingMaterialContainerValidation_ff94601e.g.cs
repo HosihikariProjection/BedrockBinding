@@ -53,6 +53,7 @@ public sealed unsafe partial class EnchantingMaterialContainerValidation : globa
         var handle = NativeMethods.TablePtr->C1.hs_create_aeb28015((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

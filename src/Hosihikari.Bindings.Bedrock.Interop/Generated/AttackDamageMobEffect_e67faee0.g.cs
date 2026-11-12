@@ -49,6 +49,7 @@ public sealed unsafe partial class AttackDamageMobEffect : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_7420f18c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

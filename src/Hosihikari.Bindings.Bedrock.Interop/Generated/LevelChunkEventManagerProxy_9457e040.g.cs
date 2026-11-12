@@ -74,6 +74,7 @@ public sealed unsafe partial class LevelChunkEventManagerProxy : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_424bb490((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

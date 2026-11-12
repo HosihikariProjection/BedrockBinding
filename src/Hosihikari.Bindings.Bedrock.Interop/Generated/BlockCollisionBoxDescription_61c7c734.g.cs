@@ -77,6 +77,7 @@ public sealed unsafe partial class BlockCollisionBoxDescription : global::System
         var handle = NativeMethods.TablePtr->C0.hs_create_4f64cfd6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -88,6 +89,7 @@ public sealed unsafe partial class BlockCollisionBoxDescription : global::System
         var handle = NativeMethods.TablePtr->C0.hs_create_1bf0f3ce((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

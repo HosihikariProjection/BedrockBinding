@@ -89,6 +89,7 @@ public sealed unsafe partial class AttributeScriptActorComponent : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_ecdf1d49((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

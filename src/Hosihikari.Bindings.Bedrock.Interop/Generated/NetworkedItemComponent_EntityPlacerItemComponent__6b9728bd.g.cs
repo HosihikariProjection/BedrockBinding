@@ -51,6 +51,7 @@ public sealed unsafe partial class NetworkedItemComponent_EntityPlacerItemCompon
         var handle = NativeMethods.TablePtr->C2.hs_create_cc7d8332((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

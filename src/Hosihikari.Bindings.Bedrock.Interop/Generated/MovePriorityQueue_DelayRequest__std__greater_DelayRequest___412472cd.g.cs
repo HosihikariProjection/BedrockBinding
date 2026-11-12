@@ -45,6 +45,7 @@ public sealed unsafe partial class MovePriorityQueue_DelayRequest__std__greater_
         var handle = NativeMethods.TablePtr->C2.hs_create_088f7c25((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,7 +92,12 @@ public sealed unsafe partial class MovePriorityQueue_DelayRequest__std__greater_
     public global::Hosihikari.Bindings.Bedrock.Interop.DelayRequest? pop()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8c561a33((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DelayRequest((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DelayRequest((nint)__hs_handle);
     }
 
     public void resort()
@@ -107,13 +113,23 @@ public sealed unsafe partial class MovePriorityQueue_DelayRequest__std__greater_
     public global::Hosihikari.Bindings.Bedrock.Interop.DelayRequest? top_604abe9e()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_604abe9e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DelayRequest((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DelayRequest((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DelayRequest? top_74fd4f70()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_74fd4f70((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DelayRequest((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DelayRequest((nint)__hs_handle, false);
     }
 
 

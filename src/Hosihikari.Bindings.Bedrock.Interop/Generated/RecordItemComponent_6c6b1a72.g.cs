@@ -59,6 +59,7 @@ public sealed unsafe partial class RecordItemComponent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_d989e710();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -74,6 +75,7 @@ public sealed unsafe partial class RecordItemComponent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_1451e8f9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

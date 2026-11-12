@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptItemStack : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_0810fbb6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class ScriptItemStack : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_8cc8bfb5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -92,6 +92,7 @@ public sealed unsafe partial class GetInteractionPositionForBlockNode : global::
         var handle = NativeMethods.TablePtr->C1.hs_create_c3f384e2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

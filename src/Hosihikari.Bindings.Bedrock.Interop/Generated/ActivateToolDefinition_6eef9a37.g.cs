@@ -49,6 +49,7 @@ public sealed unsafe partial class ActivateToolDefinition : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_1f337feb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -57,6 +57,7 @@ public sealed unsafe partial class NetherFortressPiece : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_b3c7bd6a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class NetherFortressPiece : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_0d0ce7d8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

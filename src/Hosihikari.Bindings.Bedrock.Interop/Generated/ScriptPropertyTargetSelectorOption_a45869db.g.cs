@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptPropertyTargetSelectorOption : global::
         var handle = NativeMethods.TablePtr->C3.hs_create_b972d81e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

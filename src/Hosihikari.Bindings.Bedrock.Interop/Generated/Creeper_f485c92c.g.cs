@@ -607,6 +607,7 @@ public sealed unsafe partial class Creeper : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_994cf706();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

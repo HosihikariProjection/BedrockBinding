@@ -45,6 +45,7 @@ public sealed unsafe partial class DamageSensorComponent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_1f89d7b0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

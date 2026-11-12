@@ -57,6 +57,7 @@ public sealed unsafe partial class ComponentItemComponentData : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_a0c7de30();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

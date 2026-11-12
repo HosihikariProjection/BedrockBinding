@@ -53,6 +53,7 @@ public sealed unsafe partial class DryingOutTimerDefinition : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_90eec756();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class DryingOutTimerDefinition : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_d16b84be((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

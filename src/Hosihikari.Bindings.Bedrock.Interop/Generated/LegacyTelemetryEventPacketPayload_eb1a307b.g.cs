@@ -45,6 +45,7 @@ public sealed unsafe partial class LegacyTelemetryEventPacketPayload : global::S
         var handle = NativeMethods.TablePtr->C2.hs_create_3b19c965((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

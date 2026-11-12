@@ -45,6 +45,7 @@ public sealed unsafe partial class function_invoke_brstd__detail__function__Deri
         var handle = NativeMethods.TablePtr->C4.hs_create_3741c977();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class function_invoke_brstd__detail__function__Deri
         var handle = NativeMethods.TablePtr->C4.hs_create_32bd5317();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

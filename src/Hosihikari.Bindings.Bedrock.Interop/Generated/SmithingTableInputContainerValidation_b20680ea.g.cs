@@ -53,6 +53,7 @@ public sealed unsafe partial class SmithingTableInputContainerValidation : globa
         var handle = NativeMethods.TablePtr->C3.hs_create_cca49b85((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

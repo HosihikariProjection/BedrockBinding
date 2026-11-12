@@ -71,6 +71,7 @@ public sealed unsafe partial class BlockDestructibleByExplosionDescription : glo
         var handle = NativeMethods.TablePtr->C0.hs_create_0941a8d3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,6 +83,7 @@ public sealed unsafe partial class BlockDestructibleByExplosionDescription : glo
         var handle = NativeMethods.TablePtr->C0.hs_create_73103de9(explosionResistance);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

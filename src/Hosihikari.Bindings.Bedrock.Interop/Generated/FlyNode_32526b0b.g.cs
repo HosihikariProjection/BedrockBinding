@@ -92,6 +92,7 @@ public sealed unsafe partial class FlyNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_2ce1e17b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

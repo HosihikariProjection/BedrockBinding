@@ -61,6 +61,7 @@ public sealed unsafe partial class ActorQueueCommandResponse : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_3a9cb8cd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

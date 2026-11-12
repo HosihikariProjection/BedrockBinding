@@ -77,6 +77,7 @@ public sealed unsafe partial class ScriptItemCustomComponentSignalCollection : g
         var handle = NativeMethods.TablePtr->C3.hs_create_bb4c9825();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -92,6 +93,7 @@ public sealed unsafe partial class ScriptItemCustomComponentSignalCollection : g
         var handle = NativeMethods.TablePtr->C3.hs_create_336ba1b0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

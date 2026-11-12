@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorUpgradeTriggeredEvent : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_376469cb();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ActorUpgradeTriggeredEvent : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_b5097e7f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class ActorUpgradeTriggeredEvent : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeTriggeredEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeTriggeredEvent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ee17a629((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeTriggeredEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUpgradeTriggeredEvent((nint)__hs_handle, false);
     }
 
 

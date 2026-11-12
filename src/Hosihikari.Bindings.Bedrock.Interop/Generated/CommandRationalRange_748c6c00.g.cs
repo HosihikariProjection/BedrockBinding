@@ -45,6 +45,7 @@ public sealed unsafe partial class CommandRationalRange : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_aa9dc4c4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

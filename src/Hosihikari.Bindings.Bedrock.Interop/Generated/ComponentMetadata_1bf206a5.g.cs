@@ -49,6 +49,7 @@ public sealed unsafe partial class ComponentMetadata : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_736b036d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ComponentMetadata : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_23cd31b2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,7 +93,12 @@ public sealed unsafe partial class ComponentMetadata : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.CerealItemComponentFactory_Nested.ComponentMetadata? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealItemComponentFactory_Nested.ComponentMetadata arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e930d8c1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CerealItemComponentFactory_Nested.ComponentMetadata((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CerealItemComponentFactory_Nested.ComponentMetadata((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

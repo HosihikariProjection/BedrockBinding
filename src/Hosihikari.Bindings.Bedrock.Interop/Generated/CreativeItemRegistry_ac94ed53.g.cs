@@ -55,6 +55,7 @@ public sealed unsafe partial class CreativeItemRegistry : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_565739fa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

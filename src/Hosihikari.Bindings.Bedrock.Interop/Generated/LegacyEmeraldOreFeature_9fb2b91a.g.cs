@@ -73,6 +73,7 @@ public sealed unsafe partial class LegacyEmeraldOreFeature : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_f414cbb9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

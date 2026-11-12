@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptExplosionStartedAfterEvent : global::Sy
         var handle = NativeMethods.TablePtr->C3.hs_create_cfae0d94();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -104,7 +105,12 @@ public sealed unsafe partial class ScriptExplosionStartedAfterEvent : global::Sy
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptExplosionStartedAfterEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptExplosionStartedAfterEvent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_14b217dc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptExplosionStartedAfterEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptExplosionStartedAfterEvent((nint)__hs_handle, false);
     }
 
 

@@ -156,6 +156,7 @@ public sealed unsafe partial class NetworkChunkSource : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_b52a529c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -167,6 +168,7 @@ public sealed unsafe partial class NetworkChunkSource : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_a3fd2fb7((void*)dimension.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

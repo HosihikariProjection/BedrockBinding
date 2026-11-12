@@ -51,6 +51,7 @@ public sealed unsafe partial class ServerSoundInstanceManager : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_510fde15();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -62,6 +63,7 @@ public sealed unsafe partial class ServerSoundInstanceManager : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_4619b8f3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -109,7 +111,12 @@ public sealed unsafe partial class ServerSoundInstanceManager : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_38ae84a4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

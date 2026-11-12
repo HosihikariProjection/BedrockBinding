@@ -57,6 +57,7 @@ public sealed unsafe partial class CustomComponentsItemComponent : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_2bf47538();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class CustomComponentsItemComponent : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_149eb23e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

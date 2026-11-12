@@ -82,7 +82,12 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? _fetchEntity(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorID, bool getRemoved)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ef24e97b((void*)__hosihikari_shim_handle, (void*)actorID.Handle, getRemoved);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public void _flushLevelChunkGarbageCollector()
@@ -97,19 +102,34 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry? _getBiomeRegistry_fb16af4c()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_fb16af4c((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry? _getBiomeRegistry_7547e819()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7547e819((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? _getBlockSourceFromMainChunkSource()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f013c308((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -119,7 +139,12 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp? _getBrightnessRamp()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_744c57bf((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -129,25 +154,45 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType? _getDefaultBiomeId()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_524dd369((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState? _getDimensionDirectionalLightSourceState(float a)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b6eb9939((void*)__hosihikari_shim_handle, a);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? _getDimensionId()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f404eec8((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _getSpawnPos()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4b1e62d3((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public int _getSpawnYPosition()
@@ -312,6 +357,7 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_58c0b3c5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -327,6 +373,7 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_eff006e7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -393,7 +440,12 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? fetchEntity(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorID, bool getRemoved)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c6517e04((void*)__hosihikari_shim_handle, (void*)actorID.Handle, getRemoved);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -429,31 +481,56 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry? getBiomeRegistry_ac75e0b1()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ac75e0b1((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry? getBiomeRegistry_cb5b8ea0()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cb5b8ea0((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? getBlockSourceFromMainChunkSource()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3ec7a1bb((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getBrightnessDependentFogColor(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color baseColor, float brightness)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ea325197((void*)__hosihikari_shim_handle, (void*)baseColor.Handle, brightness);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp? getBrightnessRamp()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_691ea60b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp((nint)__hs_handle, false);
     }
 
     public short getCloudHeight()
@@ -464,19 +541,34 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType? getDefaultBiomeId()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a660b152((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState? getDimensionDirectionalLightSourceState(float a)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f068e929((void*)__hosihikari_shim_handle, a);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension_Nested.DirectionalLightState((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? getDimensionId()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ccea58d9((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle);
     }
 
     public ushort getHeightInSubchunks()
@@ -487,7 +579,12 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSpawnPos()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a7786669((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public int getSpawnYPosition()
@@ -944,7 +1041,12 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Dimension? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Dimension arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_acd225cf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

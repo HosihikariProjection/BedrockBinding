@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorDefinitionTrigger : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_a3e2bbd1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -88,7 +89,12 @@ public sealed unsafe partial class ActorDefinitionTrigger : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_120.ActorDefinitionTrigger? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_120.ActorDefinitionTrigger arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_98c25108((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_120.ActorDefinitionTrigger((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_120.ActorDefinitionTrigger((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

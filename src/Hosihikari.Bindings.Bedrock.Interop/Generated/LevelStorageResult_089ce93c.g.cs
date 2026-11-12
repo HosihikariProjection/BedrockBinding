@@ -49,6 +49,7 @@ public sealed unsafe partial class LevelStorageResult : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_19a8073d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class LevelStorageResult : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_fdb201f6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +83,12 @@ public sealed unsafe partial class LevelStorageResult : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_fbe69090((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)__hs_handle, false);
     }
 
 

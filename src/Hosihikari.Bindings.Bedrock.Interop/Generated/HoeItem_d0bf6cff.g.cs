@@ -75,6 +75,7 @@ public sealed unsafe partial class HoeItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_ecb66bc0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -86,6 +87,7 @@ public sealed unsafe partial class HoeItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_a56a1608((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

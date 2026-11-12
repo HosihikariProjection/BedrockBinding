@@ -59,7 +59,12 @@ public sealed unsafe partial class Socket : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket? Accept(nint paddr)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ff92317a((void*)__hosihikari_shim_handle, (void*)paddr);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket((nint)__hs_handle, false);
     }
 
     public int Bind(nint addr)
@@ -145,6 +150,7 @@ public sealed unsafe partial class Socket : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_aad64747();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -156,6 +162,7 @@ public sealed unsafe partial class Socket : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_78c7daf3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -189,7 +196,12 @@ public sealed unsafe partial class Socket : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4efe37d8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket((nint)__hs_handle, false);
     }
 
 

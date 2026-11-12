@@ -78,6 +78,7 @@ public sealed unsafe partial class DifficultyCommand : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_32e5f329((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

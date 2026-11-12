@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptActorSpawnAfterEvent : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_c2a0a36b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

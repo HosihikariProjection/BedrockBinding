@@ -45,6 +45,7 @@ public sealed unsafe partial class Hopper : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_f8621168((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,7 +55,12 @@ public sealed unsafe partial class Hopper : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? _getContainerInBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_da2e5e70((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -45,6 +45,7 @@ public sealed unsafe partial class CommandVersion : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_374beced(from, to);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

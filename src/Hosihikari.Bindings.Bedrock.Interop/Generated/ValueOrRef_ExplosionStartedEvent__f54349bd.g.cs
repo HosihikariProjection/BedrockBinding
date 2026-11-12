@@ -51,13 +51,23 @@ public sealed unsafe partial class ValueOrRef_ExplosionStartedEvent_ : global::S
     public global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent? value_5bd40b1f()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5bd40b1f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent? value_e2c3e59d()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e2c3e59d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent((nint)__hs_handle, false);
     }
 
 

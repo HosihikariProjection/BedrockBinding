@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptMovementAmphibiousComponentFactory : gl
         var handle = NativeMethods.TablePtr->C3.hs_create_e9b0ad9a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

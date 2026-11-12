@@ -68,6 +68,7 @@ public sealed unsafe partial class ScriptBlockRecordPlayerComponentV010 : global
         var handle = NativeMethods.TablePtr->C3.hs_create_50dd0cf4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

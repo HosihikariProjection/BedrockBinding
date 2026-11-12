@@ -402,6 +402,7 @@ public sealed unsafe partial class LiquidBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_b4a8ccac();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class ReplaceRule : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_162c76f4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ReplaceRule : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_02aa0756((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

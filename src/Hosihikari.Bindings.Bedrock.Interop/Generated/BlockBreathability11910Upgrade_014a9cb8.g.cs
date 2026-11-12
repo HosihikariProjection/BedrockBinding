@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockBreathability11910Upgrade : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_2d9c46b4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -71,6 +71,7 @@ public sealed unsafe partial class FilterTestLightLevel : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_6ec87406((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

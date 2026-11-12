@@ -53,6 +53,7 @@ public sealed unsafe partial class TeleportComponentDefinition : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_6c4c9be3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

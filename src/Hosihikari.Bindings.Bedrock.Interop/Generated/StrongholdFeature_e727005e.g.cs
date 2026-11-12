@@ -67,6 +67,7 @@ public sealed unsafe partial class StrongholdFeature : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_45352203();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +79,7 @@ public sealed unsafe partial class StrongholdFeature : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_6379e4b1((void*)(villages?.Handle ?? 0), seed);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -89,6 +91,7 @@ public sealed unsafe partial class StrongholdFeature : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_64a45bed((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

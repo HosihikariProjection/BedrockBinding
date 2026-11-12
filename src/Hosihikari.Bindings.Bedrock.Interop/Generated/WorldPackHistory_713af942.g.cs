@@ -53,6 +53,7 @@ public sealed unsafe partial class WorldPackHistory : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_7fef27bc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

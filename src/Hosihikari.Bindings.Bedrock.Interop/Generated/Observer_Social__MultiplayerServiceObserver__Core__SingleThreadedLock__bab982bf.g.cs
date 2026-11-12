@@ -45,6 +45,7 @@ public sealed unsafe partial class Observer_Social__MultiplayerServiceObserver__
         var handle = NativeMethods.TablePtr->C1.hs_create_c7f4c3b7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class Observer_Social__MultiplayerServiceObserver__
         var handle = NativeMethods.TablePtr->C1.hs_create_b10d7b80((void*)subject);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

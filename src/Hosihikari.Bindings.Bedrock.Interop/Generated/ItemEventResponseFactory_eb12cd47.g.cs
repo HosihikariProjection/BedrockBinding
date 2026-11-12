@@ -67,6 +67,7 @@ public sealed unsafe partial class ItemEventResponseFactory : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_c988458c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

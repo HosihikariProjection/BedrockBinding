@@ -45,6 +45,7 @@ public sealed unsafe partial class ValueConstIterator : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_ef7563ad((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,13 +55,23 @@ public sealed unsafe partial class ValueConstIterator : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d397ba9a((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueConstIterator? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4740e90a((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueConstIterator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueConstIterator((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

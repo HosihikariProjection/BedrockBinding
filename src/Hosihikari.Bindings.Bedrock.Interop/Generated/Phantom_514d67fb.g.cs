@@ -745,6 +745,7 @@ public sealed unsafe partial class Phantom : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_de1f28fe();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

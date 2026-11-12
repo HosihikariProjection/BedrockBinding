@@ -87,6 +87,7 @@ public sealed unsafe partial class ScriptBlockRaycastOptions : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_11f6df6a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

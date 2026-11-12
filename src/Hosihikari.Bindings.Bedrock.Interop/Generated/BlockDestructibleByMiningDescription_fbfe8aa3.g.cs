@@ -90,6 +90,7 @@ public sealed unsafe partial class BlockDestructibleByMiningDescription : global
         var handle = NativeMethods.TablePtr->C0.hs_create_65c2bef6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -101,6 +102,7 @@ public sealed unsafe partial class BlockDestructibleByMiningDescription : global
         var handle = NativeMethods.TablePtr->C0.hs_create_71ddce3b(destroyTime);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

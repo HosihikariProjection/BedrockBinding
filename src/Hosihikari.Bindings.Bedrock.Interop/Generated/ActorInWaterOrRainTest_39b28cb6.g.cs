@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorInWaterOrRainTest : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_8c38fd48((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

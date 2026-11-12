@@ -759,6 +759,7 @@ public sealed unsafe partial class Monster : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_fe10777a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -777,7 +778,12 @@ public sealed unsafe partial class Monster : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7c7ee3c5((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)

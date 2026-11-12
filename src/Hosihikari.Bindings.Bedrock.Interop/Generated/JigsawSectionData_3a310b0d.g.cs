@@ -45,6 +45,7 @@ public sealed unsafe partial class JigsawSectionData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_65dc36c3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

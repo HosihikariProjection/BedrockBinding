@@ -49,6 +49,7 @@ public sealed unsafe partial class WearableItemComponentLegacyFactoryData : glob
         var handle = NativeMethods.TablePtr->C4.hs_create_12454825((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class IWorldAccessor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_fd9ad183((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -59,7 +60,12 @@ public sealed unsafe partial class IWorldAccessor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Player? fetchAnyInteractablePlayer(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 searchPos, float maxDist)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0b247e0a((void*)__hosihikari_shim_handle, (void*)searchPos.Handle, maxDist);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false);
     }
 
     public int? getActorNoActionTime(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
@@ -72,7 +78,12 @@ public sealed unsafe partial class IWorldAccessor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.IRandom? getChanceRandom()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_843be2dc((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IRandom((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IRandom((nint)__hs_handle, false);
     }
 
     public uint getChunkTickRange()

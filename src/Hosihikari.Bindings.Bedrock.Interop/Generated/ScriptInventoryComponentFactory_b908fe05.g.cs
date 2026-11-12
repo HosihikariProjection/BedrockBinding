@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptInventoryComponentFactory : global::Sys
         var handle = NativeMethods.TablePtr->C3.hs_create_28e06ca2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

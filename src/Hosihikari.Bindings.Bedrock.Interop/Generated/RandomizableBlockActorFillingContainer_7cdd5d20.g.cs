@@ -218,6 +218,7 @@ public sealed unsafe partial class RandomizableBlockActorFillingContainer : glob
         var handle = NativeMethods.TablePtr->C3.hs_create_0586c285();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

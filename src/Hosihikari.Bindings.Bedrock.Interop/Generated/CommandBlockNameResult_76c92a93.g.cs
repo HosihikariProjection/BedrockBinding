@@ -54,6 +54,7 @@ public sealed unsafe partial class CommandBlockNameResult : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_ebc3b542();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -65,6 +66,7 @@ public sealed unsafe partial class CommandBlockNameResult : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_5fc84902((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

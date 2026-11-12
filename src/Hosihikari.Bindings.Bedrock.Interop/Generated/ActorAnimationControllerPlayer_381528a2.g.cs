@@ -85,6 +85,7 @@ public sealed unsafe partial class ActorAnimationControllerPlayer : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_b57c69aa();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class ActorAnimationControllerPlayer : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_d9c949b7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -136,7 +138,12 @@ public sealed unsafe partial class ActorAnimationControllerPlayer : global::Syst
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getRawName()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_44bb17a5((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false);
     }
 
     public bool hasAnimationFinished()

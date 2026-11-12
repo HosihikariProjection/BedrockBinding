@@ -53,6 +53,7 @@ public sealed unsafe partial class BrewingStandFuelContainerValidation : global:
         var handle = NativeMethods.TablePtr->C0.hs_create_1a5a6f91((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

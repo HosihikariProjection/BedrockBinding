@@ -50,6 +50,7 @@ public sealed unsafe partial class ChunkGeneratorStructureState : global::System
         var handle = NativeMethods.TablePtr->C4.hs_create_7346b301((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -63,7 +64,12 @@ public sealed unsafe partial class ChunkGeneratorStructureState : global::System
     public static global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState? createNormal(long levelSeed, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource, global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureSetRegistry allStructures)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_eb982308(levelSeed, (void*)biomeSource.Handle, (void*)allStructures.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

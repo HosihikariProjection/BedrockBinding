@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptPlayerDimensionChangeAfterEvent : globa
         var handle = NativeMethods.TablePtr->C3.hs_create_a181b88a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptPlayerDimensionChangeAfterEvent : globa
         var handle = NativeMethods.TablePtr->C3.hs_create_0aa384d1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

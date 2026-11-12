@@ -135,6 +135,7 @@ public sealed unsafe partial class PrecompiledCommandOrigin : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_f9894146((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -158,25 +159,45 @@ public sealed unsafe partial class PrecompiledCommandOrigin : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getBlockPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0245487e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Dimension? getDimension()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_615bcfff((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? getEntity()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_276def87((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Level? getLevel()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_71e1e9ac((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false);
     }
 
     public string getName()
@@ -205,13 +226,23 @@ public sealed unsafe partial class PrecompiledCommandOrigin : global::System.IDi
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3ff0738b((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getWorldPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9330d351((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public bool hasChatPerms()
@@ -247,7 +278,12 @@ public sealed unsafe partial class PrecompiledCommandOrigin : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? serialize()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_84109043((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle);
     }
 
 

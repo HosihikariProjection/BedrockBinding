@@ -45,6 +45,7 @@ public sealed unsafe partial class IPlayerDimensionTransferConnector : global::S
         var handle = NativeMethods.TablePtr->C1.hs_create_48cf4cdc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

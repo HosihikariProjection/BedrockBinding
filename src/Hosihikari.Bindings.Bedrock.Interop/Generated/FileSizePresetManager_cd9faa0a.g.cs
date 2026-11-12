@@ -49,6 +49,7 @@ public sealed unsafe partial class FileSizePresetManager : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_d0b41f9e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

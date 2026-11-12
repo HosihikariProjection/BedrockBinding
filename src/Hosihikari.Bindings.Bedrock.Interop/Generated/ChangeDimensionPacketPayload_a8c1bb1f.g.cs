@@ -45,6 +45,7 @@ public sealed unsafe partial class ChangeDimensionPacketPayload : global::System
         var handle = NativeMethods.TablePtr->C0.hs_create_b43bddf9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

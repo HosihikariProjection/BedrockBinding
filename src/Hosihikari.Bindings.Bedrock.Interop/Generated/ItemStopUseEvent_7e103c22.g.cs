@@ -63,6 +63,7 @@ public sealed unsafe partial class ItemStopUseEvent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_921252d7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

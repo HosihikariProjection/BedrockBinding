@@ -45,6 +45,7 @@ public sealed unsafe partial class ProjectileOnHitSubcomponent : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_060d30c0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

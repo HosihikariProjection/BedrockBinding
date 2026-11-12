@@ -611,6 +611,7 @@ public sealed unsafe partial class Camel : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_51da2bbe();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -634,7 +635,12 @@ public sealed unsafe partial class Camel : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getInterpolatedRidingOffset(float arg0, int arg1)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1353dd8d((void*)__hosihikari_shim_handle, arg0, arg1);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -45,6 +45,7 @@ public sealed unsafe partial class ShowCreditsPacketPayload : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_95e24f49((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

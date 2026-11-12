@@ -77,6 +77,7 @@ public sealed unsafe partial class ItemComponent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_4139dbab((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

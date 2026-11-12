@@ -129,6 +129,7 @@ public sealed unsafe partial class CrafterContainerManagerModel : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_b289f1b5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -138,7 +139,12 @@ public sealed unsafe partial class CrafterContainerManagerModel : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext? _postInit()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ce8813e6((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

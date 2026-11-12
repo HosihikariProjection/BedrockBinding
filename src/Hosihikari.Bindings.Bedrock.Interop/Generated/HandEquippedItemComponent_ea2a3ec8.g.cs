@@ -53,6 +53,7 @@ public sealed unsafe partial class HandEquippedItemComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_19e580c9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

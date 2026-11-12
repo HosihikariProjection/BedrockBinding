@@ -45,6 +45,7 @@ public sealed unsafe partial class MaterialReducerDataEntry : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_33ae35bc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

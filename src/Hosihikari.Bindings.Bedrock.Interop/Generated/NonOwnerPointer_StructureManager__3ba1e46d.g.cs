@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_StructureManager_ : global::S
         var handle = NativeMethods.TablePtr->C0.hs_create_6e415f80();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_StructureManager_ : global::S
         var handle = NativeMethods.TablePtr->C0.hs_create_a8b7df47(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_StructureManager_ : global::S
         var handle = NativeMethods.TablePtr->C0.hs_create_f1a2a2bb();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_StructureManager_ : global::S
         var handle = NativeMethods.TablePtr->C0.hs_create_19fca3c9(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_StructureManager_ : global::S
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureManager? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_41890837((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureManager((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_StructureManager_ : global::S
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureManager? operator_StructureManager__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d6fb23c7((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureManager((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_StructureManager_ : global::S
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureManager? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c09c757f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureManager((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureManager? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_455a9214((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureManager((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

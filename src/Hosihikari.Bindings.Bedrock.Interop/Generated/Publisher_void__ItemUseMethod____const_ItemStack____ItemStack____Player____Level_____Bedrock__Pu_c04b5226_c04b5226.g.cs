@@ -57,6 +57,7 @@ public sealed unsafe partial class Publisher_void__ItemUseMethod____const_ItemSt
         var handle = NativeMethods.TablePtr->C0.hs_create_9a329c0c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

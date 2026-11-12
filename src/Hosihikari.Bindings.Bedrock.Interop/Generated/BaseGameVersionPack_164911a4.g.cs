@@ -45,6 +45,7 @@ public sealed unsafe partial class BaseGameVersionPack : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_127d61f1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class BaseGameVersionPack : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_8c13e17f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class BaseGameVersionPack : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.BaseGamePackSlices_Nested.BaseGameVersionPack? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BaseGamePackSlices_Nested.BaseGameVersionPack arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_64d83795((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseGamePackSlices_Nested.BaseGameVersionPack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseGamePackSlices_Nested.BaseGameVersionPack((nint)__hs_handle, false);
     }
 
     public void Dispose()

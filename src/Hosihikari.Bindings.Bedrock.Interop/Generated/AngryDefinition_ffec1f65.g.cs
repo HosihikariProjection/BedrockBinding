@@ -45,6 +45,7 @@ public sealed unsafe partial class AngryDefinition : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_53db99f7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

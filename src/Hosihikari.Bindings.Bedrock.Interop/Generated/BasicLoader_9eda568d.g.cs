@@ -58,6 +58,7 @@ public sealed unsafe partial class BasicLoader : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_3e883dad((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

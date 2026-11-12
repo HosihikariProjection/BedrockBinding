@@ -51,6 +51,7 @@ public sealed unsafe partial class NetworkedItemComponent_GlintItemComponent_ : 
         var handle = NativeMethods.TablePtr->C2.hs_create_6fe3fcf5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

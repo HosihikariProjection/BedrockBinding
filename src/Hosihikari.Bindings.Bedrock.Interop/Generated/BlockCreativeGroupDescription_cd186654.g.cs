@@ -55,6 +55,7 @@ public sealed unsafe partial class BlockCreativeGroupDescription : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_e9d94f6a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

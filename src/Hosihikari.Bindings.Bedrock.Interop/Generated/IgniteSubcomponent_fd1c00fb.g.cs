@@ -61,6 +61,7 @@ public sealed unsafe partial class IgniteSubcomponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_dfeba96f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -65,6 +65,7 @@ public sealed unsafe partial class CraftableCompounds : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_372029cd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

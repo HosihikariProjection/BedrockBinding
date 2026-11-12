@@ -117,6 +117,7 @@ public sealed unsafe partial class Enchant : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_56ddef82();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -132,6 +133,7 @@ public sealed unsafe partial class Enchant : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_403a2523((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

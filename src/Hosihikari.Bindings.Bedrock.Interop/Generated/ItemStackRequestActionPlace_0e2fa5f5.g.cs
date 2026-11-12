@@ -55,6 +55,7 @@ public sealed unsafe partial class ItemStackRequestActionPlace : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_e9bb201e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

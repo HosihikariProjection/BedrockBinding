@@ -45,6 +45,7 @@ public sealed unsafe partial class CircuitSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_d41e11e8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

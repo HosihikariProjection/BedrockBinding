@@ -45,6 +45,7 @@ public sealed unsafe partial class WorldTemplateManagerProxyCallbacks : global::
         var handle = NativeMethods.TablePtr->C4.hs_create_ff2591a1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class WorldTemplateManagerProxyCallbacks : global::
         var handle = NativeMethods.TablePtr->C4.hs_create_ea32428e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class WorldTemplateManagerProxyCallbacks : global::
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxyCallbacks? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxyCallbacks arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ad093c83((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxyCallbacks((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxyCallbacks((nint)__hs_handle, false);
     }
 
     public void Dispose()

@@ -49,6 +49,7 @@ public sealed unsafe partial class StreamFeedbackObserver : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_0b226af9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

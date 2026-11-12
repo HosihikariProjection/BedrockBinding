@@ -135,6 +135,7 @@ public sealed unsafe partial class ExternalFileLevelStorageSource : global::Syst
         var handle = NativeMethods.TablePtr->C1.hs_create_7c363118();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -146,6 +147,7 @@ public sealed unsafe partial class ExternalFileLevelStorageSource : global::Syst
         var handle = NativeMethods.TablePtr->C1.hs_create_a340f94a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -233,13 +235,23 @@ public sealed unsafe partial class ExternalFileLevelStorageSource : global::Syst
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getBasePath()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4c1b828c((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getLevelDatFoundPath(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path levelPath)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_aeb9e53f((void*)__hosihikari_shim_handle, (void*)levelPath.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_LevelDataLoadResult__std__error_code_? getLevelData(string levelId, global::Hosihikari.Bindings.Bedrock.Interop.LevelData levelDataOut)
@@ -258,7 +270,12 @@ public sealed unsafe partial class ExternalFileLevelStorageSource : global::Syst
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3defde43((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)levelDataOut.Handle);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_LevelDataLoadResult__std__error_code_((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_LevelDataLoadResult__std__error_code_((nint)__hs_handle);
         }
     }
 
@@ -294,7 +311,12 @@ public sealed unsafe partial class ExternalFileLevelStorageSource : global::Syst
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ebedf768((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle);
         }
     }
 

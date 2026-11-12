@@ -392,7 +392,12 @@ public sealed unsafe partial class InfestedDeepslateBlock : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? tryGetUninfested(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_86955f83((void*)__hosihikari_shim_handle, (void*)block.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
 

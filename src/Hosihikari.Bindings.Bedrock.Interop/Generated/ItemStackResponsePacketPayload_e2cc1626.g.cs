@@ -45,6 +45,7 @@ public sealed unsafe partial class ItemStackResponsePacketPayload : global::Syst
         var handle = NativeMethods.TablePtr->C1.hs_create_adabd186((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

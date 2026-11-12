@@ -65,6 +65,7 @@ public sealed unsafe partial class WeightedRandomFeature : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_9a9685b0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +82,12 @@ public sealed unsafe partial class WeightedRandomFeature : global::System.IDispo
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a4e2fda7((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
 

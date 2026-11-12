@@ -45,6 +45,7 @@ public sealed unsafe partial class FilterStringMap : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_b1d0499a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

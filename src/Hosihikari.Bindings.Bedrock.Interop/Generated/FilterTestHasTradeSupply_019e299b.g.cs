@@ -71,6 +71,7 @@ public sealed unsafe partial class FilterTestHasTradeSupply : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_90f3d5f4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class SoundEventIdentifier : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_a9ba3bb2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

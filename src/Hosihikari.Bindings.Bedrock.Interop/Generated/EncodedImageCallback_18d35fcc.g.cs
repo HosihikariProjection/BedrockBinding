@@ -53,6 +53,7 @@ public sealed unsafe partial class EncodedImageCallback : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_1b3f03d6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,7 +68,12 @@ public sealed unsafe partial class EncodedImageCallback : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result? OnEncodedImage(nint encoded_image, nint codec_specific_info)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4fdf4696((void*)__hosihikari_shim_handle, (void*)encoded_image, (void*)codec_specific_info);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result((nint)__hs_handle);
     }
 
 

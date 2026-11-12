@@ -53,6 +53,7 @@ public sealed unsafe partial class CraftingInputContainerValidation : global::Sy
         var handle = NativeMethods.TablePtr->C1.hs_create_829c68b1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

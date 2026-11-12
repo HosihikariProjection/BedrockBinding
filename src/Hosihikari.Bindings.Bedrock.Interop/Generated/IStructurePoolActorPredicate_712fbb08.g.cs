@@ -45,6 +45,7 @@ public sealed unsafe partial class IStructurePoolActorPredicate : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_b72505eb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

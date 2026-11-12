@@ -49,6 +49,7 @@ public sealed unsafe partial class TrimDataPacketPayload : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_5674c7f9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

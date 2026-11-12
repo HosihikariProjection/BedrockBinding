@@ -71,13 +71,23 @@ public sealed unsafe partial class Vec3 : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3? ZERO()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fff373dd();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3? directionFromRotation(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 rot)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b867c38a((void*)rot.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

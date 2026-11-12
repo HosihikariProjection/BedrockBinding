@@ -104,6 +104,7 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_97982d55();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -127,6 +128,7 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_83373faf((void*)item.Handle, auxValue);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -138,6 +140,7 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_05648c85((void*)itemTag.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -166,6 +169,7 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_43476881(__hs_stringData0, (nuint)__hs_stringByteCount0, itemAux);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -197,7 +201,12 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlock()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_23ece9e9((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -211,7 +220,12 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? getItem()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_068db911((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -247,7 +261,12 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor rhs)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0fab631b((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor((nint)__hs_handle, false);
     }
 
     public bool sameItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor otherItemDescriptor, bool compareAux)

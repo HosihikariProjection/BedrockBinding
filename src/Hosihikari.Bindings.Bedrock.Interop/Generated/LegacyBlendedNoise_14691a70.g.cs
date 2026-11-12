@@ -49,6 +49,7 @@ public sealed unsafe partial class LegacyBlendedNoise : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_209fc315();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class LegacyBlendedNoise : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_a4b1e3cb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

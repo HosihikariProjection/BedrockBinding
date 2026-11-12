@@ -62,6 +62,7 @@ public sealed unsafe partial class GlowStoneFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_89593c56((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

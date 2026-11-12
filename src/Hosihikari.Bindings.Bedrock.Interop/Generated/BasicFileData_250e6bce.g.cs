@@ -45,6 +45,7 @@ public sealed unsafe partial class BasicFileData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_37e026d1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class BasicFileData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_adbceb44((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class BasicFileData : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_Nested.BasicFileData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_Nested.BasicFileData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_942ebe8c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_Nested.BasicFileData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem_Nested.BasicFileData((nint)__hs_handle, false);
     }
 
     public void Dispose()

@@ -49,6 +49,7 @@ public sealed unsafe partial class GameEventMovementTrackingSystem : global::Sys
         var handle = NativeMethods.TablePtr->C1.hs_create_5f0a1c8b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

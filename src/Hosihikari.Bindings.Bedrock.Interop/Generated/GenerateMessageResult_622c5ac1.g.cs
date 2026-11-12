@@ -50,6 +50,7 @@ public sealed unsafe partial class GenerateMessageResult : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_ddfc3033((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

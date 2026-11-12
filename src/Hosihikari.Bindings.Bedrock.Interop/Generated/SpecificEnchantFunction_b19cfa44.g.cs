@@ -59,6 +59,7 @@ public sealed unsafe partial class SpecificEnchantFunction : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_ee6af003((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

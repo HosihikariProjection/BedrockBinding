@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptCustomComponentRegistry : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_e327d5d9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

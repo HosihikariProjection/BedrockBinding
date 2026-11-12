@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptBlockLocationIterator : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_ce902d2f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptBlockLocationIterator : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_d8ccd360((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -93,7 +95,12 @@ public sealed unsafe partial class ScriptBlockLocationIterator : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockLocationIterator? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockLocationIterator arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e0139daa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockLocationIterator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockLocationIterator((nint)__hs_handle, false);
     }
 
 

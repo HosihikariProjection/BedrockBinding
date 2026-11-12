@@ -61,6 +61,7 @@ public sealed unsafe partial class AttributeBuff : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_7085c17d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class AttributeBuff : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_c86cbcdb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

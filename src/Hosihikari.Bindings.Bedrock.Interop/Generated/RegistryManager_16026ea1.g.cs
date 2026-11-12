@@ -45,6 +45,7 @@ public sealed unsafe partial class RegistryManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_b9ac2f00();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class RegistryManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_94a37ea6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +83,12 @@ public sealed unsafe partial class RegistryManager : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RegistryManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RegistryManager arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_32e9983f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RegistryManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RegistryManager((nint)__hs_handle, false);
     }
 
     public void Dispose()

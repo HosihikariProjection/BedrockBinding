@@ -88,6 +88,7 @@ public sealed unsafe partial class IRandom : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_1ca3633d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

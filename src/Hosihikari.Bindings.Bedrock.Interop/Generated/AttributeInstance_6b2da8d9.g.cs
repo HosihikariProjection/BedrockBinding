@@ -61,6 +61,7 @@ public sealed unsafe partial class AttributeInstance : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_7c6af516();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

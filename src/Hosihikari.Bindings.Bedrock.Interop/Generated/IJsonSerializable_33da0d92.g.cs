@@ -45,6 +45,7 @@ public sealed unsafe partial class IJsonSerializable : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_5bf90fd6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -59,7 +60,12 @@ public sealed unsafe partial class IJsonSerializable : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? serialize()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_89eb28c9((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle);
     }
 
 

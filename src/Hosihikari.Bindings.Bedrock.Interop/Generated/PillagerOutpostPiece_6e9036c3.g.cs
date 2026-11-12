@@ -65,6 +65,7 @@ public sealed unsafe partial class PillagerOutpostPiece : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_e06e68b5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class PillagerOutpostPiece : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_2dc67173((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

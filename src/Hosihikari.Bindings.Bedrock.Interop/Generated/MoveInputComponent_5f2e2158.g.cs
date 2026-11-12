@@ -45,6 +45,7 @@ public sealed unsafe partial class MoveInputComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_ef05f24d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class IGameplayUserManagerConnector : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_ff697be9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

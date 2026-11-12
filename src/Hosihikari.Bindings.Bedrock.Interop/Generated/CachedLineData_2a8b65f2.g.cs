@@ -45,6 +45,7 @@ public sealed unsafe partial class CachedLineData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_34545ed3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

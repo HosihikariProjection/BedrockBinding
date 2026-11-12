@@ -49,6 +49,7 @@ public sealed unsafe partial class EntityInsideViews : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_cc683803();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class EntityInsideViews : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_b08336b6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

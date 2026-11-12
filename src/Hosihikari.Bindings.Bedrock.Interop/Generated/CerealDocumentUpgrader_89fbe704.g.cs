@@ -45,6 +45,7 @@ public sealed unsafe partial class CerealDocumentUpgrader : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_c312357a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class CerealDocumentUpgrader : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_4b3089c5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +83,12 @@ public sealed unsafe partial class CerealDocumentUpgrader : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.CerealDocumentUpgrader? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealDocumentUpgrader arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_140279eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CerealDocumentUpgrader((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CerealDocumentUpgrader((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

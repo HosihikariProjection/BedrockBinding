@@ -71,6 +71,7 @@ public sealed unsafe partial class OnPlayerDestroyedTrigger : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_d9e045d1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -83,6 +83,7 @@ public sealed unsafe partial class BlockTransformationDescription : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_8ad846fd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

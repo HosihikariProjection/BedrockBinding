@@ -79,6 +79,7 @@ public sealed unsafe partial class RandomFlyingGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_fd731be6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

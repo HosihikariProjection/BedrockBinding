@@ -141,6 +141,7 @@ public sealed unsafe partial class BaseChannel : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_20915dd0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -152,6 +153,7 @@ public sealed unsafe partial class BaseChannel : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_74656dad((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -538,7 +540,12 @@ public sealed unsafe partial class BaseChannel : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BaseChannel? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BaseChannel arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_05c3d0b6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BaseChannel((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BaseChannel((nint)__hs_handle, false);
     }
 
     public nint remote_streams()
@@ -559,25 +566,45 @@ public sealed unsafe partial class BaseChannel : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface? video_media_receive_channel()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_604e29b8((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface? video_media_send_channel()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5f203522((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaReceiveChannelInterface? voice_media_receive_channel()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1b96b45c((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaReceiveChannelInterface((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaSendChannelInterface? voice_media_send_channel()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b51cad28((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaSendChannelInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaSendChannelInterface((nint)__hs_handle, false);
     }
 
 

@@ -59,6 +59,7 @@ public sealed unsafe partial class ScriptRGBA : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_429a1998((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

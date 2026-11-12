@@ -45,6 +45,7 @@ public sealed unsafe partial class FeatureTerrainAdjustments : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_c8f4296d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

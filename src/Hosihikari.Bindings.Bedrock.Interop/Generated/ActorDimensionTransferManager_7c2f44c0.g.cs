@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorDimensionTransferManager : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_d75d66fa();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

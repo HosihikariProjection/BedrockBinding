@@ -303,6 +303,7 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_e132ea2f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -314,6 +315,7 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_274b5beb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -340,14 +342,24 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5b502d06((void*)__hosihikari_shim_handle, (void*)blockType.Handle, (void*)pos.Handle, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertBlockPresent(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType, int x, int y, int z, bool isPresent)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a9d2ed02((void*)__hosihikari_shim_handle, (void*)blockType.Handle, x, y, z, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -358,21 +370,36 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_51be5ff8((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)pos.Handle, expectedReach, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertContainerContains(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_23633379((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)pos.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertContainerEmpty(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0fa2b942((void*)__hosihikari_shim_handle, (void*)pos.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertEntityHasArmor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, int armorSlot, string armorName, int dataValue, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool hasArmor)
@@ -392,7 +419,12 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
             var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f1f63728((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, armorSlot, __hs_stringData2, (nuint)__hs_stringByteCount2, dataValue, (void*)pos.Handle, hasArmor, &__hs_hasValue);
-            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                if (!__hs_hasValue) { return null; }
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
         }
     }
 
@@ -413,7 +445,12 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
             var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3bde7f37((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)pos.Handle, hasComponent, &__hs_hasValue);
-            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                if (!__hs_hasValue) { return null; }
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
         }
     }
 
@@ -421,42 +458,72 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f39943c4((void*)__hosihikari_shim_handle, (void*)(actor?.Handle ?? 0), expectedPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertEntityInstancePresent(global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool expectedPresent)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_bf492012((void*)__hosihikari_shim_handle, (void*)(actor?.Handle ?? 0), (void*)pos.Handle, expectedPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, bool isPresent)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6d26c3a2((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool isPresent)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_14b095a9((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, (void*)pos.Handle, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, float distance, bool isPresent)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_06e34cba((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, (void*)pos.Handle, distance, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, int x, int y, int z, bool isPresent)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_fc791b2a((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, x, y, z, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -467,49 +534,84 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_66399a52((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, (void*)pos.Handle, isTouching, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertIsWaterlogged(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool expectedWaterlogged)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c81dca6a((void*)__hosihikari_shim_handle, (void*)pos.Handle, expectedWaterlogged, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertItemEntityCountIs(global::Hosihikari.Bindings.Bedrock.Interop.Item itemType, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, float searchDistance, int expectedCount)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5637f114((void*)__hosihikari_shim_handle, (void*)itemType.Handle, (void*)pos.Handle, searchDistance, expectedCount, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertItemEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.Item item, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, float searchDistance, bool isPresent)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b9ffa552((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)pos.Handle, searchDistance, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertItemEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.Item item, int x, int y, int z, float searchDistance, bool isPresent)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c83b9c91((void*)__hosihikari_shim_handle, (void*)item.Handle, x, y, z, searchDistance, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertRedstonePower(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int expectedPower)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_00f04467((void*)__hosihikari_shim_handle, (void*)pos.Handle, expectedPower, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? destroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool dropResources)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_df5c0614((void*)__hosihikari_shim_handle, (void*)pos.Handle, dropResources, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -528,7 +630,12 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4769a814((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -541,27 +648,47 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_37152255((void*)__hosihikari_shim_handle, (void*)mob.Handle, jumpAmount, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestHelper? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestHelper arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_40909120((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestHelper((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTestHelper((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? pressButton(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos buttonPos)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3ae69321((void*)__hosihikari_shim_handle, (void*)buttonPos.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? pressButton(int x, int y, int z)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_caf7190b((void*)__hosihikari_shim_handle, x, y, z, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? print(string text)
@@ -581,7 +708,12 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ddb2f670((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
-            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                if (!__hs_hasValue) { return null; }
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
         }
     }
 
@@ -589,21 +721,36 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d29a3960((void*)__hosihikari_shim_handle, (void*)leverPos.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? pullLever(int x, int y, int z)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_14bc4848((void*)__hosihikari_shim_handle, x, y, z, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? pulseRedstone(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int duration)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6ef66867((void*)__hosihikari_shim_handle, (void*)pos.Handle, duration, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, BlockPos>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -623,14 +770,24 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_32de3790((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle, updateFlags, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? setBlock(int x, int y, int z, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int updateFlags)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4a8cfce1((void*)__hosihikari_shim_handle, x, y, z, (void*)block.Handle, updateFlags, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public void setDayTime(int time)
@@ -642,7 +799,12 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8c8aba39((void*)__hosihikari_shim_handle, (void*)pos.Handle, _fluidType, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public void setNight()
@@ -654,7 +816,12 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9d2878b8((void*)__hosihikari_shim_handle, (void*)actor.Handle, fuseLength, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Actor *>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -689,7 +856,12 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_26a2ecc2((void*)__hosihikari_shim_handle, (void*)pos.Handle, fromFace, direction, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public void succeedWhenBlockPresent(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool isPresent)
@@ -759,7 +931,12 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
                 var __hs_handle = NativeMethods.TablePtr->C2.hs_method_bd533a89((void*)__hosihikari_shim_handle, (void*)pos.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_vectorData2, (nuint)(parameters?.Length ?? 0), &__hs_hasValue);
-                return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+                if (__hs_handle == null)
+                {
+                    NativeMethods.GetLastError();
+                    if (!__hs_hasValue) { return null; }
+                }
+                return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
             }
         }
     }
@@ -768,14 +945,24 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b2f51221((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)pos.Handle, speedModifier, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? walkTo(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, float speedModifier)
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_151391c9((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)pos.Handle, speedModifier, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, BlockPos>' requires --link-carrier or --virtual-dispatch.", false)]

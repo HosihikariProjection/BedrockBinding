@@ -55,7 +55,12 @@ public sealed unsafe partial class ScriptActorGameplayHandler
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? _handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHurtEvent actorHurtEvent)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e56120fd((void*)__hosihikari_shim_handle, (void*)actorHurtEvent.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -73,37 +78,67 @@ public sealed unsafe partial class ScriptActorGameplayHandler
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ActorAddEffectEvent actorEffectAddedEvent)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e22c1145((void*)__hosihikari_shim_handle, (void*)actorEffectAddedEvent.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent actorAquireItemEvent)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_60d7de7b((void*)__hosihikari_shim_handle, (void*)actorAquireItemEvent.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent actorHealEvent)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b81c5474((void*)__hosihikari_shim_handle, (void*)actorHealEvent.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHurtEvent actorHurtEvent)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8eaed4a5((void*)__hosihikari_shim_handle, (void*)actorHurtEvent.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.BeforeMountTamingEvent beforeMountTamingEvent)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_94117353((void*)__hosihikari_shim_handle, (void*)beforeMountTamingEvent.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.BeforeTamingEvent beforeTamingEvent)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9c914757((void*)__hosihikari_shim_handle, (void*)beforeTamingEvent.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle);
     }
 
     public int handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ActorRemovedEvent actorRemovedEvent)

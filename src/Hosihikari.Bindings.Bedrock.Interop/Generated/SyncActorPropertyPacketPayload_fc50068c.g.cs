@@ -45,6 +45,7 @@ public sealed unsafe partial class SyncActorPropertyPacketPayload : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_ea1b5781((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

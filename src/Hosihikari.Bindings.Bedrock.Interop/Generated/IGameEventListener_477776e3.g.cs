@@ -49,6 +49,7 @@ public sealed unsafe partial class IGameEventListener : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_7159d0ca((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -63,7 +64,12 @@ public sealed unsafe partial class IGameEventListener : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource? getPositionSource()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9f3abc04((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource((nint)__hs_handle, false);
     }
 
     public uint getRange()

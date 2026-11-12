@@ -57,6 +57,7 @@ public sealed unsafe partial class XoroshiroPositionalRandomFactory : global::Sy
         var handle = NativeMethods.TablePtr->C4.hs_create_d14d7e0e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

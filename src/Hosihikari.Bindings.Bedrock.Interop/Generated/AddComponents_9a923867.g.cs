@@ -45,6 +45,7 @@ public sealed unsafe partial class AddComponents : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_e94b5954((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

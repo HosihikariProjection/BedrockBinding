@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockMovementSlowdownMultiplierComponent : gl
         var handle = NativeMethods.TablePtr->C0.hs_create_f48f9dc9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

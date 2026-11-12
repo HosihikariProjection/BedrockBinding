@@ -49,6 +49,7 @@ public sealed unsafe partial class CerealComponentItemDataLoader : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_259b87a9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class CerealComponentItemDataLoader : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_28fa48b6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

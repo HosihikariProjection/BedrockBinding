@@ -45,6 +45,7 @@ public sealed unsafe partial class CommandRawText : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_70c1aab0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptBiomeSearchOptions : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_bd76473b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

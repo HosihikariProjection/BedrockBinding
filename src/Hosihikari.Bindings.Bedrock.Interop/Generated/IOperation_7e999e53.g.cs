@@ -53,6 +53,7 @@ public sealed unsafe partial class IOperation : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_023e3fa9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,13 +72,23 @@ public sealed unsafe partial class IOperation : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult? _processRedo(nint services)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8e863313((void*)__hosihikari_shim_handle, (void*)services);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult? _processUndo(nint services)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cfde9b10((void*)__hosihikari_shim_handle, (void*)services);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)__hs_handle);
     }
 
     public string getName()

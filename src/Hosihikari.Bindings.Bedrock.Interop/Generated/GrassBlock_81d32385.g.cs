@@ -402,6 +402,7 @@ public sealed unsafe partial class GrassBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_82512c58();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

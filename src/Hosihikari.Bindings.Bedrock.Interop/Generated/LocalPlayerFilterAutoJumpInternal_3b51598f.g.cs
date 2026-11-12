@@ -57,6 +57,7 @@ public sealed unsafe partial class LocalPlayerFilterAutoJumpInternal : global::S
         var handle = NativeMethods.TablePtr->C2.hs_create_0d9bc28d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -57,6 +57,7 @@ public sealed unsafe partial class JigsawStructureBuilder : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_6b998966();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class JigsawStructureBuilder : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_2e6af16a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

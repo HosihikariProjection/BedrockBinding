@@ -53,6 +53,7 @@ public sealed unsafe partial class BiomeManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_2121f18a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

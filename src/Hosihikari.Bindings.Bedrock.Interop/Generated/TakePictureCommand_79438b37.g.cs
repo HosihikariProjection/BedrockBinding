@@ -78,6 +78,7 @@ public sealed unsafe partial class TakePictureCommand : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_f3a2c21c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

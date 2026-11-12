@@ -49,6 +49,7 @@ public sealed unsafe partial class Timer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_69fcb4e7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class Timer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_990d7ef2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

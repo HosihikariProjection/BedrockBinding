@@ -45,6 +45,7 @@ public sealed unsafe partial class AgentCapabilities : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_6746da4e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

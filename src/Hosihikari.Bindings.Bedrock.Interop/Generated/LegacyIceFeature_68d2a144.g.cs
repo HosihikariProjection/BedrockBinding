@@ -81,6 +81,7 @@ public sealed unsafe partial class LegacyIceFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_ec44ed7b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class LegacyIceFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_91bb58db((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

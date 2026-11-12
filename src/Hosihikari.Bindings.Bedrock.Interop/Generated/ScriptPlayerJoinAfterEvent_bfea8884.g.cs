@@ -57,6 +57,7 @@ public sealed unsafe partial class ScriptPlayerJoinAfterEvent : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_a63ab6cf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -104,7 +105,12 @@ public sealed unsafe partial class ScriptPlayerJoinAfterEvent : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerJoinAfterEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerJoinAfterEvent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4d158e1a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerJoinAfterEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerJoinAfterEvent((nint)__hs_handle, false);
     }
 
 

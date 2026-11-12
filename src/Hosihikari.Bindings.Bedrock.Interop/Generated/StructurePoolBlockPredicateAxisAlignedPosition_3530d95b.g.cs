@@ -65,6 +65,7 @@ public sealed unsafe partial class StructurePoolBlockPredicateAxisAlignedPositio
         var handle = NativeMethods.TablePtr->C3.hs_create_8e1d9213((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

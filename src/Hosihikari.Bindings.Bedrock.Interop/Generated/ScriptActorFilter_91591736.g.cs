@@ -57,6 +57,7 @@ public sealed unsafe partial class ScriptActorFilter : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_25c21bb6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

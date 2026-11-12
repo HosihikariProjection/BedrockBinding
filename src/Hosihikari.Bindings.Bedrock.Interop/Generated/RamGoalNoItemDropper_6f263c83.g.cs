@@ -57,6 +57,7 @@ public sealed unsafe partial class RamGoalNoItemDropper : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_8aa8a620((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

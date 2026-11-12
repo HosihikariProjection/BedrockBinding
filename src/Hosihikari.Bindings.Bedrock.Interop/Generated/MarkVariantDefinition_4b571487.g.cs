@@ -45,6 +45,7 @@ public sealed unsafe partial class MarkVariantDefinition : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_fb0913e2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class MarkVariantDefinition : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_58ccda84((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,7 +77,12 @@ public sealed unsafe partial class MarkVariantDefinition : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.MarkVariantDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MarkVariantDefinition arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_45b726d7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MarkVariantDefinition((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MarkVariantDefinition((nint)__hs_handle, false);
     }
 
     public void Dispose()

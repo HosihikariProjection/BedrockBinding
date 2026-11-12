@@ -49,6 +49,7 @@ public sealed unsafe partial class HouseTowerGenerator : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_d5804e8c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

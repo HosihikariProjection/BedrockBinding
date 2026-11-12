@@ -45,6 +45,7 @@ public sealed unsafe partial class QueuedSoundBroadcastPacket : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_8aca046a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -402,6 +402,7 @@ public sealed unsafe partial class SaplingBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_71e032b7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -416,7 +417,12 @@ public sealed unsafe partial class SaplingBlock : global::System.IDisposable
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_443e65bc((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public bool canBeFertilized(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block aboveBlock)

@@ -49,6 +49,7 @@ public sealed unsafe partial class ShooterItemComponentLegacyFactoryData : globa
         var handle = NativeMethods.TablePtr->C3.hs_create_67227272((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

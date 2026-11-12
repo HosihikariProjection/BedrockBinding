@@ -57,6 +57,7 @@ public sealed unsafe partial class LevelChunkBuilderData : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_c70d83d2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

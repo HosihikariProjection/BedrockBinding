@@ -79,6 +79,7 @@ public sealed unsafe partial class SubClientConnectionRequest : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_2f53ca37();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -90,6 +91,7 @@ public sealed unsafe partial class SubClientConnectionRequest : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_054b56b4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class MovementScriptActorComponent : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_bfd2ddfe((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

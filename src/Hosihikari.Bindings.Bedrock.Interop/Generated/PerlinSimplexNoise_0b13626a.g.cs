@@ -55,6 +55,7 @@ public sealed unsafe partial class PerlinSimplexNoise : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_39619adb();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class PerlinSimplexNoise : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_e635907b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,6 +79,7 @@ public sealed unsafe partial class PerlinSimplexNoise : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_bbc773f9(seed, levels);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

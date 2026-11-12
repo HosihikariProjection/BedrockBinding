@@ -43,37 +43,67 @@ public sealed unsafe partial class iterator : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_value_t? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c54476f3((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_value_t((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_value_t((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator? operator_add(long arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a7e9aa84((void*)__hosihikari_shim_handle, arg0);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator? operator_operator___dd22f9d2()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_dd22f9d2((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator? operator_operator___6b9b38a3(int arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6b9b38a3((void*)__hosihikari_shim_handle, arg0);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator? operator_operator___8d7313a1(long arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8d7313a1((void*)__hosihikari_shim_handle, arg0);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator? operator_subtract(long arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4e61766f((void*)__hosihikari_shim_handle, arg0);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle);
     }
 
     public long operator_subtract(global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator arg0)
@@ -84,19 +114,34 @@ public sealed unsafe partial class iterator : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator? operator_operator___784cc2ad()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_784cc2ad((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator? operator_operator___48a0342d(int arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_48a0342d((void*)__hosihikari_shim_handle, arg0);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator? operator_operator___b6276ed8(long arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b6276ed8((void*)__hosihikari_shim_handle, arg0);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]

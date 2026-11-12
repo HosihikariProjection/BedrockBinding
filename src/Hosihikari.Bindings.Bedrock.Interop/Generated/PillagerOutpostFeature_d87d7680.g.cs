@@ -85,6 +85,7 @@ public sealed unsafe partial class PillagerOutpostFeature : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_c57a212f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class PillagerOutpostFeature : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_1e1185ac((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -107,6 +109,7 @@ public sealed unsafe partial class PillagerOutpostFeature : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_4f52ebb2(seed);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

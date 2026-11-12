@@ -49,6 +49,7 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_b046fd48();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_3a4f4000((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -73,6 +73,7 @@ public sealed unsafe partial class GeometryComponent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_9944c761((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

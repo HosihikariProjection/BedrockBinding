@@ -79,7 +79,12 @@ public sealed unsafe partial class NodeData : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder_Nested.NodeData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder_Nested.NodeData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8dcdd5c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder_Nested.NodeData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder_Nested.NodeData((nint)__hs_handle, false);
     }
 
 

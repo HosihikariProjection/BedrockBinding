@@ -53,6 +53,7 @@ public sealed unsafe partial class LevelBlockDestroyerProxy : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_0be301ea((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

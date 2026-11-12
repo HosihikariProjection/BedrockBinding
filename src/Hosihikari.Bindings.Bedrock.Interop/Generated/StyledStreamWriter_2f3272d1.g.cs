@@ -53,6 +53,7 @@ public sealed unsafe partial class StyledStreamWriter : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_a54b045a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class StyledStreamWriter : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_072b5665((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

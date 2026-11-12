@@ -45,6 +45,7 @@ public sealed unsafe partial class NavigateToPositionsIntent : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_890b31db((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

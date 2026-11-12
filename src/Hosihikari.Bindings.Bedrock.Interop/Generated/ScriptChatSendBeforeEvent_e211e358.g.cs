@@ -63,6 +63,7 @@ public sealed unsafe partial class ScriptChatSendBeforeEvent : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_3d8c57c4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

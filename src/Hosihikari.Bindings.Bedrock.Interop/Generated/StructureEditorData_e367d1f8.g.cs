@@ -121,7 +121,12 @@ public sealed unsafe partial class StructureEditorData : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureEditorData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructureEditorData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a3b0ad2f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureEditorData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureEditorData((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

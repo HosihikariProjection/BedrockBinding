@@ -57,6 +57,7 @@ public sealed unsafe partial class SHStraight : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_9af2b322((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

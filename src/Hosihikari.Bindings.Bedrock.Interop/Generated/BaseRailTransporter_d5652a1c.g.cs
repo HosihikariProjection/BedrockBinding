@@ -157,6 +157,7 @@ public sealed unsafe partial class BaseRailTransporter : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_52cf271b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -61,6 +61,7 @@ public sealed unsafe partial class ParticleOnHitSubcomponent : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_60f3a8d8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

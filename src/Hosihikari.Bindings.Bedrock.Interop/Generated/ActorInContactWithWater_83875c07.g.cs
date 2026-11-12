@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorInContactWithWater : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_00c95121((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

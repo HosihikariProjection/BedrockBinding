@@ -51,7 +51,12 @@ public sealed unsafe partial class ValueOrRef_const_TripWireTripEvent_ : global:
     public global::Hosihikari.Bindings.Bedrock.Interop.TripWireTripEvent? value()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_24632efd((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TripWireTripEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TripWireTripEvent((nint)__hs_handle, false);
     }
 
 

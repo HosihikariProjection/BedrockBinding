@@ -49,6 +49,7 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_2952969c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

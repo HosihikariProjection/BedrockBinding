@@ -140,6 +140,7 @@ public sealed unsafe partial class PlayerUIContainerModelBase : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_49fdad7b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -151,6 +152,7 @@ public sealed unsafe partial class PlayerUIContainerModelBase : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_023edf72((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -160,7 +162,12 @@ public sealed unsafe partial class PlayerUIContainerModelBase : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? _getContainer()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_85a2967c((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public int _getContainerOffset()
@@ -181,7 +188,12 @@ public sealed unsafe partial class PlayerUIContainerModelBase : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef? getContainerWeakRef()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ca6da512((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)__hs_handle);
     }
 
     public bool isValid()
@@ -198,7 +210,12 @@ public sealed unsafe partial class PlayerUIContainerModelBase : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerUIContainerModelBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerUIContainerModelBase arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_68cdd57e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerUIContainerModelBase((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerUIContainerModelBase((nint)__hs_handle, false);
     }
 
     public void postInit()

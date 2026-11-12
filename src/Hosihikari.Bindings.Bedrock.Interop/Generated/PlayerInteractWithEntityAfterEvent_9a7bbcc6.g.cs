@@ -50,6 +50,7 @@ public sealed unsafe partial class PlayerInteractWithEntityAfterEvent : global::
         var handle = NativeMethods.TablePtr->C2.hs_create_b0a09ff1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

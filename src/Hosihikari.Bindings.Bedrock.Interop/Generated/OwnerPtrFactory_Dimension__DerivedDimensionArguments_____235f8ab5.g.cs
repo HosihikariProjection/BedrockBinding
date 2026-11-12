@@ -45,6 +45,7 @@ public sealed unsafe partial class OwnerPtrFactory_Dimension__DerivedDimensionAr
         var handle = NativeMethods.TablePtr->C2.hs_create_001f9b80((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

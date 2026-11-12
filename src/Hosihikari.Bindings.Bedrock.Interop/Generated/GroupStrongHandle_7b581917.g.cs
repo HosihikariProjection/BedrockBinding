@@ -45,6 +45,7 @@ public sealed unsafe partial class GroupStrongHandle : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_600ae7e1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

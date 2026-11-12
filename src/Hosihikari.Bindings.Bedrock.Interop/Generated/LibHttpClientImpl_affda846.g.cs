@@ -77,6 +77,7 @@ public sealed unsafe partial class LibHttpClientImpl : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_ceaa75d1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

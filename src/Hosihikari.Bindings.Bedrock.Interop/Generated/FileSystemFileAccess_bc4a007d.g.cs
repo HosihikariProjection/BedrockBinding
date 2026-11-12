@@ -87,6 +87,7 @@ public sealed unsafe partial class FileSystemFileAccess : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_9cec308f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class FileSystemFileAccess : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_83a85897((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -145,13 +147,23 @@ public sealed unsafe partial class FileSystemFileAccess : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.IFileReadAccess? getReadInterface()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ceced8a9((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IFileReadAccess((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IFileReadAccess((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IFileWriteAccess? getWriteInterface()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4f1fea59((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IFileWriteAccess((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IFileWriteAccess((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -175,7 +187,12 @@ public sealed unsafe partial class FileSystemFileAccess : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_906361f0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FileSystemFileAccess((nint)__hs_handle, false);
     }
 
     public void unload()

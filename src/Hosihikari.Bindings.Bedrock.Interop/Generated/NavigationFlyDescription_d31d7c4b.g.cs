@@ -175,6 +175,7 @@ public sealed unsafe partial class NavigationFlyDescription : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_0741462b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class SemVersionBase_Bedrock__StaticOptimizedString
         var handle = NativeMethods.TablePtr->C3.hs_create_cafbfae3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class SemVersionBase_Bedrock__StaticOptimizedString
         var handle = NativeMethods.TablePtr->C3.hs_create_9e7ddeba((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class SemVersionBase_Bedrock__StaticOptimizedString
         var handle = NativeMethods.TablePtr->C3.hs_create_8b76034a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class SemVersionBase_Bedrock__StaticOptimizedString
         var handle = NativeMethods.TablePtr->C3.hs_create_d863f8f3(major, minor, patch, (void*)preRelease.Handle, (void*)buildMeta.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptMessagePacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_0d0a521c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptMessagePacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_a991cd82((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

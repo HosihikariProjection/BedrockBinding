@@ -65,6 +65,7 @@ public sealed unsafe partial class ContainerScreenValidatorBase : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_6d00e34f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

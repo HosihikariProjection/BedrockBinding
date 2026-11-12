@@ -53,6 +53,7 @@ public sealed unsafe partial class NBBridgeEndFiller : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_785103df((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

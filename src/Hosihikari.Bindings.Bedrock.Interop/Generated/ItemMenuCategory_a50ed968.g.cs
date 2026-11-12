@@ -45,6 +45,7 @@ public sealed unsafe partial class ItemMenuCategory : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_415c6ae4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

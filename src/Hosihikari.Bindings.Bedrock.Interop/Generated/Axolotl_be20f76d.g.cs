@@ -605,7 +605,12 @@ public sealed unsafe partial class Axolotl : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB? _getAdjustedAABBForSpawnCheck(global::Hosihikari.Bindings.Bedrock.Interop.AABB aabb, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 mobPos)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b343bb26((void*)__hosihikari_shim_handle, (void*)aabb.Handle, (void*)mobPos.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle);
     }
 
     public float _getWalkTargetValue(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

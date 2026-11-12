@@ -66,13 +66,23 @@ public sealed unsafe partial class VectorBase_BoundingBox__BlockPos__BlockPos_ :
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? operator_index_8c046d8f(ulong index)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8c046d8f((void*)__hosihikari_shim_handle, index);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? operator_index_9c879284(ulong index)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_9c879284((void*)__hosihikari_shim_handle, index);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: consteval methods cannot be called at runtime.", false)]

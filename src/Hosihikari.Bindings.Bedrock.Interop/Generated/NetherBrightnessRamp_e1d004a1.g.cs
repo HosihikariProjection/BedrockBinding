@@ -56,6 +56,7 @@ public sealed unsafe partial class NetherBrightnessRamp : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_1084cf1f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

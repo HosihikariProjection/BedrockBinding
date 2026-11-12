@@ -45,6 +45,7 @@ public sealed unsafe partial class BaseGameVersionComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_5b64a259((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

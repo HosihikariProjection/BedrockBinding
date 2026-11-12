@@ -63,6 +63,7 @@ public sealed unsafe partial class LegacyEventItemComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_689f5893();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +79,7 @@ public sealed unsafe partial class LegacyEventItemComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_c51c72ec((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

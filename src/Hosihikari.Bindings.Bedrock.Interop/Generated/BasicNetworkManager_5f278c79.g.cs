@@ -85,6 +85,7 @@ public sealed unsafe partial class BasicNetworkManager : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_6e0a7cb5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class BasicNetworkManager : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_86944925((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -221,7 +223,12 @@ public sealed unsafe partial class BasicNetworkManager : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BasicNetworkManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BasicNetworkManager arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6cd83e55((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BasicNetworkManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.BasicNetworkManager((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::NetworkMask' is not supported.", false)]

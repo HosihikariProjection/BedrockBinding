@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptItemCustomComponentReloadVersionError :
         var handle = NativeMethods.TablePtr->C3.hs_create_52e8f19f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

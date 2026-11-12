@@ -603,6 +603,7 @@ public sealed unsafe partial class Bee : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_9c37efd9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

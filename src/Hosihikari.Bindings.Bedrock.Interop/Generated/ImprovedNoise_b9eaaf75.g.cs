@@ -45,6 +45,7 @@ public sealed unsafe partial class ImprovedNoise : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d289fb9f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

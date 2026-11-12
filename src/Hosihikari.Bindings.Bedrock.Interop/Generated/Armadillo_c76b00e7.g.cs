@@ -603,6 +603,7 @@ public sealed unsafe partial class Armadillo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_adca5796();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

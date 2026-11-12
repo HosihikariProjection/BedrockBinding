@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorEventPacketPayload : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_1a23b36b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

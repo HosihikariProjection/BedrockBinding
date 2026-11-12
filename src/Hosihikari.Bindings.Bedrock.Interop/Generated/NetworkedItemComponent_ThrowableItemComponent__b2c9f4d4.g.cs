@@ -51,6 +51,7 @@ public sealed unsafe partial class NetworkedItemComponent_ThrowableItemComponent
         var handle = NativeMethods.TablePtr->C2.hs_create_627516ee((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -73,6 +73,7 @@ public sealed unsafe partial class BlastFurnaceBlockActor : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_af2f5c52();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,6 +85,7 @@ public sealed unsafe partial class BlastFurnaceBlockActor : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_5e68d60c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

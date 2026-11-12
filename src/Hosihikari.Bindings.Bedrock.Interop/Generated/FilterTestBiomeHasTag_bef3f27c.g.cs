@@ -75,6 +75,7 @@ public sealed unsafe partial class FilterTestBiomeHasTag : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_4e815de8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ICerealDefinitionSerializer : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_7eb6054c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ICerealDefinitionSerializer : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_70794892((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class ICerealDefinitionSerializer : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.ICerealDefinitionSerializer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ICerealDefinitionSerializer arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d211e972((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ICerealDefinitionSerializer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ICerealDefinitionSerializer((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? serializeDefinitionInstance(nint arg0, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion arg1, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx arg2)

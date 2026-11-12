@@ -57,6 +57,7 @@ public sealed unsafe partial class ScreenHandlerBase : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_41da7a51();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class ScreenHandlerBase : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_b53f7ed0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -98,7 +100,12 @@ public sealed unsafe partial class ScreenHandlerBase : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.ScreenHandlerBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScreenHandlerBase arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2feb29e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScreenHandlerBase((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScreenHandlerBase((nint)__hs_handle, false);
     }
 
     public void postRequest(bool wasSuccess)

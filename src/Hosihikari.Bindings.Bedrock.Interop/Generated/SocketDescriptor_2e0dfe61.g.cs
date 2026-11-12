@@ -45,6 +45,7 @@ public sealed unsafe partial class SocketDescriptor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_bbb78dd2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class SocketDescriptor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_ab9387b7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -107,7 +109,12 @@ public sealed unsafe partial class SocketDescriptor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1f7c22e4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor((nint)__hs_handle, false);
     }
 
     public void Dispose()

@@ -183,6 +183,7 @@ public sealed unsafe partial class UnderwaterCaveFeature : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_90ecd2b0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

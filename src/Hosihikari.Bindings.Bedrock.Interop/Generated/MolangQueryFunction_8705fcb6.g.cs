@@ -45,6 +45,7 @@ public sealed unsafe partial class MolangQueryFunction : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_f155a91a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

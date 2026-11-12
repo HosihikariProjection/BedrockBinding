@@ -45,6 +45,7 @@ public sealed unsafe partial class CommonResourceDefinitionMap : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_0f3273b5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

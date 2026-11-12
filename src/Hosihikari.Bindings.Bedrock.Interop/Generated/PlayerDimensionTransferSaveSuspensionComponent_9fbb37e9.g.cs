@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerDimensionTransferSaveSuspensionComponen
         var handle = NativeMethods.TablePtr->C2.hs_create_9d12dd9e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

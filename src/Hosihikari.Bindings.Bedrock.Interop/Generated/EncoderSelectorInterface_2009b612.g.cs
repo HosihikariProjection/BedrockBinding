@@ -45,6 +45,7 @@ public sealed unsafe partial class EncoderSelectorInterface : global::System.IDi
         var handle = NativeMethods.TablePtr->C4.hs_create_0acf44c3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

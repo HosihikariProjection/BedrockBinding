@@ -85,6 +85,7 @@ public sealed unsafe partial class RakTcpProxy : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_1cbe7a37();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class RakTcpProxy : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_8fd61b86((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -123,7 +125,12 @@ public sealed unsafe partial class RakTcpProxy : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c3854b5d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, port);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle);
         }
     }
 
@@ -141,19 +148,34 @@ public sealed unsafe partial class RakTcpProxy : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress? nextCompletedConnectionAttempt()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4c777a18((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress? nextFailedConnectionAttempt()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6da5176e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress? nextLostConnection()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d6d655eb((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)__hs_handle);
     }
 
     public nint nextPacket()
@@ -164,7 +186,12 @@ public sealed unsafe partial class RakTcpProxy : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RakTcpProxy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakTcpProxy arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e5ce5a97((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakTcpProxy((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakTcpProxy((nint)__hs_handle, false);
     }
 
     public bool packetsAvailable()

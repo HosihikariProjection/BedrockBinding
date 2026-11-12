@@ -61,6 +61,7 @@ public sealed unsafe partial class ImpactDamageSubcomponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_780ad184((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

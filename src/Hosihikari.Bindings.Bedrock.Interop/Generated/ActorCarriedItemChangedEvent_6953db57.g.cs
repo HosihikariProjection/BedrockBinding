@@ -49,6 +49,7 @@ public sealed unsafe partial class ActorCarriedItemChangedEvent : global::System
         var handle = NativeMethods.TablePtr->C0.hs_create_f825d3d1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

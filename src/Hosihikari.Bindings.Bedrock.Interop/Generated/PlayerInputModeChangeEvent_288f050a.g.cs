@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerInputModeChangeEvent : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_ca633d63((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

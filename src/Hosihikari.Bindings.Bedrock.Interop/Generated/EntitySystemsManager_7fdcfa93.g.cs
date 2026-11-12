@@ -49,6 +49,7 @@ public sealed unsafe partial class EntitySystemsManager : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_e5553db4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

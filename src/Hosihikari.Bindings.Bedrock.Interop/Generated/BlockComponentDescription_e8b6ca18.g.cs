@@ -99,6 +99,7 @@ public sealed unsafe partial class BlockComponentDescription : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_7919c631((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

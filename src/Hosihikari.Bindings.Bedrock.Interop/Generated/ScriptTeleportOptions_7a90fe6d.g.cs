@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptTeleportOptions : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_7ec6ce69((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

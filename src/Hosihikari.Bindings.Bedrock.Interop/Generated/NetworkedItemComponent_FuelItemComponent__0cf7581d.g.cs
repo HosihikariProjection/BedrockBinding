@@ -51,6 +51,7 @@ public sealed unsafe partial class NetworkedItemComponent_FuelItemComponent_ : g
         var handle = NativeMethods.TablePtr->C2.hs_create_dd95a333((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

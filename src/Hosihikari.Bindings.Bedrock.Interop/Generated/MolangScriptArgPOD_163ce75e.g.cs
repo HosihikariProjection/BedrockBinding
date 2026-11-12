@@ -45,6 +45,7 @@ public sealed unsafe partial class MolangScriptArgPOD : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_55b0373b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class MolangScriptArgPOD : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_a3b3a16e((void*)val.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class MolangScriptArgPOD : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_e1120d28((void*)val.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class MolangScriptArgPOD : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_4c5333fe((void*)val.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -89,6 +93,7 @@ public sealed unsafe partial class MolangScriptArgPOD : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_23ff407d((void*)(val?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -100,6 +105,7 @@ public sealed unsafe partial class MolangScriptArgPOD : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_74bf4c64((void*)(val?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -111,6 +117,7 @@ public sealed unsafe partial class MolangScriptArgPOD : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_bbda53a0(val);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -122,6 +129,7 @@ public sealed unsafe partial class MolangScriptArgPOD : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_3679e556(val);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -184,7 +192,12 @@ public sealed unsafe partial class MolangScriptArgPOD : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArgPOD? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArgPOD other)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_52d82156((void*)__hosihikari_shim_handle, (void*)other.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArgPOD((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArgPOD((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArgPOD rhs)

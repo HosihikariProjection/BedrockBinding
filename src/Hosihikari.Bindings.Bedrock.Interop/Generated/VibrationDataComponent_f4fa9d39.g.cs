@@ -45,6 +45,7 @@ public sealed unsafe partial class VibrationDataComponent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_88ee5d35((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -121,6 +121,7 @@ public sealed unsafe partial class InstantaneousAttributeBuff : global::System.I
         var handle = NativeMethods.TablePtr->C1.hs_create_5dffb294((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

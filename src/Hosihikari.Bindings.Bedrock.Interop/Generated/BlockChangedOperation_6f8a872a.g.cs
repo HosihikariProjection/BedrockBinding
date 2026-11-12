@@ -69,6 +69,7 @@ public sealed unsafe partial class BlockChangedOperation : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_cb3db076();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,6 +81,7 @@ public sealed unsafe partial class BlockChangedOperation : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_5e54c503((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -114,13 +116,23 @@ public sealed unsafe partial class BlockChangedOperation : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult? _processRedo(nint services)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e1871beb((void*)__hosihikari_shim_handle, (void*)services);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult? _processUndo(nint services)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c621d5e9((void*)__hosihikari_shim_handle, (void*)services);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -182,7 +194,12 @@ public sealed unsafe partial class BlockChangedOperation : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.BlockChangedOperation? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.BlockChangedOperation arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ad7a745d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.BlockChangedOperation((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.BlockChangedOperation((nint)__hs_handle, false);
     }
 
 

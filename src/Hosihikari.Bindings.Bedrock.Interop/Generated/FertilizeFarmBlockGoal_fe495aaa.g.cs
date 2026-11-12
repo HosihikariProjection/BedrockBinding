@@ -213,6 +213,7 @@ public sealed unsafe partial class FertilizeFarmBlockGoal : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_7ab38b75();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -228,6 +229,7 @@ public sealed unsafe partial class FertilizeFarmBlockGoal : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_daabc9b5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

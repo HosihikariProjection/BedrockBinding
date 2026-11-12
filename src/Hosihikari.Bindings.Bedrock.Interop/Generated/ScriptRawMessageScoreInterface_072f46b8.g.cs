@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptRawMessageScoreInterface : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_82b800ac((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

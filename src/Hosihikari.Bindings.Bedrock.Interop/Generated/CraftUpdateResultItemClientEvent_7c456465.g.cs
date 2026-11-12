@@ -45,6 +45,7 @@ public sealed unsafe partial class CraftUpdateResultItemClientEvent : global::Sy
         var handle = NativeMethods.TablePtr->C1.hs_create_795bed9f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -749,6 +749,7 @@ public sealed unsafe partial class Spider : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_df62655c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

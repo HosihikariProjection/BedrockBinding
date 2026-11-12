@@ -45,6 +45,7 @@ public sealed unsafe partial class IPositionalRandomFactory : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_382f0d97((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

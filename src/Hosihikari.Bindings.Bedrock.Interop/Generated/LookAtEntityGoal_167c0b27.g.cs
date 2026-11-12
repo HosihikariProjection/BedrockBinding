@@ -123,6 +123,7 @@ public sealed unsafe partial class LookAtEntityGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f72dcba4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

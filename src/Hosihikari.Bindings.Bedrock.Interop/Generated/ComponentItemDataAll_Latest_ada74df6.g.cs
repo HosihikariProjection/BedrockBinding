@@ -49,6 +49,7 @@ public sealed unsafe partial class ComponentItemDataAll_Latest : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_b85a0a43();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ComponentItemDataAll_Latest : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_559db69a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

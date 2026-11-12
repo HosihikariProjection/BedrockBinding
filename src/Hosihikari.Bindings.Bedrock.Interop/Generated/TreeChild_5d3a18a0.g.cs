@@ -45,6 +45,7 @@ public sealed unsafe partial class TreeChild : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_2b9c89bf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class TreeChild : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_65ce191b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class TreeChild : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreasTree_Nested.TreeChild? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreasTree_Nested.TreeChild arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5affe06d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreasTree_Nested.TreeChild((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreasTree_Nested.TreeChild((nint)__hs_handle, false);
     }
 
     public void Dispose()

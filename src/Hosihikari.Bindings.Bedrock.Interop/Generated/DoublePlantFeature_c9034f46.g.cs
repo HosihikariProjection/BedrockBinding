@@ -49,6 +49,7 @@ public sealed unsafe partial class DoublePlantFeature : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_0a0bbfd5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

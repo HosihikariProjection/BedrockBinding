@@ -63,6 +63,7 @@ public sealed unsafe partial class ItemCompleteUseEvent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_87a059ab((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -105,6 +105,7 @@ public sealed unsafe partial class FleeSunGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_135d758e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -61,6 +61,7 @@ public sealed unsafe partial class LookAtBlockDefinition : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_a24fad57((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

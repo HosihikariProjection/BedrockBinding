@@ -67,6 +67,7 @@ public sealed unsafe partial class SetOminousBottleFunction : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_df37a821((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

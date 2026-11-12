@@ -124,6 +124,7 @@ public sealed unsafe partial class MobSpawnerBlockActor : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_81d5a068();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

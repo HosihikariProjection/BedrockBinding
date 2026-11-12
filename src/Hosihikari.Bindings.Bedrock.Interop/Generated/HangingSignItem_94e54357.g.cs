@@ -60,7 +60,12 @@ public sealed unsafe partial class HangingSignItem : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlockToPlace(byte face, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_bea3de35((void*)__hosihikari_shim_handle, face, (void*)entity.Handle, (void*)pos.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
 

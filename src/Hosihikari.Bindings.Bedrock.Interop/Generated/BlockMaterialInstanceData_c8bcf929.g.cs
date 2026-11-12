@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockMaterialInstanceData : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_648e6c87((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

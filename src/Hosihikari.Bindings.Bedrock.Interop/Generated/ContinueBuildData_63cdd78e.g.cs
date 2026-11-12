@@ -45,6 +45,7 @@ public sealed unsafe partial class ContinueBuildData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_0d2bf65f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

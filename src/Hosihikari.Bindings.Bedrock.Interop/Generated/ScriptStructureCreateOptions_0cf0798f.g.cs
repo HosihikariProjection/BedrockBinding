@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptStructureCreateOptions : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_2ae268a6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class FeatureArea : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_6c6b0610((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

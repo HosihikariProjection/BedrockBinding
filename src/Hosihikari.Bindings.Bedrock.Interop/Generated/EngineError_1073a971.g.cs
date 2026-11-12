@@ -91,6 +91,7 @@ public sealed unsafe partial class EngineError : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_e151233d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class EngineError : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3e8e8db1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

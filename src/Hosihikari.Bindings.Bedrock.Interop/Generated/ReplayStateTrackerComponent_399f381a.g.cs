@@ -45,6 +45,7 @@ public sealed unsafe partial class ReplayStateTrackerComponent : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_a804de00((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

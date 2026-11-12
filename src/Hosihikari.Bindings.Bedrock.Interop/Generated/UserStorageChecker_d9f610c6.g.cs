@@ -45,6 +45,7 @@ public sealed unsafe partial class UserStorageChecker : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_5e3e8fc4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class UserStorageChecker : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_30ec6fb9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class UserStorageChecker : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.UserStorageChecker? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.UserStorageChecker arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0532129f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.UserStorageChecker((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.UserStorageChecker((nint)__hs_handle, false);
     }
 
     public void Dispose()

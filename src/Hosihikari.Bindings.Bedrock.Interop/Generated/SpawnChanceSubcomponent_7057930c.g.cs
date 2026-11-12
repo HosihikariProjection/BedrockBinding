@@ -61,6 +61,7 @@ public sealed unsafe partial class SpawnChanceSubcomponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_287da08e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class MemoryMappedFileWriteAccess : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_037b7581((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

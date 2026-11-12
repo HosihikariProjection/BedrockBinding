@@ -49,6 +49,7 @@ public sealed unsafe partial class GameEventDynamicRegistration : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_b42136cb();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class GameEventDynamicRegistration : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_c3c5d613((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class AttributeCollection : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_73228e9c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

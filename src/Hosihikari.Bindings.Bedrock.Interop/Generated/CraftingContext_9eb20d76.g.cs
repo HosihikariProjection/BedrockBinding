@@ -55,6 +55,7 @@ public sealed unsafe partial class CraftingContext : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_4f205694();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class CraftingContext : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d7802167(level?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ConditionalSound : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_0e3832fa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -169,6 +169,7 @@ public sealed unsafe partial class ProducerComponent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_71bbe766((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

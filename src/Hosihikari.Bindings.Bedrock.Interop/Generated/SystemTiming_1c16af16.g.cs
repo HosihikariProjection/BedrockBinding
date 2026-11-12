@@ -45,6 +45,7 @@ public sealed unsafe partial class SystemTiming : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_8e8dab3c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

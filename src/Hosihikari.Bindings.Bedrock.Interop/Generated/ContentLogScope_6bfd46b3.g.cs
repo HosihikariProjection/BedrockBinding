@@ -57,6 +57,7 @@ public sealed unsafe partial class ContentLogScope : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_b42473d1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class ContentLogScope : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d4616acd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -61,6 +61,7 @@ public sealed unsafe partial class SpawnLootEventResponse : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_2b3c4087((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

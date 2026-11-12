@@ -57,6 +57,7 @@ public sealed unsafe partial class MineshaftCrossing : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_0cb8fc85((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

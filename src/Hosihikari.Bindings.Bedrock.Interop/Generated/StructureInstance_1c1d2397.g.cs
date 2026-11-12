@@ -45,6 +45,7 @@ public sealed unsafe partial class StructureInstance : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_a2364a00((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

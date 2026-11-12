@@ -65,6 +65,7 @@ public sealed unsafe partial class StyledWriter : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_bd6dbeda((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

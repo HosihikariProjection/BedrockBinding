@@ -45,6 +45,7 @@ public sealed unsafe partial class CachedMessageData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_d0cf2f6b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

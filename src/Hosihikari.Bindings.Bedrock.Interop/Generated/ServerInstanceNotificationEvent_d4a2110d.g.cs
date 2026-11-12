@@ -45,6 +45,7 @@ public sealed unsafe partial class ServerInstanceNotificationEvent : global::Sys
         var handle = NativeMethods.TablePtr->C3.hs_create_e9b1579d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

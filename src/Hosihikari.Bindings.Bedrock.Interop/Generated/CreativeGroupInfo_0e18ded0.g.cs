@@ -55,6 +55,7 @@ public sealed unsafe partial class CreativeGroupInfo : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_36a6f4d9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

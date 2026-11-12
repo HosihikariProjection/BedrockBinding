@@ -55,6 +55,7 @@ public sealed unsafe partial class ShulkerBoxContainerScreenValidator : global::
         var handle = NativeMethods.TablePtr->C3.hs_create_dd59ee62((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

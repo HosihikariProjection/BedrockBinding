@@ -45,6 +45,7 @@ public sealed unsafe partial class ChunkKey : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_4b2fb43b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

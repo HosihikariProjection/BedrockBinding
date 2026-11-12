@@ -49,6 +49,7 @@ public sealed unsafe partial class PlayerInputTick : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_b837b199();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -51,7 +51,12 @@ public sealed unsafe partial class ValueOrRef_const_WorldClockRestartEvent_ : gl
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldClockRestartEvent? value()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9f3c1b12((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldClockRestartEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldClockRestartEvent((nint)__hs_handle, false);
     }
 
 

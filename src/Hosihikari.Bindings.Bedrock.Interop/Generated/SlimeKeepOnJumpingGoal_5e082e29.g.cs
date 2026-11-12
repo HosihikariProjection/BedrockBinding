@@ -79,6 +79,7 @@ public sealed unsafe partial class SlimeKeepOnJumpingGoal : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_35f00ee2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -90,6 +91,7 @@ public sealed unsafe partial class SlimeKeepOnJumpingGoal : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_b6b10a7c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -136,7 +138,12 @@ public sealed unsafe partial class SlimeKeepOnJumpingGoal : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c5999a63((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal((nint)__hs_handle, false);
     }
 
     public void tick()

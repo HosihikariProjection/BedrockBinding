@@ -45,6 +45,7 @@ public sealed unsafe partial class OnActorLeaveVolumeDefinition : global::System
         var handle = NativeMethods.TablePtr->C2.hs_create_8eb9420d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class OnActorLeaveVolumeDefinition : global::System
         var handle = NativeMethods.TablePtr->C2.hs_create_4fee66cd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class OnActorLeaveVolumeDefinition : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.OnActorLeaveVolumeDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OnActorLeaveVolumeDefinition arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_37a5302e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OnActorLeaveVolumeDefinition((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.OnActorLeaveVolumeDefinition((nint)__hs_handle, false);
     }
 
     public void Dispose()

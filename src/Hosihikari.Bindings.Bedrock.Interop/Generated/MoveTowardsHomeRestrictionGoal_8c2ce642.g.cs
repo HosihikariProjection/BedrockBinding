@@ -75,6 +75,7 @@ public sealed unsafe partial class MoveTowardsHomeRestrictionGoal : global::Syst
         var handle = NativeMethods.TablePtr->C2.hs_create_f55a4482((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

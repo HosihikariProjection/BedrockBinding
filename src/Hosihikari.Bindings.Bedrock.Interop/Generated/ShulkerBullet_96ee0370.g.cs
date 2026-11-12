@@ -623,6 +623,7 @@ public sealed unsafe partial class ShulkerBullet : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_5075dc8c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -641,7 +642,12 @@ public sealed unsafe partial class ShulkerBullet : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getSourceUniqueID()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f65cf857((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle);
     }
 
     public bool isOnFire()

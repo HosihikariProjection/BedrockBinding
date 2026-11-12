@@ -45,6 +45,7 @@ public sealed unsafe partial class TickDataSet : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_00e7dac3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

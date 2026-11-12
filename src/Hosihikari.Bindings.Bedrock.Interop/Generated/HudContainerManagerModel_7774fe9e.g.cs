@@ -149,6 +149,7 @@ public sealed unsafe partial class HudContainerManagerModel : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_57089f21();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -164,6 +165,7 @@ public sealed unsafe partial class HudContainerManagerModel : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_e45b2f0d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -173,7 +175,12 @@ public sealed unsafe partial class HudContainerManagerModel : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext? _postInit()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_bec04938((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle);
     }
 
     public void broadcastChanges()
@@ -188,7 +195,12 @@ public sealed unsafe partial class HudContainerManagerModel : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getSlot(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6daee41b((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

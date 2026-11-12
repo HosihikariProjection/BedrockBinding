@@ -78,6 +78,7 @@ public sealed unsafe partial class ItemUseOnActorInventoryTransaction : global::
         var handle = NativeMethods.TablePtr->C1.hs_create_c9b8e8d4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -89,6 +90,7 @@ public sealed unsafe partial class ItemUseOnActorInventoryTransaction : global::
         var handle = NativeMethods.TablePtr->C1.hs_create_436f643f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

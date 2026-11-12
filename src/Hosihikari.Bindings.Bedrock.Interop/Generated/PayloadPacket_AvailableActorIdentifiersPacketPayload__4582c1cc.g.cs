@@ -92,6 +92,7 @@ public sealed unsafe partial class PayloadPacket_AvailableActorIdentifiersPacket
         var handle = NativeMethods.TablePtr->C4.hs_create_cb2ac54f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

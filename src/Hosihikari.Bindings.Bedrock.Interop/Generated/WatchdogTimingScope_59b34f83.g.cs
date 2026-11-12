@@ -45,6 +45,7 @@ public sealed unsafe partial class WatchdogTimingScope : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_b9d5a3d8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class WatchdogTimingScope : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_8944994b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class WatchdogTimingScope : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.WatchdogTimingScope? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.WatchdogTimingScope arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cd3c3be0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.WatchdogTimingScope((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.WatchdogTimingScope((nint)__hs_handle, false);
     }
 
     public void Dispose()

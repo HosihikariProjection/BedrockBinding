@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorIsPersistentTest : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_2073ab96((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

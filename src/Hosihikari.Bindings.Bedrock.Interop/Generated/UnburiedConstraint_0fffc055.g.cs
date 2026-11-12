@@ -53,6 +53,7 @@ public sealed unsafe partial class UnburiedConstraint : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_67c59912();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class UnburiedConstraint : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_db584fc4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

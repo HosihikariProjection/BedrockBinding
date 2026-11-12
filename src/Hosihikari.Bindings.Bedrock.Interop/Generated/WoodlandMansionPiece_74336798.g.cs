@@ -113,6 +113,7 @@ public sealed unsafe partial class WoodlandMansionPiece : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_065c4885();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -124,6 +125,7 @@ public sealed unsafe partial class WoodlandMansionPiece : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_2bf1e549((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

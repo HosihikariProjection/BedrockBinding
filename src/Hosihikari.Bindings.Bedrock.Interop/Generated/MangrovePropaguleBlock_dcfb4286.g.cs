@@ -423,6 +423,7 @@ public sealed unsafe partial class MangrovePropaguleBlock : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_50a348ed();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -456,7 +457,12 @@ public sealed unsafe partial class MangrovePropaguleBlock : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getInitialDefaultState()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_84d98c9f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public int getVariant(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
@@ -467,7 +473,12 @@ public sealed unsafe partial class MangrovePropaguleBlock : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getVisualShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferAABB)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8772a9cd((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)bufferAABB.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle, false);
     }
 
     public bool mayPlaceOn(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

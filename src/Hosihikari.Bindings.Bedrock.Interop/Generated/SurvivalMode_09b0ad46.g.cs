@@ -217,7 +217,12 @@ public sealed unsafe partial class SurvivalMode : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult? _useItemOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos at, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 hit, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Block? targetBlock, bool isFirstEvent)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_851558fb((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)at.Handle, face, (void*)hit.Handle, handSlot, (void*)(targetBlock?.Handle ?? 0), isFirstEvent);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -229,6 +234,7 @@ public sealed unsafe partial class SurvivalMode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_49fb7aaa();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -244,6 +250,7 @@ public sealed unsafe partial class SurvivalMode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_51c50003((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -348,7 +355,12 @@ public sealed unsafe partial class SurvivalMode : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult? useItemOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos at, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 hit, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Block? targetBlock, bool isFirstEvent)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_89757560((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)at.Handle, face, (void*)hit.Handle, handSlot, (void*)(targetBlock?.Handle ?? 0), isFirstEvent);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle);
     }
 
 

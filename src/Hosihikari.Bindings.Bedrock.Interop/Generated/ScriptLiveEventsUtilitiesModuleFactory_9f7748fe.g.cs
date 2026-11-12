@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptLiveEventsUtilitiesModuleFactory : glob
         var handle = NativeMethods.TablePtr->C3.hs_create_8f57a761((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

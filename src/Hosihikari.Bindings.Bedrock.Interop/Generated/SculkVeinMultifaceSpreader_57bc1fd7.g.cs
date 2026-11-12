@@ -67,6 +67,7 @@ public sealed unsafe partial class SculkVeinMultifaceSpreader : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_08c0519c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

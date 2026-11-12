@@ -49,6 +49,7 @@ public sealed unsafe partial class PropertyGroupManager : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_78a73df5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

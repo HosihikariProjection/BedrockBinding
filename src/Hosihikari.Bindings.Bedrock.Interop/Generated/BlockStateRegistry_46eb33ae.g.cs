@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockStateRegistry : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_f6462e49((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

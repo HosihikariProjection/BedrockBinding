@@ -147,6 +147,7 @@ public sealed unsafe partial class ShieldRecipe : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_eb9b90af((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -166,7 +167,12 @@ public sealed unsafe partial class ShieldRecipe : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? getIngredient(int arg0, int arg1)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_48606bab((void*)__hosihikari_shim_handle, arg0, arg1);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false);
     }
 
     public nint getResultItems()

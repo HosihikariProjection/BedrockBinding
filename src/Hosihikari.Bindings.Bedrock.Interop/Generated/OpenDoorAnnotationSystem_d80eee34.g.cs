@@ -49,6 +49,7 @@ public sealed unsafe partial class OpenDoorAnnotationSystem : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_ef429e47((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

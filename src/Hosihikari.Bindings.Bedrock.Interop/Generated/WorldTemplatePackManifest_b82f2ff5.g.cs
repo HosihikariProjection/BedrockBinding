@@ -315,6 +315,7 @@ public sealed unsafe partial class WorldTemplatePackManifest : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_4fe00513();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -326,6 +327,7 @@ public sealed unsafe partial class WorldTemplatePackManifest : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_1bf657d5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -351,7 +353,12 @@ public sealed unsafe partial class WorldTemplatePackManifest : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_012f8df2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest((nint)__hs_handle, false);
     }
 
 

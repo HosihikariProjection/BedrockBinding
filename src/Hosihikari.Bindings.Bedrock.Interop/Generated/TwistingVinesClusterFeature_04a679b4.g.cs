@@ -73,6 +73,7 @@ public sealed unsafe partial class TwistingVinesClusterFeature : global::System.
         var handle = NativeMethods.TablePtr->C4.hs_create_2ffb5ccb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

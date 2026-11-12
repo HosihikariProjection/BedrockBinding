@@ -45,6 +45,7 @@ public sealed unsafe partial class PathBuffer_std__basic_string_char__ : global:
         var handle = NativeMethods.TablePtr->C1.hs_create_952f7a5b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -185,6 +185,7 @@ public sealed unsafe partial class FileStorageArea : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_1b14ec1e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -200,6 +201,7 @@ public sealed unsafe partial class FileStorageArea : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_7325dfbc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -221,7 +223,12 @@ public sealed unsafe partial class FileStorageArea : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _commit()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_49ca94e1((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -240,7 +247,12 @@ public sealed unsafe partial class FileStorageArea : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _onTransactionsEmpty(bool arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_59b8bb5a((void*)__hosihikari_shim_handle, arg0);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -302,7 +314,12 @@ public sealed unsafe partial class FileStorageArea : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? getExtendSizeThreshold(nint outExtendSizeThreshold)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_713e7ded((void*)__hosihikari_shim_handle, (void*)outExtendSizeThreshold);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getFileIndexLru()
@@ -319,7 +336,12 @@ public sealed unsafe partial class FileStorageArea : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo? getStorageAreaSpaceInfo()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f3bd00f3((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo((nint)__hs_handle);
     }
 
     public ulong getTotalSize()
@@ -335,7 +357,12 @@ public sealed unsafe partial class FileStorageArea : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? getUsedSize(nint outUsedSize)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1552d0bb((void*)__hosihikari_shim_handle, (void*)outUsedSize);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle);
     }
 
     public bool handlesPendingWrites()
@@ -480,7 +507,12 @@ public sealed unsafe partial class FileStorageArea : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? setSaveDataIcon(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3972190d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle);
     }
 
     public void setUsedSizeOverride(ulong fileSize)

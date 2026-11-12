@@ -57,6 +57,7 @@ public sealed unsafe partial class OceanMonumentPenthouse : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_6b95e355((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

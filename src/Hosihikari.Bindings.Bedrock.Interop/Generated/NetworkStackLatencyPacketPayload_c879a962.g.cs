@@ -45,6 +45,7 @@ public sealed unsafe partial class NetworkStackLatencyPacketPayload : global::Sy
         var handle = NativeMethods.TablePtr->C2.hs_create_0230aa0f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

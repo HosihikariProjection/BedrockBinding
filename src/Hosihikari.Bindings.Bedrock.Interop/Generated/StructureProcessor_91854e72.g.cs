@@ -85,6 +85,7 @@ public sealed unsafe partial class StructureProcessor : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_4ddfb8af((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

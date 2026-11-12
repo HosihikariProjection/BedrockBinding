@@ -49,6 +49,7 @@ public sealed unsafe partial class BlastFurnaceContainerManagerModel : global::S
         var handle = NativeMethods.TablePtr->C0.hs_create_05494ff9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

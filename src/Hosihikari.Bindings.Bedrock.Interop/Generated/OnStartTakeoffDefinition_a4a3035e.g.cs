@@ -67,6 +67,7 @@ public sealed unsafe partial class OnStartTakeoffDefinition : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_43c35a97((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

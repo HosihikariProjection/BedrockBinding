@@ -53,6 +53,7 @@ public sealed unsafe partial class IFileChunkUploader : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_9c6f7eb6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +78,12 @@ public sealed unsafe partial class IFileChunkUploader : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo? getChunkInfo(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo file, int chunkID)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1257b67f((void*)__hosihikari_shim_handle, (void*)file.Handle, chunkID);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo((nint)__hs_handle);
     }
 
     public int getInitErrorCode()

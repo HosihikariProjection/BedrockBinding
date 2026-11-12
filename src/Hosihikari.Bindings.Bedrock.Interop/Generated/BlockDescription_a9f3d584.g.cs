@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockDescription : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_d12133fe();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

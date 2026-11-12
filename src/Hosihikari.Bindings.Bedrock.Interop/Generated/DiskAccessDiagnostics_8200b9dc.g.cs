@@ -49,6 +49,7 @@ public sealed unsafe partial class DiskAccessDiagnostics : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_8fe7248d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class DiskAccessDiagnostics : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_08aedfa2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -145,7 +147,12 @@ public sealed unsafe partial class DiskAccessDiagnostics : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8e8e3a9c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessDiagnostics((nint)__hs_handle, false);
     }
 
     public void Dispose()

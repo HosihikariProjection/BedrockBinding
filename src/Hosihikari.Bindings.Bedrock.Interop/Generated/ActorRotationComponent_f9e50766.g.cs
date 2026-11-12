@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorRotationComponent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_92ad1ef4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class CodeScreenCapabilities : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_efbc38d2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

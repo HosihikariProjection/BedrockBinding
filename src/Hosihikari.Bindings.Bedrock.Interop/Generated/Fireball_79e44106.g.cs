@@ -627,6 +627,7 @@ public sealed unsafe partial class Fireball : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_118e75cf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -659,7 +660,12 @@ public sealed unsafe partial class Fireball : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getSourceUniqueID()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_55b696ae((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle);
     }
 
     public int getTrailParticle()

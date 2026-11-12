@@ -623,6 +623,7 @@ public sealed unsafe partial class EnderCrystal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_076b4831();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -636,7 +637,12 @@ public sealed unsafe partial class EnderCrystal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4f9696b9((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)

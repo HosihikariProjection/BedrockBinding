@@ -77,6 +77,7 @@ public sealed unsafe partial class PeerConnectionFactoryInterface : global::Syst
         var handle = NativeMethods.TablePtr->C4.hs_create_de278c41((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

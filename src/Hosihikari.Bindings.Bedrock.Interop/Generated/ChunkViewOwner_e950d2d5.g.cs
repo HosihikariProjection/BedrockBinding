@@ -45,6 +45,7 @@ public sealed unsafe partial class ChunkViewOwner : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_d9f0e912((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

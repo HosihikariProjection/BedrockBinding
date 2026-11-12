@@ -55,6 +55,7 @@ public sealed unsafe partial class Objective : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_ce50e7ac();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class Objective : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_07aa1842((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -79,7 +81,12 @@ public sealed unsafe partial class Objective : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ScoreInfo? getPlayerScore(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId id)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_de22c28a((void*)__hosihikari_shim_handle, (void*)id.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScoreInfo((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreInfo((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -109,7 +116,12 @@ public sealed unsafe partial class Objective : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Objective? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Objective arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f5f7f284((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Objective((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Objective((nint)__hs_handle, false);
     }
 
 

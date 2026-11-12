@@ -53,6 +53,7 @@ public sealed unsafe partial class UpdateCardinalGetPlacementBlockCallback : glo
         var handle = NativeMethods.TablePtr->C0.hs_create_c82674fe((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

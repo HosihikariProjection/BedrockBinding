@@ -45,6 +45,7 @@ public sealed unsafe partial class CallbackToken : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_a1a365e9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

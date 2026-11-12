@@ -52,7 +52,12 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? CheckCodecParameters(nint parameters)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f8b3e8aa((void*)__hosihikari_shim_handle, (void*)parameters);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? DisableEncodingLayers(string[] rids)
@@ -78,7 +83,12 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
                 __hs_vectorOffset0 += __hs_length0;
             }
             var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3cd4fde9((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(rids?.Length ?? 0));
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle);
         }
     }
 
@@ -104,6 +114,7 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_b2c0fd8f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -122,7 +133,12 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? SetParametersInternalWithAllLayers(nint parameters)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a942f0de((void*)__hosihikari_shim_handle, (void*)parameters);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::Codec' is not supported.", false)]

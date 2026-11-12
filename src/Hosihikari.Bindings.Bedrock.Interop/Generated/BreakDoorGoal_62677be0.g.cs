@@ -92,6 +92,7 @@ public sealed unsafe partial class BreakDoorGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_c4933342();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -103,6 +104,7 @@ public sealed unsafe partial class BreakDoorGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_31b0da31((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -165,7 +167,12 @@ public sealed unsafe partial class BreakDoorGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BreakDoorGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BreakDoorGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7dad3a71((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BreakDoorGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BreakDoorGoal((nint)__hs_handle, false);
     }
 
     public void start()

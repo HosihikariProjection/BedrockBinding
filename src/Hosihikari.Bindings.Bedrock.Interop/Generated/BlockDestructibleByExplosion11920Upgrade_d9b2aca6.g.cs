@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockDestructibleByExplosion11920Upgrade : gl
         var handle = NativeMethods.TablePtr->C0.hs_create_ea52be3e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

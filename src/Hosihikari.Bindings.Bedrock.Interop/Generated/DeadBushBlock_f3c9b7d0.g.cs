@@ -398,6 +398,7 @@ public sealed unsafe partial class DeadBushBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d28662f9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class CommandBlockDescription : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_9498cba2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

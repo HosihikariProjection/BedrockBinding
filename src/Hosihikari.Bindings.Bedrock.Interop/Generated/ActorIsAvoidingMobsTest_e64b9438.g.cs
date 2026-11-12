@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorIsAvoidingMobsTest : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_c95257c8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

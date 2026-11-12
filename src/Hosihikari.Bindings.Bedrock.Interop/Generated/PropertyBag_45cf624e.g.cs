@@ -45,6 +45,7 @@ public sealed unsafe partial class PropertyBag : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_3a2987ce((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

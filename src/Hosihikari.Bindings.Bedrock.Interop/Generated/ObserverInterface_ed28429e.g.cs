@@ -53,6 +53,7 @@ public sealed unsafe partial class ObserverInterface : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_bfdeb090((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

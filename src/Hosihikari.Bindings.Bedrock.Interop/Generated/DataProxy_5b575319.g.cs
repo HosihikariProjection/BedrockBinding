@@ -49,6 +49,7 @@ public sealed unsafe partial class DataProxy : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_785004c6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

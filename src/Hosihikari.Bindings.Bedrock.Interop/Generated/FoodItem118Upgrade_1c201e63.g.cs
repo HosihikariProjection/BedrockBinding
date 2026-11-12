@@ -77,6 +77,7 @@ public sealed unsafe partial class FoodItem118Upgrade : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_b2f738b9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

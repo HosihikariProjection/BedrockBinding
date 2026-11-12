@@ -45,6 +45,7 @@ public sealed unsafe partial class FloorRoomCollection : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_ae2e668c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

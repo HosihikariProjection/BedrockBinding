@@ -53,6 +53,7 @@ public sealed unsafe partial class DolphinMoveControl : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_66337813((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

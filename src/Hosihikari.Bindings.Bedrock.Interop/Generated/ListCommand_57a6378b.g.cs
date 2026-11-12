@@ -78,6 +78,7 @@ public sealed unsafe partial class ListCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c37aab1f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

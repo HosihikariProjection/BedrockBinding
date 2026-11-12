@@ -45,6 +45,7 @@ public sealed unsafe partial class GainedRaidOmenAtPositionComponent : global::S
         var handle = NativeMethods.TablePtr->C1.hs_create_ea83276b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

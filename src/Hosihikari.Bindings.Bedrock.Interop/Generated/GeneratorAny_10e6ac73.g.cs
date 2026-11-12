@@ -57,6 +57,7 @@ public sealed unsafe partial class GeneratorAny : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_7e66aad2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class GeneratorAny : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_2e5b1ce7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -86,6 +86,7 @@ public sealed unsafe partial class AudioTrack : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_ee15b809();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -97,6 +98,7 @@ public sealed unsafe partial class AudioTrack : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_8f2624a1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -110,7 +112,12 @@ public sealed unsafe partial class AudioTrack : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface? GetSource()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_daa6d686((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface((nint)__hs_handle, false);
     }
 
     public void OnChanged()
@@ -144,7 +151,12 @@ public sealed unsafe partial class AudioTrack : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrack? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrack arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6295e0b0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrack((nint)__hs_handle, false);
     }
 
 

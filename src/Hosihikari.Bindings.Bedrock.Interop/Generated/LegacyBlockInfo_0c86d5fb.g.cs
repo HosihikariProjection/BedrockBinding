@@ -49,6 +49,7 @@ public sealed unsafe partial class LegacyBlockInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_2b591d0d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class LegacyBlockInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_830c97b4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

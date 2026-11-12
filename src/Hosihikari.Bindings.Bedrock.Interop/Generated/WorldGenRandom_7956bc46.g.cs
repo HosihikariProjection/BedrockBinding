@@ -93,6 +93,7 @@ public sealed unsafe partial class WorldGenRandom : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_a73d925d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -160,7 +161,12 @@ public sealed unsafe partial class WorldGenRandom : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenRandom? setLargeFeatureSeed(long seed, int chunkX, int chunkZ)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_85a44937((void*)__hosihikari_shim_handle, seed, chunkX, chunkZ);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenRandom((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenRandom((nint)__hs_handle, false);
     }
 
 

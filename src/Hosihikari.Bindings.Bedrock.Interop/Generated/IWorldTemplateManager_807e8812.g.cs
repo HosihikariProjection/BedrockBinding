@@ -51,6 +51,7 @@ public sealed unsafe partial class IWorldTemplateManager : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_fc9e8a0d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -69,7 +70,12 @@ public sealed unsafe partial class IWorldTemplateManager : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo? findInstalledWorldTemplate(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion packIdentityToFind)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_80ea0e20((void*)__hosihikari_shim_handle, (void*)packIdentityToFind.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo? findInstalledWorldTemplateByUUID(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID[] packUUIDs)
@@ -84,7 +90,12 @@ public sealed unsafe partial class IWorldTemplateManager : global::System.IDispo
         {
             var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
             var __hs_handle = NativeMethods.TablePtr->C1.hs_method_38c1995f((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(packUUIDs?.Length ?? 0));
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo((nint)__hs_handle, false);
         }
     }
 
@@ -105,7 +116,12 @@ public sealed unsafe partial class IWorldTemplateManager : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo? getWorldTemplateAtIndex(int index)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_dc8c43de((void*)__hosihikari_shim_handle, index);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo((nint)__hs_handle, false);
     }
 
     public ulong getWorldTemplateSize()

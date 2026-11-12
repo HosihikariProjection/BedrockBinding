@@ -45,6 +45,7 @@ public sealed unsafe partial class ImplBase_Bedrock__Http__WebSocketInterface_ :
         var handle = NativeMethods.TablePtr->C0.hs_create_02b1506b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

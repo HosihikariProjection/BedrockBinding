@@ -45,6 +45,7 @@ public sealed unsafe partial class IPlayerSleepPercentageGetter : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_c2644598((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

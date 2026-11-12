@@ -615,6 +615,7 @@ public sealed unsafe partial class OminousItemSpawner : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_5cecadaa();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

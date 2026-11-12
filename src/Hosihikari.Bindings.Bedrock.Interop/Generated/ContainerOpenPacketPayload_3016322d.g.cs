@@ -45,6 +45,7 @@ public sealed unsafe partial class ContainerOpenPacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C1.hs_create_2447c0ab((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

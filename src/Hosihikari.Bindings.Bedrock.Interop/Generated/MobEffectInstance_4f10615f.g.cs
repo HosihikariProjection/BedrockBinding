@@ -55,6 +55,7 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_8ccac967();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_d75a45eb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,6 +79,7 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_443f34ef(id, (void*)duration.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -100,7 +103,12 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
     public static global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance? load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_788d7ed3((void*)tag.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance((nint)__hs_handle);
     }
 
     public bool mAmbient
@@ -188,7 +196,12 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_46626e80((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]

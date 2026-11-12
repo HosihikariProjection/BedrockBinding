@@ -45,6 +45,7 @@ public sealed unsafe partial class IDependencyLoader : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_c4e41ad1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,7 +69,12 @@ public sealed unsafe partial class IDependencyLoader : global::System.IDisposabl
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ff251fd2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
-            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptData((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                if (!__hs_hasValue) { return null; }
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptData((nint)__hs_handle);
         }
     }
 

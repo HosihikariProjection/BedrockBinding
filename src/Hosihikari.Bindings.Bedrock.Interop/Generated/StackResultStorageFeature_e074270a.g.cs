@@ -45,6 +45,7 @@ public sealed unsafe partial class StackResultStorageFeature : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_48a3f365((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

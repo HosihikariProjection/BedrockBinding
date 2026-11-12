@@ -57,6 +57,7 @@ public sealed unsafe partial class NBCastleSmallCorridorPiece : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_76920ed1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

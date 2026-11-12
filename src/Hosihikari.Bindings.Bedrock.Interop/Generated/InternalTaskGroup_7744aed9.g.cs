@@ -73,6 +73,7 @@ public sealed unsafe partial class InternalTaskGroup : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_2b9ee290((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

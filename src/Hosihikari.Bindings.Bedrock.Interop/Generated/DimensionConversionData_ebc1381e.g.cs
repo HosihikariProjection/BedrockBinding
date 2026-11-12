@@ -45,6 +45,7 @@ public sealed unsafe partial class DimensionConversionData : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_c33c0679((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

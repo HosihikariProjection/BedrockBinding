@@ -91,6 +91,7 @@ public sealed unsafe partial class Error : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_488a36b0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class Error : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3cf74750((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

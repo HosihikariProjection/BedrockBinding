@@ -77,6 +77,7 @@ public sealed unsafe partial class SimpleBlockVolumeIterator : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_35329c48((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

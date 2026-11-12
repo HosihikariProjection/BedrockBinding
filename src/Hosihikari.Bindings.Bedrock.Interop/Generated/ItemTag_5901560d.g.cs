@@ -62,6 +62,7 @@ public sealed unsafe partial class ItemTag : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_a7b4876c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

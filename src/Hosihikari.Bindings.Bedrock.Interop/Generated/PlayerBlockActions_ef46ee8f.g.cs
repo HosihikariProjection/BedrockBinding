@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerBlockActions : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_cad2e812((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

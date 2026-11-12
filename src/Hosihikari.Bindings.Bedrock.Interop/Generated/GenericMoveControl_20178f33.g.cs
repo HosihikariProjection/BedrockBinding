@@ -57,6 +57,7 @@ public sealed unsafe partial class GenericMoveControl : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_35b8640f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

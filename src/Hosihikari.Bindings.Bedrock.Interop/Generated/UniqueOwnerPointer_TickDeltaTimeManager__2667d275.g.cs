@@ -45,6 +45,7 @@ public sealed unsafe partial class UniqueOwnerPointer_TickDeltaTimeManager_ : gl
         var handle = NativeMethods.TablePtr->C0.hs_create_3dcf5378();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class UniqueOwnerPointer_TickDeltaTimeManager_ : gl
         var handle = NativeMethods.TablePtr->C0.hs_create_c6e02e3e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -73,7 +75,12 @@ public sealed unsafe partial class UniqueOwnerPointer_TickDeltaTimeManager_ : gl
     public global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_49f87f2f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager((nint)__hs_handle, false);
     }
 
     public bool isValid()
@@ -101,13 +108,23 @@ public sealed unsafe partial class UniqueOwnerPointer_TickDeltaTimeManager_ : gl
     public global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_08ec3494((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_688edf62((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickDeltaTimeManager((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -117,7 +134,12 @@ public sealed unsafe partial class UniqueOwnerPointer_TickDeltaTimeManager_ : gl
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_TickDeltaTimeManager_? operator_assign()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_67dfd13e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_TickDeltaTimeManager_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_TickDeltaTimeManager_((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_TickDeltaTimeManager_ other)

@@ -78,6 +78,7 @@ public sealed unsafe partial class MessageAndParams : global::System.IDisposable
                 var handle = NativeMethods.TablePtr->C3.hs_create_15291218(type, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_vectorData2, (nuint)(@params?.Length ?? 0));
                 if (handle == null)
                 {
+                    NativeMethods.GetLastError();
                     return null;
                 }
 
@@ -91,6 +92,7 @@ public sealed unsafe partial class MessageAndParams : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_ab56ee8d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

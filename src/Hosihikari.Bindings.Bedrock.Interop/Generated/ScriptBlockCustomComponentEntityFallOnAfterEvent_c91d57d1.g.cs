@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentEntityFallOnAfterEv
         var handle = NativeMethods.TablePtr->C3.hs_create_04802a50();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentEntityFallOnAfterEv
         var handle = NativeMethods.TablePtr->C3.hs_create_9942fd27((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

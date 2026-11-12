@@ -61,6 +61,7 @@ public sealed unsafe partial class ScriptPressurePlatePushAfterEvent : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_c8dcb55b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class ScriptPressurePlatePushAfterEvent : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_4fdf3367((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

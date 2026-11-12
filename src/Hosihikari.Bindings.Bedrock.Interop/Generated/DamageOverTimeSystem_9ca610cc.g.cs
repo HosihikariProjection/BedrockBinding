@@ -49,6 +49,7 @@ public sealed unsafe partial class DamageOverTimeSystem : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_25bcd843((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

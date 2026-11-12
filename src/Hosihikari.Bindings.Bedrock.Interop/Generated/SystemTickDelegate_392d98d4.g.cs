@@ -53,6 +53,7 @@ public sealed unsafe partial class SystemTickDelegate : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_3277ec72((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

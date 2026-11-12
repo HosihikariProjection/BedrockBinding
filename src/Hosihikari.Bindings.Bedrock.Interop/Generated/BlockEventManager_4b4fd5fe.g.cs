@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockEventManager : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_0f9188a1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

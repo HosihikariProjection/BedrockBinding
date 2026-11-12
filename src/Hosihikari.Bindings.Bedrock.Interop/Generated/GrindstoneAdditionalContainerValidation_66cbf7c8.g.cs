@@ -53,6 +53,7 @@ public sealed unsafe partial class GrindstoneAdditionalContainerValidation : glo
         var handle = NativeMethods.TablePtr->C1.hs_create_aafa5d0b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

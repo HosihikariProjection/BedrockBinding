@@ -104,6 +104,7 @@ public sealed unsafe partial class PayloadPacket_StopSoundPacketPayload_ : globa
         var handle = NativeMethods.TablePtr->C4.hs_create_bc1ab981((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

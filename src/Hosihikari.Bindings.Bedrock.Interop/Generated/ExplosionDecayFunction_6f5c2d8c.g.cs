@@ -57,6 +57,7 @@ public sealed unsafe partial class ExplosionDecayFunction : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_d38e4743((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

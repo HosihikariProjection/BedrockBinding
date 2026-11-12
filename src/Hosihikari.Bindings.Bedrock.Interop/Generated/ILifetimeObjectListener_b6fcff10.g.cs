@@ -45,6 +45,7 @@ public sealed unsafe partial class ILifetimeObjectListener : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_5a80e4b4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class UpdateAbilitiesPacketPayload : global::System
         var handle = NativeMethods.TablePtr->C4.hs_create_18968701((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

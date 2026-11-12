@@ -49,6 +49,7 @@ public sealed unsafe partial class DesertWellFeature : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_9b7cd16e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

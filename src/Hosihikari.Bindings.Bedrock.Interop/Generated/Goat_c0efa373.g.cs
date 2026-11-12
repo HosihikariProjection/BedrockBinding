@@ -623,6 +623,7 @@ public sealed unsafe partial class Goat : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_bb0ac67d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

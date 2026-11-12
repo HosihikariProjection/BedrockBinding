@@ -416,6 +416,7 @@ public sealed unsafe partial class UnderwaterTorchBlock : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_05cfd456();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

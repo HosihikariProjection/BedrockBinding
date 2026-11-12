@@ -49,6 +49,7 @@ public sealed unsafe partial class ItemRegistryComplexAlias : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_423f2b61((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

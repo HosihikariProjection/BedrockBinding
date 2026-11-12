@@ -615,6 +615,7 @@ public sealed unsafe partial class Bat : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_05b785a0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -628,7 +629,12 @@ public sealed unsafe partial class Bat : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_50148319((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag entityTag)

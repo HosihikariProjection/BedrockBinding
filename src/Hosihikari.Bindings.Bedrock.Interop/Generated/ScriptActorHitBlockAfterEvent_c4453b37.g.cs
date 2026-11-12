@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptActorHitBlockAfterEvent : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_05bc0848();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptActorHitBlockAfterEvent : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_133e5ec9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

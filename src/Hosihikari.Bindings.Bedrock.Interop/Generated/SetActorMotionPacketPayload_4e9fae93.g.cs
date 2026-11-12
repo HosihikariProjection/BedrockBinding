@@ -49,6 +49,7 @@ public sealed unsafe partial class SetActorMotionPacketPayload : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_54cb3d83();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class SetActorMotionPacketPayload : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_3d17af72((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

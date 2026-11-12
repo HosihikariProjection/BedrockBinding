@@ -49,6 +49,7 @@ public sealed unsafe partial class BalloonComponent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_92933439((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

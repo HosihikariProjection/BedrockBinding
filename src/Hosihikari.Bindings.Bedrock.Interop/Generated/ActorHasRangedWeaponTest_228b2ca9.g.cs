@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorHasRangedWeaponTest : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_19ca827c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

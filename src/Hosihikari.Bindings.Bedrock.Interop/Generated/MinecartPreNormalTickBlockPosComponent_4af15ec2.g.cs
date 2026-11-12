@@ -45,6 +45,7 @@ public sealed unsafe partial class MinecartPreNormalTickBlockPosComponent : glob
         var handle = NativeMethods.TablePtr->C2.hs_create_60477c75((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

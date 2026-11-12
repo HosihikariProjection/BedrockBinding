@@ -100,6 +100,7 @@ public sealed unsafe partial class BreakBlockNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_f59e7e43((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

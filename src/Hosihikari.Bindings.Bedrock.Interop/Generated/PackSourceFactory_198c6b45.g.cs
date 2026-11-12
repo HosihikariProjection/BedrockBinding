@@ -111,6 +111,7 @@ public sealed unsafe partial class PackSourceFactory : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_18369ac9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -122,6 +123,7 @@ public sealed unsafe partial class PackSourceFactory : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_1424db79((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -139,13 +141,23 @@ public sealed unsafe partial class PackSourceFactory : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackSource? createDirectoryPackSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, sbyte packType, byte packOrigin, bool isDevDirectory)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b8e4b6db((void*)__hosihikari_shim_handle, (void*)path.Handle, packType, packOrigin, isDevDirectory);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackSource((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource? createInPackagePackSource(sbyte packType)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4764d427((void*)__hosihikari_shim_handle, packType);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -159,13 +171,23 @@ public sealed unsafe partial class PackSourceFactory : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource? createWorldHistoryPackSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path pathToWorld, sbyte packType)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f168543a((void*)__hosihikari_shim_handle, (void*)pathToWorld.Handle, packType);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource? createWorldTemplatePackSource(global::Hosihikari.Bindings.Abi.SharedHandle? worldTemplateManager, global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID worldTemplateId, sbyte packType, byte packOrigin)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1757c388((void*)__hosihikari_shim_handle, worldTemplateManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)worldTemplateId.Handle, packType, packOrigin);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'WorldTemplateCollectionView' has no generated wrapper.", false)]
@@ -175,31 +197,56 @@ public sealed unsafe partial class PackSourceFactory : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackSource? getDirectoryPackSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, sbyte packType)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e609be62((void*)__hosihikari_shim_handle, (void*)path.Handle, packType);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackSource((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackSource? getDirectoryPackSourceContaining(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion packId)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_db9fe92b((void*)__hosihikari_shim_handle, (void*)packId.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackSource((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource? getInPackagePackSource(sbyte packType)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b8196759((void*)__hosihikari_shim_handle, packType);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource? getWorldHistoryPackSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path pathToWorld, sbyte packType)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8da457b4((void*)__hosihikari_shim_handle, (void*)pathToWorld.Handle, packType);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource? getWorldTemplatePackSource(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID worldTemplateId, sbyte packType)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_455f8ad9((void*)__hosihikari_shim_handle, (void*)worldTemplateId.Handle, packType);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

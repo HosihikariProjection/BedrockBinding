@@ -53,6 +53,7 @@ public sealed unsafe partial class IPropertySetter : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_b92cf52a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class IPropertySetter : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_40934edc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,7 +104,12 @@ public sealed unsafe partial class IPropertySetter : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertySetter? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertySetter arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e1da8f68((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertySetter((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertySetter((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'entt::meta_type' is not supported.", false)]

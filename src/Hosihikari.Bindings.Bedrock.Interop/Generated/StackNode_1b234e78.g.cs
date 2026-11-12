@@ -49,6 +49,7 @@ public sealed unsafe partial class StackNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_6e6de926();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class StackNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_838db96d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +83,12 @@ public sealed unsafe partial class StackNode : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.NBTSchemaWriter_Nested.StackNode? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NBTSchemaWriter_Nested.StackNode arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8fc593c9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NBTSchemaWriter_Nested.StackNode((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NBTSchemaWriter_Nested.StackNode((nint)__hs_handle, false);
     }
 
 

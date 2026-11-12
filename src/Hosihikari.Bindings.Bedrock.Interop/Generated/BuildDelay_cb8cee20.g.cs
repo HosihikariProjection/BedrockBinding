@@ -45,6 +45,7 @@ public sealed unsafe partial class BuildDelay : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_2afd51cc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

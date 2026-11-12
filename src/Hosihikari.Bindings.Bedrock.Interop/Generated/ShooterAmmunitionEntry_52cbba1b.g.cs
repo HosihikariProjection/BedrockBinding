@@ -45,6 +45,7 @@ public sealed unsafe partial class ShooterAmmunitionEntry : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_36d42a5b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

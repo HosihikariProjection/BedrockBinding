@@ -147,6 +147,7 @@ public sealed unsafe partial class NetworkSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f1027a3d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -162,6 +163,7 @@ public sealed unsafe partial class NetworkSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_dd2c67f9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -212,7 +214,12 @@ public sealed unsafe partial class NetworkSystem : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkConnection? getConnectionFromId(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6942935f((void*)__hosihikari_shim_handle, (void*)id.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkConnection((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkConnection((nint)__hs_handle, false);
     }
 
     public ushort getDefaultGamePort()
@@ -228,7 +235,12 @@ public sealed unsafe partial class NetworkSystem : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer? getPeerForUser(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_96f02cdb((void*)__hosihikari_shim_handle, (void*)id.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -461,7 +473,12 @@ public sealed unsafe partial class NetworkSystem : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9fed2170((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem((nint)__hs_handle, false);
     }
 
     public void runEvents(bool networkIsCritical)

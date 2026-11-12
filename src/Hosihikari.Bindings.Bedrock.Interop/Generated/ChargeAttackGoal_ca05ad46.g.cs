@@ -91,6 +91,7 @@ public sealed unsafe partial class ChargeAttackGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_1ec53862();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class ChargeAttackGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_094e0d77((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -177,7 +179,12 @@ public sealed unsafe partial class ChargeAttackGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ChargeAttackGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ChargeAttackGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c89037a7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChargeAttackGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ChargeAttackGoal((nint)__hs_handle, false);
     }
 
     public void start()

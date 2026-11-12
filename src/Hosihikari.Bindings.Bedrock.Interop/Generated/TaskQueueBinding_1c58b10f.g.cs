@@ -45,6 +45,7 @@ public sealed unsafe partial class TaskQueueBinding : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_7bb5d0c2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class TaskQueueBinding : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_51a0ee90((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class TaskQueueBinding : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance_Nested.TaskQueueBinding? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance_Nested.TaskQueueBinding arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dc5dbc6d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance_Nested.TaskQueueBinding((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance_Nested.TaskQueueBinding((nint)__hs_handle, false);
     }
 
     public void Dispose()

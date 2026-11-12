@@ -70,7 +70,12 @@ public sealed unsafe partial class StringByteOutput : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3a4cf29d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput((nint)__hs_handle, false);
     }
 
     public void writeBytes(nint data, ulong bytes)

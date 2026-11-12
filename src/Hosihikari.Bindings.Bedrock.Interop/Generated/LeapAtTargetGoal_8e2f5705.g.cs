@@ -79,6 +79,7 @@ public sealed unsafe partial class LeapAtTargetGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_e2616b05();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -90,6 +91,7 @@ public sealed unsafe partial class LeapAtTargetGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_467062f5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -159,7 +161,12 @@ public sealed unsafe partial class LeapAtTargetGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.LeapAtTargetGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LeapAtTargetGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_99038355((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LeapAtTargetGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LeapAtTargetGoal((nint)__hs_handle, false);
     }
 
     public void start()

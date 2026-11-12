@@ -149,6 +149,7 @@ public sealed unsafe partial class ElementConstructorContainerManagerModel : glo
         var handle = NativeMethods.TablePtr->C1.hs_create_de6219fa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -158,7 +159,12 @@ public sealed unsafe partial class ElementConstructorContainerManagerModel : glo
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext? _postInit()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_710a09f9((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle);
     }
 
     public void broadcastChanges()
@@ -173,7 +179,12 @@ public sealed unsafe partial class ElementConstructorContainerManagerModel : glo
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getSlot(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6f1b75de((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public bool isValid(float pickRange)

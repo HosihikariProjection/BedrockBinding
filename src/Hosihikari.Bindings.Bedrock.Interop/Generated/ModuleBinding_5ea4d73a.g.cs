@@ -57,6 +57,7 @@ public sealed unsafe partial class ModuleBinding : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3b0a22ee();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class ModuleBinding : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_1b38dd32((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -151,7 +153,12 @@ public sealed unsafe partial class ModuleBinding : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBinding? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBinding arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_56b62371((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBinding((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBinding((nint)__hs_handle, false);
     }
 
     public bool requireDynamicImport

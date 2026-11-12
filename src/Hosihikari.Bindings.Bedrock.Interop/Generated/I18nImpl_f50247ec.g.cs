@@ -234,6 +234,7 @@ public sealed unsafe partial class I18nImpl : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_77360427((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -621,7 +622,12 @@ public sealed unsafe partial class I18nImpl : global::System.IDisposable
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
             var __hs_handle = NativeMethods.TablePtr->C1.hs_method_15fb1c88((void*)__hosihikari_shim_handle, (void*)resourcePackManager.Handle, resourceLoadManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), __hs_stringData2, (nuint)__hs_stringByteCount2);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle);
         }
     }
 

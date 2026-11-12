@@ -61,6 +61,7 @@ public sealed unsafe partial class UnlockedRecipesServerComponent : global::Syst
         var handle = NativeMethods.TablePtr->C4.hs_create_fbd5d61a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

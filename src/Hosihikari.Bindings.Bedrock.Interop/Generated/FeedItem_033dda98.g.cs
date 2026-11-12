@@ -49,6 +49,7 @@ public sealed unsafe partial class FeedItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_0ecb08c2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

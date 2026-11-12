@@ -49,6 +49,7 @@ public sealed unsafe partial class LootTables : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_6a1336d6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +72,12 @@ public sealed unsafe partial class LootTables : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4bd152a1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)resourceLoader.Handle);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LootTable((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.LootTable((nint)__hs_handle, false);
         }
     }
 

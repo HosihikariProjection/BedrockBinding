@@ -69,6 +69,7 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_cd5e7fa2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,6 +81,7 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_570c57cd((void*)connectionRequest.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,6 +93,7 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_ffae8ced((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +105,7 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_328c8d5a((void*)request.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -115,7 +119,12 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
     public static global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef? createTrustedDefaultSerializedSkin()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b9e81b42();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef((nint)__hs_handle);
     }
 
     public bool isValid()
@@ -136,7 +145,12 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef rhs)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_413c44ab((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]

@@ -349,6 +349,7 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_e2b91e0a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -364,6 +365,7 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_ad347694((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -73,6 +73,7 @@ public sealed unsafe partial class VinesFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_d5e19000((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

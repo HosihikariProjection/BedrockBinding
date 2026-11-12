@@ -49,6 +49,7 @@ public sealed unsafe partial class Matrix : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_ff54c82d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class Matrix : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_e6bf511c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

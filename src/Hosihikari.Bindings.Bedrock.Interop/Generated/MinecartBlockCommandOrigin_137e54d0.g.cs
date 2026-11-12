@@ -127,6 +127,7 @@ public sealed unsafe partial class MinecartBlockCommandOrigin : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_53b5da38();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -146,6 +147,7 @@ public sealed unsafe partial class MinecartBlockCommandOrigin : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_f47c962d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -155,13 +157,23 @@ public sealed unsafe partial class MinecartBlockCommandOrigin : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.BaseCommandBlock? _getBaseCommandBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_53bb52f2((void*)__hosihikari_shim_handle, (void*)region.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseCommandBlock((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseCommandBlock((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockActor? _getBlockEntity(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_94306614((void*)__hosihikari_shim_handle, (void*)region.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockActor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockActor((nint)__hs_handle, false);
     }
 
     public bool canUseCommandsWithoutCheatsEnabled()
@@ -176,13 +188,23 @@ public sealed unsafe partial class MinecartBlockCommandOrigin : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getBlockPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_70725769((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? getEntity()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a9c64774((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public byte getOriginType()
@@ -194,13 +216,23 @@ public sealed unsafe partial class MinecartBlockCommandOrigin : global::System.I
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_90f3cd43((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getWorldPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_668d4769((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public bool isValid()
@@ -217,7 +249,12 @@ public sealed unsafe partial class MinecartBlockCommandOrigin : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? serialize()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3fed0536((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle);
     }
 
 

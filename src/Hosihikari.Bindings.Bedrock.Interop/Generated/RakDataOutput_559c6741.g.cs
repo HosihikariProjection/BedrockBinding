@@ -49,6 +49,7 @@ public sealed unsafe partial class RakDataOutput : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_47536142();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class RakDataOutput : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_5c9cba87((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,7 +77,12 @@ public sealed unsafe partial class RakDataOutput : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RakDataOutput? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakDataOutput arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4c8831db((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakDataOutput((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakDataOutput((nint)__hs_handle, false);
     }
 
     public void writeBytes(nint data, ulong bytes)

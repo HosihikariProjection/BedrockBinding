@@ -45,6 +45,7 @@ public sealed unsafe partial class SettingsCommandPacketPayload : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_cdc4876f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

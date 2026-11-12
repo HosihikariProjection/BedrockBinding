@@ -49,6 +49,7 @@ public sealed unsafe partial class CompoundTagUpdaterNodeBuilder : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_e6bcfbfc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class CompoundTagUpdaterNodeBuilder : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_2cff0744((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -125,7 +127,12 @@ public sealed unsafe partial class CompoundTagUpdaterNodeBuilder : global::Syste
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4da091a2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

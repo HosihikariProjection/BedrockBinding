@@ -45,6 +45,7 @@ public sealed unsafe partial class IComplexExpression : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_2cc3cafe((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -58,7 +59,12 @@ public sealed unsafe partial class IComplexExpression : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg? evalGeneric(global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_02a350a5((void*)__hosihikari_shim_handle, (void*)@params.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle, false);
     }
 
     public string getExpressionString()
@@ -86,7 +92,12 @@ public sealed unsafe partial class IComplexExpression : global::System.IDisposab
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_edcad9d9((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle);
     }
 
     public bool hasVariableAssignments()
@@ -121,7 +132,12 @@ public sealed unsafe partial class IComplexExpression : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? toJson()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_84282015((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle);
     }
 
     public void validateArrayVariables()

@@ -67,6 +67,7 @@ public sealed unsafe partial class StructureAnimationAction : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_c3861904();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

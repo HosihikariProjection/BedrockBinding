@@ -53,6 +53,7 @@ public sealed unsafe partial class LoomDyeContainerValidation : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_033c8bb5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -115,7 +115,12 @@ public sealed unsafe partial class PotionBrewing : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? mix(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor ingredient, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance source)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4fb20991((void*)ingredient.Handle, (void*)source.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -45,6 +45,7 @@ public sealed unsafe partial class IStructureTemplate : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_4f727dd7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -58,7 +59,12 @@ public sealed unsafe partial class IStructureTemplate : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? rawSize()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2df178bd((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public int shouldHandleUpgradeForBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block)

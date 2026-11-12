@@ -51,13 +51,23 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemActor? _spawnItem(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack inst, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int throwTime)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_61dec4ae((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)inst.Handle, (void*)(spawner?.Handle ?? 0), (void*)pos.Handle, throwTime);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemActor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemActor((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Mob? _spawnMob(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier id, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, bool naturalSpawn, bool surface, bool fromSpawner)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_636bc5c9((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, (void*)(spawner?.Handle ?? 0), (void*)pos.Handle, naturalSpawn, surface, fromSpawner);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Mob((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Mob((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -67,7 +77,12 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? _spawnProjectile(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier id, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 direction)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_29f391d0((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, (void*)(spawner?.Handle ?? 0), (void*)position.Handle, (void*)direction.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public static Spawner? Create(global::Hosihikari.Bindings.Bedrock.Interop.Spawner arg0)
@@ -75,6 +90,7 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3e732e40((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -98,7 +114,12 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry? getSpawnGroupRegistry()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_db311ff4((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry((nint)__hs_handle, false);
     }
 
     public nint getSpawnPlacements()
@@ -109,19 +130,34 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup? getSpawnRules()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_11b80481((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup? getSpawnRulesMutable()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a922f999((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings? getSpawnSettings()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ae9637ad((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings((nint)__hs_handle, false);
     }
 
     public uint getSpawnableTickedMobCountPrevious()
@@ -165,13 +201,23 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemActor? spawnItem(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack inst, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int throwTime)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a168a6f3((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)inst.Handle, (void*)(spawner?.Handle ?? 0), (void*)pos.Handle, throwTime);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemActor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemActor((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Mob? spawnMob(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier id, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, bool naturalSpawn, bool surface, bool fromSpawner)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_023d357b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, (void*)(spawner?.Handle ?? 0), (void*)pos.Handle, naturalSpawn, surface, fromSpawner);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Mob((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Mob((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -186,7 +232,12 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawnProjectile(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier id, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 direction)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fd489869((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, (void*)(spawner?.Handle ?? 0), (void*)position.Handle, (void*)direction.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkVolumeData levelChunkVolumeData, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos)

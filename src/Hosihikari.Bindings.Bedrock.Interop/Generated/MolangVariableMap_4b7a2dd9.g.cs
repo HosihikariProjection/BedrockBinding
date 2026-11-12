@@ -50,6 +50,7 @@ public sealed unsafe partial class MolangVariableMap : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_6c09e373();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -61,6 +62,7 @@ public sealed unsafe partial class MolangVariableMap : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_6fdfb2b4((void*)rhs.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -74,13 +76,23 @@ public sealed unsafe partial class MolangVariableMap : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.MolangVariable? _getOrAddMolangVariable(ushort molangVariableIndex)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_22fa8dfc((void*)__hosihikari_shim_handle, molangVariableIndex);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangVariable((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangVariable((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap? clear()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a782edfd((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap((nint)__hs_handle, false);
     }
 
     public bool mHasPublicVariables

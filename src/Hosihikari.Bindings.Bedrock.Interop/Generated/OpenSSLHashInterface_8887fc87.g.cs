@@ -65,6 +65,7 @@ public sealed unsafe partial class OpenSSLHashInterface : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_f9e12a11((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

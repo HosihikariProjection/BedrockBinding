@@ -61,6 +61,7 @@ public sealed unsafe partial class FreezeOnHitSubcomponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_b8540b74((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

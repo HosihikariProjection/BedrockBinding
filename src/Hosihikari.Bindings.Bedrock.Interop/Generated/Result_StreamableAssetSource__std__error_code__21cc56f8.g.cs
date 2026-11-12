@@ -45,6 +45,7 @@ public sealed unsafe partial class Result_StreamableAssetSource__std__error_code
         var handle = NativeMethods.TablePtr->C0.hs_create_478f0811((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

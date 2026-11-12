@@ -49,6 +49,7 @@ public sealed unsafe partial class FeatureTypeVersion : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_2dac590a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class FeatureTypeVersion : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_006e5d03((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -69,6 +69,7 @@ public sealed unsafe partial class SlotData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_cf5be92e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,6 +81,7 @@ public sealed unsafe partial class SlotData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_414ac33b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -104,6 +106,7 @@ public sealed unsafe partial class SlotData : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C3.hs_create_017052c2(__hs_stringData0, (nuint)__hs_stringByteCount0, collectionIndex);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 

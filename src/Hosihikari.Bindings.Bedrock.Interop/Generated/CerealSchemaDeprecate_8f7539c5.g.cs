@@ -61,6 +61,7 @@ public sealed unsafe partial class CerealSchemaDeprecate : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_f96ea554();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class CerealSchemaDeprecate : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_bdcacc98((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,7 +93,12 @@ public sealed unsafe partial class CerealSchemaDeprecate : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaDeprecate? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaDeprecate arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7ddc1ce5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaDeprecate((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaDeprecate((nint)__hs_handle, false);
     }
 
     public bool previousSchema(nint arg0)

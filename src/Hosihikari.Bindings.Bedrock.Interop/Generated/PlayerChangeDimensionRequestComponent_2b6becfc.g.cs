@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerChangeDimensionRequestComponent : globa
         var handle = NativeMethods.TablePtr->C2.hs_create_31923a0d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

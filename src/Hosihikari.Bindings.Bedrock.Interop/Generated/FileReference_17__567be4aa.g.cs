@@ -45,6 +45,7 @@ public sealed unsafe partial class FileReference_17_ : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_fd9c759f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

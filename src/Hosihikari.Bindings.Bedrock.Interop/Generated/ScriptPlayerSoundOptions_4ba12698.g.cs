@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptPlayerSoundOptions : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_3ba1d542((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

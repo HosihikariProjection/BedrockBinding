@@ -83,6 +83,7 @@ public sealed unsafe partial class DropAllCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_c5ad235d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

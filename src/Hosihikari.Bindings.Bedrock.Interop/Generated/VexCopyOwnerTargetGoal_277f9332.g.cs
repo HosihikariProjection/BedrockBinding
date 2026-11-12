@@ -179,6 +179,7 @@ public sealed unsafe partial class VexCopyOwnerTargetGoal : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_81261b90();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -194,6 +195,7 @@ public sealed unsafe partial class VexCopyOwnerTargetGoal : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_e234d095((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

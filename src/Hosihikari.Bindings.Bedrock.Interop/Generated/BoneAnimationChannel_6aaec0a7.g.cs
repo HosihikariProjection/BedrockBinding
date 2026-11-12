@@ -45,6 +45,7 @@ public sealed unsafe partial class BoneAnimationChannel : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_53fa2e6b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

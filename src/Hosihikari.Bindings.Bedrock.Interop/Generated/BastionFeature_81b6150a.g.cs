@@ -74,6 +74,7 @@ public sealed unsafe partial class BastionFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_89e2a7ce();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -85,6 +86,7 @@ public sealed unsafe partial class BastionFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_36ccc8fc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

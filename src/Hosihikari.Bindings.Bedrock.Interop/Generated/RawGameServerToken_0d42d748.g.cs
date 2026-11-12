@@ -51,6 +51,7 @@ public sealed unsafe partial class RawGameServerToken : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_61eeff5a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

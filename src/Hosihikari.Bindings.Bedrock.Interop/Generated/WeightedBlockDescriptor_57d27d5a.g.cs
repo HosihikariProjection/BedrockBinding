@@ -45,6 +45,7 @@ public sealed unsafe partial class WeightedBlockDescriptor : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_74691f22((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -55,6 +55,7 @@ public sealed unsafe partial class CommandOutput : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_cf8dbaaa();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class CommandOutput : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_d5983ae2(type);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,6 +79,7 @@ public sealed unsafe partial class CommandOutput : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_64253553((void*)rhs.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -140,7 +143,12 @@ public sealed unsafe partial class CommandOutput : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput rhs)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7506367a((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]

@@ -63,6 +63,7 @@ public sealed unsafe partial class UseModifiersItemComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_4d54f30a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +79,7 @@ public sealed unsafe partial class UseModifiersItemComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_e0ba9b9f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

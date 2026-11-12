@@ -49,6 +49,7 @@ public sealed unsafe partial class PredeclaredAnnotation : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_dc75df8b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class PredeclaredAnnotation : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_7f315a4e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,7 +77,12 @@ public sealed unsafe partial class PredeclaredAnnotation : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Profiler.details.PredeclaredAnnotation? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Profiler.details.PredeclaredAnnotation arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ae426fd9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Profiler.details.PredeclaredAnnotation((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Profiler.details.PredeclaredAnnotation((nint)__hs_handle, false);
     }
 
 

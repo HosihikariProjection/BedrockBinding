@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentRandomTickAfterEven
         var handle = NativeMethods.TablePtr->C3.hs_create_26412562();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentRandomTickAfterEven
         var handle = NativeMethods.TablePtr->C3.hs_create_e4d36e53((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

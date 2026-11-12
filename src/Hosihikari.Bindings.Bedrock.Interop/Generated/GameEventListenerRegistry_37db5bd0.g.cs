@@ -45,6 +45,7 @@ public sealed unsafe partial class GameEventListenerRegistry : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_9fc6f87d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

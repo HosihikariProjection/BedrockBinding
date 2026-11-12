@@ -93,6 +93,7 @@ public sealed unsafe partial class GameDirectorEntityServerCommandOrigin : globa
         var handle = NativeMethods.TablePtr->C1.hs_create_e95e9fd3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

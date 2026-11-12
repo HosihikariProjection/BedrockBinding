@@ -45,6 +45,7 @@ public sealed unsafe partial class EquippableDefinition : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_85b1d857((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -225,6 +225,7 @@ public sealed unsafe partial class WorkGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_8302239f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

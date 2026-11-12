@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorIsLeashedTest : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_544293ca((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

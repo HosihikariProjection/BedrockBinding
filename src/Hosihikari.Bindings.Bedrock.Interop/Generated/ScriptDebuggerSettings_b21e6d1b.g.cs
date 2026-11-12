@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptDebuggerSettings : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_a501a15e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptDebuggerSettings : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_d4cea215((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

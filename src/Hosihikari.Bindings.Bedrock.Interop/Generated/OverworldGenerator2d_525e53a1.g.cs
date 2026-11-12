@@ -145,6 +145,7 @@ public sealed unsafe partial class OverworldGenerator2d : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_9cf6f3bc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -177,7 +178,12 @@ public sealed unsafe partial class OverworldGenerator2d : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? findSpawnPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7b244ae1((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -193,7 +199,12 @@ public sealed unsafe partial class OverworldGenerator2d : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource? getBiomeSource()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cc4b297a((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource((nint)__hs_handle, false);
     }
 
     public int getLevelGenHeight()
@@ -209,14 +220,24 @@ public sealed unsafe partial class OverworldGenerator2d : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.PerlinSimplexNoise? getSurfaceNoise()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3c073276((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PerlinSimplexNoise((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PerlinSimplexNoise((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory? getXoroshiroPositionalRandomFactory()
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ad524006((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

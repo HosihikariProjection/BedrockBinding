@@ -49,6 +49,7 @@ public sealed unsafe partial class ScatteredFeaturePiece : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_1de230e1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScatteredFeaturePiece : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_72f758a4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

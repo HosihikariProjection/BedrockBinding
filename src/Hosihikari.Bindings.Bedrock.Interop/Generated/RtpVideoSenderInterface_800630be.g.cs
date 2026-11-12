@@ -104,6 +104,7 @@ public sealed unsafe partial class RtpVideoSenderInterface : global::System.IDis
         var handle = NativeMethods.TablePtr->C4.hs_create_43306796((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

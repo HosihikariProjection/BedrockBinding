@@ -45,6 +45,7 @@ public sealed unsafe partial class FurnaceOptions : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d42e8224();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class FurnaceOptions : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_ba9bc6c4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -83,7 +85,12 @@ public sealed unsafe partial class FurnaceOptions : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.FurnaceOptions? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceOptions arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_43009ffb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FurnaceOptions((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FurnaceOptions((nint)__hs_handle, false);
     }
 
     public void Dispose()

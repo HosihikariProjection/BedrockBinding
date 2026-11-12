@@ -81,6 +81,7 @@ public sealed unsafe partial class RealmsUnknownPackSource : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_974d010f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -92,6 +93,7 @@ public sealed unsafe partial class RealmsUnknownPackSource : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_71571172((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -127,7 +129,12 @@ public sealed unsafe partial class RealmsUnknownPackSource : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.RealmsUnknownPackSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RealmsUnknownPackSource arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c7b4cdea((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RealmsUnknownPackSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RealmsUnknownPackSource((nint)__hs_handle, false);
     }
 
 

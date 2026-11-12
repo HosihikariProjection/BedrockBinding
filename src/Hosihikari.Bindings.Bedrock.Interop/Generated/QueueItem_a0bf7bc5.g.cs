@@ -49,6 +49,7 @@ public sealed unsafe partial class QueueItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_4a990580();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,7 +81,12 @@ public sealed unsafe partial class QueueItem : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.QueueItem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.QueueItem arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_58f4ef3c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.QueueItem((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.QueueItem((nint)__hs_handle, false);
     }
 
     public void Dispose()

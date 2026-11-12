@@ -45,6 +45,7 @@ public sealed unsafe partial class BeforeWatchdogTerminateEvent : global::System
         var handle = NativeMethods.TablePtr->C0.hs_create_984d5eca((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

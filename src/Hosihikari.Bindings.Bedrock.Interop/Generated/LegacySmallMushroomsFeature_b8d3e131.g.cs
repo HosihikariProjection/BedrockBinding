@@ -81,6 +81,7 @@ public sealed unsafe partial class LegacySmallMushroomsFeature : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_158d7f58();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class LegacySmallMushroomsFeature : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_da437d4b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

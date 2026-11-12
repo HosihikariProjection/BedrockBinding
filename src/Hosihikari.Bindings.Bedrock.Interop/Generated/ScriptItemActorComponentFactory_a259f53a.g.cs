@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptItemActorComponentFactory : global::Sys
         var handle = NativeMethods.TablePtr->C3.hs_create_617b9452((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

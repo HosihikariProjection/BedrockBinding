@@ -45,6 +45,7 @@ public sealed unsafe partial class MobTravelComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_872efda2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

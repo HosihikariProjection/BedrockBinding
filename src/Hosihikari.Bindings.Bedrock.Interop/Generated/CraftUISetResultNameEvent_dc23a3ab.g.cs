@@ -45,6 +45,7 @@ public sealed unsafe partial class CraftUISetResultNameEvent : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_960cc0b3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

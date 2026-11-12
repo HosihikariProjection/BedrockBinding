@@ -49,6 +49,7 @@ public sealed unsafe partial class ActorAnimationEvent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_f60df338();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ActorAnimationEvent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_7281d6e2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

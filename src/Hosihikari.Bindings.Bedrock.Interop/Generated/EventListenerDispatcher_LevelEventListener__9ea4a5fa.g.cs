@@ -45,6 +45,7 @@ public sealed unsafe partial class EventListenerDispatcher_LevelEventListener_ :
         var handle = NativeMethods.TablePtr->C1.hs_create_d3bc5aac((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

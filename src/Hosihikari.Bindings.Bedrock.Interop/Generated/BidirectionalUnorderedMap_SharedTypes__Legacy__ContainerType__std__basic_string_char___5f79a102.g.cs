@@ -45,6 +45,7 @@ public sealed unsafe partial class BidirectionalUnorderedMap_SharedTypes__Legacy
         var handle = NativeMethods.TablePtr->C0.hs_create_baf3d937((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

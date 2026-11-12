@@ -71,6 +71,7 @@ public sealed unsafe partial class FilterTestDaytime : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_6fbd6ed4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

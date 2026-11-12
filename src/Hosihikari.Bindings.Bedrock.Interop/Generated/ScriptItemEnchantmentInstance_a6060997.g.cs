@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptItemEnchantmentInstance : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_af292bae((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

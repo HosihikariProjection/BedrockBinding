@@ -53,6 +53,7 @@ public sealed unsafe partial class StructureTemplateDataResponsePacketPayload : 
         var handle = NativeMethods.TablePtr->C3.hs_create_61ee4103();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

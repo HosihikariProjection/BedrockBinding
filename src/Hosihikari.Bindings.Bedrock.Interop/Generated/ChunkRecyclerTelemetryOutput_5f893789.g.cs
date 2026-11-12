@@ -45,6 +45,7 @@ public sealed unsafe partial class ChunkRecyclerTelemetryOutput : global::System
         var handle = NativeMethods.TablePtr->C0.hs_create_c1650c4b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class RailActivatorSystem : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_b7856e59((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

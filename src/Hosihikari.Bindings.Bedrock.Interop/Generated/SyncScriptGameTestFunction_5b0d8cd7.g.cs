@@ -63,6 +63,7 @@ public sealed unsafe partial class SyncScriptGameTestFunction : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_5fe6f9e2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +79,7 @@ public sealed unsafe partial class SyncScriptGameTestFunction : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_7e670630((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

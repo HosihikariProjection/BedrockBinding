@@ -55,6 +55,7 @@ public sealed unsafe partial class ChunkAccessor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_41a0b6d9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class ChunkAccessor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_d3166bd8((void*)dimension.Handle, (void*)biomeSource.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

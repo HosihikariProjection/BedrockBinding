@@ -57,6 +57,7 @@ public sealed unsafe partial class EnchantWithLevelsFunction : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_88fc5c75((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

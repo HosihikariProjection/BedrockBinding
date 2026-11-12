@@ -65,6 +65,7 @@ public sealed unsafe partial class RemoveMobEffectResponse : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_84420b11();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class RemoveMobEffectResponse : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_3d1603a6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -113,7 +115,12 @@ public sealed unsafe partial class RemoveMobEffectResponse : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.RemoveMobEffectResponse? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RemoveMobEffectResponse arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c1556329((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RemoveMobEffectResponse((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RemoveMobEffectResponse((nint)__hs_handle, false);
     }
 
 

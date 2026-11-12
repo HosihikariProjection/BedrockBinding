@@ -49,6 +49,7 @@ public sealed unsafe partial class UseModifiersItemComponentLegacyFactoryData : 
         var handle = NativeMethods.TablePtr->C4.hs_create_4effbfd4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

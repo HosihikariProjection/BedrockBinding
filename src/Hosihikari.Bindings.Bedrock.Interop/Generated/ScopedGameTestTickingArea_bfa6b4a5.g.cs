@@ -53,6 +53,7 @@ public sealed unsafe partial class ScopedGameTestTickingArea : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_0717f7fe();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class ScopedGameTestTickingArea : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_0ba096cd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -121,7 +123,12 @@ public sealed unsafe partial class ScopedGameTestTickingArea : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.ScopedGameTestTickingArea? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScopedGameTestTickingArea arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_68ee4ebe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScopedGameTestTickingArea((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScopedGameTestTickingArea((nint)__hs_handle, false);
     }
 
 

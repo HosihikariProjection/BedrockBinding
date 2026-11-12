@@ -53,6 +53,7 @@ public sealed unsafe partial class Writer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_77119ab8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

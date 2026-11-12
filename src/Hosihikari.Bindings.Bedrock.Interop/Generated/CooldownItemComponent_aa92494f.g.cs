@@ -53,6 +53,7 @@ public sealed unsafe partial class CooldownItemComponent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_6f221efc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class CooldownItemComponent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_3c77eab2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

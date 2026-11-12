@@ -57,6 +57,7 @@ public sealed unsafe partial class PhotoManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c0385a01();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

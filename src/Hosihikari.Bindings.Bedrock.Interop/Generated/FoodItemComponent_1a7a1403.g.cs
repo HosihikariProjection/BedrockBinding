@@ -49,6 +49,7 @@ public sealed unsafe partial class FoodItemComponent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_c8042c53((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

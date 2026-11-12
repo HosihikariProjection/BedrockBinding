@@ -45,6 +45,7 @@ public sealed unsafe partial class ItemStackNetManagerScreenStack : global::Syst
         var handle = NativeMethods.TablePtr->C1.hs_create_6f5dc0c6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

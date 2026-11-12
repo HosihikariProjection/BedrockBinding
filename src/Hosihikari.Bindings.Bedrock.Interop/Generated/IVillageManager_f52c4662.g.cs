@@ -51,6 +51,7 @@ public sealed unsafe partial class IVillageManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_206b49f8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

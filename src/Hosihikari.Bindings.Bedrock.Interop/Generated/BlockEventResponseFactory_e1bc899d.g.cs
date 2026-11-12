@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockEventResponseFactory : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_2f25a52b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

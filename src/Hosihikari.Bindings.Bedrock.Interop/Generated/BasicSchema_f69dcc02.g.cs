@@ -61,6 +61,7 @@ public sealed unsafe partial class BasicSchema : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_f8ae9a14((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -85,7 +86,12 @@ public sealed unsafe partial class BasicSchema : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.BasicSchema? doUnwrap(nint elem, bool fillIfEmpty)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_31a1ec7d((void*)__hosihikari_shim_handle, (void*)elem, fillIfEmpty);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.BasicSchema((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.BasicSchema((nint)__hs_handle, false);
     }
 
     public bool isGreedy(nint ctx)

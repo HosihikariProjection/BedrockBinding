@@ -45,6 +45,7 @@ public sealed unsafe partial class FromCenter : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_0427de64((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class MineshaftStart : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_555dab3d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptAfterEventList : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_4af8b4bd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

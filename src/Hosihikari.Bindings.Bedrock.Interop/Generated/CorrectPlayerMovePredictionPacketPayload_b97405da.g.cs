@@ -45,6 +45,7 @@ public sealed unsafe partial class CorrectPlayerMovePredictionPacketPayload : gl
         var handle = NativeMethods.TablePtr->C1.hs_create_608972c1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

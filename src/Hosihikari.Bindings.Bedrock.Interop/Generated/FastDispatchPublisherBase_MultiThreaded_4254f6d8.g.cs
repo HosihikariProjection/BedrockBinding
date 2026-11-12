@@ -49,6 +49,7 @@ public sealed unsafe partial class FastDispatchPublisherBase_MultiThreaded : glo
         var handle = NativeMethods.TablePtr->C0.hs_create_e9868159((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

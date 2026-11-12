@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptItemEnchantmentLevelOutOfBoundsError : 
         var handle = NativeMethods.TablePtr->C3.hs_create_97914900();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptItemEnchantmentLevelOutOfBoundsError : 
         var handle = NativeMethods.TablePtr->C3.hs_create_7bbb655a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

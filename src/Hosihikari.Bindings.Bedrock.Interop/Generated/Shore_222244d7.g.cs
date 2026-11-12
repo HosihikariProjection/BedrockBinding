@@ -45,6 +45,7 @@ public sealed unsafe partial class Shore : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_eb987110();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class Shore : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_086ce180((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class AmbientSoundServerSystem : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_5837fed9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

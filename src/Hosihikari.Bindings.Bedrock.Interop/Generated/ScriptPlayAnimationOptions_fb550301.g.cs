@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptPlayAnimationOptions : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_eba58a4f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

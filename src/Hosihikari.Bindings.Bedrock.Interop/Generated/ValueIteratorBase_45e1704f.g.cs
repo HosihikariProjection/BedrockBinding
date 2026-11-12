@@ -60,6 +60,7 @@ public sealed unsafe partial class ValueIteratorBase : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_4ba7f998();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -73,7 +74,12 @@ public sealed unsafe partial class ValueIteratorBase : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? deref()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e127568e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle, false);
     }
 
     public void increment()
@@ -104,7 +110,12 @@ public sealed unsafe partial class ValueIteratorBase : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueIteratorBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueIteratorBase arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6a192f59((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueIteratorBase((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueIteratorBase((nint)__hs_handle, false);
     }
 
 

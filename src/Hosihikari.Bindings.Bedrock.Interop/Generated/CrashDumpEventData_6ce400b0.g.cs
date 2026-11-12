@@ -49,6 +49,7 @@ public sealed unsafe partial class CrashDumpEventData : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_d1562216();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

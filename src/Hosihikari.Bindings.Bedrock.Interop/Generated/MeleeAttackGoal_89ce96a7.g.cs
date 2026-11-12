@@ -195,6 +195,7 @@ public sealed unsafe partial class MeleeAttackGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_d8ba95d4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -210,6 +211,7 @@ public sealed unsafe partial class MeleeAttackGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_06e83dce((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

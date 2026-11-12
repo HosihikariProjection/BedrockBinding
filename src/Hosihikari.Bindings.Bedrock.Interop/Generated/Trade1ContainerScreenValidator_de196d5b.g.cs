@@ -55,6 +55,7 @@ public sealed unsafe partial class Trade1ContainerScreenValidator : global::Syst
         var handle = NativeMethods.TablePtr->C4.hs_create_868fde23((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

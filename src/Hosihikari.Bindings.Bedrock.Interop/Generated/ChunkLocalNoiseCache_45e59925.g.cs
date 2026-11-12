@@ -45,6 +45,7 @@ public sealed unsafe partial class ChunkLocalNoiseCache : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_f4dc5f83((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

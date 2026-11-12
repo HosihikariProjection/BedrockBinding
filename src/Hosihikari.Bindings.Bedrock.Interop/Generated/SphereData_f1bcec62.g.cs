@@ -45,6 +45,7 @@ public sealed unsafe partial class SphereData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_0d4bc333((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

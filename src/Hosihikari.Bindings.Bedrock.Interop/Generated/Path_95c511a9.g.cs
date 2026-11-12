@@ -43,7 +43,12 @@ public sealed unsafe partial class Path : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.Core.Path? EMPTY()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8486e753();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Path((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Path((nint)__hs_handle, false);
     }
 
     public static Path? Create()
@@ -51,6 +56,7 @@ public sealed unsafe partial class Path : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_ba19ddfb();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +72,7 @@ public sealed unsafe partial class Path : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_3d71ece4((void*)other.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,6 +84,7 @@ public sealed unsafe partial class Path : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_41bbb082((void*)path);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -88,6 +96,7 @@ public sealed unsafe partial class Path : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_4bbd1bf0((void*)path);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -112,6 +121,7 @@ public sealed unsafe partial class Path : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_eb029255(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -145,6 +155,7 @@ public sealed unsafe partial class Path : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_7920e5b6(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -196,7 +207,12 @@ public sealed unsafe partial class Path : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Path? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path other)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ab963fec((void*)__hosihikari_shim_handle, (void*)other.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Path((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Path((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path rhs)

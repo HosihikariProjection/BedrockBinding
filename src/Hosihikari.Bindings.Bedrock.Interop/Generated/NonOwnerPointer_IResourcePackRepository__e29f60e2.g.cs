@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_IResourcePackRepository_ : gl
         var handle = NativeMethods.TablePtr->C0.hs_create_f97e03d1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_IResourcePackRepository_ : gl
         var handle = NativeMethods.TablePtr->C0.hs_create_da6c550c(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_IResourcePackRepository_ : gl
         var handle = NativeMethods.TablePtr->C0.hs_create_529b8d9d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_IResourcePackRepository_ : gl
         var handle = NativeMethods.TablePtr->C0.hs_create_daaab5ab(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_IResourcePackRepository_ : gl
     public global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e8d50ac7((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_IResourcePackRepository_ : gl
     public global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository? operator_IResourcePackRepository__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_00f47c9f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_IResourcePackRepository_ : gl
     public global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ebe96686((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6e053c49((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IResourcePackRepository((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

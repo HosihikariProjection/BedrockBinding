@@ -54,6 +54,7 @@ public sealed unsafe partial class InventoryContentPacketPayload : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_387ced4a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -69,6 +70,7 @@ public sealed unsafe partial class InventoryContentPacketPayload : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_c7ada27f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

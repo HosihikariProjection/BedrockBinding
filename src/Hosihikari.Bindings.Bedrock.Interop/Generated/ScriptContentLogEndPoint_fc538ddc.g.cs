@@ -75,6 +75,7 @@ public sealed unsafe partial class ScriptContentLogEndPoint : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_5dbd2cf6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -86,6 +87,7 @@ public sealed unsafe partial class ScriptContentLogEndPoint : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_6723e173((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -127,7 +129,12 @@ public sealed unsafe partial class ScriptContentLogEndPoint : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptContentLogEndPoint? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptContentLogEndPoint arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cf8994c2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptContentLogEndPoint((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptContentLogEndPoint((nint)__hs_handle, false);
     }
 
     public void setEnabled(bool newState)

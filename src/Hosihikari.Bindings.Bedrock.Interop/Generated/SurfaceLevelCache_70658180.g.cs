@@ -61,6 +61,7 @@ public sealed unsafe partial class SurfaceLevelCache : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_dac60e02();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class SurfaceLevelCache : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_063174fc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -113,7 +115,12 @@ public sealed unsafe partial class SurfaceLevelCache : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3442d142((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache((nint)__hs_handle, false);
     }
 
 

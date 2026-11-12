@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockCollision11910Upgrade : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_4733973a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

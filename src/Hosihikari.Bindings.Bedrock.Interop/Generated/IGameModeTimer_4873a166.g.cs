@@ -45,6 +45,7 @@ public sealed unsafe partial class IGameModeTimer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_9582c9fb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

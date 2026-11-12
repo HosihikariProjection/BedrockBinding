@@ -57,6 +57,7 @@ public sealed unsafe partial class StructureAnimationData : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_2bc4ae26();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class StructureAnimationData : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_49814f81((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -149,7 +151,12 @@ public sealed unsafe partial class StructureAnimationData : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ce7f51cf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -45,6 +45,7 @@ public sealed unsafe partial class TriggerJumpRequestComponent : global::System.
         var handle = NativeMethods.TablePtr->C4.hs_create_ccfd69b4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

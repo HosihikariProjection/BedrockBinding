@@ -53,7 +53,12 @@ public sealed unsafe partial class Field_BlockPos__int__int__int_ : global::Syst
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? div(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_60e3a43e((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public double dot(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos b)
@@ -94,31 +99,56 @@ public sealed unsafe partial class Field_BlockPos__int__int__int_ : global::Syst
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? mul(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_27352fb2((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? operator_multiply(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_155bb867((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? operator_operator___dd6951df(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_dd6951df((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? operator_divide(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f9afb15f((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? operator_operator___96db07d1(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_96db07d1((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false);
     }
 
     public bool operator_less(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos b)

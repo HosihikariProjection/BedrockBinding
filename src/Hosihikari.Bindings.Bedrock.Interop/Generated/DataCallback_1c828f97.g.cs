@@ -45,6 +45,7 @@ public sealed unsafe partial class DataCallback : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_73876fa9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

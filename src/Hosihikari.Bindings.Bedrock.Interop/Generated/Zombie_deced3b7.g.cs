@@ -757,6 +757,7 @@ public sealed unsafe partial class Zombie : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_6ef1c895();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

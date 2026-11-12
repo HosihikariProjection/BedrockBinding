@@ -53,6 +53,7 @@ public sealed unsafe partial class EntityRegistry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_e8738377();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class EntityRegistry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d254e07a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

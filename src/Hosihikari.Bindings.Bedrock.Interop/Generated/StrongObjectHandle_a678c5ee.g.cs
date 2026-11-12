@@ -57,6 +57,7 @@ public sealed unsafe partial class StrongObjectHandle : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_bcb9740b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -86,7 +87,12 @@ public sealed unsafe partial class StrongObjectHandle : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StrongObjectHandle? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StrongObjectHandle arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9d4d0ba9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StrongObjectHandle((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StrongObjectHandle((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

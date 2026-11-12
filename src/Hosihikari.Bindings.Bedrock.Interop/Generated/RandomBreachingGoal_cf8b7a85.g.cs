@@ -95,6 +95,7 @@ public sealed unsafe partial class RandomBreachingGoal : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_7ab93ef2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

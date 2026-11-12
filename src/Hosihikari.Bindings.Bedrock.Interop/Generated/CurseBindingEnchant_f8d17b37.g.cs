@@ -57,6 +57,7 @@ public sealed unsafe partial class CurseBindingEnchant : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_c546a73e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

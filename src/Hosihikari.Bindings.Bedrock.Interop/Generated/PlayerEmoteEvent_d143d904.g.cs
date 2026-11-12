@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerEmoteEvent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_1d740de7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

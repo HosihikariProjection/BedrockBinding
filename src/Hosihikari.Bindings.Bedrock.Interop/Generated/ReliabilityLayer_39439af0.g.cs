@@ -97,6 +97,7 @@ public sealed unsafe partial class ReliabilityLayer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_499257d9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -496,7 +497,12 @@ public sealed unsafe partial class ReliabilityLayer : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_93ca19a3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer((nint)__hs_handle, false);
     }
 
 

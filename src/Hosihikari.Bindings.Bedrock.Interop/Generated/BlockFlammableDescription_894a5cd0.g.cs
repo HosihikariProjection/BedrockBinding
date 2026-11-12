@@ -71,6 +71,7 @@ public sealed unsafe partial class BlockFlammableDescription : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_c4d888f9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

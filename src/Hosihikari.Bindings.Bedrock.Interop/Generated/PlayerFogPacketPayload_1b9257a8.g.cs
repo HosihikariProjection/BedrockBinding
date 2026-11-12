@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerFogPacketPayload : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_71341902((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -201,6 +201,7 @@ public sealed unsafe partial class MoveToLiquidGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f000418f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -216,6 +217,7 @@ public sealed unsafe partial class MoveToLiquidGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_e56ce42b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

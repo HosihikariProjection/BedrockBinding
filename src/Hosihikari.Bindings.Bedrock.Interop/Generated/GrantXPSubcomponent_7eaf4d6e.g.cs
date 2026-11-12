@@ -61,6 +61,7 @@ public sealed unsafe partial class GrantXPSubcomponent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_0179922b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

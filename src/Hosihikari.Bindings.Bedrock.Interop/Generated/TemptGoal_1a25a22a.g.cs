@@ -224,6 +224,7 @@ public sealed unsafe partial class TemptGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3819dac8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -239,6 +240,7 @@ public sealed unsafe partial class TemptGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_f428295e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -85,6 +85,7 @@ public sealed unsafe partial class ListBlockVolumeIterator : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_288b224f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class ListBlockVolumeIterator : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_c9f8ca29((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -144,13 +146,23 @@ public sealed unsafe partial class ListBlockVolumeIterator : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_86222099((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ListBlockVolumeIterator? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ListBlockVolumeIterator arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6c2f2d01((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ListBlockVolumeIterator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ListBlockVolumeIterator((nint)__hs_handle, false);
     }
 
 

@@ -57,6 +57,7 @@ public sealed unsafe partial class BehaviorDefinition : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_7d644439((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

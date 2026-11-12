@@ -57,6 +57,7 @@ public sealed unsafe partial class MobSpawnHerdInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_42c6542e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -110,7 +111,12 @@ public sealed unsafe partial class MobSpawnHerdInfo : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b62b3e1f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo((nint)__hs_handle, false);
     }
 
 

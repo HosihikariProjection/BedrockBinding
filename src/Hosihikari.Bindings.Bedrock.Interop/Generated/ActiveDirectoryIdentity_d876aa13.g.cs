@@ -45,6 +45,7 @@ public sealed unsafe partial class ActiveDirectoryIdentity : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_4a559311();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ActiveDirectoryIdentity : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_e72228cb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -175,7 +177,12 @@ public sealed unsafe partial class ActiveDirectoryIdentity : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryIdentity? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryIdentity arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_673336e6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryIdentity((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryIdentity((nint)__hs_handle, false);
     }
 
 

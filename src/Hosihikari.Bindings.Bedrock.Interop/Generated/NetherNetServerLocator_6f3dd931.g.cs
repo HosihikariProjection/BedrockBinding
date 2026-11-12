@@ -85,6 +85,7 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_7688f390();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_e39ec665((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -133,7 +135,12 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription? acquireHttpProbePermission()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2bcf3ad5((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)__hs_handle);
     }
 
     public void addCustomServer(global::Hosihikari.Bindings.Bedrock.Interop.AsynchronousIPResolver futureIP, int port)
@@ -238,7 +245,12 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_212b6eda((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator((nint)__hs_handle, false);
     }
 
     public void startAnnouncingServer(string playerName, string worldName, int gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore, global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes supportedAuth, global::Hosihikari.Bindings.Bedrock.Interop.Social.Nonce nonce)

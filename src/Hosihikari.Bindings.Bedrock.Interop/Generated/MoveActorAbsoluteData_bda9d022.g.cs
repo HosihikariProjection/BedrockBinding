@@ -49,6 +49,7 @@ public sealed unsafe partial class MoveActorAbsoluteData : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_f1897438();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class MoveActorAbsoluteData : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_5b717f03((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

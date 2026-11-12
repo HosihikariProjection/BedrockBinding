@@ -55,6 +55,7 @@ public sealed unsafe partial class TlsSlot : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_1c78f455();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class TlsSlot : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_6d5e38b7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

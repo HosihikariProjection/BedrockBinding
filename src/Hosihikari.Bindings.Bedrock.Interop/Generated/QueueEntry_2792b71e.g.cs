@@ -45,6 +45,7 @@ public sealed unsafe partial class QueueEntry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_2f1463ca((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

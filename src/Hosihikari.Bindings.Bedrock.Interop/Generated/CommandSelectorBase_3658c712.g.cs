@@ -50,6 +50,7 @@ public sealed unsafe partial class CommandSelectorBase : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_0d63a469();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -61,6 +62,7 @@ public sealed unsafe partial class CommandSelectorBase : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_3a8321c0(forcePlayer);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +74,7 @@ public sealed unsafe partial class CommandSelectorBase : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_fe1fbf34((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -93,7 +96,12 @@ public sealed unsafe partial class CommandSelectorBase : global::System.IDisposa
     public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getFeetPos(int version, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_37fccfbd(version, (void*)entity.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

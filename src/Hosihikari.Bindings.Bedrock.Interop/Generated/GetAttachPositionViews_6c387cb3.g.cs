@@ -49,6 +49,7 @@ public sealed unsafe partial class GetAttachPositionViews : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_53f7d1ec();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class GetAttachPositionViews : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_91a789fe((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

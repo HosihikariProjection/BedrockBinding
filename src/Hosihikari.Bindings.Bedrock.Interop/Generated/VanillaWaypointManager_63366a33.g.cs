@@ -45,6 +45,7 @@ public sealed unsafe partial class VanillaWaypointManager : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_0fb3fb2c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

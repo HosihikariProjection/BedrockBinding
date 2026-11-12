@@ -1604,6 +1604,7 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_0a26ea3c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -1619,6 +1620,7 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_33d12e23((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -1699,7 +1701,12 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
             fixed (byte* __hs_stringData7 = __hs_stringBytes7)
             {
                 var __hs_handle = NativeMethods.TablePtr->C3.hs_method_13917e07(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)spawnPos.Handle, (void*)spawnPosDelta.Handle, (void*)spawnRotation.Handle, spawnLoadedFromSave, (void*)dimensionId.Handle, serverNetworkHandler?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), __hs_stringData7, (nuint)__hs_stringByteCount7, (void*)(idOverride?.Handle ?? 0), idOverride is not null);
-                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer((nint)__hs_handle, false) : null;
+                if (__hs_handle == null)
+                {
+                    NativeMethods.GetLastError();
+                    return null;
+                }
+                return new global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer((nint)__hs_handle, false);
             }
         }
     }
@@ -1721,14 +1728,24 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C3.hs_method_66ef0e8f(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)pos.Handle, (void*)dimId.Handle, (void*)rotation.Handle, &__hs_hasValue);
-            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                if (!__hs_hasValue) { return null; }
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer((nint)__hs_handle, false);
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings? getMovementSettings()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_22f85abe((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings((nint)__hs_handle, false);
     }
 
     public string getXuid()
@@ -1938,13 +1955,23 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult? simulateNavigateToEntity(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, float speed)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0ba1f22d((void*)__hosihikari_shim_handle, (void*)actor.Handle, speed);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult? simulateNavigateToLocation(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position, float speed)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2944beac((void*)__hosihikari_shim_handle, (void*)position.Handle, speed);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult((nint)__hs_handle);
     }
 
     public void simulateNavigateToLocations(global::Hosihikari.Bindings.Bedrock.Interop.Vec3[] positions, float speed)
@@ -2060,7 +2087,12 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer? tryGetFromEntity(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, bool includeRemoved)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_12d79a2b((void*)entity.Handle, includeRemoved);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer((nint)__hs_handle, false);
     }
 
 

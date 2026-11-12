@@ -50,6 +50,7 @@ public sealed unsafe partial class PlayerInventoryItemChangeEvent : global::Syst
         var handle = NativeMethods.TablePtr->C2.hs_create_12bf245a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

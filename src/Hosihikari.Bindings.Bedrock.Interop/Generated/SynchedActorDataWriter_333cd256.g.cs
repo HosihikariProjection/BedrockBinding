@@ -45,6 +45,7 @@ public sealed unsafe partial class SynchedActorDataWriter : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_355d1a0e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

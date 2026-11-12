@@ -45,6 +45,7 @@ public sealed unsafe partial class ItemStackResponseContainerInfo : global::Syst
         var handle = NativeMethods.TablePtr->C1.hs_create_136cdbfb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -87,6 +87,7 @@ public sealed unsafe partial class NpcEventCoordinator : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_73155c6a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

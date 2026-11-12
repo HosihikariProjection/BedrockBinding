@@ -49,6 +49,7 @@ public sealed unsafe partial class RepairableItemComponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_f3598d24((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

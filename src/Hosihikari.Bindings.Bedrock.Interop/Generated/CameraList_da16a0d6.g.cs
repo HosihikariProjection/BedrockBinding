@@ -49,6 +49,7 @@ public sealed unsafe partial class CameraList : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_0b11e0b0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -74,7 +75,12 @@ public sealed unsafe partial class CameraList : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets_Nested.CameraList? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets_Nested.CameraList arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2260d389((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets_Nested.CameraList((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets_Nested.CameraList((nint)__hs_handle, false);
     }
 
 

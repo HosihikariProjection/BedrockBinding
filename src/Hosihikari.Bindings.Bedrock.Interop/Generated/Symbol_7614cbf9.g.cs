@@ -59,6 +59,7 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_369e7b1f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -70,6 +71,7 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_f766d7a4(data);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,6 +83,7 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_0e9f30a4(data);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -92,6 +95,7 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_51027e26((void*)other.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -103,6 +107,7 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_b985b882(val);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -118,7 +123,12 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol other)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_734990f6((void*)__hosihikari_shim_handle, (void*)other.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol other)

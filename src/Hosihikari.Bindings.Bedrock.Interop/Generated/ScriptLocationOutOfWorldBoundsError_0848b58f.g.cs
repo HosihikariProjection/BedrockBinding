@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptLocationOutOfWorldBoundsError : global:
         var handle = NativeMethods.TablePtr->C3.hs_create_4bf5ea41();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ScriptLocationOutOfWorldBoundsError : global:
         var handle = NativeMethods.TablePtr->C3.hs_create_0acbc095((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

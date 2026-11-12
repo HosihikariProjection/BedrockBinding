@@ -45,6 +45,7 @@ public sealed unsafe partial class ImportWorldsResult : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_a4a218bc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -111,6 +111,7 @@ public sealed unsafe partial class LootEnchant : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_1f5ca46f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

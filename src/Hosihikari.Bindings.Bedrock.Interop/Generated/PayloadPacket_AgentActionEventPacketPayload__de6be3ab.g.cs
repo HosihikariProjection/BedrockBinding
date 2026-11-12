@@ -104,6 +104,7 @@ public sealed unsafe partial class PayloadPacket_AgentActionEventPacketPayload_ 
         var handle = NativeMethods.TablePtr->C4.hs_create_73d77fca((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

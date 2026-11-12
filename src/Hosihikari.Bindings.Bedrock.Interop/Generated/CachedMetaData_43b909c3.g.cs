@@ -45,6 +45,7 @@ public sealed unsafe partial class CachedMetaData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_84909d18((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class TradeableSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_9744b28c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

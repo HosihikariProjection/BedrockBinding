@@ -49,6 +49,7 @@ public sealed unsafe partial class CopyableDataList : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_55a0b53b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class CopyableDataList : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_82d44b49((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

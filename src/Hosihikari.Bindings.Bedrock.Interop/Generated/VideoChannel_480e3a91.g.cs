@@ -261,13 +261,23 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel? AsVideoChannel()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_95fc0fc8((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel? AsVoiceChannel()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fd511c6b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel((nint)__hs_handle, false);
     }
 
     public bool SetLocalContent_w(nint content, int type, ref string error_desc)
@@ -334,6 +344,7 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_4174d596();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -345,6 +356,7 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_a0f1cdb4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -370,13 +382,23 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface? media_receive_channel()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f7f4648f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface? media_send_channel()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d6ac3480((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface((nint)__hs_handle, false);
     }
 
     public int media_type()
@@ -387,19 +409,34 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f230f16e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface? video_media_receive_channel()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d69ec244((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface? video_media_send_channel()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_da9dad41((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface((nint)__hs_handle, false);
     }
 
 

@@ -137381,7 +137381,14 @@ public static unsafe class NativeMethods
 
     private static global::Hosihikari.Bindings.Abi.ShimLibrary? s_library;
 
-    public static string? GetLastError() => s_library?.GetLastError();
+    public static string? GetLastError() => LastError = s_library?.GetLastError();
+
+    /// <summary>
+    /// Why the most recent projection call returned null, when it did. The shim clears
+    /// the slot on entry and fills it only on failure, so a null result can be
+    /// distinguished from a stale message by reading it right after the call.
+    /// </summary>
+    public static string? LastError { get; private set; }
 
     internal static Table* TablePtr
     {

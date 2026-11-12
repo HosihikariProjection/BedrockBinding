@@ -49,6 +49,7 @@ public sealed unsafe partial class BuriedTreasureStart : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_0b80e4f5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

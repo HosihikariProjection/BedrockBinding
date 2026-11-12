@@ -45,6 +45,7 @@ public sealed unsafe partial class RequestIdAssignments : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_107f7b0a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

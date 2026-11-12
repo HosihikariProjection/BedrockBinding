@@ -73,6 +73,7 @@ public sealed unsafe partial class StartGamePacketPayload : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_4049ae72((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -232,7 +233,12 @@ public sealed unsafe partial class StartGamePacketPayload : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacketPayload arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_015fd893((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacketPayload((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacketPayload((nint)__hs_handle, false);
     }
 
 

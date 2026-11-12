@@ -69,6 +69,7 @@ public sealed unsafe partial class PoolElementStructurePiece : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_0c589200();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,6 +81,7 @@ public sealed unsafe partial class PoolElementStructurePiece : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_0b7683e0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,6 +93,7 @@ public sealed unsafe partial class PoolElementStructurePiece : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_c51e59a2((void*)element.Handle, (void*)position.Handle, rotation, genDepth, (void*)junction.Handle, (void*)box.Handle, (void*)refPos.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -109,13 +112,23 @@ public sealed unsafe partial class PoolElementStructurePiece : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBeardStabilizeBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block foundationBlock)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b1f416eb((void*)__hosihikari_shim_handle, (void*)foundationBlock.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getSupportBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block aboveBlock)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_20adfe34((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)aboveBlock.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public int getTerrainAdjustmentEffect()
@@ -197,7 +210,12 @@ public sealed unsafe partial class PoolElementStructurePiece : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_af795111((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece((nint)__hs_handle, false);
     }
 
     public bool postProcess(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)

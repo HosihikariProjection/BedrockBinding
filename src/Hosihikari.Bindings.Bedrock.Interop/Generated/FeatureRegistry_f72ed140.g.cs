@@ -84,6 +84,7 @@ public sealed unsafe partial class FeatureRegistry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_cc48b490();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -95,6 +96,7 @@ public sealed unsafe partial class FeatureRegistry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_7485efb2(validator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,6 +108,7 @@ public sealed unsafe partial class FeatureRegistry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_c78364b7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

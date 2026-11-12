@@ -50,6 +50,7 @@ public sealed unsafe partial class ClimateParameters : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_0e4ea8e0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -61,6 +62,7 @@ public sealed unsafe partial class ClimateParameters : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_5cefcad3((void*)temperature.Handle, (void*)humidity.Handle, (void*)continentalness.Handle, (void*)erosion.Handle, (void*)depth.Handle, (void*)weirdness.Handle, offset);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +74,7 @@ public sealed unsafe partial class ClimateParameters : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_f3de6dde((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

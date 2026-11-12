@@ -63,6 +63,7 @@ public sealed unsafe partial class LegacyOnHurtActorTriggerItemComponent : globa
         var handle = NativeMethods.TablePtr->C2.hs_create_3dc32d1c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +79,7 @@ public sealed unsafe partial class LegacyOnHurtActorTriggerItemComponent : globa
         var handle = NativeMethods.TablePtr->C2.hs_create_3f7c589e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

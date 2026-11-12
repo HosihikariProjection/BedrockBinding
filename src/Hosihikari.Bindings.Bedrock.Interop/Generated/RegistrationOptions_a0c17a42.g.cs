@@ -105,6 +105,7 @@ public sealed unsafe partial class RegistrationOptions : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_e628320d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

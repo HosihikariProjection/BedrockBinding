@@ -163,7 +163,12 @@ public sealed unsafe partial class BlockGeometryDescription : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? buildUnboundDataNetworkTag()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c2f77d92((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

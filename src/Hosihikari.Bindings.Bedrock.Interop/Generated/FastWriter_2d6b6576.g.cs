@@ -65,6 +65,7 @@ public sealed unsafe partial class FastWriter : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_17779024();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class FastWriter : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_ad49e772((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

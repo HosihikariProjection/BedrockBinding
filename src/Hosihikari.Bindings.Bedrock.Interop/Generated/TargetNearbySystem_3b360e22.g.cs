@@ -49,6 +49,7 @@ public sealed unsafe partial class TargetNearbySystem : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_c9854bb6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

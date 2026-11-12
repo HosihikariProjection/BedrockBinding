@@ -201,6 +201,7 @@ public sealed unsafe partial class SidePoweredComponent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_fbf17f65((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

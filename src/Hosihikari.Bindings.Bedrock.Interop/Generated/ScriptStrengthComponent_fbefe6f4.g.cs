@@ -77,6 +77,7 @@ public sealed unsafe partial class ScriptStrengthComponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_0527724d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -57,6 +57,7 @@ public sealed unsafe partial class ActorAnimationControllerGroup : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_8af8d285((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class BreakDoorAnnotationDescription : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_1812f7cf((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

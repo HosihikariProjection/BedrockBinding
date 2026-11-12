@@ -45,6 +45,7 @@ public sealed unsafe partial class AssignedThread : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_51ecf6b7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

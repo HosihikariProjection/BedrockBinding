@@ -45,6 +45,7 @@ public sealed unsafe partial class ShowProfilePacketPayload : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_a91f601e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

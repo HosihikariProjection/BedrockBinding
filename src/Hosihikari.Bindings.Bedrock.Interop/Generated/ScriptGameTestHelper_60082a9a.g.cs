@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptGameTestHelper : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_633dc70f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ScriptGameTestHelper : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_5d5fb819((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -213,7 +215,12 @@ public sealed unsafe partial class ScriptGameTestHelper : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestHelper? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestHelper arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d5c13dbb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestHelper((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptGameTestHelper((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

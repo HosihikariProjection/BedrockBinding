@@ -45,6 +45,7 @@ public sealed unsafe partial class ValidationError : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_7a28e0c1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

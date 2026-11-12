@@ -49,6 +49,7 @@ public sealed unsafe partial class PiercingWeaponItemComponent : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_b4e2e057((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

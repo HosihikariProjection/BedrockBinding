@@ -78,6 +78,7 @@ public sealed unsafe partial class NetworkPeer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c6062611((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -118,7 +119,12 @@ public sealed unsafe partial class NetworkPeer : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus? getNetworkStatus()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a88e5f01((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)__hs_handle);
     }
 
     public bool isEncrypted()

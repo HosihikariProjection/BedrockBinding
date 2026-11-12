@@ -45,6 +45,7 @@ public sealed unsafe partial class ItemGameplayHandler : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_1448ce8c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,7 +55,12 @@ public sealed unsafe partial class ItemGameplayHandler : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.MutableItemGameplayEvent_CoordinatorResult_ @event)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_47a3c93d((void*)__hosihikari_shim_handle, (void*)@event.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle);
     }
 
     public int handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemGameplayEvent_void_ arg0)

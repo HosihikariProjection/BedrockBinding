@@ -45,6 +45,7 @@ public sealed unsafe partial class ConnectionCallbacks : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_d6398122((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

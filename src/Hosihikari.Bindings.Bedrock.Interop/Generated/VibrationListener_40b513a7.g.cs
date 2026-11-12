@@ -72,7 +72,12 @@ public sealed unsafe partial class VibrationListener : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource? getPositionSource()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5536409f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource((nint)__hs_handle, false);
     }
 
     public uint getRange()

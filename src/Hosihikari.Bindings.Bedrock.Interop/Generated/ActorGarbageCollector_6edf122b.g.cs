@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorGarbageCollector : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_70791f11((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

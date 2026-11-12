@@ -45,6 +45,7 @@ public sealed unsafe partial class SuspectTrackingComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_fbd29a9b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -65,6 +65,7 @@ public sealed unsafe partial class PathBlockSource : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_de3cd498();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class PathBlockSource : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_b2770d59((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -126,7 +128,12 @@ public sealed unsafe partial class PathBlockSource : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b25108d4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource((nint)__hs_handle, false);
     }
 
 

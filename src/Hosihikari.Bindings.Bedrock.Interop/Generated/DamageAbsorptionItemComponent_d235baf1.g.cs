@@ -57,6 +57,7 @@ public sealed unsafe partial class DamageAbsorptionItemComponent : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_cc8a42b4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class DamageAbsorptionItemComponent : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_0d4be902((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

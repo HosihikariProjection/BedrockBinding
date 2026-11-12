@@ -64,6 +64,7 @@ public sealed unsafe partial class ItemDescriptorCount : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_8ba1d6af();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

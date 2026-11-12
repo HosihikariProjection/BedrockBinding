@@ -53,6 +53,7 @@ public sealed unsafe partial class CurrentTaskQueueSetter : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_4b93fed3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class CurrentTaskQueueSetter : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_b5dd139d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -83,7 +85,12 @@ public sealed unsafe partial class CurrentTaskQueueSetter : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.CurrentTaskQueueSetter? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.CurrentTaskQueueSetter arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e3a7696c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.CurrentTaskQueueSetter((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.CurrentTaskQueueSetter((nint)__hs_handle, false);
     }
 
 

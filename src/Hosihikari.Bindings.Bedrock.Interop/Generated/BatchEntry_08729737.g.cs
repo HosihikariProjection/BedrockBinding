@@ -45,6 +45,7 @@ public sealed unsafe partial class BatchEntry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_1b11e63f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -91,6 +91,7 @@ public sealed unsafe partial class NearestAttackableTargetGoal : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_dfa73cef();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,6 +107,7 @@ public sealed unsafe partial class NearestAttackableTargetGoal : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_5ccda13a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

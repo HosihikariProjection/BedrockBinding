@@ -45,6 +45,7 @@ public sealed unsafe partial class Result_Json__Value__std__error_code_ : global
         var handle = NativeMethods.TablePtr->C0.hs_create_926f74d6((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

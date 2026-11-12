@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptCamera : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_0375470f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

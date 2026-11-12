@@ -73,6 +73,7 @@ public sealed unsafe partial class SeaPickleFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_9ee7f923((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

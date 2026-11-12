@@ -45,6 +45,7 @@ public sealed unsafe partial class CCRakNetSlidingWindow : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_178cba2a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

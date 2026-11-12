@@ -45,6 +45,7 @@ public sealed unsafe partial class ConsumeActionData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_40ed7f74((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

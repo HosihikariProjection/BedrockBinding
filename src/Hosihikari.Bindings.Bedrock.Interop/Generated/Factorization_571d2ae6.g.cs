@@ -45,6 +45,7 @@ public sealed unsafe partial class Factorization : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_a106d185((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

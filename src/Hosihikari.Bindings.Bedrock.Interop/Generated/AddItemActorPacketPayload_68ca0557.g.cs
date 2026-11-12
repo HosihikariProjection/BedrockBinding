@@ -53,6 +53,7 @@ public sealed unsafe partial class AddItemActorPacketPayload : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_ad06d481();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class AddItemActorPacketPayload : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_012b31e0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -123,7 +125,12 @@ public sealed unsafe partial class AddItemActorPacketPayload : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_993e1a3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload((nint)__hs_handle, false);
     }
 
 

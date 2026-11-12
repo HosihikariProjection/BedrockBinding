@@ -62,6 +62,7 @@ public sealed unsafe partial class typeid_t_void_ : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_7b4a87bf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,6 +78,7 @@ public sealed unsafe partial class typeid_t_void_ : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_736d1905(value);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

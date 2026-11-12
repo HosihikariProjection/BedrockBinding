@@ -45,6 +45,7 @@ public sealed unsafe partial class HeightmapData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_19402288();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class HeightmapData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_9e1dd212((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

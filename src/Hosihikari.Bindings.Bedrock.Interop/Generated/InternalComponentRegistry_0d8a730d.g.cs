@@ -53,6 +53,7 @@ public sealed unsafe partial class InternalComponentRegistry : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_31bafc7d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

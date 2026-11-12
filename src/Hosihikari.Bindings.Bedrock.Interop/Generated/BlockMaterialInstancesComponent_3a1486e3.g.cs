@@ -49,6 +49,7 @@ public sealed unsafe partial class BlockMaterialInstancesComponent : global::Sys
         var handle = NativeMethods.TablePtr->C0.hs_create_f4f89d6f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class BlockMaterialInstancesComponent : global::Sys
         var handle = NativeMethods.TablePtr->C0.hs_create_37e2e662((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

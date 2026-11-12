@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptPlayerLeaveBeforeEvent : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_daca5c3b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class KeyFrameTransform : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_ad5b0e1c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

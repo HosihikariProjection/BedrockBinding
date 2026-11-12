@@ -49,6 +49,7 @@ public sealed unsafe partial class TradeTableData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_a5718147();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class TradeTableData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_9ee3397b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

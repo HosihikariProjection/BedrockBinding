@@ -45,6 +45,7 @@ public sealed unsafe partial class MovementSnapshotComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_411cece5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class MovementSnapshotComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_d11e7fb3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -503,7 +505,12 @@ public sealed unsafe partial class MovementSnapshotComponent : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.MovementDataExtractionUtility.MovementSnapshotComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MovementDataExtractionUtility.MovementSnapshotComponent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8ee81b8d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MovementDataExtractionUtility.MovementSnapshotComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MovementDataExtractionUtility.MovementSnapshotComponent((nint)__hs_handle, false);
     }
 
     public void Dispose()

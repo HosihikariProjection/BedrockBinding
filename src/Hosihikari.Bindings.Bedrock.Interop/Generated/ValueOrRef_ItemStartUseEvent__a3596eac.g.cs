@@ -51,13 +51,23 @@ public sealed unsafe partial class ValueOrRef_ItemStartUseEvent_ : global::Syste
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStartUseEvent? value_9b6431b0()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9b6431b0((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStartUseEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStartUseEvent((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStartUseEvent? value_c99a12bb()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c99a12bb((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStartUseEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStartUseEvent((nint)__hs_handle, false);
     }
 
 

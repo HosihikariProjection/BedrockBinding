@@ -53,6 +53,7 @@ public sealed unsafe partial class InstantaneousMobEffect : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_d884898f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

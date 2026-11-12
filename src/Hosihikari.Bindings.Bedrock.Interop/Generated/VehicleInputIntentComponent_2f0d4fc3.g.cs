@@ -45,6 +45,7 @@ public sealed unsafe partial class VehicleInputIntentComponent : global::System.
         var handle = NativeMethods.TablePtr->C4.hs_create_fc651508((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

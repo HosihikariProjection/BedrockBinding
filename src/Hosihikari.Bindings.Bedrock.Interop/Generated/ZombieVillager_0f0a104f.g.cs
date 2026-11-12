@@ -753,6 +753,7 @@ public sealed unsafe partial class ZombieVillager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_f84c79a0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

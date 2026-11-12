@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptScoreTargetSelectorOption : global::Sys
         var handle = NativeMethods.TablePtr->C3.hs_create_e524b1c3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

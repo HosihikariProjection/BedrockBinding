@@ -92,6 +92,7 @@ public sealed unsafe partial class PayloadPacket_AutomationClientConnectPacketPa
         var handle = NativeMethods.TablePtr->C4.hs_create_1ae37a85((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

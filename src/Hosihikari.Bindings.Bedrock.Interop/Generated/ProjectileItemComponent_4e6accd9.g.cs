@@ -63,6 +63,7 @@ public sealed unsafe partial class ProjectileItemComponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_4e7c8f7b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,6 +83,7 @@ public sealed unsafe partial class ProjectileItemComponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_fac933f4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -111,7 +113,12 @@ public sealed unsafe partial class ProjectileItemComponent : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? shootProjectile(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 aimPos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 aimDir, float power, global::Hosihikari.Bindings.Bedrock.Interop.Player? player)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3709ac04((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)aimPos.Handle, (void*)aimDir.Handle, power, (void*)(player?.Handle ?? 0));
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
 

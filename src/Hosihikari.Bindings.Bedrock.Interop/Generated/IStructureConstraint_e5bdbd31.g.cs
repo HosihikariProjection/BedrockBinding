@@ -45,6 +45,7 @@ public sealed unsafe partial class IStructureConstraint : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_b4bb3fa6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

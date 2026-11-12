@@ -45,6 +45,7 @@ public sealed unsafe partial class WorldClockRestartEvent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_e5363927((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

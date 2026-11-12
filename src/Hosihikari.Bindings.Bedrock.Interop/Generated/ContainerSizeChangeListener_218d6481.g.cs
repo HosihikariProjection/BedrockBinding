@@ -45,6 +45,7 @@ public sealed unsafe partial class ContainerSizeChangeListener : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_c4596fa5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

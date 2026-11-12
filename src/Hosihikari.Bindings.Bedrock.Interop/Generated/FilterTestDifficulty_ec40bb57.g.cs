@@ -71,6 +71,7 @@ public sealed unsafe partial class FilterTestDifficulty : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_5f0c2661((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

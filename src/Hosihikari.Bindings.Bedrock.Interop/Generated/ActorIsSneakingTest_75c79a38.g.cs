@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorIsSneakingTest : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_fee0999c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

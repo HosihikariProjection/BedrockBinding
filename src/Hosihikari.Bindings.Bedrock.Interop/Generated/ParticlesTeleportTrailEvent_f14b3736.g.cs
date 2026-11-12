@@ -45,6 +45,7 @@ public sealed unsafe partial class ParticlesTeleportTrailEvent : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_6b8d3df2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -63,6 +63,7 @@ public sealed unsafe partial class ScriptPlayerGameModeChangeBeforeEvent : globa
         var handle = NativeMethods.TablePtr->C3.hs_create_b14a85bf((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

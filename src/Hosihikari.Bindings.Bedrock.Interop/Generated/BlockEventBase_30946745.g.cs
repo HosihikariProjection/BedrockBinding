@@ -43,7 +43,12 @@ public sealed unsafe partial class BlockEventBase : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? _getBlock()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c6282e2c((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public static BlockEventBase? Create()
@@ -51,6 +56,7 @@ public sealed unsafe partial class BlockEventBase : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_a97ef9e5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -62,6 +68,7 @@ public sealed unsafe partial class BlockEventBase : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_c16ef101((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -73,6 +80,7 @@ public sealed unsafe partial class BlockEventBase : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_fae21f05((void*)pos.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,13 +90,23 @@ public sealed unsafe partial class BlockEventBase : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlock()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9a5de8eb((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? getBlockSource()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_69dcb0cd((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

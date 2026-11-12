@@ -45,6 +45,7 @@ public sealed unsafe partial class ContentLogEndPointData : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_5167015c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

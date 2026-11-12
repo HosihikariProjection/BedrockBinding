@@ -53,6 +53,7 @@ public sealed unsafe partial class HoverTextColorItemComponent : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_568b9421((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

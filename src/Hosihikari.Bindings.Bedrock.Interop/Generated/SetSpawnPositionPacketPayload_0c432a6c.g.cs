@@ -45,6 +45,7 @@ public sealed unsafe partial class SetSpawnPositionPacketPayload : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_b9dc08a1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

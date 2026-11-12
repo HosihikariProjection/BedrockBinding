@@ -45,6 +45,7 @@ public sealed unsafe partial class AbilitiesComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_47ae03d8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

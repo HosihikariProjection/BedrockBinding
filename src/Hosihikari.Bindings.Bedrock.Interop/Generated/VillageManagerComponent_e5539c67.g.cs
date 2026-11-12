@@ -45,6 +45,7 @@ public sealed unsafe partial class VillageManagerComponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C4.hs_create_b39ebe35((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

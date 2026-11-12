@@ -78,6 +78,7 @@ public sealed unsafe partial class TestForBlocksCommand : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_e065ce91((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

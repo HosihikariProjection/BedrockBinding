@@ -57,6 +57,7 @@ public sealed unsafe partial class GameplayUserManagerProxy : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_55129e6e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

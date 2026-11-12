@@ -50,6 +50,7 @@ public sealed unsafe partial class MdnsResponderProvider : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_1e1d3e73((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

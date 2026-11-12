@@ -45,6 +45,7 @@ public sealed unsafe partial class TransformationDelay : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_6a4046b1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

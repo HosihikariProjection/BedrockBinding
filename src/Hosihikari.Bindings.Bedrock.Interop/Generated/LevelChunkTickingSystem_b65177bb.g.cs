@@ -49,6 +49,7 @@ public sealed unsafe partial class LevelChunkTickingSystem : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_166eff35((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

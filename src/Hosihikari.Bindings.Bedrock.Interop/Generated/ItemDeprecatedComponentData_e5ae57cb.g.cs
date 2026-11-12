@@ -91,6 +91,7 @@ public sealed unsafe partial class ItemDeprecatedComponentData : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_9b4c6705((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

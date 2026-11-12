@@ -45,6 +45,7 @@ public sealed unsafe partial class ParticlesBlockExplosionEvent : global::System
         var handle = NativeMethods.TablePtr->C2.hs_create_181de711((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

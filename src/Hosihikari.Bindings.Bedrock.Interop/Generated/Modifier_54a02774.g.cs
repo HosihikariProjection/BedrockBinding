@@ -61,6 +61,7 @@ public sealed unsafe partial class Modifier : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_b95e5ccf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class Modifier : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_6be6b0f5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

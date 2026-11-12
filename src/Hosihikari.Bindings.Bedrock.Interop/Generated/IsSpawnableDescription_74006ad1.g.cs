@@ -53,6 +53,7 @@ public sealed unsafe partial class IsSpawnableDescription : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_68e99943((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerToggleCrafterSlotRequestPacketPayload :
         var handle = NativeMethods.TablePtr->C2.hs_create_b593e8cd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

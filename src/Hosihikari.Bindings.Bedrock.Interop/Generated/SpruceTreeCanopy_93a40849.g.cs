@@ -49,6 +49,7 @@ public sealed unsafe partial class SpruceTreeCanopy : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_450e66a8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

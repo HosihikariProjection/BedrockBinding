@@ -45,6 +45,7 @@ public sealed unsafe partial class DependencyResolver : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_3cc7ec7b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class DependencyResolver : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_1f6fea3a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -85,7 +87,12 @@ public sealed unsafe partial class DependencyResolver : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyResolver? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyResolver arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_acaf5d55((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyResolver((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyResolver((nint)__hs_handle, false);
     }
 
     public void Dispose()

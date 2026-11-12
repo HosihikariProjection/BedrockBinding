@@ -45,6 +45,7 @@ public sealed unsafe partial class IGameTestFunctionContext : global::System.IDi
         var handle = NativeMethods.TablePtr->C4.hs_create_0f6a2b58((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

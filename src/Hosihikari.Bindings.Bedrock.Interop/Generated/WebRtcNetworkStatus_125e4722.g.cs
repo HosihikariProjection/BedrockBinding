@@ -111,6 +111,7 @@ public sealed unsafe partial class WebRtcNetworkStatus : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_373e25bc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -122,6 +123,7 @@ public sealed unsafe partial class WebRtcNetworkStatus : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_f81e3a4b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -137,7 +139,12 @@ public sealed unsafe partial class WebRtcNetworkStatus : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer_Nested.WebRtcNetworkStatus? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer_Nested.WebRtcNetworkStatus arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_de62eab3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer_Nested.WebRtcNetworkStatus((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WebRTCNetworkPeer_Nested.WebRtcNetworkStatus((nint)__hs_handle, false);
     }
 
 

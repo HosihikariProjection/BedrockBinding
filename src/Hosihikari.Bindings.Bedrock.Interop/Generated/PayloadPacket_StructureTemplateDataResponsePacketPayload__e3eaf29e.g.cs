@@ -104,6 +104,7 @@ public sealed unsafe partial class PayloadPacket_StructureTemplateDataResponsePa
         var handle = NativeMethods.TablePtr->C4.hs_create_d2f2808c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

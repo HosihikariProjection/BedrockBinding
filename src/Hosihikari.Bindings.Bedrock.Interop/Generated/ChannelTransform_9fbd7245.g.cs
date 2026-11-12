@@ -49,6 +49,7 @@ public sealed unsafe partial class ChannelTransform : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_2681c36a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ChannelTransform : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_49e5683f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

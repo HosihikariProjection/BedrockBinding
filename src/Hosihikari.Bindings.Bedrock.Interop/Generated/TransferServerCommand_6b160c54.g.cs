@@ -78,6 +78,7 @@ public sealed unsafe partial class TransferServerCommand : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_08dc2aaa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

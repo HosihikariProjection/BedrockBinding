@@ -173,6 +173,7 @@ public sealed unsafe partial class PoweredBlockComponent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_ad5f13d9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

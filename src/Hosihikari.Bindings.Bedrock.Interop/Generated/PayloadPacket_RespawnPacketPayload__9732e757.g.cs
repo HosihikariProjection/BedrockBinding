@@ -104,6 +104,7 @@ public sealed unsafe partial class PayloadPacket_RespawnPacketPayload_ : global:
         var handle = NativeMethods.TablePtr->C4.hs_create_9ecaa027((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -50,6 +50,7 @@ public sealed unsafe partial class AudioDeviceModule : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_663f5cb2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -95,7 +96,12 @@ public sealed unsafe partial class AudioDeviceModule : global::System.IDisposabl
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d4b77250((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule_Nested.Stats((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule_Nested.Stats((nint)__hs_handle);
     }
 
     public int Init()

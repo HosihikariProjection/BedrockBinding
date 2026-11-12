@@ -73,6 +73,7 @@ public sealed unsafe partial class ServerLocator : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_9cbcec0d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -92,7 +93,12 @@ public sealed unsafe partial class ServerLocator : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription? acquireHttpProbePermission()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_112a9da1((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)__hs_handle);
     }
 
     public void addCustomServer(global::Hosihikari.Bindings.Bedrock.Interop.AsynchronousIPResolver futureIP, int port)

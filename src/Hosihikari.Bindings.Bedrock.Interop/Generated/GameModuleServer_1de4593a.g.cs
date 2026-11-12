@@ -51,6 +51,7 @@ public sealed unsafe partial class GameModuleServer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_5438cb4d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

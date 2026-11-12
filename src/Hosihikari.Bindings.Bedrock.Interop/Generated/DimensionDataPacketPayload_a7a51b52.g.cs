@@ -53,6 +53,7 @@ public sealed unsafe partial class DimensionDataPacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C1.hs_create_54d68874();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class DimensionDataPacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C1.hs_create_ffc2f4e2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

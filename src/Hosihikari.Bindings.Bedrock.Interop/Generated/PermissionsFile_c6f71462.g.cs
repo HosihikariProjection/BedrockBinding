@@ -45,6 +45,7 @@ public sealed unsafe partial class PermissionsFile : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_edbe3d55((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

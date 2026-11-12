@@ -45,6 +45,7 @@ public sealed unsafe partial class SynchronizedPlainData : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_8815625e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class SynchronizedPlainData : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_b216f8a9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -101,7 +103,12 @@ public sealed unsafe partial class SynchronizedPlainData : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SynchronizedPlainData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SynchronizedPlainData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_47bc4d38((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SynchronizedPlainData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SynchronizedPlainData((nint)__hs_handle, false);
     }
 
     public void Dispose()

@@ -51,6 +51,7 @@ public sealed unsafe partial class EditorBootstrapper : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_25a49bf5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -62,6 +63,7 @@ public sealed unsafe partial class EditorBootstrapper : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_cc5a09ec((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +89,12 @@ public sealed unsafe partial class EditorBootstrapper : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.EditorBootstrapper? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EditorBootstrapper arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e7ea9948((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EditorBootstrapper((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.EditorBootstrapper((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

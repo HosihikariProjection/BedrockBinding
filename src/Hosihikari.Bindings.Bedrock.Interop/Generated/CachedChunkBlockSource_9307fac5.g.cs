@@ -45,6 +45,7 @@ public sealed unsafe partial class CachedChunkBlockSource : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_13b99b3a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class CachedChunkBlockSource : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_b8841100((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -111,7 +113,12 @@ public sealed unsafe partial class CachedChunkBlockSource : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.CachedChunkBlockSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CachedChunkBlockSource arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e27afc60((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CachedChunkBlockSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CachedChunkBlockSource((nint)__hs_handle, false);
     }
 
 

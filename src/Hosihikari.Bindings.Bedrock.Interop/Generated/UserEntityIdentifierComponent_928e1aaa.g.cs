@@ -45,6 +45,7 @@ public sealed unsafe partial class UserEntityIdentifierComponent : global::Syste
         var handle = NativeMethods.TablePtr->C4.hs_create_4120289b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

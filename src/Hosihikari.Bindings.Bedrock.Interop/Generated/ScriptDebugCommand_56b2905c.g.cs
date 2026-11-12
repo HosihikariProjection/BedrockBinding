@@ -74,6 +74,7 @@ public sealed unsafe partial class ScriptDebugCommand : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_86fec4fd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

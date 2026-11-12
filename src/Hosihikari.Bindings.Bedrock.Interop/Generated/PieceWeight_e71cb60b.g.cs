@@ -45,6 +45,7 @@ public sealed unsafe partial class PieceWeight : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c519c19c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

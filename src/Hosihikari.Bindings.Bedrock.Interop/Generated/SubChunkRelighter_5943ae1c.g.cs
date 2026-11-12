@@ -53,6 +53,7 @@ public sealed unsafe partial class SubChunkRelighter : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_863e674f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class SubChunkRelighter : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_aad79583((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

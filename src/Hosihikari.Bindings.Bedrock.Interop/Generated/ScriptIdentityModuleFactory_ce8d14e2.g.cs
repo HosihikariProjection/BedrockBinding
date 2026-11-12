@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptIdentityModuleFactory : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_89597de5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

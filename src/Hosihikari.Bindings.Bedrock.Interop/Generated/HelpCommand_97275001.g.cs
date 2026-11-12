@@ -78,6 +78,7 @@ public sealed unsafe partial class HelpCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_1a1be4fa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

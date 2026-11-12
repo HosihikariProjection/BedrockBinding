@@ -45,6 +45,7 @@ public sealed unsafe partial class BuildPlayerContext : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_d3f4dea3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

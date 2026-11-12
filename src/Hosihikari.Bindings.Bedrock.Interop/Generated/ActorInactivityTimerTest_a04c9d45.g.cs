@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorInactivityTimerTest : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_8ba7eac6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

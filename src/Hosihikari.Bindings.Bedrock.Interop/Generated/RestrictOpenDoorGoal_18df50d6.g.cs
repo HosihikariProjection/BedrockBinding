@@ -87,6 +87,7 @@ public sealed unsafe partial class RestrictOpenDoorGoal : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_c1c6e58d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -98,6 +99,7 @@ public sealed unsafe partial class RestrictOpenDoorGoal : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_a5b13090((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -143,7 +145,12 @@ public sealed unsafe partial class RestrictOpenDoorGoal : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.RestrictOpenDoorGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RestrictOpenDoorGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_641b01c5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RestrictOpenDoorGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RestrictOpenDoorGoal((nint)__hs_handle, false);
     }
 
     public void start()

@@ -53,6 +53,7 @@ public sealed unsafe partial class UpdateBlockFaceGetPlacementBlockCallback : gl
         var handle = NativeMethods.TablePtr->C0.hs_create_31be7778((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

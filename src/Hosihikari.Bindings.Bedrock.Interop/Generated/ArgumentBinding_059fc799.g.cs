@@ -49,6 +49,7 @@ public sealed unsafe partial class ArgumentBinding : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_d9f2fa04();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ArgumentBinding : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_d75cbead((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +89,12 @@ public sealed unsafe partial class ArgumentBinding : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentBinding? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentBinding arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_033aa393((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentBinding((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ArgumentBinding((nint)__hs_handle, false);
     }
 
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptWorldInitializeAfterEvent : global::Sys
         var handle = NativeMethods.TablePtr->C3.hs_create_19f163b9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

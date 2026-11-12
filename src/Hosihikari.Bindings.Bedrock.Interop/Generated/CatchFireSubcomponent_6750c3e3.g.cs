@@ -61,6 +61,7 @@ public sealed unsafe partial class CatchFireSubcomponent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_9d4af597((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

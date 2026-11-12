@@ -45,6 +45,7 @@ public sealed unsafe partial class TaskInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_98ffee62((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

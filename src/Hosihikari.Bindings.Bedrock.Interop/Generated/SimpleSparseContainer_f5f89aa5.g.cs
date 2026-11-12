@@ -155,6 +155,7 @@ public sealed unsafe partial class SimpleSparseContainer : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_55d588d0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -170,6 +171,7 @@ public sealed unsafe partial class SimpleSparseContainer : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_a5ce3bc0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -189,7 +191,12 @@ public sealed unsafe partial class SimpleSparseContainer : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1d81ec1d((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public int getMaxStackSize()
@@ -229,7 +236,12 @@ public sealed unsafe partial class SimpleSparseContainer : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.SimpleSparseContainer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimpleSparseContainer arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b683960d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SimpleSparseContainer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SimpleSparseContainer((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

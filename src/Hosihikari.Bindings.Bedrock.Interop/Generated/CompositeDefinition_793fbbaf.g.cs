@@ -57,6 +57,7 @@ public sealed unsafe partial class CompositeDefinition : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_cf34422b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

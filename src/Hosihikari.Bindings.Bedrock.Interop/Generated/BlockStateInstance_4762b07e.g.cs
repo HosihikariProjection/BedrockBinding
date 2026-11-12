@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockStateInstance : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_dc889e2e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

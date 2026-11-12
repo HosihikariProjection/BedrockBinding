@@ -49,7 +49,12 @@ public sealed unsafe partial class BlockRandomTickEvent : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? _getBlockSource()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_166c718e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -61,6 +66,7 @@ public sealed unsafe partial class BlockRandomTickEvent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_902eb86c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +78,7 @@ public sealed unsafe partial class BlockRandomTickEvent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_cdfb7cd2((void*)pos.Handle, (void*)region.Handle, (void*)random.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +88,12 @@ public sealed unsafe partial class BlockRandomTickEvent : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? getBlockSource()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_15d15348((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

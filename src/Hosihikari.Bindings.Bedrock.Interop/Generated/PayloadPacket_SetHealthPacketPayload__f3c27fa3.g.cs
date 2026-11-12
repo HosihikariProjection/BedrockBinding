@@ -92,6 +92,7 @@ public sealed unsafe partial class PayloadPacket_SetHealthPacketPayload_ : globa
         var handle = NativeMethods.TablePtr->C4.hs_create_b4d8c06f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

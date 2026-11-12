@@ -45,6 +45,7 @@ public sealed unsafe partial class MultiPartStreamHelper : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_f2d5ce06((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

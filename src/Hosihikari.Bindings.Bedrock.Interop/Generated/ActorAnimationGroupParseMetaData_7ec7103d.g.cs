@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorAnimationGroupParseMetaData : global::Sy
         var handle = NativeMethods.TablePtr->C0.hs_create_d14ca7de((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

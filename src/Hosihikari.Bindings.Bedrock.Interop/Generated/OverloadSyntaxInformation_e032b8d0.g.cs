@@ -49,6 +49,7 @@ public sealed unsafe partial class OverloadSyntaxInformation : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_06eb87b3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class OverloadSyntaxInformation : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_beeae428((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

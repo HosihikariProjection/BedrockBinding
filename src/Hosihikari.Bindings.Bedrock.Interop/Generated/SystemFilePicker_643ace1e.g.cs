@@ -61,6 +61,7 @@ public sealed unsafe partial class SystemFilePicker : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_8b7f34e7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

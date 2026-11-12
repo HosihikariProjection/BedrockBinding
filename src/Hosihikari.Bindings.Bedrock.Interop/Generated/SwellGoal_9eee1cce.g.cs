@@ -87,6 +87,7 @@ public sealed unsafe partial class SwellGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_76702d43();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class SwellGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_9d99a06c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

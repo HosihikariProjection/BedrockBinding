@@ -45,6 +45,7 @@ public sealed unsafe partial class DirectAccessBlocks : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_89d5b907();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class DirectAccessBlocks : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_421c3b0a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class DirectAccessBlocks : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6151b3a8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks((nint)__hs_handle, false);
     }
 
     public void Dispose()

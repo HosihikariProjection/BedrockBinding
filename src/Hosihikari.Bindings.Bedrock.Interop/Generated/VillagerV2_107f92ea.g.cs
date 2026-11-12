@@ -771,6 +771,7 @@ public sealed unsafe partial class VillagerV2 : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_4a0bd158();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -818,7 +819,12 @@ public sealed unsafe partial class VillagerV2 : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Interaction? getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_075e3757((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)__hs_handle);
     }
 
     public void newServerAiStep()

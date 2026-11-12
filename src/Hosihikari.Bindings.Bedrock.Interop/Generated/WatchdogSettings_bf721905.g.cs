@@ -45,6 +45,7 @@ public sealed unsafe partial class WatchdogSettings : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3e4fd647((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

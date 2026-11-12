@@ -45,6 +45,7 @@ public sealed unsafe partial class NetEaseBlockComponentStorage : global::System
         var handle = NativeMethods.TablePtr->C2.hs_create_01a8f74d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

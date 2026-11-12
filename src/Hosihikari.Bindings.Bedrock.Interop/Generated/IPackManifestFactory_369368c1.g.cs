@@ -51,6 +51,7 @@ public sealed unsafe partial class IPackManifestFactory : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_6e3278d8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

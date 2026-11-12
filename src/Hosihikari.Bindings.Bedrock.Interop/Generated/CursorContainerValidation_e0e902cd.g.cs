@@ -53,6 +53,7 @@ public sealed unsafe partial class CursorContainerValidation : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_976fd81a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class Pos2d : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_94c3ac08((void*)pos.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

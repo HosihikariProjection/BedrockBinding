@@ -49,6 +49,7 @@ public sealed unsafe partial class FakeBatteryMonitorInterface : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_cca3ecc0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

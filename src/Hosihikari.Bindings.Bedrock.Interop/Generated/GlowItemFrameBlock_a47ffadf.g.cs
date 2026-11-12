@@ -392,7 +392,12 @@ public sealed unsafe partial class GlowItemFrameBlock : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getSpawnedItemName()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a7790219((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle);
     }
 
 

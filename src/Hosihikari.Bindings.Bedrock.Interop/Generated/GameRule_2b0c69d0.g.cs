@@ -94,6 +94,7 @@ public sealed unsafe partial class GameRule : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_3be87fd9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -118,6 +119,7 @@ public sealed unsafe partial class GameRule : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_87008cbf(__hs_stringData0, (nuint)__hs_stringByteCount0, canBeModifiedByPlayer);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 

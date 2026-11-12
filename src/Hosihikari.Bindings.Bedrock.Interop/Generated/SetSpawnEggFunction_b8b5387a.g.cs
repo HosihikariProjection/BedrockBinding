@@ -63,6 +63,7 @@ public sealed unsafe partial class SetSpawnEggFunction : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_d89c27da((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

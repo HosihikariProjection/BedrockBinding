@@ -73,6 +73,7 @@ public sealed unsafe partial class IceSpikeFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_8a77c5c7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

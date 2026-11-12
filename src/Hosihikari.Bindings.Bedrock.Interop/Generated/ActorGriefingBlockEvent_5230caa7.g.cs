@@ -50,6 +50,7 @@ public sealed unsafe partial class ActorGriefingBlockEvent : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_7c0c958a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

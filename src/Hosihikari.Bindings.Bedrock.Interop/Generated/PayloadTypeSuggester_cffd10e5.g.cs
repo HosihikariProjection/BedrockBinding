@@ -53,6 +53,7 @@ public sealed unsafe partial class PayloadTypeSuggester : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_aaf7eb87((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

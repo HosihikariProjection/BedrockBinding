@@ -45,6 +45,7 @@ public sealed unsafe partial class RewindCollisionShapesComponent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_6a9bb624((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

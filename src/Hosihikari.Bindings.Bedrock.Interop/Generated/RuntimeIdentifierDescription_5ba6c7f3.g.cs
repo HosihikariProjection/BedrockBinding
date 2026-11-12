@@ -53,6 +53,7 @@ public sealed unsafe partial class RuntimeIdentifierDescription : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_5fa5b0dd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

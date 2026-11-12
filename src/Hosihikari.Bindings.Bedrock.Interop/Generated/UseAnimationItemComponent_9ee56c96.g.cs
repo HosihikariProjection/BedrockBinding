@@ -59,6 +59,7 @@ public sealed unsafe partial class UseAnimationItemComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_1b20d272((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

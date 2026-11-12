@@ -45,6 +45,7 @@ public sealed unsafe partial class StructureSetRegistry : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_2c8158e8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

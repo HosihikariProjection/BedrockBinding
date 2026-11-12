@@ -45,6 +45,7 @@ public sealed unsafe partial class GoalSelectorComponent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_48cfcb8f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

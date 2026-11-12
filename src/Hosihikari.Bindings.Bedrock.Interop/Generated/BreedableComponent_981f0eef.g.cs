@@ -45,6 +45,7 @@ public sealed unsafe partial class BreedableComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_3bc19561((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

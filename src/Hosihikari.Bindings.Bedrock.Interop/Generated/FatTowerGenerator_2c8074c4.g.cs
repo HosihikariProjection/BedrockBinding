@@ -49,6 +49,7 @@ public sealed unsafe partial class FatTowerGenerator : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_0788626e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

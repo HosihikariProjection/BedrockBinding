@@ -50,6 +50,7 @@ public sealed unsafe partial class FrameWithContext : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_cc2d27c1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -85,6 +85,7 @@ public sealed unsafe partial class AnimationComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_98e31e82();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class AnimationComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_cfa7f558((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -123,7 +125,12 @@ public sealed unsafe partial class AnimationComponent : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.Matrix? getQueryableBoneOrientation(ulong boneNameHash)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c8ab8ecb((void*)__hosihikari_shim_handle, boneNameHash);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Matrix((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Matrix((nint)__hs_handle, false);
     }
 
     public int[] getSkeletalHierarchiesToProcess()

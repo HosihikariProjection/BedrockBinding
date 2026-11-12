@@ -78,6 +78,7 @@ public sealed unsafe partial class RideCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_1d5d021b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

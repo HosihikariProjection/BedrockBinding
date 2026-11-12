@@ -57,6 +57,7 @@ public sealed unsafe partial class AttackDescription : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_2d266339((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -99,7 +99,12 @@ public sealed unsafe partial class PeerConnectionSdpMethods : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions? GetCryptoOptions()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4ee8fd44((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)__hs_handle);
     }
 
     public int? GetSctpSslRole_n()
@@ -148,6 +153,7 @@ public sealed unsafe partial class PeerConnectionSdpMethods : global::System.IDi
         var handle = NativeMethods.TablePtr->C4.hs_create_3da4fe10((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -181,7 +187,12 @@ public sealed unsafe partial class PeerConnectionSdpMethods : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? StartSctpTransport(nint options)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_dab5797f((void*)__hosihikari_shim_handle, (void*)options);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle);
     }
 
     public bool ValidateBundleSettings(nint desc, nint bundle_groups_by_mid)
@@ -192,13 +203,23 @@ public sealed unsafe partial class PeerConnectionSdpMethods : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call? call_ptr()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c2e84cb4((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration? configuration()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fb85fcc7((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration((nint)__hs_handle, false);
     }
 
     public nint data_channel_controller()
@@ -229,7 +250,12 @@ public sealed unsafe partial class PeerConnectionSdpMethods : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options? options()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6dafb720((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options((nint)__hs_handle, false);
     }
 
     public nint payload_type_picker()
@@ -268,13 +294,23 @@ public sealed unsafe partial class PeerConnectionSdpMethods : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController? transport_controller_n()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1474405a((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController? transport_controller_s()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8a2558ce((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController((nint)__hs_handle, false);
     }
 
     public nint trials()

@@ -92,6 +92,7 @@ public sealed unsafe partial class WaitTicksNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_c21a47e5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

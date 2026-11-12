@@ -81,6 +81,7 @@ public sealed unsafe partial class LegacyForestFoliageFeature : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_41431f7b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class LegacyForestFoliageFeature : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_5141661a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

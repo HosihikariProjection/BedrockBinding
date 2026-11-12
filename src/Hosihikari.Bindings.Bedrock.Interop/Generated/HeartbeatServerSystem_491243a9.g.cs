@@ -49,6 +49,7 @@ public sealed unsafe partial class HeartbeatServerSystem : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_bcf08040((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

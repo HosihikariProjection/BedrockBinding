@@ -49,6 +49,7 @@ public sealed unsafe partial class ActorHistory : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_d8ed764f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

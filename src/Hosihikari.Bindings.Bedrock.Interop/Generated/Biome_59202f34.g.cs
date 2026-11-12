@@ -49,6 +49,7 @@ public sealed unsafe partial class Biome : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_951cac8d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class Biome : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_50a61096((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

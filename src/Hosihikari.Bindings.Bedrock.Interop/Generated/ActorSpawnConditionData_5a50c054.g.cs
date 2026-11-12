@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorSpawnConditionData : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_0b06d03e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

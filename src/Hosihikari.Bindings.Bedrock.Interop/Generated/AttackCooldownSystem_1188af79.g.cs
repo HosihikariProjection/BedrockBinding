@@ -49,6 +49,7 @@ public sealed unsafe partial class AttackCooldownSystem : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_db1fe2a2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

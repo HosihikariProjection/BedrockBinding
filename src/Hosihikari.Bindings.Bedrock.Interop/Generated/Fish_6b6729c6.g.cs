@@ -611,6 +611,7 @@ public sealed unsafe partial class Fish : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_9084130e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

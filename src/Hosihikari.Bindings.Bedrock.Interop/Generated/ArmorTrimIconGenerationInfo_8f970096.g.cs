@@ -45,6 +45,7 @@ public sealed unsafe partial class ArmorTrimIconGenerationInfo : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_a60992d1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ArmorTrimIconGenerationInfo : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_252049a9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

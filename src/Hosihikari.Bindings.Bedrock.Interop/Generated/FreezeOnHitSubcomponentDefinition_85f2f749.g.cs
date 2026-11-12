@@ -53,6 +53,7 @@ public sealed unsafe partial class FreezeOnHitSubcomponentDefinition : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_24c76aa5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

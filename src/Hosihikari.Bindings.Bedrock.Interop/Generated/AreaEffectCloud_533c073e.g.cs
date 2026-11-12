@@ -619,6 +619,7 @@ public sealed unsafe partial class AreaEffectCloud : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_0f3e9f2d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

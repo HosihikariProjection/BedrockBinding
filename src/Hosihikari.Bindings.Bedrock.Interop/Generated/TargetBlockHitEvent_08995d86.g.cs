@@ -45,6 +45,7 @@ public sealed unsafe partial class TargetBlockHitEvent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_6660a922((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

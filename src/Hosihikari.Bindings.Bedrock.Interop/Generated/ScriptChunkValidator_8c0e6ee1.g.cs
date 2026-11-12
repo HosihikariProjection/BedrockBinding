@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptChunkValidator : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_c7995e1f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ScriptChunkValidator : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_09c78808((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

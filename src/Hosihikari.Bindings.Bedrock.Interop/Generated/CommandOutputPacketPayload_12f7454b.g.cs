@@ -50,6 +50,7 @@ public sealed unsafe partial class CommandOutputPacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_9431fab6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

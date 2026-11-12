@@ -45,6 +45,7 @@ public sealed unsafe partial class GameSpecificNetEventCallback : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_9bd8fb35((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

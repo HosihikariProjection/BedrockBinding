@@ -49,6 +49,7 @@ public sealed unsafe partial class MobEvent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_cc888e24();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class MobEvent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f3722c55((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

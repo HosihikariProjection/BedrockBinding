@@ -57,6 +57,7 @@ public sealed unsafe partial class ContextConfig : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_e83b6387();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -63,6 +63,7 @@ public sealed unsafe partial class RandomDyeFunction : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_22769d39((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

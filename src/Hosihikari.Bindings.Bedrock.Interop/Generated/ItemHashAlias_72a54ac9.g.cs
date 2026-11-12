@@ -45,6 +45,7 @@ public sealed unsafe partial class ItemHashAlias : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_5a6270ae((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

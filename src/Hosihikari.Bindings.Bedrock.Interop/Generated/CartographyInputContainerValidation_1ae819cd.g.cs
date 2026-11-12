@@ -53,6 +53,7 @@ public sealed unsafe partial class CartographyInputContainerValidation : global:
         var handle = NativeMethods.TablePtr->C0.hs_create_9591cc9b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class IPayload : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_e7aa2a86((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -58,13 +59,23 @@ public sealed unsafe partial class IPayload : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny? runOn(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId arg0, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.NativeRuntime arg1, byte? arg2)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_05a0b5df((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2 ?? default(byte), arg2.HasValue);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny? runOn(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringBasedRuntime runtime, byte? privilege)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_615b52f8((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)runtime.Handle, privilege ?? default(byte), privilege.HasValue);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)__hs_handle);
     }
 
 

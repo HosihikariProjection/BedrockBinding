@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockQueuedTicking11910Upgrade : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_5db99f9c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

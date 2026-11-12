@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_IEntityRegistryOwner_ : globa
         var handle = NativeMethods.TablePtr->C0.hs_create_f5fb2f5b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_IEntityRegistryOwner_ : globa
         var handle = NativeMethods.TablePtr->C0.hs_create_61abf776(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_IEntityRegistryOwner_ : globa
         var handle = NativeMethods.TablePtr->C0.hs_create_4eda0950();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_IEntityRegistryOwner_ : globa
         var handle = NativeMethods.TablePtr->C0.hs_create_12c89639(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_IEntityRegistryOwner_ : globa
     public global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f8f60372((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_IEntityRegistryOwner_ : globa
     public global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner? operator_IEntityRegistryOwner__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f5254b4b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_IEntityRegistryOwner_ : globa
     public global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_330d9ba5((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c2572ee6((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IEntityRegistryOwner((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

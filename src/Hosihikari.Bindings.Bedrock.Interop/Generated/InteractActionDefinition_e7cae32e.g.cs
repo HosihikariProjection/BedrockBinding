@@ -61,6 +61,7 @@ public sealed unsafe partial class InteractActionDefinition : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_ab1ff0fd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

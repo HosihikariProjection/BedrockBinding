@@ -45,6 +45,7 @@ public sealed unsafe partial class RakPeerHelper : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_5463bf6c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class RakPeerHelper : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_8575f841((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -93,7 +95,12 @@ public sealed unsafe partial class RakPeerHelper : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0e7bd98c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

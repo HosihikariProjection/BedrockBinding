@@ -45,6 +45,7 @@ public sealed unsafe partial class SchemaWriter : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_af81e5ef((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

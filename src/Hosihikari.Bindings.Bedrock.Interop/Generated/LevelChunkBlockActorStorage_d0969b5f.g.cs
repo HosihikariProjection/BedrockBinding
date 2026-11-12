@@ -49,6 +49,7 @@ public sealed unsafe partial class LevelChunkBlockActorStorage : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_f244d3f9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class LevelChunkBlockActorStorage : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_583977b6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -114,7 +116,12 @@ public sealed unsafe partial class LevelChunkBlockActorStorage : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2d37c2eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage((nint)__hs_handle, false);
     }
 
 

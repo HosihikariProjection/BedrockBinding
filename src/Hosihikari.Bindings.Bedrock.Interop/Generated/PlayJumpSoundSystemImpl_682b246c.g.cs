@@ -57,6 +57,7 @@ public sealed unsafe partial class PlayJumpSoundSystemImpl : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_b1679d56((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

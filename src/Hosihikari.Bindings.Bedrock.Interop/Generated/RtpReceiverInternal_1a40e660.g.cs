@@ -67,6 +67,7 @@ public sealed unsafe partial class RtpReceiverInternal : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_41d27a31((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptPluginResult : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_7c1c0d1b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

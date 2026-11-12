@@ -45,6 +45,7 @@ public sealed unsafe partial class IScriptItemCustomComponentRegistry : global::
         var handle = NativeMethods.TablePtr->C3.hs_create_be47d7a4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,7 +55,12 @@ public sealed unsafe partial class IScriptItemCustomComponentRegistry : global::
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener? getEventListener()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b67fe3b6((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener((nint)__hs_handle, false);
     }
 
     public void setCerealContext(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)

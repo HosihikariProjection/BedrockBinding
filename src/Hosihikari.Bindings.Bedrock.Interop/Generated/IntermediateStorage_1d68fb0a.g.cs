@@ -45,6 +45,7 @@ public sealed unsafe partial class IntermediateStorage : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_89c9159e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class IntermediateStorage : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_3d0b7dc4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -95,7 +97,12 @@ public sealed unsafe partial class IntermediateStorage : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentMineBlockEvent_Nested.IntermediateStorage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentMineBlockEvent_Nested.IntermediateStorage arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_71462db2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentMineBlockEvent_Nested.IntermediateStorage((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentMineBlockEvent_Nested.IntermediateStorage((nint)__hs_handle, false);
     }
 
 

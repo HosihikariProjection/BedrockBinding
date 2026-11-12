@@ -45,6 +45,7 @@ public sealed unsafe partial class UniqueOwnerPointer_StructureSpawnRegistry_ : 
         var handle = NativeMethods.TablePtr->C0.hs_create_bc747483();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class UniqueOwnerPointer_StructureSpawnRegistry_ : 
         var handle = NativeMethods.TablePtr->C0.hs_create_cfdb262e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -114,7 +116,12 @@ public sealed unsafe partial class UniqueOwnerPointer_StructureSpawnRegistry_ : 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_StructureSpawnRegistry_? operator_assign()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ca5162b8((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_StructureSpawnRegistry_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_StructureSpawnRegistry_((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_StructureSpawnRegistry_ other)

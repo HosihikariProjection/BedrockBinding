@@ -749,6 +749,7 @@ public sealed unsafe partial class Witch : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_c15c1ae6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -767,7 +768,12 @@ public sealed unsafe partial class Witch : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getFiringPos()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c823f6d8((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public void handleEntityEvent(byte id, int data)

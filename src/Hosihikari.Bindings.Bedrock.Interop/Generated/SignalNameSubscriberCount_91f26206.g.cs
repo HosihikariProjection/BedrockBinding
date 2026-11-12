@@ -45,6 +45,7 @@ public sealed unsafe partial class SignalNameSubscriberCount : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_7a6d2e10((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

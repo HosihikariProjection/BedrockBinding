@@ -65,6 +65,7 @@ public sealed unsafe partial class InteractButtonItemComponent : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_3e6bb5f9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

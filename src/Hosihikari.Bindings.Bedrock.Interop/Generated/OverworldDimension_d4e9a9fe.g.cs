@@ -443,6 +443,7 @@ public sealed unsafe partial class OverworldDimension : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_ef96dae5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -470,7 +471,12 @@ public sealed unsafe partial class OverworldDimension : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getBrightnessDependentFogColor(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color baseColor, float brightness)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_da0cee5d((void*)__hosihikari_shim_handle, (void*)baseColor.Handle, brightness);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle);
     }
 
     public short getCloudHeight()
@@ -486,7 +492,12 @@ public sealed unsafe partial class OverworldDimension : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? translatePosAcrossDimension(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originalPos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromId)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_80de1c66((void*)__hosihikari_shim_handle, (void*)originalPos.Handle, (void*)fromId.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public void upgradeLevelChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk generatedChunk)

@@ -45,6 +45,7 @@ public sealed unsafe partial class EntitySensorDefinition : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_4b5b92f0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

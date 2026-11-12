@@ -55,6 +55,7 @@ public sealed unsafe partial class ActorUseItemEvent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_de31b7bf((void*)actor.Handle, (void*)itemUsed.Handle, itemUseMethod);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class ActorUseItemEvent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_1835b3bd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

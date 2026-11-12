@@ -59,6 +59,7 @@ public sealed unsafe partial class StackedByDataItemComponent : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_7c63ef83((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

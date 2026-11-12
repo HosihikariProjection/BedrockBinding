@@ -45,6 +45,7 @@ public sealed unsafe partial class CommandFlag : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_8597f4af();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class CommandFlag : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_7590a310(value);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,19 +77,34 @@ public sealed unsafe partial class CommandFlag : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag? operator_operator__(ushort rhs)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9cc710d1((void*)__hosihikari_shim_handle, rhs);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag? operator_operator__(global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag rhs)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_233b19b4((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag? remove(ushort rhs)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3e59d480((void*)__hosihikari_shim_handle, rhs);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag((nint)__hs_handle, false);
     }
 
     public ushort value

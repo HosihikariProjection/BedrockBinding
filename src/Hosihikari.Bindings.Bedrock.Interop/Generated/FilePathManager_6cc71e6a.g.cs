@@ -67,6 +67,7 @@ public sealed unsafe partial class FilePathManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_3766b08c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,6 +83,7 @@ public sealed unsafe partial class FilePathManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_865f7932((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

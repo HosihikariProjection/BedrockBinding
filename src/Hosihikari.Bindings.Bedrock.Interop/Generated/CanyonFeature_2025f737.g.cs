@@ -57,6 +57,7 @@ public sealed unsafe partial class CanyonFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_82f1399b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

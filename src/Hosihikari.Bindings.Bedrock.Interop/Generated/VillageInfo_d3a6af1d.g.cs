@@ -45,6 +45,7 @@ public sealed unsafe partial class VillageInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_f8b0ee8e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

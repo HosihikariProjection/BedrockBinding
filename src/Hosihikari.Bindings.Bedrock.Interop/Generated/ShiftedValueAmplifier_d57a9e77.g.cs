@@ -53,6 +53,7 @@ public sealed unsafe partial class ShiftedValueAmplifier : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_68b84fad((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

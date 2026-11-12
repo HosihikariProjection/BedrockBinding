@@ -63,6 +63,7 @@ public sealed unsafe partial class ThrowableItemComponent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_4441d770((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

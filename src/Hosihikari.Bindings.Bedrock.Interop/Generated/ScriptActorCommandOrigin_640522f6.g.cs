@@ -71,6 +71,7 @@ public sealed unsafe partial class ScriptActorCommandOrigin : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_d8b89956();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -86,6 +87,7 @@ public sealed unsafe partial class ScriptActorCommandOrigin : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_70aa57de((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -99,7 +101,12 @@ public sealed unsafe partial class ScriptActorCommandOrigin : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? getEntity()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f351221c((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -111,7 +118,12 @@ public sealed unsafe partial class ScriptActorCommandOrigin : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptActorCommandOrigin? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptActorCommandOrigin arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0c1bbc5d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptActorCommandOrigin((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptActorCommandOrigin((nint)__hs_handle, false);
     }
 
 

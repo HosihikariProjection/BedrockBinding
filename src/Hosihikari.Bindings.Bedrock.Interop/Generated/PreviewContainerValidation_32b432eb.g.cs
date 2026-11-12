@@ -57,6 +57,7 @@ public sealed unsafe partial class PreviewContainerValidation : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_32126bec((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

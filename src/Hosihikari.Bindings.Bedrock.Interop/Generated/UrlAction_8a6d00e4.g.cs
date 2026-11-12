@@ -49,6 +49,7 @@ public sealed unsafe partial class UrlAction : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_5313b6cf((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -164,6 +164,7 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_d4365d92();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -188,6 +189,7 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
             var handle = NativeMethods.TablePtr->C0.hs_create_4248b22e(type, __hs_stringData1, (nuint)__hs_stringByteCount1);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -200,6 +202,7 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_919c009e((void*)other.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -211,6 +214,7 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_3487f887((void*)fullName);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -235,6 +239,7 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
             var handle = NativeMethods.TablePtr->C0.hs_create_066565d5(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -286,6 +291,7 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
                     var handle = NativeMethods.TablePtr->C0.hs_create_4884bc05(__hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                     if (handle == null)
                     {
+                        NativeMethods.GetLastError();
                         return null;
                     }
 
@@ -313,6 +319,7 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
             var handle = NativeMethods.TablePtr->C0.hs_create_1a0b9af2(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -366,7 +373,12 @@ public sealed unsafe partial class ActorDefinitionIdentifier : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier other)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d340954d((void*)__hosihikari_shim_handle, (void*)other.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

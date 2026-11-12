@@ -45,6 +45,7 @@ public sealed unsafe partial class ChunkPos : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_915436a9((void*)bp.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ChunkPos : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_c9a4146a((void*)pos.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

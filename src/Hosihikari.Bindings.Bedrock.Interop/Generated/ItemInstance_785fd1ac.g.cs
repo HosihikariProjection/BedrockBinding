@@ -86,7 +86,12 @@ public sealed unsafe partial class ItemInstance : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? EMPTY_ITEM()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a0727547();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle, false);
     }
 
     public static ItemInstance? Create()
@@ -94,6 +99,7 @@ public sealed unsafe partial class ItemInstance : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_f5455602();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -105,6 +111,7 @@ public sealed unsafe partial class ItemInstance : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_99485dd7((void*)rhs.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -116,6 +123,7 @@ public sealed unsafe partial class ItemInstance : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_470b15dd((void*)rhs.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -125,13 +133,23 @@ public sealed unsafe partial class ItemInstance : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? fromTag(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2fd71061((void*)tag.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_98aa0ba7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle, false);
     }
 
     public void reinit(global::Hosihikari.Bindings.Bedrock.Interop.Block block, int count)

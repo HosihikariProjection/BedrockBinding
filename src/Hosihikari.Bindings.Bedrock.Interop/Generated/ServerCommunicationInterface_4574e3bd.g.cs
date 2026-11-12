@@ -45,6 +45,7 @@ public sealed unsafe partial class ServerCommunicationInterface : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_2af73a57();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ServerCommunicationInterface : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_6476d747((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class ServerCommunicationInterface : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerCommunicationInterface? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerCommunicationInterface arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_69ab278f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerCommunicationInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerCommunicationInterface((nint)__hs_handle, false);
     }
 
     public void Dispose()

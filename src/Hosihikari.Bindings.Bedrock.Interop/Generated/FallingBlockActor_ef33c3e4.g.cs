@@ -639,6 +639,7 @@ public sealed unsafe partial class FallingBlockActor : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_deabf4d5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -652,7 +653,12 @@ public sealed unsafe partial class FallingBlockActor : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource arg0, float arg1, nint arg2)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0eee5a71((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1, (void*)arg2);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

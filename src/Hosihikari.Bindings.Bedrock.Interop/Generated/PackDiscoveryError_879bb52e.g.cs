@@ -61,6 +61,7 @@ public sealed unsafe partial class PackDiscoveryError : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_be2fe4f8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class PackDiscoveryError : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_9938c291((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

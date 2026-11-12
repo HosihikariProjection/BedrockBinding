@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorHealEvent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_8bb84a7f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

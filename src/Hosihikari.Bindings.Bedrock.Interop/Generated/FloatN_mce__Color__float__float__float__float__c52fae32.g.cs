@@ -48,13 +48,23 @@ public sealed unsafe partial class FloatN_mce__Color__float__float__float__float
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? cross(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_839c4c64((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? normalize()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e3fca69f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle);
     }
 
     public void Dispose()

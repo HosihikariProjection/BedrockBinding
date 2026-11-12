@@ -49,6 +49,7 @@ public sealed unsafe partial class GameTestRequestPacketPayload : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_9e20bb71((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class ResourcePackManagerArgs : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_04b81576();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ResourcePackManagerArgs : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_87a93f7b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -99,7 +101,12 @@ public sealed unsafe partial class ResourcePackManagerArgs : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0c4c7496((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs((nint)__hs_handle, false);
     }
 
 

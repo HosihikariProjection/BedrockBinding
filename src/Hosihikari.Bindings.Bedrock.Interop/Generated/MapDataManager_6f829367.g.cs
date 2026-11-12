@@ -69,6 +69,7 @@ public sealed unsafe partial class MapDataManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_cc67ea95();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,6 +85,7 @@ public sealed unsafe partial class MapDataManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_ecad2ea8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -114,7 +116,12 @@ public sealed unsafe partial class MapDataManager : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData? createMapSavedData(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID uuid)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a44a09ac((void*)__hosihikari_shim_handle, (void*)uuid.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -196,7 +203,12 @@ public sealed unsafe partial class MapDataManager : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c918436d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MapDataManager((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

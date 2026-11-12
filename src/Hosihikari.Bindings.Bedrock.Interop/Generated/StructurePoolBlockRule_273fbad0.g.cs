@@ -45,6 +45,7 @@ public sealed unsafe partial class StructurePoolBlockRule : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_8f642902((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

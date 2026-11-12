@@ -749,6 +749,7 @@ public sealed unsafe partial class Pillager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_aec5699a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

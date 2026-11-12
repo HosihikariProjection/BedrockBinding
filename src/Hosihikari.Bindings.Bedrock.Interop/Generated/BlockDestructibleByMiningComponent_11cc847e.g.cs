@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockDestructibleByMiningComponent : global::
         var handle = NativeMethods.TablePtr->C0.hs_create_a40e08cb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

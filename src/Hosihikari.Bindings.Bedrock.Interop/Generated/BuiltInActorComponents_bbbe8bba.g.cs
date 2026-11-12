@@ -45,6 +45,7 @@ public sealed unsafe partial class BuiltInActorComponents : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_d9b13b74((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

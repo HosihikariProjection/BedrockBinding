@@ -57,6 +57,7 @@ public sealed unsafe partial class NpcDialoguePacketPayload : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_567eff1d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class NpcDialoguePacketPayload : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_c9bb1345((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -50,6 +50,7 @@ public sealed unsafe partial class PlayerTitleRawCommandEvent : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_c7c46665((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

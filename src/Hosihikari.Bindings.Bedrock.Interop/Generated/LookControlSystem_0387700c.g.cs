@@ -49,6 +49,7 @@ public sealed unsafe partial class LookControlSystem : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_95387f6e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

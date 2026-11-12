@@ -45,6 +45,7 @@ public sealed unsafe partial class DynamicPropertiesComponent : global::System.I
         var handle = NativeMethods.TablePtr->C1.hs_create_535e1bde((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

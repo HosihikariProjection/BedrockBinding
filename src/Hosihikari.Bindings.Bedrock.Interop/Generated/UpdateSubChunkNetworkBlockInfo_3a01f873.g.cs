@@ -45,6 +45,7 @@ public sealed unsafe partial class UpdateSubChunkNetworkBlockInfo : global::Syst
         var handle = NativeMethods.TablePtr->C4.hs_create_6103e6c9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

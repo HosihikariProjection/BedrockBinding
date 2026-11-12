@@ -49,6 +49,7 @@ public sealed unsafe partial class TropicalFishInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_d3e9fc95();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class TropicalFishInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_deeb5796((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockShapeComponentData : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_de1461da((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

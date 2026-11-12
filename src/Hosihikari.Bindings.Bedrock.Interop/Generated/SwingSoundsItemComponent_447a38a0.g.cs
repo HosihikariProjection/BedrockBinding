@@ -49,6 +49,7 @@ public sealed unsafe partial class SwingSoundsItemComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_8cd48355((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class AttributeRequestComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_8d9d985b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

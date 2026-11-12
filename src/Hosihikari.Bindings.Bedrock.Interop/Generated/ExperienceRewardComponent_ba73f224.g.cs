@@ -49,6 +49,7 @@ public sealed unsafe partial class ExperienceRewardComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_5c278efd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

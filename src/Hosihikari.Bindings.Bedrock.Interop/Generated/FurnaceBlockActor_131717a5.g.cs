@@ -287,6 +287,7 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_8487f436();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -306,6 +307,7 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_08a0ff58((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -376,13 +378,23 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? getContainer_790b19a8()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_790b19a8((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? getContainer_167920e2()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_167920e2((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public int getContainerSize()
@@ -393,7 +405,12 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cb1f249f((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public static float getItemBurnDuration(global::Hosihikari.Bindings.Bedrock.Interop.Item item, float burnInterval)
@@ -569,7 +586,12 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlockActor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlockActor arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1dd5a93e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlockActor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlockActor((nint)__hs_handle, false);
     }
 
     public bool save(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, nint saveContext)

@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptPlayerInputPermissions : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_6dc7463b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

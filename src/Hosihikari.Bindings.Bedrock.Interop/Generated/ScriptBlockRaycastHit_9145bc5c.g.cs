@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptBlockRaycastHit : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_4dab1e83();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ScriptBlockRaycastHit : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_17abf31b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

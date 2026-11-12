@@ -49,6 +49,7 @@ public sealed unsafe partial class CreativeContentPacketPayload : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_9a4e651a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class CreativeContentPacketPayload : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_89f54c57((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

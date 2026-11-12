@@ -57,6 +57,7 @@ public sealed unsafe partial class RNS2_Berkley : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_5f9116c4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class RNS2_Berkley : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_e979e776((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -110,7 +112,12 @@ public sealed unsafe partial class RNS2_Berkley : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Berkley? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Berkley arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d909f061((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Berkley((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2_Berkley((nint)__hs_handle, false);
     }
 
 

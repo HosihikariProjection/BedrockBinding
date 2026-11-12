@@ -49,6 +49,7 @@ public sealed unsafe partial class PlayerLegacyRequestSlotIdAssignment : global:
         var handle = NativeMethods.TablePtr->C1.hs_create_1c3f2c9d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class PlayerLegacyRequestSlotIdAssignment : global:
         var handle = NativeMethods.TablePtr->C1.hs_create_bb093de0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class ChainedSubcommandData : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_66c2880c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,7 +73,12 @@ public sealed unsafe partial class ChainedSubcommandData : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.ChainedSubcommandData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.ChainedSubcommandData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e919100e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.ChainedSubcommandData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.ChainedSubcommandData((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

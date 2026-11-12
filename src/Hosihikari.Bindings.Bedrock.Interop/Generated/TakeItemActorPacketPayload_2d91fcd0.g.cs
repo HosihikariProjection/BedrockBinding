@@ -45,6 +45,7 @@ public sealed unsafe partial class TakeItemActorPacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_8cb9a187((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

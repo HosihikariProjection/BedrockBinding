@@ -49,6 +49,7 @@ public sealed unsafe partial class BasaltColumnsFeature : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_8c0c33c7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

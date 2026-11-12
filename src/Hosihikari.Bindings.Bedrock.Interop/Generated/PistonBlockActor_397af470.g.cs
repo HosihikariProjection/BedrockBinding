@@ -173,7 +173,12 @@ public sealed unsafe partial class PistonBlockActor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getFacingDir(global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0a5b4a00((void*)__hosihikari_shim_handle, (void*)region.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -45,6 +45,7 @@ public sealed unsafe partial class MolangItemDescriptorData : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_3ce32ad2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

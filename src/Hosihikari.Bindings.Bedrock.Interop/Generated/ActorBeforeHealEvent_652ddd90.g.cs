@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorBeforeHealEvent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_69cc9817();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ActorBeforeHealEvent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_423e4555((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -83,7 +85,12 @@ public sealed unsafe partial class ActorBeforeHealEvent : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_162f71d2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeHealEvent((nint)__hs_handle, false);
     }
 
     public void Dispose()

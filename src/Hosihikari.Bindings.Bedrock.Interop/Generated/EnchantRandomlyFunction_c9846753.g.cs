@@ -53,6 +53,7 @@ public sealed unsafe partial class EnchantRandomlyFunction : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_aed63389((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

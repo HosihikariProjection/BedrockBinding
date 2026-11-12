@@ -51,6 +51,7 @@ public sealed unsafe partial class BlockPartVisibilityDescription : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_5821126b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

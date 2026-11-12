@@ -50,6 +50,7 @@ public sealed unsafe partial class Path : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_1cfa4219((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

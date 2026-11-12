@@ -90,6 +90,7 @@ public sealed unsafe partial class TitleCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_c4d84257((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class DeltaFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_0563e42c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

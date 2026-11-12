@@ -87,6 +87,7 @@ public sealed unsafe partial class PlayerVehicleTamedGoal : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_e31986b9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -98,6 +99,7 @@ public sealed unsafe partial class PlayerVehicleTamedGoal : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_4aae3ebf((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -143,7 +145,12 @@ public sealed unsafe partial class PlayerVehicleTamedGoal : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerVehicleTamedGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerVehicleTamedGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e647b28a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerVehicleTamedGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerVehicleTamedGoal((nint)__hs_handle, false);
     }
 
     public void start()

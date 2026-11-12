@@ -65,7 +65,12 @@ public sealed unsafe partial class CommandBlockName : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockNameResult? resolveBlock(int data)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_36e6caf8((void*)__hosihikari_shim_handle, data);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockNameResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockNameResult((nint)__hs_handle);
     }
 
     public void Dispose()

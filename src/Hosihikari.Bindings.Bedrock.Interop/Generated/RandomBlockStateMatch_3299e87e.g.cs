@@ -57,6 +57,7 @@ public sealed unsafe partial class RandomBlockStateMatch : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_42a7c5ac((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

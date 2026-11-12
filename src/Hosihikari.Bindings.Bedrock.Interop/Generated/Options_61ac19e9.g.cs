@@ -45,6 +45,7 @@ public sealed unsafe partial class Options : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_1c249dc8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class Options : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_3edb1e0c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -89,7 +91,12 @@ public sealed unsafe partial class Options : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6496e3bd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options((nint)__hs_handle, false);
     }
 
     public void Dispose()

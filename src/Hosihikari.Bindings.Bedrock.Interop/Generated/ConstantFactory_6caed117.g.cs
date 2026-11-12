@@ -57,6 +57,7 @@ public sealed unsafe partial class ConstantFactory : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_af497268();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -61,6 +61,7 @@ public sealed unsafe partial class EnchantingInputContainerValidation : global::
         var handle = NativeMethods.TablePtr->C1.hs_create_3f6a0f87((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

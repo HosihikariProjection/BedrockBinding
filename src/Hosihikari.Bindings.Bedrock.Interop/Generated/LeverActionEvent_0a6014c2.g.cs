@@ -45,6 +45,7 @@ public sealed unsafe partial class LeverActionEvent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_b4db483e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

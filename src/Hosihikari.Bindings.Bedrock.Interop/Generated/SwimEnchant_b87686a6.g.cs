@@ -115,6 +115,7 @@ public sealed unsafe partial class SwimEnchant : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_0c2213bc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class Result_void__ActorValidationError_ : global::
         var handle = NativeMethods.TablePtr->C0.hs_create_fa4fe74b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

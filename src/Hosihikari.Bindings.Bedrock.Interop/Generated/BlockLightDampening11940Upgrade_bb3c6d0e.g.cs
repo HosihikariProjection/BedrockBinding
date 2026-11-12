@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockLightDampening11940Upgrade : global::Sys
         var handle = NativeMethods.TablePtr->C0.hs_create_98102cf4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

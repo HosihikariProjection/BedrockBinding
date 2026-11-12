@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptMovementFlyComponentFactory : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_d1c58312((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -55,6 +55,7 @@ public sealed unsafe partial class CommandRequestPacketPayload : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_f4e99039();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class CommandRequestPacketPayload : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_b3ef3119((void*)context.Handle, internalSource);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,6 +79,7 @@ public sealed unsafe partial class CommandRequestPacketPayload : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_54713c75((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

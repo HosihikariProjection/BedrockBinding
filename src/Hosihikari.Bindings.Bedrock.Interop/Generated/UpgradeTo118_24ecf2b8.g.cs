@@ -77,6 +77,7 @@ public sealed unsafe partial class UpgradeTo118 : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_97192bb0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

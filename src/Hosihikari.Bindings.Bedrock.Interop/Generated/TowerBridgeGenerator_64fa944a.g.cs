@@ -49,6 +49,7 @@ public sealed unsafe partial class TowerBridgeGenerator : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_6485115e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

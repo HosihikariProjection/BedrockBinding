@@ -45,6 +45,7 @@ public sealed unsafe partial class OnHitBlockTriggerItemComponent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_27fc085b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

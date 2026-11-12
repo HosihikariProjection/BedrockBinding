@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_ServerNetworkHandler_ : globa
         var handle = NativeMethods.TablePtr->C0.hs_create_9b7ef802();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_ServerNetworkHandler_ : globa
         var handle = NativeMethods.TablePtr->C0.hs_create_3de55fcf(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_ServerNetworkHandler_ : globa
         var handle = NativeMethods.TablePtr->C0.hs_create_fa52e242();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_ServerNetworkHandler_ : globa
         var handle = NativeMethods.TablePtr->C0.hs_create_29e2f0b4(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_ServerNetworkHandler_ : globa
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f561e288((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_ServerNetworkHandler_ : globa
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler? operator_ServerNetworkHandler__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f644e28d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_ServerNetworkHandler_ : globa
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_89194420((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_065ba336((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

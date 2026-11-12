@@ -45,6 +45,7 @@ public sealed unsafe partial class ITreeCanopy : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_66f0f809((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

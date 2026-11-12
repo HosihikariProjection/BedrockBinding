@@ -45,6 +45,7 @@ public sealed unsafe partial class ServerPlayerInventoryTransactionComponent : g
         var handle = NativeMethods.TablePtr->C3.hs_create_f2f06cae((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class BossEventPacketPayload : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_e0a2a8b0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

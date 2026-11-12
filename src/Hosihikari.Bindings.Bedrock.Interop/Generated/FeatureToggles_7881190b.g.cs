@@ -63,6 +63,7 @@ public sealed unsafe partial class FeatureToggles : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_32057358();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +79,7 @@ public sealed unsafe partial class FeatureToggles : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_2980d7eb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

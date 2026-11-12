@@ -45,6 +45,7 @@ public sealed unsafe partial class IPhotoManagerConnector : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_e3daaa88((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

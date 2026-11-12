@@ -45,6 +45,7 @@ public sealed unsafe partial class ILevelStorageManagerConnector : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_a620bce8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

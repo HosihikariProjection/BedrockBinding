@@ -50,6 +50,7 @@ public sealed unsafe partial class AudioMixer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_3c8e4b33((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

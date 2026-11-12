@@ -85,6 +85,7 @@ public sealed unsafe partial class VoiceMediaSendChannelInterface : global::Syst
         var handle = NativeMethods.TablePtr->C4.hs_create_64171ae5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

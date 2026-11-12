@@ -92,6 +92,7 @@ public sealed unsafe partial class ShootBowNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_b65dcb7e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class PingCallbackData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_96806e33((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

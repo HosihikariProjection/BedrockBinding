@@ -61,6 +61,7 @@ public sealed unsafe partial class ScriptPlayerPlaceBlockBeforeEvent : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_95862be6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class ScriptPlayerPlaceBlockBeforeEvent : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_b36f4b69((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

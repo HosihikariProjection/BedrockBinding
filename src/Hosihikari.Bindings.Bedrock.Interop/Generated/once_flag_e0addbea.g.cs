@@ -51,6 +51,7 @@ public sealed unsafe partial class once_flag : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_559fad57();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -62,6 +63,7 @@ public sealed unsafe partial class once_flag : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_7d1908a1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class once_flag : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f06761d5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag((nint)__hs_handle, false);
     }
 
     public void Dispose()

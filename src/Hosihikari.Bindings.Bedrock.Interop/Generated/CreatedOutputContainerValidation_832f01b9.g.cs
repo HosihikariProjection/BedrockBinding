@@ -61,6 +61,7 @@ public sealed unsafe partial class CreatedOutputContainerValidation : global::Sy
         var handle = NativeMethods.TablePtr->C1.hs_create_9ff6ae39((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

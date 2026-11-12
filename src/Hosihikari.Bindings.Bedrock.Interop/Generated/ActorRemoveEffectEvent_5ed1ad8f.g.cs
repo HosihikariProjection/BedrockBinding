@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorRemoveEffectEvent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_2f1d3e07((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class NetworkServerConfig : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_14718fb1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,7 +97,12 @@ public sealed unsafe partial class NetworkServerConfig : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkServerConfig? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkServerConfig arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c254b0ce((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkServerConfig((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkServerConfig((nint)__hs_handle, false);
     }
 
     public bool requireNonce

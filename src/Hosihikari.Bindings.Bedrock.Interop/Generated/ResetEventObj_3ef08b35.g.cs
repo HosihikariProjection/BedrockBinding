@@ -45,6 +45,7 @@ public sealed unsafe partial class ResetEventObj : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_18fb4fa3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

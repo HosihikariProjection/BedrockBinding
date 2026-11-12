@@ -45,6 +45,7 @@ public sealed unsafe partial class EDLWrapper : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_9f9a0d3a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

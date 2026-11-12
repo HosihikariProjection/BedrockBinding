@@ -45,6 +45,7 @@ public sealed unsafe partial class DebugInfoComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_594053fa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

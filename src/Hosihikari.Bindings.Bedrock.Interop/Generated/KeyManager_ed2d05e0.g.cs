@@ -65,6 +65,7 @@ public sealed unsafe partial class KeyManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_171eaefb();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

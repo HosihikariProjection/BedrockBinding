@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerScriptInputEvent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_9aa857bc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class Brightness : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_2a2eb456((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,13 +55,23 @@ public sealed unsafe partial class Brightness : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.Brightness? MAX()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f7d7a38c();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Brightness? MIN()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_aff771e7();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)__hs_handle, false);
     }
 
     public byte mValue

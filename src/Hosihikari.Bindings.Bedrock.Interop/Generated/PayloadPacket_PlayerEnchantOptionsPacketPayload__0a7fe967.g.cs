@@ -92,6 +92,7 @@ public sealed unsafe partial class PayloadPacket_PlayerEnchantOptionsPacketPaylo
         var handle = NativeMethods.TablePtr->C4.hs_create_23e3ade8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -78,6 +78,7 @@ public sealed unsafe partial class ScoreboardCommand : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_b1c3f033((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

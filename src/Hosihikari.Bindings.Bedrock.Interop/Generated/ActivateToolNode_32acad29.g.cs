@@ -65,6 +65,7 @@ public sealed unsafe partial class ActivateToolNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_78df7613((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

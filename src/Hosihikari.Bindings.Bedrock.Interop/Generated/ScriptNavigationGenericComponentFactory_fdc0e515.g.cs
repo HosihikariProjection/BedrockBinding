@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptNavigationGenericComponentFactory : glo
         var handle = NativeMethods.TablePtr->C3.hs_create_e4632d55((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

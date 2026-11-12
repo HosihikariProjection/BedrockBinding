@@ -54,6 +54,7 @@ public sealed unsafe partial class EndGatewayFeature : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_b550e497((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

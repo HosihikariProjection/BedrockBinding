@@ -45,6 +45,7 @@ public sealed unsafe partial class BiomeTagComponent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_4ad05fec((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -65,6 +65,7 @@ public sealed unsafe partial class StructurePoolBlockPredicateAlwaysTrueExcept :
         var handle = NativeMethods.TablePtr->C3.hs_create_3a737b4c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

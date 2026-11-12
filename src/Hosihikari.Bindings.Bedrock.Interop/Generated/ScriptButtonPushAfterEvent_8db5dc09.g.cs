@@ -61,6 +61,7 @@ public sealed unsafe partial class ScriptButtonPushAfterEvent : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_4b74cb11();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class ScriptButtonPushAfterEvent : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_ebe43ff0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

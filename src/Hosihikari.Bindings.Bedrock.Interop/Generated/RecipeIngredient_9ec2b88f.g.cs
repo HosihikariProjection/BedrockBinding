@@ -59,7 +59,12 @@ public sealed unsafe partial class RecipeIngredient : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? EMPTY_INGREDIENT()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8ae872b7();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false);
     }
 
 

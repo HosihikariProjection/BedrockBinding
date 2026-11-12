@@ -178,6 +178,7 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_c5a67a6e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -189,6 +190,7 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_90c2fc6f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -410,7 +412,12 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0e6fde3a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]

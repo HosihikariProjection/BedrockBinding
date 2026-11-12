@@ -87,6 +87,7 @@ public sealed unsafe partial class RandomSitGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3cd8e0d9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -98,6 +99,7 @@ public sealed unsafe partial class RandomSitGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_30738397((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -179,7 +181,12 @@ public sealed unsafe partial class RandomSitGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RandomSitGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RandomSitGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5ca47418((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RandomSitGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RandomSitGoal((nint)__hs_handle, false);
     }
 
     public void start()

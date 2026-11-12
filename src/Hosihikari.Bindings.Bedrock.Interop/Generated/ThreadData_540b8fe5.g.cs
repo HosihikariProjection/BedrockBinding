@@ -45,6 +45,7 @@ public sealed unsafe partial class ThreadData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_da95300b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

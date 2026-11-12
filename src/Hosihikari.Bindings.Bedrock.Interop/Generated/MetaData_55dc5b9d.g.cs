@@ -49,6 +49,7 @@ public sealed unsafe partial class MetaData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_34d7cf1b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class MetaData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d205a332((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

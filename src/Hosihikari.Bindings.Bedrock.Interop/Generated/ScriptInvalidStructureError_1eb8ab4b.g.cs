@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptInvalidStructureError : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_53911b90((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

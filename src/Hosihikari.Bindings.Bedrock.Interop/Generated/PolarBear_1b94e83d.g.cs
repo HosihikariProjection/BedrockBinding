@@ -727,6 +727,7 @@ public sealed unsafe partial class PolarBear : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_d95347bd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

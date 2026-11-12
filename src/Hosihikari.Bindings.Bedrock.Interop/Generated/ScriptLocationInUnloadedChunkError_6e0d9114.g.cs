@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptLocationInUnloadedChunkError : global::
         var handle = NativeMethods.TablePtr->C3.hs_create_feb05168();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptLocationInUnloadedChunkError : global::
         var handle = NativeMethods.TablePtr->C3.hs_create_562a68b9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

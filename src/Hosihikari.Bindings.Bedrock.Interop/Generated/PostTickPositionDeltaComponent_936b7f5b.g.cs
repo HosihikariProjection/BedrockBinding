@@ -45,6 +45,7 @@ public sealed unsafe partial class PostTickPositionDeltaComponent : global::Syst
         var handle = NativeMethods.TablePtr->C2.hs_create_8c71f5c3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class Explosion : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_4221cafa();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class Explosion : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_6bd835ef((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -180,7 +182,12 @@ public sealed unsafe partial class Explosion : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Explosion? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Explosion arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_948367cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Explosion((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Explosion((nint)__hs_handle, false);
     }
 
 

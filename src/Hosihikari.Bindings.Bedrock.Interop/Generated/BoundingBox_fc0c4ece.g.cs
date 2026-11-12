@@ -45,6 +45,7 @@ public sealed unsafe partial class BoundingBox : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_97b19896();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class BoundingBox : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_d3670679((void*)min.Handle, (void*)max.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class BoundingBox : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_730024d1((void*)k.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -108,31 +111,56 @@ public sealed unsafe partial class BoundingBox : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSideLength()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ffdedbea((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? merge(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos a)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4d97eaea((void*)__hosihikari_shim_handle, (void*)a.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? merge(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox a)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a71ecf23((void*)__hosihikari_shim_handle, (void*)a.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB? operator_AABB()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_cc11c5d9((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox k)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_82f2a0f3((void*)__hosihikari_shim_handle, (void*)k.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

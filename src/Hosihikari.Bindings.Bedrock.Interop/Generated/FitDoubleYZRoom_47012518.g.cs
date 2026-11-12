@@ -53,6 +53,7 @@ public sealed unsafe partial class FitDoubleYZRoom : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_427844e1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

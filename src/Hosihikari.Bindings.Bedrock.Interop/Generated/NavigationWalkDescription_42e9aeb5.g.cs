@@ -175,6 +175,7 @@ public sealed unsafe partial class NavigationWalkDescription : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_bd8e2ac6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

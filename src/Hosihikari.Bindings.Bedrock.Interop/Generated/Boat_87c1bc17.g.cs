@@ -640,6 +640,7 @@ public sealed unsafe partial class Boat : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_3a0a9c0e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -653,7 +654,12 @@ public sealed unsafe partial class Boat : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint arg2)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dd9a7569((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)arg2);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
     public bool canAddPassenger(global::Hosihikari.Bindings.Bedrock.Interop.Actor passenger)
@@ -669,7 +675,12 @@ public sealed unsafe partial class Boat : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getControllingPlayer()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_192f369d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle);
     }
 
     public string getExitTip(string kind, uint mode, int scheme)

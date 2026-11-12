@@ -55,6 +55,7 @@ public sealed unsafe partial class IPacketObserver : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_2fd3c62f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

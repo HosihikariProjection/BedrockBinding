@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptItemEnchantmentTypeNotCompatibleError :
         var handle = NativeMethods.TablePtr->C3.hs_create_81b98f6e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

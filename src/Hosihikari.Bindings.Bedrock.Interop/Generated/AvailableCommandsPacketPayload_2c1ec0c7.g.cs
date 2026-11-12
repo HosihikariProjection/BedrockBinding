@@ -59,6 +59,7 @@ public sealed unsafe partial class AvailableCommandsPacketPayload : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_ff804422();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -70,6 +71,7 @@ public sealed unsafe partial class AvailableCommandsPacketPayload : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_73846524((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -131,7 +133,12 @@ public sealed unsafe partial class AvailableCommandsPacketPayload : global::Syst
     public global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8194e2b1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload((nint)__hs_handle, false);
     }
 
 

@@ -418,6 +418,7 @@ public sealed unsafe partial class BushBlock : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C0.hs_create_251c8b55(__hs_stringData0, (nuint)__hs_stringByteCount0, id);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 

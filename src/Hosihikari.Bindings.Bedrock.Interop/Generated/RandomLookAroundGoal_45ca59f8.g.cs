@@ -87,6 +87,7 @@ public sealed unsafe partial class RandomLookAroundGoal : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_67b88d2c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -98,6 +99,7 @@ public sealed unsafe partial class RandomLookAroundGoal : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_86e7d7ea((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -191,7 +193,12 @@ public sealed unsafe partial class RandomLookAroundGoal : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.RandomLookAroundGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RandomLookAroundGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c99d13e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RandomLookAroundGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RandomLookAroundGoal((nint)__hs_handle, false);
     }
 
     public void start()

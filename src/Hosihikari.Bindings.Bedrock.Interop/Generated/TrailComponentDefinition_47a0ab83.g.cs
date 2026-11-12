@@ -61,6 +61,7 @@ public sealed unsafe partial class TrailComponentDefinition : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_718c09d0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -118,7 +119,12 @@ public sealed unsafe partial class TrailComponentDefinition : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_86b1b194((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

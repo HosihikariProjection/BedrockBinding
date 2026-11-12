@@ -67,6 +67,7 @@ public sealed unsafe partial class OnDeathDefinition : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_349031b6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

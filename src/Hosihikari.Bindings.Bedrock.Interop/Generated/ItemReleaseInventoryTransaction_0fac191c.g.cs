@@ -77,6 +77,7 @@ public sealed unsafe partial class ItemReleaseInventoryTransaction : global::Sys
         var handle = NativeMethods.TablePtr->C1.hs_create_a081e0f6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -88,6 +89,7 @@ public sealed unsafe partial class ItemReleaseInventoryTransaction : global::Sys
         var handle = NativeMethods.TablePtr->C1.hs_create_499b6518((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

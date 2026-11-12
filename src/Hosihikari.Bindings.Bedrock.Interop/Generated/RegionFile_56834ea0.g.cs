@@ -49,6 +49,7 @@ public sealed unsafe partial class RegionFile : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_4432eeda();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class RegionFile : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_627885bd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

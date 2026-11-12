@@ -45,6 +45,7 @@ public sealed unsafe partial class SetScorePacketPayload : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_3c6dd7f0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,7 +55,12 @@ public sealed unsafe partial class SetScorePacketPayload : global::System.IDispo
     public static global::Hosihikari.Bindings.Bedrock.Interop.SetScorePacketPayload? change(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId id, global::Hosihikari.Bindings.Bedrock.Interop.Objective objective)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_879790e2((void*)id.Handle, (void*)objective.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SetScorePacketPayload((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SetScorePacketPayload((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

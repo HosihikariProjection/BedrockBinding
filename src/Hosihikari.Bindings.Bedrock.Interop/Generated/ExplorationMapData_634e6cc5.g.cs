@@ -53,6 +53,7 @@ public sealed unsafe partial class ExplorationMapData : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_81fcc399();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class ExplorationMapData : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_4dc5f6f2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

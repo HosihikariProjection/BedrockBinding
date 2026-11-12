@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptSystemLevelEventListener : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_63aa63de((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

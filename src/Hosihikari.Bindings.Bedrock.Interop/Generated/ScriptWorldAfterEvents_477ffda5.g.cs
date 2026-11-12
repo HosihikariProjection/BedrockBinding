@@ -345,6 +345,7 @@ public sealed unsafe partial class ScriptWorldAfterEvents : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_7239fd9c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -370,7 +371,12 @@ public sealed unsafe partial class ScriptWorldAfterEvents : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.Level? getLevel()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b6359e09((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

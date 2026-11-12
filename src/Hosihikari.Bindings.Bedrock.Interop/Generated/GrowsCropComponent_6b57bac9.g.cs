@@ -45,6 +45,7 @@ public sealed unsafe partial class GrowsCropComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_793bad39((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

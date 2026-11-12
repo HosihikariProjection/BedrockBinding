@@ -45,6 +45,7 @@ public sealed unsafe partial class LoadAllVersionsOptions : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_858c699f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

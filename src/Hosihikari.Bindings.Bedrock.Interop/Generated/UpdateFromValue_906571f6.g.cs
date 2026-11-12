@@ -45,6 +45,7 @@ public sealed unsafe partial class UpdateFromValue : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_4219e2a7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class UpdateFromValue : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_c24e29dd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class UpdateFromValue : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ShouldUpdateBoundingBoxRequestComponent_Nested.UpdateFromValue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ShouldUpdateBoundingBoxRequestComponent_Nested.UpdateFromValue arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1c61af30((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ShouldUpdateBoundingBoxRequestComponent_Nested.UpdateFromValue((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ShouldUpdateBoundingBoxRequestComponent_Nested.UpdateFromValue((nint)__hs_handle, false);
     }
 
     public void Dispose()

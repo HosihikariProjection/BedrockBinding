@@ -57,6 +57,7 @@ public sealed unsafe partial class EntityStorageBlockActorComponent : global::Sy
         var handle = NativeMethods.TablePtr->C1.hs_create_f0fa37cb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

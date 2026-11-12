@@ -45,6 +45,7 @@ public sealed unsafe partial class HeartbeatServerComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_ce7afce3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class HeartbeatServerComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_990f002a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +83,12 @@ public sealed unsafe partial class HeartbeatServerComponent : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerComponent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5ac4390b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerComponent((nint)__hs_handle, false);
     }
 
 

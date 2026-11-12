@@ -65,6 +65,7 @@ public sealed unsafe partial class ScriptPlayerBreakBlockAfterEvent : global::Sy
         var handle = NativeMethods.TablePtr->C3.hs_create_769c19c6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

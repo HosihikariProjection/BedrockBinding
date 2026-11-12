@@ -45,6 +45,7 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorDimensionTransferMana
         var handle = NativeMethods.TablePtr->C0.hs_create_c73ed212();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorDimensionTransferMana
         var handle = NativeMethods.TablePtr->C0.hs_create_000a1e3f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -73,7 +75,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorDimensionTransferMana
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorDimensionTransferManager? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_0958ad5b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDimensionTransferManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDimensionTransferManager((nint)__hs_handle, false);
     }
 
     public bool isValid()
@@ -101,13 +108,23 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorDimensionTransferMana
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorDimensionTransferManager? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_62612532((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDimensionTransferManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDimensionTransferManager((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorDimensionTransferManager? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b0150b72((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDimensionTransferManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDimensionTransferManager((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -117,7 +134,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorDimensionTransferMana
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ActorDimensionTransferManager_? operator_assign()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7f8e2556((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ActorDimensionTransferManager_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ActorDimensionTransferManager_((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ActorDimensionTransferManager_ other)

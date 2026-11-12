@@ -101,6 +101,7 @@ public sealed unsafe partial class LevelEventListener : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_42a32849((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

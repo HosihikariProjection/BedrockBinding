@@ -43,7 +43,12 @@ public sealed unsafe partial class FixedBiomeSource : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Biome? __getBiome(nint arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8beafcf3((void*)__hosihikari_shim_handle, (void*)arg0);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: span element type 'const BiomeIdType' is not supported.", false)]
@@ -58,13 +63,23 @@ public sealed unsafe partial class FixedBiomeSource : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea? _getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox area, uint scale)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3af55f12((void*)__hosihikari_shim_handle, (void*)area.Handle, scale);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea? _getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox area, uint scale, nint getBiomeOptions)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_382aa506((void*)__hosihikari_shim_handle, (void*)area.Handle, scale, (void*)getBiomeOptions);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle);
     }
 
     public int _getType()
@@ -90,6 +105,7 @@ public sealed unsafe partial class FixedBiomeSource : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_0d9011f8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -101,6 +117,7 @@ public sealed unsafe partial class FixedBiomeSource : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_dda5a203((void*)biome.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -112,6 +129,7 @@ public sealed unsafe partial class FixedBiomeSource : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_538becf6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -121,7 +139,12 @@ public sealed unsafe partial class FixedBiomeSource : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Biome? _getBiome(nint arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4129ad83((void*)__hosihikari_shim_handle, (void*)arg0);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: span element type 'const BiomeIdType' is not supported.", false)]
@@ -136,13 +159,23 @@ public sealed unsafe partial class FixedBiomeSource : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea? getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox area, uint scale)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ca42389e((void*)__hosihikari_shim_handle, (void*)area.Handle, scale);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea? getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox area, uint scale, nint getBiomeOptions)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0a404df1((void*)__hosihikari_shim_handle, (void*)area.Handle, scale, (void*)getBiomeOptions);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle);
     }
 
     public int getType()
@@ -168,7 +201,12 @@ public sealed unsafe partial class FixedBiomeSource : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.FixedBiomeSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FixedBiomeSource arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0e956e05((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FixedBiomeSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FixedBiomeSource((nint)__hs_handle, false);
     }
 
 

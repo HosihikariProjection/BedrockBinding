@@ -45,6 +45,7 @@ public sealed unsafe partial class VanillaBiomeTypeAttributes : global::System.I
         var handle = NativeMethods.TablePtr->C4.hs_create_6d6caaa9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

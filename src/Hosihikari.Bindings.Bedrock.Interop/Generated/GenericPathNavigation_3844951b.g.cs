@@ -69,6 +69,7 @@ public sealed unsafe partial class GenericPathNavigation : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_2dd40fe7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,7 +79,12 @@ public sealed unsafe partial class GenericPathNavigation : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getTempMobPos(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_253772ed((void*)__hosihikari_shim_handle, (void*)mob.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.NavigationDescription? description)

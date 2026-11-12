@@ -65,6 +65,7 @@ public sealed unsafe partial class SetBlockState : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_2906cae2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

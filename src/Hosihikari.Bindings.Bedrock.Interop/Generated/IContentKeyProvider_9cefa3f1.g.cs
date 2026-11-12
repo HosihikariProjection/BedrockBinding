@@ -59,6 +59,7 @@ public sealed unsafe partial class IContentKeyProvider : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_74655fdb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

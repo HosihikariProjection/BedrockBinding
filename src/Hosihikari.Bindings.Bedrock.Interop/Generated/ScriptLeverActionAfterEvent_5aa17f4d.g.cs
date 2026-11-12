@@ -61,6 +61,7 @@ public sealed unsafe partial class ScriptLeverActionAfterEvent : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_c32d8a5b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class ScriptLeverActionAfterEvent : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_981a600f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

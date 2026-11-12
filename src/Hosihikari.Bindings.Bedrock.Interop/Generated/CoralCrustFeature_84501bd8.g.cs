@@ -49,6 +49,7 @@ public sealed unsafe partial class CoralCrustFeature : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_85f0fc4c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

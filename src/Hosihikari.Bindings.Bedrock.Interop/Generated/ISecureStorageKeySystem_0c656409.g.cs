@@ -45,6 +45,7 @@ public sealed unsafe partial class ISecureStorageKeySystem : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_0454ac92((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,7 +68,12 @@ public sealed unsafe partial class ISecureStorageKeySystem : global::System.IDis
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C1.hs_method_38421a36((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SecureStorageKey((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.SecureStorageKey((nint)__hs_handle);
         }
     }
 

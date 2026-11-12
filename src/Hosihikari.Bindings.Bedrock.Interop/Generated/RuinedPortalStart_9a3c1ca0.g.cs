@@ -49,6 +49,7 @@ public sealed unsafe partial class RuinedPortalStart : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_006d99e3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class DeregisterTagsFromActorProxy : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_a7f37478((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

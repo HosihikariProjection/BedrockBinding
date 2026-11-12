@@ -45,6 +45,7 @@ public sealed unsafe partial class RequiredResourceOrBehaviorPackType : global::
         var handle = NativeMethods.TablePtr->C2.hs_create_a509f0df();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class RequiredResourceOrBehaviorPackType : global::
         var handle = NativeMethods.TablePtr->C2.hs_create_abdb0ba0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class RequiredResourceOrBehaviorPackType : global::
     public global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a5598598((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType((nint)__hs_handle, false);
     }
 
     public void Dispose()

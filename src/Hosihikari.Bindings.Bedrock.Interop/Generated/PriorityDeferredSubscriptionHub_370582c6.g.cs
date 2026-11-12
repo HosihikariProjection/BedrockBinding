@@ -75,6 +75,7 @@ public sealed unsafe partial class PriorityDeferredSubscriptionHub : global::Sys
         var handle = NativeMethods.TablePtr->C0.hs_create_ea98c595((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

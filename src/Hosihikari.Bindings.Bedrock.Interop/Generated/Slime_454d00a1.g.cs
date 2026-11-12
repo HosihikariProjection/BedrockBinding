@@ -778,6 +778,7 @@ public sealed unsafe partial class Slime : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_fc0162f3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

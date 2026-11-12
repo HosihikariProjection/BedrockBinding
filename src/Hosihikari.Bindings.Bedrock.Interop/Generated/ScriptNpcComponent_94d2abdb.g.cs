@@ -77,6 +77,7 @@ public sealed unsafe partial class ScriptNpcComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_ef181f03((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class TrustingComponent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_8ed83264((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

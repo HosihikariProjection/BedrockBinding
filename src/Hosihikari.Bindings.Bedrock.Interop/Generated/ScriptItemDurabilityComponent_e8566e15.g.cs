@@ -69,6 +69,7 @@ public sealed unsafe partial class ScriptItemDurabilityComponent : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_661f01c5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

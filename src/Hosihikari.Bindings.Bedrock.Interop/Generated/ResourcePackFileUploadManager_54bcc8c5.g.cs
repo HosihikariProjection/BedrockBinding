@@ -123,6 +123,7 @@ public sealed unsafe partial class ResourcePackFileUploadManager : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_538189b0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -134,6 +135,7 @@ public sealed unsafe partial class ResourcePackFileUploadManager : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_109dc826((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -215,7 +217,12 @@ public sealed unsafe partial class ResourcePackFileUploadManager : global::Syste
     public global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackFileUploadManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackFileUploadManager arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b714eca1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackFileUploadManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackFileUploadManager((nint)__hs_handle, false);
     }
 
     public void uploadFileToRealmStorage(string uploadId, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, int slotIndex)

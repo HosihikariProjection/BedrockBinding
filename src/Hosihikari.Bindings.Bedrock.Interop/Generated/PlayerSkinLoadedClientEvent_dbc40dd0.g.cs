@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerSkinLoadedClientEvent : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_164ee2de((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

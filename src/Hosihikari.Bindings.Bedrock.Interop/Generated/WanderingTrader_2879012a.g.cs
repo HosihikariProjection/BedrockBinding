@@ -731,6 +731,7 @@ public sealed unsafe partial class WanderingTrader : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_f0c49a2f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

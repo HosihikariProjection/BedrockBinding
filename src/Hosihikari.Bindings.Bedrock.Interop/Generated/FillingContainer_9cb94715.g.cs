@@ -188,6 +188,7 @@ public sealed unsafe partial class FillingContainer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_7cdb5ab2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -235,7 +236,12 @@ public sealed unsafe partial class FillingContainer : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_76e7074b((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public int getMaxStackSize()

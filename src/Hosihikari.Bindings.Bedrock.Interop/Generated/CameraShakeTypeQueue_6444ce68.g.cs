@@ -45,6 +45,7 @@ public sealed unsafe partial class CameraShakeTypeQueue : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_93a9b201();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class CameraShakeTypeQueue : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_2b9dbd36((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class CameraShakeTypeQueue : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.CameraShakeTypeQueue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CameraShakeTypeQueue arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1bfb1260((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CameraShakeTypeQueue((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CameraShakeTypeQueue((nint)__hs_handle, false);
     }
 
     public void Dispose()

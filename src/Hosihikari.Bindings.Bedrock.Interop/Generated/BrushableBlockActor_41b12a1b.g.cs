@@ -132,6 +132,7 @@ public sealed unsafe partial class BrushableBlockActor : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_37f40549();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -171,7 +172,12 @@ public sealed unsafe partial class BrushableBlockActor : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_24d2f993((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

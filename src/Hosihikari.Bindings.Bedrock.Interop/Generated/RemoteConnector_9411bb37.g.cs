@@ -89,6 +89,7 @@ public sealed unsafe partial class RemoteConnector : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_44712b13();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -104,6 +105,7 @@ public sealed unsafe partial class RemoteConnector : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_93c376ed((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -128,7 +130,12 @@ public sealed unsafe partial class RemoteConnector : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier? getNetworkIdentifier()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8164ffee((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle);
     }
 
     public bool host(global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition definition, global::Hosihikari.Bindings.Bedrock.Interop.PrivateKeyManager keys)

@@ -45,6 +45,7 @@ public sealed unsafe partial class DisplayNameItemComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_b7952309((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -60,6 +60,7 @@ public sealed unsafe partial class ActorFilterGroup : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_831125f0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

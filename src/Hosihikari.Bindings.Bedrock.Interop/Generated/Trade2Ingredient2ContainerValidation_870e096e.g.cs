@@ -49,6 +49,7 @@ public sealed unsafe partial class Trade2Ingredient2ContainerValidation : global
         var handle = NativeMethods.TablePtr->C4.hs_create_9a3af701((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

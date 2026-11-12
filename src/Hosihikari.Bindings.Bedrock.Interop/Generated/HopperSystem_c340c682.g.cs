@@ -49,6 +49,7 @@ public sealed unsafe partial class HopperSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_7c0adebd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

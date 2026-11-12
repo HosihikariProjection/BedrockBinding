@@ -45,6 +45,7 @@ public sealed unsafe partial class Result_EditorConnectionJoinIntent__std__error
         var handle = NativeMethods.TablePtr->C0.hs_create_f7c24d85((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

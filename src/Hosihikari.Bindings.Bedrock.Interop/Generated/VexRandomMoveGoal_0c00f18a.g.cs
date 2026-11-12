@@ -83,6 +83,7 @@ public sealed unsafe partial class VexRandomMoveGoal : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_f95af0f6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -94,6 +95,7 @@ public sealed unsafe partial class VexRandomMoveGoal : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_c500cb0a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -139,7 +141,12 @@ public sealed unsafe partial class VexRandomMoveGoal : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.VexRandomMoveGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VexRandomMoveGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c8d3239a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VexRandomMoveGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.VexRandomMoveGoal((nint)__hs_handle, false);
     }
 
     public void tick()

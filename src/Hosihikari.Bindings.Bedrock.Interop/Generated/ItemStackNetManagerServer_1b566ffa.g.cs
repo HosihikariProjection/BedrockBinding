@@ -134,6 +134,7 @@ public sealed unsafe partial class ItemStackNetManagerServer : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_559e52b7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

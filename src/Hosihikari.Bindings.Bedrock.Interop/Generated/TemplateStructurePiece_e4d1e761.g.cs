@@ -93,6 +93,7 @@ public sealed unsafe partial class TemplateStructurePiece : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_8bde8409();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -104,6 +105,7 @@ public sealed unsafe partial class TemplateStructurePiece : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_49aad12b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -115,6 +117,7 @@ public sealed unsafe partial class TemplateStructurePiece : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_b1790337(depth);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

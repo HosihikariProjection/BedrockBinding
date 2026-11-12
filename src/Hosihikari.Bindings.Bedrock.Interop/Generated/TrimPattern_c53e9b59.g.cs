@@ -49,6 +49,7 @@ public sealed unsafe partial class TrimPattern : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_e9871d17((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

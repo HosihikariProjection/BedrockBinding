@@ -55,6 +55,7 @@ public sealed unsafe partial class DispatchQueue : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_ee251979();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class DispatchQueue : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_be5f3968((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -109,7 +111,12 @@ public sealed unsafe partial class DispatchQueue : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatchQueue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatchQueue arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7510d392((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatchQueue((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatchQueue((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<Bedrock::Http::Response>' requires --link-carrier or --virtual-dispatch.", false)]

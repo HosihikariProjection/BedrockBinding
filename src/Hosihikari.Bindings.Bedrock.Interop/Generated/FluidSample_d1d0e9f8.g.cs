@@ -45,6 +45,7 @@ public sealed unsafe partial class FluidSample : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_bf11eeb2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

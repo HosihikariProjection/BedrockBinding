@@ -45,6 +45,7 @@ public sealed unsafe partial class PersistentTickingAreaLimits : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_0a80cdc4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -69,6 +69,7 @@ public sealed unsafe partial class Publisher_void__const_Json__Value_____Bedrock
         var handle = NativeMethods.TablePtr->C0.hs_create_93d2cffe();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ThisPtrPlusSysAddr : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_eb98f1b7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ThisPtrPlusSysAddr : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_0587301c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -95,7 +97,12 @@ public sealed unsafe partial class ThisPtrPlusSysAddr : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface_Nested.ThisPtrPlusSysAddr? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface_Nested.ThisPtrPlusSysAddr arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b39c7b03((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface_Nested.ThisPtrPlusSysAddr((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.TCPInterface_Nested.ThisPtrPlusSysAddr((nint)__hs_handle, false);
     }
 
     public void Dispose()

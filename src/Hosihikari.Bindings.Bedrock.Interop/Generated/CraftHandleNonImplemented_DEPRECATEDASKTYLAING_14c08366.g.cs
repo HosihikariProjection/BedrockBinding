@@ -49,6 +49,7 @@ public sealed unsafe partial class CraftHandleNonImplemented_DEPRECATEDASKTYLAIN
         var handle = NativeMethods.TablePtr->C1.hs_create_d7b810bd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

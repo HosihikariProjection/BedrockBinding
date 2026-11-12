@@ -119,6 +119,7 @@ public sealed unsafe partial class SwiftSneakEnchant : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_ed8bb171((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

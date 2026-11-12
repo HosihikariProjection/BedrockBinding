@@ -45,6 +45,7 @@ public sealed unsafe partial class SpawnActorDefinition : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_a70b7f89((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

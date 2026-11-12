@@ -53,6 +53,7 @@ public sealed unsafe partial class AnimateEntityPacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_fc1e89b7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class AnimateEntityPacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_69c373a5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

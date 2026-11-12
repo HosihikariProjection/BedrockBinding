@@ -53,6 +53,7 @@ public sealed unsafe partial class GrindstoneInputContainerValidation : global::
         var handle = NativeMethods.TablePtr->C1.hs_create_cd1e4e1d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

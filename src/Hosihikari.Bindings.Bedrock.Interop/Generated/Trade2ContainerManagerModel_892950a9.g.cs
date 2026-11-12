@@ -167,6 +167,7 @@ public sealed unsafe partial class Trade2ContainerManagerModel : global::System.
         var handle = NativeMethods.TablePtr->C4.hs_create_b032f452();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -182,6 +183,7 @@ public sealed unsafe partial class Trade2ContainerManagerModel : global::System.
         var handle = NativeMethods.TablePtr->C4.hs_create_9421511d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -191,7 +193,12 @@ public sealed unsafe partial class Trade2ContainerManagerModel : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext? _postInit()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5e26d47b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle);
     }
 
     public void broadcastChanges()
@@ -206,7 +213,12 @@ public sealed unsafe partial class Trade2ContainerManagerModel : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getSlot(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c2bbd0fb((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public bool isValid(float pickRange)

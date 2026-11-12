@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptBiomeType : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_d3fac24a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

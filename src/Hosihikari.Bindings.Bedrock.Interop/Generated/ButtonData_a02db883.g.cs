@@ -45,6 +45,7 @@ public sealed unsafe partial class ButtonData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_5ce78227();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ButtonData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_9906c968((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -89,7 +91,12 @@ public sealed unsafe partial class ButtonData : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormData_Nested.ButtonData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormData_Nested.ButtonData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_59504cc7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormData_Nested.ButtonData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormData_Nested.ButtonData((nint)__hs_handle, false);
     }
 
     public void Dispose()

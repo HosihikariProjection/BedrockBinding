@@ -53,6 +53,7 @@ public sealed unsafe partial class InterventionPublishers : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_a5368235((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

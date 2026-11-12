@@ -140,6 +140,7 @@ public sealed unsafe partial class InventoryContainerModel : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_a0af3d04();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -151,6 +152,7 @@ public sealed unsafe partial class InventoryContainerModel : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_9564f195((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -160,7 +162,12 @@ public sealed unsafe partial class InventoryContainerModel : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? _getContainer()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2e01db0f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public int _getContainerOffset()
@@ -181,7 +188,12 @@ public sealed unsafe partial class InventoryContainerModel : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef? getContainerWeakRef()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_12df71f7((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)__hs_handle);
     }
 
     public bool isValid()
@@ -198,7 +210,12 @@ public sealed unsafe partial class InventoryContainerModel : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1eacbfee((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel((nint)__hs_handle, false);
     }
 
     public void postInit()

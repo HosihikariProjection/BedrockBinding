@@ -55,6 +55,7 @@ public sealed unsafe partial class AddEntry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_28c7a65a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class AddEntry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_13550683((void*)entry.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,6 +79,7 @@ public sealed unsafe partial class AddEntry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_76f1c326((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

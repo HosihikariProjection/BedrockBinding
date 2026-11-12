@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptActorType : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_c863fe85((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

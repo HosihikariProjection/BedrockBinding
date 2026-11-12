@@ -49,6 +49,7 @@ public sealed unsafe partial class SchemaInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_0e273973();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class SchemaInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_978d3858((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -50,6 +50,7 @@ public sealed unsafe partial class ScriptNavigationResult : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_7d2a208f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

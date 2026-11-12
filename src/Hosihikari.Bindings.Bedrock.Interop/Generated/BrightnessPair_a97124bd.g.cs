@@ -45,6 +45,7 @@ public sealed unsafe partial class BrightnessPair : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_e3e11593((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

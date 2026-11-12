@@ -45,6 +45,7 @@ public sealed unsafe partial class CustomMapGrassColorAttributes : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_1a303cdc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class EntitySubsensorDescriptor : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_052a3ae2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -81,6 +81,7 @@ public sealed unsafe partial class ScriptItemEnchantmentComponent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_04f88c7f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -108,7 +109,12 @@ public sealed unsafe partial class ScriptItemEnchantmentComponent : global::Syst
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentComponent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_15f5152b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentComponent((nint)__hs_handle, false);
     }
 
 

@@ -79,6 +79,7 @@ public sealed unsafe partial class HatchetItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d28f5720();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -90,6 +91,7 @@ public sealed unsafe partial class HatchetItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_c382ed35((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -75,6 +75,7 @@ public sealed unsafe partial class OceanMonumentFeature : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_fd9f0948();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -86,6 +87,7 @@ public sealed unsafe partial class OceanMonumentFeature : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_3e49f071((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -97,6 +99,7 @@ public sealed unsafe partial class OceanMonumentFeature : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_10661a98(seed);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

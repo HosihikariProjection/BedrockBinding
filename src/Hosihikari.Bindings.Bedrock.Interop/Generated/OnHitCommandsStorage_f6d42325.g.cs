@@ -45,6 +45,7 @@ public sealed unsafe partial class OnHitCommandsStorage : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_9ba3a842((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

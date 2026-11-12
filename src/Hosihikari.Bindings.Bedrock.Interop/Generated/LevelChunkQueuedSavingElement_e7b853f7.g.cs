@@ -45,6 +45,7 @@ public sealed unsafe partial class LevelChunkQueuedSavingElement : global::Syste
         var handle = NativeMethods.TablePtr->C2.hs_create_979cf000((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

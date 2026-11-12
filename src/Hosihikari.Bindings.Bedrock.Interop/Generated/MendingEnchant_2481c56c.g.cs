@@ -115,6 +115,7 @@ public sealed unsafe partial class MendingEnchant : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_b5c942f0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class MansionPiecePlacer : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_47507032();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class MansionPiecePlacer : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_a7013ef0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -105,7 +107,12 @@ public sealed unsafe partial class MansionPiecePlacer : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.MansionPiecePlacer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.MansionPiecePlacer arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a73a144d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.MansionPiecePlacer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.MansionPiecePlacer((nint)__hs_handle, false);
     }
 
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class Mutex : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_707027dd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class Mutex : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_5f8c25a9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,7 +77,12 @@ public sealed unsafe partial class Mutex : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_af792af5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex((nint)__hs_handle, false);
     }
 
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class NamedMolangScript : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_3ea5de5e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

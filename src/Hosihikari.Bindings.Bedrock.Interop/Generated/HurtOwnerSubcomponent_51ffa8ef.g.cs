@@ -61,6 +61,7 @@ public sealed unsafe partial class HurtOwnerSubcomponent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_f49b0db4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

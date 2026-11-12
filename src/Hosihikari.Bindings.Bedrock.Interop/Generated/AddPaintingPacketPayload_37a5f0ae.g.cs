@@ -45,6 +45,7 @@ public sealed unsafe partial class AddPaintingPacketPayload : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_a392bc72((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

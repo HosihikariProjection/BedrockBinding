@@ -51,6 +51,7 @@ public sealed unsafe partial class SpawnerData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_e5ee2292((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

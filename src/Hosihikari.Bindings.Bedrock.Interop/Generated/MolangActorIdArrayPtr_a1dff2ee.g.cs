@@ -45,6 +45,7 @@ public sealed unsafe partial class MolangActorIdArrayPtr : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_e0e37768((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

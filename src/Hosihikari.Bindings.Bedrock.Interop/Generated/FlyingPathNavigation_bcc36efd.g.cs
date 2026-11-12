@@ -81,6 +81,7 @@ public sealed unsafe partial class FlyingPathNavigation : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_fd4e8db7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -115,7 +116,12 @@ public sealed unsafe partial class FlyingPathNavigation : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getTempMobPos(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_654bc69d((void*)__hosihikari_shim_handle, (void*)mob.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.NavigationDescription? description)

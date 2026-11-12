@@ -92,6 +92,7 @@ public sealed unsafe partial class InteractActionNode : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_0cf55361((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

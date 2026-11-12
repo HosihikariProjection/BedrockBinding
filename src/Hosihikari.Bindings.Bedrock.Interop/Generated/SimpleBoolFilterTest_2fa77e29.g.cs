@@ -75,6 +75,7 @@ public sealed unsafe partial class SimpleBoolFilterTest : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_6127d13b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -86,6 +87,7 @@ public sealed unsafe partial class SimpleBoolFilterTest : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_60c085ae((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -95,7 +97,12 @@ public sealed unsafe partial class SimpleBoolFilterTest : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeValue()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_989fcabb((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.", false)]
@@ -111,7 +118,12 @@ public sealed unsafe partial class SimpleBoolFilterTest : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.SimpleBoolFilterTest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimpleBoolFilterTest arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ae7e6cff((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SimpleBoolFilterTest((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SimpleBoolFilterTest((nint)__hs_handle, false);
     }
 
     public bool setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)

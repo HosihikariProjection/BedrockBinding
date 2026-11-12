@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptItemCustomComponentMineBlockEvent : glo
         var handle = NativeMethods.TablePtr->C3.hs_create_0f084a80((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

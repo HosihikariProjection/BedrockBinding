@@ -607,7 +607,12 @@ public sealed unsafe partial class Arrow : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? __getPickupItem()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dbaa8dc7((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -652,6 +657,7 @@ public sealed unsafe partial class Arrow : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_05e452c0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -665,7 +671,12 @@ public sealed unsafe partial class Arrow : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? _getPickupItem()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_09a60d3c((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle);
     }
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
@@ -680,7 +691,12 @@ public sealed unsafe partial class Arrow : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getEffectColor()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_81adb929((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle);
     }
 
     public int mEnchantFlame

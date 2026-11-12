@@ -45,6 +45,7 @@ public sealed unsafe partial class LevelAddedActorEvent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_fe6ced4f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

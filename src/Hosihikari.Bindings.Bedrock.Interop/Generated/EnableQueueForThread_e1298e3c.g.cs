@@ -57,6 +57,7 @@ public sealed unsafe partial class EnableQueueForThread : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_73eba8e0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

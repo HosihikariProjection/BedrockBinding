@@ -45,6 +45,7 @@ public sealed unsafe partial class TintColor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_df365a2a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class TintColor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3bc7fb39((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class FancyTreeCanopy : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_55ee88da((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -69,7 +69,12 @@ public sealed unsafe partial class StructureFeature : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureStart? _getStructureAt(int cellX, int cellY, int cellZ)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_727661bb((void*)__hosihikari_shim_handle, cellX, cellY, cellZ);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureStart((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureStart((nint)__hs_handle, false);
     }
 
     public bool _shouldAddHardcodedSpawnAreas()
@@ -91,6 +96,7 @@ public sealed unsafe partial class StructureFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_c64f354f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +108,7 @@ public sealed unsafe partial class StructureFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_9f38461a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -113,6 +120,7 @@ public sealed unsafe partial class StructureFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_deb6ec7c(seed, (void*)structureFeatureType.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -162,7 +170,12 @@ public sealed unsafe partial class StructureFeature : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureStart? getStructureAt(int cellX, int cellY, int cellZ)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_db2f8f88((void*)__hosihikari_shim_handle, cellX, cellY, cellZ);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureStart((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureStart((nint)__hs_handle, false);
     }
 
     public bool isFeatureChunk(global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos, uint levelSeed, global::Hosihikari.Bindings.Bedrock.Interop.IPreliminarySurfaceProvider preliminarySurfaceLevel, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)

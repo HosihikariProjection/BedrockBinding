@@ -43,7 +43,12 @@ public sealed unsafe partial class optional_ref_Actor_ : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? as_ptr()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_12f7a069((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: return type 'decltype(auto)' is not supported.", false)]
@@ -73,7 +78,12 @@ public sealed unsafe partial class optional_ref_Actor_ : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fb44173d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public bool has_value()
@@ -84,13 +94,23 @@ public sealed unsafe partial class optional_ref_Actor_ : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? operator_Actor___4db0420f()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4db0420f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? operator_Actor___21898b9f()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_21898b9f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -101,25 +121,45 @@ public sealed unsafe partial class optional_ref_Actor_ : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_96efbe8b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_729f9641((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_Actor_? operator_assign_26617d8d(global::Hosihikari.Bindings.Bedrock.Interop.Actor? arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_26617d8d((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_Actor_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_Actor_((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_Actor_? operator_assign_8f03b565(global::Hosihikari.Bindings.Bedrock.Interop.Actor? arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8f03b565((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), arg0 is not null);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_Actor_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_Actor_((nint)__hs_handle, false);
     }
 
     public static optional_ref_Actor_? Create()
@@ -127,6 +167,7 @@ public sealed unsafe partial class optional_ref_Actor_ : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_5a50cc02();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -138,6 +179,7 @@ public sealed unsafe partial class optional_ref_Actor_ : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_218caa3c((void*)(arg0?.Handle ?? 0), arg0 is not null);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -149,6 +191,7 @@ public sealed unsafe partial class optional_ref_Actor_ : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_c3055597((void*)(arg0?.Handle ?? 0), arg0 is not null);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -160,6 +203,7 @@ public sealed unsafe partial class optional_ref_Actor_ : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_de9bedcf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -171,6 +215,7 @@ public sealed unsafe partial class optional_ref_Actor_ : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_dd8110b7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -188,7 +233,12 @@ public sealed unsafe partial class optional_ref_Actor_ : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? value()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e4950bcd((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public void Dispose()

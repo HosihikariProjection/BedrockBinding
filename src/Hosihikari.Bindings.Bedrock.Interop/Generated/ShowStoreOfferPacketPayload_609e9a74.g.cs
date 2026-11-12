@@ -45,6 +45,7 @@ public sealed unsafe partial class ShowStoreOfferPacketPayload : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_dcc18a05((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

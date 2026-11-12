@@ -49,6 +49,7 @@ public sealed unsafe partial class Signature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_377e4666((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

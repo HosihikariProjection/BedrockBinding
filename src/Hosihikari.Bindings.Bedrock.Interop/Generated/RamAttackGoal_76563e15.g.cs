@@ -91,6 +91,7 @@ public sealed unsafe partial class RamAttackGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_87d0bcaa();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,6 +107,7 @@ public sealed unsafe partial class RamAttackGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_e0a07630((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -313,7 +315,12 @@ public sealed unsafe partial class RamAttackGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8b23dfa4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoal((nint)__hs_handle, false);
     }
 
     public void start()

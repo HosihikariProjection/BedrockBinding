@@ -45,6 +45,7 @@ public sealed unsafe partial class RecordGroup : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_fc16be38((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

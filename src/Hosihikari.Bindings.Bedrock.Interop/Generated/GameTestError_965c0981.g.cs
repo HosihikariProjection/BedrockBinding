@@ -95,6 +95,7 @@ public sealed unsafe partial class GameTestError : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_64e365d8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,6 +107,7 @@ public sealed unsafe partial class GameTestError : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_825f8aa0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -145,7 +147,12 @@ public sealed unsafe partial class GameTestError : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6cd35845((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle, false);
     }
 
 

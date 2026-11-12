@@ -341,6 +341,7 @@ public sealed unsafe partial class MaceItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_d6c49678();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -352,6 +353,7 @@ public sealed unsafe partial class MaceItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_334a7c39((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

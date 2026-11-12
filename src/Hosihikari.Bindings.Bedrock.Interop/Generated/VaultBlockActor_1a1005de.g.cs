@@ -150,6 +150,7 @@ public sealed unsafe partial class VaultBlockActor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_4d9f87b4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

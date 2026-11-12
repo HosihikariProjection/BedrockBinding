@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorAnimationControllerPtr : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_32b56eae();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class ActorAnimationControllerPtr : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_01fcb97d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

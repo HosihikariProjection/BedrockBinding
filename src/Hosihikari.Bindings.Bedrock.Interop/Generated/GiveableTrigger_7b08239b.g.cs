@@ -49,6 +49,7 @@ public sealed unsafe partial class GiveableTrigger : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_7c0f9859((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockSourceComponent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_05c0478e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

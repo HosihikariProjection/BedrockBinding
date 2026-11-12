@@ -45,6 +45,7 @@ public sealed unsafe partial class StoredCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_ff540b57((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

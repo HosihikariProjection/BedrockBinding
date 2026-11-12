@@ -45,6 +45,7 @@ public sealed unsafe partial class IAsyncInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_3f2392b9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -67,6 +67,7 @@ public sealed unsafe partial class OnHurtByPlayerDefinition : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_b5b97cb0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

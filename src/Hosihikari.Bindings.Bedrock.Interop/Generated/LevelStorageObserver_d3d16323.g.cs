@@ -45,6 +45,7 @@ public sealed unsafe partial class LevelStorageObserver : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_7f299e1b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

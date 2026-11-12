@@ -57,6 +57,7 @@ public sealed unsafe partial class EducationLevelSettings : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_8a85b6c1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

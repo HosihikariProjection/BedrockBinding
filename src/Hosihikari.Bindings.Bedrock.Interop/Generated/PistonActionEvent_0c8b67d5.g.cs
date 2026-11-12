@@ -45,6 +45,7 @@ public sealed unsafe partial class PistonActionEvent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_7117a1c4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

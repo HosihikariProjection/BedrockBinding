@@ -61,6 +61,7 @@ public sealed unsafe partial class GetInteractionPositionForBlockDefinition : gl
         var handle = NativeMethods.TablePtr->C1.hs_create_22dfc3e9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

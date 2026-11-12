@@ -57,6 +57,7 @@ public sealed unsafe partial class RamGoalItemDropperImpl : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_3d3d586d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class RamGoalItemDropperImpl : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_77cf4b4e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -99,7 +101,12 @@ public sealed unsafe partial class RamGoalItemDropperImpl : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoalUtils.RamGoalItemDropperImpl? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoalUtils.RamGoalItemDropperImpl arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5e27bcb9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoalUtils.RamGoalItemDropperImpl((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoalUtils.RamGoalItemDropperImpl((nint)__hs_handle, false);
     }
 
     public void tryDropHorn(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 dropPos)

@@ -73,6 +73,7 @@ public sealed unsafe partial class ReedsFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_eef6e892((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

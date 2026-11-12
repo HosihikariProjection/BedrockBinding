@@ -49,6 +49,7 @@ public sealed unsafe partial class Views : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_bb71d4d2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class Views : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_017cd31a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

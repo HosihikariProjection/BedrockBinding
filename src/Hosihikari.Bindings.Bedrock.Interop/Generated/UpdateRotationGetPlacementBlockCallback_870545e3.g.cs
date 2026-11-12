@@ -53,6 +53,7 @@ public sealed unsafe partial class UpdateRotationGetPlacementBlockCallback : glo
         var handle = NativeMethods.TablePtr->C0.hs_create_69fe9e84((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

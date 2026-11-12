@@ -115,6 +115,7 @@ public sealed unsafe partial class TridentImpalerEnchant : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_e04d20ee((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

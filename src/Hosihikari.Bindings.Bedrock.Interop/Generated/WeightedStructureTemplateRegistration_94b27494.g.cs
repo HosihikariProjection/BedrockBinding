@@ -45,6 +45,7 @@ public sealed unsafe partial class WeightedStructureTemplateRegistration : globa
         var handle = NativeMethods.TablePtr->C4.hs_create_5c9dc319((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

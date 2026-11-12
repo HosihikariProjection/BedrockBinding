@@ -124,6 +124,7 @@ public sealed unsafe partial class TrialSpawnerBlockActor : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_edf995ac();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptBlockVolumeIterable : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_b5ec9cbb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

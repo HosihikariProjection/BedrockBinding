@@ -45,6 +45,7 @@ public sealed unsafe partial class UriListener : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_4fb52312((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class AABBShapeComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_3286f4cc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

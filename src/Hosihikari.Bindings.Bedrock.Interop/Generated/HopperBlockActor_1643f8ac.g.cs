@@ -204,7 +204,12 @@ public sealed unsafe partial class HopperBlockActor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? _getItem(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_bdbe6a6c((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -265,6 +270,7 @@ public sealed unsafe partial class HopperBlockActor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_05811957();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -299,13 +305,23 @@ public sealed unsafe partial class HopperBlockActor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? getContainer_f3db7e5e()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f3db7e5e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? getContainer_a6213d76()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a6213d76((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public int getContainerSize()
@@ -316,7 +332,12 @@ public sealed unsafe partial class HopperBlockActor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_15f7adc7((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public int getMaxStackSize()

@@ -49,6 +49,7 @@ public sealed unsafe partial class SurfaceMaterialAttributes : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_22f7815b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

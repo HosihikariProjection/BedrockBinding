@@ -65,6 +65,7 @@ public sealed unsafe partial class ActorDimensionTransferer : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_2a54b6ac();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,7 +79,12 @@ public sealed unsafe partial class ActorDimensionTransferer : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? findTargetPositionAndSetPosition(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint actorDimensionTransferRequest, global::Hosihikari.Bindings.Bedrock.Interop.IDimension toDimension, global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer portalForcer)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f5a16b2e((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)actorDimensionTransferRequest, (void*)toDimension.Handle, (void*)portalForcer.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

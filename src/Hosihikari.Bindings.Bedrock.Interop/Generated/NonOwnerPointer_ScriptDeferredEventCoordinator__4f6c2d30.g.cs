@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_ScriptDeferredEventCoordinato
         var handle = NativeMethods.TablePtr->C0.hs_create_e0bf4b88();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_ScriptDeferredEventCoordinato
         var handle = NativeMethods.TablePtr->C0.hs_create_d9e074ee(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_ScriptDeferredEventCoordinato
         var handle = NativeMethods.TablePtr->C0.hs_create_9e3fb848();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_ScriptDeferredEventCoordinato
         var handle = NativeMethods.TablePtr->C0.hs_create_5fec4ddd(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_ScriptDeferredEventCoordinato
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventCoordinator? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_21a826d0((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventCoordinator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventCoordinator((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_ScriptDeferredEventCoordinato
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventCoordinator? operator_ScriptDeferredEventCoordinator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_97263875((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventCoordinator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventCoordinator((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_ScriptDeferredEventCoordinato
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventCoordinator? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_283be4f3((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventCoordinator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventCoordinator((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventCoordinator? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6a928711((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventCoordinator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventCoordinator((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

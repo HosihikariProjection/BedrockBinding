@@ -157,6 +157,7 @@ public sealed unsafe partial class BlockVolumeTarget : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_1162ed55();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -168,6 +169,7 @@ public sealed unsafe partial class BlockVolumeTarget : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_6667e4fe((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -201,31 +203,56 @@ public sealed unsafe partial class BlockVolumeTarget : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.Biome? getBiome(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2bd720db((void*)__hosihikari_shim_handle, (void*)pos.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d1423407((void*)__hosihikari_shim_handle, (void*)pos.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlockNoBoundsCheck(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1ff18abf((void*)__hosihikari_shim_handle, (void*)pos.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext? getContext()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c6316955((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getExtraBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_06a0793f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public short getHeightmap(int x, int z)
@@ -236,7 +263,12 @@ public sealed unsafe partial class BlockVolumeTarget : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelData? getLevelData()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7886008f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelData((nint)__hs_handle, false);
     }
 
     public short getLocalWaterLevel(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg0)
@@ -328,7 +360,12 @@ public sealed unsafe partial class BlockVolumeTarget : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockVolumeTarget? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolumeTarget arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d5ef46e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockVolumeTarget((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockVolumeTarget((nint)__hs_handle, false);
     }
 
     public bool placeStructure(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg0, global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate arg1, global::Hosihikari.Bindings.Bedrock.Interop.StructureSettings arg2)
@@ -354,7 +391,12 @@ public sealed unsafe partial class BlockVolumeTarget : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? tryGetLiquidBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9babb4b3((void*)__hosihikari_shim_handle, (void*)pos.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
 

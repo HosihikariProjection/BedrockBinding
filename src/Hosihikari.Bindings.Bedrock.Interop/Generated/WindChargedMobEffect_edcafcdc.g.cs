@@ -162,6 +162,7 @@ public sealed unsafe partial class WindChargedMobEffect : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_1654b81c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

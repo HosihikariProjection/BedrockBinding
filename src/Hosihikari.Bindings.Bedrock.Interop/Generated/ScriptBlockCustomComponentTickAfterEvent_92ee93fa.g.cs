@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentTickAfterEvent : gl
         var handle = NativeMethods.TablePtr->C3.hs_create_b20a14cc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentTickAfterEvent : gl
         var handle = NativeMethods.TablePtr->C3.hs_create_8c1ce094((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

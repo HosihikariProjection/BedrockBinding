@@ -69,6 +69,7 @@ public sealed unsafe partial class PhotoStorage : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_bf75800e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,6 +85,7 @@ public sealed unsafe partial class PhotoStorage : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_eef43e77((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class CraftResultsActionData : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_d0270c1d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

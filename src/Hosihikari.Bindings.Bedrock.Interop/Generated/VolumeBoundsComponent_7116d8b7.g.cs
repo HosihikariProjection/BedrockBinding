@@ -45,6 +45,7 @@ public sealed unsafe partial class VolumeBoundsComponent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_66a45d71((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

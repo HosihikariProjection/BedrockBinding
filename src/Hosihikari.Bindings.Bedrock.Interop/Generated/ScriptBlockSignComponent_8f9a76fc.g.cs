@@ -72,6 +72,7 @@ public sealed unsafe partial class ScriptBlockSignComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_3ad037ce((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

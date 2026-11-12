@@ -45,6 +45,7 @@ public sealed unsafe partial class WeakEntityRef : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_8b05dbb4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class WeakEntityRef : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_a90bfa75((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -73,7 +75,12 @@ public sealed unsafe partial class WeakEntityRef : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.WeakEntityRef? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WeakEntityRef arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0a6f56e6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WeakEntityRef((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WeakEntityRef((nint)__hs_handle, false);
     }
 
 

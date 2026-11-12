@@ -74,6 +74,7 @@ public sealed unsafe partial class TaskQueueBase : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_de109cd4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

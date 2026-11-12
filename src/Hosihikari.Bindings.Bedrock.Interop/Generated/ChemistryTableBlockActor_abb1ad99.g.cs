@@ -136,6 +136,7 @@ public sealed unsafe partial class ChemistryTableBlockActor : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_4457e21c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -149,13 +150,23 @@ public sealed unsafe partial class ChemistryTableBlockActor : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? getContainer_c77b400d()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c77b400d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? getContainer_8f793ae4()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8f793ae4((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public int getContainerSize()
@@ -166,7 +177,12 @@ public sealed unsafe partial class ChemistryTableBlockActor : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e18eca0e((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public int getMaxStackSize()

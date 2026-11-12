@@ -45,6 +45,7 @@ public sealed unsafe partial class DefaultPropertyValues : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_31d1435b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

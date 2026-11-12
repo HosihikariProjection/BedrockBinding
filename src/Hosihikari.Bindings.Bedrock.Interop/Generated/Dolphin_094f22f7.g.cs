@@ -615,6 +615,7 @@ public sealed unsafe partial class Dolphin : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_21452949();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

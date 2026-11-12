@@ -80,6 +80,7 @@ public sealed unsafe partial class ConnectionRequest : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_2628462c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,6 +92,7 @@ public sealed unsafe partial class ConnectionRequest : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_b25d6221((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

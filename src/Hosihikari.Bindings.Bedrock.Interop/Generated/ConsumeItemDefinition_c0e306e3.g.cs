@@ -57,6 +57,7 @@ public sealed unsafe partial class ConsumeItemDefinition : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_0b4d6be1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class UniqueOwnerPointer_ServerLevelEventCoordinato
         var handle = NativeMethods.TablePtr->C0.hs_create_12b94367();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class UniqueOwnerPointer_ServerLevelEventCoordinato
         var handle = NativeMethods.TablePtr->C0.hs_create_479b8c51();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -73,7 +75,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ServerLevelEventCoordinato
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerLevelEventCoordinator? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1c059011((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerLevelEventCoordinator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerLevelEventCoordinator((nint)__hs_handle, false);
     }
 
     public bool isValid()
@@ -101,13 +108,23 @@ public sealed unsafe partial class UniqueOwnerPointer_ServerLevelEventCoordinato
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerLevelEventCoordinator? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c53c8940((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerLevelEventCoordinator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerLevelEventCoordinator((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerLevelEventCoordinator? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_145e09fd((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerLevelEventCoordinator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerLevelEventCoordinator((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -117,7 +134,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ServerLevelEventCoordinato
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerLevelEventCoordinator_? operator_assign()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_15b2b758((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerLevelEventCoordinator_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerLevelEventCoordinator_((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ServerLevelEventCoordinator_ other)

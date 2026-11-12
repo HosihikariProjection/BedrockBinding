@@ -95,6 +95,7 @@ public sealed unsafe partial class RiverFollowingGoal : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_55ed691f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -110,6 +111,7 @@ public sealed unsafe partial class RiverFollowingGoal : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_caaf6cb3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -173,7 +175,12 @@ public sealed unsafe partial class RiverFollowingGoal : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.RiverFollowingGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RiverFollowingGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3397fe9e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RiverFollowingGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RiverFollowingGoal((nint)__hs_handle, false);
     }
 
     public void start()

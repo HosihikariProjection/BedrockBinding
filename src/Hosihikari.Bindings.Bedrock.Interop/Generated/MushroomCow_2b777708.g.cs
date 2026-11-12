@@ -739,6 +739,7 @@ public sealed unsafe partial class MushroomCow : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_120fcbe7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

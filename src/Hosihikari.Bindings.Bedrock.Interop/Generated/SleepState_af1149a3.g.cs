@@ -59,6 +59,7 @@ public sealed unsafe partial class SleepState : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_ced092d0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

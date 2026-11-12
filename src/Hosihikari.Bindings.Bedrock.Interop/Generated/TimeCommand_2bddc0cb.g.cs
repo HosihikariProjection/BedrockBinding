@@ -78,6 +78,7 @@ public sealed unsafe partial class TimeCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_37206f83((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

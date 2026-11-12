@@ -45,6 +45,7 @@ public sealed unsafe partial class ServerNetworkHandlerFactoryArguments : global
         var handle = NativeMethods.TablePtr->C2.hs_create_0153a24b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ServerNetworkHandlerFactoryArguments : global
         var handle = NativeMethods.TablePtr->C2.hs_create_09e8e78b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -95,7 +97,12 @@ public sealed unsafe partial class ServerNetworkHandlerFactoryArguments : global
     public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.ServerNetworkHandlerFactoryArguments? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.ServerNetworkHandlerFactoryArguments arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cc0bf38a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.ServerNetworkHandlerFactoryArguments((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.ServerNetworkHandlerFactoryArguments((nint)__hs_handle, false);
     }
 
 

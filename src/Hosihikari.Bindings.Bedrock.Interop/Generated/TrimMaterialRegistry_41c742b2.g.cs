@@ -45,6 +45,7 @@ public sealed unsafe partial class TrimMaterialRegistry : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_94369831((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

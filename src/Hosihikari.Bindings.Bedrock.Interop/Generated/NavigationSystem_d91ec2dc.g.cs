@@ -49,6 +49,7 @@ public sealed unsafe partial class NavigationSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_edee0513((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

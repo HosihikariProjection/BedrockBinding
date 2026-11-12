@@ -55,6 +55,18 @@ inline void setLastError(char const* message) noexcept
     }
 }
 
+// The slot is sticky by design: a caller only reads it after a call that reported failure.
+// Clearing it is a separate operation so a shim entry can reset it without the "unknown
+// native error" placeholder a null setLastError would leave behind.
+inline void clearLastError() noexcept
+{
+    try {
+        g_lastError.clear();
+    }
+    catch (...) {
+    }
+}
+
 inline char const* lastError() noexcept
 {
     return g_lastError.c_str();

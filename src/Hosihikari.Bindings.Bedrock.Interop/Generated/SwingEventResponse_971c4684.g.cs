@@ -65,6 +65,7 @@ public sealed unsafe partial class SwingEventResponse : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_ecda8d64((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

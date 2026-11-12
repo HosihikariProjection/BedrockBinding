@@ -61,6 +61,7 @@ public sealed unsafe partial class ArrowEffectSubcomponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_8397b002((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

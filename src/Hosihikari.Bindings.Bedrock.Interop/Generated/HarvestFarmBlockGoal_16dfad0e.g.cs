@@ -214,6 +214,7 @@ public sealed unsafe partial class HarvestFarmBlockGoal : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_d700ea9c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -229,6 +230,7 @@ public sealed unsafe partial class HarvestFarmBlockGoal : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_f4aace45((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

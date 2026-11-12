@@ -49,6 +49,7 @@ public sealed unsafe partial class MountTamingSystem : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_ce10d06f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

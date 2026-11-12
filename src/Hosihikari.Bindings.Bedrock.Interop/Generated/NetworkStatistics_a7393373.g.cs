@@ -81,6 +81,7 @@ public sealed unsafe partial class NetworkStatistics : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_ba7afaf8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -465,13 +465,23 @@ public sealed unsafe partial class DiodeBlock : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getOffBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block? block)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_426b1275((void*)__hosihikari_shim_handle, (void*)(block?.Handle ?? 0));
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getOnBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block? block)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_76709c4f((void*)__hosihikari_shim_handle, (void*)(block?.Handle ?? 0));
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public int getOutputSignal(global::Hosihikari.Bindings.Bedrock.Interop.Block block)

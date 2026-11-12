@@ -63,6 +63,7 @@ public sealed unsafe partial class floatN4_mce__Color_ : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_1286e2be((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -74,6 +75,7 @@ public sealed unsafe partial class floatN4_mce__Color_ : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_6b429bee(all);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +89,12 @@ public sealed unsafe partial class floatN4_mce__Color_ : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN4_mce__Color_? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN4_mce__Color_ arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d114386b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN4_mce__Color_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN4_mce__Color_((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

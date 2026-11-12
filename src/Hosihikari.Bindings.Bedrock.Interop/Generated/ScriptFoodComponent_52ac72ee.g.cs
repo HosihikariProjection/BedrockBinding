@@ -57,6 +57,7 @@ public sealed unsafe partial class ScriptFoodComponent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_3a1a95da((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

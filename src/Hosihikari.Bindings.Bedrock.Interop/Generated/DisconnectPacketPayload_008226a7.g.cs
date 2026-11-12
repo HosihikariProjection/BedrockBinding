@@ -78,6 +78,7 @@ public sealed unsafe partial class DisconnectPacketPayload : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_805b518a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -115,6 +116,7 @@ public sealed unsafe partial class DisconnectPacketPayload : global::System.IDis
                 var handle = NativeMethods.TablePtr->C1.hs_create_7b5a26d4(reason, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, message is not null, filteredMessage is not null);
                 if (handle == null)
                 {
+                    NativeMethods.GetLastError();
                     return null;
                 }
 
@@ -128,6 +130,7 @@ public sealed unsafe partial class DisconnectPacketPayload : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_1229312d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

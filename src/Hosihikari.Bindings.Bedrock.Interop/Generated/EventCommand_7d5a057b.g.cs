@@ -78,6 +78,7 @@ public sealed unsafe partial class EventCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_b9ca4caa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

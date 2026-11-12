@@ -57,6 +57,7 @@ public sealed unsafe partial class WeaponItemComponent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_199e3386();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

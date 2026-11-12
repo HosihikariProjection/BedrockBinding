@@ -61,6 +61,7 @@ public sealed unsafe partial class InventoryContainerValidation : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_95d87112((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

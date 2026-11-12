@@ -45,6 +45,7 @@ public sealed unsafe partial class ICommandDispatcher : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_04d6102d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

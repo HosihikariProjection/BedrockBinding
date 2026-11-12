@@ -49,6 +49,7 @@ public sealed unsafe partial class SurfaceMaterialAdjustmentEvaluated : global::
         var handle = NativeMethods.TablePtr->C3.hs_create_40c25e1b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

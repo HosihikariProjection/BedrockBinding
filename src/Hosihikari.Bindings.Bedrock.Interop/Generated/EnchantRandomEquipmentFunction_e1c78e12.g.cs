@@ -53,6 +53,7 @@ public sealed unsafe partial class EnchantRandomEquipmentFunction : global::Syst
         var handle = NativeMethods.TablePtr->C1.hs_create_0bb77132((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

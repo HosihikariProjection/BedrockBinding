@@ -59,6 +59,7 @@ public sealed unsafe partial class LootItemKilledByPlayerOrPetsCondition : globa
         var handle = NativeMethods.TablePtr->C2.hs_create_335199d5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

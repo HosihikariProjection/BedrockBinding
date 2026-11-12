@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptProjectileHitInfoAfterEvent : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_b4f015f3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ScriptProjectileHitInfoAfterEvent : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_a1c06651((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

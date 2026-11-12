@@ -51,7 +51,12 @@ public sealed unsafe partial class ValueOrRef_const_ActorGriefingBlockEvent_ : g
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorGriefingBlockEvent? value()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_795506fc((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorGriefingBlockEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorGriefingBlockEvent((nint)__hs_handle, false);
     }
 
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class OutgoingPacketEvent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_96545610((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

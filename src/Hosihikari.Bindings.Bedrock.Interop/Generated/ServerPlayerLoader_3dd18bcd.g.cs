@@ -45,6 +45,7 @@ public sealed unsafe partial class ServerPlayerLoader : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_27f66cf4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ServerPlayerLoader : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_eefd6eb5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,7 +77,12 @@ public sealed unsafe partial class ServerPlayerLoader : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerLoader? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerLoader arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_671769be((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerLoader((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerLoader((nint)__hs_handle, false);
     }
 
     public void Dispose()

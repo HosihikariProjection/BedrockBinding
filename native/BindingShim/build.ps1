@@ -30,9 +30,25 @@ $OutputDirectory = Split-Path $Output -Parent
 New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
 
 $VsWhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+# The component id below is not registered for preview installs (VS 18), so fall back to
+# any install that actually carries a toolchain directory.
 $VsRoot = & $VsWhere -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+if (-not $VsRoot) {
+    # -latest does not consider the preview channel here, so enumerate all of them.
+    Write-Output "The C++ component id did not match any install; falling back to a toolchain directory."
+    $VsRoot = & $VsWhere -all -prerelease -products * -property installationPath |
+        Where-Object { Test-Path (Join-Path $_ "VC\Tools\MSVC") } |
+        Select-Object -First 1
+}
 if (-not $VsRoot) { throw "Visual Studio with the C++ toolchain was not found." }
 $DevCmd = Join-Path $VsRoot "Common7\Tools\VsDevCmd.bat"
+# VsDevCmd.bat locates the install through vswhere.exe on PATH; a session started while the
+# installer was running can be missing that directory, which then silently yields an empty
+# INCLUDE. Prepend it for the child cmd processes.
+$VsInstaller = Split-Path $VsWhere -Parent
+if (-not (($env:PATH -split ';') -contains $VsInstaller)) {
+    $env:PATH = "$VsInstaller;$env:PATH"
+}
 
 # The shim calls inline member bodies of template instances, so it needs the carrier
 # headers and the packages the carrier builds with. The paths mirror those the IR

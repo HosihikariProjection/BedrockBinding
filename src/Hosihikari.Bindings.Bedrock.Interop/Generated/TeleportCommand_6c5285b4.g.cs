@@ -78,6 +78,7 @@ public sealed unsafe partial class TeleportCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_0efe1175((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,7 +92,12 @@ public sealed unsafe partial class TeleportCommand : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.TeleportTarget? computeTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor victim, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 destination, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? facePosition, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType destinationDimension, global::Hosihikari.Bindings.Bedrock.Interop.RotationCommandUtils.RotationData? rotationData, int commandVersion)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6a3bf30b((void*)victim.Handle, (void*)destination.Handle, (void*)(facePosition?.Handle ?? 0), (void*)destinationDimension.Handle, (void*)(rotationData?.Handle ?? 0), commandVersion, rotationData is not null);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TeleportTarget((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TeleportTarget((nint)__hs_handle);
     }
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)

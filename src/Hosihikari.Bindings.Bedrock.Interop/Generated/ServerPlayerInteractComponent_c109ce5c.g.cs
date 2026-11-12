@@ -45,6 +45,7 @@ public sealed unsafe partial class ServerPlayerInteractComponent : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_725454cc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

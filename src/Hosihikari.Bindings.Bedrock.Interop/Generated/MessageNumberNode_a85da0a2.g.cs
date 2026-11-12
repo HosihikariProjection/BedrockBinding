@@ -45,6 +45,7 @@ public sealed unsafe partial class MessageNumberNode : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_946d3edc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class MessageNumberNode : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_cbebb771((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class MessageNumberNode : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7563993e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode((nint)__hs_handle, false);
     }
 
     public void Dispose()

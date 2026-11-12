@@ -45,6 +45,7 @@ public sealed unsafe partial class ChangePlayerScore : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_019e2d43((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

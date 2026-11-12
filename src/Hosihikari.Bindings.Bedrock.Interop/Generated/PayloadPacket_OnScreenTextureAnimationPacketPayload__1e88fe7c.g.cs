@@ -92,6 +92,7 @@ public sealed unsafe partial class PayloadPacket_OnScreenTextureAnimationPacketP
         var handle = NativeMethods.TablePtr->C4.hs_create_6a80dd2c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -55,6 +55,7 @@ public sealed unsafe partial class LegacyTriggerItemComponent : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_720cc47a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

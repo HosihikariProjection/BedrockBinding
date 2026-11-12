@@ -62,7 +62,12 @@ public sealed unsafe partial class FloatTag : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_03d1c187((void*)__hosihikari_shim_handle, (void*)dis.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle);
     }
 
     public string _toString()
@@ -85,6 +90,7 @@ public sealed unsafe partial class FloatTag : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_cd8b1225((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +102,7 @@ public sealed unsafe partial class FloatTag : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_23a09e94(value);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -130,7 +137,12 @@ public sealed unsafe partial class FloatTag : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_28e32bfc((void*)__hosihikari_shim_handle, (void*)dis.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle);
     }
 
     public float operator_float()
@@ -141,7 +153,12 @@ public sealed unsafe partial class FloatTag : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.FloatTag? operator_assign(float value)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5a6b1a43((void*)__hosihikari_shim_handle, value);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FloatTag((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FloatTag((nint)__hs_handle, false);
     }
 
     public string toString()

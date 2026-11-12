@@ -63,6 +63,7 @@ public sealed unsafe partial class SetStewEffectFunction : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_4e07a95b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

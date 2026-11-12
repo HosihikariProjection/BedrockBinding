@@ -65,6 +65,7 @@ public sealed unsafe partial class PlayerListEntry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_4c0b97fa();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class PlayerListEntry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_a8ef6468((void*)player.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,6 +89,7 @@ public sealed unsafe partial class PlayerListEntry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_db50ba46((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -168,7 +171,12 @@ public sealed unsafe partial class PlayerListEntry : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5bd005bc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry((nint)__hs_handle, false);
     }
 
 

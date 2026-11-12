@@ -69,6 +69,7 @@ public sealed unsafe partial class BlockPatternPreEvent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_cf72bb7f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

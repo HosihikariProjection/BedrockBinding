@@ -53,6 +53,7 @@ public sealed unsafe partial class UpdateAttributesPacketPayload : global::Syste
         var handle = NativeMethods.TablePtr->C4.hs_create_4f321654();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class UpdateAttributesPacketPayload : global::Syste
         var handle = NativeMethods.TablePtr->C4.hs_create_f59a7c14((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

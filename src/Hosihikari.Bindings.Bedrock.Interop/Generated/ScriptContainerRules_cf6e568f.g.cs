@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptContainerRules : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_ec7f82d5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

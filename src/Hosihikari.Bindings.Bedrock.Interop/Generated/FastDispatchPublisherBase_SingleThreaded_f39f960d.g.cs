@@ -45,6 +45,7 @@ public sealed unsafe partial class FastDispatchPublisherBase_SingleThreaded : gl
         var handle = NativeMethods.TablePtr->C0.hs_create_7e10d902((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

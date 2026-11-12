@@ -69,6 +69,7 @@ public sealed unsafe partial class BinaryRequestBody : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_bd5f42d3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,6 +81,7 @@ public sealed unsafe partial class BinaryRequestBody : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_bba681a8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -128,7 +130,12 @@ public sealed unsafe partial class BinaryRequestBody : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.BinaryRequestBody? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.BinaryRequestBody arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d3d7b5be((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.BinaryRequestBody((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.BinaryRequestBody((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody_Nested.ReadResult? read(byte[] destination)
@@ -136,7 +143,12 @@ public sealed unsafe partial class BinaryRequestBody : global::System.IDisposabl
         fixed (byte* __hs_vectorData0 = destination)
         {
             var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c2c056ec((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(destination?.Length ?? 0));
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody_Nested.ReadResult((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody_Nested.ReadResult((nint)__hs_handle);
         }
     }
 

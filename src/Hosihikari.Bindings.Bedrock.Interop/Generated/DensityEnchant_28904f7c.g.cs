@@ -61,6 +61,7 @@ public sealed unsafe partial class DensityEnchant : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_5af6954b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class IPlayerTickProxy : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_8ab571ee((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

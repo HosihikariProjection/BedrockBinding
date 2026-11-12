@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerListPacketPayload : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_58dc0440((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

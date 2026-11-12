@@ -67,6 +67,7 @@ public sealed unsafe partial class LevelSettings : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_4c2d4947();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -510,7 +511,12 @@ public sealed unsafe partial class LevelSettings : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_664eee8d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64? parseSeedString(string seedInput)
@@ -530,7 +536,12 @@ public sealed unsafe partial class LevelSettings : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C2.hs_method_665a6a54(__hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
-            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                if (!__hs_hasValue) { return null; }
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64((nint)__hs_handle);
         }
     }
 

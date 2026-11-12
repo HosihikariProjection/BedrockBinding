@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorRuntimeID : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_533257ff();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ActorRuntimeID : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_3dc9e315(x);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

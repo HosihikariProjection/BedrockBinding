@@ -131,6 +131,7 @@ public sealed unsafe partial class ActorDamageByChildActorSource : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_15c7a11b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -146,6 +147,7 @@ public sealed unsafe partial class ActorDamageByChildActorSource : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_5de38bff((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -183,7 +185,12 @@ public sealed unsafe partial class ActorDamageByChildActorSource : global::Syste
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getDamagingEntityUniqueID()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5f77b023((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle);
     }
 
     public bool isChildEntitySource()

@@ -45,6 +45,7 @@ public sealed unsafe partial class FlockingComponent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_5393e6dc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

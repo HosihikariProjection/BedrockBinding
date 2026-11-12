@@ -49,6 +49,7 @@ public sealed unsafe partial class AliasInfoDescription : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_92fc729a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

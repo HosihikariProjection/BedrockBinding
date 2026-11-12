@@ -45,6 +45,7 @@ public sealed unsafe partial class Token : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_e214e2c7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

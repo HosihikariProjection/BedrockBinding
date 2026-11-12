@@ -55,6 +55,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_2628559f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -6122,7 +6123,12 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager? getEventManager()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f5ead2dc((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager((nint)__hs_handle, false);
     }
 
     public string getExperienceId()
@@ -6206,7 +6212,12 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? propertiesAsJsonValue()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_adc27fd2((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'Bedrock::PubSub::Subscription' is not supported.", false)]

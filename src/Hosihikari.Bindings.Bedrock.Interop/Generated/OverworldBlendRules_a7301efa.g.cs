@@ -45,6 +45,7 @@ public sealed unsafe partial class OverworldBlendRules : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_549e88dc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

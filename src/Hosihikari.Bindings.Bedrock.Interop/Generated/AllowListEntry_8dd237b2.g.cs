@@ -57,6 +57,7 @@ public sealed unsafe partial class AllowListEntry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_df9fe28d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class AllowListEntry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_78944740((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -122,7 +124,12 @@ public sealed unsafe partial class AllowListEntry : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? serialize()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_59d7de43((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle);
     }
 
 

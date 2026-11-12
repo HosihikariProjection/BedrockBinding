@@ -62,6 +62,7 @@ public sealed unsafe partial class typeid_t_CommandRegistry_ : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_70e4393b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,6 +78,7 @@ public sealed unsafe partial class typeid_t_CommandRegistry_ : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_cdeeb743(value);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

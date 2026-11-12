@@ -53,6 +53,7 @@ public sealed unsafe partial class ChunkLoadedRequest : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_3a92b438();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class JigsawBlockInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_d3d8140a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -61,6 +61,7 @@ public sealed unsafe partial class CerealSchemaUpgrade : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_d3dab8fa();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class CerealSchemaUpgrade : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_7da8b609((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -113,7 +115,12 @@ public sealed unsafe partial class CerealSchemaUpgrade : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaUpgrade? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaUpgrade arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_69c81ffe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaUpgrade((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CerealSchemaUpgrade((nint)__hs_handle, false);
     }
 
     public bool previousSchema(nint component)

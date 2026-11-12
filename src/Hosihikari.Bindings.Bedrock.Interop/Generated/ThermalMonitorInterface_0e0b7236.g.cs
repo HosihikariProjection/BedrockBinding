@@ -45,6 +45,7 @@ public sealed unsafe partial class ThermalMonitorInterface : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_d92ac067((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class ServerConfigurationJoinInfo : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_216c93cf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class EmoteListPacketPayload : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_fec4f9bd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

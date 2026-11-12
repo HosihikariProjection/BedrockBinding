@@ -49,6 +49,7 @@ public sealed unsafe partial class BinaryHeap : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_1a59e88c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

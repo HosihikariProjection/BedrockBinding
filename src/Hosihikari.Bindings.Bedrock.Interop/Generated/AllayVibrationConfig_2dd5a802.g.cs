@@ -65,6 +65,7 @@ public sealed unsafe partial class AllayVibrationConfig : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_9fdaa929();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,6 +81,7 @@ public sealed unsafe partial class AllayVibrationConfig : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_e6f7e166((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

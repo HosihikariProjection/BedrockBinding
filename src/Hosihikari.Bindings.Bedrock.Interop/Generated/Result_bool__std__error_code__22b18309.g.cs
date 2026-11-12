@@ -45,6 +45,7 @@ public sealed unsafe partial class Result_bool__std__error_code_ : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_28ba74fd((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

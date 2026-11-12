@@ -57,6 +57,7 @@ public sealed unsafe partial class ShiftedDurationAmplifier : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_bab4dd1c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -50,6 +50,7 @@ public sealed unsafe partial class InventoryTransaction : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_0065207e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

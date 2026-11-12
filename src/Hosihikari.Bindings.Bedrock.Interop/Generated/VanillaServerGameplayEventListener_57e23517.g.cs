@@ -90,6 +90,7 @@ public sealed unsafe partial class VanillaServerGameplayEventListener : global::
         var handle = NativeMethods.TablePtr->C4.hs_create_87b84815((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

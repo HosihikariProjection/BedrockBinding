@@ -45,6 +45,7 @@ public sealed unsafe partial class Jump : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_6b2c8222((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

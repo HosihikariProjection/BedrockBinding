@@ -65,6 +65,7 @@ public sealed unsafe partial class ScriptPlayerBreakBlockBeforeEvent : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_b422f65c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -104,7 +105,12 @@ public sealed unsafe partial class ScriptPlayerBreakBlockBeforeEvent : global::S
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerBreakBlockBeforeEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerBreakBlockBeforeEvent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_39e4e955((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerBreakBlockBeforeEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPlayerBreakBlockBeforeEvent((nint)__hs_handle, false);
     }
 
 

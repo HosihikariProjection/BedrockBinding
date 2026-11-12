@@ -603,6 +603,7 @@ public sealed unsafe partial class IllagerBeast : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_e1c1867a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

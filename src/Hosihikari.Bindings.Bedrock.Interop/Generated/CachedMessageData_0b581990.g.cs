@@ -45,6 +45,7 @@ public sealed unsafe partial class CachedMessageData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_c1e3778d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class CachedMessageData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_0e34b712((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,7 +108,12 @@ public sealed unsafe partial class CachedMessageData : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_33a5ba8f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData((nint)__hs_handle, false);
     }
 
 

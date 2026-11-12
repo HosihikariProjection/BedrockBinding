@@ -77,6 +77,7 @@ public sealed unsafe partial class LegacySwampFoliageFeature : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_42b69508();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -92,6 +93,7 @@ public sealed unsafe partial class LegacySwampFoliageFeature : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_4adab9e9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

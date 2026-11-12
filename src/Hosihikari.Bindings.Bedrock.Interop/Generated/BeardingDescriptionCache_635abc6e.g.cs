@@ -45,6 +45,7 @@ public sealed unsafe partial class BeardingDescriptionCache : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_24464b3e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

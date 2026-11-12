@@ -91,6 +91,7 @@ public sealed unsafe partial class MoveIndoorsGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_e8db92b0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class MoveIndoorsGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_50ebb507((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -199,7 +201,12 @@ public sealed unsafe partial class MoveIndoorsGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.MoveIndoorsGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MoveIndoorsGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5caf6eb5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MoveIndoorsGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MoveIndoorsGoal((nint)__hs_handle, false);
     }
 
     public void start()

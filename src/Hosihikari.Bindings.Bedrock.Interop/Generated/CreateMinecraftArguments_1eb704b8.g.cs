@@ -45,6 +45,7 @@ public sealed unsafe partial class CreateMinecraftArguments : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_b1f3eece();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class CreateMinecraftArguments : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_c3538c4f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -83,7 +85,12 @@ public sealed unsafe partial class CreateMinecraftArguments : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateMinecraftArguments? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateMinecraftArguments arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6f2f65a0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateMinecraftArguments((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateMinecraftArguments((nint)__hs_handle, false);
     }
 
     public void Dispose()

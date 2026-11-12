@@ -49,6 +49,7 @@ public sealed unsafe partial class RaidBossSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_30813ace((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

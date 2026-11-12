@@ -57,6 +57,7 @@ public sealed unsafe partial class PlaceBlockDefinition : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_8d2f62ed((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

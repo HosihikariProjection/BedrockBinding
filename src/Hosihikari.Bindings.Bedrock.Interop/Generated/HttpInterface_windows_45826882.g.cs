@@ -45,6 +45,7 @@ public sealed unsafe partial class HttpInterface_windows : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_9b54e6a6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

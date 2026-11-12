@@ -65,6 +65,7 @@ public sealed unsafe partial class HugeMushroomFeature : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_a5082468((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

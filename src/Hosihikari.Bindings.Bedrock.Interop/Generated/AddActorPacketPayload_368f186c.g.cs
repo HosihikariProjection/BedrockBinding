@@ -53,6 +53,7 @@ public sealed unsafe partial class AddActorPacketPayload : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_56fb5610();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class AddActorPacketPayload : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_909c1612((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

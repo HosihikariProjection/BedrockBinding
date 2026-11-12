@@ -53,6 +53,7 @@ public sealed unsafe partial class CrafterContainerValidation : global::System.I
         var handle = NativeMethods.TablePtr->C1.hs_create_695769d9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -57,6 +57,7 @@ public sealed unsafe partial class BlockPileFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_73b3b92e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class BlockPileFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_2d5865d0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class BlockPileFeature : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlockToPlace(global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2da20612((void*)__hosihikari_shim_handle, (void*)random.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -89,7 +96,12 @@ public sealed unsafe partial class BlockPileFeature : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPileFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockPileFeature arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_359b56ec((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPileFeature((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPileFeature((nint)__hs_handle, false);
     }
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)

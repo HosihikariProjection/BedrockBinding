@@ -49,6 +49,7 @@ public sealed unsafe partial class AverageTracker : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_46db4abf((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

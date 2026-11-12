@@ -57,6 +57,7 @@ public sealed unsafe partial class ScriptServerMessageAfterEvent : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_8677e754();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -100,7 +101,12 @@ public sealed unsafe partial class ScriptServerMessageAfterEvent : global::Syste
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptServerMessageAfterEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptServerMessageAfterEvent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b08ee066((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptServerMessageAfterEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptServerMessageAfterEvent((nint)__hs_handle, false);
     }
 
 

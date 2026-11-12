@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorUndergroundTest : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_3dd82252((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

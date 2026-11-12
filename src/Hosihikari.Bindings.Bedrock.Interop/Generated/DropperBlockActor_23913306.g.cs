@@ -191,7 +191,12 @@ public sealed unsafe partial class DropperBlockActor : global::System.IDisposabl
     public static global::Hosihikari.Bindings.Bedrock.Interop.Container? getContainerAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4992f128((void*)region.Handle, (void*)pos.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public string getName()

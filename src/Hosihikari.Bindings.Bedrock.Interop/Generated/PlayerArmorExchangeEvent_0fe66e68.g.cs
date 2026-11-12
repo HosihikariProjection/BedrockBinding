@@ -50,6 +50,7 @@ public sealed unsafe partial class PlayerArmorExchangeEvent : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_a38262e4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

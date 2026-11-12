@@ -74,6 +74,7 @@ public sealed unsafe partial class StructureStart : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_bd7b9b0e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

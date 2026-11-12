@@ -61,6 +61,7 @@ public sealed unsafe partial class StickInGroundSubcomponent : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_c50cd68b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

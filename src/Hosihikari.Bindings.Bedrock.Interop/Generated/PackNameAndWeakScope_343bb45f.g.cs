@@ -45,6 +45,7 @@ public sealed unsafe partial class PackNameAndWeakScope : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_015658df((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

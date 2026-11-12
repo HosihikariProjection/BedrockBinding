@@ -45,6 +45,7 @@ public sealed unsafe partial class NewBlockID : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f890274c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

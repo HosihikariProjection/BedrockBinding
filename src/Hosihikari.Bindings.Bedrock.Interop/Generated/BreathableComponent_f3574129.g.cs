@@ -49,6 +49,7 @@ public sealed unsafe partial class BreathableComponent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_16149cd8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class BreathableComponent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_00a24362((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -155,7 +157,12 @@ public sealed unsafe partial class BreathableComponent : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b225b491((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

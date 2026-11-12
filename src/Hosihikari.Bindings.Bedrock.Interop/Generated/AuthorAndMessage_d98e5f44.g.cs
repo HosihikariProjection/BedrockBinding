@@ -45,6 +45,7 @@ public sealed unsafe partial class AuthorAndMessage : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_4537d1f4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,6 +83,7 @@ public sealed unsafe partial class AuthorAndMessage : global::System.IDisposable
                 var handle = NativeMethods.TablePtr->C3.hs_create_7881fdb6(type, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 if (handle == null)
                 {
+                    NativeMethods.GetLastError();
                     return null;
                 }
 
@@ -95,6 +97,7 @@ public sealed unsafe partial class AuthorAndMessage : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_ec80218f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -126,7 +129,12 @@ public sealed unsafe partial class AuthorAndMessage : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.TextPacketPayload_Nested.AuthorAndMessage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TextPacketPayload_Nested.AuthorAndMessage arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b321d1e8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TextPacketPayload_Nested.AuthorAndMessage((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TextPacketPayload_Nested.AuthorAndMessage((nint)__hs_handle, false);
     }
 
 

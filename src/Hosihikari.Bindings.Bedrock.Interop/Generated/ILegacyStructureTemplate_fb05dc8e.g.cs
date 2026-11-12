@@ -45,6 +45,7 @@ public sealed unsafe partial class ILegacyStructureTemplate : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_1818e08d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

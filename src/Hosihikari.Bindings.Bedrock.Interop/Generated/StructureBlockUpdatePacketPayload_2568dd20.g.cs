@@ -45,6 +45,7 @@ public sealed unsafe partial class StructureBlockUpdatePacketPayload : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_3a83d00c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

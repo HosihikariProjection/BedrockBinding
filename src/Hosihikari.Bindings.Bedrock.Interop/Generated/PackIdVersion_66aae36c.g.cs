@@ -54,6 +54,7 @@ public sealed unsafe partial class PackIdVersion : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_af41f8a4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -65,6 +66,7 @@ public sealed unsafe partial class PackIdVersion : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f93103b4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +78,7 @@ public sealed unsafe partial class PackIdVersion : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_0eac9b2a((void*)id.Handle, (void*)version.Handle, packType);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -104,7 +107,12 @@ public sealed unsafe partial class PackIdVersion : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4c7897de(__hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)__hs_handle);
         }
     }
 
@@ -129,7 +137,12 @@ public sealed unsafe partial class PackIdVersion : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_147fff3a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion rhs)

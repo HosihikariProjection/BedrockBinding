@@ -61,6 +61,7 @@ public sealed unsafe partial class MoveDefinition : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_eccb62c9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

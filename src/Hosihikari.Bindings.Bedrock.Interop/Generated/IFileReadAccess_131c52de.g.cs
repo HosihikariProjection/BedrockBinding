@@ -45,6 +45,7 @@ public sealed unsafe partial class IFileReadAccess : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_8f81144b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class CompoundCreatorContainerScreenValidator : glo
         var handle = NativeMethods.TablePtr->C0.hs_create_09a5230a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

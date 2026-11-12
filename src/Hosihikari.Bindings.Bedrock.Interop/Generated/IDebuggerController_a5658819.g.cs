@@ -45,6 +45,7 @@ public sealed unsafe partial class IDebuggerController : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_49bc672a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

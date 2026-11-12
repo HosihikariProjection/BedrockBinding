@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockPosTrackerComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_98fc8d1d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

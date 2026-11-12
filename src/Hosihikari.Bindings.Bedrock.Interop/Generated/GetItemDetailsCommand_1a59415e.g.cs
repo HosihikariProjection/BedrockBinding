@@ -87,6 +87,7 @@ public sealed unsafe partial class GetItemDetailsCommand : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_34fb41b3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

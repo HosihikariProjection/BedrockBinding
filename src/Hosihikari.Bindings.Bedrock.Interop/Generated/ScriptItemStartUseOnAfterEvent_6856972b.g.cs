@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptItemStartUseOnAfterEvent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_2add13c5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptItemStartUseOnAfterEvent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_b8d0fe51((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

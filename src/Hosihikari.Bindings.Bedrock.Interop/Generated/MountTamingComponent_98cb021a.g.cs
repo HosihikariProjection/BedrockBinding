@@ -49,6 +49,7 @@ public sealed unsafe partial class MountTamingComponent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_35e81bde();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class MountTamingComponent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_ce16a1f4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

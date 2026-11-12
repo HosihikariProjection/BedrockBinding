@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerDimensionChangeAfterEvent : global::Sys
         var handle = NativeMethods.TablePtr->C2.hs_create_2385a2e5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

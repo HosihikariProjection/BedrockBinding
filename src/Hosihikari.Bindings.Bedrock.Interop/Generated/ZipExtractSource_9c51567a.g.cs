@@ -45,6 +45,7 @@ public sealed unsafe partial class ZipExtractSource : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_05ce766f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ZipExtractSource : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_d8fea3a9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -83,7 +85,12 @@ public sealed unsafe partial class ZipExtractSource : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.ZipExtractSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.ZipExtractSource arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e157e202((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.ZipExtractSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.ZipExtractSource((nint)__hs_handle, false);
     }
 
     public void Dispose()

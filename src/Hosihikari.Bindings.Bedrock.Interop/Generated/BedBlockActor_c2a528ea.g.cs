@@ -105,6 +105,7 @@ public sealed unsafe partial class BedBlockActor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_3865945e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -116,6 +117,7 @@ public sealed unsafe partial class BedBlockActor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_ebd6f365((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -138,7 +140,12 @@ public sealed unsafe partial class BedBlockActor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.IVanillaRenderBlockActorComponent? getCrackEntity(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_74a18c28((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaRenderBlockActorComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaRenderBlockActorComponent((nint)__hs_handle, false);
     }
 
     public string getName()
@@ -189,7 +196,12 @@ public sealed unsafe partial class BedBlockActor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BedBlockActor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BedBlockActor arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_fbbb5395((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BedBlockActor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BedBlockActor((nint)__hs_handle, false);
     }
 
     public bool save(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, nint saveContext)

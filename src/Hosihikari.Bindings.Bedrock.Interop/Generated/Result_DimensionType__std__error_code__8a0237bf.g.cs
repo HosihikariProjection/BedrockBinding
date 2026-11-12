@@ -45,6 +45,7 @@ public sealed unsafe partial class Result_DimensionType__std__error_code_ : glob
         var handle = NativeMethods.TablePtr->C0.hs_create_95aa9156((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

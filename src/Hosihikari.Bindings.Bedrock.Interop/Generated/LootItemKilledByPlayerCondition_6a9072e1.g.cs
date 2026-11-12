@@ -59,6 +59,7 @@ public sealed unsafe partial class LootItemKilledByPlayerCondition : global::Sys
         var handle = NativeMethods.TablePtr->C2.hs_create_fc08944e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

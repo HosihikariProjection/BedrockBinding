@@ -53,6 +53,7 @@ public sealed unsafe partial class EventResponseFactory : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_72c22247((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

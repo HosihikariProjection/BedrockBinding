@@ -53,6 +53,7 @@ public sealed unsafe partial class LevelEventManager : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_0e5f0f9c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

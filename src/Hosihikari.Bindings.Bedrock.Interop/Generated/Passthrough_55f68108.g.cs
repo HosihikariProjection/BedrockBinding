@@ -57,6 +57,7 @@ public sealed unsafe partial class Passthrough : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_57bdb0c1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

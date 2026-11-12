@@ -49,6 +49,7 @@ public sealed unsafe partial class SpawnParticleEffectPacketPayload : global::Sy
         var handle = NativeMethods.TablePtr->C3.hs_create_59407b81();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class SpawnParticleEffectPacketPayload : global::Sy
         var handle = NativeMethods.TablePtr->C3.hs_create_4ed817fe((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

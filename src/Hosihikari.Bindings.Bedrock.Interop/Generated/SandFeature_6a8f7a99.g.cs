@@ -77,6 +77,7 @@ public sealed unsafe partial class SandFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3d802ad9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -88,6 +89,7 @@ public sealed unsafe partial class SandFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_87bb74b9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -109,7 +111,12 @@ public sealed unsafe partial class SandFeature : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.SandFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SandFeature arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_30b42c22((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SandFeature((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SandFeature((nint)__hs_handle, false);
     }
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)

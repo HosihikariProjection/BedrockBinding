@@ -45,6 +45,7 @@ public sealed unsafe partial class RailActivatorDefinition : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_64dd587e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

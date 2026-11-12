@@ -100,6 +100,7 @@ public sealed unsafe partial class CalibratedSculkSensorBlockActor : global::Sys
         var handle = NativeMethods.TablePtr->C0.hs_create_7c2420a0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

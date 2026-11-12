@@ -69,6 +69,7 @@ public sealed unsafe partial class HorseEquipContainerValidation : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_c624bf99();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,6 +85,7 @@ public sealed unsafe partial class HorseEquipContainerValidation : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_92eaf64e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

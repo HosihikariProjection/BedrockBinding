@@ -45,6 +45,7 @@ public sealed unsafe partial class RuntimeLightingSubchunkList : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_91a0d9b0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

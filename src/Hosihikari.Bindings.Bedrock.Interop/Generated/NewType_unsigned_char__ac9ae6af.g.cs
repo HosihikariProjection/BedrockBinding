@@ -45,6 +45,7 @@ public sealed unsafe partial class NewType_unsigned_char_ : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_5a7f516d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NewType_unsigned_char_ : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_49bdd2a0((void*)other.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NewType_unsigned_char_ : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_9164cd73((void*)t);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,7 +85,12 @@ public sealed unsafe partial class NewType_unsigned_char_ : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_char_? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_char_ other)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_150cc3d8((void*)__hosihikari_shim_handle, (void*)other.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_char_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_char_((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.NewType_unsigned_char_ other)

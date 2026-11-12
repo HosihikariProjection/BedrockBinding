@@ -98,6 +98,7 @@ public sealed unsafe partial class PayloadPacket_ServerSettingsResponsePacketPay
         var handle = NativeMethods.TablePtr->C4.hs_create_b6a37bfd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

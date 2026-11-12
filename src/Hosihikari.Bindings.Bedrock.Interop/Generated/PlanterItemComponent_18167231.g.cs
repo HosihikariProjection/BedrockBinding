@@ -57,6 +57,7 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_7d6963cf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,7 +103,12 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_0.PlanterItemComponent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_0.PlanterItemComponent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f61a4163((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_0.PlanterItemComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_0.PlanterItemComponent((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

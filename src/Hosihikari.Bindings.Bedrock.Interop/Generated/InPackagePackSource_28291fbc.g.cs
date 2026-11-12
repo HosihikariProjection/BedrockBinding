@@ -63,6 +63,7 @@ public sealed unsafe partial class InPackagePackSource : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_f58b7ba5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -74,6 +75,7 @@ public sealed unsafe partial class InPackagePackSource : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_ec75e565((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -115,7 +117,12 @@ public sealed unsafe partial class InPackagePackSource : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0c5c09d0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InPackagePackSource((nint)__hs_handle, false);
     }
 
 

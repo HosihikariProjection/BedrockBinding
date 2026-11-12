@@ -49,6 +49,7 @@ public sealed unsafe partial class NotifierInterface : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_eb481420((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

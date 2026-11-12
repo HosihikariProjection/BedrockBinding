@@ -57,6 +57,7 @@ public sealed unsafe partial class ClientboundMapItemDataPacketPayload : global:
         var handle = NativeMethods.TablePtr->C0.hs_create_06c77dee();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class ClientboundMapItemDataPacketPayload : global:
         var handle = NativeMethods.TablePtr->C0.hs_create_67ecea61((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class AgentAnimationPacketPayload : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_6f9e552b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

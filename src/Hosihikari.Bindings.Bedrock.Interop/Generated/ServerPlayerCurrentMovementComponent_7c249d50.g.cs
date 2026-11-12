@@ -45,6 +45,7 @@ public sealed unsafe partial class ServerPlayerCurrentMovementComponent : global
         var handle = NativeMethods.TablePtr->C3.hs_create_4d7fe783((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

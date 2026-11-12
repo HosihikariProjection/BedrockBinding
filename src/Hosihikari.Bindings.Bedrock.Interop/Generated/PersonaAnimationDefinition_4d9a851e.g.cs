@@ -45,6 +45,7 @@ public sealed unsafe partial class PersonaAnimationDefinition : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_aa6e5e64();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class PersonaAnimationDefinition : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_8a75aa20((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class PersonaAnimationDefinition : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_437e8fd3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition((nint)__hs_handle, false);
     }
 
     public void Dispose()

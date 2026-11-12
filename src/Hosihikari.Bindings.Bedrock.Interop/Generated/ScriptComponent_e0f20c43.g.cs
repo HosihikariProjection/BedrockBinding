@@ -57,6 +57,7 @@ public sealed unsafe partial class ScriptComponent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_023f756a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class ScriptComponent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_fdcdfaf9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

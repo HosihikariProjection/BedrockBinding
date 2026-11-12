@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptBlockHitInformation : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_79319e96();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptBlockHitInformation : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_3a6e8981((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

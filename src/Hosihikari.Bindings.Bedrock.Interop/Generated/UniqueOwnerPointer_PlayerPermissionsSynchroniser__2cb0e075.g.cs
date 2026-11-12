@@ -45,6 +45,7 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerPermissionsSynchroni
         var handle = NativeMethods.TablePtr->C0.hs_create_f8ce0107();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerPermissionsSynchroni
         var handle = NativeMethods.TablePtr->C0.hs_create_070473bf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -114,7 +116,12 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerPermissionsSynchroni
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_PlayerPermissionsSynchroniser_? operator_assign()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c856d8c5((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_PlayerPermissionsSynchroniser_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_PlayerPermissionsSynchroniser_((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_PlayerPermissionsSynchroniser_ other)

@@ -49,6 +49,7 @@ public sealed unsafe partial class CloseWebSocketCommand : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_8c9926cd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

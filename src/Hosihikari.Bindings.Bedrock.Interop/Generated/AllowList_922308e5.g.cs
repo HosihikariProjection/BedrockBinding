@@ -57,6 +57,7 @@ public sealed unsafe partial class AllowList : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_281fb1b9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class AllowList : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_5e91fe9f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -104,7 +106,12 @@ public sealed unsafe partial class AllowList : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? serialize()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_83b53322((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -45,6 +45,7 @@ public sealed unsafe partial class IScriptBlockCustomComponentReader : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_912dbecd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

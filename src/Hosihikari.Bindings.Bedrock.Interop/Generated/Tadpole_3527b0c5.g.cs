@@ -739,6 +739,7 @@ public sealed unsafe partial class Tadpole : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_cb1ca768();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

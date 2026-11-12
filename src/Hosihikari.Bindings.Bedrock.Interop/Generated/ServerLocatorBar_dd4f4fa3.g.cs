@@ -45,6 +45,7 @@ public sealed unsafe partial class ServerLocatorBar : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_4589a2a2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

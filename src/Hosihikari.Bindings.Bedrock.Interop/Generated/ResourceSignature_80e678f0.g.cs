@@ -45,6 +45,7 @@ public sealed unsafe partial class ResourceSignature : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_a1ac8020();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ResourceSignature : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_3df37d08((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -79,7 +81,12 @@ public sealed unsafe partial class ResourceSignature : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.ResourceSignature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourceSignature arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cc07f3b4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourceSignature((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceSignature((nint)__hs_handle, false);
     }
 
     public void Dispose()

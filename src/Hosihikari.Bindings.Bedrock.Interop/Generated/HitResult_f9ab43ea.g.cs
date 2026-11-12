@@ -45,6 +45,7 @@ public sealed unsafe partial class HitResult : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_f035c4a8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class HitResult : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_e6ad7c0c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,6 +73,7 @@ public sealed unsafe partial class HitResult : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d053126d((void*)startPos.Handle, (void*)rayDir.Handle, (void*)entity.Handle, (void*)pos.Handle, (void*)entityAABB.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,7 +83,12 @@ public sealed unsafe partial class HitResult : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? getEntity()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1880c8ce((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -169,7 +177,12 @@ public sealed unsafe partial class HitResult : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.HitResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HitResult arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_163ca77b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HitResult((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HitResult((nint)__hs_handle, false);
     }
 
 

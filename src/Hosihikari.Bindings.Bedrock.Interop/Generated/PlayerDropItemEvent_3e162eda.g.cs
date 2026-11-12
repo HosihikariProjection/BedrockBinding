@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerDropItemEvent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_aa8b2d0a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

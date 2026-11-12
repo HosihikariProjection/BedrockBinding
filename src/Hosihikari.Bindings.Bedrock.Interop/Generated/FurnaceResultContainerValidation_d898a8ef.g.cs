@@ -49,6 +49,7 @@ public sealed unsafe partial class FurnaceResultContainerValidation : global::Sy
         var handle = NativeMethods.TablePtr->C1.hs_create_435018a7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

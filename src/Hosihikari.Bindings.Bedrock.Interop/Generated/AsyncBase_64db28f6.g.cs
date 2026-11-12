@@ -49,6 +49,7 @@ public sealed unsafe partial class AsyncBase : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_70562364((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -58,7 +59,12 @@ public sealed unsafe partial class AsyncBase : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.AsyncBase_Nested.DiagnosticInfo? getAsyncDiagnosticInfo()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dd1f5846((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.AsyncBase_Nested.DiagnosticInfo((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.AsyncBase_Nested.DiagnosticInfo((nint)__hs_handle);
     }
 
 

@@ -71,6 +71,7 @@ public sealed unsafe partial class BossEventSubscriptionManagerImpl : global::Sy
         var handle = NativeMethods.TablePtr->C0.hs_create_e2720675((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

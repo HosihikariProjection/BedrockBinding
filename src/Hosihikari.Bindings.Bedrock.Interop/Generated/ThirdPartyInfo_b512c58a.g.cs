@@ -53,6 +53,7 @@ public sealed unsafe partial class ThirdPartyInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_ec0c73b5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

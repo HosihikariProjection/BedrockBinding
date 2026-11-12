@@ -51,6 +51,7 @@ public sealed unsafe partial class LocalSpatialEntityFetcherFactoryComponent : g
         var handle = NativeMethods.TablePtr->C2.hs_create_7234fd10((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

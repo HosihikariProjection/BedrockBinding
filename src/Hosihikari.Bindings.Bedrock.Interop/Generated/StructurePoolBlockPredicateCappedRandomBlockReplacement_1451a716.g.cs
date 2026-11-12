@@ -73,6 +73,7 @@ public sealed unsafe partial class StructurePoolBlockPredicateCappedRandomBlockR
         var handle = NativeMethods.TablePtr->C3.hs_create_8e948384((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class OceanMonumentStart : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_36670864((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

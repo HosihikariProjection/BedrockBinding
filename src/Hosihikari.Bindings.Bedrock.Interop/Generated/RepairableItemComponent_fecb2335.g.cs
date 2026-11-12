@@ -59,6 +59,7 @@ public sealed unsafe partial class RepairableItemComponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_378e5287();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -74,6 +75,7 @@ public sealed unsafe partial class RepairableItemComponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_35724771((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,7 +93,12 @@ public sealed unsafe partial class RepairableItemComponent : global::System.IDis
     public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getIdentifier()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0c8a43b7();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -45,6 +45,7 @@ public sealed unsafe partial class NpcRequestPacketPayload : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_32933e8d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NpcRequestPacketPayload : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_40a025a1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

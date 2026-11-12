@@ -49,6 +49,7 @@ public sealed unsafe partial class IPropertyGetter : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_d8e7f5f8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class IPropertyGetter : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_85a212e7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -95,7 +97,12 @@ public sealed unsafe partial class IPropertyGetter : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertyGetter? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertyGetter arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4f57f5c9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertyGetter((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Reflection.IPropertyGetter((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'entt::meta_type' is not supported.", false)]

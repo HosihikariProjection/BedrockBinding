@@ -49,6 +49,7 @@ public sealed unsafe partial class SwampBiomeSurfaceFlag : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_35ae341e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

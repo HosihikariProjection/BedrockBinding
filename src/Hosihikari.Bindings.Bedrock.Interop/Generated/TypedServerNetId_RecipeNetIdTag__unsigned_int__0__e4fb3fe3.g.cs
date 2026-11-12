@@ -45,6 +45,7 @@ public sealed unsafe partial class TypedServerNetId_RecipeNetIdTag__unsigned_int
         var handle = NativeMethods.TablePtr->C4.hs_create_b1855810((void*)rawId);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

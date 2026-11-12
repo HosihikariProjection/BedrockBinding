@@ -67,6 +67,7 @@ public sealed unsafe partial class RandomBlockStateFunction : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_1bd06a3f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +79,7 @@ public sealed unsafe partial class RandomBlockStateFunction : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_27568101((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class NetherFortressStart : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_7fc69435((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

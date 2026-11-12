@@ -45,6 +45,7 @@ public sealed unsafe partial class LocalRegistry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_fbad990e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class LocalRegistry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_e75f2f22((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -101,7 +103,12 @@ public sealed unsafe partial class LocalRegistry : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece_Nested.LocalRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece_Nested.LocalRegistry arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d166916b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece_Nested.LocalRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressPiece_Nested.LocalRegistry((nint)__hs_handle, false);
     }
 
     public void Dispose()

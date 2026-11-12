@@ -45,6 +45,7 @@ public sealed unsafe partial class JigsawStructureElementRegistry : global::Syst
         var handle = NativeMethods.TablePtr->C2.hs_create_6235c877((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

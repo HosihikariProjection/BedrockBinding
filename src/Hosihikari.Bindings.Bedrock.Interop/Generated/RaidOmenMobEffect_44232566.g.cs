@@ -166,6 +166,7 @@ public sealed unsafe partial class RaidOmenMobEffect : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_6c7c5bd7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

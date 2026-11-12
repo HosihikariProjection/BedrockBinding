@@ -85,6 +85,7 @@ public sealed unsafe partial class ItemStackNetManagerBase : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_e4ba3812();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -100,6 +101,7 @@ public sealed unsafe partial class ItemStackNetManagerBase : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_b87dd3ae((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -150,13 +152,23 @@ public sealed unsafe partial class ItemStackNetManagerBase : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext? getScreenContext()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9629ceb0((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SparseContainer? initOpenContainer(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName openContainerId, global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef containerWeakRef)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_10f3b6bb((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)openContainerId.Handle, (void*)containerWeakRef.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SparseContainer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SparseContainer((nint)__hs_handle, false);
     }
 
     public bool isEnabled()
@@ -229,7 +241,12 @@ public sealed unsafe partial class ItemStackNetManagerBase : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerBase arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_0c9c251a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerBase((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetManagerBase((nint)__hs_handle, false);
     }
 
     public bool retainSetItemStackNetIdVariant()

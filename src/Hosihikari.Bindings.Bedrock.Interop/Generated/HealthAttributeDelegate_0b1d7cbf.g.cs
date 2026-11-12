@@ -75,6 +75,7 @@ public sealed unsafe partial class HealthAttributeDelegate : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_8c3b06df((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

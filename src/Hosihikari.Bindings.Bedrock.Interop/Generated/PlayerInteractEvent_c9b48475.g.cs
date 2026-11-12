@@ -50,6 +50,7 @@ public sealed unsafe partial class PlayerInteractEvent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_116c4ce9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

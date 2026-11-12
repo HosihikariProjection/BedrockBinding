@@ -45,6 +45,7 @@ public sealed unsafe partial class StructureTempOwner : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_225f6477((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

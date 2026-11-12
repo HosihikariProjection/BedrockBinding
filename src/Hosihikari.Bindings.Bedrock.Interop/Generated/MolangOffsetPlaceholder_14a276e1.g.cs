@@ -45,6 +45,7 @@ public sealed unsafe partial class MolangOffsetPlaceholder : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_6564a280((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class ServerTelemetryData : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_fbb82b08();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

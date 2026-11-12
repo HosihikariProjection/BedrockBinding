@@ -57,6 +57,7 @@ public sealed unsafe partial class MobSpawnRules : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_5051358f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -329,7 +330,12 @@ public sealed unsafe partial class MobSpawnRules : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo? selectRandomHerd(global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5bfc23e9((void*)__hosihikari_shim_handle, (void*)random.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

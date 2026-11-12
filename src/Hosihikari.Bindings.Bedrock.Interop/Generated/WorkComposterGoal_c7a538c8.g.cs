@@ -205,6 +205,7 @@ public sealed unsafe partial class WorkComposterGoal : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_e946e50f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class LevelBlockDestroyer : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_6d2f58df((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

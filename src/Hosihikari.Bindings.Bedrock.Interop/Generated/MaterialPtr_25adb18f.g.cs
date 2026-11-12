@@ -45,6 +45,7 @@ public sealed unsafe partial class MaterialPtr : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_56287fad();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -67,6 +67,7 @@ public sealed unsafe partial class SetItemCountFunction : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_d967d9d5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

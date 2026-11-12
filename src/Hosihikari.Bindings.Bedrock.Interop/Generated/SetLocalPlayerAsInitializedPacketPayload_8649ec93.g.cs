@@ -45,6 +45,7 @@ public sealed unsafe partial class SetLocalPlayerAsInitializedPacketPayload : gl
         var handle = NativeMethods.TablePtr->C3.hs_create_d0e50b29((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

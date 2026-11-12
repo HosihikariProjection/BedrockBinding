@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptStructureManager : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_ec67d46b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ScriptStructureManager : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_6a4bf40b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

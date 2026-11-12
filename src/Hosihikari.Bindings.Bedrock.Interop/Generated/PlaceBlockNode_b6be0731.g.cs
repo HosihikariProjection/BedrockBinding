@@ -88,6 +88,7 @@ public sealed unsafe partial class PlaceBlockNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_3d14f753((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

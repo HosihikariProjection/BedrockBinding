@@ -45,6 +45,7 @@ public sealed unsafe partial class DefintionDescription : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_478db52a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

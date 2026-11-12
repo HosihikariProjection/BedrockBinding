@@ -43,6 +43,11 @@ public sealed unsafe partial class VolumeTriggerConstraint
     public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription? doDescription(byte arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_12c918a2((void*)__hosihikari_shim_handle, arg0);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription((nint)__hs_handle);
     }
 }

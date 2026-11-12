@@ -53,6 +53,7 @@ public sealed unsafe partial class ConstantHeight : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_10cfcb55((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

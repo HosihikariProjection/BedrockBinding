@@ -45,6 +45,7 @@ public sealed unsafe partial class NoiseCellInterpolator : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_783c90d3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -463,6 +463,7 @@ public sealed unsafe partial class NetherDimension : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_81796f7e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -490,7 +491,12 @@ public sealed unsafe partial class NetherDimension : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType? getDefaultBiomeId()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6c2b63f2((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)__hs_handle);
     }
 
     public float getTimeOfDay(int time, float a)
@@ -531,7 +537,12 @@ public sealed unsafe partial class NetherDimension : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? translatePosAcrossDimension(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originalPos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromId)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f114a105((void*)__hosihikari_shim_handle, (void*)originalPos.Handle, (void*)fromId.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public void upgradeLevelChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk generatedChunk)

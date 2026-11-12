@@ -49,6 +49,7 @@ public sealed unsafe partial class ActorEventResponseFactory : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_7cd92de2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

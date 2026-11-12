@@ -69,6 +69,7 @@ public sealed unsafe partial class ScriptServerStateMonitor : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_a05ca986();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,6 +85,7 @@ public sealed unsafe partial class ScriptServerStateMonitor : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_d54124d8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

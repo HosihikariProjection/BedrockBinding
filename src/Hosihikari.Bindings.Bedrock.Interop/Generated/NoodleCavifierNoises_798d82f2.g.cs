@@ -45,6 +45,7 @@ public sealed unsafe partial class NoodleCavifierNoises : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_54a41ba2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

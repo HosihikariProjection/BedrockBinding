@@ -78,6 +78,7 @@ public sealed unsafe partial class DeOpCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_074ab877((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

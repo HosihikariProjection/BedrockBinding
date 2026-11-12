@@ -49,6 +49,7 @@ public sealed unsafe partial class RegistryState : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_f8c94c26((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

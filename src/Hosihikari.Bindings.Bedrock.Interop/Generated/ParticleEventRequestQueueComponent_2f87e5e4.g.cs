@@ -45,6 +45,7 @@ public sealed unsafe partial class ParticleEventRequestQueueComponent : global::
         var handle = NativeMethods.TablePtr->C2.hs_create_d195ed6a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

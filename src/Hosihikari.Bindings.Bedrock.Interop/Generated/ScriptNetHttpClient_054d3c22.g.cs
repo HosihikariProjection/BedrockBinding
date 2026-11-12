@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptNetHttpClient : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_313b7ca6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptNetHttpClient : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_65dc4e44((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -83,7 +85,12 @@ public sealed unsafe partial class ScriptNetHttpClient : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_311a2e9a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient((nint)__hs_handle, false);
     }
 
     public void Dispose()

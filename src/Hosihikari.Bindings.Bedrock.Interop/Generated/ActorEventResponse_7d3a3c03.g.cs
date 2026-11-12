@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorEventResponse : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_31537461((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -120,6 +120,7 @@ public sealed unsafe partial class SculkSensorBlockActor : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_8c78e578();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

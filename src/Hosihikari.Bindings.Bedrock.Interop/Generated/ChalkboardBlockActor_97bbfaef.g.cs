@@ -120,6 +120,7 @@ public sealed unsafe partial class ChalkboardBlockActor : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_ada519d5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

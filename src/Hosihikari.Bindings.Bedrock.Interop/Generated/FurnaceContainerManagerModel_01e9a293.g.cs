@@ -162,6 +162,7 @@ public sealed unsafe partial class FurnaceContainerManagerModel : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_86b81eb5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -173,6 +174,7 @@ public sealed unsafe partial class FurnaceContainerManagerModel : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_fc3a72ac((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -184,6 +186,7 @@ public sealed unsafe partial class FurnaceContainerManagerModel : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_8113247c((void*)recipeTag.Handle, containerType, blockActorType, containerId, (void*)player.Handle, (void*)blockPos.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -210,7 +213,12 @@ public sealed unsafe partial class FurnaceContainerManagerModel : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext? _postInit()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_efba56d9((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)__hs_handle);
     }
 
     public void broadcastChanges()
@@ -225,7 +233,12 @@ public sealed unsafe partial class FurnaceContainerManagerModel : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getSlot(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d6f670ae((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public bool isValid(float pickRange)

@@ -57,6 +57,7 @@ public sealed unsafe partial class BoolOption : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_34ac6114();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

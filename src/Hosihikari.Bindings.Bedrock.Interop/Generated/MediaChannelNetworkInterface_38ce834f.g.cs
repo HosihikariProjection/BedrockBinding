@@ -53,6 +53,7 @@ public sealed unsafe partial class MediaChannelNetworkInterface : global::System
         var handle = NativeMethods.TablePtr->C4.hs_create_291528eb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

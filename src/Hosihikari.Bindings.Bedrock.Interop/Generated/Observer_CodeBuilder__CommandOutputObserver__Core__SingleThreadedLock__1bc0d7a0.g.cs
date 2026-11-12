@@ -45,6 +45,7 @@ public sealed unsafe partial class Observer_CodeBuilder__CommandOutputObserver__
         var handle = NativeMethods.TablePtr->C1.hs_create_8a281f9d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class Observer_CodeBuilder__CommandOutputObserver__
         var handle = NativeMethods.TablePtr->C1.hs_create_c2209127((void*)subject);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

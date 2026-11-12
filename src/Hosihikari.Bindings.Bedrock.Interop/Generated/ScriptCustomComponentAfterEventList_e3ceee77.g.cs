@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptCustomComponentAfterEventList : global:
         var handle = NativeMethods.TablePtr->C3.hs_create_95a56732((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

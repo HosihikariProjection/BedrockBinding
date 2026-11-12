@@ -51,6 +51,7 @@ public sealed unsafe partial class NetworkedItemComponent_DiggerItemComponent_ :
         var handle = NativeMethods.TablePtr->C2.hs_create_b74a0fa9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

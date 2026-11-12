@@ -53,6 +53,7 @@ public sealed unsafe partial class NWayVisualRotationStateMapping : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_d0d3ed14();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

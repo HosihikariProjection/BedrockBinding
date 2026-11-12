@@ -45,6 +45,7 @@ public sealed unsafe partial class StreamState : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_e1ead7bd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class StreamState : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_7813b126((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -89,7 +91,12 @@ public sealed unsafe partial class StreamState : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport_Nested.StreamState? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport_Nested.StreamState arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3c49f546((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport_Nested.StreamState((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport_Nested.StreamState((nint)__hs_handle, false);
     }
 
     public void Dispose()

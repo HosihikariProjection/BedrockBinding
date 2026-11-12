@@ -53,6 +53,7 @@ public sealed unsafe partial class NetworkID : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_8de55ef9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

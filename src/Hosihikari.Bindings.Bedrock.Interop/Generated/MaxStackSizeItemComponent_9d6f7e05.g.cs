@@ -59,6 +59,7 @@ public sealed unsafe partial class MaxStackSizeItemComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_cc8c43e9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

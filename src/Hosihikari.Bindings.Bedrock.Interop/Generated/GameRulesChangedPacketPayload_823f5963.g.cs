@@ -45,6 +45,7 @@ public sealed unsafe partial class GameRulesChangedPacketPayload : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_2c08fa38((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

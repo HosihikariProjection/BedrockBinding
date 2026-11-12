@@ -92,6 +92,7 @@ public sealed unsafe partial class PayloadPacket_EduUriResourcePacketPayload_ : 
         var handle = NativeMethods.TablePtr->C4.hs_create_686aaad3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

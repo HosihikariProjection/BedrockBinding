@@ -60,6 +60,7 @@ public sealed unsafe partial class MerchantRecipe : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_227cc4bf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,6 +72,7 @@ public sealed unsafe partial class MerchantRecipe : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_020ea772((void*)buy.Handle, (void*)sell.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,6 +84,7 @@ public sealed unsafe partial class MerchantRecipe : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_a70bb8de((void*)buyA.Handle, (void*)buyB.Handle, (void*)sell.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -93,6 +96,7 @@ public sealed unsafe partial class MerchantRecipe : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_32b48020((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

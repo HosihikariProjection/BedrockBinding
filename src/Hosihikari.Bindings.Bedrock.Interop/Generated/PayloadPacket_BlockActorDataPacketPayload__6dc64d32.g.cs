@@ -98,6 +98,7 @@ public sealed unsafe partial class PayloadPacket_BlockActorDataPacketPayload_ : 
         var handle = NativeMethods.TablePtr->C4.hs_create_faade6ca((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

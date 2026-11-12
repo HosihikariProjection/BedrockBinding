@@ -49,6 +49,7 @@ public sealed unsafe partial class ManualTimer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_cc3990c3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

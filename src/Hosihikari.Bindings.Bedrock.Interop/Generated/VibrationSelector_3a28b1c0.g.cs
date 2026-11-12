@@ -45,6 +45,7 @@ public sealed unsafe partial class VibrationSelector : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_eefec8bc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

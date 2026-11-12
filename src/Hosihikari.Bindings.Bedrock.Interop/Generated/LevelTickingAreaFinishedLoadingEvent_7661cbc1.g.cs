@@ -45,6 +45,7 @@ public sealed unsafe partial class LevelTickingAreaFinishedLoadingEvent : global
         var handle = NativeMethods.TablePtr->C2.hs_create_c59dd006((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

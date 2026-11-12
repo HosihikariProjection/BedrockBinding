@@ -85,6 +85,7 @@ public sealed unsafe partial class RandomScatteredLargeFeature : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_862bc12f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class RandomScatteredLargeFeature : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_f35ab857((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -107,6 +109,7 @@ public sealed unsafe partial class RandomScatteredLargeFeature : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_b6876c78(seed);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

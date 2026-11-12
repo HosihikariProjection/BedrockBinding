@@ -82,6 +82,7 @@ public sealed unsafe partial class GameConnectionInfo : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_b69d4340((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

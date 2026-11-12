@@ -97,6 +97,7 @@ public sealed unsafe partial class BaseContainerMenu : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_c7dab12f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -108,6 +109,7 @@ public sealed unsafe partial class BaseContainerMenu : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_94014e34((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -117,7 +119,12 @@ public sealed unsafe partial class BaseContainerMenu : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? _getContainer()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6ebe6598((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public void broadcastChanges()
@@ -154,7 +161,12 @@ public sealed unsafe partial class BaseContainerMenu : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getSlot(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ea5a48b2((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public bool isResultSlot(int slot)
@@ -218,7 +230,12 @@ public sealed unsafe partial class BaseContainerMenu : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.BaseContainerMenu? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BaseContainerMenu arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6961fce3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseContainerMenu((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseContainerMenu((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

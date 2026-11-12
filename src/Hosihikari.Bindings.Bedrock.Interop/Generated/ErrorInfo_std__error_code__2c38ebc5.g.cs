@@ -45,6 +45,7 @@ public sealed unsafe partial class ErrorInfo_std__error_code_ : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_43de24bd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ErrorInfo_std__error_code_ : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_c742d41d((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,6 +73,7 @@ public sealed unsafe partial class ErrorInfo_std__error_code_ : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_d2a52198((void*)error);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

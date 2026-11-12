@@ -45,6 +45,7 @@ public sealed unsafe partial class CelebrateHuntComponent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_0758de5f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

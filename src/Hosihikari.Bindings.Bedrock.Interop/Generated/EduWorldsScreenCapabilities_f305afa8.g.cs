@@ -49,6 +49,7 @@ public sealed unsafe partial class EduWorldsScreenCapabilities : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_1d7322b7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class EduWorldsScreenCapabilities : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_b7b57eb5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +83,12 @@ public sealed unsafe partial class EduWorldsScreenCapabilities : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.EduWorldsScreenCapabilities? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EduWorldsScreenCapabilities arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_82ffa87e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EduWorldsScreenCapabilities((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.EduWorldsScreenCapabilities((nint)__hs_handle, false);
     }
 
 

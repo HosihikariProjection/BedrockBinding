@@ -45,6 +45,7 @@ public sealed unsafe partial class ChanceInformation : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_51689ceb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -65,6 +65,7 @@ public sealed unsafe partial class FileUploadManager : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_79958410();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,6 +81,7 @@ public sealed unsafe partial class FileUploadManager : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_9dd5563b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -201,7 +203,12 @@ public sealed unsafe partial class FileUploadManager : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_502f8a4c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

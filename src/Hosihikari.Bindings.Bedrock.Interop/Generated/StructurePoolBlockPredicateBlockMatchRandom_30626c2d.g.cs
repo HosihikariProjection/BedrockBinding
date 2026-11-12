@@ -65,6 +65,7 @@ public sealed unsafe partial class StructurePoolBlockPredicateBlockMatchRandom :
         var handle = NativeMethods.TablePtr->C3.hs_create_97e99ff6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class StructurePoolBlockPredicateBlockMatchRandom :
         var handle = NativeMethods.TablePtr->C3.hs_create_6415100b((void*)block.Handle, probability);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,6 +89,7 @@ public sealed unsafe partial class StructurePoolBlockPredicateBlockMatchRandom :
         var handle = NativeMethods.TablePtr->C3.hs_create_95a20ffa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -117,7 +120,12 @@ public sealed unsafe partial class StructurePoolBlockPredicateBlockMatchRandom :
     public global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatchRandom? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatchRandom arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_deddb570((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatchRandom((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateBlockMatchRandom((nint)__hs_handle, false);
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)

@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptingEventListener : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_678f04af((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

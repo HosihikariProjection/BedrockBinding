@@ -59,6 +59,7 @@ public sealed unsafe partial class ScriptPlayerInteractWithBlockAfterEvent : glo
         var handle = NativeMethods.TablePtr->C3.hs_create_db22411a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

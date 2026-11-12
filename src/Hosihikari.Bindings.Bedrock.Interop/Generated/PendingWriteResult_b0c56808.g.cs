@@ -45,6 +45,7 @@ public sealed unsafe partial class PendingWriteResult : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_88d29d20((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

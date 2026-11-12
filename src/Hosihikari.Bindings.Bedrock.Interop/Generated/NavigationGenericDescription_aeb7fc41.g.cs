@@ -179,6 +179,7 @@ public sealed unsafe partial class NavigationGenericDescription : global::System
         var handle = NativeMethods.TablePtr->C2.hs_create_9ebed4bd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

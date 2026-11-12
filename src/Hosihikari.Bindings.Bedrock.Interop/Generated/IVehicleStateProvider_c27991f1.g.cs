@@ -45,6 +45,7 @@ public sealed unsafe partial class IVehicleStateProvider : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_49ffd425((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

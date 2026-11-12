@@ -57,6 +57,7 @@ public sealed unsafe partial class HotbarContainerValidation : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_6454b03c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

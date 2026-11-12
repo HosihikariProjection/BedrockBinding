@@ -48,7 +48,12 @@ public sealed unsafe partial class StringByteInput : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _readBytesResult(nint data, ulong bytes)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_57713712((void*)__hosihikari_shim_handle, (void*)data, bytes);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -77,6 +82,7 @@ public sealed unsafe partial class StringByteInput : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C3.hs_create_d3d076ec(__hs_stringData0, (nuint)__hs_stringByteCount0, offset);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -104,7 +110,12 @@ public sealed unsafe partial class StringByteInput : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? readBytesResult(nint data, ulong bytes)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_abedd66e((void*)__hosihikari_shim_handle, (void*)data, bytes);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle);
     }
 
 

@@ -78,6 +78,7 @@ public sealed unsafe partial class InputPermissionCommand : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_93bdcdf3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

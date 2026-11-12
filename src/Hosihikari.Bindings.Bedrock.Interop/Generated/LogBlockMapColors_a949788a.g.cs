@@ -45,6 +45,7 @@ public sealed unsafe partial class LogBlockMapColors : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_6576e624((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

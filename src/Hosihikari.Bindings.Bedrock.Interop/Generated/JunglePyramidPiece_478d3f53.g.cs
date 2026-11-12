@@ -53,6 +53,7 @@ public sealed unsafe partial class JunglePyramidPiece : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_e7c8b5e2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

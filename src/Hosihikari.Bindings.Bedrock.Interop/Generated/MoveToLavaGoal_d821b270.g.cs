@@ -177,6 +177,7 @@ public sealed unsafe partial class MoveToLavaGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_fc3f9276((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -61,6 +61,7 @@ public sealed unsafe partial class WaitTicksDefinition : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_e5274f84((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

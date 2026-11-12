@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorWasLastHurtByTest : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_34177005((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class UpdateVerticalHalfGetPlacementBlockCallback :
         var handle = NativeMethods.TablePtr->C0.hs_create_bb176f3b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

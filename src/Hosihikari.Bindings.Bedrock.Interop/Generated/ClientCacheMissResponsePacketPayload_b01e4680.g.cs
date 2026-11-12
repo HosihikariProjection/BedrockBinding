@@ -45,6 +45,7 @@ public sealed unsafe partial class ClientCacheMissResponsePacketPayload : global
         var handle = NativeMethods.TablePtr->C0.hs_create_da870380((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

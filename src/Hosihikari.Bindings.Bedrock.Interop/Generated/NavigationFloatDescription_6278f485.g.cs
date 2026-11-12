@@ -175,6 +175,7 @@ public sealed unsafe partial class NavigationFloatDescription : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_ad6c8dde((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

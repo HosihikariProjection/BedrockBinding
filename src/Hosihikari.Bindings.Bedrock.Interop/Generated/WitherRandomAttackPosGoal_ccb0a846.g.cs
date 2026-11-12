@@ -131,6 +131,7 @@ public sealed unsafe partial class WitherRandomAttackPosGoal : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_ac9fe19a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -50,6 +50,7 @@ public sealed unsafe partial class MolangMemberVariable : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_0dafd3b6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

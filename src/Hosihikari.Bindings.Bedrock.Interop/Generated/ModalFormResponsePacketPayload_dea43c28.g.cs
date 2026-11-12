@@ -45,6 +45,7 @@ public sealed unsafe partial class ModalFormResponsePacketPayload : global::Syst
         var handle = NativeMethods.TablePtr->C2.hs_create_710e3546((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

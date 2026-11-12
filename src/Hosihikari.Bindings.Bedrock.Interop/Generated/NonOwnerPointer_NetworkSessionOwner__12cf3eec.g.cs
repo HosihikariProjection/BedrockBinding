@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_NetworkSessionOwner_ : global
         var handle = NativeMethods.TablePtr->C0.hs_create_1fd687f6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_NetworkSessionOwner_ : global
         var handle = NativeMethods.TablePtr->C0.hs_create_9558ec7a(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_NetworkSessionOwner_ : global
         var handle = NativeMethods.TablePtr->C0.hs_create_7304ea45();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_NetworkSessionOwner_ : global
         var handle = NativeMethods.TablePtr->C0.hs_create_993ebac3(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_NetworkSessionOwner_ : global
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkSessionOwner? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_86ea0711((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSessionOwner((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSessionOwner((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_NetworkSessionOwner_ : global
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkSessionOwner? operator_NetworkSessionOwner__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4f318a47((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSessionOwner((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSessionOwner((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_NetworkSessionOwner_ : global
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkSessionOwner? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dff00884((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSessionOwner((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSessionOwner((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkSessionOwner? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5a41a4c9((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSessionOwner((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSessionOwner((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

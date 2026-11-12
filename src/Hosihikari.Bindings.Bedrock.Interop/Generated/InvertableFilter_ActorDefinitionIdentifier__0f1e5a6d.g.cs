@@ -45,6 +45,7 @@ public sealed unsafe partial class InvertableFilter_ActorDefinitionIdentifier_ :
         var handle = NativeMethods.TablePtr->C1.hs_create_f7cb8bc3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

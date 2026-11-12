@@ -78,6 +78,7 @@ public sealed unsafe partial class SetMaxPlayersCommand : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_7b78ef62((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

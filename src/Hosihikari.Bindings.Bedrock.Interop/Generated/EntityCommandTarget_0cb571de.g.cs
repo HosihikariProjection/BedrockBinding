@@ -45,6 +45,7 @@ public sealed unsafe partial class EntityCommandTarget : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_88e9993f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class InstantDespawnSystem : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_f732805f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

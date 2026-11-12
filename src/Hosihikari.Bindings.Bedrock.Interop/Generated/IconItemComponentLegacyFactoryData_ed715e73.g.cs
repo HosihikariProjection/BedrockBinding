@@ -49,6 +49,7 @@ public sealed unsafe partial class IconItemComponentLegacyFactoryData : global::
         var handle = NativeMethods.TablePtr->C1.hs_create_323c865b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

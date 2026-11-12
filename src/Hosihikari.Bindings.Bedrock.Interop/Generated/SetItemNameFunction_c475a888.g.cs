@@ -67,6 +67,7 @@ public sealed unsafe partial class SetItemNameFunction : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_44b80abc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +79,7 @@ public sealed unsafe partial class SetItemNameFunction : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_f6344fd9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

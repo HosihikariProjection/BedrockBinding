@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptActorRemoveBeforeEvent : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_f209836e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

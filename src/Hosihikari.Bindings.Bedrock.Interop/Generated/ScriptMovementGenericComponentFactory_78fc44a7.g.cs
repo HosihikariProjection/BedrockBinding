@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptMovementGenericComponentFactory : globa
         var handle = NativeMethods.TablePtr->C3.hs_create_be430e4b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

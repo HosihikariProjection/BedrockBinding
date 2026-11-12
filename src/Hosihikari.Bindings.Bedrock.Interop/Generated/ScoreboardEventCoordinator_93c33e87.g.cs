@@ -87,6 +87,7 @@ public sealed unsafe partial class ScoreboardEventCoordinator : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_c6a09b51((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

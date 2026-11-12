@@ -115,6 +115,7 @@ public sealed unsafe partial class BaseMoveToGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_ad9cfc68();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -130,6 +131,7 @@ public sealed unsafe partial class BaseMoveToGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_1c6fa92c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -149,7 +151,12 @@ public sealed unsafe partial class BaseMoveToGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? _getTargetPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9df31497((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public void _moveToBlock()
@@ -281,7 +288,12 @@ public sealed unsafe partial class BaseMoveToGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d0ff94ad((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseMoveToGoal((nint)__hs_handle, false);
     }
 
     public void setInterval(int interval)

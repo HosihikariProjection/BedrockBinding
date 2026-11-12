@@ -45,6 +45,7 @@ public sealed unsafe partial class Result_unsigned_short__std__error_code_ : glo
         var handle = NativeMethods.TablePtr->C0.hs_create_ac37d3d4((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

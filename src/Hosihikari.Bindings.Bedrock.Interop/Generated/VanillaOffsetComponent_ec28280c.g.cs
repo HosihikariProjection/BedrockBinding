@@ -45,6 +45,7 @@ public sealed unsafe partial class VanillaOffsetComponent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_825e2b8a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

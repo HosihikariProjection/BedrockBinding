@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_ActorGarbageCollector_ : glob
         var handle = NativeMethods.TablePtr->C0.hs_create_b5593f5b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_ActorGarbageCollector_ : glob
         var handle = NativeMethods.TablePtr->C0.hs_create_0352a6f4(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_ActorGarbageCollector_ : glob
         var handle = NativeMethods.TablePtr->C0.hs_create_9ec500bc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_ActorGarbageCollector_ : glob
         var handle = NativeMethods.TablePtr->C0.hs_create_50913451(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_ActorGarbageCollector_ : glob
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5c76a702((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_ActorGarbageCollector_ : glob
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector? operator_ActorGarbageCollector__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3db35795((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_ActorGarbageCollector_ : glob
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c3956a92((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6b478da9((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorGarbageCollector((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

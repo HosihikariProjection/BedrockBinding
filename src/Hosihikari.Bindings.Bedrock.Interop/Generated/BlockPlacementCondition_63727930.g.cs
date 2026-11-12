@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockPlacementCondition : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_91796b73((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class Occupant : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_cba8607a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

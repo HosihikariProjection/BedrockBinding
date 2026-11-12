@@ -51,6 +51,7 @@ public sealed unsafe partial class ActorLink : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_f1341220((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

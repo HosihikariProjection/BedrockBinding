@@ -49,6 +49,7 @@ public sealed unsafe partial class DelayActionList : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_f80b313c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

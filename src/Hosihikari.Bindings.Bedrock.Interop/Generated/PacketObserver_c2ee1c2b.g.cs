@@ -71,6 +71,7 @@ public sealed unsafe partial class PacketObserver : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_94068e9f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -83,6 +83,7 @@ public sealed unsafe partial class FilterTestGameRule : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_43d75634();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -94,6 +95,7 @@ public sealed unsafe partial class FilterTestGameRule : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_ff69e458((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -103,7 +105,12 @@ public sealed unsafe partial class FilterTestGameRule : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeValue()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_704e2e0e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle);
     }
 
     public bool evaluate(nint context)
@@ -136,7 +143,12 @@ public sealed unsafe partial class FilterTestGameRule : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.FilterTestGameRule? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FilterTestGameRule arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_015eb880((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FilterTestGameRule((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FilterTestGameRule((nint)__hs_handle, false);
     }
 
     public bool setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)

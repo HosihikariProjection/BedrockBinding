@@ -57,6 +57,7 @@ public sealed unsafe partial class PacketViolationHandler : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_625e12f9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class PacketViolationHandler : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_70ebac98((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -105,7 +107,12 @@ public sealed unsafe partial class PacketViolationHandler : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationHandler? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationHandler arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4c137f44((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationHandler((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationHandler((nint)__hs_handle, false);
     }
 
 

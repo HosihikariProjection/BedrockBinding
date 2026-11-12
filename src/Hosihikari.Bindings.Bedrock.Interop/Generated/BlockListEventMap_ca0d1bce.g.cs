@@ -49,6 +49,7 @@ public sealed unsafe partial class BlockListEventMap : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_a987bbb9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockQueuedTickingComponent : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_4a10a84a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

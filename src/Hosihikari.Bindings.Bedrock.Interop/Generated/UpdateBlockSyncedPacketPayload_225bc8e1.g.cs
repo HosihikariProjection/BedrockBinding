@@ -45,6 +45,7 @@ public sealed unsafe partial class UpdateBlockSyncedPacketPayload : global::Syst
         var handle = NativeMethods.TablePtr->C4.hs_create_f375323a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

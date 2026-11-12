@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerFormCloseEvent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_9371f5aa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

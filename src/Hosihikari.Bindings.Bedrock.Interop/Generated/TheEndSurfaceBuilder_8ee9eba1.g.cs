@@ -65,6 +65,7 @@ public sealed unsafe partial class TheEndSurfaceBuilder : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_683837ab((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

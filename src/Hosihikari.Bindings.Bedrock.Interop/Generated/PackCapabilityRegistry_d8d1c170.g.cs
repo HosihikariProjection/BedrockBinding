@@ -49,6 +49,7 @@ public sealed unsafe partial class PackCapabilityRegistry : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_31641789();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class PackCapabilityRegistry : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_555c0f7a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,7 +77,12 @@ public sealed unsafe partial class PackCapabilityRegistry : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.PackCapabilityRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackCapabilityRegistry arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4b4d2e52((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackCapabilityRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackCapabilityRegistry((nint)__hs_handle, false);
     }
 
 

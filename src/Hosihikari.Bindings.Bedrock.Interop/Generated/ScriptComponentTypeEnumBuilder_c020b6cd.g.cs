@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptComponentTypeEnumBuilder : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_bae0c393();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ScriptComponentTypeEnumBuilder : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_1b8e8ae3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

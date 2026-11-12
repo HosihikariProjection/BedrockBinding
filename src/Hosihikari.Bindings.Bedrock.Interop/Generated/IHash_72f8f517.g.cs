@@ -45,6 +45,7 @@ public sealed unsafe partial class IHash : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_0e6492f4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

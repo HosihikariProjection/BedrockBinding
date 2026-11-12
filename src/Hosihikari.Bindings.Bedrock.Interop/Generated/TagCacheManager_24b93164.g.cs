@@ -49,6 +49,7 @@ public sealed unsafe partial class TagCacheManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_e7209800();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class TagCacheManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_c929e814((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

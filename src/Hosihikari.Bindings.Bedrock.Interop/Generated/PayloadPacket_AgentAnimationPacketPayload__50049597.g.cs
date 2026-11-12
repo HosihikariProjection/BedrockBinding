@@ -98,6 +98,7 @@ public sealed unsafe partial class PayloadPacket_AgentAnimationPacketPayload_ : 
         var handle = NativeMethods.TablePtr->C4.hs_create_171a0f60((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

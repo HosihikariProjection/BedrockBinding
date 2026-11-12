@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorRandomChanceTest : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_3e69e2a3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

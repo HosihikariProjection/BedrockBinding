@@ -45,6 +45,7 @@ public sealed unsafe partial class AudioReceiveStreamInterface : global::System.
         var handle = NativeMethods.TablePtr->C4.hs_create_3a37dba2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -59,7 +60,12 @@ public sealed unsafe partial class AudioReceiveStreamInterface : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Stats? GetStats(bool arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a10a8fcd((void*)__hosihikari_shim_handle, arg0);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Stats((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Stats((nint)__hs_handle);
     }
 
     public bool IsRunning()
@@ -104,7 +110,12 @@ public sealed unsafe partial class AudioReceiveStreamInterface : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioMixer_Nested.Source? source()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4bc03525((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioMixer_Nested.Source((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioMixer_Nested.Source((nint)__hs_handle, false);
     }
 
 

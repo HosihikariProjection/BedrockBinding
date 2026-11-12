@@ -113,6 +113,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_b0eb2ec7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

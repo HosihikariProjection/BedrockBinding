@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptMovementGlideComponentFactory : global:
         var handle = NativeMethods.TablePtr->C3.hs_create_100bdc97((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class ThrowableItemComponentLegacyFactoryData : glo
         var handle = NativeMethods.TablePtr->C3.hs_create_ff45e949((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

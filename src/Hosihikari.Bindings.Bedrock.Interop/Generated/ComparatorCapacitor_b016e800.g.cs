@@ -186,6 +186,7 @@ public sealed unsafe partial class ComparatorCapacitor : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_9a671122((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

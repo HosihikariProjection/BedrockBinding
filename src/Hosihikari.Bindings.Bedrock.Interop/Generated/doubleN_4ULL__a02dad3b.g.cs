@@ -63,6 +63,7 @@ public sealed unsafe partial class doubleN_4ULL_ : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_c8ac26ae((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -74,6 +75,7 @@ public sealed unsafe partial class doubleN_4ULL_ : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_61cdfafc(all);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

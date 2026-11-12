@@ -45,6 +45,7 @@ public sealed unsafe partial class OnConsumeTriggerItemComponent : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_e0edf018((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

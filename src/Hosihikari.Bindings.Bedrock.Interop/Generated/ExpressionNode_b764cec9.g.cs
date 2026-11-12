@@ -76,6 +76,7 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_6c1bbdef();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,6 +92,7 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_7518750b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -123,6 +125,7 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_33184c57(__hs_stringData0, (nuint)__hs_stringByteCount0, molangVersion);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -153,7 +156,12 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg? evalGeneric(global::Hosihikari.Bindings.Bedrock.Interop.RenderParams renderParams)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_58110497((void*)__hosihikari_shim_handle, (void*)renderParams.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle, false);
     }
 
     public string getExpressionString()

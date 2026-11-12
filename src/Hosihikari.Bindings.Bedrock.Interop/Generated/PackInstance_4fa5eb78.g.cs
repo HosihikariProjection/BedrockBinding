@@ -58,6 +58,7 @@ public sealed unsafe partial class PackInstance : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f85fe3af();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -69,6 +70,7 @@ public sealed unsafe partial class PackInstance : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_5c393eae((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

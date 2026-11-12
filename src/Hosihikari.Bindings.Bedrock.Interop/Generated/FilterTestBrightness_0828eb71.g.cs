@@ -71,6 +71,7 @@ public sealed unsafe partial class FilterTestBrightness : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_63d31cff((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

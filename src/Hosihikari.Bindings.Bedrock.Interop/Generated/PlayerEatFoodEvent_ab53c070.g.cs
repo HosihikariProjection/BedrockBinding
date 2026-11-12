@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerEatFoodEvent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_4d20bc86((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -749,6 +749,7 @@ public sealed unsafe partial class Vex : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_372765d7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

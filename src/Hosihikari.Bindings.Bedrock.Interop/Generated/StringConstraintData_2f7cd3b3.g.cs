@@ -45,6 +45,7 @@ public sealed unsafe partial class StringConstraintData : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_944b14f3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

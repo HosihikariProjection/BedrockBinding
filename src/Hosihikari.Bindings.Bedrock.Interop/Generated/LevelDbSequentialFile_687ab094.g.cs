@@ -53,6 +53,7 @@ public sealed unsafe partial class LevelDbSequentialFile : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_bdc2a55e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class LevelDbSequentialFile : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_c36c8c5e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -73,13 +75,23 @@ public sealed unsafe partial class LevelDbSequentialFile : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Read(ulong n, nint result, nint scratch)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d189f3c5((void*)__hosihikari_shim_handle, n, (void*)result, (void*)scratch);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Skip(ulong n)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_af8836a2((void*)__hosihikari_shim_handle, n);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -91,7 +103,12 @@ public sealed unsafe partial class LevelDbSequentialFile : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelDbSequentialFile? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelDbSequentialFile arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cd9a4f33((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbSequentialFile((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbSequentialFile((nint)__hs_handle, false);
     }
 
 

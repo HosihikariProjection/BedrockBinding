@@ -50,6 +50,7 @@ public sealed unsafe partial class RtpPacketSinkInterface : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_599073bb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

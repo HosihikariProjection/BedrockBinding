@@ -45,6 +45,7 @@ public sealed unsafe partial class MapDecoration : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f591c5e3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

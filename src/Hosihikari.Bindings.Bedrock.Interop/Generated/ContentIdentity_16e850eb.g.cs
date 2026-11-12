@@ -45,6 +45,7 @@ public sealed unsafe partial class ContentIdentity : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_e7e3b85b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

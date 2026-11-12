@@ -49,6 +49,7 @@ public sealed unsafe partial class AgentCommandSystem : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_b5836df1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

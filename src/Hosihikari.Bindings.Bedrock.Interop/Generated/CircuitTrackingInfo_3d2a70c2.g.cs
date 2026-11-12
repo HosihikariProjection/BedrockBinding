@@ -45,6 +45,7 @@ public sealed unsafe partial class CircuitTrackingInfo : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_4c61bea7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

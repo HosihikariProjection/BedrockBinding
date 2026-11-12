@@ -63,6 +63,7 @@ public sealed unsafe partial class TimerActorFlag3Goal : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_414c3959((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

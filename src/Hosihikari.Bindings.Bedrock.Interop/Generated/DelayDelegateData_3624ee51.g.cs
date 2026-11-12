@@ -45,6 +45,7 @@ public sealed unsafe partial class DelayDelegateData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_1a7768f7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

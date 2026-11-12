@@ -55,6 +55,7 @@ public sealed unsafe partial class ItemStackRequestActionDestroy : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_d6d024f1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class ItemStackRequestActionDestroy : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_33318b2b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

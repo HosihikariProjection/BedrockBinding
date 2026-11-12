@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockLightEmissionComponent : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_4bd7bd4c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

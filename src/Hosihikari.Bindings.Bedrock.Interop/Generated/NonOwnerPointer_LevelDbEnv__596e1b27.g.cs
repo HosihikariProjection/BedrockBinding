@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_LevelDbEnv_ : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_88219b06();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_LevelDbEnv_ : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_4f68708a(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_LevelDbEnv_ : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_3787acd2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_LevelDbEnv_ : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_dd7f944b(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_LevelDbEnv_ : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c0622205((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_LevelDbEnv_ : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv? operator_LevelDbEnv__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e17ad004((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_LevelDbEnv_ : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_488df311((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9bbc4a36((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

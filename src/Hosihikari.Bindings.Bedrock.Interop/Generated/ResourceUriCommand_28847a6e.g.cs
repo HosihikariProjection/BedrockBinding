@@ -78,6 +78,7 @@ public sealed unsafe partial class ResourceUriCommand : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_bd550bc4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

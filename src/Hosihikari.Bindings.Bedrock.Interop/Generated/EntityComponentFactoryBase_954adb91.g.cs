@@ -51,6 +51,7 @@ public sealed unsafe partial class EntityComponentFactoryBase : global::System.I
         var handle = NativeMethods.TablePtr->C1.hs_create_b8ec4e38((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

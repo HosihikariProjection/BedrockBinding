@@ -45,6 +45,7 @@ public sealed unsafe partial class NpcGUIOffset : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_4ff0eb92((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

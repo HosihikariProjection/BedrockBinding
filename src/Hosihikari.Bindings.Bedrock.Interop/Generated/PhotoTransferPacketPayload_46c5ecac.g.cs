@@ -49,6 +49,7 @@ public sealed unsafe partial class PhotoTransferPacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_3af1a92a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class PhotoTransferPacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_164004e4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

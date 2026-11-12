@@ -51,6 +51,7 @@ public sealed unsafe partial class PacketSender : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_7d152e43((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

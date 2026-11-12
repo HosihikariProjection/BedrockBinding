@@ -153,6 +153,7 @@ public sealed unsafe partial class ScriptEntityRaycastOptions : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_1f23422f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

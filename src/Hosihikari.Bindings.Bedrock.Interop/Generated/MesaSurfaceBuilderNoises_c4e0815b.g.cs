@@ -49,6 +49,7 @@ public sealed unsafe partial class MesaSurfaceBuilderNoises : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_3179adaa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

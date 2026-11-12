@@ -53,6 +53,7 @@ public sealed unsafe partial class LabTableReactionComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_d6b7d166((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

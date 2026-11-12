@@ -45,6 +45,7 @@ public sealed unsafe partial class IPacketSecurityHandler : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_7fb90c2f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

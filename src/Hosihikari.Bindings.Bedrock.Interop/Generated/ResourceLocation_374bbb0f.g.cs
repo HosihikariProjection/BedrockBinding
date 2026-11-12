@@ -60,6 +60,7 @@ public sealed unsafe partial class ResourceLocation : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_c4726a54();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,6 +72,7 @@ public sealed unsafe partial class ResourceLocation : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_c577677a((void*)path.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,6 +84,7 @@ public sealed unsafe partial class ResourceLocation : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_a3d74214((void*)path.Handle, fileSystem);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -93,6 +96,7 @@ public sealed unsafe partial class ResourceLocation : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_d44f9b44((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -130,7 +134,12 @@ public sealed unsafe partial class ResourceLocation : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_01d36abc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

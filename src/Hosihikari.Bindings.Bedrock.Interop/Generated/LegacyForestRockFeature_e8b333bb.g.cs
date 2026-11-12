@@ -81,6 +81,7 @@ public sealed unsafe partial class LegacyForestRockFeature : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_dfe1d7e9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class LegacyForestRockFeature : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_b3a07fe3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

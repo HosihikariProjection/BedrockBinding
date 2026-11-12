@@ -45,6 +45,7 @@ public sealed unsafe partial class Result_std__basic_string_char___std__error_co
         var handle = NativeMethods.TablePtr->C0.hs_create_7afe2baf((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

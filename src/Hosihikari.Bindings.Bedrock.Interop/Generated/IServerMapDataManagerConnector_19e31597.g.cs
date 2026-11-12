@@ -45,6 +45,7 @@ public sealed unsafe partial class IServerMapDataManagerConnector : global::Syst
         var handle = NativeMethods.TablePtr->C1.hs_create_10236be5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

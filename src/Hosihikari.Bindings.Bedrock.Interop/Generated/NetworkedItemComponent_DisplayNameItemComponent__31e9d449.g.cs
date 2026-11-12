@@ -51,6 +51,7 @@ public sealed unsafe partial class NetworkedItemComponent_DisplayNameItemCompone
         var handle = NativeMethods.TablePtr->C2.hs_create_6f59d3da((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -50,6 +50,7 @@ public sealed unsafe partial class MolangScriptArg : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_2183f2e0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -61,6 +62,7 @@ public sealed unsafe partial class MolangScriptArg : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_6d15eb92((void*)actorId.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +74,7 @@ public sealed unsafe partial class MolangScriptArg : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_ff969131((void*)loopBreak.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -83,6 +86,7 @@ public sealed unsafe partial class MolangScriptArg : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c51fa23e((void*)loopContinue.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -94,6 +98,7 @@ public sealed unsafe partial class MolangScriptArg : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_fae4ceff((void*)actor.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -105,6 +110,7 @@ public sealed unsafe partial class MolangScriptArg : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_08e3f5fe((void*)item.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -116,6 +122,7 @@ public sealed unsafe partial class MolangScriptArg : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_12215874((void*)other.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -127,6 +134,7 @@ public sealed unsafe partial class MolangScriptArg : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_35db8e16(val);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -150,7 +158,12 @@ public sealed unsafe partial class MolangScriptArg : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg? mDefaultReturnValue_float0()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0abe1850();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -188,7 +201,12 @@ public sealed unsafe partial class MolangScriptArg : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg other)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f043fa97((void*)__hosihikari_shim_handle, (void*)other.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

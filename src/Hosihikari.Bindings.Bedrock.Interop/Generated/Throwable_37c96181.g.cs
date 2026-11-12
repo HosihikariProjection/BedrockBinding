@@ -627,6 +627,7 @@ public sealed unsafe partial class Throwable : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_47a0f811();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -650,7 +651,12 @@ public sealed unsafe partial class Throwable : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getSourceUniqueID()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_89945d99((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle);
     }
 
     public float getThrowPower()

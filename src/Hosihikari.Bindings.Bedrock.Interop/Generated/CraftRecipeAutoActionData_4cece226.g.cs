@@ -45,6 +45,7 @@ public sealed unsafe partial class CraftRecipeAutoActionData : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_3d5b4ec1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

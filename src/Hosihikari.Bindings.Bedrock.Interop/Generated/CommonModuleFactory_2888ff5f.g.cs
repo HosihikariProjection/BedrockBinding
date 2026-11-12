@@ -57,6 +57,7 @@ public sealed unsafe partial class CommonModuleFactory : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_5ccd7337((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

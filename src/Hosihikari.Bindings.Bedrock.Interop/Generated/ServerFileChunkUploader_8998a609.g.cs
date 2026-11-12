@@ -85,6 +85,7 @@ public sealed unsafe partial class ServerFileChunkUploader : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_ffec9ac8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class ServerFileChunkUploader : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_caceec97((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -120,7 +122,12 @@ public sealed unsafe partial class ServerFileChunkUploader : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo? getChunkInfo(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo file, int chunkID)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fb4baac3((void*)__hosihikari_shim_handle, (void*)file.Handle, chunkID);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo((nint)__hs_handle);
     }
 
     public int getInitErrorCode()
@@ -180,7 +187,12 @@ public sealed unsafe partial class ServerFileChunkUploader : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerFileChunkUploader? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerFileChunkUploader arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_aa5b1208((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerFileChunkUploader((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerFileChunkUploader((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]

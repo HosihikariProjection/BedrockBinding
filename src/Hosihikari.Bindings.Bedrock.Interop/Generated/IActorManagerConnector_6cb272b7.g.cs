@@ -45,6 +45,7 @@ public sealed unsafe partial class IActorManagerConnector : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_48d7b0ca((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

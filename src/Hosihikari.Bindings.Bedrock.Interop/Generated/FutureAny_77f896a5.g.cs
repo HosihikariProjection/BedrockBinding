@@ -57,6 +57,7 @@ public sealed unsafe partial class FutureAny : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_90c1fce9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class FutureAny : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_ee358d03((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

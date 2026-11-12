@@ -57,6 +57,7 @@ public sealed unsafe partial class ActorDamageByBlockSource : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_45f998bd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

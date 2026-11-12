@@ -79,6 +79,7 @@ public sealed unsafe partial class Minecraft : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_81ce6caa();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -94,6 +95,7 @@ public sealed unsafe partial class Minecraft : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_67c246af((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -131,13 +133,23 @@ public sealed unsafe partial class Minecraft : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Level? getLevel()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ae0c0094((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_ServerNetworkHandler_? getServerNetworkHandler()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9c7e2099((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_ServerNetworkHandler_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_ServerNetworkHandler_((nint)__hs_handle);
     }
 
     public bool getSimPaused()
@@ -377,7 +389,12 @@ public sealed unsafe partial class Minecraft : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Minecraft? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Minecraft arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4424ebfe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Minecraft((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Minecraft((nint)__hs_handle, false);
     }
 
     public void setSimTimePause(bool pause)

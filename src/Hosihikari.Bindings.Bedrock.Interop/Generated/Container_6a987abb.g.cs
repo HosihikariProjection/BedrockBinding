@@ -255,6 +255,7 @@ public sealed unsafe partial class Container : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_f420a5d9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -266,6 +267,7 @@ public sealed unsafe partial class Container : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_1103bb42(type);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -316,7 +318,12 @@ public sealed unsafe partial class Container : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_? begin()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_716e8b5e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle);
     }
 
     public bool canPullOutItem(int slot, int face, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
@@ -332,13 +339,23 @@ public sealed unsafe partial class Container : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_? cbegin()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_47228296((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_? cend()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_88332543((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)__hs_handle);
     }
 
     public void containerRemoved()
@@ -349,7 +366,12 @@ public sealed unsafe partial class Container : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.BidirectionalUnorderedMap_SharedTypes__Legacy__ContainerType__std__basic_string_char__? containerTypeMap()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2779ed58();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BidirectionalUnorderedMap_SharedTypes__Legacy__ContainerType__std__basic_string_char__((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BidirectionalUnorderedMap_SharedTypes__Legacy__ContainerType__std__basic_string_char__((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::reverse_iterator<ContainerIterator<const Container>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -377,7 +399,12 @@ public sealed unsafe partial class Container : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_? end()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_92c36d2b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle);
     }
 
     public int findFirstSlotForItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
@@ -416,7 +443,12 @@ public sealed unsafe partial class Container : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f7f40392((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -431,7 +463,12 @@ public sealed unsafe partial class Container : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_ItemStack_? getItemNonConst(int index)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_12a23ce1((void*)__hosihikari_shim_handle, index);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_ItemStack_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_ItemStack_((nint)__hs_handle);
     }
 
     public int getMaxStackSize()
@@ -573,13 +610,23 @@ public sealed unsafe partial class Container : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? operator_index_c647bc78(int index)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c647bc78((void*)__hosihikari_shim_handle, index);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? operator_index_39221f08(int index)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_39221f08((void*)__hosihikari_shim_handle, index);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::reverse_iterator<ContainerIterator<Container>>' requires --link-carrier or --virtual-dispatch.", false)]

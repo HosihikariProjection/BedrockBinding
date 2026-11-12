@@ -53,6 +53,7 @@ public sealed unsafe partial class CalibratedSculkSensorVibrationConfig : global
         var handle = NativeMethods.TablePtr->C0.hs_create_4d732f3a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

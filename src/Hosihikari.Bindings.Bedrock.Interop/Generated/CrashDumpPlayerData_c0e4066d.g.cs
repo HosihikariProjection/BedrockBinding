@@ -45,6 +45,7 @@ public sealed unsafe partial class CrashDumpPlayerData : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_f8da767b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class CrashDumpPlayerData : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_60714a55((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,7 +77,12 @@ public sealed unsafe partial class CrashDumpPlayerData : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpPlayerData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpPlayerData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_22a7ec9f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpPlayerData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CrashDumpPlayerData((nint)__hs_handle, false);
     }
 
     public void Dispose()

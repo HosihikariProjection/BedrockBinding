@@ -49,6 +49,7 @@ public sealed unsafe partial class LegacyStructureBlockPalette : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_27a3741f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

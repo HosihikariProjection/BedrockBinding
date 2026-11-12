@@ -57,6 +57,7 @@ public sealed unsafe partial class SHRoomCrossing : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_ba4c17d0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

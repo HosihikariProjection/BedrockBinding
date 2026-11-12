@@ -619,6 +619,7 @@ public sealed unsafe partial class LavaSlime : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_5c968112();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

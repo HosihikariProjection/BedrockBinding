@@ -53,6 +53,7 @@ public sealed unsafe partial class SHFillerCorridor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_84f1dd25((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

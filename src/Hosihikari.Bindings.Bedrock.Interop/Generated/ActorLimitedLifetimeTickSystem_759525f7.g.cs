@@ -49,6 +49,7 @@ public sealed unsafe partial class ActorLimitedLifetimeTickSystem : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_80de2d18((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

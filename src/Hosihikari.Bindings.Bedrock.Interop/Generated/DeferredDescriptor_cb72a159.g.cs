@@ -93,6 +93,7 @@ public sealed unsafe partial class DeferredDescriptor : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_4d48eff8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -154,7 +155,12 @@ public sealed unsafe partial class DeferredDescriptor : global::System.IDisposab
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d9787b59((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle);
     }
 
     public void serialize(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)

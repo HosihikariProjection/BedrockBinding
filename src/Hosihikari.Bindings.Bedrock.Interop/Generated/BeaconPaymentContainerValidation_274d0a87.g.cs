@@ -65,6 +65,7 @@ public sealed unsafe partial class BeaconPaymentContainerValidation : global::Sy
         var handle = NativeMethods.TablePtr->C0.hs_create_adf0c7a9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

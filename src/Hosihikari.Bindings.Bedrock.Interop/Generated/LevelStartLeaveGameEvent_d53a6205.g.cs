@@ -45,6 +45,7 @@ public sealed unsafe partial class LevelStartLeaveGameEvent : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_8b802a63((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

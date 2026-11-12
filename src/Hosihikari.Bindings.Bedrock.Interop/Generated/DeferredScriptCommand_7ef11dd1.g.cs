@@ -57,6 +57,7 @@ public sealed unsafe partial class DeferredScriptCommand : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_88f43bd4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

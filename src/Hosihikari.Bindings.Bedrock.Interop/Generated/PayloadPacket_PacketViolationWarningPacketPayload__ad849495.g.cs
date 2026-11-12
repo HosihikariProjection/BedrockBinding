@@ -110,6 +110,7 @@ public sealed unsafe partial class PayloadPacket_PacketViolationWarningPacketPay
         var handle = NativeMethods.TablePtr->C4.hs_create_2965597a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

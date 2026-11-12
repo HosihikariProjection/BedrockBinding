@@ -49,6 +49,7 @@ public sealed unsafe partial class FlockingSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_5103fb1f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

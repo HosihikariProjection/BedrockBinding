@@ -49,6 +49,7 @@ public sealed unsafe partial class SoftEnum : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_d174ac2c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class SoftEnum : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_92ffd350((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

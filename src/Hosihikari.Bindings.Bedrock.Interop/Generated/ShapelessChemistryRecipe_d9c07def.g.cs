@@ -119,6 +119,7 @@ public sealed unsafe partial class ShapelessChemistryRecipe : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_08af09fb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

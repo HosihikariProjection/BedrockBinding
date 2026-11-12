@@ -45,6 +45,7 @@ public sealed unsafe partial class EnvironmentSensorDefinition : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_9c6c5141((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

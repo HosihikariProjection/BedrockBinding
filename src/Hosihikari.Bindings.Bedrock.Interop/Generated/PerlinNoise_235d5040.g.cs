@@ -57,6 +57,7 @@ public sealed unsafe partial class PerlinNoise : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_6bcc6da6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class PerlinNoise : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_bfb7d932((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

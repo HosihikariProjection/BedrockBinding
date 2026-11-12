@@ -170,6 +170,7 @@ public sealed unsafe partial class ServerScoreboard : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_29e09385();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -220,20 +221,35 @@ public sealed unsafe partial class ServerScoreboard : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9f723c4f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Objective((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Objective((nint)__hs_handle, false);
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId? createScoreboardId(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2bb5ad1b((void*)__hosihikari_shim_handle, (void*)entity.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId? createScoreboardId(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d489d285((void*)__hosihikari_shim_handle, (void*)player.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId? createScoreboardId(string name)
@@ -252,7 +268,12 @@ public sealed unsafe partial class ServerScoreboard : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f6f817ab((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_handle, false);
         }
     }
 
@@ -381,7 +402,12 @@ public sealed unsafe partial class ServerScoreboard : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C3.hs_method_079f55fa((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)objective.Handle, order);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DisplayObjective((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.DisplayObjective((nint)__hs_handle, false);
         }
     }
 

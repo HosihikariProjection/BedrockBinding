@@ -77,6 +77,7 @@ public sealed unsafe partial class GenericModuleBindingFactory : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_dfa15ed1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -88,6 +89,7 @@ public sealed unsafe partial class GenericModuleBindingFactory : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_f1658aad((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -127,7 +129,12 @@ public sealed unsafe partial class GenericModuleBindingFactory : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? getUUID()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a45fc3ef((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle);
     }
 
     public bool hasAlias(string alias)
@@ -170,7 +177,12 @@ public sealed unsafe partial class GenericModuleBindingFactory : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5a842867((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory((nint)__hs_handle, false);
     }
 
 

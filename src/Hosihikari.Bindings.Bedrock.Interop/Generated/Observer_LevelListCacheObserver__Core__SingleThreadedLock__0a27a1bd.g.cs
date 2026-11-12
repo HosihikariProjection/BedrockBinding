@@ -45,6 +45,7 @@ public sealed unsafe partial class Observer_LevelListCacheObserver__Core__Single
         var handle = NativeMethods.TablePtr->C1.hs_create_9254d936();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class Observer_LevelListCacheObserver__Core__Single
         var handle = NativeMethods.TablePtr->C1.hs_create_02ee2a92((void*)subject);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

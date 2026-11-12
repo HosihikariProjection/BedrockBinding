@@ -45,6 +45,7 @@ public sealed unsafe partial class BiomeComponentBase : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_d901aa9e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class MapItemSavedData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_8f937f20();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -51,6 +51,7 @@ public sealed unsafe partial class IEntityRegistryOwner : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_ce02a64d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

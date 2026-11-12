@@ -53,6 +53,7 @@ public sealed unsafe partial class IsSummonableDescription : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_b37bf6a4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

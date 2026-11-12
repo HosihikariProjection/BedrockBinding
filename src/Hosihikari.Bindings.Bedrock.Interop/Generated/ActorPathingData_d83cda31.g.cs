@@ -49,6 +49,7 @@ public sealed unsafe partial class ActorPathingData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_3f4f2c51((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

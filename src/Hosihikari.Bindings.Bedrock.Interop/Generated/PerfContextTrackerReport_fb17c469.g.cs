@@ -45,6 +45,7 @@ public sealed unsafe partial class PerfContextTrackerReport : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_bce7b6b8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class PerfContextTrackerReport : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_90777ee7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -215,7 +217,12 @@ public sealed unsafe partial class PerfContextTrackerReport : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReport? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReport arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9bc9340e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReport((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReport((nint)__hs_handle, false);
     }
 
 

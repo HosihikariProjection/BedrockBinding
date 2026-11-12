@@ -45,6 +45,7 @@ public sealed unsafe partial class ThreadSpecificData : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_22059f89((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

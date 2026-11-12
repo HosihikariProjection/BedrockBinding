@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorRemovedEvent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_cf0ed6b7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

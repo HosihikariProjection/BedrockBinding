@@ -78,6 +78,7 @@ public sealed unsafe partial class NetherSpringFeature : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_459e10da();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -89,6 +90,7 @@ public sealed unsafe partial class NetherSpringFeature : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_129d37ca((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -110,7 +112,12 @@ public sealed unsafe partial class NetherSpringFeature : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.NetherSpringFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherSpringFeature arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_579a2156((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetherSpringFeature((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetherSpringFeature((nint)__hs_handle, false);
     }
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)

@@ -129,6 +129,7 @@ public sealed unsafe partial class CampfireBlockActor : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_107d7e74();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

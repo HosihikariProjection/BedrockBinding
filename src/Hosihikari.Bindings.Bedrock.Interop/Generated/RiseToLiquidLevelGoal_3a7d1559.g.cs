@@ -79,6 +79,7 @@ public sealed unsafe partial class RiseToLiquidLevelGoal : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_08b2b81f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -90,6 +91,7 @@ public sealed unsafe partial class RiseToLiquidLevelGoal : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_17739473((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -148,7 +150,12 @@ public sealed unsafe partial class RiseToLiquidLevelGoal : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.RiseToLiquidLevelGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RiseToLiquidLevelGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_31697287((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RiseToLiquidLevelGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RiseToLiquidLevelGoal((nint)__hs_handle, false);
     }
 
     public void tick()

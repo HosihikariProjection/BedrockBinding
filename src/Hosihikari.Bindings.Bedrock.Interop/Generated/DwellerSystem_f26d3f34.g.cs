@@ -53,6 +53,7 @@ public sealed unsafe partial class DwellerSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_330e5e82((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

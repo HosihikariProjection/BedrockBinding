@@ -45,6 +45,7 @@ public sealed unsafe partial class Raid : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_256b3ee5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

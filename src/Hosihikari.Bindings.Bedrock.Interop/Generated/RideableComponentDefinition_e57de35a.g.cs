@@ -57,6 +57,7 @@ public sealed unsafe partial class RideableComponentDefinition : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_25c5396d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -51,13 +51,23 @@ public sealed unsafe partial class ValueOrRef_ItemUsedOnEvent_ : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent? value_b1588fdd()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b1588fdd((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent? value_2586af5a()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2586af5a((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemUsedOnEvent((nint)__hs_handle, false);
     }
 
 

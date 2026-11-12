@@ -71,6 +71,7 @@ public sealed unsafe partial class FilterTestBiomeHumid : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_6b63b28c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

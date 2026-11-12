@@ -49,6 +49,7 @@ public sealed unsafe partial class SmoothStoneSelector : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_cb8437ac((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,7 +65,12 @@ public sealed unsafe partial class SmoothStoneSelector : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? next(global::Hosihikari.Bindings.Bedrock.Interop.Random random, int arg1, int arg2, int arg3, bool isEdge)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ac1fec97((void*)__hosihikari_shim_handle, (void*)random.Handle, arg1, arg2, arg3, isEdge);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
 

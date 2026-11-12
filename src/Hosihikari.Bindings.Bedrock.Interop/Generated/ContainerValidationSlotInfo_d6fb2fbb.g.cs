@@ -45,6 +45,7 @@ public sealed unsafe partial class ContainerValidationSlotInfo : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_df7ca962((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -741,6 +741,7 @@ public sealed unsafe partial class Piglin : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_b6c1c285();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -754,7 +755,12 @@ public sealed unsafe partial class Piglin : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Interaction? getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6ef3a1d3((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)__hs_handle);
     }
 
     public bool isDarkEnoughToSpawn()

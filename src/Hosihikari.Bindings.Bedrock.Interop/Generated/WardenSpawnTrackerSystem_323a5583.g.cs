@@ -53,6 +53,7 @@ public sealed unsafe partial class WardenSpawnTrackerSystem : global::System.IDi
         var handle = NativeMethods.TablePtr->C4.hs_create_d7c60947((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

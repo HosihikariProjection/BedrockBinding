@@ -77,6 +77,7 @@ public sealed unsafe partial class FireworksRecipe : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_e47bda00((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -100,7 +101,12 @@ public sealed unsafe partial class FireworksRecipe : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? getIngredient(int arg0, int arg1)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_69c4b5bf((void*)__hosihikari_shim_handle, arg0, arg1);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false);
     }
 
     public nint getResultItems()

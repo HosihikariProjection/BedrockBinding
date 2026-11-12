@@ -45,6 +45,7 @@ public sealed unsafe partial class WindOffsetter : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3664c40a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

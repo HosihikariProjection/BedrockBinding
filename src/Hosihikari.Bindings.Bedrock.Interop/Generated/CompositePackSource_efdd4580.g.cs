@@ -67,6 +67,7 @@ public sealed unsafe partial class CompositePackSource : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_f0e236fe();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -82,6 +82,11 @@ public sealed unsafe partial class associative_adapter_int__brstd__no_value_t__s
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t? values()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2568dcf3((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t((nint)__hs_handle, false);
     }
 }

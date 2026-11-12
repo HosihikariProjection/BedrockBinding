@@ -121,6 +121,7 @@ public sealed unsafe partial class NavigationScriptActorComponent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_d36b4abb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

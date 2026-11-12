@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptActorHealthChangedAfterEvent : global::
         var handle = NativeMethods.TablePtr->C3.hs_create_737cc024((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

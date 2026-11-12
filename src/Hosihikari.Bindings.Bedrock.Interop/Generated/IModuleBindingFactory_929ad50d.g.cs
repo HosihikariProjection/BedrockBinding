@@ -45,6 +45,7 @@ public sealed unsafe partial class IModuleBindingFactory : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_0d2351c8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,7 +73,12 @@ public sealed unsafe partial class IModuleBindingFactory : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? getUUID()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e64a816d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle);
     }
 
     public bool hasAlias(string alias)

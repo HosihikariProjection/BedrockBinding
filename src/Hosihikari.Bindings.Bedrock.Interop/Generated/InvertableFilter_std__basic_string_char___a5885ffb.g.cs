@@ -45,6 +45,7 @@ public sealed unsafe partial class InvertableFilter_std__basic_string_char__ : g
         var handle = NativeMethods.TablePtr->C1.hs_create_88eb0d97((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

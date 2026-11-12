@@ -61,6 +61,7 @@ public sealed unsafe partial class AncientCityPiece : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_07dbc5f1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,13 +79,23 @@ public sealed unsafe partial class AncientCityPiece : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBeardStabilizeBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7f058067((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getSupportBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg1, global::Hosihikari.Bindings.Bedrock.Interop.Block arg2)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_96aac85e((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public int getTerrainAdjustmentEffect()

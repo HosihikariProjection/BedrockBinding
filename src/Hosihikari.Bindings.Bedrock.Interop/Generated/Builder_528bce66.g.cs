@@ -45,6 +45,7 @@ public sealed unsafe partial class Builder : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_2cd54e85((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -69,7 +70,12 @@ public sealed unsafe partial class Builder : global::System.IDisposable
             fixed (byte* __hs_stringData0 = __hs_stringBytes0)
             {
                 var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b547814a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_vectorData1, (nuint)(data?.Length ?? 0));
-                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
+                if (__hs_handle == null)
+                {
+                    NativeMethods.GetLastError();
+                    return null;
+                }
+                return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle);
             }
         }
     }
@@ -84,7 +90,12 @@ public sealed unsafe partial class Builder : global::System.IDisposable
         fixed (byte* __hs_vectorData0 = buffer)
         {
             var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5695cdf5((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(buffer?.Length ?? 0));
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle);
         }
     }
 

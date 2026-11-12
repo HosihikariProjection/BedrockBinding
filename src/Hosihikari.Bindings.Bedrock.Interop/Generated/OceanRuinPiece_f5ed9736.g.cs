@@ -62,6 +62,7 @@ public sealed unsafe partial class OceanRuinPiece : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_d0ee68ad();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

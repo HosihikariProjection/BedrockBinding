@@ -49,6 +49,7 @@ public sealed unsafe partial class AnvilInputContainerValidation : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_08756dea((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

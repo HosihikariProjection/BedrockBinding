@@ -69,6 +69,7 @@ public sealed unsafe partial class PlacementDirection : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_4a0e0209((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

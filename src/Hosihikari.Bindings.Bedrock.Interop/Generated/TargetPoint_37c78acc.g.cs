@@ -49,6 +49,7 @@ public sealed unsafe partial class TargetPoint : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_aa69ed16();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class TargetPoint : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_e9a1972c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

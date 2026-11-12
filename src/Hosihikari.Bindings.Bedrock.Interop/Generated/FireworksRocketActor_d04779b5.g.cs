@@ -619,6 +619,7 @@ public sealed unsafe partial class FireworksRocketActor : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_62989665();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

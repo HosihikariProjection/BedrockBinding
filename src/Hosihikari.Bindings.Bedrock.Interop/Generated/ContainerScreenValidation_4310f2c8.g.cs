@@ -61,6 +61,7 @@ public sealed unsafe partial class ContainerScreenValidation : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_5932fecc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -162,7 +163,12 @@ public sealed unsafe partial class ContainerScreenValidation : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult? tryActivate()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_27e4024a((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

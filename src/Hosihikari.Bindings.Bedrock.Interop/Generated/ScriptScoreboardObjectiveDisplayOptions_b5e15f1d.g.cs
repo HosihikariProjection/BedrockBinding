@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptScoreboardObjectiveDisplayOptions : glo
         var handle = NativeMethods.TablePtr->C3.hs_create_d877db16((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

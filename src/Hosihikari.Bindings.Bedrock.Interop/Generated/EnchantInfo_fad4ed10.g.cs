@@ -45,6 +45,7 @@ public sealed unsafe partial class EnchantInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_6f7a063c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

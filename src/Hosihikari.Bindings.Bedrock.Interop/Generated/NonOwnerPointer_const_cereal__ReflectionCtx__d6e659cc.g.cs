@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_const_cereal__ReflectionCtx_ 
         var handle = NativeMethods.TablePtr->C0.hs_create_ec2608be();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_const_cereal__ReflectionCtx_ 
         var handle = NativeMethods.TablePtr->C0.hs_create_ecb8d78b(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_const_cereal__ReflectionCtx_ 
         var handle = NativeMethods.TablePtr->C0.hs_create_0ad59406();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_const_cereal__ReflectionCtx_ 
         var handle = NativeMethods.TablePtr->C0.hs_create_558b4ff0(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_const_cereal__ReflectionCtx_ 
     public global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_507383b4((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -109,19 +118,34 @@ public sealed unsafe partial class NonOwnerPointer_const_cereal__ReflectionCtx_ 
     public global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx? operator_const_cereal__ReflectionCtx__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_47545b6f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7c5a8284((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c1b4ab61((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

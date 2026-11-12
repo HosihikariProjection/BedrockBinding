@@ -45,6 +45,7 @@ public sealed unsafe partial class FoodItemComponentData_v1_20_30 : global::Syst
         var handle = NativeMethods.TablePtr->C1.hs_create_30d35b1e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

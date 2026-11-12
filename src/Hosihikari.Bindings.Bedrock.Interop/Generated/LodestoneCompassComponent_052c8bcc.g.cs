@@ -45,6 +45,7 @@ public sealed unsafe partial class LodestoneCompassComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_3a2f9abc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerInputPermissionCategoryChangeEvent : gl
         var handle = NativeMethods.TablePtr->C2.hs_create_94cb9d4c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

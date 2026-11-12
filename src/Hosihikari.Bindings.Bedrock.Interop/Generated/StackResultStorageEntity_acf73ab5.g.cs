@@ -50,6 +50,7 @@ public sealed unsafe partial class StackResultStorageEntity : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_c4231779();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -61,6 +62,7 @@ public sealed unsafe partial class StackResultStorageEntity : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_a8b12d38((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +74,7 @@ public sealed unsafe partial class StackResultStorageEntity : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_500f5ff7((void*)weakStorage.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

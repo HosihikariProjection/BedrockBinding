@@ -91,6 +91,7 @@ public sealed unsafe partial class VillagerCelebrationGoal : global::System.IDis
         var handle = NativeMethods.TablePtr->C4.hs_create_a6c9e6db();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class VillagerCelebrationGoal : global::System.IDis
         var handle = NativeMethods.TablePtr->C4.hs_create_d2bfe20f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -177,7 +179,12 @@ public sealed unsafe partial class VillagerCelebrationGoal : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.VillagerCelebrationGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VillagerCelebrationGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_9da52ffb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VillagerCelebrationGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.VillagerCelebrationGoal((nint)__hs_handle, false);
     }
 
     public void start()

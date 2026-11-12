@@ -45,6 +45,7 @@ public sealed unsafe partial class IAppExtensionsNonOwner : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_d0099967((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -79,6 +79,7 @@ public sealed unsafe partial class ScriptLavaMovementComponent : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_f04751ed((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

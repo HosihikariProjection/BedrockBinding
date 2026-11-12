@@ -45,6 +45,7 @@ public sealed unsafe partial class InsideBubbleColumnBlockComponent : global::Sy
         var handle = NativeMethods.TablePtr->C1.hs_create_e52aa20b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

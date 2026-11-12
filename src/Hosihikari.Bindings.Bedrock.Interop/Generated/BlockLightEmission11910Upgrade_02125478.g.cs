@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockLightEmission11910Upgrade : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_24244829((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

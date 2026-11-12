@@ -63,6 +63,7 @@ public sealed unsafe partial class InventoryAction : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_e8c9be5a((void*)source.Handle, slot, (void*)fromItem.Handle, (void*)toItem.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -74,6 +75,7 @@ public sealed unsafe partial class InventoryAction : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_83d1d2d5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

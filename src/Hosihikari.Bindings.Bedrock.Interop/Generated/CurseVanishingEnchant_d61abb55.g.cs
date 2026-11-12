@@ -57,6 +57,7 @@ public sealed unsafe partial class CurseVanishingEnchant : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_4ffae9b1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

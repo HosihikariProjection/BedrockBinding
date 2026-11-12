@@ -45,6 +45,7 @@ public sealed unsafe partial class Image : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_b0926a4e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class Image : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_43e86491((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,6 +77,7 @@ public sealed unsafe partial class Image : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_fb89ed27(w, h, format, usage);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -86,6 +89,7 @@ public sealed unsafe partial class Image : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_ec52064f(w, h, d, format, usage);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -95,7 +99,12 @@ public sealed unsafe partial class Image : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Image? clone()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8907b10c((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)__hs_handle);
     }
 
     public void copyRawImage(global::Hosihikari.Bindings.Bedrock.Interop.mce.Blob arg0)
@@ -153,7 +162,12 @@ public sealed unsafe partial class Image : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Image? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.mce.Image arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a55d1dd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

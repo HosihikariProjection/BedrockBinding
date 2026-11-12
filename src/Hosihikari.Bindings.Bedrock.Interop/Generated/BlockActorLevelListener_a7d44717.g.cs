@@ -61,6 +61,7 @@ public sealed unsafe partial class BlockActorLevelListener : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_a2e84823((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

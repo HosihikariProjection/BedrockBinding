@@ -57,6 +57,7 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_e74646d2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_19641432((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

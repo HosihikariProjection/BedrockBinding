@@ -49,6 +49,7 @@ public sealed unsafe partial class DispatcherUpdateSystem : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_f496cf6c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

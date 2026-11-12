@@ -45,6 +45,7 @@ public sealed unsafe partial class MediaStreamTrackInterface : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_c84c713c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -50,6 +50,7 @@ public sealed unsafe partial class Context : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_0479f340((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -88,7 +89,12 @@ public sealed unsafe partial class Context : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder? PacketBuilder()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_746f50d5((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder((nint)__hs_handle);
     }
 
     public void Send(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder builder)
@@ -99,13 +105,23 @@ public sealed unsafe partial class Context : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks? callbacks()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d58d9ffc((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TimeDelta? current_rto()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f0d68a29((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TimeDelta((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TimeDelta((nint)__hs_handle);
     }
 
     public bool is_connection_established()

@@ -50,6 +50,7 @@ public sealed unsafe partial class CommandOutputMessage : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_44adbd2a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -65,6 +66,7 @@ public sealed unsafe partial class CommandOutputMessage : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_07eb098e((void*)rhs.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -92,7 +94,12 @@ public sealed unsafe partial class CommandOutputMessage : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage rhs)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f8f3fb08((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputMessage((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

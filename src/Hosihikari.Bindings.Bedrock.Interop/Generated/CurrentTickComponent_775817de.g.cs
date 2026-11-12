@@ -45,6 +45,7 @@ public sealed unsafe partial class CurrentTickComponent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_f898b5af((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

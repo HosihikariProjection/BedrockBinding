@@ -48,13 +48,23 @@ public sealed unsafe partial class MediaReceiveChannelInterface : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface? AsVideoReceiveChannel()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3a2393cd((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaReceiveChannelInterface? AsVoiceReceiveChannel()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_10a3bdfe((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaReceiveChannelInterface((nint)__hs_handle, false);
     }
 
     public void ChooseReceiverReportSsrc(nint arg0)
@@ -81,6 +91,7 @@ public sealed unsafe partial class MediaReceiveChannelInterface : global::System
         var handle = NativeMethods.TablePtr->C4.hs_create_7c4feaef((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

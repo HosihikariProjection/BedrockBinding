@@ -50,6 +50,7 @@ public sealed unsafe partial class Response : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_84f7522a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -61,6 +62,7 @@ public sealed unsafe partial class Response : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_f89dbbc5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

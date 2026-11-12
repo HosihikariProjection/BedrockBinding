@@ -210,6 +210,7 @@ public sealed unsafe partial class RaidGardenGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_7e4e7996();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -225,6 +226,7 @@ public sealed unsafe partial class RaidGardenGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_b164c247((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

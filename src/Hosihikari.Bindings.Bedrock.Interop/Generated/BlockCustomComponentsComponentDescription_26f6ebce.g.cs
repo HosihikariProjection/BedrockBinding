@@ -75,6 +75,7 @@ public sealed unsafe partial class BlockCustomComponentsComponentDescription : g
         var handle = NativeMethods.TablePtr->C0.hs_create_b467a5a5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

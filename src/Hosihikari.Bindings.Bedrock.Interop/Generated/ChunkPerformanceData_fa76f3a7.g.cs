@@ -59,6 +59,7 @@ public sealed unsafe partial class ChunkPerformanceData : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_40348d56((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

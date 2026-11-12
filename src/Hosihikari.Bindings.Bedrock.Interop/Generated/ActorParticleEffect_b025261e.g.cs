@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorParticleEffect : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_a5b0933f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

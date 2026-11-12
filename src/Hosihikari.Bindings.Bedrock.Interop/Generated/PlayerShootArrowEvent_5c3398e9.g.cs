@@ -50,6 +50,7 @@ public sealed unsafe partial class PlayerShootArrowEvent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_da84f1ae();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -61,6 +62,7 @@ public sealed unsafe partial class PlayerShootArrowEvent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_11fdd7fc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +74,7 @@ public sealed unsafe partial class PlayerShootArrowEvent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_fe43131b(player?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), arrow?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)weaponItem.Handle, (void*)arrowItem.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -105,7 +108,12 @@ public sealed unsafe partial class PlayerShootArrowEvent : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerShootArrowEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerShootArrowEvent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1b89d0c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerShootArrowEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerShootArrowEvent((nint)__hs_handle, false);
     }
 
 

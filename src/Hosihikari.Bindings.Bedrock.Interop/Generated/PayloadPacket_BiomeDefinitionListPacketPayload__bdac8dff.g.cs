@@ -98,6 +98,7 @@ public sealed unsafe partial class PayloadPacket_BiomeDefinitionListPacketPayloa
         var handle = NativeMethods.TablePtr->C4.hs_create_f52f5dbb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

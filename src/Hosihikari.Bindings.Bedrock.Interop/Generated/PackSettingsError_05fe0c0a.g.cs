@@ -79,6 +79,7 @@ public sealed unsafe partial class PackSettingsError : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_b1f02304((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

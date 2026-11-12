@@ -45,6 +45,7 @@ public sealed unsafe partial class TameableDefinition : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_ed059b5f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -60,6 +60,7 @@ public sealed unsafe partial class RNS2EventHandler : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_9f819a03((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

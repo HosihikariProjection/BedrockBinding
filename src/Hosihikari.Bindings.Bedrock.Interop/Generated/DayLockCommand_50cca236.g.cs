@@ -78,6 +78,7 @@ public sealed unsafe partial class DayLockCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_464a03dc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

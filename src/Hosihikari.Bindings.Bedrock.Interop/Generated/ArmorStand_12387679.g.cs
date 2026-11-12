@@ -605,7 +605,12 @@ public sealed unsafe partial class ArmorStand : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Interaction? _getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_cea9d0d8((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -637,6 +642,7 @@ public sealed unsafe partial class ArmorStand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_f388b045();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -666,7 +672,12 @@ public sealed unsafe partial class ArmorStand : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_88adcd97((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -686,7 +697,12 @@ public sealed unsafe partial class ArmorStand : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Interaction? getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c0b9520f((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)__hs_handle);
     }
 
     public float getShadowRadius()

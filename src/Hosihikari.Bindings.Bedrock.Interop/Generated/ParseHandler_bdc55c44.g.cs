@@ -45,6 +45,7 @@ public sealed unsafe partial class ParseHandler : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_d1f660bf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ParseHandler : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_4bb7a32b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +83,12 @@ public sealed unsafe partial class ParseHandler : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ParseHandler? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ParseHandler arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a1824712((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ParseHandler((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ParseHandler((nint)__hs_handle, false);
     }
 
     public void Dispose()

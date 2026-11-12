@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerRespawnRandomizer : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_bbe11eb6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

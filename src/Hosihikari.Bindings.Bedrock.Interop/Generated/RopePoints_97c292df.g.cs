@@ -45,6 +45,7 @@ public sealed unsafe partial class RopePoints : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_305feef8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -55,6 +55,7 @@ public sealed unsafe partial class ScopedItemRegistry : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_f6c68bf6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class ScopedItemRegistry : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_fe26f2ca((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,6 +79,7 @@ public sealed unsafe partial class ScopedItemRegistry : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_634e8a6a(registry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

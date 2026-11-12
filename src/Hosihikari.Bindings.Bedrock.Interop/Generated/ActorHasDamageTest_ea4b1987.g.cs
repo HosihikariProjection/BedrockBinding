@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorHasDamageTest : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_6f73a85d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

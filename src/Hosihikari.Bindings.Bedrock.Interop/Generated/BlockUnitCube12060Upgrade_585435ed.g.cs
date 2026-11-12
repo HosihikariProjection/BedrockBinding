@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockUnitCube12060Upgrade : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_78ceb4f1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

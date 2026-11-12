@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorTickNeededComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_4dd20d57((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

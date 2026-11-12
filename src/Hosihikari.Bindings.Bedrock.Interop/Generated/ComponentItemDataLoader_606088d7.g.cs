@@ -49,6 +49,7 @@ public sealed unsafe partial class ComponentItemDataLoader : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_b9969174();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ComponentItemDataLoader : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_361bcf4f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

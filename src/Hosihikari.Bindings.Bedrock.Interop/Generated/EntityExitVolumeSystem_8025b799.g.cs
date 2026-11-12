@@ -45,6 +45,7 @@ public sealed unsafe partial class EntityExitVolumeSystem : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_56ac8a86();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class EntityExitVolumeSystem : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_417c2dd5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class EntityExitVolumeSystem : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.EntityExitVolumeSystem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EntityExitVolumeSystem arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a0044c18((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EntityExitVolumeSystem((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.EntityExitVolumeSystem((nint)__hs_handle, false);
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry arg0)

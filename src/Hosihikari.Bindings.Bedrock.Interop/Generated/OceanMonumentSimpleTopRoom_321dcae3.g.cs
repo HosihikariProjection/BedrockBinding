@@ -65,6 +65,7 @@ public sealed unsafe partial class OceanMonumentSimpleTopRoom : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_26c529fa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

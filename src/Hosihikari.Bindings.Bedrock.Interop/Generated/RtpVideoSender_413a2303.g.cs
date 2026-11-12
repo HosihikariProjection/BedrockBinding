@@ -191,7 +191,12 @@ public sealed unsafe partial class RtpVideoSender : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result? OnEncodedImage(nint encoded_image, nint codec_specific_info)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c774c73d((void*)__hosihikari_shim_handle, (void*)encoded_image, (void*)codec_specific_info);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result((nint)__hs_handle);
     }
 
     public void OnNetworkAvailability(bool network_available)
@@ -223,6 +228,7 @@ public sealed unsafe partial class RtpVideoSender : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_921ca9e6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -238,6 +244,7 @@ public sealed unsafe partial class RtpVideoSender : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_a741fd0a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -423,7 +430,12 @@ public sealed unsafe partial class RtpVideoSender : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSender? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSender arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_03f82357((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSender((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSender((nint)__hs_handle, false);
     }
 
 

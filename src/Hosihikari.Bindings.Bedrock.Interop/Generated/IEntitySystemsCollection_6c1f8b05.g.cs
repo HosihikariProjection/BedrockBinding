@@ -45,6 +45,7 @@ public sealed unsafe partial class IEntitySystemsCollection : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_5653f39b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +82,12 @@ public sealed unsafe partial class IEntitySystemsCollection : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.ComponentInfo? getComponentInfoForId(uint id)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ed1fa074((void*)__hosihikari_shim_handle, id);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ComponentInfo((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ComponentInfo((nint)__hs_handle, false);
     }
 
     public ulong getLargestSystemIndex()

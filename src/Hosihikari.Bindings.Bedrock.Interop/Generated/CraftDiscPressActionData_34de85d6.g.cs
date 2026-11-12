@@ -45,6 +45,7 @@ public sealed unsafe partial class CraftDiscPressActionData : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_6d308404((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

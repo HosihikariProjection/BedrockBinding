@@ -45,6 +45,7 @@ public sealed unsafe partial class ScopeHandler : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_a2aec1fc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

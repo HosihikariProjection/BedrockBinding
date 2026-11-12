@@ -45,6 +45,7 @@ public sealed unsafe partial class InMemoryFileStorage : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_b99e13dc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class InMemoryFileStorage : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_055c3fa4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -97,7 +99,12 @@ public sealed unsafe partial class InMemoryFileStorage : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFileStorage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFileStorage arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b78d23eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFileStorage((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFileStorage((nint)__hs_handle, false);
     }
 
     public void Dispose()

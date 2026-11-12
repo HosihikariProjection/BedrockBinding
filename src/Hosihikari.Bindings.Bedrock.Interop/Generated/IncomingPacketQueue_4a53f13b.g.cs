@@ -45,6 +45,7 @@ public sealed unsafe partial class IncomingPacketQueue : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_abe61b71();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class IncomingPacketQueue : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_46a59bc6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class IncomingPacketQueue : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem_Nested.IncomingPacketQueue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem_Nested.IncomingPacketQueue arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_10e73aaa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem_Nested.IncomingPacketQueue((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkSystem_Nested.IncomingPacketQueue((nint)__hs_handle, false);
     }
 
     public void Dispose()

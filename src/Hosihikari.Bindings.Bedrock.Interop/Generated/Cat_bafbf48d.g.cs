@@ -607,6 +607,7 @@ public sealed unsafe partial class Cat : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_f0d350dc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

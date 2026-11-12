@@ -125,6 +125,7 @@ public sealed unsafe partial class LegacyStructureTemplate : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_f18a8285((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -233,7 +234,12 @@ public sealed unsafe partial class LegacyStructureTemplate : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? rawSize()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b1470b8e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public int shouldHandleUpgradeForBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block)

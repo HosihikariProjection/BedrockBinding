@@ -59,6 +59,7 @@ public sealed unsafe partial class SetItemLoreFunction : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_eafb2efe((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

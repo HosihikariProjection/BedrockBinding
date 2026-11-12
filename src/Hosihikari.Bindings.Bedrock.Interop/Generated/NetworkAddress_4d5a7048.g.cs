@@ -45,6 +45,7 @@ public sealed unsafe partial class NetworkAddress : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_07de310d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

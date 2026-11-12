@@ -45,6 +45,7 @@ public sealed unsafe partial class IBlockActorComponent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_7c4574a6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

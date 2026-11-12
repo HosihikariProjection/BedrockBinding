@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockLoot11910Upgrade : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_8047e673((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

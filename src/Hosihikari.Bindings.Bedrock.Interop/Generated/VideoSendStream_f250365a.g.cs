@@ -77,7 +77,12 @@ public sealed unsafe partial class VideoSendStream : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.Stats? GetStats()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b4a78b12((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.Stats((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.Stats((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::VideoEncoderConfig' is not a known bindable declaration.", false)]
@@ -117,6 +122,7 @@ public sealed unsafe partial class VideoSendStream : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_e3fe86c7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

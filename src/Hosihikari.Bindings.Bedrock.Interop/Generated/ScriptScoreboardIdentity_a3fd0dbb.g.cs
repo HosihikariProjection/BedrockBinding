@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptScoreboardIdentity : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_c617e319((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

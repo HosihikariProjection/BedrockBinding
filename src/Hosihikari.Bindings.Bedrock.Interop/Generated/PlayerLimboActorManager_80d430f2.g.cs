@@ -53,6 +53,7 @@ public sealed unsafe partial class PlayerLimboActorManager : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_43c373c3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class PlayerLimboActorManager : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_9d3dae7e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

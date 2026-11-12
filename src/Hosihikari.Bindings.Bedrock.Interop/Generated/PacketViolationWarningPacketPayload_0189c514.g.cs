@@ -49,6 +49,7 @@ public sealed unsafe partial class PacketViolationWarningPacketPayload : global:
         var handle = NativeMethods.TablePtr->C2.hs_create_020f2675();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class PacketViolationWarningPacketPayload : global:
         var handle = NativeMethods.TablePtr->C2.hs_create_7346bddf((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

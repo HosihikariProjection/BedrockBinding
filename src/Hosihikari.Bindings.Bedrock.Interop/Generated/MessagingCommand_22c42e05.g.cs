@@ -74,6 +74,7 @@ public sealed unsafe partial class MessagingCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_9ec6ca43((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

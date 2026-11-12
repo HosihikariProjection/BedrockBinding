@@ -45,6 +45,7 @@ public sealed unsafe partial class OnHitActorTriggerItemComponent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_4ade21d6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

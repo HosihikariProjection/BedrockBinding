@@ -57,6 +57,7 @@ public sealed unsafe partial class WaterMovementDescription : global::System.IDi
         var handle = NativeMethods.TablePtr->C4.hs_create_0ed0a355();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class WaterMovementDescription : global::System.IDi
         var handle = NativeMethods.TablePtr->C4.hs_create_e9f2ac81((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -93,7 +95,12 @@ public sealed unsafe partial class WaterMovementDescription : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.WaterMovementDescription? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WaterMovementDescription arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_75ad8bb8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WaterMovementDescription((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WaterMovementDescription((nint)__hs_handle, false);
     }
 
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class CustomMapFoliageColorAttributes : global::Sys
         var handle = NativeMethods.TablePtr->C1.hs_create_3f4c9ac9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

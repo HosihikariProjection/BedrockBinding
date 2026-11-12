@@ -49,6 +49,7 @@ public sealed unsafe partial class FuelItemComponent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_1f04d7e5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

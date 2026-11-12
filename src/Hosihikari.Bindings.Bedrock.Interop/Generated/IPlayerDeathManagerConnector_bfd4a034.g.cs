@@ -45,6 +45,7 @@ public sealed unsafe partial class IPlayerDeathManagerConnector : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_42d6ac24((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

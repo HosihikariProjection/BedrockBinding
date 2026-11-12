@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptEntityEffectOptions : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_08ed991a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

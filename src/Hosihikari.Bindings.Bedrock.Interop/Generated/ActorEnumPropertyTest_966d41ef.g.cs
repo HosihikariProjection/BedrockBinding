@@ -73,6 +73,7 @@ public sealed unsafe partial class ActorEnumPropertyTest : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_93bef5b7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,6 +85,7 @@ public sealed unsafe partial class ActorEnumPropertyTest : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_f2ab167e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -93,13 +95,23 @@ public sealed unsafe partial class ActorEnumPropertyTest : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeDomain()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_976e9a1f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeValue()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_24258434((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle);
     }
 
     public bool evaluate(nint context)
@@ -136,7 +148,12 @@ public sealed unsafe partial class ActorEnumPropertyTest : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorEnumPropertyTest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorEnumPropertyTest arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9fe25819((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorEnumPropertyTest((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorEnumPropertyTest((nint)__hs_handle, false);
     }
 
     public bool setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)

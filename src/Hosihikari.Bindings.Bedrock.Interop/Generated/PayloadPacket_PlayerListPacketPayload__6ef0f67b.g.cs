@@ -92,6 +92,7 @@ public sealed unsafe partial class PayloadPacket_PlayerListPacketPayload_ : glob
         var handle = NativeMethods.TablePtr->C4.hs_create_7e778122((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

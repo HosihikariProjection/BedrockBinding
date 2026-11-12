@@ -45,6 +45,7 @@ public sealed unsafe partial class Verbose : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_890f36c5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

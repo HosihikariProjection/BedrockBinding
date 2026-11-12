@@ -49,6 +49,7 @@ public sealed unsafe partial class BodyControlSystem : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_a7bd28f9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

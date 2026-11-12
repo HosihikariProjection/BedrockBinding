@@ -51,6 +51,7 @@ public sealed unsafe partial class TextFilteringProcessor : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_72e82f8b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

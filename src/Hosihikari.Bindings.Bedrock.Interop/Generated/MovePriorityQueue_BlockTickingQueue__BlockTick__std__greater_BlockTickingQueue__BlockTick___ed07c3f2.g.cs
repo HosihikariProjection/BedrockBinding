@@ -45,6 +45,7 @@ public sealed unsafe partial class MovePriorityQueue_BlockTickingQueue__BlockTic
         var handle = NativeMethods.TablePtr->C2.hs_create_8438e85a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,7 +92,12 @@ public sealed unsafe partial class MovePriorityQueue_BlockTickingQueue__BlockTic
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick? pop()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_84e74fcd((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)__hs_handle);
     }
 
     public void resort()
@@ -107,13 +113,23 @@ public sealed unsafe partial class MovePriorityQueue_BlockTickingQueue__BlockTic
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick? top_2f65d4fc()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2f65d4fc((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick? top_2d8ff382()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2d8ff382((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)__hs_handle, false);
     }
 
 

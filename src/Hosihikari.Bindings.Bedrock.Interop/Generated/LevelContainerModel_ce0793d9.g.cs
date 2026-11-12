@@ -145,6 +145,7 @@ public sealed unsafe partial class LevelContainerModel : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_0169a969();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -156,6 +157,7 @@ public sealed unsafe partial class LevelContainerModel : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_e55206c2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -165,7 +167,12 @@ public sealed unsafe partial class LevelContainerModel : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? _getContainer()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_123bef9b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public int _getContainerOffset()
@@ -198,7 +205,12 @@ public sealed unsafe partial class LevelContainerModel : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef? getContainerWeakRef()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c4bc4e1e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)__hs_handle);
     }
 
     public bool isSlotDisabled(int slot)
@@ -244,7 +256,12 @@ public sealed unsafe partial class LevelContainerModel : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelContainerModel? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelContainerModel arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_931f801d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelContainerModel((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelContainerModel((nint)__hs_handle, false);
     }
 
     public void postInit()

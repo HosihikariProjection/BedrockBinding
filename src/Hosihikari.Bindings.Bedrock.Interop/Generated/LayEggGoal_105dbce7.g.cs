@@ -210,6 +210,7 @@ public sealed unsafe partial class LayEggGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_3a513472((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -92,6 +92,7 @@ public sealed unsafe partial class PayloadPacket_SetScorePacketPayload_ : global
         var handle = NativeMethods.TablePtr->C4.hs_create_ad604e9a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

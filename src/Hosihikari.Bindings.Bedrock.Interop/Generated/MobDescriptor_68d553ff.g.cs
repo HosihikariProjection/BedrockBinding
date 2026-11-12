@@ -45,6 +45,7 @@ public sealed unsafe partial class MobDescriptor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f93eeb7e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

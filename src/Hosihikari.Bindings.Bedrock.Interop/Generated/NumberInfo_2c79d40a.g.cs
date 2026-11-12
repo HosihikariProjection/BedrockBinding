@@ -52,6 +52,7 @@ public sealed unsafe partial class NumberInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_8bc7e76f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -63,6 +64,7 @@ public sealed unsafe partial class NumberInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_79fa80f5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,7 +80,12 @@ public sealed unsafe partial class NumberInfo : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper_Nested.NumberInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper_Nested.NumberInfo arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_11553c97((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper_Nested.NumberInfo((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper_Nested.NumberInfo((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -45,6 +45,7 @@ public sealed unsafe partial class ServerSupportedAuthenticationTypes : global::
         var handle = NativeMethods.TablePtr->C3.hs_create_8d06f4e4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ServerSupportedAuthenticationTypes : global::
         var handle = NativeMethods.TablePtr->C3.hs_create_f444f38e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class ServerSupportedAuthenticationTypes : global::
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5e7261d9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes((nint)__hs_handle, false);
     }
 
     public void Dispose()

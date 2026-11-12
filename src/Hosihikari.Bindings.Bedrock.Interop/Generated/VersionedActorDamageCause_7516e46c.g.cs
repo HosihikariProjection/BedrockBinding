@@ -49,6 +49,7 @@ public sealed unsafe partial class VersionedActorDamageCause : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_32040b5b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class VersionedActorDamageCause : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_4d31eb57((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

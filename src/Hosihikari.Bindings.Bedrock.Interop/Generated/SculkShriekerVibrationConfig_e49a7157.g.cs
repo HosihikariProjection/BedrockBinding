@@ -69,6 +69,7 @@ public sealed unsafe partial class SculkShriekerVibrationConfig : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_2421d1f0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

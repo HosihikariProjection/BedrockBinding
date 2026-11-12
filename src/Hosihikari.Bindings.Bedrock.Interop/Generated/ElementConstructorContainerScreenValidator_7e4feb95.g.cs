@@ -55,6 +55,7 @@ public sealed unsafe partial class ElementConstructorContainerScreenValidator : 
         var handle = NativeMethods.TablePtr->C1.hs_create_f38846ea((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

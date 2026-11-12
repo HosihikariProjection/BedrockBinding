@@ -605,7 +605,12 @@ public sealed unsafe partial class DragonFireball : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource arg0, float arg1, nint arg2)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_57b835b9((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1, (void*)arg2);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
     public int getTrailParticle()

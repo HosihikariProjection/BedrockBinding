@@ -45,6 +45,7 @@ public sealed unsafe partial class DimensionType : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d048fa26();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class DimensionType : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_beade689(value);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

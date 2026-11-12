@@ -45,6 +45,7 @@ public sealed unsafe partial class EntitiesEnteredVolumeComponent : global::Syst
         var handle = NativeMethods.TablePtr->C1.hs_create_a6df67fc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

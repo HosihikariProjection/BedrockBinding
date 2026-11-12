@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockLootComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_14ad96af((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

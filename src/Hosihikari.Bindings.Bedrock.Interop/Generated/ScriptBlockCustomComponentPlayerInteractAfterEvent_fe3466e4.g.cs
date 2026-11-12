@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentPlayerInteractAfter
         var handle = NativeMethods.TablePtr->C3.hs_create_272a5ca6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentPlayerInteractAfter
         var handle = NativeMethods.TablePtr->C3.hs_create_57d7b932((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

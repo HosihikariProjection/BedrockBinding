@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_PackCommand__IPackCommandPipe
         var handle = NativeMethods.TablePtr->C0.hs_create_8b6d26e4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_PackCommand__IPackCommandPipe
         var handle = NativeMethods.TablePtr->C0.hs_create_1169747b(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_PackCommand__IPackCommandPipe
         var handle = NativeMethods.TablePtr->C0.hs_create_046336a1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_PackCommand__IPackCommandPipe
         var handle = NativeMethods.TablePtr->C0.hs_create_119487ca(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)p);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class LevelNotificationEvent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_25a7b987((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

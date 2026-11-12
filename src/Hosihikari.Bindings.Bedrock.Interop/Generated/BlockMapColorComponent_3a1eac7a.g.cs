@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockMapColorComponent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_187c7eba((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

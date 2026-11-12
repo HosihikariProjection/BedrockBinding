@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptInvalidContainerSlotError : global::Sys
         var handle = NativeMethods.TablePtr->C3.hs_create_5e224b73((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

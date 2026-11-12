@@ -79,6 +79,7 @@ public sealed unsafe partial class ScriptExplosionStartedBeforeEvent : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_58e4472b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -94,6 +95,7 @@ public sealed unsafe partial class ScriptExplosionStartedBeforeEvent : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_545f10f9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

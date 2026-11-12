@@ -196,6 +196,7 @@ public sealed unsafe partial class LevelStorageWriteBatch : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_a7aa562c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

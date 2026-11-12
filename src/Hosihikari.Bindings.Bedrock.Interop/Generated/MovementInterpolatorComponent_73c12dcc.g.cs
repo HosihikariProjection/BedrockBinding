@@ -45,6 +45,7 @@ public sealed unsafe partial class MovementInterpolatorComponent : global::Syste
         var handle = NativeMethods.TablePtr->C2.hs_create_a9915e70((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

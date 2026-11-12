@@ -65,6 +65,7 @@ public sealed unsafe partial class MangroveTreeCanopy : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_34ff9f90((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class DrinkPotionData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_684d39df((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

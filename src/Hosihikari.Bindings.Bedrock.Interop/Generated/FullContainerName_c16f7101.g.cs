@@ -45,6 +45,7 @@ public sealed unsafe partial class FullContainerName : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_98f8e864((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

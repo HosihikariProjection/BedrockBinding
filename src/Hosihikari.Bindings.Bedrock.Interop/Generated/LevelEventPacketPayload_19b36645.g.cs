@@ -45,6 +45,7 @@ public sealed unsafe partial class LevelEventPacketPayload : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_e1dd197d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

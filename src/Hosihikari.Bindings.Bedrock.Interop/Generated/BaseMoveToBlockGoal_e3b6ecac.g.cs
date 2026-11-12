@@ -87,6 +87,7 @@ public sealed unsafe partial class BaseMoveToBlockGoal : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_51265d45();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class BaseMoveToBlockGoal : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_ddaa8bfd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

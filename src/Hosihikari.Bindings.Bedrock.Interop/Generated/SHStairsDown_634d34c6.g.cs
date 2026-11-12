@@ -57,6 +57,7 @@ public sealed unsafe partial class SHStairsDown : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_7cd18fb1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

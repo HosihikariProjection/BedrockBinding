@@ -45,6 +45,7 @@ public sealed unsafe partial class RequestPermissionsPacketPayload : global::Sys
         var handle = NativeMethods.TablePtr->C3.hs_create_1f5fc94e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -73,6 +73,7 @@ public sealed unsafe partial class WaterBoundPathNavigation : global::System.IDi
         var handle = NativeMethods.TablePtr->C4.hs_create_6a372b91((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +88,12 @@ public sealed unsafe partial class WaterBoundPathNavigation : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getTempMobPos(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ff7390cd((void*)__hosihikari_shim_handle, (void*)mob.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.NavigationDescription? description)

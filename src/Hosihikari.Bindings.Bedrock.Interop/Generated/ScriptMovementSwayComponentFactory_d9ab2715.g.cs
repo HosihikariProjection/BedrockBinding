@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptMovementSwayComponentFactory : global::
         var handle = NativeMethods.TablePtr->C3.hs_create_d9b81a5e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

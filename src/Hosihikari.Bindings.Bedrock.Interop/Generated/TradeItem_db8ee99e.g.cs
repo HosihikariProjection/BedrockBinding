@@ -53,6 +53,7 @@ public sealed unsafe partial class TradeItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_f27f501b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class TradeItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_f540b073((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -117,7 +119,12 @@ public sealed unsafe partial class TradeItem : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.TradeItem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TradeItem arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ad40525e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TradeItem((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TradeItem((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

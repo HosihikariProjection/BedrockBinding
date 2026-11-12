@@ -55,6 +55,7 @@ public sealed unsafe partial class MaterialReducerContainerScreenValidator : glo
         var handle = NativeMethods.TablePtr->C2.hs_create_fb980173((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

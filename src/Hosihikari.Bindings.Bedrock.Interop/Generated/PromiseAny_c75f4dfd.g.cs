@@ -53,6 +53,7 @@ public sealed unsafe partial class PromiseAny : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_460016ba();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class PromiseAny : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_e5c2ccb5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

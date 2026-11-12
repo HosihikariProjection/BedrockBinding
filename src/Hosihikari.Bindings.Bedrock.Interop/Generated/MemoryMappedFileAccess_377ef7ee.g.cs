@@ -91,6 +91,7 @@ public sealed unsafe partial class MemoryMappedFileAccess : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_eb144e2b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class MemoryMappedFileAccess : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_fe9411b1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -149,13 +151,23 @@ public sealed unsafe partial class MemoryMappedFileAccess : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.IFileReadAccess? getReadInterface()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e6bd5d2a((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IFileReadAccess((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IFileReadAccess((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IFileWriteAccess? getWriteInterface()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4a9996ac((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IFileWriteAccess((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IFileWriteAccess((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -209,7 +221,12 @@ public sealed unsafe partial class MemoryMappedFileAccess : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_421e4567((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MemoryMappedFileAccess((nint)__hs_handle, false);
     }
 
     public void unload()

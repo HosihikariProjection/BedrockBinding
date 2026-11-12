@@ -81,6 +81,7 @@ public sealed unsafe partial class ActorAnimationControllerStatePlayer : global:
         var handle = NativeMethods.TablePtr->C0.hs_create_1756422d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -92,6 +93,7 @@ public sealed unsafe partial class ActorAnimationControllerStatePlayer : global:
         var handle = NativeMethods.TablePtr->C0.hs_create_c10a5943((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -124,7 +126,12 @@ public sealed unsafe partial class ActorAnimationControllerStatePlayer : global:
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getRawName()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5af442df((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false);
     }
 
     public bool hasAnimationFinished()
@@ -159,7 +166,12 @@ public sealed unsafe partial class ActorAnimationControllerStatePlayer : global:
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerStatePlayer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerStatePlayer arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3e0a7311((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerStatePlayer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerStatePlayer((nint)__hs_handle, false);
     }
 
     public void resetAnimation()

@@ -121,6 +121,7 @@ public sealed unsafe partial class ScriptActor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_d1bea86a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -136,6 +137,7 @@ public sealed unsafe partial class ScriptActor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_1ab90884((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -153,7 +155,12 @@ public sealed unsafe partial class ScriptActor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId? _getScoreboardId(global::Hosihikari.Bindings.Bedrock.Interop.Scoreboard scoreboard)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_005a5613((void*)__hosihikari_shim_handle, (void*)scoreboard.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -504,7 +511,12 @@ public sealed unsafe partial class ScriptActor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActor arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_29525ddf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActor((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -73,6 +73,7 @@ public sealed unsafe partial class EmptyPoolElement : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_269a6bb9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,6 +85,7 @@ public sealed unsafe partial class EmptyPoolElement : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_e067bf8b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -97,7 +99,12 @@ public sealed unsafe partial class EmptyPoolElement : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? getBoundingBox(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, byte rotation)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4b480154((void*)__hosihikari_shim_handle, (void*)position.Handle, rotation);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'JigsawBlockInfo' is not supported.", false)]
@@ -111,7 +118,12 @@ public sealed unsafe partial class EmptyPoolElement : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSize(byte rotation)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_53c2f7a1((void*)__hosihikari_shim_handle, rotation);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public bool isValid()

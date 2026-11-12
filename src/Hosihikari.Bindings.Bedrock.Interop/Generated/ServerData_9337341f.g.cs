@@ -45,6 +45,7 @@ public sealed unsafe partial class ServerData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_0a893c89();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ServerData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_f722ad00((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -83,7 +85,12 @@ public sealed unsafe partial class ServerData : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ServerData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ServerData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b77a92aa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ServerData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ServerData((nint)__hs_handle, false);
     }
 
     public void Dispose()

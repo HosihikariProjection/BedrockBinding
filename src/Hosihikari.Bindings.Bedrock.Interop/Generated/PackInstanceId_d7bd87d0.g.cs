@@ -74,6 +74,7 @@ public sealed unsafe partial class PackInstanceId : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_316c4bbf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -98,6 +99,7 @@ public sealed unsafe partial class PackInstanceId : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C2.hs_create_c87a4df2((void*)packId.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -110,6 +112,7 @@ public sealed unsafe partial class PackInstanceId : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f4c26b98((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -131,7 +134,12 @@ public sealed unsafe partial class PackInstanceId : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2d46a31c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackInstanceId((nint)__hs_handle, false);
     }
 
 

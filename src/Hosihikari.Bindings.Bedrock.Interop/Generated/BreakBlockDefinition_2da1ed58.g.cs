@@ -61,6 +61,7 @@ public sealed unsafe partial class BreakBlockDefinition : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_b9dc2e19((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

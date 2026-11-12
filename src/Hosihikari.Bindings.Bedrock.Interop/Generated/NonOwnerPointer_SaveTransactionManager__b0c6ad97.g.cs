@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_SaveTransactionManager_ : glo
         var handle = NativeMethods.TablePtr->C0.hs_create_5fe205f2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_SaveTransactionManager_ : glo
         var handle = NativeMethods.TablePtr->C0.hs_create_90465d70(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_SaveTransactionManager_ : glo
         var handle = NativeMethods.TablePtr->C0.hs_create_38d49d1d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_SaveTransactionManager_ : glo
         var handle = NativeMethods.TablePtr->C0.hs_create_1fd0261c(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_SaveTransactionManager_ : glo
     public global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_30011cfc((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_SaveTransactionManager_ : glo
     public global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager? operator_SaveTransactionManager__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ebe66b85((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_SaveTransactionManager_ : glo
     public global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5e22380f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_0571567f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

@@ -45,6 +45,7 @@ public sealed unsafe partial class ServerSettingsResponsePacketPayload : global:
         var handle = NativeMethods.TablePtr->C3.hs_create_a85a90bb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

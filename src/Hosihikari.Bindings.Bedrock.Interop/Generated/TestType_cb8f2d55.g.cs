@@ -45,6 +45,7 @@ public sealed unsafe partial class TestType : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_671d44e1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

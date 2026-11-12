@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorIsSprintingTest : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_794b1bd1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

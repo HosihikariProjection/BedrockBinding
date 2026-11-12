@@ -229,6 +229,7 @@ public sealed unsafe partial class ServerNetworkSystem : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_ae187462();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -244,6 +245,7 @@ public sealed unsafe partial class ServerNetworkSystem : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_7fd65ad3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

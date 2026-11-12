@@ -167,6 +167,7 @@ public sealed unsafe partial class WeavingMobEffect : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_0f9e0d41((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

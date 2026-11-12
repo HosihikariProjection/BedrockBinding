@@ -53,6 +53,7 @@ public sealed unsafe partial class FileStorageSystem : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_f42f4451();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class FileStorageSystem : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_e9af1e21((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,7 +108,12 @@ public sealed unsafe partial class FileStorageSystem : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.FileSecureStorage_Nested.FileStorageSystem? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FileSecureStorage_Nested.FileStorageSystem arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_68040214((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FileSecureStorage_Nested.FileStorageSystem((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FileSecureStorage_Nested.FileStorageSystem((nint)__hs_handle, false);
     }
 
     public void setData(string data, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path)

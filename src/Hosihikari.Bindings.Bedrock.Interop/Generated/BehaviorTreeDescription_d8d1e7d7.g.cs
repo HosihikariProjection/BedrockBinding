@@ -53,6 +53,7 @@ public sealed unsafe partial class BehaviorTreeDescription : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_46c9f758((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

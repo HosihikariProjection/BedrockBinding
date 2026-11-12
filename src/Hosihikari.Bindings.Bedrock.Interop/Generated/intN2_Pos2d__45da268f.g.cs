@@ -57,6 +57,7 @@ public sealed unsafe partial class intN2_Pos2d_ : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_f9a6d442((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class intN2_Pos2d_ : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_9457f0c2(all);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +83,12 @@ public sealed unsafe partial class intN2_Pos2d_ : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ll.math.intN2_Pos2d_? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.intN2_Pos2d_ arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5d5675ff((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ll.math.intN2_Pos2d_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ll.math.intN2_Pos2d_((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

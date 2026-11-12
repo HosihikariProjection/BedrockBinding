@@ -45,6 +45,7 @@ public sealed unsafe partial class WeakPtr_Item_ : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_efbb046e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class WeakPtr_Item_ : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_66b1d17c((void*)other.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,6 +73,7 @@ public sealed unsafe partial class WeakPtr_Item_ : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_88170740();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,7 +94,12 @@ public sealed unsafe partial class WeakPtr_Item_ : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_10e634a7((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'SharedPtr<Item>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -106,13 +114,23 @@ public sealed unsafe partial class WeakPtr_Item_ : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6712708e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a1d36664((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -122,7 +140,12 @@ public sealed unsafe partial class WeakPtr_Item_ : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_ other)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1dc427bf((void*)__hosihikari_shim_handle, (void*)other.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_((nint)__hs_handle, false);
     }
 
     public int use_count()

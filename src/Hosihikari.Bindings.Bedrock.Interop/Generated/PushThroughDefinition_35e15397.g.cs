@@ -45,6 +45,7 @@ public sealed unsafe partial class PushThroughDefinition : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_f3d21606();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class PushThroughDefinition : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_55f04446((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -79,7 +81,12 @@ public sealed unsafe partial class PushThroughDefinition : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9ca927eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition((nint)__hs_handle, false);
     }
 
     public void Dispose()

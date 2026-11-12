@@ -45,6 +45,7 @@ public sealed unsafe partial class HurtArmorPacketPayload : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_26e236bd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

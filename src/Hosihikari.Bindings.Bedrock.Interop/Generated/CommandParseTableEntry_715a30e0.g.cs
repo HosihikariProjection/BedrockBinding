@@ -45,6 +45,7 @@ public sealed unsafe partial class CommandParseTableEntry : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_545d1a2c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class CommandParseTableEntry : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_7b01e024((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class CommandParseTableEntry : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_fbc31d72((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry((nint)__hs_handle, false);
     }
 
     public void Dispose()

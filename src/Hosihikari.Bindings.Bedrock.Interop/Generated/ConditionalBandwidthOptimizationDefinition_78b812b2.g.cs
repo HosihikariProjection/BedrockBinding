@@ -45,6 +45,7 @@ public sealed unsafe partial class ConditionalBandwidthOptimizationDefinition : 
         var handle = NativeMethods.TablePtr->C0.hs_create_0651d799((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class SurfaceBuilderComponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_96904ff6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

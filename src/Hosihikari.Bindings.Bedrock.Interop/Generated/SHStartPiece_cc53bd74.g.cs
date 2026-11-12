@@ -55,6 +55,7 @@ public sealed unsafe partial class SHStartPiece : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_df1872db((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

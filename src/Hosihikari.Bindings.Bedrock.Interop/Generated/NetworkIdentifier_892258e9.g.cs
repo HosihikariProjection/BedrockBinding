@@ -43,7 +43,12 @@ public sealed unsafe partial class NetworkIdentifier : global::System.IDisposabl
     public static global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier? INVALID_ID()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8652d579();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle, false);
     }
 
     public static NetworkIdentifier? Create()
@@ -51,6 +56,7 @@ public sealed unsafe partial class NetworkIdentifier : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_5748c1c3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -62,6 +68,7 @@ public sealed unsafe partial class NetworkIdentifier : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_f5977d39((void*)other.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

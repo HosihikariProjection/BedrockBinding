@@ -49,6 +49,7 @@ public sealed unsafe partial class AllowOffHandItemComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_f54958b5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

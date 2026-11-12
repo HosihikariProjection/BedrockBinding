@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptExplosionOptions : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_37350bc6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

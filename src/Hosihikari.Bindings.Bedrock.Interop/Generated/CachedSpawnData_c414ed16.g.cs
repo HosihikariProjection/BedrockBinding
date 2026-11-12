@@ -45,6 +45,7 @@ public sealed unsafe partial class CachedSpawnData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_79360209((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

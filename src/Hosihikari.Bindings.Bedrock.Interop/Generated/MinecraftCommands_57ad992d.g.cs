@@ -53,6 +53,7 @@ public sealed unsafe partial class MinecraftCommands : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_cdc31f8d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class MinecraftCommands : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_70d513ad((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -89,7 +91,12 @@ public sealed unsafe partial class MinecraftCommands : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.MCRESULT? executeCommand(global::Hosihikari.Bindings.Bedrock.Interop.CommandContext context, bool suppressOutput)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f83d3c65((void*)__hosihikari_shim_handle, (void*)context.Handle, suppressOutput);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MCRESULT((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MCRESULT((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -160,7 +167,12 @@ public sealed unsafe partial class MinecraftCommands : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1ee03317((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

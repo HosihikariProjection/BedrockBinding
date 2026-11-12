@@ -216,6 +216,7 @@ public sealed unsafe partial class PistonConsumer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_558046ad((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

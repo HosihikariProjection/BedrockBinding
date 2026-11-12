@@ -45,6 +45,7 @@ public sealed unsafe partial class PostGameEventRequestComponent : global::Syste
         var handle = NativeMethods.TablePtr->C2.hs_create_2e004abf((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

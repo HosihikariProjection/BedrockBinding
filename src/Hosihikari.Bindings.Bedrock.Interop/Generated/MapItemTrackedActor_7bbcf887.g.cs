@@ -45,6 +45,7 @@ public sealed unsafe partial class MapItemTrackedActor : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_bbca6f79((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

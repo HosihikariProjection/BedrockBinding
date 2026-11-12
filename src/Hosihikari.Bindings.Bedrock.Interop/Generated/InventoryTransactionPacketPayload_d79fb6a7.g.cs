@@ -54,6 +54,7 @@ public sealed unsafe partial class InventoryTransactionPacketPayload : global::S
         var handle = NativeMethods.TablePtr->C1.hs_create_70472f72();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

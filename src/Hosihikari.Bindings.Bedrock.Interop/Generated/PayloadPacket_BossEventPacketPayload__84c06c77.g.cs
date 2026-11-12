@@ -122,6 +122,7 @@ public sealed unsafe partial class PayloadPacket_BossEventPacketPayload_ : globa
         var handle = NativeMethods.TablePtr->C4.hs_create_e511ab98((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

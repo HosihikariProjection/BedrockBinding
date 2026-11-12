@@ -92,6 +92,7 @@ public sealed unsafe partial class FindActorNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d1a1a1de((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

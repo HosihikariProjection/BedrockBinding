@@ -53,6 +53,7 @@ public sealed unsafe partial class CameraPreset : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_77ba409b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

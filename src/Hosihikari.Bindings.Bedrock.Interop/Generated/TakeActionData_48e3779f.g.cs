@@ -45,6 +45,7 @@ public sealed unsafe partial class TakeActionData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_78ecf5a6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

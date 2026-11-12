@@ -45,6 +45,7 @@ public sealed unsafe partial class OwnerStorageFeature : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_111ce55b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

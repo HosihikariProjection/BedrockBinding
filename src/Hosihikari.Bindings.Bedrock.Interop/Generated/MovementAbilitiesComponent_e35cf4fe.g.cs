@@ -45,6 +45,7 @@ public sealed unsafe partial class MovementAbilitiesComponent : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_0fe5fbc2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -57,6 +57,7 @@ public sealed unsafe partial class AddVolumeEntityPacketPayload : global::System
         var handle = NativeMethods.TablePtr->C0.hs_create_71f706f2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

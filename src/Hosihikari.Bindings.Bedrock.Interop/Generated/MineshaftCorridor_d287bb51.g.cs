@@ -61,6 +61,7 @@ public sealed unsafe partial class MineshaftCorridor : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_ddd2507c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

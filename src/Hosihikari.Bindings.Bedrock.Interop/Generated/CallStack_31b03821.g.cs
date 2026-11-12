@@ -49,6 +49,7 @@ public sealed unsafe partial class CallStack : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_9b032d31();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class CallStack : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_0e70066d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

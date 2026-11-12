@@ -53,6 +53,7 @@ public sealed unsafe partial class LockGuard : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d980aa77();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class LockGuard : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_8e360b17((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

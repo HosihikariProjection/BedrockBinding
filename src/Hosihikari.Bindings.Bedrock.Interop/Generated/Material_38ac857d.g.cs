@@ -43,7 +43,12 @@ public sealed unsafe partial class Material : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.Material? getMaterial(byte type)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_61beab2d(type);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Material((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Material((nint)__hs_handle, false);
     }
 
     public bool mBlocksMotion

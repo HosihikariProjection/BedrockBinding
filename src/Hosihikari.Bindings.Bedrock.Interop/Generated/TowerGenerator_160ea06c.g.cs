@@ -49,6 +49,7 @@ public sealed unsafe partial class TowerGenerator : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_b49b5e96((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

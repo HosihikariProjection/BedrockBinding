@@ -69,6 +69,7 @@ public sealed unsafe partial class ObjectInspector : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_72966f46();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,6 +81,7 @@ public sealed unsafe partial class ObjectInspector : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_4e6c20af((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -109,7 +111,12 @@ public sealed unsafe partial class ObjectInspector : global::System.IDisposable
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_90285a27((void*)__hosihikari_shim_handle, (void*)handle.Handle, (void*)name, (void*)expectedType, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)__hs_handle);
     }
 
     public bool hasBooleanPropertyValue(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectHandle handle, nint name, bool expectedValue)
@@ -137,7 +144,12 @@ public sealed unsafe partial class ObjectInspector : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectInspector? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectInspector arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ab0734c7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectInspector((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ObjectInspector((nint)__hs_handle, false);
     }
 
 

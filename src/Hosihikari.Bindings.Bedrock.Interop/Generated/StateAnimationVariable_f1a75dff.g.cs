@@ -45,6 +45,7 @@ public sealed unsafe partial class StateAnimationVariable : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_0b248308((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

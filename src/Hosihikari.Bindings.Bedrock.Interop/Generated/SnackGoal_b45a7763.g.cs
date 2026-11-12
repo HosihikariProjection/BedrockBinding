@@ -95,6 +95,7 @@ public sealed unsafe partial class SnackGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_69a9e2b5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,6 +107,7 @@ public sealed unsafe partial class SnackGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_ba7325a2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -206,7 +208,12 @@ public sealed unsafe partial class SnackGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.SnackGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnackGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7f6f493e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SnackGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SnackGoal((nint)__hs_handle, false);
     }
 
     public void start()

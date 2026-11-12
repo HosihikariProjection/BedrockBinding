@@ -105,6 +105,7 @@ public sealed unsafe partial class CraftHandlerCrafting : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_f816df76();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -116,6 +117,7 @@ public sealed unsafe partial class CraftHandlerCrafting : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_17458dda((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -125,7 +127,12 @@ public sealed unsafe partial class CraftHandlerCrafting : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.Recipes? _getLevelRecipes()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3c9fe95c((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Recipes((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Recipes((nint)__hs_handle, false);
     }
 
     public byte _handleCraftAction(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase requestAction)
@@ -171,7 +178,12 @@ public sealed unsafe partial class CraftHandlerCrafting : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerCrafting? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerCrafting arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f969a798((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerCrafting((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerCrafting((nint)__hs_handle, false);
     }
 
     public byte preHandleAction(byte requestActionType)

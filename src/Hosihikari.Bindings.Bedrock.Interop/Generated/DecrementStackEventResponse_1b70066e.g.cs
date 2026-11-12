@@ -61,6 +61,7 @@ public sealed unsafe partial class DecrementStackEventResponse : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_3e1a3c9b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -59,6 +59,7 @@ public sealed unsafe partial class DoublesForFloatsRandom : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_b0a1edeb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -65,6 +65,7 @@ public sealed unsafe partial class CrossbowEnchant : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_3289ea23((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

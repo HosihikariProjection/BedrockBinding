@@ -111,6 +111,7 @@ public sealed unsafe partial class FishingEnchant : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_69d79f4b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

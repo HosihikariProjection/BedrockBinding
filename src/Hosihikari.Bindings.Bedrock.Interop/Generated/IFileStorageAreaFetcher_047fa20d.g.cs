@@ -45,6 +45,7 @@ public sealed unsafe partial class IFileStorageAreaFetcher : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_80e3b55c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,7 +55,12 @@ public sealed unsafe partial class IFileStorageAreaFetcher : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? getStorageAreaForPath(global::Hosihikari.Bindings.Abi.SharedHandle? fileStorageArea, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1270868a((void*)__hosihikari_shim_handle, fileStorageArea?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)path.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle);
     }
 
 

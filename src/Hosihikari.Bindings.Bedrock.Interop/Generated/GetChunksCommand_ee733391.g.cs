@@ -78,6 +78,7 @@ public sealed unsafe partial class GetChunksCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_9cba433b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -81,6 +81,7 @@ public sealed unsafe partial class ContainerValidationBase : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_fbdac6ee((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

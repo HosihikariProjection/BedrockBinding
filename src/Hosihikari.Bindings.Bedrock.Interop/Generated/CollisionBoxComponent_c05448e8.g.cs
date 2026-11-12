@@ -45,6 +45,7 @@ public sealed unsafe partial class CollisionBoxComponent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_c1c6e14d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

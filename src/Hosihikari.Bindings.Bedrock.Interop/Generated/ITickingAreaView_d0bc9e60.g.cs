@@ -45,6 +45,7 @@ public sealed unsafe partial class ITickingAreaView : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_694c7ad0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -74,13 +75,23 @@ public sealed unsafe partial class ITickingAreaView : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bounds? getBoundsCopy()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a75612d2((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bounds((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bounds((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? getDimensionId()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1158aa83((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle);
     }
 
     public void init(global::Hosihikari.Bindings.Bedrock.Interop.Bounds bounds, bool isCircle)

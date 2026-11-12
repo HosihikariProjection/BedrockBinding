@@ -45,6 +45,7 @@ public sealed unsafe partial class IAddActorEntityProxy : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_2da8162e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

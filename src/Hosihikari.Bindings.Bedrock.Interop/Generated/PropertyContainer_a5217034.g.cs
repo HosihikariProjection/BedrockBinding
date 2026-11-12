@@ -45,6 +45,7 @@ public sealed unsafe partial class PropertyContainer : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_5892f350((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

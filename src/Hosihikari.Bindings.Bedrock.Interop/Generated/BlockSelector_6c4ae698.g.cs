@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockSelector : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_1aa18662((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,7 +55,12 @@ public sealed unsafe partial class BlockSelector : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? next(global::Hosihikari.Bindings.Bedrock.Interop.Random arg0, int arg1, int arg2, int arg3, bool arg4)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b85147a8((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1, arg2, arg3, arg4);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
 

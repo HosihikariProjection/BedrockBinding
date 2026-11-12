@@ -45,6 +45,7 @@ public sealed unsafe partial class HitboxJson : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d6f9be16((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

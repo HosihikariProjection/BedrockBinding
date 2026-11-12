@@ -45,6 +45,7 @@ public sealed unsafe partial class TripodCameraActivatedComponent : global::Syst
         var handle = NativeMethods.TablePtr->C4.hs_create_2a19588c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

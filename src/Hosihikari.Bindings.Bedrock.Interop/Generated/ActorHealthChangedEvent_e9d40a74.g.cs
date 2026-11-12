@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorHealthChangedEvent : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_aea5b968((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

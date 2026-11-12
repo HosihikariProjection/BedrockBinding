@@ -45,6 +45,7 @@ public sealed unsafe partial class MolangDataDrivenGeometry : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_49eb49e9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class MolangDataDrivenGeometry : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_fc24e44b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

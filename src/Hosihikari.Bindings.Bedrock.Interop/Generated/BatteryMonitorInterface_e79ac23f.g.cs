@@ -45,6 +45,7 @@ public sealed unsafe partial class BatteryMonitorInterface : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_67273914((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

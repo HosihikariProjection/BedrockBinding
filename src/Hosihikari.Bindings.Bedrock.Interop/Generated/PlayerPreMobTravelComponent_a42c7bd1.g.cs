@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerPreMobTravelComponent : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_970b3c7c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

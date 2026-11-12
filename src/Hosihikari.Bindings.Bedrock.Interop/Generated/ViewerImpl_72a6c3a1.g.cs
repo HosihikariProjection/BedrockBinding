@@ -57,6 +57,7 @@ public sealed unsafe partial class ViewerImpl : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_e9dfec33();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class ViewerImpl : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_3c9db68c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -98,7 +100,12 @@ public sealed unsafe partial class ViewerImpl : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6549f4c1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Node((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Node((nint)__hs_handle, false);
         }
     }
 
@@ -111,7 +118,12 @@ public sealed unsafe partial class ViewerImpl : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.ViewerImpl? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.ViewerImpl arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d158ce61((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.ViewerImpl((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.ViewerImpl((nint)__hs_handle, false);
     }
 
 

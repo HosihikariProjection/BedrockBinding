@@ -45,6 +45,7 @@ public sealed unsafe partial class ConstrainedString : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_96dee2f4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ConstrainedString : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_e7793f07((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class ConstrainedString : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.VolumeIdentifier_Nested.ConstrainedString? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VolumeIdentifier_Nested.ConstrainedString arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4eaf2b9a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VolumeIdentifier_Nested.ConstrainedString((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.VolumeIdentifier_Nested.ConstrainedString((nint)__hs_handle, false);
     }
 
     public void Dispose()

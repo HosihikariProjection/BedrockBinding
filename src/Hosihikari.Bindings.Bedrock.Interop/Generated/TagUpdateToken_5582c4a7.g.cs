@@ -50,6 +50,7 @@ public sealed unsafe partial class TagUpdateToken : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_a28198a8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

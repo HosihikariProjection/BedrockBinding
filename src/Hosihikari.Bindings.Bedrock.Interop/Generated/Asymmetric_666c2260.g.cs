@@ -89,6 +89,7 @@ public sealed unsafe partial class Asymmetric : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_68d742be();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -100,6 +101,7 @@ public sealed unsafe partial class Asymmetric : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_e541b1a9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -143,7 +145,12 @@ public sealed unsafe partial class Asymmetric : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_? constructPublicKey(nint components)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ebdfffdb((void*)__hosihikari_shim_handle, (void*)components);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Result<std::variant<Crypto::Asymmetric::RsaPublicKeyComponents, Crypto::Asymmetric::EcPublicKeyComponents>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -200,7 +207,12 @@ public sealed unsafe partial class Asymmetric : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C1.hs_method_14858eec((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)__hs_handle);
         }
     }
 
@@ -257,7 +269,12 @@ public sealed unsafe partial class Asymmetric : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Asymmetric.Asymmetric? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Asymmetric.Asymmetric arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_163b5ab7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Asymmetric.Asymmetric((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Asymmetric.Asymmetric((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_? parsePrivateKey(string privateKey, int format)
@@ -276,7 +293,12 @@ public sealed unsafe partial class Asymmetric : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e0e0aa07((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, format);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)__hs_handle);
         }
     }
 

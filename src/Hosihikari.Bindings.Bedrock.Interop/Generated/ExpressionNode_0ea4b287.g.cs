@@ -53,6 +53,7 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_dc7b95c1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_bc3a816e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class AnvilMaterialContainerValidation : global::Sy
         var handle = NativeMethods.TablePtr->C0.hs_create_6e60e395((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class AreaAttackSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_889cf49d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class MovementCorrection : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_7794df77((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

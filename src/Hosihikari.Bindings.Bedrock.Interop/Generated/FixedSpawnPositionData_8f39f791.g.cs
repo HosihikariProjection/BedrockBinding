@@ -45,6 +45,7 @@ public sealed unsafe partial class FixedSpawnPositionData : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_2c398cd0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

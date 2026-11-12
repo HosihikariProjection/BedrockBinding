@@ -49,6 +49,7 @@ public sealed unsafe partial class BaseCommandBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_866370e8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class BaseCommandBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_9d5ffa09((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -164,7 +166,12 @@ public sealed unsafe partial class BaseCommandBlock : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BaseCommandBlock? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BaseCommandBlock arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_20e94898((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseCommandBlock((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseCommandBlock((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

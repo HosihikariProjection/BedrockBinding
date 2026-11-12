@@ -150,6 +150,7 @@ public sealed unsafe partial class WoodlandMansionFeature : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_311146ba();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -161,6 +162,7 @@ public sealed unsafe partial class WoodlandMansionFeature : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_84b31944((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -172,6 +174,7 @@ public sealed unsafe partial class WoodlandMansionFeature : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_d3934d54(seed);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

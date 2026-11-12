@@ -61,6 +61,7 @@ public sealed unsafe partial class PassengerOfBlockArguments : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_733268d2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class QueuedSoundBroadcastMultipleUserIdsPacket : g
         var handle = NativeMethods.TablePtr->C2.hs_create_c9a24123((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

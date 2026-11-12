@@ -739,6 +739,7 @@ public sealed unsafe partial class Panda : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_6f2513b8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

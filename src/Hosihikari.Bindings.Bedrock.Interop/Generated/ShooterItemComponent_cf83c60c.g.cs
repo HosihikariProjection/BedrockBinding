@@ -67,6 +67,7 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_a7a032d8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,6 +83,7 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_82586418((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

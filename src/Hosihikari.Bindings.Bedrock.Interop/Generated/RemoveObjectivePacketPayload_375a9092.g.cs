@@ -45,6 +45,7 @@ public sealed unsafe partial class RemoveObjectivePacketPayload : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_0bf0de36((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_const_WorldClockRegistry_ : g
         var handle = NativeMethods.TablePtr->C0.hs_create_da75e712();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_const_WorldClockRegistry_ : g
         var handle = NativeMethods.TablePtr->C0.hs_create_d64d30de(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_const_WorldClockRegistry_ : g
         var handle = NativeMethods.TablePtr->C0.hs_create_4bdcdbad();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_const_WorldClockRegistry_ : g
         var handle = NativeMethods.TablePtr->C0.hs_create_6b7c61eb(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)p);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

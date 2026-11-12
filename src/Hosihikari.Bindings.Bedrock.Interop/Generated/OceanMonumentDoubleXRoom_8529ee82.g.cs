@@ -53,6 +53,7 @@ public sealed unsafe partial class OceanMonumentDoubleXRoom : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_fd17c7be((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

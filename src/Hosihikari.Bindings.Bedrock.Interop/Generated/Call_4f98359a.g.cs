@@ -49,6 +49,7 @@ public sealed unsafe partial class Call : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_9683f489((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -58,25 +59,45 @@ public sealed unsafe partial class Call : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface? CreateAudioReceiveStream(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Config arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b901dab0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream? CreateAudioSendStream(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4d981cdf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream? CreateFlexfecReceiveStream(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream_Nested.Config arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_223560fb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface? CreateVideoReceiveStream(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Config arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fb8629eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::VideoEncoderConfig' is not a known bindable declaration.", false)]
@@ -129,13 +150,23 @@ public sealed unsafe partial class Call : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PayloadTypeSuggester? GetPayloadTypeSuggester()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6b8c8ff4((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PayloadTypeSuggester((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PayloadTypeSuggester((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats? GetStats()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_36bb4ca8((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats((nint)__hs_handle);
     }
 
     public nint GetTransportControllerSend()
@@ -215,13 +246,23 @@ public sealed unsafe partial class Call : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase? network_thread()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5b40e718((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase? worker_thread()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e9b5d5cc((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase((nint)__hs_handle, false);
     }
 
 

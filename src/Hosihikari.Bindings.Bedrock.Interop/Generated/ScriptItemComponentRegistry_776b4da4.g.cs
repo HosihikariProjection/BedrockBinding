@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptItemComponentRegistry : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_6c08fe10();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ScriptItemComponentRegistry : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_59c19718((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,7 +77,12 @@ public sealed unsafe partial class ScriptItemComponentRegistry : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemComponentRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemComponentRegistry arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_40ea3c76((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemComponentRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemComponentRegistry((nint)__hs_handle, false);
     }
 
     public void Dispose()

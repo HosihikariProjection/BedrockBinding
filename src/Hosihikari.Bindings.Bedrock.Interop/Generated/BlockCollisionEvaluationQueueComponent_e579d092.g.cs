@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockCollisionEvaluationQueueComponent : glob
         var handle = NativeMethods.TablePtr->C0.hs_create_dcb5cdb8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

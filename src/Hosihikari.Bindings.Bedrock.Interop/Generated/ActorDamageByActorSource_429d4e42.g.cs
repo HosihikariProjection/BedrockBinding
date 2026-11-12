@@ -99,6 +99,7 @@ public sealed unsafe partial class ActorDamageByActorSource : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_9145d486();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -110,6 +111,7 @@ public sealed unsafe partial class ActorDamageByActorSource : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_d309960e((void*)actor.Handle, cause);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -121,6 +123,7 @@ public sealed unsafe partial class ActorDamageByActorSource : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_339ec104((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -143,7 +146,12 @@ public sealed unsafe partial class ActorDamageByActorSource : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getDamagingEntityUniqueID()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d2814ae0((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle);
     }
 
     public uint getEntityCategories()
@@ -159,7 +167,12 @@ public sealed unsafe partial class ActorDamageByActorSource : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getEntityUniqueID()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_abece035((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)__hs_handle);
     }
 
     public bool getIsCreative()
@@ -222,7 +235,12 @@ public sealed unsafe partial class ActorDamageByActorSource : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageByActorSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageByActorSource arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b62811df((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageByActorSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageByActorSource((nint)__hs_handle, false);
     }
 
 

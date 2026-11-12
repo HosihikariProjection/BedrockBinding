@@ -45,6 +45,7 @@ public sealed unsafe partial class AnvilDamagePacketPayload : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_0ba5f741((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

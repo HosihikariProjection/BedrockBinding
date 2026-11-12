@@ -57,6 +57,7 @@ public sealed unsafe partial class Igloo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_668c9006((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

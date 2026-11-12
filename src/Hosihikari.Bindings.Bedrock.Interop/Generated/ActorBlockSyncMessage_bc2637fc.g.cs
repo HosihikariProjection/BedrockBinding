@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorBlockSyncMessage : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_93022f32((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -57,6 +57,7 @@ public sealed unsafe partial class SHChestCorridor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_9d6e39ae((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

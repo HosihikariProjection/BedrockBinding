@@ -49,6 +49,7 @@ public sealed unsafe partial class SynchedActorDataEntityWrapper : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_05e4fcb4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class SynchedActorDataEntityWrapper : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_8168b069((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

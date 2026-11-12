@@ -63,6 +63,7 @@ public sealed unsafe partial class StructureTemplateData : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_c49a03fb();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -74,6 +75,7 @@ public sealed unsafe partial class StructureTemplateData : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_8b6131d6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -136,7 +138,12 @@ public sealed unsafe partial class StructureTemplateData : global::System.IDispo
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ea96a86b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette((nint)__hs_handle, false);
         }
     }
 
@@ -199,7 +206,12 @@ public sealed unsafe partial class StructureTemplateData : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_af7d5729((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateData((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

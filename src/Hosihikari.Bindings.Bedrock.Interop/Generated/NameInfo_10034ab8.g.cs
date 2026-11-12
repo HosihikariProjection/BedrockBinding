@@ -50,6 +50,7 @@ public sealed unsafe partial class NameInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_f787c8c6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

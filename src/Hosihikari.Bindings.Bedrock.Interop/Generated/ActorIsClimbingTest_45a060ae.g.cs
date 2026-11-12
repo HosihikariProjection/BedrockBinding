@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorIsClimbingTest : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_bbf1d736((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

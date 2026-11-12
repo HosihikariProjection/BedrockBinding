@@ -49,6 +49,7 @@ public sealed unsafe partial class ActorDefinition : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_c6921deb();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ActorDefinition : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_081c0522((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

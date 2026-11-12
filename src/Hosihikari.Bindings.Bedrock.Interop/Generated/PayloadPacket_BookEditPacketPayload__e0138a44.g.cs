@@ -98,6 +98,7 @@ public sealed unsafe partial class PayloadPacket_BookEditPacketPayload_ : global
         var handle = NativeMethods.TablePtr->C4.hs_create_a94bed94((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

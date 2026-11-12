@@ -69,6 +69,7 @@ public sealed unsafe partial class MaterialReducerInputValidation : global::Syst
         var handle = NativeMethods.TablePtr->C2.hs_create_2e70384a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

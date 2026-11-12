@@ -45,6 +45,7 @@ public sealed unsafe partial class SpawnExperienceOrbPacketPayload : global::Sys
         var handle = NativeMethods.TablePtr->C3.hs_create_6f8b88cd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

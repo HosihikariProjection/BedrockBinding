@@ -53,6 +53,7 @@ public sealed unsafe partial class GroundedConstraint : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_d73538ea();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class GroundedConstraint : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_f9c74337((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

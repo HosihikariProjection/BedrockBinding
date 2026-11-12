@@ -43,7 +43,12 @@ public sealed unsafe partial class ScoreboardId : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId? INVALID()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_bec087ec();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_handle, false);
     }
 
     public nint mIdentityDef

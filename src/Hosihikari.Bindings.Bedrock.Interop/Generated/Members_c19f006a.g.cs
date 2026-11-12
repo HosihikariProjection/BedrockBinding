@@ -49,6 +49,7 @@ public sealed unsafe partial class Members : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_f59d1d29();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class Members : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_de48d98a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -387,7 +389,12 @@ public sealed unsafe partial class Members : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.Members? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.Members arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2dd6069c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.Members((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.Members((nint)__hs_handle, false);
     }
 
 

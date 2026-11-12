@@ -53,6 +53,7 @@ public sealed unsafe partial class ProjectileItemComponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_b38d25b8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

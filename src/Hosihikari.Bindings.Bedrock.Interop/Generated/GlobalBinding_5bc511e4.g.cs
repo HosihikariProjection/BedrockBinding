@@ -49,6 +49,7 @@ public sealed unsafe partial class GlobalBinding : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_0767d32b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class GlobalBinding : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_06f3a600((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -105,7 +107,12 @@ public sealed unsafe partial class GlobalBinding : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GlobalBinding? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GlobalBinding arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5df6db2e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GlobalBinding((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GlobalBinding((nint)__hs_handle, false);
     }
 
 

@@ -416,6 +416,7 @@ public sealed unsafe partial class MushroomBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_cf4f7885();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

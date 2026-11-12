@@ -49,6 +49,7 @@ public sealed unsafe partial class CoralFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_38a27e44((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

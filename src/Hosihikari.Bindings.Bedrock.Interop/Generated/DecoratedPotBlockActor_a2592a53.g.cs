@@ -215,6 +215,7 @@ public sealed unsafe partial class DecoratedPotBlockActor : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_1dbfe3ef();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -226,6 +227,7 @@ public sealed unsafe partial class DecoratedPotBlockActor : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_04cd206d((void*)pos.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -257,7 +259,12 @@ public sealed unsafe partial class DecoratedPotBlockActor : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6d250b27((void*)__hosihikari_shim_handle, arg0);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public int getMaxStackSize()

@@ -71,6 +71,7 @@ public sealed unsafe partial class IsWaterLoggedTest : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_283586a0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

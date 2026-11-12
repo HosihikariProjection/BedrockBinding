@@ -51,6 +51,7 @@ public sealed unsafe partial class IFileAccess : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_2f046828((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -94,13 +95,23 @@ public sealed unsafe partial class IFileAccess : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.IFileReadAccess? getReadInterface()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9c8d5b6f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IFileReadAccess((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IFileReadAccess((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IFileWriteAccess? getWriteInterface()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f899f0a5((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IFileWriteAccess((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IFileWriteAccess((nint)__hs_handle, false);
     }
 
     public void unload()

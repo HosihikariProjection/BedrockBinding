@@ -55,6 +55,7 @@ public sealed unsafe partial class Parser : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_831b8ea5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class Parser : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_209f0fcf((void*)registry.Handle, version);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,6 +79,7 @@ public sealed unsafe partial class Parser : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_cdfc1bc7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -163,7 +166,12 @@ public sealed unsafe partial class Parser : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Parser? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Parser arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6755c3ce((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Parser((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Parser((nint)__hs_handle, false);
     }
 
     public bool parseCommand(string @in)

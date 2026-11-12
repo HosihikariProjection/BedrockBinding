@@ -49,6 +49,7 @@ public sealed unsafe partial class ErrorLocalization : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_1a501932();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ErrorLocalization : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_612e3bf8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +83,12 @@ public sealed unsafe partial class ErrorLocalization : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ErrorLocalization? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ErrorLocalization arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_994041dc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ErrorLocalization((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ErrorLocalization((nint)__hs_handle, false);
     }
 
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class RuleSet : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_2813b75e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -95,7 +96,12 @@ public sealed unsafe partial class RuleSet : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b5a0e3cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

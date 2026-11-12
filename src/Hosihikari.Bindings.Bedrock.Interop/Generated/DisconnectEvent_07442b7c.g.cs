@@ -45,6 +45,7 @@ public sealed unsafe partial class DisconnectEvent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f5f54e1c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class DisconnectEvent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_68b6a493((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -89,7 +91,12 @@ public sealed unsafe partial class DisconnectEvent : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.DisconnectEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.DisconnectEvent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a75759ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.DisconnectEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.DisconnectEvent((nint)__hs_handle, false);
     }
 
     public void Dispose()

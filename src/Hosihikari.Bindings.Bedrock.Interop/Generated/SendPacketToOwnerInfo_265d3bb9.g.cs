@@ -45,6 +45,7 @@ public sealed unsafe partial class SendPacketToOwnerInfo : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_6b78e226();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class SendPacketToOwnerInfo : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_a3b084d3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class SendPacketToOwnerInfo : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.SendPacketToOwnerInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SendPacketToOwnerInfo arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4646ffee((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SendPacketToOwnerInfo((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SendPacketToOwnerInfo((nint)__hs_handle, false);
     }
 
     public void Dispose()

@@ -116,6 +116,7 @@ public sealed unsafe partial class PayloadPacket_TextPacketPayload_ : global::Sy
         var handle = NativeMethods.TablePtr->C4.hs_create_7d5b4d84((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

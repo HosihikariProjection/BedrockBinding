@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_IContentAccessibilityProvider
         var handle = NativeMethods.TablePtr->C0.hs_create_5da8e30e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_IContentAccessibilityProvider
         var handle = NativeMethods.TablePtr->C0.hs_create_767d7de2(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_IContentAccessibilityProvider
         var handle = NativeMethods.TablePtr->C0.hs_create_6b5a45e7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_IContentAccessibilityProvider
         var handle = NativeMethods.TablePtr->C0.hs_create_bc601579(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_IContentAccessibilityProvider
     public global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7458a591((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_IContentAccessibilityProvider
     public global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider? operator_IContentAccessibilityProvider__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6c40e907((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_IContentAccessibilityProvider
     public global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b6666ddf((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ebcaeb9e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

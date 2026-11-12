@@ -49,6 +49,7 @@ public sealed unsafe partial class ShareableData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_43f4429c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ShareableData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_85d8b376((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

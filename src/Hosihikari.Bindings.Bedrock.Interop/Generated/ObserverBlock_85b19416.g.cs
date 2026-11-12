@@ -468,7 +468,12 @@ public sealed unsafe partial class ObserverBlock : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getRenderBlock()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f87c324f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public int getVariant(global::Hosihikari.Bindings.Bedrock.Interop.Block block)

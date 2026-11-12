@@ -217,6 +217,7 @@ public sealed unsafe partial class DropItemForGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_6b97a321();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -232,6 +233,7 @@ public sealed unsafe partial class DropItemForGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_4eec9cd6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

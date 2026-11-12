@@ -49,6 +49,7 @@ public sealed unsafe partial class GameTestBatch : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_469f59c6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class GameTestBatch : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_d78f5553((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

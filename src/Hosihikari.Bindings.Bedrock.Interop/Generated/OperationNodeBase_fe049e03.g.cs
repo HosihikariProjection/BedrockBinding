@@ -49,6 +49,7 @@ public sealed unsafe partial class OperationNodeBase : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_4cd0c32b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class SimplexNoise : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_d348de6a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

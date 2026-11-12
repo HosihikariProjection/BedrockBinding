@@ -45,6 +45,7 @@ public sealed unsafe partial class IUIEventTelemetry : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_57008d17((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

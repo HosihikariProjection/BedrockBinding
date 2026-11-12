@@ -45,6 +45,7 @@ public sealed unsafe partial class SetActorLinkPacketPayload : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_da041f8b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -98,6 +98,7 @@ public sealed unsafe partial class PayloadPacket_ResourcePackChunkRequestPacketP
         var handle = NativeMethods.TablePtr->C4.hs_create_d26d5bfb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

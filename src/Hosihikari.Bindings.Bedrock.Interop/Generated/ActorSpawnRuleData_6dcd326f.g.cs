@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorSpawnRuleData : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_9696d7e8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

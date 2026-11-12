@@ -78,6 +78,7 @@ public sealed unsafe partial class EnableEncryptionCommand : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_1073325f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

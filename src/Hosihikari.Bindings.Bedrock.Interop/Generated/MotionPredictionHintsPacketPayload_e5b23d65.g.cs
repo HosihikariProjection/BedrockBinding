@@ -45,6 +45,7 @@ public sealed unsafe partial class MotionPredictionHintsPacketPayload : global::
         var handle = NativeMethods.TablePtr->C2.hs_create_8c2a8055((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

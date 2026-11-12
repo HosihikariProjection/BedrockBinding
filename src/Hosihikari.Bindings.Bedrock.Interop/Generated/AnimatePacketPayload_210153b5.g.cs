@@ -45,6 +45,7 @@ public sealed unsafe partial class AnimatePacketPayload : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_0443c81f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

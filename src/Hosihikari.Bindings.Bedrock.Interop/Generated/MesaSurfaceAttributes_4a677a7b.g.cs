@@ -49,6 +49,7 @@ public sealed unsafe partial class MesaSurfaceAttributes : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_fde0359b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

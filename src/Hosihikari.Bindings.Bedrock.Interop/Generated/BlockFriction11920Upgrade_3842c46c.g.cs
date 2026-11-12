@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockFriction11920Upgrade : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_059ba59e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

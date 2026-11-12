@@ -72,7 +72,12 @@ public sealed unsafe partial class VideoEncoderFactory : global::System.IDisposa
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
             var __hs_handle = NativeMethods.TablePtr->C4.hs_method_daf4b134((void*)__hosihikari_shim_handle, (void*)arg0, __hs_stringData1, (nuint)__hs_stringByteCount1, arg1 is not null);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory_Nested.CodecSupport((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory_Nested.CodecSupport((nint)__hs_handle);
         }
     }
 
@@ -81,6 +86,7 @@ public sealed unsafe partial class VideoEncoderFactory : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_95f28e22((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

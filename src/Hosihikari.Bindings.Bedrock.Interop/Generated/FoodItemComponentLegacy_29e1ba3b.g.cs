@@ -73,6 +73,7 @@ public sealed unsafe partial class FoodItemComponentLegacy : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_37c4b3a5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,6 +85,7 @@ public sealed unsafe partial class FoodItemComponentLegacy : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_2777ddd5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,7 +108,12 @@ public sealed unsafe partial class FoodItemComponentLegacy : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? eatItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Level level)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d43f5a31((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)level.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false);
     }
 
     public int getNutrition()
@@ -196,7 +203,12 @@ public sealed unsafe partial class FoodItemComponentLegacy : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.FoodItemComponentLegacy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FoodItemComponentLegacy arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_12b5ca9c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FoodItemComponentLegacy((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FoodItemComponentLegacy((nint)__hs_handle, false);
     }
 
     public void use(nint result, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
@@ -207,7 +219,12 @@ public sealed unsafe partial class FoodItemComponentLegacy : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? useTimeDepleted(nint itemUseMethod, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack arg1, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Level level)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_534d8215((void*)__hosihikari_shim_handle, (void*)itemUseMethod, (void*)arg1.Handle, (void*)instance.Handle, (void*)player.Handle, (void*)level.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false);
     }
 
 

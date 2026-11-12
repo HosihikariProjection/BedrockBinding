@@ -63,6 +63,7 @@ public sealed unsafe partial class BlockSelectionBoxComponent : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_18c2f06a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

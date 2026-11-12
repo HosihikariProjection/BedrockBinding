@@ -45,6 +45,7 @@ public sealed unsafe partial class PositionTrackingDBServerBroadcastPacketPayloa
         var handle = NativeMethods.TablePtr->C2.hs_create_15bb8eb7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

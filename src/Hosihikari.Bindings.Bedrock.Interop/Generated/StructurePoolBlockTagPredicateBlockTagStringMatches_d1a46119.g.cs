@@ -61,6 +61,7 @@ public sealed unsafe partial class StructurePoolBlockTagPredicateBlockTagStringM
         var handle = NativeMethods.TablePtr->C3.hs_create_8354139e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class StructurePoolBlockTagPredicateBlockTagStringM
         var handle = NativeMethods.TablePtr->C3.hs_create_2d57bc20((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -108,7 +110,12 @@ public sealed unsafe partial class StructurePoolBlockTagPredicateBlockTagStringM
     public global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockTagPredicateBlockTagStringMatches? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockTagPredicateBlockTagStringMatches arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_66191344((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockTagPredicateBlockTagStringMatches((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockTagPredicateBlockTagStringMatches((nint)__hs_handle, false);
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)

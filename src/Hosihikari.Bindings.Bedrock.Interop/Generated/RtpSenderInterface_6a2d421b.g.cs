@@ -61,6 +61,7 @@ public sealed unsafe partial class RtpSenderInterface : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_549b6406((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,7 +92,12 @@ public sealed unsafe partial class RtpSenderInterface : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? SetParameters(nint a1)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_735effdd((void*)__hosihikari_shim_handle, (void*)a1);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: parameter type 'absl::AnyInvocable<void (webrtc::RTCError) &&>' is not supported.", false)]

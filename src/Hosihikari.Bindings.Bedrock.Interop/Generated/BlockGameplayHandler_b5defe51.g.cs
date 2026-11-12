@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockGameplayHandler : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_ee6d8892((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,13 +55,23 @@ public sealed unsafe partial class BlockGameplayHandler : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.MutableBlockGameplayEvent_CoordinatorResult_ @event)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1a38f6b7((void*)__hosihikari_shim_handle, (void*)@event.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.BlockGameplayEvent_CoordinatorResult_ arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_459aad24((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'GameplayHandlerResult<std::optional<std::basic_string<char>>>' requires --link-carrier or --virtual-dispatch.", false)]

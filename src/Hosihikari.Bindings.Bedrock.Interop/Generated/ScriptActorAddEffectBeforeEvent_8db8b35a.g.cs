@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptActorAddEffectBeforeEvent : global::Sys
         var handle = NativeMethods.TablePtr->C3.hs_create_d8c48238((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

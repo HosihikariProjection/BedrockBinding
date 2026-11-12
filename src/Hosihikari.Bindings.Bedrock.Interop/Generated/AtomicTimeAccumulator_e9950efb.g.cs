@@ -45,6 +45,7 @@ public sealed unsafe partial class AtomicTimeAccumulator : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_c343cd4d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

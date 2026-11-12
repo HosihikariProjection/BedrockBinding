@@ -68,6 +68,7 @@ public sealed unsafe partial class ScriptBlockInventoryComponent : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_7144e521((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

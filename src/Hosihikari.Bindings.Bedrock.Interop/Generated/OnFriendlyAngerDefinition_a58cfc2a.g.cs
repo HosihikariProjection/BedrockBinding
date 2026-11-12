@@ -67,6 +67,7 @@ public sealed unsafe partial class OnFriendlyAngerDefinition : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_1f51316f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

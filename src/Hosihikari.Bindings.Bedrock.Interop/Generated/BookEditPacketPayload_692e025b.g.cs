@@ -45,6 +45,7 @@ public sealed unsafe partial class BookEditPacketPayload : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_111b0221((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

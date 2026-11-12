@@ -50,6 +50,7 @@ public sealed unsafe partial class AnimatedImageData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_7ae8a19f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -61,6 +62,7 @@ public sealed unsafe partial class AnimatedImageData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_f4a77ddc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +74,7 @@ public sealed unsafe partial class AnimatedImageData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_c9294b82(type, animationExpression, (void*)animatedImage.Handle, frames);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

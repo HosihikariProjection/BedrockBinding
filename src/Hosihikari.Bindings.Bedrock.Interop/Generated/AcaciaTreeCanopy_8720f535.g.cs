@@ -49,6 +49,7 @@ public sealed unsafe partial class AcaciaTreeCanopy : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_b4a23771((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

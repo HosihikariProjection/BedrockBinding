@@ -49,6 +49,7 @@ public sealed unsafe partial class CooldownItemComponent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_977c764d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

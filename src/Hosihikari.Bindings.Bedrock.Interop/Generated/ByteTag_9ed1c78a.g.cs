@@ -62,7 +62,12 @@ public sealed unsafe partial class ByteTag : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? _load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f135c850((void*)__hosihikari_shim_handle, (void*)dis.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle);
     }
 
     public string _toString()
@@ -85,6 +90,7 @@ public sealed unsafe partial class ByteTag : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_ea019650();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +102,7 @@ public sealed unsafe partial class ByteTag : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_067b26fe((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -134,7 +141,12 @@ public sealed unsafe partial class ByteTag : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a79e7395((void*)__hosihikari_shim_handle, (void*)dis.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::byte' requires --link-carrier or --virtual-dispatch.", false)]
@@ -144,7 +156,12 @@ public sealed unsafe partial class ByteTag : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ByteTag? operator_subtract()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_74f81016((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ByteTag((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ByteTag((nint)__hs_handle);
     }
 
     public string toString()

@@ -45,6 +45,7 @@ public sealed unsafe partial class Beardifier : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_a9cb0e76((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class EventingDispatcherComponent : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_545e63ff((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

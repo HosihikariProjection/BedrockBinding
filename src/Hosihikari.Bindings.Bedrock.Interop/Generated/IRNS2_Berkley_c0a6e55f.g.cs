@@ -50,6 +50,7 @@ public sealed unsafe partial class IRNS2_Berkley : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_4ea9bcf8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

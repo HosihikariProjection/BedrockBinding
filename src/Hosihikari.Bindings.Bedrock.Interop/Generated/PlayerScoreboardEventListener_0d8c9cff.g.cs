@@ -49,6 +49,7 @@ public sealed unsafe partial class PlayerScoreboardEventListener : global::Syste
         var handle = NativeMethods.TablePtr->C2.hs_create_dbc9918e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class CircuitComponentList : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_2c9ac673((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

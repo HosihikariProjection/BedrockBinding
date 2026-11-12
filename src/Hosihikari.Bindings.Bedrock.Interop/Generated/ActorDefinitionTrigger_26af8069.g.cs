@@ -58,6 +58,7 @@ public sealed unsafe partial class ActorDefinitionTrigger : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_81eec5fd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -101,7 +102,12 @@ public sealed unsafe partial class ActorDefinitionTrigger : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5a1b951f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger((nint)__hs_handle, false);
     }
 
 

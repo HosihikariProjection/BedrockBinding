@@ -45,6 +45,7 @@ public sealed unsafe partial class FrozenNoiseBasedTemperatureFlag : global::Sys
         var handle = NativeMethods.TablePtr->C1.hs_create_592b9c05((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

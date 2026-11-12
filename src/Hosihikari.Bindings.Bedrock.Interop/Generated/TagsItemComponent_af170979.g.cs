@@ -59,6 +59,7 @@ public sealed unsafe partial class TagsItemComponent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_6640c697((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

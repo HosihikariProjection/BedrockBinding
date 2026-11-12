@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptWeatherChangedAfterEvent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_78fb1a8e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptWeatherChangedAfterEvent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_7f3b4e30((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

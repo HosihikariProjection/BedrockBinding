@@ -49,6 +49,7 @@ public sealed unsafe partial class LegacyJigsawPlacement : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_b41efae7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class LegacyJigsawPlacement : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_48f9ffec((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

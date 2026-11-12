@@ -50,6 +50,7 @@ public sealed unsafe partial class LayeredAbilities : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_1141060b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -61,6 +62,7 @@ public sealed unsafe partial class LayeredAbilities : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_66d20e6a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,13 +80,23 @@ public sealed unsafe partial class LayeredAbilities : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Ability? getAbility(sbyte val)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_01fb0e9e((void*)__hosihikari_shim_handle, val);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Ability((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Ability((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Ability? getAbility(ushort layer, sbyte val)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5a3de719((void*)__hosihikari_shim_handle, layer, val);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Ability((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Ability((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -111,7 +123,12 @@ public sealed unsafe partial class LayeredAbilities : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities rhs)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d9b59028((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)__hs_handle, false);
     }
 
     public bool setAbility(sbyte val, bool value)

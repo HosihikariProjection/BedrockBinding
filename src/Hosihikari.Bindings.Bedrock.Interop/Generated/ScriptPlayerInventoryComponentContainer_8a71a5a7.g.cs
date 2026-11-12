@@ -75,6 +75,7 @@ public sealed unsafe partial class ScriptPlayerInventoryComponentContainer : glo
         var handle = NativeMethods.TablePtr->C3.hs_create_b417a273((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,13 +85,23 @@ public sealed unsafe partial class ScriptPlayerInventoryComponentContainer : glo
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemContext? _getItemContext(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8fada254((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemContext((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemContext((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? _tryGetContainer()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_39df552d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

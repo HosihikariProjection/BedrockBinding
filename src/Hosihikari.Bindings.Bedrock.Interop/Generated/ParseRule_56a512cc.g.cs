@@ -45,6 +45,7 @@ public sealed unsafe partial class ParseRule : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_625865c8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ParseRule : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_e3d43013((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +83,12 @@ public sealed unsafe partial class ParseRule : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dcec9f0b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

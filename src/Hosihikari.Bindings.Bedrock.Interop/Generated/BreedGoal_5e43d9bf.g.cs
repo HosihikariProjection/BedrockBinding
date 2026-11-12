@@ -91,6 +91,7 @@ public sealed unsafe partial class BreedGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_dca7f114();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,6 +107,7 @@ public sealed unsafe partial class BreedGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_2bc7dd5f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -182,7 +184,12 @@ public sealed unsafe partial class BreedGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BreedGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BreedGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_500d55ac((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BreedGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BreedGoal((nint)__hs_handle, false);
     }
 
     public void stop()

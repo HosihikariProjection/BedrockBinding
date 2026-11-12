@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptMoveToOptions : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_47d7ca07((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

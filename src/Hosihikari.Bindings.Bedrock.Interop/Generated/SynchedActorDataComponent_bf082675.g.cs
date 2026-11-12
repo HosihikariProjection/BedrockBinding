@@ -45,6 +45,7 @@ public sealed unsafe partial class SynchedActorDataComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_d8aff9cd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

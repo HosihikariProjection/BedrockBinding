@@ -81,6 +81,7 @@ public sealed unsafe partial class DynamicJumpControl : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_908cfc40((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

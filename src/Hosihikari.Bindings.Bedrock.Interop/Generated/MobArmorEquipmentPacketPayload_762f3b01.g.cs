@@ -63,6 +63,7 @@ public sealed unsafe partial class MobArmorEquipmentPacketPayload : global::Syst
         var handle = NativeMethods.TablePtr->C2.hs_create_7fd23324();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,6 +83,7 @@ public sealed unsafe partial class MobArmorEquipmentPacketPayload : global::Syst
         var handle = NativeMethods.TablePtr->C2.hs_create_d1107109((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -127,7 +129,12 @@ public sealed unsafe partial class MobArmorEquipmentPacketPayload : global::Syst
     public global::Hosihikari.Bindings.Bedrock.Interop.MobArmorEquipmentPacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MobArmorEquipmentPacketPayload arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2ce9d3e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MobArmorEquipmentPacketPayload((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MobArmorEquipmentPacketPayload((nint)__hs_handle, false);
     }
 
 

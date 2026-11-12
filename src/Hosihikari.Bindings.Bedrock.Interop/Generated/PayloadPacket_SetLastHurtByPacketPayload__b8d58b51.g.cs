@@ -92,6 +92,7 @@ public sealed unsafe partial class PayloadPacket_SetLastHurtByPacketPayload_ : g
         var handle = NativeMethods.TablePtr->C4.hs_create_d640e156((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

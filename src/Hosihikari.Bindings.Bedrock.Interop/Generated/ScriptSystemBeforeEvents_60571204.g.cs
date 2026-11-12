@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptSystemBeforeEvents : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_0acdd10f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ScriptSystemBeforeEvents : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_d74ca182((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

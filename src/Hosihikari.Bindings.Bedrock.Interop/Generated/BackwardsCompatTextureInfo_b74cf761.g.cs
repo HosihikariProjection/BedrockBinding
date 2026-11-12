@@ -45,6 +45,7 @@ public sealed unsafe partial class BackwardsCompatTextureInfo : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_8e11382e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class BackwardsCompatTextureInfo : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_4b273d47((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -95,7 +97,12 @@ public sealed unsafe partial class BackwardsCompatTextureInfo : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureInfo arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2f9d289a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureInfo((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureInfo((nint)__hs_handle, false);
     }
 
     public void Dispose()

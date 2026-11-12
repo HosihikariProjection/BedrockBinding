@@ -59,6 +59,7 @@ public sealed unsafe partial class ScriptPlayerInteractWithEntityAfterEvent : gl
         var handle = NativeMethods.TablePtr->C3.hs_create_b5d5bad0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

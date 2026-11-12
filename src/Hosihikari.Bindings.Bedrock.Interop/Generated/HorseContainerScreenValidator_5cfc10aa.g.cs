@@ -55,6 +55,7 @@ public sealed unsafe partial class HorseContainerScreenValidator : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_5acaf1fa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

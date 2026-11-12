@@ -61,6 +61,7 @@ public sealed unsafe partial class BannerPattern : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_a9d32ea6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class BannerPattern : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_49511c8f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

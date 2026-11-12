@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerInputRequestComponent : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_fb8ba57c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

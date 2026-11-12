@@ -49,6 +49,7 @@ public sealed unsafe partial class VanillaInPackagePacks : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_8fd4dd4b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class BaseBlockLocationIterator : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_cb2611af((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,7 +107,12 @@ public sealed unsafe partial class BaseBlockLocationIterator : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e3e05252((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator arg0)

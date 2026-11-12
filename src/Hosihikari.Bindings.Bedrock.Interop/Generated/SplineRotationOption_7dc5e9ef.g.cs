@@ -45,6 +45,7 @@ public sealed unsafe partial class SplineRotationOption : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_9b23c828((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

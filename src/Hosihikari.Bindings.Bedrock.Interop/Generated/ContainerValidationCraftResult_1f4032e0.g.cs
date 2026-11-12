@@ -50,6 +50,7 @@ public sealed unsafe partial class ContainerValidationCraftResult : global::Syst
         var handle = NativeMethods.TablePtr->C1.hs_create_d6774f82((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

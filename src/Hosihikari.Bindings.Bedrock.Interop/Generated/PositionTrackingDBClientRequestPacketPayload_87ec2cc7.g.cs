@@ -45,6 +45,7 @@ public sealed unsafe partial class PositionTrackingDBClientRequestPacketPayload 
         var handle = NativeMethods.TablePtr->C2.hs_create_9d9408b0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

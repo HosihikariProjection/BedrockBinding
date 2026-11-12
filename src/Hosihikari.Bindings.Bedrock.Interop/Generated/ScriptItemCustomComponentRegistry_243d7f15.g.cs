@@ -81,6 +81,7 @@ public sealed unsafe partial class ScriptItemCustomComponentRegistry : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_b40766e3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class ScriptItemCustomComponentRegistry : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_7feaf4b8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -123,7 +125,12 @@ public sealed unsafe partial class ScriptItemCustomComponentRegistry : global::S
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener? getEventListener()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fbc6aba0((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDeferredEventListener((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Scripting::WeakTypedObjectHandle<ScriptModuleMinecraft::ScriptItemStack>' is not a known bindable declaration.", false)]
@@ -175,7 +182,12 @@ public sealed unsafe partial class ScriptItemCustomComponentRegistry : global::S
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentRegistry arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7db71479((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentRegistry((nint)__hs_handle, false);
     }
 
     public void setCerealContext(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)

@@ -45,6 +45,7 @@ public sealed unsafe partial class MoveRequestComponent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_e9795afd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

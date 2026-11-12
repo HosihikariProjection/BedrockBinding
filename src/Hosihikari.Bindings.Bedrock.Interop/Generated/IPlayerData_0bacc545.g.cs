@@ -45,6 +45,7 @@ public sealed unsafe partial class IPlayerData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_889c8a89((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerAbilitiesManager_ : 
         var handle = NativeMethods.TablePtr->C0.hs_create_e6455e62();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerAbilitiesManager_ : 
         var handle = NativeMethods.TablePtr->C0.hs_create_3b05dd3a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -73,7 +75,12 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerAbilitiesManager_ : 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerAbilitiesManager? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5ba2c82f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAbilitiesManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAbilitiesManager((nint)__hs_handle, false);
     }
 
     public bool isValid()
@@ -101,13 +108,23 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerAbilitiesManager_ : 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerAbilitiesManager? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_bcd276df((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAbilitiesManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAbilitiesManager((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerAbilitiesManager? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1c0a4ccb((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAbilitiesManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAbilitiesManager((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -117,7 +134,12 @@ public sealed unsafe partial class UniqueOwnerPointer_PlayerAbilitiesManager_ : 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_PlayerAbilitiesManager_? operator_assign()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_60a0d508((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_PlayerAbilitiesManager_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_PlayerAbilitiesManager_((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_PlayerAbilitiesManager_ other)

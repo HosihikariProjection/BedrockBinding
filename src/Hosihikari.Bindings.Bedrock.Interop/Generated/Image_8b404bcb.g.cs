@@ -45,6 +45,7 @@ public sealed unsafe partial class Image : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_a3eee581();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class Image : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_b1213fe5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -95,7 +97,12 @@ public sealed unsafe partial class Image : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.glTF.Image? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.glTF.Image arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d14989d8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.glTF.Image((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.glTF.Image((nint)__hs_handle, false);
     }
 
     public void Dispose()

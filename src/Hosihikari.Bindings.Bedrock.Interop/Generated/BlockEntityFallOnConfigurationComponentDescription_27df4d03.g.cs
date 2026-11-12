@@ -63,6 +63,7 @@ public sealed unsafe partial class BlockEntityFallOnConfigurationComponentDescri
         var handle = NativeMethods.TablePtr->C0.hs_create_743f3048((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -119,7 +119,12 @@ public sealed unsafe partial class SmithingTransformRecipe : global::System.IDis
     public static global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? ID()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a6267cf5();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false);
     }
 
     public static SmithingTransformRecipe? Create()
@@ -127,6 +132,7 @@ public sealed unsafe partial class SmithingTransformRecipe : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_6c106acc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -138,6 +144,7 @@ public sealed unsafe partial class SmithingTransformRecipe : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_c46b3344((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

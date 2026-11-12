@@ -69,6 +69,7 @@ public sealed unsafe partial class HugeFungusFeature : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_d26c1ef9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,6 +85,7 @@ public sealed unsafe partial class HugeFungusFeature : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_b1e64ecd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

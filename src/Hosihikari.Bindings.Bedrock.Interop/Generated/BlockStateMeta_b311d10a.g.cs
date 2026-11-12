@@ -49,6 +49,7 @@ public sealed unsafe partial class BlockStateMeta : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_ad83eaf7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class BlockStateMeta : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_05760f13((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -115,7 +117,12 @@ public sealed unsafe partial class BlockStateMeta : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockStateMeta? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockStateMeta arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_fc00a8ed((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockStateMeta((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockStateMeta((nint)__hs_handle, false);
     }
 
 

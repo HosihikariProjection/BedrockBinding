@@ -67,6 +67,7 @@ public sealed unsafe partial class ReflectionCtx : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_6392cd7a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

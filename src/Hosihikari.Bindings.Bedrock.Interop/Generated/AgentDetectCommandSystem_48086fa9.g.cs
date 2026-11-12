@@ -49,6 +49,7 @@ public sealed unsafe partial class AgentDetectCommandSystem : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_7d5e8ed0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

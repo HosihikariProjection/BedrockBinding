@@ -95,6 +95,7 @@ public sealed unsafe partial class JumpAroundTargetGoal : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_44866c56();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -110,6 +111,7 @@ public sealed unsafe partial class JumpAroundTargetGoal : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_618c871e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -308,7 +310,12 @@ public sealed unsafe partial class JumpAroundTargetGoal : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9e22d082((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal((nint)__hs_handle, false);
     }
 
     public void start()

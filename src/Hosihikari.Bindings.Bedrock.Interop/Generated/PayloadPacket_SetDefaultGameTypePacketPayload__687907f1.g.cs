@@ -92,6 +92,7 @@ public sealed unsafe partial class PayloadPacket_SetDefaultGameTypePacketPayload
         var handle = NativeMethods.TablePtr->C4.hs_create_4147b8ed((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

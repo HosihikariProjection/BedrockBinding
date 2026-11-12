@@ -45,6 +45,7 @@ public sealed unsafe partial class MoveActorDeltaPacketPayload : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_5ec6b0c0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

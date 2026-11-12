@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptNetResponse : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_a82b4b72();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ScriptNetResponse : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_05681066((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -105,7 +107,12 @@ public sealed unsafe partial class ScriptNetResponse : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetResponse? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetResponse arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1ea5d2f7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetResponse((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetResponse((nint)__hs_handle, false);
     }
 
     public void Dispose()

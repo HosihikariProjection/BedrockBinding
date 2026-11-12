@@ -45,6 +45,7 @@ public sealed unsafe partial class Result_double__std__error_code_ : global::Sys
         var handle = NativeMethods.TablePtr->C0.hs_create_bccd63c7((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

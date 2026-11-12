@@ -53,6 +53,7 @@ public sealed unsafe partial class RuinedPortalPiece : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_b0afb1df();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class RuinedPortalPiece : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_87f63e7e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -126,7 +128,12 @@ public sealed unsafe partial class RuinedPortalPiece : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.RuinedPortalPiece? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RuinedPortalPiece arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5f69aa61((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RuinedPortalPiece((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RuinedPortalPiece((nint)__hs_handle, false);
     }
 
     public bool postProcess(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)

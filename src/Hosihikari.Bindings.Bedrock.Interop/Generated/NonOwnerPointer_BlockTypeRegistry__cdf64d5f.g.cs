@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_BlockTypeRegistry_ : global::
         var handle = NativeMethods.TablePtr->C0.hs_create_1f81cde4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_BlockTypeRegistry_ : global::
         var handle = NativeMethods.TablePtr->C0.hs_create_ce73a7c8(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_BlockTypeRegistry_ : global::
         var handle = NativeMethods.TablePtr->C0.hs_create_5079cedf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_BlockTypeRegistry_ : global::
         var handle = NativeMethods.TablePtr->C0.hs_create_0595e3e0(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_BlockTypeRegistry_ : global::
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1a4a103b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_BlockTypeRegistry_ : global::
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry? operator_BlockTypeRegistry__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1420895e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_BlockTypeRegistry_ : global::
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9cad7a2a((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_176e11b1((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

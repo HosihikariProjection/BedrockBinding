@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptItemCompleteUseEvent : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_c71fbf90((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

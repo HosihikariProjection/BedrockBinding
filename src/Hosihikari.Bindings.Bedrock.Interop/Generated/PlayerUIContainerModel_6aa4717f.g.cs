@@ -116,6 +116,7 @@ public sealed unsafe partial class PlayerUIContainerModel : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_1b62dd2f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -131,6 +132,7 @@ public sealed unsafe partial class PlayerUIContainerModel : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_f1f8546e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

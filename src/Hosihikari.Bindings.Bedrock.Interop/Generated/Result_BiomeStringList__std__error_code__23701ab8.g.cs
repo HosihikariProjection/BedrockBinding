@@ -45,6 +45,7 @@ public sealed unsafe partial class Result_BiomeStringList__std__error_code_ : gl
         var handle = NativeMethods.TablePtr->C0.hs_create_7544bbc2((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

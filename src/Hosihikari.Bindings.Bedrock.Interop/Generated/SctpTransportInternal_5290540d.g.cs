@@ -71,6 +71,7 @@ public sealed unsafe partial class SctpTransportInternal : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_0ff79170((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,7 +81,12 @@ public sealed unsafe partial class SctpTransportInternal : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? SendData(int sid, nint @params, nint payload)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_195e2a18((void*)__hosihikari_shim_handle, sid, (void*)@params, (void*)payload);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle);
     }
 
     public void SetBufferedAmountLowThreshold(int sid, ulong bytes)

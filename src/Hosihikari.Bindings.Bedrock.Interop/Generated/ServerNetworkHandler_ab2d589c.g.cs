@@ -67,7 +67,12 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer? __getServerPlayer(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, byte subId)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b5787f40((void*)__hosihikari_shim_handle, (void*)source.Handle, subId);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -78,7 +83,12 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7512fdf3((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo((nint)__hs_handle);
     }
 
     public int _allowIncomingPacketId(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifierWithSubId sender, int packetId, ulong packetSize)
@@ -579,6 +589,7 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_0fb5aa2c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -594,6 +605,7 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_4b577dbb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -624,7 +636,12 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer? _getServerPlayer(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, byte subId)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_530866de((void*)__hosihikari_shim_handle, (void*)source.Handle, subId);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -682,7 +699,12 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b789fa71((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -808,7 +830,12 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.GameSpecificNetEventCallback? getGameSpecificNetEventCallback()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3353524d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameSpecificNetEventCallback((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameSpecificNetEventCallback((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -1736,7 +1763,12 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_68aeaac4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -92,6 +92,7 @@ public sealed unsafe partial class PayloadPacket_AddBehaviorTreePacketPayload_ :
         var handle = NativeMethods.TablePtr->C4.hs_create_23cf1746((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

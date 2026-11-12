@@ -45,6 +45,7 @@ public sealed unsafe partial class EduCloudImportInfo : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_5fdabb6c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

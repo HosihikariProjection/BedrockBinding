@@ -49,6 +49,7 @@ public sealed unsafe partial class BoostableSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_21d9d4a2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

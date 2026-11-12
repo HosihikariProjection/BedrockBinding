@@ -85,6 +85,7 @@ public sealed unsafe partial class FeaturePoolElement : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_c029f1ce();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -100,6 +101,7 @@ public sealed unsafe partial class FeaturePoolElement : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_82551d35((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -119,7 +121,12 @@ public sealed unsafe partial class FeaturePoolElement : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSize(byte rotation)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_39c33018((void*)__hosihikari_shim_handle, rotation);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

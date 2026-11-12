@@ -83,13 +83,23 @@ public sealed unsafe partial class ItemRegistry : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_? getItem(global::Hosihikari.Bindings.Bedrock.Interop.HashedString id)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_27cc67df((void*)__hosihikari_shim_handle, (void*)id.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_? getItem(short id)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_538da92b((void*)__hosihikari_shim_handle, id);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -124,7 +134,12 @@ public sealed unsafe partial class ItemRegistry : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4a928b4f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_((nint)__hs_handle);
         }
     }
 

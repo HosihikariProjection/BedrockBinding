@@ -77,6 +77,7 @@ public sealed unsafe partial class ScriptItemActorComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_cad35892((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ContainerManagerController : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_50e47e2d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -93,19 +94,34 @@ public sealed unsafe partial class ContainerManagerController : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString? getItemName()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_171674ae((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString? getPreviewItemName()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5a3d5f84((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase? getTakeableItemStackBase(global::Hosihikari.Bindings.Bedrock.Interop.SlotData slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_56fdbd95((void*)__hosihikari_shim_handle, (void*)slot.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase((nint)__hs_handle, false);
     }
 
     public bool handleAddToStack(global::Hosihikari.Bindings.Bedrock.Interop.SlotData dstSlot, global::Hosihikari.Bindings.Bedrock.Interop.SlotData srcSlot, int type)

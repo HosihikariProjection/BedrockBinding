@@ -49,6 +49,7 @@ public sealed unsafe partial class SpellStage : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3522a99a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -134,7 +135,12 @@ public sealed unsafe partial class SpellStage : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellStage? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellStage arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a1eac6cf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellStage((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.SummonActorGoalDefinition_Nested.SpellStage((nint)__hs_handle, false);
     }
 
 

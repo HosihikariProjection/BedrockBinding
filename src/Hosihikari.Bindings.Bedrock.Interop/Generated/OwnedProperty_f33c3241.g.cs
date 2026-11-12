@@ -45,6 +45,7 @@ public sealed unsafe partial class OwnedProperty : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_4fc5144f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class OwnedProperty : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_4e2ac76f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class OwnedProperty : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.OwnedProperty? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.OwnedProperty arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1c6ebd22((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.OwnedProperty((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.OwnedProperty((nint)__hs_handle, false);
     }
 
     public void Dispose()

@@ -49,6 +49,7 @@ public sealed unsafe partial class WorkerPoolHandleImpl : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_2d0ebfb3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class WorkerPoolHandleImpl : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_3b3ad9ef((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +83,12 @@ public sealed unsafe partial class WorkerPoolHandleImpl : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolHandleImpl? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolHandleImpl arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6583c4b8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolHandleImpl((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.WorkerPoolHandleImpl((nint)__hs_handle, false);
     }
 
 

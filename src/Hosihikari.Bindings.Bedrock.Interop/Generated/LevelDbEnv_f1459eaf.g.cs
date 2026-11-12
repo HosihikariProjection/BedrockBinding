@@ -154,7 +154,12 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C2.hs_method_53249234((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
         }
     }
 
@@ -213,7 +218,12 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
             fixed (byte* __hs_stringData0 = __hs_stringBytes0)
             {
                 var __hs_handle = NativeMethods.TablePtr->C2.hs_method_bac3aab9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_vectorData1, (nuint)(pChildrenOut?.Length ?? 0));
-                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+                if (__hs_handle == null)
+                {
+                    NativeMethods.GetLastError();
+                    return null;
+                }
+                return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
             }
         }
     }
@@ -234,14 +244,24 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C2.hs_method_015e4864((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)size);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? GetTestDirectory(nint result)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_42dd4b07((void*)__hosihikari_shim_handle, (void*)result);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
     }
 
     public static LevelDbEnv? Create()
@@ -249,6 +269,7 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f879c899();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -260,6 +281,7 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_8a107bea((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -315,7 +337,12 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8dd91b6c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
         }
     }
 
@@ -335,7 +362,12 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4a75851a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
         }
     }
 
@@ -368,7 +400,12 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
                 var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a7927dec((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
-                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+                if (__hs_handle == null)
+                {
+                    NativeMethods.GetLastError();
+                    return null;
+                }
+                return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
             }
         }
     }
@@ -389,7 +426,12 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? UnlockFile(nint @lock)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_85e43bc7((void*)__hosihikari_shim_handle, (void*)@lock);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -407,7 +449,12 @@ public sealed unsafe partial class LevelDbEnv : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f1056835((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelDbEnv((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -49,6 +49,7 @@ public sealed unsafe partial class AgentMoveCommandSystem : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_783baa6b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class LockedChunk : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_54e583c4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

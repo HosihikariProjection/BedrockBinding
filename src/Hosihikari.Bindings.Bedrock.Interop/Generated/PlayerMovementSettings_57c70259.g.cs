@@ -55,6 +55,7 @@ public sealed unsafe partial class PlayerMovementSettings : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_b5ea6f2b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

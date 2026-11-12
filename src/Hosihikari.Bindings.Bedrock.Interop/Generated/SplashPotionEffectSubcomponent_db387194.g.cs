@@ -45,6 +45,7 @@ public sealed unsafe partial class SplashPotionEffectSubcomponent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_2384505a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -99,6 +99,7 @@ public sealed unsafe partial class DelayedAttackGoal : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_9473a400();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -114,6 +115,7 @@ public sealed unsafe partial class DelayedAttackGoal : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_41e2843a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ServerInstanceLeaveGameDoneEvent : global::Sy
         var handle = NativeMethods.TablePtr->C3.hs_create_f8aeab57((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorStopRidingEvent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_629f3dfc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

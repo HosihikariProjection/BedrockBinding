@@ -623,6 +623,7 @@ public sealed unsafe partial class Blaze : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_f3a07f21();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

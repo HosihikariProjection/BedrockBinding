@@ -53,6 +53,7 @@ public sealed unsafe partial class LevelChunkDataRegistry : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_b9b63992((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

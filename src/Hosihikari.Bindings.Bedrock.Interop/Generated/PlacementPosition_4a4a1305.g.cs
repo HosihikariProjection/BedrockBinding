@@ -65,6 +65,7 @@ public sealed unsafe partial class PlacementPosition : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_6a1c97be((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

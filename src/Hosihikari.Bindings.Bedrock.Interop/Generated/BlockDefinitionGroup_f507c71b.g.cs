@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockDefinitionGroup : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_3811faf7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class BlockDefinitionGroup : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_d41b68bc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -180,7 +182,12 @@ public sealed unsafe partial class BlockDefinitionGroup : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockDefinitionGroup? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockDefinitionGroup arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_66f02d13((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockDefinitionGroup((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockDefinitionGroup((nint)__hs_handle, false);
     }
 
     public void registerBlockFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.BlockDefinition definition, bool assertIfAlreadyExists)
@@ -191,7 +198,12 @@ public sealed unsafe partial class BlockDefinitionGroup : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockType? registerDataDrivenBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescription desc)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_dce6792e((void*)__hosihikari_shim_handle, (void*)desc.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockType((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockType((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockDefinition? tryGetBlockDefinition(string name)
@@ -210,7 +222,12 @@ public sealed unsafe partial class BlockDefinitionGroup : global::System.IDispos
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b84fe568((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockDefinition((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.BlockDefinition((nint)__hs_handle, false);
         }
     }
 

@@ -61,6 +61,7 @@ public sealed unsafe partial class DieEventResponse : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_09d250c7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

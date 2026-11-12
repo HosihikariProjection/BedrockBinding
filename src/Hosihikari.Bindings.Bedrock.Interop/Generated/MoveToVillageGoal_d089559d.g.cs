@@ -199,6 +199,7 @@ public sealed unsafe partial class MoveToVillageGoal : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_850af459();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -214,6 +215,7 @@ public sealed unsafe partial class MoveToVillageGoal : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_dc23c109((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -228,7 +230,12 @@ public sealed unsafe partial class MoveToVillageGoal : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _selectRandomPosInVillage()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c918f117((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

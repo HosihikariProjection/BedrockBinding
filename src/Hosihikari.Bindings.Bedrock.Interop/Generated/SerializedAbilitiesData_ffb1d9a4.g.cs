@@ -59,6 +59,7 @@ public sealed unsafe partial class SerializedAbilitiesData : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_e409778f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -70,6 +71,7 @@ public sealed unsafe partial class SerializedAbilitiesData : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_c48669fa((void*)targetPlayer.Handle, (void*)layeredAbilities.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,6 +83,7 @@ public sealed unsafe partial class SerializedAbilitiesData : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_ccbba311((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

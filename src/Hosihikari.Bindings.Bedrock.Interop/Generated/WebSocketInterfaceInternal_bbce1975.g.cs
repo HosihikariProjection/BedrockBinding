@@ -61,6 +61,7 @@ public sealed unsafe partial class WebSocketInterfaceInternal : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_c95e242d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

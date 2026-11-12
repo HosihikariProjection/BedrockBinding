@@ -98,6 +98,7 @@ public sealed unsafe partial class PayloadPacket_PlayerStartItemCooldownPacketPa
         var handle = NativeMethods.TablePtr->C4.hs_create_6d7d01bb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

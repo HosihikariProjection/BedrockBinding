@@ -45,6 +45,7 @@ public sealed unsafe partial class ShouldUpdateBoundingBoxRequestComponent : glo
         var handle = NativeMethods.TablePtr->C3.hs_create_9147ebd9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

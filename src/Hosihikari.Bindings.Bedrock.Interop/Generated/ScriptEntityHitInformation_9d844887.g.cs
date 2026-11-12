@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptEntityHitInformation : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_f0d9b317((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

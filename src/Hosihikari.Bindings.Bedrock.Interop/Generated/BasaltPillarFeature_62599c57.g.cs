@@ -49,6 +49,7 @@ public sealed unsafe partial class BasaltPillarFeature : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_05965952((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

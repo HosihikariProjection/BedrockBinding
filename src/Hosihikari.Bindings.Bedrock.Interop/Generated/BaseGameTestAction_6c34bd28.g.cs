@@ -45,6 +45,7 @@ public sealed unsafe partial class BaseGameTestAction : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_fee3264f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class BaseGameTestAction : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_a7277250((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,14 +73,24 @@ public sealed unsafe partial class BaseGameTestAction : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestAction? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestAction arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0406c6e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestAction((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestAction((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? run()
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4af56145((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
 

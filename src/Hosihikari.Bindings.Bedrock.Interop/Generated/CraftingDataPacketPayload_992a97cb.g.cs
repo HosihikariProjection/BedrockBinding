@@ -50,6 +50,7 @@ public sealed unsafe partial class CraftingDataPacketPayload : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_67d6c81c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -59,7 +60,12 @@ public sealed unsafe partial class CraftingDataPacketPayload : global::System.ID
     public static global::Hosihikari.Bindings.Bedrock.Interop.CraftingDataPacketPayload? fromRecipes(global::Hosihikari.Bindings.Bedrock.Interop.Recipes levelRecipes, bool onlyCraftingRecipes)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5444bda7((void*)levelRecipes.Handle, onlyCraftingRecipes);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CraftingDataPacketPayload((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CraftingDataPacketPayload((nint)__hs_handle);
     }
 
     public bool mClearRecipes

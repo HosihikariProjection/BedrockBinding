@@ -49,6 +49,7 @@ public sealed unsafe partial class PlaySoundReactionComponent : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_b8b011e4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

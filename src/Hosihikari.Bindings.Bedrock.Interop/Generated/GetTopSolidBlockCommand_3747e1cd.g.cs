@@ -78,6 +78,7 @@ public sealed unsafe partial class GetTopSolidBlockCommand : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_8e4f8cd2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

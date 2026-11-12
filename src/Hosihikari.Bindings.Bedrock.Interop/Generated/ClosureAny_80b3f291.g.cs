@@ -57,6 +57,7 @@ public sealed unsafe partial class ClosureAny : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_da273b89();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class ClosureAny : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_d2f7fdba((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

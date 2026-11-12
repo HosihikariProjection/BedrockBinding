@@ -161,6 +161,7 @@ public sealed unsafe partial class RakNetConnector : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_19cb8263();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -172,6 +173,7 @@ public sealed unsafe partial class RakNetConnector : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_30178366((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -206,7 +208,12 @@ public sealed unsafe partial class RakNetConnector : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo? getConnectedGameInfo()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a260d3bd((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)__hs_handle, false);
     }
 
     public ushort getIPv4Port()
@@ -228,7 +235,12 @@ public sealed unsafe partial class RakNetConnector : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier? getNetworkIdentifier()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_661c48fc((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle);
     }
 
     public int getNetworkType()
@@ -239,13 +251,23 @@ public sealed unsafe partial class RakNetConnector : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakPeerInterface? getPeer_8e41de34()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8e41de34((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakPeerInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakPeerInterface((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakPeerInterface? getPeer_116036d3()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_116036d3((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakPeerInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakPeerInterface((nint)__hs_handle, false);
     }
 
     public ushort getPort()
@@ -388,7 +410,12 @@ public sealed unsafe partial class RakNetConnector : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5bf96d83((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector((nint)__hs_handle, false);
     }
 
     public void runEvents()

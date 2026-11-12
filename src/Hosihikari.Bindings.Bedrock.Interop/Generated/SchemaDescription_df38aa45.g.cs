@@ -57,6 +57,7 @@ public sealed unsafe partial class SchemaDescription : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_62635113();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

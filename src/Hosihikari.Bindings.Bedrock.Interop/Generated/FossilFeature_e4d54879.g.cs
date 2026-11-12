@@ -61,6 +61,7 @@ public sealed unsafe partial class FossilFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_9ffdb8ca((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

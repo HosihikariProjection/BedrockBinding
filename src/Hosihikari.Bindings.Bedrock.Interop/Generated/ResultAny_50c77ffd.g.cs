@@ -53,6 +53,7 @@ public sealed unsafe partial class ResultAny : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_858c64b3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -51,6 +51,7 @@ public sealed unsafe partial class RemoteSystemStruct : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_5e1e2e89((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -64,6 +64,7 @@ public sealed unsafe partial class HungerAttributeDelegate : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_b0fea15d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

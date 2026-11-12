@@ -95,6 +95,7 @@ public sealed unsafe partial class RandomLookAroundAndSitGoal : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_c6bd08c8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -110,6 +111,7 @@ public sealed unsafe partial class RandomLookAroundAndSitGoal : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_c5966be2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

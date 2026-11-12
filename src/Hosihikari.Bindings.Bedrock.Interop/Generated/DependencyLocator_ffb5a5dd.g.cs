@@ -45,6 +45,7 @@ public sealed unsafe partial class DependencyLocator : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_ebbaccd4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class DependencyLocator : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_3e5788df((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class DependencyLocator : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyLocator? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyLocator arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c1d033b4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyLocator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyLocator((nint)__hs_handle, false);
     }
 
     public void Dispose()

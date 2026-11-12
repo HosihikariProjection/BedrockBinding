@@ -53,6 +53,7 @@ public sealed unsafe partial class DamageItemComponent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_6c06cc6f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

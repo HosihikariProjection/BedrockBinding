@@ -45,6 +45,7 @@ public sealed unsafe partial class AsyncTracker : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_ad794eea((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

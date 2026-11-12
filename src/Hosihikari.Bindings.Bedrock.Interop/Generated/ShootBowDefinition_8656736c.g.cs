@@ -61,6 +61,7 @@ public sealed unsafe partial class ShootBowDefinition : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_048d7a81((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

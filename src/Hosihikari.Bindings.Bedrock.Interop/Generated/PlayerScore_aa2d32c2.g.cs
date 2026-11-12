@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerScore : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_d2fec3f0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

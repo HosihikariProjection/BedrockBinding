@@ -109,6 +109,7 @@ public sealed unsafe partial class DirectoryPackWithEncryptionAccessStrategy : g
         var handle = NativeMethods.TablePtr->C1.hs_create_2ea6bf8f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -120,6 +121,7 @@ public sealed unsafe partial class DirectoryPackWithEncryptionAccessStrategy : g
         var handle = NativeMethods.TablePtr->C1.hs_create_13c51a06((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -173,7 +175,12 @@ public sealed unsafe partial class DirectoryPackWithEncryptionAccessStrategy : g
     public global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation? getPackLocation()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ab54dea4((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)__hs_handle, false);
     }
 
     public string getPackName()
@@ -195,7 +202,12 @@ public sealed unsafe partial class DirectoryPackWithEncryptionAccessStrategy : g
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_? getStreamableSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path arg0, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView? arg1)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e4e5376b((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(arg1?.Handle ?? 0), arg1 is not null);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)__hs_handle);
     }
 
     public bool hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, bool trustedContentOnly, bool caseSensative)
@@ -275,13 +287,23 @@ public sealed unsafe partial class DirectoryPackWithEncryptionAccessStrategy : g
     public global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackWithEncryptionAccessStrategy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackWithEncryptionAccessStrategy arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_79830788((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackWithEncryptionAccessStrategy((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DirectoryPackWithEncryptionAccessStrategy((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity? readContentIdentity()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7f406bc1((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity((nint)__hs_handle);
     }
 
     public void unload()

@@ -54,6 +54,7 @@ public sealed unsafe partial class ResolvedItemIconInfo : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_0c161c7d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -65,6 +66,7 @@ public sealed unsafe partial class ResolvedItemIconInfo : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_50ceaa4e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

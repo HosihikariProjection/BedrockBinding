@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockExplosionResistance11910Upgrade : global
         var handle = NativeMethods.TablePtr->C0.hs_create_9a51e6da((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

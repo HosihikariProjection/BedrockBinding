@@ -61,6 +61,7 @@ public sealed unsafe partial class NullSecureStorage : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_aebb1607((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

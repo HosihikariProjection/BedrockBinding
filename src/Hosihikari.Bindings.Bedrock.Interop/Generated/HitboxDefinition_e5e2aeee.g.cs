@@ -45,6 +45,7 @@ public sealed unsafe partial class HitboxDefinition : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_3d864e4a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class WanderingTraderScheduler : global::System.IDi
         var handle = NativeMethods.TablePtr->C4.hs_create_18b149e8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class WanderingTraderScheduler : global::System.IDi
         var handle = NativeMethods.TablePtr->C4.hs_create_353bc259((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -103,7 +105,12 @@ public sealed unsafe partial class WanderingTraderScheduler : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.WanderingTraderScheduler? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WanderingTraderScheduler arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_352eed6a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WanderingTraderScheduler((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WanderingTraderScheduler((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

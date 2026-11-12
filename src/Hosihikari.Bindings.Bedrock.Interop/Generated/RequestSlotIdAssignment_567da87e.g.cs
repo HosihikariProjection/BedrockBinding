@@ -45,6 +45,7 @@ public sealed unsafe partial class RequestSlotIdAssignment : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_203a98b0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class RegistrationLocation : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_d9438405((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

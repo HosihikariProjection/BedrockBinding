@@ -57,6 +57,7 @@ public sealed unsafe partial class VibrationListenerConfig : global::System.IDis
         var handle = NativeMethods.TablePtr->C4.hs_create_5240a094((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

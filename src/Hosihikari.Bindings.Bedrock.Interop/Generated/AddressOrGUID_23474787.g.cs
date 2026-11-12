@@ -45,6 +45,7 @@ public sealed unsafe partial class AddressOrGUID : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_847ae661();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class AddressOrGUID : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_e2da400b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class AddressOrGUID : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_6b19c97b((void*)input.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class AddressOrGUID : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_6148e2ce((void*)input.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class AddressOrGUID : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.AddressOrGUID? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.AddressOrGUID arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f543b7f4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.AddressOrGUID((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.AddressOrGUID((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -61,6 +61,7 @@ public sealed unsafe partial class DouseFireSubcomponent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_8ff1c3ec((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

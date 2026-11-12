@@ -150,6 +150,7 @@ public sealed unsafe partial class OpenDoorGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c6ff57b3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -161,6 +162,7 @@ public sealed unsafe partial class OpenDoorGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_ed5e6ec7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -218,7 +220,12 @@ public sealed unsafe partial class OpenDoorGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.OpenDoorGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OpenDoorGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d79e8445((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OpenDoorGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.OpenDoorGoal((nint)__hs_handle, false);
     }
 
     public void start()

@@ -63,6 +63,7 @@ public sealed unsafe partial class BiomeRegistry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_ee16e876((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -146,7 +147,12 @@ public sealed unsafe partial class BiomeRegistry : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2a3fae62((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false);
         }
     }
 

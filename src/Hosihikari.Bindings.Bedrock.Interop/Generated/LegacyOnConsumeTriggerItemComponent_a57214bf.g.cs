@@ -63,6 +63,7 @@ public sealed unsafe partial class LegacyOnConsumeTriggerItemComponent : global:
         var handle = NativeMethods.TablePtr->C2.hs_create_4113852f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +79,7 @@ public sealed unsafe partial class LegacyOnConsumeTriggerItemComponent : global:
         var handle = NativeMethods.TablePtr->C2.hs_create_2e9d5e7d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

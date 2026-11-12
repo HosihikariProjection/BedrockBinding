@@ -63,6 +63,7 @@ public sealed unsafe partial class StoneCutterContainerScreenValidator : global:
         var handle = NativeMethods.TablePtr->C3.hs_create_236ac89d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -51,7 +51,12 @@ public sealed unsafe partial class ServerCorrectionPolicy : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection? _shouldCorrectMovement(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacket packet, ulong frame, byte currentCounter, bool isStrictMovement)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_181652e8((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)packet.Handle, frame, currentCounter, isStrictMovement);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -63,6 +68,7 @@ public sealed unsafe partial class ServerCorrectionPolicy : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_3c4d407f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -100,7 +106,12 @@ public sealed unsafe partial class ServerCorrectionPolicy : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection? shouldCorrectMovement(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacket packet, ulong frame, byte currentCounter, bool isStrictMovement)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5507fd09((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)packet.Handle, frame, currentCounter, isStrictMovement);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)__hs_handle);
     }
 
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptNavigationFloatComponentFactory : globa
         var handle = NativeMethods.TablePtr->C3.hs_create_54092ed1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

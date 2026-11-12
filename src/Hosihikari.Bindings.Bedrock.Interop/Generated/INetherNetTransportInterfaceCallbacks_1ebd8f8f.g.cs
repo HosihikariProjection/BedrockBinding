@@ -49,6 +49,7 @@ public sealed unsafe partial class INetherNetTransportInterfaceCallbacks : globa
         var handle = NativeMethods.TablePtr->C2.hs_create_4d53ab87((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

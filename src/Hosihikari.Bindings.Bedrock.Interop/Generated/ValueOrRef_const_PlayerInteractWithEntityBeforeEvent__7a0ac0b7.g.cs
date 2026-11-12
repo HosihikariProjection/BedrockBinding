@@ -51,7 +51,12 @@ public sealed unsafe partial class ValueOrRef_const_PlayerInteractWithEntityBefo
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerInteractWithEntityBeforeEvent? value()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b375eeeb((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerInteractWithEntityBeforeEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerInteractWithEntityBeforeEvent((nint)__hs_handle, false);
     }
 
 

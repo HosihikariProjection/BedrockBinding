@@ -49,6 +49,7 @@ public sealed unsafe partial class MapInfoRequestPacketPayload : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_f717886e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class MapInfoRequestPacketPayload : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_7d60ebfa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

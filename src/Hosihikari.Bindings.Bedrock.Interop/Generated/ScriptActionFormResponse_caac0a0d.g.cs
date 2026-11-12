@@ -57,6 +57,7 @@ public sealed unsafe partial class ScriptActionFormResponse : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_332848b7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class ScriptActionFormResponse : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_a7db35c5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +89,12 @@ public sealed unsafe partial class ScriptActionFormResponse : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormResponse? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormResponse arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5f18a40a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormResponse((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptActionFormResponse((nint)__hs_handle, false);
     }
 
     public void Dispose()

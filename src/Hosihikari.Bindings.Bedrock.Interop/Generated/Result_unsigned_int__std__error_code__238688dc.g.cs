@@ -45,6 +45,7 @@ public sealed unsafe partial class Result_unsigned_int__std__error_code_ : globa
         var handle = NativeMethods.TablePtr->C0.hs_create_35e8229d((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

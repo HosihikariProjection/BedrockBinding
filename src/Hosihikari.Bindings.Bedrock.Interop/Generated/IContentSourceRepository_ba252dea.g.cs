@@ -45,6 +45,7 @@ public sealed unsafe partial class IContentSourceRepository : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_59a9b1dc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

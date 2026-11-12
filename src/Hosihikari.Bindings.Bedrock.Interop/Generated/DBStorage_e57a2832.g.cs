@@ -234,6 +234,7 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_57cceaff();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -268,7 +269,12 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_? compactStorage()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e8caf676((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ChunkSource' has no accessible destructor.", false)]
@@ -317,7 +323,12 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C1.hs_method_fa14b7ae((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, category);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle);
         }
     }
 
@@ -342,25 +353,45 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity? getContentIdentity()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_59bb381f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getFullPath()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2c4959c7((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult? getLevelStorageState()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4ebd2427((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult? getState()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_034b9434((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)__hs_handle);
     }
 
     public string getStatistics(string outStats, uint statsType)
@@ -744,7 +775,12 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_? saveData(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageWriteBatch batch)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_182417cc((void*)__hosihikari_shim_handle, (void*)batch.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_? saveData(string key, string data, uint category)
@@ -776,7 +812,12 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
                 var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6b18b97b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, category);
-                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle) : null;
+                if (__hs_handle == null)
+                {
+                    NativeMethods.GetLastError();
+                    return null;
+                }
+                return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)__hs_handle);
             }
         }
     }

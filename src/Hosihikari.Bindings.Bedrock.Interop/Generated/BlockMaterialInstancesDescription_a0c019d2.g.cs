@@ -111,6 +111,7 @@ public sealed unsafe partial class BlockMaterialInstancesDescription : global::S
         var handle = NativeMethods.TablePtr->C0.hs_create_14af31e0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -122,6 +123,7 @@ public sealed unsafe partial class BlockMaterialInstancesDescription : global::S
         var handle = NativeMethods.TablePtr->C0.hs_create_0100dba7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -146,6 +148,7 @@ public sealed unsafe partial class BlockMaterialInstancesDescription : global::S
             var handle = NativeMethods.TablePtr->C0.hs_create_d7e71b0c(__hs_stringData0, (nuint)__hs_stringByteCount0, renderLayer, ambientOcclusion, faceDimming, tintMethod, randomizeUVRotation, supportsTextureVariations, alphaMaskedTint, dithering);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 

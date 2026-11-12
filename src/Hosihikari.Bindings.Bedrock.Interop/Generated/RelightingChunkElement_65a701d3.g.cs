@@ -45,6 +45,7 @@ public sealed unsafe partial class RelightingChunkElement : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_62cb4a4c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

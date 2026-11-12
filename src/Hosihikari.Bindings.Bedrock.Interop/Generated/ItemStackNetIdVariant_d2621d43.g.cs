@@ -45,6 +45,7 @@ public sealed unsafe partial class ItemStackNetIdVariant : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_0306207d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ItemStackNetIdVariant : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_30e63cd3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

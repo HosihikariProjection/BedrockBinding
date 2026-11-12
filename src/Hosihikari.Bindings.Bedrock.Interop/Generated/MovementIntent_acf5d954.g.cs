@@ -53,6 +53,7 @@ public sealed unsafe partial class MovementIntent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_968273e7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class MovementIntent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_9d0d8e7c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

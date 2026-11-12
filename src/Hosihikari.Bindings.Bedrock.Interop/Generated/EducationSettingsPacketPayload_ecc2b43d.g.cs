@@ -45,6 +45,7 @@ public sealed unsafe partial class EducationSettingsPacketPayload : global::Syst
         var handle = NativeMethods.TablePtr->C1.hs_create_e748049a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

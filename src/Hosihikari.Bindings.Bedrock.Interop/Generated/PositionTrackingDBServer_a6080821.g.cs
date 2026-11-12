@@ -53,6 +53,7 @@ public sealed unsafe partial class PositionTrackingDBServer : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_7e9f3f8d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class PositionTrackingDBServer : global::System.IDi
         var handle = NativeMethods.TablePtr->C2.hs_create_d7ff99f3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -137,7 +139,12 @@ public sealed unsafe partial class PositionTrackingDBServer : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBServer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBServer arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7781374d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBServer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBServer((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -125,6 +125,7 @@ public sealed unsafe partial class DragonStrafePlayerGoal : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_64d29063();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

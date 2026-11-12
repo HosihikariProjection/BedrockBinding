@@ -65,6 +65,7 @@ public sealed unsafe partial class OverworldDefaultSurfaceBuilder : global::Syst
         var handle = NativeMethods.TablePtr->C4.hs_create_1f16e1c3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

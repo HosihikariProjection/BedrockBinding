@@ -65,6 +65,7 @@ public sealed unsafe partial class ParticleEffectResponse : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_d7ae59fc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class ParticleEffectResponse : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_be98c94a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -119,7 +121,12 @@ public sealed unsafe partial class ParticleEffectResponse : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.ParticleEffectResponse? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEffectResponse arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cc2b1baa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ParticleEffectResponse((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ParticleEffectResponse((nint)__hs_handle, false);
     }
 
 

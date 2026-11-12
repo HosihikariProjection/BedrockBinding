@@ -45,6 +45,7 @@ public sealed unsafe partial class AmbientSoundIntervalDefinition : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_51441a3b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class AmbientSoundIntervalDefinition : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_d9b14c99((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -101,7 +103,12 @@ public sealed unsafe partial class AmbientSoundIntervalDefinition : global::Syst
     public global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundIntervalDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundIntervalDefinition arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_370dee54((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundIntervalDefinition((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundIntervalDefinition((nint)__hs_handle, false);
     }
 
     public void Dispose()

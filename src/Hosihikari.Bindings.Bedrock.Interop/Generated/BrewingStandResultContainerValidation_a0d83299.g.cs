@@ -65,6 +65,7 @@ public sealed unsafe partial class BrewingStandResultContainerValidation : globa
         var handle = NativeMethods.TablePtr->C0.hs_create_68de6f7f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

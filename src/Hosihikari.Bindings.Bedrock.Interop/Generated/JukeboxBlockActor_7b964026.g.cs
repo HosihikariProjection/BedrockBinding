@@ -257,13 +257,23 @@ public sealed unsafe partial class JukeboxBlockActor : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? getContainer_2b648a66()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2b648a66((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? getContainer_68e4aba8()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_68e4aba8((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false);
     }
 
     public int getContainerSize()
@@ -274,7 +284,12 @@ public sealed unsafe partial class JukeboxBlockActor : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem(int arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_15dd76c8((void*)__hosihikari_shim_handle, arg0);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public int getMaxStackSize()

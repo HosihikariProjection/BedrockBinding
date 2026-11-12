@@ -420,7 +420,12 @@ public sealed unsafe partial class ShulkerBoxBlockActor : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getObstructionAABB()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fd0bfbd5((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle);
     }
 
     public uint getOpenSound()

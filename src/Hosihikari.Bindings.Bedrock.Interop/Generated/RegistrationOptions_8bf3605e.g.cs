@@ -45,6 +45,7 @@ public sealed unsafe partial class RegistrationOptions : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_a1e03a6d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class RegistrationOptions : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_85642350((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -125,7 +127,12 @@ public sealed unsafe partial class RegistrationOptions : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.ECSModule.RegistrationOptions? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ECSModule.RegistrationOptions arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_625e80f4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ECSModule.RegistrationOptions((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ECSModule.RegistrationOptions((nint)__hs_handle, false);
     }
 
     public void Dispose()

@@ -79,6 +79,7 @@ public sealed unsafe partial class DispatcherProcess : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_6fe7f178();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -90,6 +91,7 @@ public sealed unsafe partial class DispatcherProcess : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_ded093c3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -114,7 +116,12 @@ public sealed unsafe partial class DispatcherProcess : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatcherProcess? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatcherProcess arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_05f2c946((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatcherProcess((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.DispatcherProcess((nint)__hs_handle, false);
     }
 
     public void resume()

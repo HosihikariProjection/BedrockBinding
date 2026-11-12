@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockTransformationComponent : global::System
         var handle = NativeMethods.TablePtr->C0.hs_create_17b93478((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

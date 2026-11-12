@@ -45,6 +45,7 @@ public sealed unsafe partial class InteractPacketPayload : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_77e09b36((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

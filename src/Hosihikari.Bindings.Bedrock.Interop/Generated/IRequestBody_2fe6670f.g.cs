@@ -45,6 +45,7 @@ public sealed unsafe partial class IRequestBody : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_ea9a42d7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -83,7 +84,12 @@ public sealed unsafe partial class IRequestBody : global::System.IDisposable
         fixed (byte* __hs_vectorData0 = destination)
         {
             var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a0aaedf4((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(destination?.Length ?? 0));
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody_Nested.ReadResult((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Internal.IRequestBody_Nested.ReadResult((nint)__hs_handle);
         }
     }
 

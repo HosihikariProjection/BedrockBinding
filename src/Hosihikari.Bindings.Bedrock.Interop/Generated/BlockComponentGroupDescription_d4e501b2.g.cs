@@ -49,6 +49,7 @@ public sealed unsafe partial class BlockComponentGroupDescription : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_0fe78251();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class BlockComponentGroupDescription : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_d1fe5b8a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,7 +84,12 @@ public sealed unsafe partial class BlockComponentGroupDescription : global::Syst
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C0.hs_method_52acb935((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentDescription((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentDescription((nint)__hs_handle, false);
         }
     }
 

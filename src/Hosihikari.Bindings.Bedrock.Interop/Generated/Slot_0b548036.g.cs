@@ -49,6 +49,7 @@ public sealed unsafe partial class Slot : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_a8ee1014((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

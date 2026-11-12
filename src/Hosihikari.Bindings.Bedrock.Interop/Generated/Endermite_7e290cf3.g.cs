@@ -619,6 +619,7 @@ public sealed unsafe partial class Endermite : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_fe299932();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class ZlibFileAccessWrapper : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_725a4653();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ZlibFileAccessWrapper : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_3f9a9bad((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -85,7 +87,12 @@ public sealed unsafe partial class ZlibFileAccessWrapper : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.ZlibFileAccessWrapper? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ZlibFileAccessWrapper arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a033b03c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ZlibFileAccessWrapper((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ZlibFileAccessWrapper((nint)__hs_handle, false);
     }
 
     public void Dispose()

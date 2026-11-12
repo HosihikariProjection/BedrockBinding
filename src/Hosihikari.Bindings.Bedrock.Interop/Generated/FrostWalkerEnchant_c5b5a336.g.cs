@@ -115,6 +115,7 @@ public sealed unsafe partial class FrostWalkerEnchant : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_36cce7d1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

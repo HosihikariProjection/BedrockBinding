@@ -45,6 +45,7 @@ public sealed unsafe partial class InvertableFilter_HashedString_ : global::Syst
         var handle = NativeMethods.TablePtr->C1.hs_create_9de8ec62((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

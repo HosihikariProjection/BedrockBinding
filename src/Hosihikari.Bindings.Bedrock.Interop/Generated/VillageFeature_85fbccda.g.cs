@@ -150,6 +150,7 @@ public sealed unsafe partial class VillageFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_44cda593();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -161,6 +162,7 @@ public sealed unsafe partial class VillageFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_792fb022((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -172,6 +174,7 @@ public sealed unsafe partial class VillageFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_2a5c9148(seed, townSpacing, minTownSeparation, (void*)biomeRegistry.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

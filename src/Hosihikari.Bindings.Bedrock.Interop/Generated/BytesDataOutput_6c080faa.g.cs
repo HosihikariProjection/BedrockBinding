@@ -113,6 +113,7 @@ public sealed unsafe partial class BytesDataOutput : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_b46ff499((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

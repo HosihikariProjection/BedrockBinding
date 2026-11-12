@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_PacketSender_ : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_3524009d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_PacketSender_ : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_82af2a76(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_PacketSender_ : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_9587de9c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_PacketSender_ : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_6d898300(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_PacketSender_ : global::Syste
     public global::Hosihikari.Bindings.Bedrock.Interop.PacketSender? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_72d14b09((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PacketSender((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PacketSender((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_PacketSender_ : global::Syste
     public global::Hosihikari.Bindings.Bedrock.Interop.PacketSender? operator_PacketSender__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9082caca((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PacketSender((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PacketSender((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_PacketSender_ : global::Syste
     public global::Hosihikari.Bindings.Bedrock.Interop.PacketSender? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7479f60d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PacketSender((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PacketSender((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PacketSender? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1fb6945f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PacketSender((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PacketSender((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

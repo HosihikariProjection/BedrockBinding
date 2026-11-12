@@ -45,6 +45,7 @@ public sealed unsafe partial class GenerationContext : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_f6b4ac96();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class GenerationContext : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_b749ba0b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -101,7 +103,12 @@ public sealed unsafe partial class GenerationContext : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c2216d19((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext((nint)__hs_handle, false);
     }
 
 

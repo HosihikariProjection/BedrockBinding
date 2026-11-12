@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorIsMarkVariantTest : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_57ef8364((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -87,6 +87,7 @@ public sealed unsafe partial class InspectDataCommand : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_ee182eb5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

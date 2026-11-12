@@ -49,6 +49,7 @@ public sealed unsafe partial class LibraryScreenCapabilities : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_33e365e1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class LibraryScreenCapabilities : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_7bd8672b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -105,7 +107,12 @@ public sealed unsafe partial class LibraryScreenCapabilities : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.LibraryScreenCapabilities? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LibraryScreenCapabilities arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_79dd834c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LibraryScreenCapabilities((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LibraryScreenCapabilities((nint)__hs_handle, false);
     }
 
 

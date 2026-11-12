@@ -45,6 +45,7 @@ public sealed unsafe partial class ChunkPositionAndDimension : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_eff7300d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

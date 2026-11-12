@@ -49,6 +49,7 @@ public sealed unsafe partial class InsideBlockNotifierSystem : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_e8b064b5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -57,6 +57,7 @@ public sealed unsafe partial class EnchantBookForTradingFunction : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_e8d11813((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

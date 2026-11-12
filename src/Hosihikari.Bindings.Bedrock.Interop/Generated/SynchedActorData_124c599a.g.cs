@@ -53,6 +53,7 @@ public sealed unsafe partial class SynchedActorData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_ba2fceee();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class SynchedActorData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_2f680bc9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -107,7 +109,12 @@ public sealed unsafe partial class SynchedActorData : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_76b7d7e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'std::unique_ptr<DataItem>' is not supported.", false)]

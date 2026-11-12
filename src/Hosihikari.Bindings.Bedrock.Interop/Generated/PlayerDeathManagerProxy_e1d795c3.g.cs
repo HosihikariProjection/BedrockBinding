@@ -61,6 +61,7 @@ public sealed unsafe partial class PlayerDeathManagerProxy : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_17d9865f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -70,7 +71,12 @@ public sealed unsafe partial class PlayerDeathManagerProxy : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? fetchActor(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorUniqueID)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b598b32e((void*)__hosihikari_shim_handle, (void*)actorUniqueID.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

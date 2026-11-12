@@ -45,6 +45,7 @@ public sealed unsafe partial class TeleportComponent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_e9ef9b59((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

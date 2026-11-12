@@ -49,6 +49,7 @@ public sealed unsafe partial class WebSocketPacketData : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_1b347efb();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class WebSocketPacketData : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_3d2852a3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

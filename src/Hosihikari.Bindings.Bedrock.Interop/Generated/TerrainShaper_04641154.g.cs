@@ -59,6 +59,7 @@ public sealed unsafe partial class TerrainShaper : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_2a8ca342((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

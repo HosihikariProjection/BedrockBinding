@@ -62,6 +62,7 @@ public sealed unsafe partial class AudioTrackInterface : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_04b6c4fd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,7 +81,12 @@ public sealed unsafe partial class AudioTrackInterface : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface? GetSource()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_20dff959((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface((nint)__hs_handle, false);
     }
 
     public void RemoveSink(nint a1)

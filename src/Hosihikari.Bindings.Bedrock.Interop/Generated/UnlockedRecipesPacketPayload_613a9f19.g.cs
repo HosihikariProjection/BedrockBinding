@@ -45,6 +45,7 @@ public sealed unsafe partial class UnlockedRecipesPacketPayload : global::System
         var handle = NativeMethods.TablePtr->C4.hs_create_a458626b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

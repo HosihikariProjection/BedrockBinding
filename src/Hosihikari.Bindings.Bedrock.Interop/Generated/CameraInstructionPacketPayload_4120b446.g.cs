@@ -45,6 +45,7 @@ public sealed unsafe partial class CameraInstructionPacketPayload : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_f2c7775f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

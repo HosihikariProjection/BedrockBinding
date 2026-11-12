@@ -77,6 +77,7 @@ public sealed unsafe partial class WebSocket : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_fcbc58a0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -150,7 +151,12 @@ public sealed unsafe partial class WebSocket : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocket? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocket arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_64caa227((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocket((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.WebSocket((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<std::error_code>' requires --link-carrier or --virtual-dispatch.", false)]

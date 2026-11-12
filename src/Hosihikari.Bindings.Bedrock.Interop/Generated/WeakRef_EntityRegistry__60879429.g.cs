@@ -45,6 +45,7 @@ public sealed unsafe partial class WeakRef_EntityRegistry_ : global::System.IDis
         var handle = NativeMethods.TablePtr->C4.hs_create_c106b94c(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class WeakRef_EntityRegistry_ : global::System.IDis
         var handle = NativeMethods.TablePtr->C4.hs_create_a2247688(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class WeakRef_EntityRegistry_ : global::System.IDis
         var handle = NativeMethods.TablePtr->C4.hs_create_da957b9c(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class WeakRef_EntityRegistry_ : global::System.IDis
         var handle = NativeMethods.TablePtr->C4.hs_create_2156dfc2(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

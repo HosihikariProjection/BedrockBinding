@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerEnchantOptionsPacketPayload : global::S
         var handle = NativeMethods.TablePtr->C2.hs_create_ee09177e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

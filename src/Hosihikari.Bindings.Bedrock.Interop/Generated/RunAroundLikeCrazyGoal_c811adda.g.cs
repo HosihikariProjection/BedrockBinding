@@ -83,6 +83,7 @@ public sealed unsafe partial class RunAroundLikeCrazyGoal : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_f28e02af();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -94,6 +95,7 @@ public sealed unsafe partial class RunAroundLikeCrazyGoal : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_c3ad926e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -151,7 +153,12 @@ public sealed unsafe partial class RunAroundLikeCrazyGoal : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.RunAroundLikeCrazyGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RunAroundLikeCrazyGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d299cea9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RunAroundLikeCrazyGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RunAroundLikeCrazyGoal((nint)__hs_handle, false);
     }
 
     public void start()

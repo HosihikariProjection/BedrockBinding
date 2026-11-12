@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorTerrainInterlockData : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_ccf6792b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -57,6 +57,7 @@ public sealed unsafe partial class TransformationComponentDefinition : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_43a28104();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

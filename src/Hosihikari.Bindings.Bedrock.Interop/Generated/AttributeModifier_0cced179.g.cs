@@ -81,6 +81,7 @@ public sealed unsafe partial class AttributeModifier : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_e4b96758();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -92,6 +93,7 @@ public sealed unsafe partial class AttributeModifier : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_a639cdff((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -116,6 +118,7 @@ public sealed unsafe partial class AttributeModifier : global::System.IDisposabl
             var handle = NativeMethods.TablePtr->C0.hs_create_86c24632((void*)id.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, amount, operation, operand, serializable);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 

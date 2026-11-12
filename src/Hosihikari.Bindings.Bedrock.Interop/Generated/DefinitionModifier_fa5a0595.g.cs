@@ -45,6 +45,7 @@ public sealed unsafe partial class DefinitionModifier : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_476d635d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

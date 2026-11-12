@@ -71,6 +71,7 @@ public sealed unsafe partial class FilterTestDistanceToNearestPlayer : global::S
         var handle = NativeMethods.TablePtr->C1.hs_create_12852cad((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

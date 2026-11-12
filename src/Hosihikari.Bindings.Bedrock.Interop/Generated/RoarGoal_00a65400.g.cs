@@ -91,6 +91,7 @@ public sealed unsafe partial class RoarGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_f0beceea();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class RoarGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_242eb988((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -165,7 +167,12 @@ public sealed unsafe partial class RoarGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RoarGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RoarGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4a460cf5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RoarGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RoarGoal((nint)__hs_handle, false);
     }
 
     public void start()

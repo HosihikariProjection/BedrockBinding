@@ -48,19 +48,34 @@ public sealed unsafe partial class VanillaDimensions : global::System.IDisposabl
     public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? Nether()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e7379ce2();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? Overworld()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d548ade6();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? TheEnd()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_be32882b();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -70,7 +85,12 @@ public sealed unsafe partial class VanillaDimensions : global::System.IDisposabl
     public static global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? Undefined()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_546a7ff3();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle, false);
     }
 
     public static bool convertPointBetweenDimensions(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 startingPosition, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 outputPosition, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromID, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType toID, global::Hosihikari.Bindings.Bedrock.Interop.DimensionConversionData data)
@@ -98,7 +118,12 @@ public sealed unsafe partial class VanillaDimensions : global::System.IDisposabl
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e0ce4a41(__hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle);
         }
     }
 

@@ -57,6 +57,7 @@ public sealed unsafe partial class DBChunkStorageKey : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_c4ce7fbc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

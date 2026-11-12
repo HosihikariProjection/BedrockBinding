@@ -51,6 +51,7 @@ public sealed unsafe partial class OverworldBrightnessRamp : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_c671d3b3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

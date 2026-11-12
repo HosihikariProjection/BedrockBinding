@@ -45,6 +45,7 @@ public sealed unsafe partial class StructureTemplateDataRequestPacketPayload : g
         var handle = NativeMethods.TablePtr->C3.hs_create_d36394d6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class StructureTemplateDataRequestPacketPayload : g
         var handle = NativeMethods.TablePtr->C3.hs_create_7ecc6b2c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

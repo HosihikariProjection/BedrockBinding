@@ -73,6 +73,7 @@ public sealed unsafe partial class ScriptEquippableComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_a3f9cbff((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

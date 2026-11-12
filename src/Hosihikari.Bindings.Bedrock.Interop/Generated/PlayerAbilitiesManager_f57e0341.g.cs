@@ -49,6 +49,7 @@ public sealed unsafe partial class PlayerAbilitiesManager : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_1de87603();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class PlayerAbilitiesManager : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_a1e0cd47((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

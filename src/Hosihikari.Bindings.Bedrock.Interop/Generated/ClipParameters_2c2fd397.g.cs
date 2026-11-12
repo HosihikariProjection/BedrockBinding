@@ -45,6 +45,7 @@ public sealed unsafe partial class ClipParameters : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_c12a2e4d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ClipParameters : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_2d4bfc5d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -125,7 +127,12 @@ public sealed unsafe partial class ClipParameters : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ClipParameters? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ClipParameters arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_783f4e54((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ClipParameters((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ClipParameters((nint)__hs_handle, false);
     }
 
 

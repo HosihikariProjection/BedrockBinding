@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorLocationData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_c5b5aa1a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ActorLocationData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_4114e949((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class ActorLocationData : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.ActorLocationData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.ActorLocationData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_da515485((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.ActorLocationData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.ActorLocationData((nint)__hs_handle, false);
     }
 
     public void Dispose()

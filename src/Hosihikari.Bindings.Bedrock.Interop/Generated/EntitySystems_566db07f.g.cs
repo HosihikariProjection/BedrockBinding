@@ -71,6 +71,7 @@ public sealed unsafe partial class EntitySystems : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_57445035();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

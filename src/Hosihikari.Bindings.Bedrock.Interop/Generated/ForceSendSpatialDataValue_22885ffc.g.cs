@@ -45,6 +45,7 @@ public sealed unsafe partial class ForceSendSpatialDataValue : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_6e78e0b3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

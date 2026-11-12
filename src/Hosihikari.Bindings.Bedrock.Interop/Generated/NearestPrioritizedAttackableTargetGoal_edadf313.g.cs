@@ -144,6 +144,7 @@ public sealed unsafe partial class NearestPrioritizedAttackableTargetGoal : glob
         var handle = NativeMethods.TablePtr->C2.hs_create_20bc4ab7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -159,6 +160,7 @@ public sealed unsafe partial class NearestPrioritizedAttackableTargetGoal : glob
         var handle = NativeMethods.TablePtr->C2.hs_create_8fa7e472((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -85,6 +85,7 @@ public sealed unsafe partial class XoroshiroRandom : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_27a61d89();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class XoroshiroRandom : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_2c7fe673((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -161,7 +163,12 @@ public sealed unsafe partial class XoroshiroRandom : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroRandom? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroRandom arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fd7d85f0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroRandom((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroRandom((nint)__hs_handle, false);
     }
 
 

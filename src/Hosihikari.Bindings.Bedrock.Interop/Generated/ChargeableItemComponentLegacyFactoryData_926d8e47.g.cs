@@ -45,6 +45,7 @@ public sealed unsafe partial class ChargeableItemComponentLegacyFactoryData : gl
         var handle = NativeMethods.TablePtr->C0.hs_create_c6e824b1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

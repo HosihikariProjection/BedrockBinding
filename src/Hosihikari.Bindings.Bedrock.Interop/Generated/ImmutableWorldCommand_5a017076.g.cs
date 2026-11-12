@@ -78,6 +78,7 @@ public sealed unsafe partial class ImmutableWorldCommand : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_5498b43c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

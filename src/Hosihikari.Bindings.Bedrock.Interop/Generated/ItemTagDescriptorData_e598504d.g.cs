@@ -45,6 +45,7 @@ public sealed unsafe partial class ItemTagDescriptorData : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_e8f1f2a0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

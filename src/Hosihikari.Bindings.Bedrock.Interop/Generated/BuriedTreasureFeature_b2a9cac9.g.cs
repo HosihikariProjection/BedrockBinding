@@ -71,6 +71,7 @@ public sealed unsafe partial class BuriedTreasureFeature : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_e31196d3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,6 +83,7 @@ public sealed unsafe partial class BuriedTreasureFeature : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_d5dbc004((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -93,6 +95,7 @@ public sealed unsafe partial class BuriedTreasureFeature : global::System.IDispo
         var handle = NativeMethods.TablePtr->C0.hs_create_7b9c6b0c(seed);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

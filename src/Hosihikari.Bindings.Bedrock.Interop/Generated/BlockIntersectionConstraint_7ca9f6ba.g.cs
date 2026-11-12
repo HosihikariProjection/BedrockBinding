@@ -57,6 +57,7 @@ public sealed unsafe partial class BlockIntersectionConstraint : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_2a4d85d4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class BlockIntersectionConstraint : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_b1c64173((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

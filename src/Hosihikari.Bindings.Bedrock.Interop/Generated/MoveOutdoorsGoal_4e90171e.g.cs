@@ -205,6 +205,7 @@ public sealed unsafe partial class MoveOutdoorsGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_6af806f7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -220,6 +221,7 @@ public sealed unsafe partial class MoveOutdoorsGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_eadf7f1a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

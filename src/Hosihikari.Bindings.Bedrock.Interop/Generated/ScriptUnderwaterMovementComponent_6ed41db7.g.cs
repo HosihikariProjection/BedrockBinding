@@ -79,6 +79,7 @@ public sealed unsafe partial class ScriptUnderwaterMovementComponent : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_d1cc4ec5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -122,6 +122,7 @@ public sealed unsafe partial class MovingBlockActor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_cabc4323();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -133,6 +134,7 @@ public sealed unsafe partial class MovingBlockActor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_d89d20d5((void*)pos.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptTickSignal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_4c01be2c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

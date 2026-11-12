@@ -45,6 +45,7 @@ public sealed unsafe partial class ILevelChunkEventManagerConnector : global::Sy
         var handle = NativeMethods.TablePtr->C1.hs_create_3e31db0b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

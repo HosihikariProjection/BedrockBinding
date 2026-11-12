@@ -45,6 +45,7 @@ public sealed unsafe partial class ContainerIterator_Container_ : global::System
         var handle = NativeMethods.TablePtr->C0.hs_create_df5ff91a((void*)(container?.Handle ?? 0), position);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,49 +55,89 @@ public sealed unsafe partial class ContainerIterator_Container_ : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a4b75fd3((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_? operator_add(long n)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1a91faa4((void*)__hosihikari_shim_handle, n);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_? operator_operator___60b4c627()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_60b4c627((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_? operator_operator___e4f52fa7(long n)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e4f52fa7((void*)__hosihikari_shim_handle, n);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_? operator_subtract(long n)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3d5cef1f((void*)__hosihikari_shim_handle, n);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_? operator_operator___8da2cd86()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8da2cd86((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_? operator_operator___6686ae2c(long n)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6686ae2c((void*)__hosihikari_shim_handle, n);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_Container_((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? operator_operator___05df8522()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_05df8522((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]
@@ -111,7 +152,12 @@ public sealed unsafe partial class ContainerIterator_Container_ : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? operator_index(long n)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8b92c551((void*)__hosihikari_shim_handle, n);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public void Dispose()

@@ -45,6 +45,7 @@ public sealed unsafe partial class OptionalParameterChain : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_ff2b8c91((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -75,6 +75,7 @@ public sealed unsafe partial class SerializerContext : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_3ee0e6dd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

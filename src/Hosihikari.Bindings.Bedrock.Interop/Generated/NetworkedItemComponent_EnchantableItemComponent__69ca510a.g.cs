@@ -51,6 +51,7 @@ public sealed unsafe partial class NetworkedItemComponent_EnchantableItemCompone
         var handle = NativeMethods.TablePtr->C2.hs_create_c1e8f744((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

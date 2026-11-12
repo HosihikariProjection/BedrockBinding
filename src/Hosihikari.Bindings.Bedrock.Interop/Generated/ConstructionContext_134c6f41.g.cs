@@ -50,6 +50,7 @@ public sealed unsafe partial class ConstructionContext : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_6de6934b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

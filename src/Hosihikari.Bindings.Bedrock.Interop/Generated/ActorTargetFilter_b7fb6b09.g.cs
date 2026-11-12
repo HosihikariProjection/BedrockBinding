@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorTargetFilter : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_434ad79e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

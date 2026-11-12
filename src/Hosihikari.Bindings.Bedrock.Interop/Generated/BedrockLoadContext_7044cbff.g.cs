@@ -49,6 +49,7 @@ public sealed unsafe partial class BedrockLoadContext : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_6eb58a54((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

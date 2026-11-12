@@ -45,6 +45,7 @@ public sealed unsafe partial class PassengersToPositionComponent : global::Syste
         var handle = NativeMethods.TablePtr->C2.hs_create_fe4a668e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

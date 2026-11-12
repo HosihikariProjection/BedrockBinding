@@ -49,6 +49,7 @@ public sealed unsafe partial class FilterGroupDataMap : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_dc11f9f5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

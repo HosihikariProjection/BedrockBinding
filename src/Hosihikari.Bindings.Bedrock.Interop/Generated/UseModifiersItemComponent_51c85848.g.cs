@@ -49,6 +49,7 @@ public sealed unsafe partial class UseModifiersItemComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_d90115ab((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class GatheringsConfigurationJoinInfo : global::Sys
         var handle = NativeMethods.TablePtr->C3.hs_create_7a51dae4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

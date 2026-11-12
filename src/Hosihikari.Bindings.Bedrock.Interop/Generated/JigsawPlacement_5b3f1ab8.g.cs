@@ -49,6 +49,7 @@ public sealed unsafe partial class JigsawPlacement : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_a919d50a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class JigsawPlacement : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_ac714a80((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -155,7 +157,12 @@ public sealed unsafe partial class JigsawPlacement : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.JigsawPlacement? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JigsawPlacement arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5fa4e3e7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.JigsawPlacement((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.JigsawPlacement((nint)__hs_handle, false);
     }
 
 

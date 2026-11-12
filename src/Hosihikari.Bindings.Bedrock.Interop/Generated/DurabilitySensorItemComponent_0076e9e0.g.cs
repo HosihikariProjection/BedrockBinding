@@ -45,6 +45,7 @@ public sealed unsafe partial class DurabilitySensorItemComponent : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_c9708582((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

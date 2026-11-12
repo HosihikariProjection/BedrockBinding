@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerAddLevelEvent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_2b714e91((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

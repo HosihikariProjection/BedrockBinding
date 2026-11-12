@@ -45,6 +45,7 @@ public sealed unsafe partial class TypeWrapper_std__pair_std__basic_string_char_
         var handle = NativeMethods.TablePtr->C4.hs_create_6b3af97d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class TypeWrapper_std__pair_std__basic_string_char_
         var handle = NativeMethods.TablePtr->C4.hs_create_ac3aee18((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class TypeWrapper_std__pair_std__basic_string_char_
         var handle = NativeMethods.TablePtr->C4.hs_create_41d640b9((void*)other);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

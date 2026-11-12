@@ -69,6 +69,7 @@ public sealed unsafe partial class FileStdStreamBuf : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_5c4535c1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,6 +81,7 @@ public sealed unsafe partial class FileStdStreamBuf : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_5e97b9d6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -117,7 +119,12 @@ public sealed unsafe partial class FileStdStreamBuf : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStdStreamBuf? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStdStreamBuf arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b8acc4ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStdStreamBuf((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStdStreamBuf((nint)__hs_handle, false);
     }
 
     public int overflow(int c)

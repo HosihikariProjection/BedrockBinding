@@ -45,6 +45,7 @@ public sealed unsafe partial class MapCreateLockedCopyPacketPayload : global::Sy
         var handle = NativeMethods.TablePtr->C2.hs_create_d8ad18af((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

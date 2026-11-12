@@ -63,6 +63,7 @@ public sealed unsafe partial class RenderOffsetsItemComponent : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_276160a2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

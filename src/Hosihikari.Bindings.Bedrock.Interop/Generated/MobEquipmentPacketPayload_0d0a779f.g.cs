@@ -50,6 +50,7 @@ public sealed unsafe partial class MobEquipmentPacketPayload : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_61824c14();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -61,6 +62,7 @@ public sealed unsafe partial class MobEquipmentPacketPayload : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_80129a34((void*)runtimeId.Handle, (void*)item.Handle, slot, selectedSlot, containerId);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +74,7 @@ public sealed unsafe partial class MobEquipmentPacketPayload : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_f865855d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

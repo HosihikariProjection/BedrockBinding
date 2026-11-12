@@ -53,13 +53,23 @@ public sealed unsafe partial class VideoReceiveStreamInterface : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Stats? GetStats()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2f0f1a59((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Stats((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Stats((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState? SetAndGetRecordingState(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState arg0, bool arg1)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_95c3f0ef((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::map<int, int>' is not a known bindable declaration.", false)]
@@ -106,6 +116,7 @@ public sealed unsafe partial class VideoReceiveStreamInterface : global::System.
         var handle = NativeMethods.TablePtr->C4.hs_create_dff3a5d7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

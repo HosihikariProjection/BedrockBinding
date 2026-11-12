@@ -53,6 +53,7 @@ public sealed unsafe partial class DiggerItemComponent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_ff61f525();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class DiggerItemComponent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_89fbf367((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

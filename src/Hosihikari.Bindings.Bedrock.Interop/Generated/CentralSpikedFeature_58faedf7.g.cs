@@ -53,6 +53,7 @@ public sealed unsafe partial class CentralSpikedFeature : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_a24cf64a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class CentralSpikedFeature : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_c200b909((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,7 +86,12 @@ public sealed unsafe partial class CentralSpikedFeature : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.CentralSpikedFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CentralSpikedFeature arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_360b192e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CentralSpikedFeature((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CentralSpikedFeature((nint)__hs_handle, false);
     }
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)

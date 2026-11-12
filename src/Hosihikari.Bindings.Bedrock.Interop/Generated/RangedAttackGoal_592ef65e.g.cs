@@ -91,6 +91,7 @@ public sealed unsafe partial class RangedAttackGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3865c78e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,6 +107,7 @@ public sealed unsafe partial class RangedAttackGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_d4d281fe((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -305,7 +307,12 @@ public sealed unsafe partial class RangedAttackGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RangedAttackGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RangedAttackGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f332744b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RangedAttackGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RangedAttackGoal((nint)__hs_handle, false);
     }
 
     public void start()

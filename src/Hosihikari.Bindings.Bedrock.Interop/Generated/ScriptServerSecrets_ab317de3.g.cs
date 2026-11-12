@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptServerSecrets : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_6f1358a0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ScriptServerSecrets : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_d587fd98((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -89,7 +91,12 @@ public sealed unsafe partial class ScriptServerSecrets : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerSecrets? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerSecrets arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a43334a2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerSecrets((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerSecrets((nint)__hs_handle, false);
     }
 
     public void Dispose()

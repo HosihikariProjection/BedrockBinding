@@ -53,6 +53,7 @@ public sealed unsafe partial class OnUseOnItemComponentLegacyFactoryData : globa
         var handle = NativeMethods.TablePtr->C2.hs_create_54d167ce();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class OnUseOnItemComponentLegacyFactoryData : globa
         var handle = NativeMethods.TablePtr->C2.hs_create_959c3ce7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

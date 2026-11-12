@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockComponentDirectData : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_5cc2fce2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

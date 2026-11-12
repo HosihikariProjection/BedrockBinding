@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerAddExpEvent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_1a5caa91((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

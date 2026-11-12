@@ -77,6 +77,7 @@ public sealed unsafe partial class LegacySpringsFeature : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_b866e445();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -92,6 +93,7 @@ public sealed unsafe partial class LegacySpringsFeature : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_c6643b19((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

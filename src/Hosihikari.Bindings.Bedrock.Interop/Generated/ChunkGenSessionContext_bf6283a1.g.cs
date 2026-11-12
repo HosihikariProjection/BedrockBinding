@@ -45,6 +45,7 @@ public sealed unsafe partial class ChunkGenSessionContext : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_4c85c6de((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

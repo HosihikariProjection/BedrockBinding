@@ -80,6 +80,7 @@ public sealed unsafe partial class VideoTrackInterface : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C4.hs_create_b8423bb3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

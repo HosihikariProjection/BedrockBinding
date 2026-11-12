@@ -143,6 +143,7 @@ public sealed unsafe partial class ZipPackAccessStrategy : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_13728eeb();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -154,6 +155,7 @@ public sealed unsafe partial class ZipPackAccessStrategy : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_bd2f6c10((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -214,7 +216,12 @@ public sealed unsafe partial class ZipPackAccessStrategy : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation? getPackLocation()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1ccab376((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)__hs_handle, false);
     }
 
     public string getPackName()
@@ -236,13 +243,23 @@ public sealed unsafe partial class ZipPackAccessStrategy : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_? getStreamableSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView? tempDirectory)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_af814038((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, (void*)(tempDirectory?.Handle ?? 0), tempDirectory is not null);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getSubPath()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_718c0b3d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle, false);
     }
 
     public bool hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, bool trustedContentOnly, bool caseSensative)
@@ -320,13 +337,23 @@ public sealed unsafe partial class ZipPackAccessStrategy : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.ZipPackAccessStrategy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ZipPackAccessStrategy arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fc0982c7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ZipPackAccessStrategy((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ZipPackAccessStrategy((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity? readContentIdentity()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_0a5b4329((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity((nint)__hs_handle);
     }
 
     public bool supportsSignatureVerification()

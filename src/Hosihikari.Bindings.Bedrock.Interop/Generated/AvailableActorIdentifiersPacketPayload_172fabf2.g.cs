@@ -45,6 +45,7 @@ public sealed unsafe partial class AvailableActorIdentifiersPacketPayload : glob
         var handle = NativeMethods.TablePtr->C0.hs_create_48fc815e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

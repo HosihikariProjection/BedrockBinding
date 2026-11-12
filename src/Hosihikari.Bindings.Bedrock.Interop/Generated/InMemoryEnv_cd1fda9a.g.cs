@@ -135,7 +135,12 @@ public sealed unsafe partial class InMemoryEnv : global::System.IDisposable
             fixed (byte* __hs_stringData0 = __hs_stringBytes0)
             {
                 var __hs_handle = NativeMethods.TablePtr->C1.hs_method_830e3bf1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_vectorData1, (nuint)(r?.Length ?? 0));
-                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+                if (__hs_handle == null)
+                {
+                    NativeMethods.GetLastError();
+                    return null;
+                }
+                return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
             }
         }
     }
@@ -156,7 +161,12 @@ public sealed unsafe partial class InMemoryEnv : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d96721bf((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)size);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
         }
     }
 
@@ -165,6 +175,7 @@ public sealed unsafe partial class InMemoryEnv : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_53f5f531();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -176,6 +187,7 @@ public sealed unsafe partial class InMemoryEnv : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_1f5fd306((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -214,7 +226,12 @@ public sealed unsafe partial class InMemoryEnv : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C1.hs_method_38462b11((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
         }
     }
 
@@ -247,7 +264,12 @@ public sealed unsafe partial class InMemoryEnv : global::System.IDisposable
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
                 var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ea9687dc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
-                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+                if (__hs_handle == null)
+                {
+                    NativeMethods.GetLastError();
+                    return null;
+                }
+                return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
             }
         }
     }
@@ -282,7 +304,12 @@ public sealed unsafe partial class InMemoryEnv : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.InMemoryEnv? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryEnv arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b469c880((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryEnv((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryEnv((nint)__hs_handle, false);
     }
 
 

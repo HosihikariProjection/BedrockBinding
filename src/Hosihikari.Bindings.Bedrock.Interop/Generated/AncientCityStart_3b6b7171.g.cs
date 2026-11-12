@@ -53,6 +53,7 @@ public sealed unsafe partial class AncientCityStart : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_336acf55((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

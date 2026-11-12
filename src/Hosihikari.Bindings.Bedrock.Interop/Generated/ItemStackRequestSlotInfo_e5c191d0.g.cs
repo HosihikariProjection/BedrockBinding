@@ -45,6 +45,7 @@ public sealed unsafe partial class ItemStackRequestSlotInfo : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_18b7c33b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

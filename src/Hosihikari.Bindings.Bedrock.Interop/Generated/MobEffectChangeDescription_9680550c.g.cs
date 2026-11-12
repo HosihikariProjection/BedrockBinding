@@ -57,6 +57,7 @@ public sealed unsafe partial class MobEffectChangeDescription : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_3e641d20((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

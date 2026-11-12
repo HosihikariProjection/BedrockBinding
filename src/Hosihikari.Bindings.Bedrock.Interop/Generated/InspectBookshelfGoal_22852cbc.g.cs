@@ -209,6 +209,7 @@ public sealed unsafe partial class InspectBookshelfGoal : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_4dce8bb0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -224,6 +225,7 @@ public sealed unsafe partial class InspectBookshelfGoal : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_cc3114df((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

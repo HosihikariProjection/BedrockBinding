@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptCameraDefaultOptions : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_7f423a05((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

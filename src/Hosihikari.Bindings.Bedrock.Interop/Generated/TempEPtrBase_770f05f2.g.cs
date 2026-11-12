@@ -57,6 +57,7 @@ public sealed unsafe partial class TempEPtrBase : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_a355d18a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class TempEPtrBase : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_7c9eed9b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

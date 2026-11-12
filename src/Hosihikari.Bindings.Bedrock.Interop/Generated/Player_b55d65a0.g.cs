@@ -731,7 +731,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? __hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f4d0a3c7((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -775,7 +780,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _attack(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint cause)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0fbf41f7((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)cause);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
     public bool _canAddPassenger(global::Hosihikari.Bindings.Bedrock.Interop.Actor passenger)
@@ -1293,25 +1303,45 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? EXHAUSTION()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_009242a7();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? EXPERIENCE()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f4101320();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? HUNGER()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3752ea03();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? LEVEL()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d101f358();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     public static Player? Create()
@@ -1319,6 +1349,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_b597b27f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -1334,6 +1365,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_2a3ac703((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -1343,7 +1375,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? SATURATION()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3b06811a();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -1364,7 +1401,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_290c2746((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -1446,13 +1488,23 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? attack(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint cause)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f7886c55((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)cause);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? attack(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint cause, global::Hosihikari.Bindings.Bedrock.Interop.Player_Nested.AttackParameters parameters)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0533227f((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)cause, (void*)parameters.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
     public bool canAddPassenger(global::Hosihikari.Bindings.Bedrock.Interop.Actor passenger)
@@ -1947,13 +1999,23 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities? getAbilities_f8073330()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f8073330((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities? getAbilities_842aa693()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_842aa693((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -1963,7 +2025,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getActorRendererId()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_00647450((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -1995,7 +2062,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent? getAnimationComponent()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_97bafd21((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -2013,7 +2085,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getCarriedItem()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_24770a58((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -2034,13 +2111,23 @@ public sealed unsafe partial class Player : global::System.IDisposable
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_50f505f4((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getCurrentStructureFeature()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1bb446d6((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -2062,31 +2149,56 @@ public sealed unsafe partial class Player : global::System.IDisposable
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6e321530((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EnderChestContainer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.EnderChestContainer((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getEquippedTotem()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b814bf83((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing? getEventing()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_77aa9109((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? getExpectedSpawnDimensionId()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ec2d88be((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getExpectedSpawnPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_54b0f3a6((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false);
     }
 
     public string getIPAndPort()
@@ -2102,13 +2214,23 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getInterpolatedRidingOffset(float arg0, int arg1)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_326c7e9c((void*)__hosihikari_shim_handle, arg0, arg1);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Inventory? getInventory()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_acf3d65a((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Inventory((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Inventory((nint)__hs_handle, false);
     }
 
     public int getItemCooldownLeft(global::Hosihikari.Bindings.Bedrock.Interop.HashedString category)
@@ -2143,14 +2265,24 @@ public sealed unsafe partial class Player : global::System.IDisposable
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_761079c5((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getLastDeathPos()
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ccdc010c((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public string getLocaleCode()
@@ -2176,33 +2308,58 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings? getMovementSettings()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8e48c17d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? getNameTagTextColor()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2339452a((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier? getNetworkIdentifier()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1d60adf5((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus? getNetworkStatus()
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d549a210((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo? getPartyInfo_UNTRUSTED()
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f8ba02b1((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -2218,7 +2375,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventCoordinator? getPlayerEventCoordinator()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d5576247((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventCoordinator((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventCoordinator((nint)__hs_handle, false);
     }
 
     public int getPlayerGameType()
@@ -2245,7 +2407,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getSelectedItem()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_dc7228c6((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public int getSelectedItemSlot()
@@ -2275,13 +2442,23 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent? getUserEntityIdentifier_8c183776()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8c183776((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent? getUserEntityIdentifier_4b63d575()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4b63d575((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent((nint)__hs_handle, false);
     }
 
     public uint getUserId()
@@ -2292,7 +2469,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? getUuid()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b8dd04ca((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false);
     }
 
     public int getXpEarnedAtCurrentLevel()
@@ -2347,7 +2529,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult? interact(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e15f24b1((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)location.Handle, handSlot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle);
     }
 
     public void inventoryChanged(global::Hosihikari.Bindings.Bedrock.Interop.Container arg0, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack oldItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack newItem, bool forceBalanced)
@@ -3199,7 +3386,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Player? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Player arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_65ff0552((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false);
     }
 
     public void passengerTick()
@@ -3455,7 +3647,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? setSelectedSlot(int slot)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3a5c3e98((void*)__hosihikari_shim_handle, slot);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
     public void setSleeping(bool val)
@@ -3583,7 +3780,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.Player? tryGetFromEntity(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, bool includeRemoved)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f1932719((void*)entity.Handle, includeRemoved);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false);
     }
 
     public bool tryStartGliding()

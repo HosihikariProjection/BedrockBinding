@@ -49,6 +49,7 @@ public sealed unsafe partial class EventScope : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_e4b38f79();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class EventScope : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f8825f05((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,7 +83,12 @@ public sealed unsafe partial class EventScope : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c334bcd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope((nint)__hs_handle, false);
     }
 
 

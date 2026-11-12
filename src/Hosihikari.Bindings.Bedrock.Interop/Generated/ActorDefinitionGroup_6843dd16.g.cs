@@ -49,6 +49,7 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_b9d11a9c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_7509967f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -139,7 +141,12 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5c9578df((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionPtr? tryGetDefinition(string definitionId)
@@ -158,7 +165,12 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ef042212((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionPtr((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionPtr((nint)__hs_handle);
         }
     }
 

@@ -51,6 +51,7 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_f8cdb7c3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,7 +76,12 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView? getCurrentlyPlayingMusicPath()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1535ea04((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView((nint)__hs_handle);
     }
 
     public bool getItem(string eventName, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView soundPath, nint soundItem)

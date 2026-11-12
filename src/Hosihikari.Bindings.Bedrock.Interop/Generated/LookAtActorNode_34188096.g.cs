@@ -92,6 +92,7 @@ public sealed unsafe partial class LookAtActorNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_78c4f745((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

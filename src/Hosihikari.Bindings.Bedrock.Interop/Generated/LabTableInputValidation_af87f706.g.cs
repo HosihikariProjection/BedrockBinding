@@ -57,6 +57,7 @@ public sealed unsafe partial class LabTableInputValidation : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_6a07c552((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

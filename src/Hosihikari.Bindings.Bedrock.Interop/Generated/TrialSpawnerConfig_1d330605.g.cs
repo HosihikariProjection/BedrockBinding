@@ -57,6 +57,7 @@ public sealed unsafe partial class TrialSpawnerConfig : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C4.hs_create_e7826bcc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

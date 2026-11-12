@@ -45,6 +45,7 @@ public sealed unsafe partial class DeathInfoPacketPayload : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_4796e9b9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

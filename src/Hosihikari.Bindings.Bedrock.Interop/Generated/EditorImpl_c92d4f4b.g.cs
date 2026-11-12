@@ -65,6 +65,7 @@ public sealed unsafe partial class EditorImpl : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_3d2ab3cd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class EditorImpl : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_7b420faa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,7 +108,12 @@ public sealed unsafe partial class EditorImpl : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C0.hs_method_bf8f0609((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Node((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Node((nint)__hs_handle, false);
         }
     }
 
@@ -126,7 +133,12 @@ public sealed unsafe partial class EditorImpl : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c41da461((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Node((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Node((nint)__hs_handle, false);
         }
     }
 
@@ -145,7 +157,12 @@ public sealed unsafe partial class EditorImpl : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.EditorImpl? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.EditorImpl arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_583a838d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.EditorImpl((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.EditorImpl((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Node? setValueForKey(string key, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper value)
@@ -164,7 +181,12 @@ public sealed unsafe partial class EditorImpl : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d3f5696f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)value.Handle);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Node((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.Node((nint)__hs_handle, false);
         }
     }
 

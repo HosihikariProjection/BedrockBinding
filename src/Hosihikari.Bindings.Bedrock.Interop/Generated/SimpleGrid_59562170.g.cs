@@ -45,6 +45,7 @@ public sealed unsafe partial class SimpleGrid : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_464b8ccc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

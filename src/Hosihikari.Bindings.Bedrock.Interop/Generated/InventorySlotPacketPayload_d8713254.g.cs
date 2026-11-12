@@ -64,6 +64,7 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C1.hs_create_4ee28f0a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,6 +76,7 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C1.hs_create_e2b27470(id, slot, (void*)item.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -86,6 +88,7 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C1.hs_create_d23ccb08(id, slot, (void*)item.Handle, (void*)fullContainerName.Handle, (void*)storageItem.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -101,6 +104,7 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
         var handle = NativeMethods.TablePtr->C1.hs_create_2399265b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -140,7 +144,12 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2e195742((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload((nint)__hs_handle, false);
     }
 
 

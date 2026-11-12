@@ -45,6 +45,7 @@ public sealed unsafe partial class CreateNetworkSystemArguments : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_7a7e5a42();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class CreateNetworkSystemArguments : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_cedbc444((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class CreateNetworkSystemArguments : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateNetworkSystemArguments? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateNetworkSystemArguments arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f9402ee2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateNetworkSystemArguments((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments_Nested.CreateNetworkSystemArguments((nint)__hs_handle, false);
     }
 
     public void Dispose()

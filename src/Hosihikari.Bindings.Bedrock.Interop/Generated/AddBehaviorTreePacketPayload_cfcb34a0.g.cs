@@ -45,6 +45,7 @@ public sealed unsafe partial class AddBehaviorTreePacketPayload : global::System
         var handle = NativeMethods.TablePtr->C0.hs_create_fa4375ba((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

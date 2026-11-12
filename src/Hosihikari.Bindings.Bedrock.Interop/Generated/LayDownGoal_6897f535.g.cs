@@ -91,6 +91,7 @@ public sealed unsafe partial class LayDownGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_a0c9f38b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class LayDownGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_edbe1c41((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -159,7 +161,12 @@ public sealed unsafe partial class LayDownGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.LayDownGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LayDownGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0a41b361((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LayDownGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LayDownGoal((nint)__hs_handle, false);
     }
 
     public void start()

@@ -65,6 +65,7 @@ public sealed unsafe partial class LevelChunkEventManager : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_75f52515();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class LevelChunkEventManager : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_26d85dab((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -70,6 +70,7 @@ public sealed unsafe partial class BaseMobSpawner : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_f90ceb41();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +88,12 @@ public sealed unsafe partial class BaseMobSpawner : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getPos()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_24ecceff((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false);
     }
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag data)

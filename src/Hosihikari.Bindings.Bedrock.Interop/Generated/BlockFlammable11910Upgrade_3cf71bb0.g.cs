@@ -53,6 +53,7 @@ public sealed unsafe partial class BlockFlammable11910Upgrade : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_0a07f6dd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

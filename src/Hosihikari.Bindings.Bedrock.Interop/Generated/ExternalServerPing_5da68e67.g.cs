@@ -45,6 +45,7 @@ public sealed unsafe partial class ExternalServerPing : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_ced94183();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ExternalServerPing : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_0c3672d2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -101,7 +103,12 @@ public sealed unsafe partial class ExternalServerPing : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.ExternalServerPing? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.ExternalServerPing arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_286d0fe5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.ExternalServerPing((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetServerLocator_Nested.ExternalServerPing((nint)__hs_handle, false);
     }
 
     public void Dispose()

@@ -110,6 +110,7 @@ public sealed unsafe partial class VoiceMediaReceiveChannelInterface : global::S
         var handle = NativeMethods.TablePtr->C4.hs_create_fd274c6f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

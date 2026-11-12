@@ -53,6 +53,7 @@ public sealed unsafe partial class MultiSelectSetting : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_39154e83();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

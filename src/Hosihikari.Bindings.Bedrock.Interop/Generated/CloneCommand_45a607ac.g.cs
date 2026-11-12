@@ -49,6 +49,7 @@ public sealed unsafe partial class CloneCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_e894f79e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

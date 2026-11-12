@@ -45,6 +45,7 @@ public sealed unsafe partial class ILevelChunkSaveManagerProxy : global::System.
         var handle = NativeMethods.TablePtr->C1.hs_create_2c0a43a8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

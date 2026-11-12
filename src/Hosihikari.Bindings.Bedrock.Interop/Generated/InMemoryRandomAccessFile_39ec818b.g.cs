@@ -49,6 +49,7 @@ public sealed unsafe partial class InMemoryRandomAccessFile : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_5fd03480();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class InMemoryRandomAccessFile : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_dae8c97b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -69,7 +71,12 @@ public sealed unsafe partial class InMemoryRandomAccessFile : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Read(ulong offset, ulong n, nint result, nint scratch)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d5b43e46((void*)__hosihikari_shim_handle, offset, n, (void*)result, (void*)scratch);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -81,7 +88,12 @@ public sealed unsafe partial class InMemoryRandomAccessFile : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f297abbc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile((nint)__hs_handle, false);
     }
 
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorKilledEvent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_bb146a18((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class LevelChunkPacketPayload : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_125c343f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

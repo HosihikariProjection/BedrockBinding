@@ -54,6 +54,7 @@ public sealed unsafe partial class WebToken : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_998315f9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

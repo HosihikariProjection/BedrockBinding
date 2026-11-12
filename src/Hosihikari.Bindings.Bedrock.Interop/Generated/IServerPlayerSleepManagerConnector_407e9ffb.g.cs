@@ -45,6 +45,7 @@ public sealed unsafe partial class IServerPlayerSleepManagerConnector : global::
         var handle = NativeMethods.TablePtr->C1.hs_create_ba862f0b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

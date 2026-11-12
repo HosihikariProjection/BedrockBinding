@@ -45,6 +45,7 @@ public sealed unsafe partial class ItemStackRequestBatch : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_25850b98((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

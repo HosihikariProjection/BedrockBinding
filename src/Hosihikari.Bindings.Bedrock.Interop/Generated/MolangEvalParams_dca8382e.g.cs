@@ -45,6 +45,7 @@ public sealed unsafe partial class MolangEvalParams : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_3f99ca5a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

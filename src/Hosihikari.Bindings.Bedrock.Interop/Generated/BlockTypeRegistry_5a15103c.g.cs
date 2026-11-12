@@ -55,7 +55,12 @@ public sealed unsafe partial class BlockTypeRegistry : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.LookupByNameImplReturnType? _lookupByNameImpl(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, int data, int resolve, bool logNotFound)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_56276c75((void*)__hosihikari_shim_handle, (void*)name.Handle, data, resolve, logNotFound);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.LookupByNameImplReturnType((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.LookupByNameImplReturnType((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -82,13 +87,23 @@ public sealed unsafe partial class BlockTypeRegistry : global::System.IDisposabl
     public static global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2f097c1e();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getBlockNameFromNameHash(ulong hash)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d60831e5((void*)__hosihikari_shim_handle, hash);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -98,7 +113,12 @@ public sealed unsafe partial class BlockTypeRegistry : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getDefaultBlockState(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, bool logNotFound)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c4530951((void*)__hosihikari_shim_handle, (void*)name.Handle, logNotFound);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public bool isComplexAliasBlock(global::Hosihikari.Bindings.Bedrock.Interop.HashedString blockName)
@@ -113,7 +133,12 @@ public sealed unsafe partial class BlockTypeRegistry : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockType? lookupByName(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, bool logNotFound)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2864cc90((void*)__hosihikari_shim_handle, (void*)name.Handle, logNotFound);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockType((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockType((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -161,7 +186,12 @@ public sealed unsafe partial class BlockTypeRegistry : global::System.IDisposabl
     public static global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Owner_BlockTypeRegistry_? mBlockTypeRegistry()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7e1e575a();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Owner_BlockTypeRegistry_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Owner_BlockTypeRegistry_((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

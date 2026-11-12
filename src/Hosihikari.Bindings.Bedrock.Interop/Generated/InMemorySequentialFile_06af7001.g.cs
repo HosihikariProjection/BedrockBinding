@@ -57,6 +57,7 @@ public sealed unsafe partial class InMemorySequentialFile : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_eef75078();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class InMemorySequentialFile : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_f2ff9ca0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,13 +79,23 @@ public sealed unsafe partial class InMemorySequentialFile : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Read(ulong n, nint result, nint scratch)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6fa1f541((void*)__hosihikari_shim_handle, n, (void*)result, (void*)scratch);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status? Skip(ulong n)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7de68bd1((void*)__hosihikari_shim_handle, n);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -101,7 +113,12 @@ public sealed unsafe partial class InMemorySequentialFile : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.InMemorySequentialFile? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemorySequentialFile arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_927883e7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InMemorySequentialFile((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemorySequentialFile((nint)__hs_handle, false);
     }
 
 

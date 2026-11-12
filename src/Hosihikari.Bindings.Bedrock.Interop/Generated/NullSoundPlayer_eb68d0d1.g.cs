@@ -203,6 +203,7 @@ public sealed unsafe partial class NullSoundPlayer : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_8a098ba3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -227,7 +228,12 @@ public sealed unsafe partial class NullSoundPlayer : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView? getCurrentlyPlayingMusicPath()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0f1d45c8((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView((nint)__hs_handle);
     }
 
     public bool getItem(string arg0, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView arg1, nint arg2)

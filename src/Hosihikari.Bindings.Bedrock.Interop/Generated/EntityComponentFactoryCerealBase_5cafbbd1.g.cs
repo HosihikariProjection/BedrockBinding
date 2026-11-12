@@ -55,6 +55,7 @@ public sealed unsafe partial class EntityComponentFactoryCerealBase : global::Sy
         var handle = NativeMethods.TablePtr->C1.hs_create_0fe708cc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class EntityComponentFactoryCerealBase : global::Sy
         var handle = NativeMethods.TablePtr->C1.hs_create_0a2831ca((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +89,12 @@ public sealed unsafe partial class EntityComponentFactoryCerealBase : global::Sy
     public global::Hosihikari.Bindings.Bedrock.Interop.EntityComponentFactoryCerealBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EntityComponentFactoryCerealBase arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5996effe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EntityComponentFactoryCerealBase((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.EntityComponentFactoryCerealBase((nint)__hs_handle, false);
     }
 
 

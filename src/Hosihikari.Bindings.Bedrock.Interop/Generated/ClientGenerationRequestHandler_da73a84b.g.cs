@@ -45,6 +45,7 @@ public sealed unsafe partial class ClientGenerationRequestHandler : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_50837de9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ClientGenerationRequestHandler : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_b60d320d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -95,7 +97,12 @@ public sealed unsafe partial class ClientGenerationRequestHandler : global::Syst
     public global::Hosihikari.Bindings.Bedrock.Interop.ClientGenerationRequestHandler? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ClientGenerationRequestHandler arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_812349a5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ClientGenerationRequestHandler((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ClientGenerationRequestHandler((nint)__hs_handle, false);
     }
 
     public void Dispose()

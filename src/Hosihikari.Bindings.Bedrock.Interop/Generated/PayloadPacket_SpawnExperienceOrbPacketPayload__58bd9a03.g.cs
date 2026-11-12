@@ -98,6 +98,7 @@ public sealed unsafe partial class PayloadPacket_SpawnExperienceOrbPacketPayload
         var handle = NativeMethods.TablePtr->C4.hs_create_27ead496((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

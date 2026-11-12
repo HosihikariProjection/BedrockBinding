@@ -45,6 +45,7 @@ public sealed unsafe partial class ITaskExecutionContext : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_d2aff549((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

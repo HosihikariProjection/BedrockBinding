@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentStepOffAfterEvent :
         var handle = NativeMethods.TablePtr->C3.hs_create_8c9ae734();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentStepOffAfterEvent :
         var handle = NativeMethods.TablePtr->C3.hs_create_d11cc434((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

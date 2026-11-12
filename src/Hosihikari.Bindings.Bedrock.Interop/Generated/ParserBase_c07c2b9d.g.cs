@@ -53,6 +53,7 @@ public sealed unsafe partial class ParserBase : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_95efa0db();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ParserBase : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_024144d5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class ParserBase : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny? doParse(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input input, byte contextArea)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_77a029e7((void*)__hosihikari_shim_handle, (void*)input.Handle, contextArea);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -95,7 +102,12 @@ public sealed unsafe partial class ParserBase : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.ParserBase? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.ParserBase arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7d3a9c78((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Puv.ParserBase((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.ParserBase((nint)__hs_handle, false);
     }
 
 

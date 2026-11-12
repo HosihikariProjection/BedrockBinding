@@ -57,6 +57,7 @@ public sealed unsafe partial class ConsoleGameTestListener : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_e478c164((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

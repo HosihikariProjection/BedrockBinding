@@ -53,6 +53,7 @@ public sealed unsafe partial class LoomInputContainerValidation : global::System
         var handle = NativeMethods.TablePtr->C2.hs_create_9bc3c6eb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class ResourcePacksInfoPacketPayload : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_80d28d27();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ResourcePacksInfoPacketPayload : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_e4df7388((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

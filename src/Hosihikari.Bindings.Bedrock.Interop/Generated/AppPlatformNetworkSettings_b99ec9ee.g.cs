@@ -49,6 +49,7 @@ public sealed unsafe partial class AppPlatformNetworkSettings : global::System.I
         var handle = NativeMethods.TablePtr->C0.hs_create_772e0010((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

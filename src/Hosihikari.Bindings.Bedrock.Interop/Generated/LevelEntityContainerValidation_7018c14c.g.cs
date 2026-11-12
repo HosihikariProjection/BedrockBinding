@@ -53,6 +53,7 @@ public sealed unsafe partial class LevelEntityContainerValidation : global::Syst
         var handle = NativeMethods.TablePtr->C2.hs_create_e287bc29((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class MovementPackets : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_50badd44((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

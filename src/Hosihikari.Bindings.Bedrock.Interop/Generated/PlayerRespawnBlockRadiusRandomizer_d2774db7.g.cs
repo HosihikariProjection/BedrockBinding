@@ -49,6 +49,7 @@ public sealed unsafe partial class PlayerRespawnBlockRadiusRandomizer : global::
         var handle = NativeMethods.TablePtr->C2.hs_create_291825ae();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

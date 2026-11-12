@@ -67,7 +67,12 @@ public sealed unsafe partial class VanillaBlockStateTransformUtils : global::Sys
     public static global::Hosihikari.Bindings.Bedrock.Interop.Block? transformBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte rotation, byte mirror)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ef633792((void*)block.Handle, rotation, mirror);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

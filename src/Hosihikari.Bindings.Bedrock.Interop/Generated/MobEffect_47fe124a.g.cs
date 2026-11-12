@@ -85,6 +85,7 @@ public sealed unsafe partial class MobEffect : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_6f3575fc();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class MobEffect : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_9dfe6930((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -157,7 +159,12 @@ public sealed unsafe partial class MobEffect : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6a1e3b44(__hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MobEffect((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.MobEffect((nint)__hs_handle, false);
         }
     }
 

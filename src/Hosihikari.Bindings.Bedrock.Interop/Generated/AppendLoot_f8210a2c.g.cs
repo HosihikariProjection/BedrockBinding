@@ -57,6 +57,7 @@ public sealed unsafe partial class AppendLoot : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_1be40a83((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

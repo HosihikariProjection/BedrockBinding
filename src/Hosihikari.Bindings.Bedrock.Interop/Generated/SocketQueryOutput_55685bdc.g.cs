@@ -45,6 +45,7 @@ public sealed unsafe partial class SocketQueryOutput : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_e40540fb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

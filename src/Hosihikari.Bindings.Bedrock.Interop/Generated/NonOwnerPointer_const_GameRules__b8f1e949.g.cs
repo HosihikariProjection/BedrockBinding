@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_const_GameRules_ : global::Sy
         var handle = NativeMethods.TablePtr->C0.hs_create_eedf0e10();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_const_GameRules_ : global::Sy
         var handle = NativeMethods.TablePtr->C0.hs_create_2148d69c(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_const_GameRules_ : global::Sy
         var handle = NativeMethods.TablePtr->C0.hs_create_a56d99b2();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_const_GameRules_ : global::Sy
         var handle = NativeMethods.TablePtr->C0.hs_create_55508c8d(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_const_GameRules_ : global::Sy
     public global::Hosihikari.Bindings.Bedrock.Interop.GameRules? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_09463521((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameRules((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameRules((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -109,19 +118,34 @@ public sealed unsafe partial class NonOwnerPointer_const_GameRules_ : global::Sy
     public global::Hosihikari.Bindings.Bedrock.Interop.GameRules? operator_const_GameRules__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4ba85abc((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameRules((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameRules((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameRules? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8ed66f7c((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameRules((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameRules((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameRules? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f9305fb5((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GameRules((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameRules((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

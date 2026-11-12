@@ -406,6 +406,7 @@ public sealed unsafe partial class PointedDripstoneBlock : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_0cfe0c2c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

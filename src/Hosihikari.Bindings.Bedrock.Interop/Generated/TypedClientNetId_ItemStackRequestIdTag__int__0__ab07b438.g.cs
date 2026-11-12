@@ -45,6 +45,7 @@ public sealed unsafe partial class TypedClientNetId_ItemStackRequestIdTag__int__
         var handle = NativeMethods.TablePtr->C4.hs_create_b4e3cc97((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

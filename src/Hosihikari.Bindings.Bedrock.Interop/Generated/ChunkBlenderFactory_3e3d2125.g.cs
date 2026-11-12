@@ -45,6 +45,7 @@ public sealed unsafe partial class ChunkBlenderFactory : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_ca6a9d31((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

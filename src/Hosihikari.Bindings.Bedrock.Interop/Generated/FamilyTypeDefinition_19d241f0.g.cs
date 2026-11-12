@@ -45,6 +45,7 @@ public sealed unsafe partial class FamilyTypeDefinition : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_22082f8a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class FamilyTypeDefinition : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_3fe74dc6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -79,7 +81,12 @@ public sealed unsafe partial class FamilyTypeDefinition : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.FamilyTypeDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FamilyTypeDefinition arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5785e507((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FamilyTypeDefinition((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FamilyTypeDefinition((nint)__hs_handle, false);
     }
 
     public void Dispose()

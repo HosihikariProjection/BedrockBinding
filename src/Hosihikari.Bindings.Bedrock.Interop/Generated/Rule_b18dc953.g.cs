@@ -61,6 +61,7 @@ public sealed unsafe partial class Rule : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_483ab0ef((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

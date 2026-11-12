@@ -54,6 +54,7 @@ public sealed unsafe partial class SetDisplayObjectivePacketPayload : global::Sy
         var handle = NativeMethods.TablePtr->C3.hs_create_7617f1e9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -65,6 +66,7 @@ public sealed unsafe partial class SetDisplayObjectivePacketPayload : global::Sy
         var handle = NativeMethods.TablePtr->C3.hs_create_3c507726((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

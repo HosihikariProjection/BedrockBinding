@@ -51,13 +51,23 @@ public sealed unsafe partial class ValueOrRef_BlockTryDestroyByPlayerEvent_ : gl
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent? value_1a2addfe()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1a2addfe((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent? value_658592c7()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_658592c7((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTryDestroyByPlayerEvent((nint)__hs_handle, false);
     }
 
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptGameTestRegistrationBuilder : global::S
         var handle = NativeMethods.TablePtr->C3.hs_create_38bafa39((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

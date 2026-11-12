@@ -45,6 +45,7 @@ public sealed unsafe partial class SpawnConditions : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_b333c3b2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

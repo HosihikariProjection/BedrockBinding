@@ -106,6 +106,7 @@ public sealed unsafe partial class VideoMediaReceiveChannelInterface : global::S
         var handle = NativeMethods.TablePtr->C4.hs_create_31ea9c41((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

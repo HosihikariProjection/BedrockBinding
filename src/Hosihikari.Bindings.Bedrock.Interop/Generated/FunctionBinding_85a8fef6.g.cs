@@ -53,6 +53,7 @@ public sealed unsafe partial class FunctionBinding : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3869f1bb();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

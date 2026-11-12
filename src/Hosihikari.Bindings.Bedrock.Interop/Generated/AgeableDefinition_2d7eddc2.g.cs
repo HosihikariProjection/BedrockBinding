@@ -49,6 +49,7 @@ public sealed unsafe partial class AgeableDefinition : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_7589781a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class AgeableDefinition : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_cfc6e3a1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -151,7 +153,12 @@ public sealed unsafe partial class AgeableDefinition : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.AgeableDefinition? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AgeableDefinition arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e490b3c8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AgeableDefinition((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AgeableDefinition((nint)__hs_handle, false);
     }
 
 

@@ -61,6 +61,7 @@ public sealed unsafe partial class FilterTest : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_ee254b1b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class FilterTest : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_15c56a68((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -81,13 +83,23 @@ public sealed unsafe partial class FilterTest : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeDomain()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3b3ecd34((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value? _serializeValue()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4107ca9f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)__hs_handle);
     }
 
     public bool evaluate(nint context)
@@ -135,7 +147,12 @@ public sealed unsafe partial class FilterTest : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.FilterTest? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b6ca7e72((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FilterTest((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FilterTest((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

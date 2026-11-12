@@ -45,6 +45,7 @@ public sealed unsafe partial class ManhattanDistance : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_11401965((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

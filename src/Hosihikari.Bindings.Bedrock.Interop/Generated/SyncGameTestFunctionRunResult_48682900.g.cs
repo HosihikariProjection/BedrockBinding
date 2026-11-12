@@ -57,6 +57,7 @@ public sealed unsafe partial class SyncGameTestFunctionRunResult : global::Syste
         var handle = NativeMethods.TablePtr->C4.hs_create_d9794b07();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class SyncGameTestFunctionRunResult : global::Syste
         var handle = NativeMethods.TablePtr->C4.hs_create_37aa830d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,7 +80,12 @@ public sealed unsafe partial class SyncGameTestFunctionRunResult : global::Syste
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1661277c((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
     public bool isComplete()
@@ -95,7 +102,12 @@ public sealed unsafe partial class SyncGameTestFunctionRunResult : global::Syste
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.SyncGameTestFunctionRunResult? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.SyncGameTestFunctionRunResult arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_36d57e10((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.SyncGameTestFunctionRunResult((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.SyncGameTestFunctionRunResult((nint)__hs_handle, false);
     }
 
 

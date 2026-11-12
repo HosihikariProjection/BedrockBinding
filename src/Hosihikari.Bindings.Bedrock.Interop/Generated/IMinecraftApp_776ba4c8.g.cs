@@ -45,6 +45,7 @@ public sealed unsafe partial class IMinecraftApp : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_90e133c9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

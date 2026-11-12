@@ -115,6 +115,7 @@ public sealed unsafe partial class TridentChannelingEnchant : global::System.IDi
         var handle = NativeMethods.TablePtr->C4.hs_create_49f2c4a1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

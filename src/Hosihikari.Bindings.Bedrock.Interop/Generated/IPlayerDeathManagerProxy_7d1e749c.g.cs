@@ -45,6 +45,7 @@ public sealed unsafe partial class IPlayerDeathManagerProxy : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_916913e5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,7 +55,12 @@ public sealed unsafe partial class IPlayerDeathManagerProxy : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? fetchActor(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorUniqueID)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_99287f2f((void*)__hosihikari_shim_handle, (void*)actorUniqueID.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false);
     }
 
     public void onWorldOwnerHasDied()

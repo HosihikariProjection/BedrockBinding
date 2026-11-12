@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorInCaravanTest : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_449054e5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockState : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_a8a31296((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class BlockState : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_ae25a15e(id, variationCount, (void*)name.Handle, (void*)node.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

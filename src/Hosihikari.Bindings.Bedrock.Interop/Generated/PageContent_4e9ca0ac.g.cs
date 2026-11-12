@@ -91,6 +91,7 @@ public sealed unsafe partial class PageContent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c1eb0ce0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -132,6 +133,7 @@ public sealed unsafe partial class PageContent : global::System.IDisposable
                 var handle = NativeMethods.TablePtr->C2.hs_create_fec601a6(__hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, nFilteredText is not null);
                 if (handle == null)
                 {
+                    NativeMethods.GetLastError();
                     return null;
                 }
 

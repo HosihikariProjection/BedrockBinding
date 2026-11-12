@@ -45,6 +45,7 @@ public sealed unsafe partial class SubChunkPacketData : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_f943735f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class SubChunkPacketData : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_cd54848a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class SubChunkPacketData : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_761193ff((void*)pos.Handle, requestResult);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,7 +109,12 @@ public sealed unsafe partial class SubChunkPacketData : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData rhs)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f9441d89((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

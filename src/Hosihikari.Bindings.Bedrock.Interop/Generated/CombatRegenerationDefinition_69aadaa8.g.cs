@@ -45,6 +45,7 @@ public sealed unsafe partial class CombatRegenerationDefinition : global::System
         var handle = NativeMethods.TablePtr->C0.hs_create_03976dd9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

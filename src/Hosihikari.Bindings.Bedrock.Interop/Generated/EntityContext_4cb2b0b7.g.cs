@@ -45,6 +45,7 @@ public sealed unsafe partial class EntityContext : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_adf38203();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class EntityContext : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_c1f496fb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,7 +77,12 @@ public sealed unsafe partial class EntityContext : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.WeakEntityRef? getWeakRef()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_24cbca66((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WeakEntityRef((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WeakEntityRef((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -99,7 +106,12 @@ public sealed unsafe partial class EntityContext : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.EntityContext? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_fa0313d9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EntityContext((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.EntityContext((nint)__hs_handle, false);
     }
 
     public void Dispose()

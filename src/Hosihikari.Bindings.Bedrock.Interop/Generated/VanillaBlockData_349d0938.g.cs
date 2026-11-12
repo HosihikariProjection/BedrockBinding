@@ -53,6 +53,7 @@ public sealed unsafe partial class VanillaBlockData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_3aaeb8dd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class ScopeExit : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_450dfb7f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ScopeExit : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_de06b83f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -75,7 +77,12 @@ public sealed unsafe partial class ScopeExit : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ScopeExit? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ScopeExit arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c327474c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ScopeExit((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ScopeExit((nint)__hs_handle, false);
     }
 
 

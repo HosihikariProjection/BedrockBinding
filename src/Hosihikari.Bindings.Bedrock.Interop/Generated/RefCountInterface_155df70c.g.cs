@@ -58,6 +58,7 @@ public sealed unsafe partial class RefCountInterface : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_f286a2c4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

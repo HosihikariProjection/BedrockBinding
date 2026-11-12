@@ -59,6 +59,7 @@ public sealed unsafe partial class ResourceLoader : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_9ee9b41e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -70,6 +71,7 @@ public sealed unsafe partial class ResourceLoader : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_651d7b69((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +89,12 @@ public sealed unsafe partial class ResourceLoader : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1dfb0bee((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, string[] extensions)
@@ -113,14 +120,24 @@ public sealed unsafe partial class ResourceLoader : global::System.IDisposable
                 __hs_vectorOffset1 += __hs_length1;
             }
             var __hs_handle = NativeMethods.TablePtr->C3.hs_method_81f5740d((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_vectorData1, (nuint)(extensions?.Length ?? 0));
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle);
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getPathContainingResource(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_353b7c67((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle);
     }
 
     public bool load(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, ref string resourceStream)
@@ -249,7 +266,12 @@ public sealed unsafe partial class ResourceLoader : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Image? loadTexture(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_258a2a7f((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

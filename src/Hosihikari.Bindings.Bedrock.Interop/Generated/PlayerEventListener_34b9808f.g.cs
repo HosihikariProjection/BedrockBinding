@@ -304,6 +304,7 @@ public sealed unsafe partial class PlayerEventListener : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_46f24dc9((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

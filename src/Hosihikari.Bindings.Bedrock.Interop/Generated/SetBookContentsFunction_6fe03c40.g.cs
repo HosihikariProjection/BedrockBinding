@@ -59,6 +59,7 @@ public sealed unsafe partial class SetBookContentsFunction : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_7b36f535((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

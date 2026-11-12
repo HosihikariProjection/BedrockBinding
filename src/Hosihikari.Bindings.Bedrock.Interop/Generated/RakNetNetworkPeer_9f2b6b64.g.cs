@@ -75,6 +75,7 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_1771026b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -86,6 +87,7 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_6800f07b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -122,7 +124,12 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus? getNetworkStatus()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_bcb1a054((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)__hs_handle);
     }
 
     public bool isEncrypted()
@@ -180,7 +187,12 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_99f78cf1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer((nint)__hs_handle, false);
     }
 
     public void sendPacket(string data, int reliability, int arg2)

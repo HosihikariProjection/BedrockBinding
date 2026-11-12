@@ -45,6 +45,7 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorRuntimeIDManager_ : g
         var handle = NativeMethods.TablePtr->C0.hs_create_d9f55905();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorRuntimeIDManager_ : g
         var handle = NativeMethods.TablePtr->C0.hs_create_074f99c0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -73,7 +75,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorRuntimeIDManager_ : g
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1f19c181((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager((nint)__hs_handle, false);
     }
 
     public bool isValid()
@@ -101,13 +108,23 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorRuntimeIDManager_ : g
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_fdc09f28((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f01a9812((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeIDManager((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -117,7 +134,12 @@ public sealed unsafe partial class UniqueOwnerPointer_ActorRuntimeIDManager_ : g
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ActorRuntimeIDManager_? operator_assign()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_9f684c7b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ActorRuntimeIDManager_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ActorRuntimeIDManager_((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_ActorRuntimeIDManager_ other)

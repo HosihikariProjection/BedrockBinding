@@ -193,37 +193,67 @@ public sealed unsafe partial class BlockActor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.IVanillaMainBlockActorComponent? _getMainComponent_ab18c462()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ab18c462((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaMainBlockActorComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaMainBlockActorComponent((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IVanillaMainBlockActorComponent? _getMainComponent_57f66f16()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_57f66f16((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaMainBlockActorComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaMainBlockActorComponent((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IVanillaRenderBlockActorComponent? _getRenderComponent_f45765a1()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f45765a1((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaRenderBlockActorComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaRenderBlockActorComponent((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IVanillaRenderBlockActorComponent? _getRenderComponent_2808d943()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2808d943((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaRenderBlockActorComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaRenderBlockActorComponent((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IVanillaTickBlockActorComponent? _getTickComponent_b105af80()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b105af80((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaTickBlockActorComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaTickBlockActorComponent((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IVanillaTickBlockActorComponent? _getTickComponent_53db99b4()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_53db99b4((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaTickBlockActorComponent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IVanillaTickBlockActorComponent((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'BlockActorDataPacket' has no accessible destructor.", false)]
@@ -281,7 +311,12 @@ public sealed unsafe partial class BlockActor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4d852631((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false);
     }
 
     public byte getType()

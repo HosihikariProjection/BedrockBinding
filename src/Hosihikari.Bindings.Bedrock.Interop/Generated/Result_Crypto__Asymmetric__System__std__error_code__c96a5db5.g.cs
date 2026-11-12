@@ -45,6 +45,7 @@ public sealed unsafe partial class Result_Crypto__Asymmetric__System__std__error
         var handle = NativeMethods.TablePtr->C0.hs_create_ab0c2e8f((void*)arg0);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

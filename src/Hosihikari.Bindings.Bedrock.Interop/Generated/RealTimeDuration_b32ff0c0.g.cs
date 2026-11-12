@@ -45,6 +45,7 @@ public sealed unsafe partial class RealTimeDuration : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_fd70f5a6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class RealTimeDuration : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_b2f4de0f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class RealTimeDuration : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.RealTimeDuration? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.RealTimeDuration arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_852a914b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.RealTimeDuration((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.RealTimeDuration((nint)__hs_handle, false);
     }
 
     public void Dispose()

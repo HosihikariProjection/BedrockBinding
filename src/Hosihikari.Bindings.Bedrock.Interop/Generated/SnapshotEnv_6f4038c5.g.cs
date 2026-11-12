@@ -100,7 +100,12 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f3494e5a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
         }
     }
 
@@ -133,7 +138,12 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
                 var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1bccb894((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
-                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle) : null;
+                if (__hs_handle == null)
+                {
+                    NativeMethods.GetLastError();
+                    return null;
+                }
+                return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
             }
         }
     }
@@ -143,6 +153,7 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_359dd779();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -154,6 +165,7 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_504f38b1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -223,7 +235,12 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e06946d5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

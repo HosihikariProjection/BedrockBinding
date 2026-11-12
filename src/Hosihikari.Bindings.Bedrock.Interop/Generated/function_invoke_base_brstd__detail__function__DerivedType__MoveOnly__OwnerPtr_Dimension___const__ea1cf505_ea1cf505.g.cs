@@ -56,7 +56,12 @@ public sealed unsafe partial class function_invoke_base_brstd__detail__function_
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
             var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2b3fe9aa((void*)__hosihikari_shim_handle, (void*)args.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_((nint)__hs_handle);
         }
     }
 

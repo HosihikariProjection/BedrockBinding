@@ -140,6 +140,7 @@ public sealed unsafe partial class ItemFrameBlockActor : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_dc6a000c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -468,6 +468,7 @@ public sealed unsafe partial class RepeaterBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_524935db();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -494,7 +495,12 @@ public sealed unsafe partial class RepeaterBlock : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5a82d9bc((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(arg1?.Handle ?? 0));
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle);
     }
 
     public bool canSurvive(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
@@ -505,13 +511,23 @@ public sealed unsafe partial class RepeaterBlock : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getOffBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block? block)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_54631323((void*)__hosihikari_shim_handle, (void*)(block?.Handle ?? 0));
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getOnBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block? block)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5a667a2e((void*)__hosihikari_shim_handle, (void*)(block?.Handle ?? 0));
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     public int getTurnOnDelay(global::Hosihikari.Bindings.Bedrock.Interop.Block block)

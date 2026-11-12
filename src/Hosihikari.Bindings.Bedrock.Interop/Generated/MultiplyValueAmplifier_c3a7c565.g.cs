@@ -53,6 +53,7 @@ public sealed unsafe partial class MultiplyValueAmplifier : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_fbf3e1ca((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

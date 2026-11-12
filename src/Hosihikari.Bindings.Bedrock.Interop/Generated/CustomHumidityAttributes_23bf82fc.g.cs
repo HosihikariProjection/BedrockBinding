@@ -45,6 +45,7 @@ public sealed unsafe partial class CustomHumidityAttributes : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_0a28f5da((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

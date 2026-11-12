@@ -73,6 +73,7 @@ public sealed unsafe partial class WeepingVinesClusterFeature : global::System.I
         var handle = NativeMethods.TablePtr->C4.hs_create_3cc8994b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

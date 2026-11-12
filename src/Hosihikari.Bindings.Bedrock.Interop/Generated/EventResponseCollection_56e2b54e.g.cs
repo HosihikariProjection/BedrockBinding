@@ -45,6 +45,7 @@ public sealed unsafe partial class EventResponseCollection : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_ea7e1129((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

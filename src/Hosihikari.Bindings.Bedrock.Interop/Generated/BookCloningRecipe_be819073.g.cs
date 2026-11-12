@@ -73,6 +73,7 @@ public sealed unsafe partial class BookCloningRecipe : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_2c0e93f4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,7 +97,12 @@ public sealed unsafe partial class BookCloningRecipe : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? getIngredient(int x, int y)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b415f614((void*)__hosihikari_shim_handle, x, y);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false);
     }
 
     public nint getResultItems()

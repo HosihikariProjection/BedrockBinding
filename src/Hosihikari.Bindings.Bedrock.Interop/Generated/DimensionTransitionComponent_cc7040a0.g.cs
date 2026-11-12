@@ -57,6 +57,7 @@ public sealed unsafe partial class DimensionTransitionComponent : global::System
         var handle = NativeMethods.TablePtr->C1.hs_create_db939cec((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

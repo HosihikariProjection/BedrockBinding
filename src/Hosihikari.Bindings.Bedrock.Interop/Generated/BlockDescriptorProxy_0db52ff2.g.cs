@@ -57,6 +57,7 @@ public sealed unsafe partial class BlockDescriptorProxy : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_da08b43a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class BlockDescriptorProxy : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_e1e3694f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

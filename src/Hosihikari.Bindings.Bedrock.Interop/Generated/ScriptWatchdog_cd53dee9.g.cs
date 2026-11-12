@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptWatchdog : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_8e4f5af8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ScriptWatchdog : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_d2dcec0a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

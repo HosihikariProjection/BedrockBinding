@@ -45,6 +45,7 @@ public sealed unsafe partial class IScriptRef : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_83f6e8d6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class ValidationLogEntry : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_8fb95ee7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

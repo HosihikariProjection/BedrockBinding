@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptProjectileShootOptions : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_0014c830((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

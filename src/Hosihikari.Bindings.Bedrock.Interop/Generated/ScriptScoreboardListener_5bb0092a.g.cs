@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptScoreboardListener : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_978c63b3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -57,6 +57,7 @@ public sealed unsafe partial class TickDeltaTimeManagerProxy : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_360a1cbe((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

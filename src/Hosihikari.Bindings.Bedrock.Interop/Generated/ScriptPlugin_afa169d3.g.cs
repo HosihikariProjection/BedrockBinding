@@ -77,6 +77,7 @@ public sealed unsafe partial class ScriptPlugin : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_e9ef76d8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -256,7 +257,12 @@ public sealed unsafe partial class ScriptPlugin : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9ff86df0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
-            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptData((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                if (!__hs_hasValue) { return null; }
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptData((nint)__hs_handle);
         }
     }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class CameraAimAssistCommandPresetDefinition : glob
         var handle = NativeMethods.TablePtr->C3.hs_create_af530015((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

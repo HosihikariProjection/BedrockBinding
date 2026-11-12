@@ -53,6 +53,7 @@ public sealed unsafe partial class DimensionDefinitionGroup : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_17661c4b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class DimensionDefinitionGroup : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_b3c6c7ba((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

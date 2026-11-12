@@ -51,6 +51,7 @@ public sealed unsafe partial class IAppPlatform : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d9386417((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -92,7 +93,12 @@ public sealed unsafe partial class IAppPlatform : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getLoggingPath()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_70b0603e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle);
     }
 
     public ulong getLowPhysicalMemoryThreshold()

@@ -45,6 +45,7 @@ public sealed unsafe partial class ArmorItemComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_24f6ea39((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

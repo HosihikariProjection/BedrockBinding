@@ -45,6 +45,7 @@ public sealed unsafe partial class EnvironmentRequirement : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_d3e4b0e4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class EnvironmentRequirement : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_7ab0e400((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +89,12 @@ public sealed unsafe partial class EnvironmentRequirement : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.EnvironmentRequirement? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EnvironmentRequirement arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b5c0d928((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EnvironmentRequirement((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.EnvironmentRequirement((nint)__hs_handle, false);
     }
 
     public void Dispose()

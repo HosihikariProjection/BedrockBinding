@@ -83,6 +83,7 @@ public sealed unsafe partial class DefendTrustedTargetGoal : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_acd68efe();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -98,6 +99,7 @@ public sealed unsafe partial class DefendTrustedTargetGoal : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_fa65992e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

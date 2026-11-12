@@ -241,6 +241,7 @@ public sealed unsafe partial class StompBlockGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_ea0af001();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -256,6 +257,7 @@ public sealed unsafe partial class StompBlockGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_cf30146b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

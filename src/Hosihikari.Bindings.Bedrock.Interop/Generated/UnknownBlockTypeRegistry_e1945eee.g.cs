@@ -55,6 +55,7 @@ public sealed unsafe partial class UnknownBlockTypeRegistry : global::System.IDi
         var handle = NativeMethods.TablePtr->C4.hs_create_f488fc50((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,7 +65,12 @@ public sealed unsafe partial class UnknownBlockTypeRegistry : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getUnknownBlock(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag serId)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_05b10fc5((void*)__hosihikari_shim_handle, (void*)serId.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -109,6 +109,7 @@ public sealed unsafe partial class PackAccessStrategy : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_4c1206f4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -120,6 +121,7 @@ public sealed unsafe partial class PackAccessStrategy : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_0452a36d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -190,7 +192,12 @@ public sealed unsafe partial class PackAccessStrategy : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation? getPackLocation()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6b1ba1dc((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)__hs_handle, false);
     }
 
     public string getPackName()
@@ -212,13 +219,23 @@ public sealed unsafe partial class PackAccessStrategy : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_? getStreamableSource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView? tempDirectory)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ea7f0eea((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, (void*)(tempDirectory?.Handle ?? 0), tempDirectory is not null);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__? getSubPath()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7ed84413((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)__hs_handle, false);
     }
 
     public bool hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, bool trustedContentOnly, bool caseSensative)
@@ -267,7 +284,12 @@ public sealed unsafe partial class PackAccessStrategy : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.PackAccessStrategy? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackAccessStrategy arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1625abbc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackAccessStrategy((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackAccessStrategy((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -281,7 +303,12 @@ public sealed unsafe partial class PackAccessStrategy : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity? readContentIdentity()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6174c437((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity((nint)__hs_handle);
     }
 
     public int regenerateAssetSet()

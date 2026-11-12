@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorBeforeAcquireItemEvent : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_317d554d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ActorBeforeAcquireItemEvent : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_30943ada((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -95,7 +97,12 @@ public sealed unsafe partial class ActorBeforeAcquireItemEvent : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ffefd76f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent((nint)__hs_handle, false);
     }
 
 

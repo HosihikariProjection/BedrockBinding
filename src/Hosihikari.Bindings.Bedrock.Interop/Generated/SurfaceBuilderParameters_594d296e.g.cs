@@ -49,6 +49,7 @@ public sealed unsafe partial class SurfaceBuilderParameters : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_d336cd93();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class SurfaceBuilderParameters : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_9c9bd3f8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -69,6 +69,7 @@ public sealed unsafe partial class IGameTestListener : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C4.hs_create_876ba4d7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

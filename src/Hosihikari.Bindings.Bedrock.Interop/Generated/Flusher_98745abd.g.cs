@@ -45,6 +45,7 @@ public sealed unsafe partial class Flusher : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_91cec5e1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,7 +55,12 @@ public sealed unsafe partial class Flusher : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? _flushBuffer(nint data, ulong amount)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c882605d((void*)__hosihikari_shim_handle, (void*)data, amount);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle);
     }
 
 

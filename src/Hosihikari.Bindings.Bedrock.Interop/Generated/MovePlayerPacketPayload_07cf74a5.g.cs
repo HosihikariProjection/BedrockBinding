@@ -53,6 +53,7 @@ public sealed unsafe partial class MovePlayerPacketPayload : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_ec22f922();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class MovePlayerPacketPayload : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_30f8f574((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

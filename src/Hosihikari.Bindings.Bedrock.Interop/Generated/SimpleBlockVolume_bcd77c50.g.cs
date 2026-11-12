@@ -93,6 +93,7 @@ public sealed unsafe partial class SimpleBlockVolume : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_33e34009((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -114,7 +115,12 @@ public sealed unsafe partial class SimpleBlockVolume : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? getBoundingBox()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_381a34fe((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle);
     }
 
     public int getCapacity()
@@ -145,13 +151,23 @@ public sealed unsafe partial class SimpleBlockVolume : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getMax()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_010b4d4a((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getMin()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_51aa534b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'glm::vec<3, int>' requires --link-carrier or --virtual-dispatch.", false)]

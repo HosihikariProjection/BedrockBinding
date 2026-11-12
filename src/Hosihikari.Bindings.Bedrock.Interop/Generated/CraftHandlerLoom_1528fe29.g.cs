@@ -92,6 +92,7 @@ public sealed unsafe partial class CraftHandlerLoom : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_4ca8e2ec((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

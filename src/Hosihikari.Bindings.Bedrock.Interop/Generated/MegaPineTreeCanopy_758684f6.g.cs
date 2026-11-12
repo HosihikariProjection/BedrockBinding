@@ -49,6 +49,7 @@ public sealed unsafe partial class MegaPineTreeCanopy : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_bea2eb32((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

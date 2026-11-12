@@ -217,6 +217,7 @@ public sealed unsafe partial class RepeaterCapacitor : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_e8daef08((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

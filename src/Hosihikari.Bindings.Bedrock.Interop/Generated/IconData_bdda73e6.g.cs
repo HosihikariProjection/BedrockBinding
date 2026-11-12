@@ -45,6 +45,7 @@ public sealed unsafe partial class IconData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_08c6c413();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class IconData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_76971a1a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class IconData : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptModalFormData_Nested.IconData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptModalFormData_Nested.IconData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3c00854b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptModalFormData_Nested.IconData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptModalFormData_Nested.IconData((nint)__hs_handle, false);
     }
 
     public void Dispose()

@@ -71,6 +71,7 @@ public sealed unsafe partial class FilterTestAltitude : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_457baa70((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

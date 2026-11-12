@@ -45,6 +45,7 @@ public sealed unsafe partial class PredictionDbgData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_6e5182d1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class PredictionDbgData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_89ebd59d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -101,7 +103,12 @@ public sealed unsafe partial class PredictionDbgData : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.PredictionDbgData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.PredictionDbgData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_77255f78((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.PredictionDbgData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.PredictionDbgData((nint)__hs_handle, false);
     }
 
     public void Dispose()

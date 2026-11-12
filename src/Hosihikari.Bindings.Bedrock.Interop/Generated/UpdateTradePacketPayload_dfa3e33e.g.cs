@@ -49,6 +49,7 @@ public sealed unsafe partial class UpdateTradePacketPayload : global::System.IDi
         var handle = NativeMethods.TablePtr->C4.hs_create_c68a9c62();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -122,7 +123,12 @@ public sealed unsafe partial class UpdateTradePacketPayload : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.UpdateTradePacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.UpdateTradePacketPayload arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8660dba7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.UpdateTradePacketPayload((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.UpdateTradePacketPayload((nint)__hs_handle, false);
     }
 
 

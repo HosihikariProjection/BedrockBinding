@@ -45,6 +45,7 @@ public sealed unsafe partial class DimensionTypeComponent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_fdbb9510((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

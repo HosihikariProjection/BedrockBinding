@@ -135,6 +135,7 @@ public sealed unsafe partial class LookAtTradingPlayerGoal : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_304ab95a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -146,6 +147,7 @@ public sealed unsafe partial class LookAtTradingPlayerGoal : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_1b38ccc3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -191,7 +193,12 @@ public sealed unsafe partial class LookAtTradingPlayerGoal : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.LookAtTradingPlayerGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LookAtTradingPlayerGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3a0a427f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LookAtTradingPlayerGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LookAtTradingPlayerGoal((nint)__hs_handle, false);
     }
 
 

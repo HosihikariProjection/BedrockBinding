@@ -57,6 +57,7 @@ public sealed unsafe partial class DirectPoolAliasBinding : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_92c11494((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

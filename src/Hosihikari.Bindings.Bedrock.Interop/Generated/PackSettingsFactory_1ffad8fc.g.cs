@@ -57,6 +57,7 @@ public sealed unsafe partial class PackSettingsFactory : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_cd7883ab();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -104,7 +105,12 @@ public sealed unsafe partial class PackSettingsFactory : global::System.IDisposa
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
             var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ffd2feff((void*)__hosihikari_shim_handle, (void*)manifest.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, worldId is not null);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackSettings((nint)__hs_handle, false) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.PackSettings((nint)__hs_handle, false);
         }
     }
 

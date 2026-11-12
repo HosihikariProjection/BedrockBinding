@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerGameModeChangeEvent : global::System.ID
         var handle = NativeMethods.TablePtr->C2.hs_create_08f3cb85((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

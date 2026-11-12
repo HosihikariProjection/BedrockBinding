@@ -65,6 +65,7 @@ public sealed unsafe partial class MapDataManagerOptions : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_dbe7929a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -74,7 +75,12 @@ public sealed unsafe partial class MapDataManagerOptions : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getWorldCenter()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0b911d9d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false);
     }
 
     public bool hasMapsCenteredToOrigin()

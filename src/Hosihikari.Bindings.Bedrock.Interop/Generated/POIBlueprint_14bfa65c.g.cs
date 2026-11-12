@@ -49,6 +49,7 @@ public sealed unsafe partial class POIBlueprint : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_7a988906();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class POIBlueprint : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_82613d06((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

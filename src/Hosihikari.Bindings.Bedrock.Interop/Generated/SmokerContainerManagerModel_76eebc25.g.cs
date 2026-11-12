@@ -221,6 +221,7 @@ public sealed unsafe partial class SmokerContainerManagerModel : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_7d27ce4e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

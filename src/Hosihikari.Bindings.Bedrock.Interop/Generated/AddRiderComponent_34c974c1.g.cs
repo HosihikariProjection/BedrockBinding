@@ -45,6 +45,7 @@ public sealed unsafe partial class AddRiderComponent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_0603ce7f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

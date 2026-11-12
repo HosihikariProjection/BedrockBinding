@@ -45,6 +45,7 @@ public sealed unsafe partial class HeightProvider : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_d38803a5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

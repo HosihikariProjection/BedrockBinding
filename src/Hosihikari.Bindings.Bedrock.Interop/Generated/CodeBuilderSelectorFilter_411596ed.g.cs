@@ -45,6 +45,7 @@ public sealed unsafe partial class CodeBuilderSelectorFilter : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_f5b3a70f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

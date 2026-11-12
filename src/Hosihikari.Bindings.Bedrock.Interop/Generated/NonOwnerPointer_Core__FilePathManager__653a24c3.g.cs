@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_Core__FilePathManager_ : glob
         var handle = NativeMethods.TablePtr->C0.hs_create_b6f4fda8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_Core__FilePathManager_ : glob
         var handle = NativeMethods.TablePtr->C0.hs_create_9cb3dff1(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_Core__FilePathManager_ : glob
         var handle = NativeMethods.TablePtr->C0.hs_create_0949def9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_Core__FilePathManager_ : glob
         var handle = NativeMethods.TablePtr->C0.hs_create_c62071bc(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_Core__FilePathManager_ : glob
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3859a15d((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_Core__FilePathManager_ : glob
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager? operator_Core__FilePathManager__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_bae397da((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_Core__FilePathManager_ : glob
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_d20b1103((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_78a32aeb((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FilePathManager((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

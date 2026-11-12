@@ -45,6 +45,7 @@ public sealed unsafe partial class ClientInputLockComponent : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_38e0e4d7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

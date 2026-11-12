@@ -49,6 +49,7 @@ public sealed unsafe partial class OceanFrozenSurfaceFlag : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_c5a47e66((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

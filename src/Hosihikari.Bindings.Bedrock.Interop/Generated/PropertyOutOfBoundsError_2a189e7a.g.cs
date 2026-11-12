@@ -95,6 +95,7 @@ public sealed unsafe partial class PropertyOutOfBoundsError : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_f9ac68c7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -106,6 +107,7 @@ public sealed unsafe partial class PropertyOutOfBoundsError : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_a4634328((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -141,7 +143,12 @@ public sealed unsafe partial class PropertyOutOfBoundsError : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_96722437((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError((nint)__hs_handle, false);
     }
 
 

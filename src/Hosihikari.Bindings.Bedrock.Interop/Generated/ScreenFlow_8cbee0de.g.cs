@@ -53,6 +53,7 @@ public sealed unsafe partial class ScreenFlow : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_d50a64a0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ScreenFlow : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_86d04271((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -113,7 +115,12 @@ public sealed unsafe partial class ScreenFlow : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f7ecf5ac((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow((nint)__hs_handle, false);
     }
 
     public void Dispose()

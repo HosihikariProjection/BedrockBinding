@@ -73,6 +73,7 @@ public sealed unsafe partial class Potion : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_a6714c77();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,6 +85,7 @@ public sealed unsafe partial class Potion : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c3755163((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

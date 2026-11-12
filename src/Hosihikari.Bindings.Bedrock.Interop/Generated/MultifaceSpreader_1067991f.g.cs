@@ -69,6 +69,7 @@ public sealed unsafe partial class MultifaceSpreader : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_fd733c81();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,6 +81,7 @@ public sealed unsafe partial class MultifaceSpreader : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_41704016((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

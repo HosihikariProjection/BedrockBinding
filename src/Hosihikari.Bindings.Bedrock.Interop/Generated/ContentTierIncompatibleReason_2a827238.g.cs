@@ -45,6 +45,7 @@ public sealed unsafe partial class ContentTierIncompatibleReason : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_b42d6f17();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ContentTierIncompatibleReason : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_6715cc27((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -79,7 +81,12 @@ public sealed unsafe partial class ContentTierIncompatibleReason : global::Syste
     public global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f912b00f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason((nint)__hs_handle, false);
     }
 
     public void Dispose()

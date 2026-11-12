@@ -69,6 +69,7 @@ public sealed unsafe partial class StorageAreaStateListener : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_a9de644d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

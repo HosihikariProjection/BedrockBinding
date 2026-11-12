@@ -105,6 +105,7 @@ public sealed unsafe partial class StorageArea_windows : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_070a3a7c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -116,6 +117,7 @@ public sealed unsafe partial class StorageArea_windows : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_8a7bf62c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -144,13 +146,23 @@ public sealed unsafe partial class StorageArea_windows : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? getExtendSizeThreshold(nint outExtendSizeThreshold)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c6f8f3f9((void*)__hosihikari_shim_handle, (void*)outExtendSizeThreshold);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo? getStorageAreaSpaceInfo()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_db7bad42((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea_Nested.StorageAreaSpaceInfo((nint)__hs_handle);
     }
 
     public ulong getTotalSize()
@@ -161,7 +173,12 @@ public sealed unsafe partial class StorageArea_windows : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result? getUsedSize(nint outUsedSize)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4bf552a8((void*)__hosihikari_shim_handle, (void*)outUsedSize);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -173,7 +190,12 @@ public sealed unsafe partial class StorageArea_windows : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageArea_windows? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageArea_windows arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_bd3b41f8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageArea_windows((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageArea_windows((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

@@ -77,6 +77,7 @@ public sealed unsafe partial class NetherFossilFeature : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_fe763f47((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

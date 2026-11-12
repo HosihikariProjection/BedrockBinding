@@ -45,6 +45,7 @@ public sealed unsafe partial class ICommandOriginLoader : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_acccdd84((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

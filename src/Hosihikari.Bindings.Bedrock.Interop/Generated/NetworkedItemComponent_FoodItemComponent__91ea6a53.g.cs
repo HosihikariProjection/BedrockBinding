@@ -51,6 +51,7 @@ public sealed unsafe partial class NetworkedItemComponent_FoodItemComponent_ : g
         var handle = NativeMethods.TablePtr->C2.hs_create_17f99f8c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

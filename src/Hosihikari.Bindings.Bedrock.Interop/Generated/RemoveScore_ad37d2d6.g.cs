@@ -45,6 +45,7 @@ public sealed unsafe partial class RemoveScore : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_577a9a8f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

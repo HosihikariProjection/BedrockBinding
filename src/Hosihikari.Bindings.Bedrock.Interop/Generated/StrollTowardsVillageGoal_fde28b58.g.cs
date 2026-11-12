@@ -191,6 +191,7 @@ public sealed unsafe partial class StrollTowardsVillageGoal : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_8b012902();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -206,6 +207,7 @@ public sealed unsafe partial class StrollTowardsVillageGoal : global::System.IDi
         var handle = NativeMethods.TablePtr->C3.hs_create_b872c5bb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -215,7 +217,12 @@ public sealed unsafe partial class StrollTowardsVillageGoal : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _selectRandomPosInVillage()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c2ac9561((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public string appendDebugInfo(string str)

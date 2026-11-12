@@ -45,6 +45,7 @@ public sealed unsafe partial class LessonProgressPacketPayload : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_b8ba84ba((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

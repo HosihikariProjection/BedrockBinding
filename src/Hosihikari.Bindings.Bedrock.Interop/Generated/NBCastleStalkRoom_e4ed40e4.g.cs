@@ -57,6 +57,7 @@ public sealed unsafe partial class NBCastleStalkRoom : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_03f2e529((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

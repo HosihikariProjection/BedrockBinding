@@ -45,6 +45,7 @@ public sealed unsafe partial class PurchaseReceiptPacketPayload : global::System
         var handle = NativeMethods.TablePtr->C2.hs_create_e43c1ba6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

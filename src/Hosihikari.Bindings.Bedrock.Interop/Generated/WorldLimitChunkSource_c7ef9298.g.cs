@@ -129,6 +129,7 @@ public sealed unsafe partial class WorldLimitChunkSource : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_1b8c18f1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

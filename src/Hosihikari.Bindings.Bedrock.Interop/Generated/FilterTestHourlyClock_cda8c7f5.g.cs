@@ -75,6 +75,7 @@ public sealed unsafe partial class FilterTestHourlyClock : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_1d403049();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -86,6 +87,7 @@ public sealed unsafe partial class FilterTestHourlyClock : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_095b0886((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -112,7 +114,12 @@ public sealed unsafe partial class FilterTestHourlyClock : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHourlyClock? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHourlyClock arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_249d5355((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHourlyClock((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FilterTestHourlyClock((nint)__hs_handle, false);
     }
 
     public bool setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)

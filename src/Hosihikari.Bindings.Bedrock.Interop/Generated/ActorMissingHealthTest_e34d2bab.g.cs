@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorMissingHealthTest : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_205b2310((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

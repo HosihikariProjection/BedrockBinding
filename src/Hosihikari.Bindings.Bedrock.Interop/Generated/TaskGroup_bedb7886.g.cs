@@ -100,6 +100,7 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_998ee4a7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -124,6 +125,7 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C3.hs_create_79af4f8d((void*)workers.Handle, (void*)context.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -136,6 +138,7 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_e7ab74b8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -167,7 +170,12 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.IBackgroundTaskOwner? getCurrentTaskGroup()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_01aca6c9();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IBackgroundTaskOwner((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IBackgroundTaskOwner((nint)__hs_handle, false);
     }
 
     public int getState()

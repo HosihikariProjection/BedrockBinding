@@ -53,6 +53,7 @@ public sealed unsafe partial class StructureTemplatePool : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_63280539();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class StructureTemplatePool : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_3953b72f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -54,6 +54,7 @@ public sealed unsafe partial class Parameter : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_300abcf3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -65,6 +66,7 @@ public sealed unsafe partial class Parameter : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_151a6b5a((void*)min, (void*)max);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

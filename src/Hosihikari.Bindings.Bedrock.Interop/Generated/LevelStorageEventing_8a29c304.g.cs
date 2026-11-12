@@ -55,6 +55,7 @@ public sealed unsafe partial class LevelStorageEventing : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_4e7d8298();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -66,6 +67,7 @@ public sealed unsafe partial class LevelStorageEventing : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_c585c0ee((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

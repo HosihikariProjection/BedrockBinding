@@ -58,6 +58,7 @@ public sealed unsafe partial class StringNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_34f04f29();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -69,6 +70,7 @@ public sealed unsafe partial class StringNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_ae1232fd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,7 +80,12 @@ public sealed unsafe partial class StringNode : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.StringNode? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.StringNode arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_45f09f5f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.StringNode((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.StringNode((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

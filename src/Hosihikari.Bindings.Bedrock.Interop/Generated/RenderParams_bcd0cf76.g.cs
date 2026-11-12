@@ -54,6 +54,7 @@ public sealed unsafe partial class RenderParams : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_e730fa1e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,7 +68,12 @@ public sealed unsafe partial class RenderParams : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RenderParams? init(nint baseActorRenderContext, global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent? animationComponent, global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap? variableMap, global::Hosihikari.Bindings.Abi.SharedHandle? model, float frameAlpha, float modelScale, bool isDitheringEnabled)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_845cde5c((void*)__hosihikari_shim_handle, (void*)baseActorRenderContext, (void*)(actor?.Handle ?? 0), (void*)(animationComponent?.Handle ?? 0), (void*)(variableMap?.Handle ?? 0), model?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), frameAlpha, modelScale, isDitheringEnabled);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RenderParams((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RenderParams((nint)__hs_handle, false);
     }
 
     public nint mActor

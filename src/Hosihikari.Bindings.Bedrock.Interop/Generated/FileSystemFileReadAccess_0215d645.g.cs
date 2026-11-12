@@ -53,6 +53,7 @@ public sealed unsafe partial class FileSystemFileReadAccess : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_ecd18317((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

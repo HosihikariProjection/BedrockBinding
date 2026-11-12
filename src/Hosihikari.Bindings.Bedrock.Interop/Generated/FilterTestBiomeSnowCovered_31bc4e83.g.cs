@@ -71,6 +71,7 @@ public sealed unsafe partial class FilterTestBiomeSnowCovered : global::System.I
         var handle = NativeMethods.TablePtr->C1.hs_create_1f24df23((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

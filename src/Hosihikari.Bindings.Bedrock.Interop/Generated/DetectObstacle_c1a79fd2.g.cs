@@ -45,6 +45,7 @@ public sealed unsafe partial class DetectObstacle : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_b43082c7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class DetectObstacle : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_b6de93f0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class DetectObstacle : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.DetectObstacle? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.DetectObstacle arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_31ab6e6d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.DetectObstacle((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.DetectObstacle((nint)__hs_handle, false);
     }
 
     public void Dispose()

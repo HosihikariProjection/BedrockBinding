@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerDataDrivenScreenClosedEvent : global::S
         var handle = NativeMethods.TablePtr->C2.hs_create_77efaeb1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

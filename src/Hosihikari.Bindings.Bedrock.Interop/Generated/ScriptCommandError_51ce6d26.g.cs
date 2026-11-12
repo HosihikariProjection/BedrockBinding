@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptCommandError : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_bb04c036();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class ScriptCommandError : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_cb6425df((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

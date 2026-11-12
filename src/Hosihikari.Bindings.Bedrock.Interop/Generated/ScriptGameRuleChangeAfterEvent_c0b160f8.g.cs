@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptGameRuleChangeAfterEvent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_f8305720((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

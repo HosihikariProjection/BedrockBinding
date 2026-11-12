@@ -71,6 +71,7 @@ public sealed unsafe partial class AncientCityFeature : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_ff399b37();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -82,6 +83,7 @@ public sealed unsafe partial class AncientCityFeature : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_d2a7324c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -93,6 +95,7 @@ public sealed unsafe partial class AncientCityFeature : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_b59b5673(seed, (void*)arg1.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

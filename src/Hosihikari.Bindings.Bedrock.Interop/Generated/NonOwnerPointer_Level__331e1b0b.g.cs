@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_Level_ : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_efd0bccf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_Level_ : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_4d63c165(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_Level_ : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_910f2eb4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_Level_ : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_09adefe1(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_Level_ : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.Level? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f64347d8((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_Level_ : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.Level? operator_Level__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_eb13e3af((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_Level_ : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.Level? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_856c7185((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Level? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e25dd21f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

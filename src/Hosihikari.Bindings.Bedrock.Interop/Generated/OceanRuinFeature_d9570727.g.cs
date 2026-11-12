@@ -67,6 +67,7 @@ public sealed unsafe partial class OceanRuinFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_bd972630();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +79,7 @@ public sealed unsafe partial class OceanRuinFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_18bb6411((void*)monument.Handle, seed, (void*)baseGameVersion.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -89,6 +91,7 @@ public sealed unsafe partial class OceanRuinFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c913f0e1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -150,7 +153,12 @@ public sealed unsafe partial class OceanRuinFeature : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.OceanRuinFeature? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OceanRuinFeature arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b216bfe4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.OceanRuinFeature((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.OceanRuinFeature((nint)__hs_handle, false);
     }
 
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerSwingStartEvent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_3bb4079f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptMolangVariableMap : global::System.IDis
         var handle = NativeMethods.TablePtr->C3.hs_create_a253936d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

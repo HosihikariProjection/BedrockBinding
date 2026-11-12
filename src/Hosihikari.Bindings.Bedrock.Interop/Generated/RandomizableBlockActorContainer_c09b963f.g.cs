@@ -198,6 +198,7 @@ public sealed unsafe partial class RandomizableBlockActorContainer : global::Sys
         var handle = NativeMethods.TablePtr->C3.hs_create_0f906fcd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

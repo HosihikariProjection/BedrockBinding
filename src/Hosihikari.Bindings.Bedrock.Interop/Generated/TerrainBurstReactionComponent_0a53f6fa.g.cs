@@ -49,6 +49,7 @@ public sealed unsafe partial class TerrainBurstReactionComponent : global::Syste
         var handle = NativeMethods.TablePtr->C3.hs_create_e4489b91((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

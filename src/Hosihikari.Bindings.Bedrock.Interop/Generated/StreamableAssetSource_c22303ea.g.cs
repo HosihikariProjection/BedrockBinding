@@ -45,6 +45,7 @@ public sealed unsafe partial class StreamableAssetSource : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_f442b50b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class StreamableAssetSource : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_fee92cf2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,7 +73,12 @@ public sealed unsafe partial class StreamableAssetSource : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1f056ec3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource((nint)__hs_handle, false);
     }
 
     public void Dispose()

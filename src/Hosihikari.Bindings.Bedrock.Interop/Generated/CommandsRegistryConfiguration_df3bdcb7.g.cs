@@ -55,6 +55,7 @@ public sealed unsafe partial class CommandsRegistryConfiguration : global::Syste
         var handle = NativeMethods.TablePtr->C0.hs_create_efcbb2a0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

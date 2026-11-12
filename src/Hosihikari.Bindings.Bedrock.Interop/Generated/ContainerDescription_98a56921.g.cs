@@ -53,6 +53,7 @@ public sealed unsafe partial class ContainerDescription : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_c5a40fba((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

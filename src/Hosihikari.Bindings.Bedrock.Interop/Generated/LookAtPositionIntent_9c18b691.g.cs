@@ -45,6 +45,7 @@ public sealed unsafe partial class LookAtPositionIntent : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_83c59b7b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

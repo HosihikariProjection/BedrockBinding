@@ -98,6 +98,7 @@ public sealed unsafe partial class PayloadPacket_EmoteListPacketPayload_ : globa
         var handle = NativeMethods.TablePtr->C4.hs_create_72d1793f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

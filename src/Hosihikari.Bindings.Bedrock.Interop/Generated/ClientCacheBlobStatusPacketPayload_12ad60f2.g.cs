@@ -45,6 +45,7 @@ public sealed unsafe partial class ClientCacheBlobStatusPacketPayload : global::
         var handle = NativeMethods.TablePtr->C0.hs_create_2f6033f3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

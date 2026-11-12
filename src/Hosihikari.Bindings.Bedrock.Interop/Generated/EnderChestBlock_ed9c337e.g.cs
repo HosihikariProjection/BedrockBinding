@@ -404,6 +404,7 @@ public sealed unsafe partial class EnderChestBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_5bdf864a();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

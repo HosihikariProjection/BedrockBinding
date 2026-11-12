@@ -45,6 +45,7 @@ public sealed unsafe partial class PressurePlatePushEvent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_40c062d8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

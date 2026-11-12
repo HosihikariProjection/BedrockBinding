@@ -133,6 +133,7 @@ public sealed unsafe partial class NetherNetConnector : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_ee1e8340();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -199,7 +200,12 @@ public sealed unsafe partial class NetherNetConnector : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier? getNetworkIdentifier()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7ee0c809((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)__hs_handle);
     }
 
     public int getNetworkType()

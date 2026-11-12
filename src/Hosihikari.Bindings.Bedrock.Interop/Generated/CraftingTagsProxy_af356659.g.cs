@@ -45,6 +45,7 @@ public sealed unsafe partial class CraftingTagsProxy : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_3d83870e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

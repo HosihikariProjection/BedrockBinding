@@ -45,6 +45,7 @@ public sealed unsafe partial class ClockTimeMarkerNameCommandParam : global::Sys
         var handle = NativeMethods.TablePtr->C0.hs_create_9268e111((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

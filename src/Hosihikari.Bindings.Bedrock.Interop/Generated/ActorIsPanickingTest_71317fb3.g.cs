@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorIsPanickingTest : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_5a45f5e8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

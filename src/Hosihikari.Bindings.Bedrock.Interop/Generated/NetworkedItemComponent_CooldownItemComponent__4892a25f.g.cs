@@ -51,6 +51,7 @@ public sealed unsafe partial class NetworkedItemComponent_CooldownItemComponent_
         var handle = NativeMethods.TablePtr->C2.hs_create_62296b33((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class NeighborChangedQueue : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_5d3b87e1();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NeighborChangedQueue : global::System.IDispos
         var handle = NativeMethods.TablePtr->C2.hs_create_ea31a025((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -105,7 +107,12 @@ public sealed unsafe partial class NeighborChangedQueue : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c799f390((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -49,6 +49,7 @@ public sealed unsafe partial class GetCollisionShapeViews : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_6c2388bf();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class GetCollisionShapeViews : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_11db6922((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -145,7 +147,12 @@ public sealed unsafe partial class GetCollisionShapeViews : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6ed03123((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews((nint)__hs_handle, false);
     }
 
     public void Dispose()

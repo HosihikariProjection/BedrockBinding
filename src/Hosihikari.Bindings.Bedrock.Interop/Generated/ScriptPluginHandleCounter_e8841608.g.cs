@@ -57,6 +57,7 @@ public sealed unsafe partial class ScriptPluginHandleCounter : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_e2aaa9bd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class ScriptPluginHandleCounter : global::System.ID
         var handle = NativeMethods.TablePtr->C3.hs_create_ec509dba((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -113,7 +115,12 @@ public sealed unsafe partial class ScriptPluginHandleCounter : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_11c9aaf8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter((nint)__hs_handle, false);
     }
 
 

@@ -61,6 +61,7 @@ public sealed unsafe partial class FurnaceFuelContainerValidation : global::Syst
         var handle = NativeMethods.TablePtr->C1.hs_create_ef81a5d1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -91,6 +91,7 @@ public sealed unsafe partial class SquidOutOfWaterGoal : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_9ab660b6();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class SquidOutOfWaterGoal : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_e1393ba6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -147,7 +149,12 @@ public sealed unsafe partial class SquidOutOfWaterGoal : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.SquidOutOfWaterGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SquidOutOfWaterGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3a22d87c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SquidOutOfWaterGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SquidOutOfWaterGoal((nint)__hs_handle, false);
     }
 
     public void start()

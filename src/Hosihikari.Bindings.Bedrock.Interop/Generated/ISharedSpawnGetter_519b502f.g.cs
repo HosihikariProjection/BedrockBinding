@@ -45,6 +45,7 @@ public sealed unsafe partial class ISharedSpawnGetter : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_55ca3b6d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -54,7 +55,12 @@ public sealed unsafe partial class ISharedSpawnGetter : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSharedSpawnPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_66522b62((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle, false);
     }
 
 

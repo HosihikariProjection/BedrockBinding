@@ -91,6 +91,7 @@ public sealed unsafe partial class GuardianAttackGoal : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_8d62446d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class GuardianAttackGoal : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_7cf76bbc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -201,7 +203,12 @@ public sealed unsafe partial class GuardianAttackGoal : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.GuardianAttackGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GuardianAttackGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a7015fb2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GuardianAttackGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GuardianAttackGoal((nint)__hs_handle, false);
     }
 
     public void start()

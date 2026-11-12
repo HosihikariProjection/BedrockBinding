@@ -53,6 +53,7 @@ public sealed unsafe partial class BonusChestFeature : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_c335456b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

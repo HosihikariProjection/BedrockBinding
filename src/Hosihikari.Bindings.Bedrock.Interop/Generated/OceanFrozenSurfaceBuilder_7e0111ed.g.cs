@@ -77,6 +77,7 @@ public sealed unsafe partial class OceanFrozenSurfaceBuilder : global::System.ID
         var handle = NativeMethods.TablePtr->C4.hs_create_e6454076((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -129,7 +130,12 @@ public sealed unsafe partial class OceanFrozenSurfaceBuilder : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.OceanFrozenSurfaceBuilder? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.OceanFrozenSurfaceBuilder arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_db4cde67((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.OceanFrozenSurfaceBuilder((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.VanillaSurfaceBuilders.OceanFrozenSurfaceBuilder((nint)__hs_handle, false);
     }
 
 

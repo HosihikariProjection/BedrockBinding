@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerInitialSpawnEvent : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_f69f7f0d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

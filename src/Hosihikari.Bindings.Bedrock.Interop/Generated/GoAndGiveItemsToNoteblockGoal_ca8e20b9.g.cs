@@ -91,6 +91,7 @@ public sealed unsafe partial class GoAndGiveItemsToNoteblockGoal : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_086495ed();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -102,6 +103,7 @@ public sealed unsafe partial class GoAndGiveItemsToNoteblockGoal : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_fc47a8e4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -207,7 +209,12 @@ public sealed unsafe partial class GoAndGiveItemsToNoteblockGoal : global::Syste
     public global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToNoteblockGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToNoteblockGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e570a8a4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToNoteblockGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GoAndGiveItemsToNoteblockGoal((nint)__hs_handle, false);
     }
 
     public void start()

@@ -55,6 +55,7 @@ public sealed unsafe partial class ScriptPlayerInteractWithBlockBeforeEvent : gl
         var handle = NativeMethods.TablePtr->C3.hs_create_c0bef4a5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -70,6 +71,7 @@ public sealed unsafe partial class ScriptPlayerInteractWithBlockBeforeEvent : gl
         var handle = NativeMethods.TablePtr->C3.hs_create_bde5250d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

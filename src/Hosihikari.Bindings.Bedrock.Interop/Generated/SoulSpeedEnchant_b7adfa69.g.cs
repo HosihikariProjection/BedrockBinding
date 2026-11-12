@@ -123,6 +123,7 @@ public sealed unsafe partial class SoulSpeedEnchant : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_12afe593((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

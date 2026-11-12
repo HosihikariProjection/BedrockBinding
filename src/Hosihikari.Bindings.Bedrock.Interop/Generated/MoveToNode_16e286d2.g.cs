@@ -92,6 +92,7 @@ public sealed unsafe partial class MoveToNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_d87b0202((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

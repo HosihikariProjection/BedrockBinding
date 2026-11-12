@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_f1182c6a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

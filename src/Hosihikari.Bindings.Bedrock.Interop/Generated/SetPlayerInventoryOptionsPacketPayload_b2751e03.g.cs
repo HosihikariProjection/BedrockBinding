@@ -45,6 +45,7 @@ public sealed unsafe partial class SetPlayerInventoryOptionsPacketPayload : glob
         var handle = NativeMethods.TablePtr->C3.hs_create_7de2d94d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class ActorItemEventAfterDroppedItem : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_0280df89((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

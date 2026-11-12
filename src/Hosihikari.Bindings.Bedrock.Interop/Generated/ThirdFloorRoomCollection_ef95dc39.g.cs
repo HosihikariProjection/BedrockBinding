@@ -45,6 +45,7 @@ public sealed unsafe partial class ThirdFloorRoomCollection : global::System.IDi
         var handle = NativeMethods.TablePtr->C4.hs_create_2cf7c405((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

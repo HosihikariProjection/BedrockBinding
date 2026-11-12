@@ -45,6 +45,7 @@ public sealed unsafe partial class IReplayStatePolicy : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_556ecbc0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,7 +65,12 @@ public sealed unsafe partial class IReplayStatePolicy : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection? shouldCorrectMovement(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacket arg1, ulong arg2, byte arg3, bool arg4)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d5425b62((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2, arg3, arg4);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)__hs_handle);
     }
 
 

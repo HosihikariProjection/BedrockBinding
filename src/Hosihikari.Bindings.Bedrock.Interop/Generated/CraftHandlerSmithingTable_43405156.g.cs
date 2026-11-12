@@ -96,6 +96,7 @@ public sealed unsafe partial class CraftHandlerSmithingTable : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_e57cce15();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -107,6 +108,7 @@ public sealed unsafe partial class CraftHandlerSmithingTable : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_92334d2f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -116,7 +118,12 @@ public sealed unsafe partial class CraftHandlerSmithingTable : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.Recipes? _getLevelRecipes()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d49ef178((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Recipes((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Recipes((nint)__hs_handle, false);
     }
 
     public byte _handleCraftAction(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase requestAction)
@@ -133,7 +140,12 @@ public sealed unsafe partial class CraftHandlerSmithingTable : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerSmithingTable? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerSmithingTable arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b91e2e9a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerSmithingTable((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CraftHandlerSmithingTable((nint)__hs_handle, false);
     }
 
 

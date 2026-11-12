@@ -51,6 +51,7 @@ public sealed unsafe partial class NetworkedItemComponent_ProjectileItemComponen
         var handle = NativeMethods.TablePtr->C2.hs_create_db65b439((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

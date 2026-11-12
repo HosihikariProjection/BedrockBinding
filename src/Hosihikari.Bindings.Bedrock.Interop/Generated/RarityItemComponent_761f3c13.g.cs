@@ -49,6 +49,7 @@ public sealed unsafe partial class RarityItemComponent : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C3.hs_create_a557db4f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -402,6 +402,7 @@ public sealed unsafe partial class MossBlock : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_099ff572();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

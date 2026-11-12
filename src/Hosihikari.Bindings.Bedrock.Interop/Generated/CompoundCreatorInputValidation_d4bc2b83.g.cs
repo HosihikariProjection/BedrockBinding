@@ -57,6 +57,7 @@ public sealed unsafe partial class CompoundCreatorInputValidation : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_7bb65f7a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class PlayerClosedContainerEvent : global::System.I
         var handle = NativeMethods.TablePtr->C2.hs_create_7d69dd60((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

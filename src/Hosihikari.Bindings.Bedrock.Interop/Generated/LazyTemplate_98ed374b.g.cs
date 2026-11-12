@@ -61,6 +61,7 @@ public sealed unsafe partial class LazyTemplate : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_03bc9756((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -79,7 +80,12 @@ public sealed unsafe partial class LazyTemplate : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSize(byte rotation)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7c722fe3((void*)__hosihikari_shim_handle, rotation);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     public bool isLegacyStructure()

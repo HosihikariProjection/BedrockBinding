@@ -57,6 +57,7 @@ public sealed unsafe partial class NavigationDescription : global::System.IDispo
         var handle = NativeMethods.TablePtr->C2.hs_create_3c6d94a1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

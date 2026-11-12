@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockCulling : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_0731e557((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -57,6 +57,7 @@ public sealed unsafe partial class NBCastleSmallCorridorLeftTurnPiece : global::
         var handle = NativeMethods.TablePtr->C2.hs_create_1cedc6ec((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

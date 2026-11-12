@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockActorDataPacketPayload : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_63b76613((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

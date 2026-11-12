@@ -45,6 +45,7 @@ public sealed unsafe partial class TrackingRecord : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_9b4635e1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

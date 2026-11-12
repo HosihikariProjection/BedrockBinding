@@ -45,6 +45,7 @@ public sealed unsafe partial class DisconnectPacketMessages : global::System.IDi
         var handle = NativeMethods.TablePtr->C1.hs_create_791a6ace((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

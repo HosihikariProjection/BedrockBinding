@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptItemType : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_c5fb6b44((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

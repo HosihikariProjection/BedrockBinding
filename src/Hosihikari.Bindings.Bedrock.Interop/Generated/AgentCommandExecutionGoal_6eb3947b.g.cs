@@ -73,6 +73,7 @@ public sealed unsafe partial class AgentCommandExecutionGoal : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_a4a6b407();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -88,6 +89,7 @@ public sealed unsafe partial class AgentCommandExecutionGoal : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_109c8dff((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -133,7 +135,12 @@ public sealed unsafe partial class AgentCommandExecutionGoal : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.AgentCommandExecutionGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommandExecutionGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_35504285((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AgentCommandExecutionGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AgentCommandExecutionGoal((nint)__hs_handle, false);
     }
 
     public void start()

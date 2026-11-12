@@ -45,6 +45,7 @@ public sealed unsafe partial class ILevelEventManagerCoordinator : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_58c23f17((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

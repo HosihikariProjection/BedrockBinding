@@ -73,6 +73,7 @@ public sealed unsafe partial class ArmorContainerValidation : global::System.IDi
         var handle = NativeMethods.TablePtr->C0.hs_create_59077aac((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -68,6 +68,7 @@ public sealed unsafe partial class UnderwaterCanyonFeature : global::System.IDis
         var handle = NativeMethods.TablePtr->C4.hs_create_7f091972((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class WeightedRandomNumberReference : global::Syste
         var handle = NativeMethods.TablePtr->C1.hs_create_cddd9de0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

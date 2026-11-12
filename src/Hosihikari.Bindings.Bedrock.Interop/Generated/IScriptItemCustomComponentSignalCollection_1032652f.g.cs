@@ -45,6 +45,7 @@ public sealed unsafe partial class IScriptItemCustomComponentSignalCollection : 
         var handle = NativeMethods.TablePtr->C3.hs_create_b542ae2f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

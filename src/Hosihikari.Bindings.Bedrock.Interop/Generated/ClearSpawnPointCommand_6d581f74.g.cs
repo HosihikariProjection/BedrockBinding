@@ -49,6 +49,7 @@ public sealed unsafe partial class ClearSpawnPointCommand : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_c39cc51e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

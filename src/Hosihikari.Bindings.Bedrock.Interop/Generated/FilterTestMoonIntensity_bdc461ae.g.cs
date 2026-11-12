@@ -71,6 +71,7 @@ public sealed unsafe partial class FilterTestMoonIntensity : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_b124382b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

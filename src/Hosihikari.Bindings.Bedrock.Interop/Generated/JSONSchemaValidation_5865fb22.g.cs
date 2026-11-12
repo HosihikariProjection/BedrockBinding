@@ -49,6 +49,7 @@ public sealed unsafe partial class JSONSchemaValidation : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_c75a71de();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class JSONSchemaValidation : global::System.IDispos
         var handle = NativeMethods.TablePtr->C4.hs_create_f0ce987a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ChangeMobPropertyPacketPayload : global::Syst
         var handle = NativeMethods.TablePtr->C0.hs_create_b76c1a1a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

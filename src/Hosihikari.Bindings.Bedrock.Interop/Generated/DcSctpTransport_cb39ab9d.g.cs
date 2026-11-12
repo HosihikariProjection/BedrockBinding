@@ -197,6 +197,7 @@ public sealed unsafe partial class DcSctpTransport : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_de42499f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -208,6 +209,7 @@ public sealed unsafe partial class DcSctpTransport : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_a8cd230a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -330,7 +332,12 @@ public sealed unsafe partial class DcSctpTransport : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError? SendData(int sid, nint @params, nint payload)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_802b6fa8((void*)__hosihikari_shim_handle, sid, (void*)@params, (void*)payload);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.", false)]
@@ -475,7 +482,12 @@ public sealed unsafe partial class DcSctpTransport : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d70f6efa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DcSctpTransport((nint)__hs_handle, false);
     }
 
     public void set_debug_name_for_testing(nint debug_name)

@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptItemComponents : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_3dddf82b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -107,6 +107,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_dd09a74f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -118,6 +119,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_f2d3b159((void*)rhs.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -129,6 +131,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_a93bd541((void*)entities);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -161,6 +164,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
             var handle = NativeMethods.TablePtr->C0.hs_create_f8975370(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -209,7 +213,12 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_416c1ec0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter((nint)__hs_handle, false);
     }
 
 

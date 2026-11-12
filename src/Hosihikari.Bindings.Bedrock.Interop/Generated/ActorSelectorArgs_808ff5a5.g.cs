@@ -49,6 +49,7 @@ public sealed unsafe partial class ActorSelectorArgs : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_49e75a84((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

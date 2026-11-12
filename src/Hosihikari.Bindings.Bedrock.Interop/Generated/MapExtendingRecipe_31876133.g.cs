@@ -85,6 +85,7 @@ public sealed unsafe partial class MapExtendingRecipe : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_55aafe63();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -96,6 +97,7 @@ public sealed unsafe partial class MapExtendingRecipe : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C2.hs_create_8e200df8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -119,7 +121,12 @@ public sealed unsafe partial class MapExtendingRecipe : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient? getIngredient(int x, int y)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8aae02b1((void*)__hosihikari_shim_handle, x, y);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)__hs_handle, false);
     }
 
     public nint getResultItems()

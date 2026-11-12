@@ -51,6 +51,7 @@ public sealed unsafe partial class BlockEventDispatcher : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_94942dfd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

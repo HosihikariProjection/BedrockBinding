@@ -45,6 +45,7 @@ public sealed unsafe partial class RealtimeFrameData : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C2.hs_create_6c63a5ac((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

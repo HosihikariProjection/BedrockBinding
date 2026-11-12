@@ -45,6 +45,7 @@ public sealed unsafe partial class FeatureExpressionNodePair : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_f9d88dbd((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

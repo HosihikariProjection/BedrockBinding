@@ -126,6 +126,7 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_41c27014();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -145,6 +146,7 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_0d31cfb2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -173,6 +175,7 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
             var handle = NativeMethods.TablePtr->C3.hs_create_1e5f8282(__hs_stringData0, (nuint)__hs_stringByteCount0, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -244,7 +247,12 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? getTransformedBounds(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos loadPosition, global::Hosihikari.Bindings.Bedrock.Interop.StructureSettings structureSettings)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_525ae265((void*)__hosihikari_shim_handle, (void*)loadPosition.Handle, (void*)structureSettings.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -305,7 +313,12 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_651a2e03((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -337,7 +350,12 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? rawSize()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_14d0b090((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]

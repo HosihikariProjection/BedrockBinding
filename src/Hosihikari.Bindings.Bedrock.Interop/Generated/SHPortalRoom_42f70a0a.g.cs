@@ -57,6 +57,7 @@ public sealed unsafe partial class SHPortalRoom : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_4938b464((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

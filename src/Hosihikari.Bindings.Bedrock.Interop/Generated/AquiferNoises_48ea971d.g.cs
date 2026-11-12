@@ -45,6 +45,7 @@ public sealed unsafe partial class AquiferNoises : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_9602b244((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

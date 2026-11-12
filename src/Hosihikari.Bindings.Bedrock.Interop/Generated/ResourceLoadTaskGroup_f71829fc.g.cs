@@ -45,6 +45,7 @@ public sealed unsafe partial class ResourceLoadTaskGroup : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_5d086c5d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ResourceLoadTaskGroup : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_0e2528f1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -101,7 +103,12 @@ public sealed unsafe partial class ResourceLoadTaskGroup : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoadManager_Nested.ResourceLoadTaskGroup? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoadManager_Nested.ResourceLoadTaskGroup arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a1f62bc7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoadManager_Nested.ResourceLoadTaskGroup((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoadManager_Nested.ResourceLoadTaskGroup((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -45,6 +45,7 @@ public sealed unsafe partial class IRealmEventLogger : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_5945d0f4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

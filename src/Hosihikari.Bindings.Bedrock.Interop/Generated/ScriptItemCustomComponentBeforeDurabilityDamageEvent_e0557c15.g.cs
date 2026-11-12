@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptItemCustomComponentBeforeDurabilityDama
         var handle = NativeMethods.TablePtr->C3.hs_create_6782f677((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -78,6 +78,7 @@ public sealed unsafe partial class DialogueCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_3ab94114((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

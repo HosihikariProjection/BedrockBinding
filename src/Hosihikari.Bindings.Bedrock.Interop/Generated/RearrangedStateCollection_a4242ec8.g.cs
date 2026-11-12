@@ -59,6 +59,7 @@ public sealed unsafe partial class RearrangedStateCollection : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_4cc9ac40((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -91,7 +92,12 @@ public sealed unsafe partial class RearrangedStateCollection : global::System.ID
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? setState(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType, int blockData, int stateData)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_79d7e97b((void*)__hosihikari_shim_handle, (void*)blockType.Handle, blockData, stateData);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
     }
 
 

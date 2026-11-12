@@ -45,6 +45,7 @@ public sealed unsafe partial class ChunkBlockPos : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_ce1a60bc((void*)pos.Handle, minDimensionHeight);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class ChunkBlockPos : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_00082a92(x, (void*)y.Handle, z);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -65,13 +67,23 @@ public sealed unsafe partial class ChunkBlockPos : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos? from2D(byte x, byte z)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_b5e85b4c(x, z);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos((nint)__hs_handle);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos? fromLegacyIndex(ushort idx)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_465ce045(idx);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos((nint)__hs_handle);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos other)

@@ -73,6 +73,7 @@ public sealed unsafe partial class HashedString : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_8f85d7af((void*)other.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,6 +85,7 @@ public sealed unsafe partial class HashedString : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_1ba7a4e8((void*)mStr);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -108,6 +110,7 @@ public sealed unsafe partial class HashedString : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_0d67d647(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -133,6 +136,7 @@ public sealed unsafe partial class HashedString : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_3881f610(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -158,6 +162,7 @@ public sealed unsafe partial class HashedString : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C1.hs_create_b7694618(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -170,6 +175,7 @@ public sealed unsafe partial class HashedString : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_3e72da99();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -181,6 +187,7 @@ public sealed unsafe partial class HashedString : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_82cc41eb(h, (void*)mStr);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -281,7 +288,12 @@ public sealed unsafe partial class HashedString : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HashedString other)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7a19d284((void*)__hosihikari_shim_handle, (void*)other.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.HashedString other)

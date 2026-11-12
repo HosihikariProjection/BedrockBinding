@@ -65,6 +65,7 @@ public sealed unsafe partial class ScriptPluginPackSource : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_01c8a224();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -76,6 +77,7 @@ public sealed unsafe partial class ScriptPluginPackSource : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_062d5d60((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -115,7 +117,12 @@ public sealed unsafe partial class ScriptPluginPackSource : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.PackManifest? getManifest()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a62efe9c((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PackManifest((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackManifest((nint)__hs_handle, false);
     }
 
     public string? loadScript(string path)
@@ -154,7 +161,12 @@ public sealed unsafe partial class ScriptPluginPackSource : global::System.IDisp
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginPackSource? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginPackSource arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_996ff0df((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginPackSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginPackSource((nint)__hs_handle, false);
     }
 
     public string removeRootFromPath(string path)

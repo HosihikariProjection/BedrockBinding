@@ -45,6 +45,7 @@ public sealed unsafe partial class RequestProcessor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_6cd970d8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class RequestProcessor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_f6a007ea((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -119,7 +121,12 @@ public sealed unsafe partial class RequestProcessor : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient_Nested.RequestProcessor? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient_Nested.RequestProcessor arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e77ce8e8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient_Nested.RequestProcessor((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient_Nested.RequestProcessor((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

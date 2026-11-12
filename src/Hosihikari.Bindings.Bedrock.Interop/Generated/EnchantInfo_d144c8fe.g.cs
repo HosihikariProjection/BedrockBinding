@@ -45,6 +45,7 @@ public sealed unsafe partial class EnchantInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_26ed858b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class EnchantInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_4d1b6b4f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class EnchantInfo : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition_Nested.EnchantInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition_Nested.EnchantInfo arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_433ee2a3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition_Nested.EnchantInfo((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LootItemMatchToolCondition_Nested.EnchantInfo((nint)__hs_handle, false);
     }
 
     public void Dispose()

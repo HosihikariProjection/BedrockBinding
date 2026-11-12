@@ -58,6 +58,7 @@ public sealed unsafe partial class NetworkBinderInterface : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_74fe12ae((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

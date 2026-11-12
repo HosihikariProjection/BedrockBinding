@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptHealthComponentFactory : global::System
         var handle = NativeMethods.TablePtr->C3.hs_create_475d3b14((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class LevelStorageEventingContext : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_f86ab94f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

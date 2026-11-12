@@ -45,6 +45,7 @@ public sealed unsafe partial class BlockEventPacketPayload : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_0b62eda2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

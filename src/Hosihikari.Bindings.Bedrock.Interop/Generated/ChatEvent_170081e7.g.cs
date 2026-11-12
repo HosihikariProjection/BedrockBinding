@@ -53,6 +53,7 @@ public sealed unsafe partial class ChatEvent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_0daa4ddb();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class ChatEvent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_d7f0e846((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

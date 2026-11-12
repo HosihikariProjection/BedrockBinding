@@ -69,6 +69,7 @@ public sealed unsafe partial class StructurePoolBlockPredicateBlockMatch : globa
         var handle = NativeMethods.TablePtr->C3.hs_create_e40015f3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -84,6 +85,7 @@ public sealed unsafe partial class StructurePoolBlockPredicateBlockMatch : globa
         var handle = NativeMethods.TablePtr->C3.hs_create_6b959547((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

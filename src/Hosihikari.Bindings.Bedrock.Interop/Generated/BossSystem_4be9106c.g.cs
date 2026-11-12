@@ -49,6 +49,7 @@ public sealed unsafe partial class BossSystem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_79f26e9e((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

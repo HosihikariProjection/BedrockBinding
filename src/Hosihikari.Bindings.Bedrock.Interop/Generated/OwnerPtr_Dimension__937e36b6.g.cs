@@ -45,6 +45,7 @@ public sealed unsafe partial class OwnerPtr_Dimension_ : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_36030ea6(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class OwnerPtr_Dimension_ : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_2f4e3a73(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class OwnerPtr_Dimension_ : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_4016dcaa(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

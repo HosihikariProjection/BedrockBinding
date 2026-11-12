@@ -155,7 +155,12 @@ public sealed unsafe partial class PhysicalSocket : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket? Accept(nint out_addr)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_85123a67((void*)__hosihikari_shim_handle, (void*)out_addr);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket((nint)__hs_handle, false);
     }
 
     public int Bind(nint bind_addr)
@@ -240,6 +245,7 @@ public sealed unsafe partial class PhysicalSocket : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_01f2f271();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -251,6 +257,7 @@ public sealed unsafe partial class PhysicalSocket : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_34dccbfc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -378,7 +385,12 @@ public sealed unsafe partial class PhysicalSocket : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PhysicalSocket? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PhysicalSocket arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_809a04bc((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PhysicalSocket((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PhysicalSocket((nint)__hs_handle, false);
     }
 
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class DebuggerStatEvent : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C1.hs_create_0449c907((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

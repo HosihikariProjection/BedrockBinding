@@ -89,6 +89,7 @@ public sealed unsafe partial class BiomeSource3d : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_91178283();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -104,6 +105,7 @@ public sealed unsafe partial class BiomeSource3d : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_25b35331((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -113,7 +115,12 @@ public sealed unsafe partial class BiomeSource3d : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Biome? _getBiome(nint getBiomeOptions)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3a3871c8((void*)__hosihikari_shim_handle, (void*)getBiomeOptions);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -147,13 +154,23 @@ public sealed unsafe partial class BiomeSource3d : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea? getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox box, uint scale)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1d23edc7((void*)__hosihikari_shim_handle, (void*)box.Handle, scale);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea? getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox box, uint scale, nint getBiomeOptionsIn)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_bcc33376((void*)__hosihikari_shim_handle, (void*)box.Handle, scale, (void*)getBiomeOptionsIn);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'ChunkVolume::VolumeOf<Biome>' requires --link-carrier or --virtual-dispatch.", false)]

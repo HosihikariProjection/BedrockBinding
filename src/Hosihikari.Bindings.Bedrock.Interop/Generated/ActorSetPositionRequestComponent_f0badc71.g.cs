@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorSetPositionRequestComponent : global::Sy
         var handle = NativeMethods.TablePtr->C0.hs_create_3111adf0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

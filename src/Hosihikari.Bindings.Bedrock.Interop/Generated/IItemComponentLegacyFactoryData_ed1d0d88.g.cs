@@ -45,6 +45,7 @@ public sealed unsafe partial class IItemComponentLegacyFactoryData : global::Sys
         var handle = NativeMethods.TablePtr->C1.hs_create_50e4cc81((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

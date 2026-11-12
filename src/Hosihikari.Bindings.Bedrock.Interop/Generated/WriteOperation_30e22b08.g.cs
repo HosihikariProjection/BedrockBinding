@@ -45,6 +45,7 @@ public sealed unsafe partial class WriteOperation : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_e09b9816();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class WriteOperation : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_e23f4020((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -83,7 +85,12 @@ public sealed unsafe partial class WriteOperation : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessTracker_Nested.WriteOperation? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessTracker_Nested.WriteOperation arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ffa9a92d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessTracker_Nested.WriteOperation((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.DiskAccessTracker_Nested.WriteOperation((nint)__hs_handle, false);
     }
 
     public void Dispose()

@@ -45,6 +45,7 @@ public sealed unsafe partial class SendEventData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_82440706((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

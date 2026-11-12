@@ -281,6 +281,7 @@ public sealed unsafe partial class SmokerBlockActor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_d4fafb22();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -296,6 +297,7 @@ public sealed unsafe partial class SmokerBlockActor : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_f92e2578((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

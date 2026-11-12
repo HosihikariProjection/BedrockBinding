@@ -50,6 +50,7 @@ public sealed unsafe partial class PlayerTellCommandEvent : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_c1872486((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

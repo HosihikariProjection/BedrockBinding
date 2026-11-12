@@ -53,6 +53,7 @@ public sealed unsafe partial class IScriptBlockProperty : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_0b7b41e4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class IScriptBlockProperty : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_e79ce437((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -98,7 +100,12 @@ public sealed unsafe partial class IScriptBlockProperty : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.IScriptBlockProperty? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.IScriptBlockProperty arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_31a5d2dd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.IScriptBlockProperty((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.IScriptBlockProperty((nint)__hs_handle, false);
     }
 
 

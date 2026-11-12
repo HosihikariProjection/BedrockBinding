@@ -53,6 +53,7 @@ public sealed unsafe partial class EnumValue : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_c7a40269();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

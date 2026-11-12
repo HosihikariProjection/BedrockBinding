@@ -53,6 +53,7 @@ public sealed unsafe partial class SmithingTableMaterialContainerValidation : gl
         var handle = NativeMethods.TablePtr->C3.hs_create_af128ee5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

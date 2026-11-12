@@ -45,6 +45,7 @@ public sealed unsafe partial class GroupSizeComponent : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C1.hs_create_f67f7279((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

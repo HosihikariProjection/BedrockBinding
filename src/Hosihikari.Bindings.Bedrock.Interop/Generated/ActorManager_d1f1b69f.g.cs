@@ -61,6 +61,7 @@ public sealed unsafe partial class ActorManager : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_ecadaf85();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

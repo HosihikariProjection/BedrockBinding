@@ -45,6 +45,7 @@ public sealed unsafe partial class NonOwnerPointer_ContentLogEndPoint_ : global:
         var handle = NativeMethods.TablePtr->C0.hs_create_a76d69db();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NonOwnerPointer_ContentLogEndPoint_ : global:
         var handle = NativeMethods.TablePtr->C0.hs_create_83ebb6c1(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -67,6 +69,7 @@ public sealed unsafe partial class NonOwnerPointer_ContentLogEndPoint_ : global:
         var handle = NativeMethods.TablePtr->C0.hs_create_91e585a0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -78,6 +81,7 @@ public sealed unsafe partial class NonOwnerPointer_ContentLogEndPoint_ : global:
         var handle = NativeMethods.TablePtr->C0.hs_create_4efd063e(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -87,7 +91,12 @@ public sealed unsafe partial class NonOwnerPointer_ContentLogEndPoint_ : global:
     public global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_fd0d10a2((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -105,7 +114,12 @@ public sealed unsafe partial class NonOwnerPointer_ContentLogEndPoint_ : global:
     public global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint? operator_ContentLogEndPoint__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_0b1e6e49((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint((nint)__hs_handle, false);
     }
 
     public bool operator_bool()
@@ -116,13 +130,23 @@ public sealed unsafe partial class NonOwnerPointer_ContentLogEndPoint_ : global:
     public global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_2bd4dbb2((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_45aa0e5f((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint((nint)__hs_handle, false);
     }
 
     public bool operator_equal()

@@ -57,6 +57,7 @@ public sealed unsafe partial class RakDataInput : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_63d5110e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class RakDataInput : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_ee7a44e4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -88,13 +90,23 @@ public sealed unsafe partial class RakDataInput : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3e20525b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_? readBytesResult(nint data, ulong bytes)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_38f4fb68((void*)__hosihikari_shim_handle, (void*)data, bytes);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle);
     }
 
 

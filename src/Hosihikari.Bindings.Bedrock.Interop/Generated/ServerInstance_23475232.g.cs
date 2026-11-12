@@ -163,6 +163,7 @@ public sealed unsafe partial class ServerInstance : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_1bb2b881();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

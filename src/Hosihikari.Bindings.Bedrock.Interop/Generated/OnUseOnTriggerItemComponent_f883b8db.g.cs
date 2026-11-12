@@ -45,6 +45,7 @@ public sealed unsafe partial class OnUseOnTriggerItemComponent : global::System.
         var handle = NativeMethods.TablePtr->C3.hs_create_7f7577d7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

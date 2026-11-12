@@ -49,6 +49,7 @@ public sealed unsafe partial class ResourcePackClientResponsePacketPayload : glo
         var handle = NativeMethods.TablePtr->C3.hs_create_f55925ac();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class ResourcePackClientResponsePacketPayload : glo
         var handle = NativeMethods.TablePtr->C3.hs_create_30e9241d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

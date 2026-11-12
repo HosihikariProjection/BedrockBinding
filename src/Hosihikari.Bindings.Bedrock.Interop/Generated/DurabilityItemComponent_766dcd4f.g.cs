@@ -49,6 +49,7 @@ public sealed unsafe partial class DurabilityItemComponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_92d6e962((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

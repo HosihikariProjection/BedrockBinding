@@ -95,6 +95,7 @@ public sealed unsafe partial class MeleeAttackBaseGoal : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_214550b7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -110,6 +111,7 @@ public sealed unsafe partial class MeleeAttackBaseGoal : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C2.hs_create_682ab02f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -266,7 +268,12 @@ public sealed unsafe partial class MeleeAttackBaseGoal : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackBaseGoal? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackBaseGoal arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_44dcacd1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackBaseGoal((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MeleeAttackBaseGoal((nint)__hs_handle, false);
     }
 
     public void start()

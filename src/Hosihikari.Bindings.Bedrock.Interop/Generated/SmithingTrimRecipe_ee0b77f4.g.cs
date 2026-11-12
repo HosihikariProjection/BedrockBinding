@@ -124,7 +124,12 @@ public sealed unsafe partial class SmithingTrimRecipe : global::System.IDisposab
     public static global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? ID()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5f37b880();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false);
     }
 
     public static SmithingTrimRecipe? Create()
@@ -132,6 +137,7 @@ public sealed unsafe partial class SmithingTrimRecipe : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_d4a6eb43();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -143,6 +149,7 @@ public sealed unsafe partial class SmithingTrimRecipe : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C3.hs_create_81710eca((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

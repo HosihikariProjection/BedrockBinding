@@ -45,6 +45,7 @@ public sealed unsafe partial class PoolElementStructureSection : global::System.
         var handle = NativeMethods.TablePtr->C4.hs_create_e7910799((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

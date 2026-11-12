@@ -53,6 +53,7 @@ public sealed unsafe partial class PingedCompatibleServer : global::System.IDisp
         var handle = NativeMethods.TablePtr->C2.hs_create_36d9ced8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

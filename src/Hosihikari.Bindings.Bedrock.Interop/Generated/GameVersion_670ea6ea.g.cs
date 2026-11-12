@@ -57,6 +57,7 @@ public sealed unsafe partial class GameVersion : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_103ba1f9();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class GameVersion : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_c358354f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class FillContainerFunction : global::System.IDispo
         var handle = NativeMethods.TablePtr->C1.hs_create_345d3862((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

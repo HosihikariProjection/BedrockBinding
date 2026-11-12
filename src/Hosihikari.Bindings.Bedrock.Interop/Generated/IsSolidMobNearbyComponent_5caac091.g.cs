@@ -45,6 +45,7 @@ public sealed unsafe partial class IsSolidMobNearbyComponent : global::System.ID
         var handle = NativeMethods.TablePtr->C1.hs_create_3efabde7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

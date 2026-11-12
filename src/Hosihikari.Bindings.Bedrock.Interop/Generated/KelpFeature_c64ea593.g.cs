@@ -77,6 +77,7 @@ public sealed unsafe partial class KelpFeature : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_74cc6688((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

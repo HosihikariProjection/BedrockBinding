@@ -61,6 +61,7 @@ public sealed unsafe partial class ActorDimensionTransferProxy : global::System.
         var handle = NativeMethods.TablePtr->C0.hs_create_56616af3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

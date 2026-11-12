@@ -50,6 +50,7 @@ public sealed unsafe partial class PlayerInteractWithBlockAfterEvent : global::S
         var handle = NativeMethods.TablePtr->C2.hs_create_32761df0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

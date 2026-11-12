@@ -55,6 +55,7 @@ public sealed unsafe partial class LabTableContainerScreenValidator : global::Sy
         var handle = NativeMethods.TablePtr->C2.hs_create_b958513d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -58,6 +58,7 @@ public sealed unsafe partial class PlayerSkinPacketPayload : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_69f01af8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -99,7 +100,12 @@ public sealed unsafe partial class PlayerSkinPacketPayload : global::System.IDis
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b012fd4d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload((nint)__hs_handle, false);
     }
 
 

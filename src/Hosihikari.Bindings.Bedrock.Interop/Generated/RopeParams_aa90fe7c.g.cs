@@ -45,6 +45,7 @@ public sealed unsafe partial class RopeParams : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_8cd4b1de((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

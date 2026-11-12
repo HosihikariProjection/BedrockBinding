@@ -49,6 +49,7 @@ public sealed unsafe partial class StructureTemplateRegistrationContext : global
         var handle = NativeMethods.TablePtr->C3.hs_create_58039a92();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class StructureTemplateRegistrationContext : global
         var handle = NativeMethods.TablePtr->C3.hs_create_cf3fb76f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -71,6 +73,7 @@ public sealed unsafe partial class StructureTemplateRegistrationContext : global
         var handle = NativeMethods.TablePtr->C3.hs_create_a491ce0e(manager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)structureRegistry.Handle, (void*)featureRegistry.Handle, (void*)baseGameVersion.Handle, (void*)experiments.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -110,7 +113,12 @@ public sealed unsafe partial class StructureTemplateRegistrationContext : global
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateRegistrationContext? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateRegistrationContext arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0bc39185((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateRegistrationContext((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateRegistrationContext((nint)__hs_handle, false);
     }
 
 

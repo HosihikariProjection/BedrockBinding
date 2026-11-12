@@ -133,6 +133,7 @@ public sealed unsafe partial class StructurePoolElement : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_7f829c23();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -144,6 +145,7 @@ public sealed unsafe partial class StructurePoolElement : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_5072c3c0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -183,7 +185,12 @@ public sealed unsafe partial class StructurePoolElement : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox? getBoundingBox(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, byte rotation)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1c252930((void*)__hosihikari_shim_handle, (void*)position.Handle, rotation);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'JigsawBlockInfo' is not supported.", false)]
@@ -207,7 +214,12 @@ public sealed unsafe partial class StructurePoolElement : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getSize(byte rotation)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4b650a9f((void*)__hosihikari_shim_handle, rotation);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: map key type 'BlockPos' is not supported.", false)]

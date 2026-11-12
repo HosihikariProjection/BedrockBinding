@@ -45,6 +45,7 @@ public sealed unsafe partial class DimensionStateComponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_de521750((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

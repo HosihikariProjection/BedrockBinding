@@ -77,6 +77,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentsRegistry : global:
         var handle = NativeMethods.TablePtr->C3.hs_create_f0c114f0();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -92,6 +93,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentsRegistry : global:
         var handle = NativeMethods.TablePtr->C3.hs_create_6e266ba8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -272,7 +274,12 @@ public sealed unsafe partial class ScriptBlockCustomComponentsRegistry : global:
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7b886af0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentsRegistry((nint)__hs_handle, false);
     }
 
     public nint tryGetCustomComponentParametersForBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block, string componentName, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope)

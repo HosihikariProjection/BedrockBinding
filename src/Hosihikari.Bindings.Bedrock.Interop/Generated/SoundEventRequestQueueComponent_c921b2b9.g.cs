@@ -45,6 +45,7 @@ public sealed unsafe partial class SoundEventRequestQueueComponent : global::Sys
         var handle = NativeMethods.TablePtr->C3.hs_create_8e7ee21c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -122,6 +122,7 @@ public sealed unsafe partial class md5 : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_d0c7454a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

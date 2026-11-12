@@ -45,6 +45,7 @@ public sealed unsafe partial class UniqueOwnerPointer_LevelBlockDestroyer_ : glo
         var handle = NativeMethods.TablePtr->C0.hs_create_d6f8ecbd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class UniqueOwnerPointer_LevelBlockDestroyer_ : glo
         var handle = NativeMethods.TablePtr->C0.hs_create_84b655e5();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -73,7 +75,12 @@ public sealed unsafe partial class UniqueOwnerPointer_LevelBlockDestroyer_ : glo
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer? get()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_63041f2e((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer((nint)__hs_handle, false);
     }
 
     public bool isValid()
@@ -101,13 +108,23 @@ public sealed unsafe partial class UniqueOwnerPointer_LevelBlockDestroyer_ : glo
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer? operator_multiply()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_36fb1866((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer? operator_operator__()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_649a9d72((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyer((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -117,7 +134,12 @@ public sealed unsafe partial class UniqueOwnerPointer_LevelBlockDestroyer_ : glo
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelBlockDestroyer_? operator_assign()
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_443df525((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelBlockDestroyer_((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelBlockDestroyer_((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_LevelBlockDestroyer_ other)

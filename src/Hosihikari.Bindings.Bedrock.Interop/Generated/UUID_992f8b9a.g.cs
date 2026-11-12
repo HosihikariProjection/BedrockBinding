@@ -43,7 +43,12 @@ public sealed unsafe partial class UUID : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? EMPTY()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_dc73d871();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -68,6 +73,7 @@ public sealed unsafe partial class UUID : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C4.hs_create_28955e60(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -93,6 +99,7 @@ public sealed unsafe partial class UUID : global::System.IDisposable
             var handle = NativeMethods.TablePtr->C4.hs_create_c68fbce8(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -105,6 +112,7 @@ public sealed unsafe partial class UUID : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_92aefe9a(a, b);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -164,7 +172,12 @@ public sealed unsafe partial class UUID : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C4.hs_method_dd9ea793(__hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle);
         }
     }
 
@@ -184,7 +197,12 @@ public sealed unsafe partial class UUID : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C4.hs_method_11fda17e(__hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle);
         }
     }
 
@@ -211,7 +229,12 @@ public sealed unsafe partial class UUID : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID? random()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2b7181cc();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: expected value type 'mce::UUID': by-value return type 'mce::UUID' requires --link-carrier or --virtual-dispatch.", false)]

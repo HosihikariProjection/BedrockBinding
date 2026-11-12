@@ -65,6 +65,7 @@ public sealed unsafe partial class WardenVibrationConfig : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_a54fb1dd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,6 +81,7 @@ public sealed unsafe partial class WardenVibrationConfig : global::System.IDispo
         var handle = NativeMethods.TablePtr->C4.hs_create_31e3714a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

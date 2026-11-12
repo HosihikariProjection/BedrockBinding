@@ -43,7 +43,12 @@ public sealed unsafe partial class SharedAttributes : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? ABSORPTION()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_5b491390();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -53,7 +58,12 @@ public sealed unsafe partial class SharedAttributes : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? ATTACK_DAMAGE()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_766ef6b9();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -63,7 +73,12 @@ public sealed unsafe partial class SharedAttributes : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? FOLLOW_RANGE()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_11b7e62c();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -73,43 +88,78 @@ public sealed unsafe partial class SharedAttributes : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? HEALTH()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_da4ccab4();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? JUMP_STRENGTH()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_8e258dab();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? KNOCKBACK_RESISTANCE()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1e9846c4();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? LAVA_MOVEMENT_SPEED()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f4ee3e75();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? LUCK()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a32df52e();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? MOVEMENT_SPEED()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_769b9e64();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? UNDERWATER_MOVEMENT_SPEED()
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_172d5e3e();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

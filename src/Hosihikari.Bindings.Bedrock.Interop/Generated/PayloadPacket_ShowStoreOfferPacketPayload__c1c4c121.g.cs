@@ -98,6 +98,7 @@ public sealed unsafe partial class PayloadPacket_ShowStoreOfferPacketPayload_ : 
         var handle = NativeMethods.TablePtr->C4.hs_create_4bbf0d46((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

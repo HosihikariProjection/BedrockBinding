@@ -45,6 +45,7 @@ public sealed unsafe partial class LogEntry : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_0d0a0e53((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

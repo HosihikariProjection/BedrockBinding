@@ -78,6 +78,7 @@ public sealed unsafe partial class SpreadPlayersCommand : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_f10c98a3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

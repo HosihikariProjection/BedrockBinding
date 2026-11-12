@@ -53,6 +53,7 @@ public sealed unsafe partial class ResolvedExperienceInfo : global::System.IDisp
         var handle = NativeMethods.TablePtr->C3.hs_create_676e332f();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class ClimateAttributes : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C0.hs_create_fc60a491((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

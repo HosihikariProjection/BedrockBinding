@@ -49,6 +49,7 @@ public sealed unsafe partial class MinEngineVersion : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_48a731fd();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class MinEngineVersion : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_a29ca85d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -90,7 +92,12 @@ public sealed unsafe partial class MinEngineVersion : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2adac2a5(__hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion((nint)__hs_handle) : null;
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion((nint)__hs_handle);
         }
     }
 

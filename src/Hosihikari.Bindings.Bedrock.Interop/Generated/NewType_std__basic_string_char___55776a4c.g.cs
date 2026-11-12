@@ -45,6 +45,7 @@ public sealed unsafe partial class NewType_std__basic_string_char__ : global::Sy
         var handle = NativeMethods.TablePtr->C2.hs_create_cbb3cb06();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class NewType_std__basic_string_char__ : global::Sy
         var handle = NativeMethods.TablePtr->C2.hs_create_1a50809f((void*)other.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -80,6 +82,7 @@ public sealed unsafe partial class NewType_std__basic_string_char__ : global::Sy
             var handle = NativeMethods.TablePtr->C2.hs_create_24a13b1c(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
+                NativeMethods.GetLastError();
                 return null;
             }
 
@@ -96,7 +99,12 @@ public sealed unsafe partial class NewType_std__basic_string_char__ : global::Sy
     public global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__ other)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8c7386a4((void*)__hosihikari_shim_handle, (void*)other.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.NewType_std__basic_string_char__ other)

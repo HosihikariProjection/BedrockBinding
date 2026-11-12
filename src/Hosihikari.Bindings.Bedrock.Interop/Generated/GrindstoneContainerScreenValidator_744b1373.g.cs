@@ -55,6 +55,7 @@ public sealed unsafe partial class GrindstoneContainerScreenValidator : global::
         var handle = NativeMethods.TablePtr->C1.hs_create_7adaddfa((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -50,6 +50,7 @@ public sealed unsafe partial class VehicleComponent : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_9ab17de0((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

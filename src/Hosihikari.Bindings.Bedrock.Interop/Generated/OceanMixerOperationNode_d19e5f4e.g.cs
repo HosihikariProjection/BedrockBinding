@@ -57,6 +57,7 @@ public sealed unsafe partial class OceanMixerOperationNode : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_1d38892e();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class OceanMixerOperationNode : global::System.IDis
         var handle = NativeMethods.TablePtr->C2.hs_create_261d3e21((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

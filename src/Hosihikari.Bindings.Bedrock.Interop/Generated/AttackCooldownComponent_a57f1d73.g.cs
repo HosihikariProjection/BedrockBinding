@@ -45,6 +45,7 @@ public sealed unsafe partial class AttackCooldownComponent : global::System.IDis
         var handle = NativeMethods.TablePtr->C0.hs_create_4dda4c76((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

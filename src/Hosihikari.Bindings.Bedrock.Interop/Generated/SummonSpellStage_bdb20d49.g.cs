@@ -49,6 +49,7 @@ public sealed unsafe partial class SummonSpellStage : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_31d73c96((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

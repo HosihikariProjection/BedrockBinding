@@ -100,6 +100,7 @@ public sealed unsafe partial class FindBlockNode : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_c7924ff6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

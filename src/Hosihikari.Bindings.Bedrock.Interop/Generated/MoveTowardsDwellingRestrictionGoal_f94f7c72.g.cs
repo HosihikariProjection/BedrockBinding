@@ -75,6 +75,7 @@ public sealed unsafe partial class MoveTowardsDwellingRestrictionGoal : global::
         var handle = NativeMethods.TablePtr->C2.hs_create_342cfcd5((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

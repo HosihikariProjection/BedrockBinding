@@ -102,7 +102,12 @@ public sealed unsafe partial class VariantParameterList : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterListConst? operator_VariantParameterListConst()
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b5717783((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterListConst((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterListConst((nint)__hs_handle);
     }
 
     public void Dispose()

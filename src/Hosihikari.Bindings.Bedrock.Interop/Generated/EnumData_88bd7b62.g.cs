@@ -49,6 +49,7 @@ public sealed unsafe partial class EnumData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_e920e742();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,7 +73,12 @@ public sealed unsafe partial class EnumData : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.EnumData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.EnumData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6e3f6a24((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.EnumData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.EnumData((nint)__hs_handle, false);
     }
 
     // The native field type is not projected; this is the address of the field storage.

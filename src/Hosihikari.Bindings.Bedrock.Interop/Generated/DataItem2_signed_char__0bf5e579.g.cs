@@ -45,6 +45,7 @@ public sealed unsafe partial class DataItem2_signed_char_ : global::System.IDisp
         var handle = NativeMethods.TablePtr->C1.hs_create_e9646016((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

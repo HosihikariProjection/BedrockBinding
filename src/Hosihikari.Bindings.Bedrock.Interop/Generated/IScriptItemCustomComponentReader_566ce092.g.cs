@@ -45,6 +45,7 @@ public sealed unsafe partial class IScriptItemCustomComponentReader : global::Sy
         var handle = NativeMethods.TablePtr->C3.hs_create_1319168f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

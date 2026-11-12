@@ -45,6 +45,7 @@ public sealed unsafe partial class PassengerRenderingRidingOffsetComponent : glo
         var handle = NativeMethods.TablePtr->C2.hs_create_ab4618e1((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class HttpHeaders : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_4e17a4f7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class HttpHeaders : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C1.hs_create_1cf57b5a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -105,7 +107,12 @@ public sealed unsafe partial class HttpHeaders : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.HttpHeaders? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HttpHeaders arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d817ac23((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HttpHeaders((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HttpHeaders((nint)__hs_handle, false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

@@ -45,6 +45,7 @@ public sealed unsafe partial class OnActorLeaveVolumeComponent : global::System.
         var handle = NativeMethods.TablePtr->C2.hs_create_27b373f4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

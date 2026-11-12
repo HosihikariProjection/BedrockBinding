@@ -72,6 +72,7 @@ public sealed unsafe partial class ScriptBlockPistonComponent : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_4aa27dd6((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

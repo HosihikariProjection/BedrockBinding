@@ -49,6 +49,7 @@ public sealed unsafe partial class PersonaCharacterHandle : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_b130ebbb();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -60,6 +61,7 @@ public sealed unsafe partial class PersonaCharacterHandle : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_f8961d42((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

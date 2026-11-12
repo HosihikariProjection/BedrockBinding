@@ -77,6 +77,7 @@ public sealed unsafe partial class ScriptOnFireComponent : global::System.IDispo
         var handle = NativeMethods.TablePtr->C3.hs_create_e4ce4eaf((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

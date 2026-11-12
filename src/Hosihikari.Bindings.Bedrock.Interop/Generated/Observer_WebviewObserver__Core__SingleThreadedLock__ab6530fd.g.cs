@@ -45,6 +45,7 @@ public sealed unsafe partial class Observer_WebviewObserver__Core__SingleThreade
         var handle = NativeMethods.TablePtr->C1.hs_create_562b7dbe();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class Observer_WebviewObserver__Core__SingleThreade
         var handle = NativeMethods.TablePtr->C1.hs_create_797e09f7((void*)subject);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

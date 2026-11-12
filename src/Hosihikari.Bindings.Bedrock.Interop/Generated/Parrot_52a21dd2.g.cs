@@ -759,6 +759,7 @@ public sealed unsafe partial class Parrot : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_c825d2b3();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

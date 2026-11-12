@@ -45,6 +45,7 @@ public sealed unsafe partial class AcceleratedRule : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_0c5ec81c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

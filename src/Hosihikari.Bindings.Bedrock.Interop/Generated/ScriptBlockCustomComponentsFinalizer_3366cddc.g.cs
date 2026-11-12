@@ -49,6 +49,7 @@ public sealed unsafe partial class ScriptBlockCustomComponentsFinalizer : global
         var handle = NativeMethods.TablePtr->C3.hs_create_18e432e3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

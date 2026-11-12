@@ -133,6 +133,7 @@ public sealed unsafe partial class AppPlatformListener : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_35b1b481((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

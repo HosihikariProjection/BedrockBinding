@@ -45,6 +45,7 @@ public sealed unsafe partial class RTree : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_3364f58c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -45,6 +45,7 @@ public sealed unsafe partial class ChunkLoadTelemetryData : global::System.IDisp
         var handle = NativeMethods.TablePtr->C0.hs_create_5b774bb3((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

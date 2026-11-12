@@ -49,6 +49,7 @@ public sealed unsafe partial class ClearCommand : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_8f6fa5bc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

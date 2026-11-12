@@ -45,6 +45,7 @@ public sealed unsafe partial class ImplBase_Bedrock__Resources__Archive__Builder
         var handle = NativeMethods.TablePtr->C0.hs_create_fb04c122((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -55,6 +55,7 @@ public sealed unsafe partial class WalkState : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_4967c36d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

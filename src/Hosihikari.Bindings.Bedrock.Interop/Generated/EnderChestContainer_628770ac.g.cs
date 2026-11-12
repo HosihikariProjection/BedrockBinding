@@ -131,6 +131,7 @@ public sealed unsafe partial class EnderChestContainer : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C1.hs_create_8a07e53b((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -53,6 +53,7 @@ public sealed unsafe partial class Impl : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_27581f59((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

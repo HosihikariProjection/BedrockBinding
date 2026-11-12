@@ -78,6 +78,7 @@ public sealed unsafe partial class GetSpawnPointCommand : global::System.IDispos
         var handle = NativeMethods.TablePtr->C1.hs_create_dca5062a((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

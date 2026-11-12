@@ -49,6 +49,7 @@ public sealed unsafe partial class CommandParameterData : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_deb2041d();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -64,6 +65,7 @@ public sealed unsafe partial class CommandParameterData : global::System.IDispos
         var handle = NativeMethods.TablePtr->C0.hs_create_02d557eb((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -165,7 +167,12 @@ public sealed unsafe partial class CommandParameterData : global::System.IDispos
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_33748eb7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData((nint)__hs_handle, false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData other)

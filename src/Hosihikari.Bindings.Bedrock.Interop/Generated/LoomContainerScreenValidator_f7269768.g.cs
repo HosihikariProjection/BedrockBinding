@@ -55,6 +55,7 @@ public sealed unsafe partial class LoomContainerScreenValidator : global::System
         var handle = NativeMethods.TablePtr->C2.hs_create_c9b6be3d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

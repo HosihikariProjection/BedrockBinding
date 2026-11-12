@@ -58,6 +58,7 @@ public sealed unsafe partial class BasicSaver : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_f901b999((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

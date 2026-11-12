@@ -735,6 +735,7 @@ public sealed unsafe partial class Rabbit : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_d4376c7b();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

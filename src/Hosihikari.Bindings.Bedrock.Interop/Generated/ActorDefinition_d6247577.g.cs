@@ -45,6 +45,7 @@ public sealed unsafe partial class ActorDefinition : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_f0552fa4((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

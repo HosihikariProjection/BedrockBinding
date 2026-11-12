@@ -346,6 +346,7 @@ public sealed unsafe partial class ShovelItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_22d81068();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -357,6 +358,7 @@ public sealed unsafe partial class ShovelItem : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C3.hs_create_e99f365f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -370,7 +372,12 @@ public sealed unsafe partial class ShovelItem : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult? _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
     {
         var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2d0d3909((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)pos.Handle, face, handSlot, (void*)clickPos.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)__hs_handle);
     }
 
     public string getEfficiencyLocalization()

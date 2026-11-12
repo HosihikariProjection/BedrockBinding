@@ -45,6 +45,7 @@ public sealed unsafe partial class CodecSupport : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_849a3340();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class CodecSupport : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_fb126655((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -77,7 +79,12 @@ public sealed unsafe partial class CodecSupport : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory_Nested.CodecSupport? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory_Nested.CodecSupport arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c87dc733((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory_Nested.CodecSupport((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory_Nested.CodecSupport((nint)__hs_handle, false);
     }
 
     public void Dispose()

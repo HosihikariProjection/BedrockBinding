@@ -45,6 +45,7 @@ public sealed unsafe partial class DataStoreInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_d9e0b9d7();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class DataStoreInfo : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_8c5c3bac((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -83,7 +85,12 @@ public sealed unsafe partial class DataStoreInfo : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStoreDetail.DataStoreInfo? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStoreDetail.DataStoreInfo arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e0b5646e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStoreDetail.DataStoreInfo((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStoreDetail.DataStoreInfo((nint)__hs_handle, false);
     }
 
     public void Dispose()

@@ -53,6 +53,7 @@ public sealed unsafe partial class ScriptBlockFilter : global::System.IDisposabl
         var handle = NativeMethods.TablePtr->C3.hs_create_0a94731c();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

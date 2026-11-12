@@ -53,7 +53,12 @@ public sealed unsafe partial class Field_mce__Color__float__float__float__float_
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? div(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_85d22b7d((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle);
     }
 
     public double dot(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color b)
@@ -94,31 +99,56 @@ public sealed unsafe partial class Field_mce__Color__float__float__float__float_
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? mul(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_358db3e4((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? operator_multiply(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fd0ae300((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? operator_operator___f4eaac2a(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f4eaac2a((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? operator_divide(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1c35a29a((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? operator_operator___cf3b87cb(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color b)
     {
         var __hs_handle = NativeMethods.TablePtr->C4.hs_method_cf3b87cb((void*)__hosihikari_shim_handle, (void*)b.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle, false);
     }
 
     public bool operator_less(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color b)

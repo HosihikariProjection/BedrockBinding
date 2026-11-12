@@ -53,6 +53,7 @@ public sealed unsafe partial class ActorHasNameTagTest : global::System.IDisposa
         var handle = NativeMethods.TablePtr->C0.hs_create_e2e4c4dc((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

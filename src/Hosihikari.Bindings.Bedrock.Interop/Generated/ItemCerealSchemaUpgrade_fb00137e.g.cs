@@ -77,6 +77,7 @@ public sealed unsafe partial class ItemCerealSchemaUpgrade : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_9f2cb679();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -92,6 +93,7 @@ public sealed unsafe partial class ItemCerealSchemaUpgrade : global::System.IDis
         var handle = NativeMethods.TablePtr->C1.hs_create_ec5718d2((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

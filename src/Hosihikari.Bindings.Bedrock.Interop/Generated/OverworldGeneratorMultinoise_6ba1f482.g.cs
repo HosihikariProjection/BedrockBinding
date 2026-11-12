@@ -206,6 +206,7 @@ public sealed unsafe partial class OverworldGeneratorMultinoise : global::System
         var handle = NativeMethods.TablePtr->C2.hs_create_8c3ed740();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -217,6 +218,7 @@ public sealed unsafe partial class OverworldGeneratorMultinoise : global::System
         var handle = NativeMethods.TablePtr->C2.hs_create_735fca06((void*)dimension.Handle, (void*)seed.Handle, (void*)(biomeOverride?.Handle ?? 0));
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -248,7 +250,12 @@ public sealed unsafe partial class OverworldGeneratorMultinoise : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache? createNoiseCache(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d2349639((void*)__hosihikari_shim_handle, (void*)chunkPos.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -263,7 +270,12 @@ public sealed unsafe partial class OverworldGeneratorMultinoise : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? findSpawnPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4afc9ee2((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Util::MultidimensionalArray<float, 5, 5, 41>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -273,7 +285,12 @@ public sealed unsafe partial class OverworldGeneratorMultinoise : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource? getBiomeSource()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_08974b69((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource((nint)__hs_handle, false);
     }
 
     public int getLevelGenHeight()
@@ -293,14 +310,24 @@ public sealed unsafe partial class OverworldGeneratorMultinoise : global::System
     public global::Hosihikari.Bindings.Bedrock.Interop.PerlinSimplexNoise? getSurfaceNoise()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cb2801a2((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PerlinSimplexNoise((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PerlinSimplexNoise((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory? getXoroshiroPositionalRandomFactory()
     {
         var __hs_hasValue = false;
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_86ead8df((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory((nint)__hs_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

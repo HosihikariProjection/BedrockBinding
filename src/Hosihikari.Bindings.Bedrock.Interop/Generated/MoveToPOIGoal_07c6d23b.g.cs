@@ -199,6 +199,7 @@ public sealed unsafe partial class MoveToPOIGoal : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C2.hs_create_8c209e26();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -222,7 +223,12 @@ public sealed unsafe partial class MoveToPOIGoal : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? _getTargetPosition()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_03e1e594((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle);
     }
 
     public void _moveToBlock()

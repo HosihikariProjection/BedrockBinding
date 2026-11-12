@@ -53,6 +53,7 @@ public sealed unsafe partial class ArmorTrim : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_9a2b8ba8();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -68,6 +69,7 @@ public sealed unsafe partial class ArmorTrim : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_11b0410d((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

@@ -49,6 +49,7 @@ public sealed unsafe partial class TickingAreaDescription : global::System.IDisp
         var handle = NativeMethods.TablePtr->C4.hs_create_bd8db002((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

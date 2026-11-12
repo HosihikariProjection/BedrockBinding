@@ -61,6 +61,7 @@ public sealed unsafe partial class TargetGoalDefinition : global::System.IDispos
         var handle = NativeMethods.TablePtr->C3.hs_create_bc4d06c7((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

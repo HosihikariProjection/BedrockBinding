@@ -45,6 +45,7 @@ public sealed unsafe partial class MemberFamily : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C4.hs_create_14b46948((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

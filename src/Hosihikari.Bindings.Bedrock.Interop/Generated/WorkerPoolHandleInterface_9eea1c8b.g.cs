@@ -45,6 +45,7 @@ public sealed unsafe partial class WorkerPoolHandleInterface : global::System.ID
         var handle = NativeMethods.TablePtr->C0.hs_create_13aa8090((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

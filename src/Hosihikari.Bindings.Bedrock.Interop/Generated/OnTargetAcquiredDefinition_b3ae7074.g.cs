@@ -67,6 +67,7 @@ public sealed unsafe partial class OnTargetAcquiredDefinition : global::System.I
         var handle = NativeMethods.TablePtr->C3.hs_create_aab4843f((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

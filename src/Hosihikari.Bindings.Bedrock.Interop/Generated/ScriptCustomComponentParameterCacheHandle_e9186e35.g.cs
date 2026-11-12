@@ -45,6 +45,7 @@ public sealed unsafe partial class ScriptCustomComponentParameterCacheHandle : g
         var handle = NativeMethods.TablePtr->C3.hs_create_2513f179((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

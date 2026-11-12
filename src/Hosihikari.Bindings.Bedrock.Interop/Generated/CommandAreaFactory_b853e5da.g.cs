@@ -45,6 +45,7 @@ public sealed unsafe partial class CommandAreaFactory : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_d87245ba();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -56,6 +57,7 @@ public sealed unsafe partial class CommandAreaFactory : global::System.IDisposab
         var handle = NativeMethods.TablePtr->C0.hs_create_e53218c8((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -83,7 +85,12 @@ public sealed unsafe partial class CommandAreaFactory : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory arg0)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7ab02f29((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory((nint)__hs_handle, false);
     }
 
     public void Dispose()

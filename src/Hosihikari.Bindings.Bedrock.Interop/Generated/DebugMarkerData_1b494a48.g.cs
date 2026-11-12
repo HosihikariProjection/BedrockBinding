@@ -45,6 +45,7 @@ public sealed unsafe partial class DebugMarkerData : global::System.IDisposable
         var handle = NativeMethods.TablePtr->C0.hs_create_34e1698c((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

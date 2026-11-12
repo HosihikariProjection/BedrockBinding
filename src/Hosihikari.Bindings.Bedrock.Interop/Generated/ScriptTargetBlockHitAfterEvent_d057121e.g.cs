@@ -61,6 +61,7 @@ public sealed unsafe partial class ScriptTargetBlockHitAfterEvent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_298131b4();
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 
@@ -72,6 +73,7 @@ public sealed unsafe partial class ScriptTargetBlockHitAfterEvent : global::Syst
         var handle = NativeMethods.TablePtr->C3.hs_create_796c6b97((void*)arg0.Handle);
         if (handle == null)
         {
+            NativeMethods.GetLastError();
             return null;
         }
 

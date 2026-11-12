@@ -51,13 +51,23 @@ public sealed unsafe partial class ValueOrRef_ActorAddEffectEvent_ : global::Sys
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorAddEffectEvent? value_8e80c2f4()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8e80c2f4((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorAddEffectEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorAddEffectEvent((nint)__hs_handle, false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorAddEffectEvent? value_4d0a1219()
     {
         var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4d0a1219((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorAddEffectEvent((nint)__hs_handle, false) : null;
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorAddEffectEvent((nint)__hs_handle, false);
     }
 
 
