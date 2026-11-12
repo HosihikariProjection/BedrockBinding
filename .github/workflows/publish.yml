@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: HosihikariProjection/BindingAbi
+          ref: 0cefbb52067d31c8488269d2f1a701624c3a8729
           path: Binding.Abi
 
       # The shim compiles inline template bodies, so it needs the carrier headers and the
