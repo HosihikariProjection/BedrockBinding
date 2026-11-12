@@ -136,9 +136,11 @@ public sealed unsafe partial class Potion : global::System.IDisposable
     public static void appendMobEffectText(nint inOutHovertext, nint potionVariant, uint mobEffectId, int amplifier, nint player) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static nint effectDurationToString(nint potionType, float timeMod, nint effect) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static string effectDurationToString(int potionType, float timeMod, global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance effect)
+    {
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_b9da7440(potionType, timeMod, (void*)effect.Handle);
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint effectPotencyToString(nint effect) =>
@@ -152,9 +154,11 @@ public sealed unsafe partial class Potion : global::System.IDisposable
     public nint getDescriptionId() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint getDescriptionId(nint potionType) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public string getDescriptionId(int potionType)
+    {
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_a278b43d((void*)__hosihikari_shim_handle, potionType);
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getNameId() =>

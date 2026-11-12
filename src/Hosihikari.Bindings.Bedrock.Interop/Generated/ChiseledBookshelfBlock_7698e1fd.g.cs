@@ -405,13 +405,15 @@ public sealed unsafe partial class ChiseledBookshelfBlock : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static bool _retrieveBook(nint player, nint bookshelfActor, nint hitSlot) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static bool _retrieveBook(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ChiseledBookshelfBlockActor bookshelfActor, int hitSlot)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_d40c95ab((void*)player.Handle, (void*)bookshelfActor.Handle, hitSlot) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _setBook(nint player, nint heldItem, nint bookshelfActor, int hitSlot, nint handSlot) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _setBook(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack heldItem, global::Hosihikari.Bindings.Bedrock.Interop.ChiseledBookshelfBlockActor bookshelfActor, int hitSlot, byte handSlot)
+    {
+        NativeMethods.TablePtr->C0.hs_method_0fae0dcc((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)heldItem.Handle, (void*)bookshelfActor.Handle, hitSlot, handSlot);
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
     {
@@ -444,9 +446,10 @@ public sealed unsafe partial class ChiseledBookshelfBlock : global::System.IDisp
         NativeMethods.TablePtr->C0.hs_method_2faa67c5((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void use(nint eventData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void use(nint eventData)
+    {
+        NativeMethods.TablePtr->C0.hs_method_b7ec0f41((void*)__hosihikari_shim_handle, (void*)eventData);
+    }
 
 
     public bool mHorizontalOnly

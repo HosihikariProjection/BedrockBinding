@@ -144,13 +144,13 @@ public sealed unsafe partial class RaidOmenMobEffect : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mResourceName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_53557f58((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_53557f58((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mValueAmplifier_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_0ef7cbfa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0ef7cbfa((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -163,7 +163,7 @@ public sealed unsafe partial class RaidOmenMobEffect : global::System.IDisposabl
 
     public static RaidOmenMobEffect? Create(global::Hosihikari.Bindings.Bedrock.Interop.RaidOmenMobEffect arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6c7c5bd7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_6c7c5bd7((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -175,12 +175,12 @@ public sealed unsafe partial class RaidOmenMobEffect : global::System.IDisposabl
 
     public void applyEffects(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration durationTicks, int amplification)
     {
-        NativeMethods.TablePtr->C2.hs_method_223a912a((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)durationTicks.Handle, amplification);
+        NativeMethods.TablePtr->C3.hs_method_223a912a((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)durationTicks.Handle, amplification);
     }
 
     public void onEffectExpired(global::Hosihikari.Bindings.Bedrock.Interop.Actor target)
     {
-        NativeMethods.TablePtr->C2.hs_method_e18b0806((void*)__hosihikari_shim_handle, (void*)target.Handle);
+        NativeMethods.TablePtr->C3.hs_method_e18b0806((void*)__hosihikari_shim_handle, (void*)target.Handle);
     }
 
 

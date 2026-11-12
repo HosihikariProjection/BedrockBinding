@@ -72,9 +72,30 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
         return new ActorDefinitionGroup((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _loadActorDefinition(nint level, nint packLoadContext, nint relativeResourceFilepath, nint root, nint definitions, nint logArea) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup_Nested.LoadActorResult? _loadActorDefinition(global::Hosihikari.Bindings.Bedrock.Interop.Level level, nint packLoadContext, string relativeResourceFilepath, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value root, nint definitions, uint logArea)
+    {
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(relativeResourceFilepath);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(relativeResourceFilepath, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c1ad98ff((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)packLoadContext, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)root.Handle, (void*)definitions, logArea);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup_Nested.LoadActorResult((nint)__hs_handle);
+        }
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void _setupCommonResourceDefinitionMap(nint def, nint level) =>

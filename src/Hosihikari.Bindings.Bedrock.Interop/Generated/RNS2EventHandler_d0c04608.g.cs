@@ -42,22 +42,22 @@ public sealed unsafe partial class RNS2EventHandler : global::System.IDisposable
 
     public nint AllocRNS2RecvStruct(nint file, uint line)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_d7fbcb33((void*)__hosihikari_shim_handle, (void*)file, line);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_d7fbcb33((void*)__hosihikari_shim_handle, (void*)file, line);
     }
 
     public void DeallocRNS2RecvStruct(nint s, nint file, uint line)
     {
-        NativeMethods.TablePtr->C2.hs_method_6366231b((void*)__hosihikari_shim_handle, (void*)s, (void*)file, line);
+        NativeMethods.TablePtr->C3.hs_method_6366231b((void*)__hosihikari_shim_handle, (void*)s, (void*)file, line);
     }
 
     public void OnRNS2Recv(nint recvStruct)
     {
-        NativeMethods.TablePtr->C2.hs_method_ba53359c((void*)__hosihikari_shim_handle, (void*)recvStruct);
+        NativeMethods.TablePtr->C3.hs_method_ba53359c((void*)__hosihikari_shim_handle, (void*)recvStruct);
     }
 
     public static RNS2EventHandler? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RNS2EventHandler arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_9f819a03((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_9f819a03((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -74,7 +74,7 @@ public sealed unsafe partial class RNS2EventHandler : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_d0c04608((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_d0c04608((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -42,7 +42,7 @@ public sealed unsafe partial class SwapActionData : global::System.IDisposable
 
     public static SwapActionData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.SwapActionData arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ce6690e8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_ce6690e8((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -55,13 +55,13 @@ public sealed unsafe partial class SwapActionData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mDestination_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_f70c35c8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f70c35c8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_ff756a7f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_ff756a7f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class SwapActionData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_bc8e9314((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_bc8e9314((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

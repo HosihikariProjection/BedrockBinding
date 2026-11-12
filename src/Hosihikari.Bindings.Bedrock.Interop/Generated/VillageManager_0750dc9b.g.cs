@@ -244,9 +244,10 @@ public sealed unsafe partial class VillageManager : global::System.IDisposable
     public void tick(nint tick) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void tickVillages(nint tick, nint position, nint region) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void tickVillages(global::Hosihikari.Bindings.Bedrock.Interop.Tick tick, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
+    {
+        NativeMethods.TablePtr->C4.hs_method_5a64f311((void*)__hosihikari_shim_handle, (void*)tick.Handle, (void*)position.Handle, (void*)region.Handle);
+    }
 
 
     public void Dispose()

@@ -82,9 +82,10 @@ public sealed unsafe partial class PotionBrewing : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_7a7dd55c((void*)item.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static bool isPotionRecipeInput(nint item) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static bool isPotionRecipeInput(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_848c1092((void*)item.Handle) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint mChemistryMixes() =>

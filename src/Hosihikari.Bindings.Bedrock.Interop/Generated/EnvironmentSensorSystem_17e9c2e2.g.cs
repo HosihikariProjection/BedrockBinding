@@ -40,9 +40,10 @@ public sealed unsafe partial class EnvironmentSensorSystem : global::System.IDis
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _tick(nint registry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
+    {
+        NativeMethods.TablePtr->C1.hs_method_a1481b4f((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+    }
 
     public static EnvironmentSensorSystem? Create(global::Hosihikari.Bindings.Bedrock.Interop.EnvironmentSensorSystem arg0)
     {

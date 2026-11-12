@@ -139,9 +139,24 @@ public sealed unsafe partial class FeatureRegistry : global::System.IDisposable
     public void _registerFeature(nint name, nint featurePtr) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _setupFeature(nint worldRegistries, bool isBasePack, nint rpm, nint featureName, nint jsonDefinition, nint minEngineVersion, bool serializeFeatures) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _setupFeature(global::Hosihikari.Bindings.Bedrock.Interop.IWorldRegistriesProvider worldRegistries, bool isBasePack, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager rpm, string featureName, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value jsonDefinition, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion minEngineVersion, bool serializeFeatures)
+    {
+        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(featureName);
+        scoped global::System.Span<byte> __hs_stringBytes3;
+        if (__hs_stringByteCount3 <= 256)
+        {
+            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
+        }
+        else
+        {
+            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(featureName, __hs_stringBytes3);
+        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
+        {
+            return NativeMethods.TablePtr->C1.hs_method_c51ab339((void*)__hosihikari_shim_handle, (void*)worldRegistries.Handle, isBasePack, (void*)rpm.Handle, __hs_stringData3, (nuint)__hs_stringByteCount3, (void*)jsonDefinition.Handle, (void*)minEngineVersion.Handle, serializeFeatures) != 0;
+        }
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool isFeaturePassDefined(nint featurePass) =>

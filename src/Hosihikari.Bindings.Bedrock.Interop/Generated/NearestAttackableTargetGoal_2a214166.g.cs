@@ -66,13 +66,15 @@ public sealed unsafe partial class NearestAttackableTargetGoal : global::System.
     public void _appendDebugInfo(nint str) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _canContinueToUse() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _canContinueToUse()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_e5d97b3c((void*)__hosihikari_shim_handle) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _canUse() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _canUse()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_26c36c6a((void*)__hosihikari_shim_handle) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint mob, nint name, nint goalId) =>
@@ -122,9 +124,10 @@ public sealed unsafe partial class NearestAttackableTargetGoal : global::System.
     public bool _isTargetInCooldown(nint descriptor) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _selectTarget() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _selectTarget()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_4133fbfb((void*)__hosihikari_shim_handle) != 0;
+    }
 
     public string appendDebugInfo(string str)
     {

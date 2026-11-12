@@ -80,9 +80,10 @@ public sealed unsafe partial class Biome : global::System.IDisposable
     public static nint getColorBySamplingSurroundings(nint region, nint pos, nint pattern, nint sampler) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public float getTemperature(nint region, nint pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public float getTemperature(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_ddeed90b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
+    }
 
     public float mAshDensity
     {

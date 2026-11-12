@@ -272,9 +272,10 @@ public sealed unsafe partial class PistonBlockActor : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_6dc0ebec((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void moveEntityLastProgress(nint entity, nint delta) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void moveEntityLastProgress(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 delta)
+    {
+        NativeMethods.TablePtr->C2.hs_method_19ec2900((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)delta.Handle);
+    }
 
     public void onRemoved(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {

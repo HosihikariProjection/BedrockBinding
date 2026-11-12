@@ -40,9 +40,10 @@ public sealed unsafe partial class PlayerInventory : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _containerContentChanged(int slot) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _containerContentChanged(int slot)
+    {
+        NativeMethods.TablePtr->C2.hs_method_b68405fb((void*)__hosihikari_shim_handle, slot);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _containerSizeChanged(int size) =>

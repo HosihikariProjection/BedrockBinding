@@ -1545,9 +1545,10 @@ public sealed unsafe partial class BlockType : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_72c83684((void*)__hosihikari_shim_handle, (void*)stateType.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool hasState(nint name) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool hasState(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_73e8b4b0((void*)__hosihikari_shim_handle, (void*)name.Handle) != 0;
+    }
 
     public bool hasTag(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, string tagName)
     {
@@ -1693,9 +1694,10 @@ public sealed unsafe partial class BlockType : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_89b5f388((void*)__hosihikari_shim_handle, value) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool isValidSpawn(nint region, nint state, nint pos, nint entityType) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool isValidSpawn(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Block state, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, nint entityType)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_5d4cf883((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)state.Handle, (void*)pos.Handle, (void*)entityType) != 0;
+    }
 
     public bool isWallBlock()
     {
@@ -2253,9 +2255,10 @@ public sealed unsafe partial class BlockType : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_d7f796bc((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool shouldTriggerOnStandOn(nint entity, nint pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool shouldTriggerOnStandOn(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_3ffc5948((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)pos.Handle) != 0;
+    }
 
     public void spawnAfterBreak(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource arg0, global::Hosihikari.Bindings.Bedrock.Interop.Block arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg2, global::Hosihikari.Bindings.Bedrock.Interop.ResourceDropsContext arg3)
     {

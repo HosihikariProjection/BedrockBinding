@@ -46,7 +46,7 @@ public sealed unsafe partial class RNS2_Windows_Linux_360 : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_a3ccaeb4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_a3ccaeb4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

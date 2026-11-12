@@ -42,12 +42,12 @@ public sealed unsafe partial class ItemStackRequestData : global::System.IDispos
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C1.hs_method_24aef370((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_24aef370((void*)__hosihikari_shim_handle);
     }
 
     public static ItemStackRequestData? Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_eeb7145f();
+        var handle = NativeMethods.TablePtr->C2.hs_create_eeb7145f();
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -59,7 +59,7 @@ public sealed unsafe partial class ItemStackRequestData : global::System.IDispos
 
     public static ItemStackRequestData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestData arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_4e07ffe1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_4e07ffe1((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -72,30 +72,30 @@ public sealed unsafe partial class ItemStackRequestData : global::System.IDispos
     // The native field type is not projected; this is the address of the field storage.
     public nint mActions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_45bf4f19((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_45bf4f19((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mClientRequestId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_f8f26043((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f8f26043((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStringsToFilter_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_7b829ebc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7b829ebc((void*)__hosihikari_shim_handle);
     }
 
     public int mStringsToFilterOrigin
     {
-        get => NativeMethods.TablePtr->C1.hs_get_63d4fba5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_63d4fba5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_63d4fba5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_63d4fba5((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestData? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestData arg0)
     {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6b265c15((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6b265c15((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
         if (__hs_handle == null)
         {
             NativeMethods.GetLastError();
@@ -111,7 +111,7 @@ public sealed unsafe partial class ItemStackRequestData : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_aeb387e1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_aeb387e1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

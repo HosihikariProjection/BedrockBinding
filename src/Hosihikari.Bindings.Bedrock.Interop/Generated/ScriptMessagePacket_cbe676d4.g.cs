@@ -89,17 +89,19 @@ public sealed unsafe partial class ScriptMessagePacket : global::System.IDisposa
     public nint __read(nint stream, nint reflectionCtx) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _ctor(nint payload) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMessagePacketPayload payload)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_9fb0c974((void*)__hosihikari_shim_handle, (void*)payload.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _disallowBatching() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _dtor() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C3.hs_method_fa2f16b2((void*)__hosihikari_shim_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getId() =>
@@ -161,9 +163,17 @@ public sealed unsafe partial class ScriptMessagePacket : global::System.IDisposa
         return new ScriptMessagePacket((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static ScriptMessagePacket Create(nint payload) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static ScriptMessagePacket? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMessagePacketPayload payload)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_69a1441a((void*)payload.Handle);
+        if (handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+
+        return new ScriptMessagePacket((nint)handle);
+    }
 
     public static ScriptMessagePacket? Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMessagePacket arg0)
     {

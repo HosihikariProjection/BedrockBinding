@@ -742,9 +742,10 @@ public sealed unsafe partial class Monster : global::System.IDisposable
     public bool _isDarkEnoughToSpawn() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _normalTick() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _normalTick()
+    {
+        NativeMethods.TablePtr->C2.hs_method_a5fb7ddf((void*)__hosihikari_shim_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _readAdditionalSaveData(nint tag, nint dataLoadHelper) =>

@@ -103,9 +103,10 @@ public sealed unsafe partial class RakPeerHelper : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper((nint)__hs_handle, false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint peerStartup(nint peerIn, nint definition, nint purpose) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public int peerStartup(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakPeerInterface? peerIn, global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition definition, int purpose)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_826f2415((void*)__hosihikari_shim_handle, (void*)(peerIn?.Handle ?? 0), (void*)definition.Handle, purpose);
+    }
 
     public void Dispose()
     {

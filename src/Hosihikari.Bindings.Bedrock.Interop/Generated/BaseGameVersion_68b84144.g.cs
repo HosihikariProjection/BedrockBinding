@@ -40,9 +40,10 @@ public sealed unsafe partial class BaseGameVersion : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _ctor(nint rhs) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion rhs)
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_42fece83((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint ANY() =>
@@ -60,9 +61,17 @@ public sealed unsafe partial class BaseGameVersion : global::System.IDisposable
         return new BaseGameVersion((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static BaseGameVersion Create(nint rhs) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static BaseGameVersion? Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion rhs)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_9461d2b5((void*)rhs.Handle);
+        if (handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+
+        return new BaseGameVersion((nint)handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint EMPTY() =>

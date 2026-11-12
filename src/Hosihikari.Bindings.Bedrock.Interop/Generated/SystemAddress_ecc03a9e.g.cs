@@ -48,9 +48,11 @@ public sealed unsafe partial class SystemAddress : global::System.IDisposable
     public bool FromString(nint str, byte portDelineator, int ipVersion) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint GetIPString() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public string GetIPString()
+    {
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_a5d0f11e((void*)__hosihikari_shim_handle);
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
 
     public string ToString(sbyte portDelineator)
     {

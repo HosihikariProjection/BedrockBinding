@@ -610,9 +610,10 @@ public sealed unsafe partial class Fireball : global::System.IDisposable
     public nint _getTrailParticle() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _normalTick() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _normalTick()
+    {
+        NativeMethods.TablePtr->C1.hs_method_ed18ebf1((void*)__hosihikari_shim_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _readAdditionalSaveData(nint tag, nint dataLoadHelper) =>

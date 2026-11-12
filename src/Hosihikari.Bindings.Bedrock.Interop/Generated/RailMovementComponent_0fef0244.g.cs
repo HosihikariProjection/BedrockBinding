@@ -42,8 +42,8 @@ public sealed unsafe partial class RailMovementComponent : global::System.IDispo
 
     public float mMaxSpeed
     {
-        get => NativeMethods.TablePtr->C2.hs_get_167cfd14((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_167cfd14((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_167cfd14((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_167cfd14((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -52,7 +52,7 @@ public sealed unsafe partial class RailMovementComponent : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0fef0244((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0fef0244((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

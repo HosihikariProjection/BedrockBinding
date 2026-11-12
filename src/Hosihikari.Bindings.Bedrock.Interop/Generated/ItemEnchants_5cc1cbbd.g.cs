@@ -60,9 +60,10 @@ public sealed unsafe partial class ItemEnchants : global::System.IDisposable
     public nint _toList() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public int addEnchants(nint enchants, bool allowNonVanilla) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public int addEnchants(global::Hosihikari.Bindings.Bedrock.Interop.ItemEnchants enchants, bool allowNonVanilla)
+    {
+        return NativeMethods.TablePtr->C1.hs_method_c20f36ed((void*)__hosihikari_shim_handle, (void*)enchants.Handle, allowNonVanilla);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'EnchantResult' requires --link-carrier or --virtual-dispatch.", false)]
     public nint canEnchant(nint enchant, bool allowNonVanilla) =>
@@ -84,9 +85,17 @@ public sealed unsafe partial class ItemEnchants : global::System.IDisposable
     public nint getEnchantInstances() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::array<std::vector<EnchantmentInstance>, 3>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint getEnchantNames() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public string[] getEnchantNames()
+    {
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_d785dbd3((void*)__hosihikari_shim_handle);
+        var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
+        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
+        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
+        {
+            __hs_result[__hs_i] = global::System.Text.Encoding.UTF8.GetString(__hs_items[__hs_i].Data, checked((int)__hs_items[__hs_i].Size));
+        }
+        return __hs_result;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public int getTotalValue(bool bookModifier) =>

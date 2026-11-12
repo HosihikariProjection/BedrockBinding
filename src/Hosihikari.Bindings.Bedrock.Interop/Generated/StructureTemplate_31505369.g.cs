@@ -255,9 +255,10 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
         return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)__hs_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint isWaterlogged(nint pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool isWaterlogged(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_59c33a3b((void*)__hosihikari_shim_handle, (void*)pos.Handle) != 0;
+    }
 
     public bool load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
@@ -306,9 +307,9 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C3.hs_get_9b986f20((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public nint operator_assign(nint other) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate arg0)
     {
@@ -375,9 +376,16 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
     public bool structureTemplateDataIsValid(nint region, nint structureName, nint capturePosition, nint structureSettings) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static nint tryGetBlockAtPos(nint pos, nint structureTemplateData, nint blockRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Block? tryGetBlockAtPos(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateData structureTemplateData, global::Hosihikari.Bindings.Abi.SharedHandle? blockRegistry)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_457c8114((void*)pos.Handle, (void*)structureTemplateData.Handle, blockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false);
+    }
 
 
     public void Dispose()

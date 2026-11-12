@@ -227,9 +227,17 @@ public sealed unsafe partial class StructureManager : global::System.IDisposable
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint getStructureNames(nint levelStorage, bool includeUnremovable) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public string[] getStructureNames(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage, bool includeUnremovable)
+    {
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_362c87cd((void*)__hosihikari_shim_handle, (void*)levelStorage.Handle, includeUnremovable);
+        var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
+        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
+        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
+        {
+            __hs_result[__hs_i] = global::System.Text.Encoding.UTF8.GetString(__hs_items[__hs_i].Data, checked((int)__hs_items[__hs_i].Size));
+        }
+        return __hs_result;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint getStructurePath(nint structureFullName) =>
@@ -243,9 +251,10 @@ public sealed unsafe partial class StructureManager : global::System.IDisposable
     public void importStructureFromTemplate(nint name, nint temp) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool load(nint structureTemplate, nint packManager, nint levelStorage) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool load(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate structureTemplate, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager? packManager, global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage? levelStorage)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_a6691bcb((void*)__hosihikari_shim_handle, (void*)structureTemplate.Handle, (void*)(packManager?.Handle ?? 0), (void*)(levelStorage?.Handle ?? 0)) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void loadMetadataRegistries() =>

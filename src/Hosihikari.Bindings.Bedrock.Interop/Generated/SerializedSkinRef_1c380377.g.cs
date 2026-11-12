@@ -113,7 +113,7 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static SerializedSkinRef Create(nint name, nint resourcePatch, nint skinImage, nint skinImageWidth, nint skinImageHeight, nint capeImage, nint capeImageWidth, nint capeImageHeight, nint geometryData, nint geometryDataMinEngineVersion, nint animationData, nint capeId, bool isTrustedSkin, bool isPremium, bool isPersona, bool isPersonaCapeOnClassicSkin, bool isPrimaryUser, bool overridesPlayerAppearance) =>
+    public static SerializedSkinRef Create(nint name, nint resourcePatch, nint skinImage, nint skinImageWidth, nint skinImageHeight, nint capeImage, nint capeImageWidth, nint capeImageHeight, nint geometryData, nint geometryDataMinEngineVersion, nint animationData, nint capeId, bool isTrustedSkin, bool isPremium, bool isPersona, bool isPersonaCapeOnClassicSkin, nint isPrimaryUser, bool overridesPlayerAppearance) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef? createTrustedDefaultSerializedSkin()

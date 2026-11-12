@@ -77,9 +77,16 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public void _applySnapshot(nint snapshotEntity, nint originalSnapshotEntity) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _attack(nint target, nint cause) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult? _attack(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, nint cause)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_a235c88a((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)cause);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _baseTick() =>
@@ -98,9 +105,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_384b23f4((void*)__hosihikari_shim_handle, (void*)passenger.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _canBeAffected(uint id) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _canBeAffected(uint id)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_f6a31390((void*)__hosihikari_shim_handle, id) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _canBeAffectedByArrow(nint effect) =>
@@ -130,9 +138,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public bool _canObstructSpawningAndBlockPlacement() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _canPickupItem(nint item) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _canPickupItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_3ff7e44f((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _canPowerJump() =>
@@ -146,16 +155,18 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public bool _canSynchronizeNewEntity() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public float _causeFallDamageToActor(float distance, float multiplier, nint source) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public float _causeFallDamageToActor(float distance, float multiplier, global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_70584fc8((void*)__hosihikari_shim_handle, distance, multiplier, (void*)source.Handle);
+    }
+
+    public void _changeDimension(global::Hosihikari.Bindings.Bedrock.Interop.DimensionType toId)
+    {
+        NativeMethods.TablePtr->C0.hs_method_206f1538((void*)__hosihikari_shim_handle, (void*)toId.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _changeDimension_206f1538(nint toId) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _changeDimension_5acf5325(nint packet) =>
+    public void _changeDimension(nint packet) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -175,9 +186,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_a20b96c7((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _die(nint source) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _die(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
+    {
+        NativeMethods.TablePtr->C0.hs_method_e0364145((void*)__hosihikari_shim_handle, (void*)source.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _doEnterWaterSplashEffect() =>
@@ -195,9 +207,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public void _doWaterSplashEffect() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _drop(nint item, nint randomly) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _drop(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool randomly)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_436c3afc((void*)__hosihikari_shim_handle, (void*)item.Handle, randomly) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _dtor() =>
@@ -279,9 +292,16 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public nint _getHeadLookVector(float a) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _getInteraction(nint player, nint location, nint handSlot) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction? _getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_00ad46fa((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)__hs_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public float _getInterpolatedBodyRot(float a) =>
@@ -420,9 +440,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public bool _isValidTarget(nint attacker) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _kill() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _kill()
+    {
+        NativeMethods.TablePtr->C0.hs_method_efb090e5((void*)__hosihikari_shim_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _lerpMotion(nint delta) =>
@@ -568,17 +589,19 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public void _setStanding(bool value) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _setTarget(nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _setTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor? entity)
+    {
+        NativeMethods.TablePtr->C0.hs_method_73337612((void*)__hosihikari_shim_handle, (void*)(entity?.Handle ?? 0));
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _shouldDropDeathLoot() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _startRiding(nint vehicle, bool forceRiding) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _startRiding(global::Hosihikari.Bindings.Bedrock.Interop.Actor vehicle, bool forceRiding)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_e4fa6e8b((void*)__hosihikari_shim_handle, (void*)vehicle.Handle, forceRiding) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _startSwimming() =>
@@ -601,9 +624,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public nint _tryCreateAddActorPacket() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _useItem(nint item, nint itemUseMethod, bool consumeItem) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _useItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int itemUseMethod, bool consumeItem)
+    {
+        NativeMethods.TablePtr->C0.hs_method_c2ddeea3((void*)__hosihikari_shim_handle, (void*)item.Handle, itemUseMethod, consumeItem);
+    }
 
     public static Actor? Create()
     {
@@ -830,9 +854,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_49e8dc71((void*)__hosihikari_shim_handle, (void*)passenger.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool canAttack(nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool canAttack(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_6a2ad681((void*)__hosihikari_shim_handle, (void*)entity.Handle) != 0;
+    }
 
     public bool canBeAffected(uint id)
     {
@@ -897,9 +922,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_acb8afc8((void*)__hosihikari_shim_handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool canReceiveMobEffectsFromGameplay() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool canReceiveMobEffectsFromGameplay()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_0db024c5((void*)__hosihikari_shim_handle) != 0;
+    }
 
     public bool canSee(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 targetPos, byte obstructionType)
     {
@@ -940,9 +966,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_bfc59c1d((void*)__hosihikari_shim_handle, (void*)packet.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void checkFallDamage(float ya, bool onGround, bool recheckLiquid) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void checkFallDamage(float ya, bool onGround, bool recheckLiquid)
+    {
+        NativeMethods.TablePtr->C0.hs_method_4604aba9((void*)__hosihikari_shim_handle, ya, onGround, recheckLiquid);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void chorusFruitTeleport(nint range) =>
@@ -959,17 +986,20 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_Actor_((nint)__hs_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool closerThan(nint e, float distance) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool closerThan(global::Hosihikari.Bindings.Bedrock.Interop.Actor e, float distance)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_26f97560((void*)__hosihikari_shim_handle, (void*)e.Handle, distance) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool closerThan(nint e, float distanceXZ, float distanceY) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool closerThan(global::Hosihikari.Bindings.Bedrock.Interop.Actor e, float distanceXZ, float distanceY)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_51d2f936((void*)__hosihikari_shim_handle, (void*)e.Handle, distanceXZ, distanceY) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void consumeItem(nint itemActor, int count) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void consumeItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemActor itemActor, int count)
+    {
+        NativeMethods.TablePtr->C0.hs_method_c01e2f5a((void*)__hosihikari_shim_handle, (void*)itemActor.Handle, count);
+    }
 
     public bool consumeTotem()
     {
@@ -1053,17 +1083,34 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_e14d8aff((void*)__hosihikari_shim_handle, (void*)item.Handle, randomly) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void dropTowards(nint item, nint towards) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void dropTowards(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 towards)
+    {
+        NativeMethods.TablePtr->C0.hs_method_33b56ce3((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)towards.Handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void equip_5994037a(nint equipmentTable) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void equip(global::Hosihikari.Bindings.Bedrock.Interop.EquipmentTable equipmentTable)
+    {
+        NativeMethods.TablePtr->C0.hs_method_5994037a((void*)__hosihikari_shim_handle, (void*)equipmentTable.Handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void equip_65e42e69(nint lootTableFilePath) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void equip(string lootTableFilePath)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(lootTableFilePath);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(lootTableFilePath, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C0.hs_method_65e42e69((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+        }
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void equipFromEquipmentDefinition() =>
@@ -1092,9 +1139,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public float evaluateSeatRotation(nint rideable, bool useVehicleRenderParams) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void exitVehicle(bool exitFromPassenger, bool actorIsBeingDestroyed, bool wasEjectedByActivatorRail) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void exitVehicle(bool exitFromPassenger, bool actorIsBeingDestroyed, bool wasEjectedByActivatorRail)
+    {
+        NativeMethods.TablePtr->C0.hs_method_5bdfdb49((void*)__hosihikari_shim_handle, exitFromPassenger, actorIsBeingDestroyed, wasEjectedByActivatorRail);
+    }
 
     public void feed(int itemId)
     {
@@ -1105,9 +1153,9 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public nint fetchFishingHook() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'DistanceSortedActor' is not supported.", false)]
     public nint fetchNearbyActorsSorted(nint distance, nint actorTypeId) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'DistanceSortedActor' is not supported.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getAABB()
     {
@@ -1248,9 +1296,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public nint getCarriedItemInSlotPreferredBy(nint item) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public int getChestSlots() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public int getChestSlots()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_d02b6264((void*)__hosihikari_shim_handle);
+    }
 
     public byte getCommandPermissionLevel()
     {
@@ -1402,17 +1451,20 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_88e34288((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public int getEquipSlots() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public int getEquipSlots()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_d8f6f77a((void*)__hosihikari_shim_handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public int getEquipmentCount() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public int getEquipmentCount()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_00fe6f0d((void*)__hosihikari_shim_handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint getEquipmentSlotForItem(nint item) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public int getEquipmentSlotForItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_74cd567e((void*)__hosihikari_shim_handle, (void*)item.Handle);
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getEquippedSlot(int slot)
     {
@@ -1599,9 +1651,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public nint getInterpolatedRidingPosition(float a) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public int getInventorySize() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public int getInventorySize()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_5747f1a9((void*)__hosihikari_shim_handle);
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItemInHandSlot(byte slot)
     {
@@ -1665,9 +1718,9 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_df6064eb((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'ActorLink' is not supported.", false)]
     public nint getLinks() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'ActorLink' is not supported.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getLiquidAABB(byte liquidType)
     {
@@ -1680,9 +1733,16 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint getLootTable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.LootTable? getLootTable()
+    {
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7532129c((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LootTable((nint)__hs_handle, false);
+    }
 
     public float getMapDecorationRotation()
     {
@@ -1736,13 +1796,21 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public int getOnDeathExperience() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public int getOnDeathExperience()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_94cfb27f((void*)__hosihikari_shim_handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint getOrAddDynamicProperties() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.DynamicProperties? getOrAddDynamicProperties()
+    {
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ba1a6db4((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DynamicProperties((nint)__hs_handle, false);
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? getOrCreateUniqueID()
     {
@@ -2035,9 +2103,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_c7687495((void*)__hosihikari_shim_handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool hasPlayerPassenger() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool hasPlayerPassenger()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_4336afd9((void*)__hosihikari_shim_handle) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool hasPriorityAmmunition() =>
@@ -2140,9 +2209,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_050d97cd((void*)__hosihikari_shim_handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool isAngry() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool isAngry()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_c8e8ca68((void*)__hosihikari_shim_handle) != 0;
+    }
 
     public bool isBaby()
     {
@@ -2276,9 +2346,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_5f773ec6((void*)__hosihikari_shim_handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool isInsidePortal() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool isInsidePortal()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_9db5e094((void*)__hosihikari_shim_handle) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool isInvertedHealAndHarm() =>
@@ -2294,9 +2365,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_c008d342((void*)__hosihikari_shim_handle, (void*)source.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool isJumping() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool isJumping()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_064b407c((void*)__hosihikari_shim_handle) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool isLayingDown() =>
@@ -2359,9 +2431,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_ef8a35cc((void*)__hosihikari_shim_handle, (void*)(targetVehicle?.Handle ?? 0)) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool isSilent() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool isSilent()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_ec0c8e6c((void*)__hosihikari_shim_handle) != 0;
+    }
 
     public bool isSilentObserver()
     {
@@ -3135,12 +3208,13 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_25aefb27((void*)__hosihikari_shim_handle, (void*)region.Handle, type, (void*)pos.Handle, data);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void playSynchronizedSound_d85de1dc(nint type, nint pos, int data, bool isGlobal, nint arg4) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void playSynchronizedSound(uint type, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int data, bool isGlobal, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? arg4)
+    {
+        NativeMethods.TablePtr->C0.hs_method_d85de1dc((void*)__hosihikari_shim_handle, type, (void*)pos.Handle, data, isGlobal, (void*)(arg4?.Handle ?? 0), arg4 is not null);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void playSynchronizedSound_dc86ccf1(nint soundEvent, nint pos, int data, bool isGlobal, nint primaryLocalPlayer) =>
+    public void playSynchronizedSound(nint soundEvent, nint pos, int data, bool isGlobal, nint primaryLocalPlayer) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void playerTouch(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
@@ -3335,9 +3409,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_b2c47684((void*)__hosihikari_shim_handle, (void*)leashHolder.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void setLimitedLifetimeTicks(int lifetimeTicks) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void setLimitedLifetimeTicks(int lifetimeTicks)
+    {
+        NativeMethods.TablePtr->C0.hs_method_a8742205((void*)__hosihikari_shim_handle, lifetimeTicks);
+    }
 
     public void setName(string name)
     {
@@ -3405,9 +3480,24 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public void setRuntimeID(nint id) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void setScoreTag(nint score) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void setScoreTag(string score)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(score);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(score, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C0.hs_method_3c572078((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+        }
+    }
 
     public void setSitting(bool value)
     {
@@ -3515,9 +3605,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_67dc627b((void*)__hosihikari_shim_handle, swingSource, handSlot) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void synchronousSetSize(float w, float h) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void synchronousSetSize(float w, float h)
+    {
+        NativeMethods.TablePtr->C0.hs_method_1ebb1262((void*)__hosihikari_shim_handle, w, h);
+    }
 
     public void teleport(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimId)
     {
@@ -3529,9 +3620,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_c1264bec((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)dimId.Handle, (void*)rotation.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void teleportPassengersTo(nint pos, int cause, int entityType) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void teleportPassengersTo(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int cause, int entityType)
+    {
+        NativeMethods.TablePtr->C0.hs_method_6f1331f5((void*)__hosihikari_shim_handle, (void*)pos.Handle, cause, entityType);
+    }
 
     public void teleportTo(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity)
     {
@@ -3597,9 +3689,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public static nint tryGetFromEntity(nint entity, nint registry, bool includeRemoved) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool tryTeleportTo(nint pos, bool landOnBlock, bool avoidLiquid, int cause, int entityType) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool tryTeleportTo(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, bool landOnBlock, bool avoidLiquid, int cause, int entityType)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_8778e5c9((void*)__hosihikari_shim_handle, (void*)pos.Handle, landOnBlock, avoidLiquid, cause, entityType) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void updateDimensionChunkMove() =>

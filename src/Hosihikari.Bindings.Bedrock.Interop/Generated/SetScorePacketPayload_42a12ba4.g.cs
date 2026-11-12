@@ -63,9 +63,9 @@ public sealed unsafe partial class SetScorePacketPayload : global::System.IDispo
         return new global::Hosihikari.Bindings.Bedrock.Interop.SetScorePacketPayload((nint)__hs_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::variant<RemoveScore, ChangePlayerScore, ChangeEntityScore, ChangeFakePlayerScore>' is not supported.", false)]
     public static nint change(nint info) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::variant<RemoveScore, ChangePlayerScore, ChangeEntityScore, ChangeFakePlayerScore>' is not supported.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScoreInfo_Address

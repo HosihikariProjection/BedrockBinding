@@ -42,7 +42,7 @@ public sealed unsafe partial class ItemStackResponseContainerInfo : global::Syst
 
     public static ItemStackResponseContainerInfo? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackResponseContainerInfo arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_136cdbfb((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_136cdbfb((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -55,13 +55,13 @@ public sealed unsafe partial class ItemStackResponseContainerInfo : global::Syst
     // The native field type is not projected; this is the address of the field storage.
     public nint mFullContainerName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_a6fe9a66((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a6fe9a66((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSlots_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_1e8cbf44((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1e8cbf44((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -75,7 +75,7 @@ public sealed unsafe partial class ItemStackResponseContainerInfo : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_c1326be3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c1326be3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

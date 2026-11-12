@@ -618,17 +618,19 @@ public sealed unsafe partial class CauldronBlock : global::System.IDisposable
     public void onPlace(nint eventData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void setLiquidLevel(nint region, nint pos, int liquidLevel, nint type) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void setLiquidLevel(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int liquidLevel, int type)
+    {
+        NativeMethods.TablePtr->C0.hs_method_ee74074f((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, liquidLevel, type);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void tick(nint eventData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void use(nint eventData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void use(nint eventData)
+    {
+        NativeMethods.TablePtr->C0.hs_method_0608feb7((void*)__hosihikari_shim_handle, (void*)eventData);
+    }
 
 
     public void Dispose()

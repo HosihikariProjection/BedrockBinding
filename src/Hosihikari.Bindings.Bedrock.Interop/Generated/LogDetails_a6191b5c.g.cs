@@ -112,9 +112,24 @@ public sealed unsafe partial class LogDetails : global::System.IDisposable
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _log(nint _area, uint _priority, nint _function, int line, int _messageId, nint message) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _log(int _area, uint _priority, nint _function, int line, int _messageId, string message)
+    {
+        var __hs_stringByteCount5 = global::System.Text.Encoding.UTF8.GetByteCount(message);
+        scoped global::System.Span<byte> __hs_stringBytes5;
+        if (__hs_stringByteCount5 <= 256)
+        {
+            __hs_stringBytes5 = stackalloc byte[__hs_stringByteCount5 == 0 ? 1 : __hs_stringByteCount5];
+        }
+        else
+        {
+            __hs_stringBytes5 = new byte[__hs_stringByteCount5];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes5);
+        fixed (byte* __hs_stringData5 = __hs_stringBytes5)
+        {
+            NativeMethods.TablePtr->C0.hs_method_5a046d4b((void*)__hosihikari_shim_handle, _area, _priority, (void*)_function, line, _messageId, __hs_stringData5, (nuint)__hs_stringByteCount5);
+        }
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _logToFile(nint debugEvent) =>

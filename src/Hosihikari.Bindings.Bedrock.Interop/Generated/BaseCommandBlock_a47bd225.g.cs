@@ -174,9 +174,10 @@ public sealed unsafe partial class BaseCommandBlock : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BaseCommandBlock((nint)__hs_handle, false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool performCommand(nint region, nint minecartId) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool performCommand(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID minecartId)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_144d60a4((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)minecartId.Handle) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool save(nint tag) =>

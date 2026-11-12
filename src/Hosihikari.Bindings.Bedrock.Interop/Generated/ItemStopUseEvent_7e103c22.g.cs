@@ -43,24 +43,24 @@ public sealed unsafe partial class ItemStopUseEvent : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mActor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_2b8a3ad1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2b8a3ad1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemInstance_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_581ba609((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_581ba609((void*)__hosihikari_shim_handle);
     }
 
     public int mUseDuration
     {
-        get => NativeMethods.TablePtr->C1.hs_get_ce053056((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_ce053056((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_ce053056((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_ce053056((void*)__hosihikari_shim_handle, value);
     }
 
     public static ItemStopUseEvent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStopUseEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_921252d7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_921252d7((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -77,7 +77,7 @@ public sealed unsafe partial class ItemStopUseEvent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_7e103c22((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_7e103c22((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

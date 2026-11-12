@@ -425,9 +425,10 @@ public sealed unsafe partial class CommandBlock : global::System.IDisposable
     public static void _executeChain(nint region, nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _executeChainBlock(nint region, nint pos, nint blockActor, bool fromTickQueue) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _executeChainBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockActor blockActor, bool fromTickQueue)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_cf583119((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)blockActor.Handle, fromTickQueue) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _onRedstoneUpdate(nint blockEvent) =>

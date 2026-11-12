@@ -48,9 +48,10 @@ public sealed unsafe partial class ItemLockHelper : global::System.IDisposable
     public static bool addItemLockMode(nint item, nint data) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static bool addKeepOnDeath(nint item, nint data) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static bool addKeepOnDeath(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value data)
+    {
+        return NativeMethods.TablePtr->C1.hs_method_2524fae8((void*)item.Handle, (void*)data.Handle) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static bool canMoveItemSlots(nint actor, nint item) =>

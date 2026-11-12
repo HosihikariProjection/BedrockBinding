@@ -93,9 +93,9 @@ public sealed unsafe partial class BaseAttributeMap : global::System.IDisposable
     public nint getMutableInstance_a8c1fa14(nint attribute) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'AttributeInstanceRef' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'AttributeInstanceRef' requires --link-carrier or --virtual-dispatch.", false)]
     public nint getMutableInstance_6ba4f860(nint name) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'AttributeInstanceRef' requires --link-carrier or --virtual-dispatch.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'MutableAttributeWithContext' requires --link-carrier or --virtual-dispatch.", false)]
     public nint getMutableInstanceWithContext(nint attribute) =>

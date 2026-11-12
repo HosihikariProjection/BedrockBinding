@@ -52,9 +52,9 @@ public sealed unsafe partial class ItemData : global::System.IDisposable
         return new ItemData((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'ItemData' is not supported.", false)]
     public static nint fromItemRegistry(nint itemRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'ItemData' is not supported.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mComponentData_Address

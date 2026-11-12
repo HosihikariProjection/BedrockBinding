@@ -89,9 +89,10 @@ public sealed unsafe partial class ResourcePackStack : global::System.IDisposabl
     public nint getPacksWhereAssetExtractionNotViable(nint getContentKey) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void getSplitStacks(nint clientStack, nint serverStack) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void getSplitStacks(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack clientStack, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack serverStack)
+    {
+        NativeMethods.TablePtr->C3.hs_method_bc09b199((void*)__hosihikari_shim_handle, (void*)clientStack.Handle, (void*)serverStack.Handle);
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPackSourceReport_Address

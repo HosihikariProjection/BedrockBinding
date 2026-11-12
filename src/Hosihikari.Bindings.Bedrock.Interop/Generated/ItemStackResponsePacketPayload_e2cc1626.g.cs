@@ -42,7 +42,7 @@ public sealed unsafe partial class ItemStackResponsePacketPayload : global::Syst
 
     public static ItemStackResponsePacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackResponsePacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_adabd186((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_adabd186((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -55,7 +55,7 @@ public sealed unsafe partial class ItemStackResponsePacketPayload : global::Syst
     // The native field type is not projected; this is the address of the field storage.
     public nint mResponses_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_e4802e70((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e4802e70((void*)__hosihikari_shim_handle);
     }
 
 
@@ -65,7 +65,7 @@ public sealed unsafe partial class ItemStackResponsePacketPayload : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_e2cc1626((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e2cc1626((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

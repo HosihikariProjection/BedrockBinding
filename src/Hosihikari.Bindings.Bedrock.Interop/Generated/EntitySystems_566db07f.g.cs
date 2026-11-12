@@ -164,9 +164,10 @@ public sealed unsafe partial class EntitySystems : global::System.IDisposable
     public void registerTickingSystem(nint categories, nint system, nint info, nint tickingMode) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'const Bedrock::typeid_t<SystemCategory>' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void tick(nint registry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
+    {
+        NativeMethods.TablePtr->C1.hs_method_2c6b1a5e((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void tickEditor(nint registry) =>

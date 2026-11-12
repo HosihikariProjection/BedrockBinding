@@ -139,9 +139,10 @@ public sealed unsafe partial class TheEndGenerator : global::System.IDisposable
     public nint _getPreliminarySurfaceLevel(nint worldQuartPos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _loadChunk(nint levelChunk, bool forceImmediateReplacementDataLoad) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _loadChunk(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk, bool forceImmediateReplacementDataLoad)
+    {
+        NativeMethods.TablePtr->C3.hs_method_241735a8((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle, forceImmediateReplacementDataLoad);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _postProcessMobsAt(nint region, int chunkWestBlock, int chunkNorthBlock, nint random) =>

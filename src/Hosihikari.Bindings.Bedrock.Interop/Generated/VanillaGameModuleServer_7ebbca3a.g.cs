@@ -85,9 +85,10 @@ public sealed unsafe partial class VanillaGameModuleServer : global::System.IDis
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _setupCommands(nint commandRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _setupCommands(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry commandRegistry)
+    {
+        NativeMethods.TablePtr->C4.hs_method_8c270da8((void*)__hosihikari_shim_handle, (void*)commandRegistry.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _tick() =>

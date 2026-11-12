@@ -46,7 +46,7 @@ public sealed unsafe partial class RakDataOutput : global::System.IDisposable
 
     public static RakDataOutput? Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_47536142();
+        var handle = NativeMethods.TablePtr->C3.hs_create_47536142();
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -58,7 +58,7 @@ public sealed unsafe partial class RakDataOutput : global::System.IDisposable
 
     public static RakDataOutput? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakDataOutput arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_5c9cba87((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_5c9cba87((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -71,12 +71,12 @@ public sealed unsafe partial class RakDataOutput : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBitStream_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_65599815((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_65599815((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakDataOutput? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakDataOutput arg0)
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4c8831db((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4c8831db((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
         if (__hs_handle == null)
         {
             NativeMethods.GetLastError();
@@ -87,7 +87,7 @@ public sealed unsafe partial class RakDataOutput : global::System.IDisposable
 
     public void writeBytes(nint data, ulong bytes)
     {
-        NativeMethods.TablePtr->C2.hs_method_41b89c30((void*)__hosihikari_shim_handle, (void*)data, bytes);
+        NativeMethods.TablePtr->C3.hs_method_41b89c30((void*)__hosihikari_shim_handle, (void*)data, bytes);
     }
 
 
@@ -97,7 +97,7 @@ public sealed unsafe partial class RakDataOutput : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_559c6741((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_559c6741((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

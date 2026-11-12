@@ -164,12 +164,19 @@ public sealed unsafe partial class RedactableString : global::System.IDisposable
     public void operator_operator__(nint rhs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint operator_assign_def9e56d(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString arg0)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_def9e56d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString((nint)__hs_handle, false);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint operator_assign_3833e972(nint unredactedCString) =>
+    public nint operator_assign(nint unredactedCString) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString? operator_assign(string unredactedString)

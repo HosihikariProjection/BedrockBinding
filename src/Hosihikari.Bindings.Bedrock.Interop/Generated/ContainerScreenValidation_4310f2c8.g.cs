@@ -104,9 +104,11 @@ public sealed unsafe partial class ContainerScreenValidation : global::System.ID
     public nint getCraftResults(nint craftInputs, nint numCrafts) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint getOrCreateSparseContainer(nint containerEnumName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Abi.SharedHandle? getOrCreateSparseContainer(global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName containerEnumName)
+    {
+        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_ff16e8ed((void*)__hosihikari_shim_handle, (void*)containerEnumName.Handle);
+        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
+    }
 
     public int mCaller
     {
@@ -171,9 +173,10 @@ public sealed unsafe partial class ContainerScreenValidation : global::System.ID
         return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult((nint)__hs_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool tryCommitActionResults() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool tryCommitActionResults()
+    {
+        return NativeMethods.TablePtr->C1.hs_method_235e871e((void*)__hosihikari_shim_handle) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint tryConsume(nint srcSlotData, int transferAmount) =>

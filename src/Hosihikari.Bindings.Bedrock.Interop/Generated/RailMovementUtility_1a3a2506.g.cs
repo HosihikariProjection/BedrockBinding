@@ -46,7 +46,7 @@ public sealed unsafe partial class RailMovementUtility : global::System.IDisposa
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3? calculateGoldenRailSpeedIncrease(global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int direction, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 posDelta)
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7093dc8f((void*)region.Handle, (void*)pos.Handle, direction, (void*)posDelta.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7093dc8f((void*)region.Handle, (void*)pos.Handle, direction, (void*)posDelta.Handle);
         if (__hs_handle == null)
         {
             NativeMethods.GetLastError();
@@ -73,7 +73,7 @@ public sealed unsafe partial class RailMovementUtility : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_1a3a2506((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_1a3a2506((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

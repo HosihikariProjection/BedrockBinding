@@ -44,9 +44,16 @@ public sealed unsafe partial class ScriptActorGameplayHandler
     public nint _handleEvent_daf88637(nint actorEffectAddedEvent) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _handleEvent_bedc9d6e(nint actorAquireItemEvent) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_? _handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ActorBeforeAcquireItemEvent actorAquireItemEvent)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_bedc9d6e((void*)__hosihikari_shim_handle, (void*)actorAquireItemEvent.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)__hs_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _handleEvent_70a1c44f(nint actorHealEvent) =>

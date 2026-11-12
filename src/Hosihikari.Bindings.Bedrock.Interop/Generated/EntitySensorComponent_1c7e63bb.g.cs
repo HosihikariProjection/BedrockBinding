@@ -88,9 +88,10 @@ public sealed unsafe partial class EntitySensorComponent : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C1.hs_get_a397a3ec((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void tick(nint actorOwnerComponent, nint currentTick) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void tick(global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent, global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick)
+    {
+        NativeMethods.TablePtr->C1.hs_method_dfc8980a((void*)__hosihikari_shim_handle, (void*)actorOwnerComponent.Handle, (void*)currentTick.Handle);
+    }
 
 
     public void Dispose()

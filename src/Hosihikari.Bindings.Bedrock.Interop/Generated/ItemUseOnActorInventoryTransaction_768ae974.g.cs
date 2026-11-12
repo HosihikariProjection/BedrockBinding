@@ -43,13 +43,13 @@ public sealed unsafe partial class ItemUseOnActorInventoryTransaction : global::
     // The native field type is not projected; this is the address of the field storage.
     public nint mTransaction_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_e0de44a7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e0de44a7((void*)__hosihikari_shim_handle);
     }
 
     public uint mType
     {
-        get => NativeMethods.TablePtr->C1.hs_get_8019f0c9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_8019f0c9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_8019f0c9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_8019f0c9((void*)__hosihikari_shim_handle, value);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -58,7 +58,7 @@ public sealed unsafe partial class ItemUseOnActorInventoryTransaction : global::
 
     public int _handle(global::Hosihikari.Bindings.Bedrock.Interop.Player player, bool isSenderAuthority)
     {
-        return NativeMethods.TablePtr->C1.hs_method_02db87a3((void*)__hosihikari_shim_handle, (void*)player.Handle, isSenderAuthority);
+        return NativeMethods.TablePtr->C2.hs_method_02db87a3((void*)__hosihikari_shim_handle, (void*)player.Handle, isSenderAuthority);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -75,7 +75,7 @@ public sealed unsafe partial class ItemUseOnActorInventoryTransaction : global::
 
     public static ItemUseOnActorInventoryTransaction? Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_c9b8e8d4();
+        var handle = NativeMethods.TablePtr->C2.hs_create_c9b8e8d4();
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -87,7 +87,7 @@ public sealed unsafe partial class ItemUseOnActorInventoryTransaction : global::
 
     public static ItemUseOnActorInventoryTransaction? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemUseOnActorInventoryTransaction arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_436f643f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_436f643f((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -99,54 +99,54 @@ public sealed unsafe partial class ItemUseOnActorInventoryTransaction : global::
 
     public int handle(global::Hosihikari.Bindings.Bedrock.Interop.Player player, bool isSenderAuthority)
     {
-        return NativeMethods.TablePtr->C1.hs_method_7c50346b((void*)__hosihikari_shim_handle, (void*)player.Handle, isSenderAuthority);
+        return NativeMethods.TablePtr->C2.hs_method_7c50346b((void*)__hosihikari_shim_handle, (void*)player.Handle, isSenderAuthority);
     }
 
     public int mActionType
     {
-        get => NativeMethods.TablePtr->C1.hs_get_b3c9966c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_b3c9966c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_b3c9966c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_b3c9966c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFromPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_975a2288((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_975a2288((void*)__hosihikari_shim_handle);
     }
 
     public byte mHand
     {
-        get => NativeMethods.TablePtr->C1.hs_get_d224e32d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_d224e32d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_d224e32d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_d224e32d((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHitPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_87297cab((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_87297cab((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_1199c7a1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1199c7a1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRuntimeId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_01232a02((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_01232a02((void*)__hosihikari_shim_handle);
     }
 
     public int mSlot
     {
-        get => NativeMethods.TablePtr->C1.hs_get_bb599304((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_bb599304((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_bb599304((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_bb599304((void*)__hosihikari_shim_handle, value);
     }
 
     public void onTransactionError(global::Hosihikari.Bindings.Bedrock.Interop.Player player, int error)
     {
-        NativeMethods.TablePtr->C1.hs_method_9749d395((void*)__hosihikari_shim_handle, (void*)player.Handle, error);
+        NativeMethods.TablePtr->C2.hs_method_9749d395((void*)__hosihikari_shim_handle, (void*)player.Handle, error);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -155,7 +155,7 @@ public sealed unsafe partial class ItemUseOnActorInventoryTransaction : global::
 
     public void postLoadItems(global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette blockPalette, bool isClientSide)
     {
-        NativeMethods.TablePtr->C1.hs_method_82457156((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
+        NativeMethods.TablePtr->C2.hs_method_82457156((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -169,7 +169,7 @@ public sealed unsafe partial class ItemUseOnActorInventoryTransaction : global::
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_768ae974((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_768ae974((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

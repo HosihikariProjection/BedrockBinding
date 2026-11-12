@@ -98,9 +98,10 @@ public sealed unsafe partial class TridentRiptideEnchant : global::System.IDispo
     public int _getMaxCost(int level) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public int _getMaxLevel() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public int _getMaxLevel()
+    {
+        return NativeMethods.TablePtr->C4.hs_method_8345f383((void*)__hosihikari_shim_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public int _getMinCost(int level) =>

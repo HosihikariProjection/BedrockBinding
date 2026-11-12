@@ -90,13 +90,15 @@ public sealed unsafe partial class ActorDamageByChildActorSource : global::Syste
     public nint _clone() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _ctor(nint childActor, nint actor, nint cause) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Actor childActor, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int cause)
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_8f7d46d5((void*)__hosihikari_shim_handle, (void*)childActor.Handle, (void*)actor.Handle, cause);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _dtor() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C0.hs_method_1d5c2fb1((void*)__hosihikari_shim_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getDamagingEntityCategories() =>
@@ -138,9 +140,17 @@ public sealed unsafe partial class ActorDamageByChildActorSource : global::Syste
         return new ActorDamageByChildActorSource((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static ActorDamageByChildActorSource Create(nint childActor, nint actor, nint cause) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static ActorDamageByChildActorSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.Actor childActor, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int cause)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_5b6fde19((void*)childActor.Handle, (void*)actor.Handle, cause);
+        if (handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+
+        return new ActorDamageByChildActorSource((nint)handle);
+    }
 
     public static ActorDamageByChildActorSource? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageByChildActorSource arg0)
     {

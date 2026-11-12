@@ -48,9 +48,10 @@ public sealed unsafe partial class AddItemActorPacket : global::System.IDisposab
     public nint __read(nint stream, nint reflectionCtx) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _ctor(nint payload) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload payload)
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_6159972e((void*)__hosihikari_shim_handle, (void*)payload.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _disallowBatching() =>
@@ -116,9 +117,17 @@ public sealed unsafe partial class AddItemActorPacket : global::System.IDisposab
         return new AddItemActorPacket((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static AddItemActorPacket Create(nint payload) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static AddItemActorPacket? Create(global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload payload)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_a3f4aa0f((void*)payload.Handle);
+        if (handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+
+        return new AddItemActorPacket((nint)handle);
+    }
 
     public static AddItemActorPacket? Create(global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacket arg0)
     {

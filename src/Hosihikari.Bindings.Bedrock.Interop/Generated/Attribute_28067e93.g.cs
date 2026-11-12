@@ -72,9 +72,16 @@ public sealed unsafe partial class Attribute : global::System.IDisposable
     public static Attribute Create(nint name, nint redefMode, bool isSyncable) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static nint getByName(nint attribute) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute? getByName(global::Hosihikari.Bindings.Bedrock.Interop.HashedString attribute)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_7c82a337((void*)attribute.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)__hs_handle, false);
+    }
 
     public uint mIDValue
     {

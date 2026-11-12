@@ -91,9 +91,9 @@ public sealed unsafe partial class GameRules : global::System.IDisposable
     public nint _setGameRule(nint gameRule, nint value, nint type, bool returnPacket, nint pValueValidated, nint pValueChanged, nint errorOutput) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'GameRulesChangedPacket' has no accessible destructor.", false)]
     public nint createAllGameRulesPacket() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'GameRulesChangedPacket' has no accessible destructor.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void deserializeRules(nint ruleData) =>

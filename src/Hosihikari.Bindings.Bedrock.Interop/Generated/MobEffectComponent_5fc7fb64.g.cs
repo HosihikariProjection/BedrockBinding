@@ -102,9 +102,10 @@ public sealed unsafe partial class MobEffectComponent : global::System.IDisposab
     public void readAdditionalSaveData(nint owner, nint tag, nint arg2) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void tick(nint owner) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void tick(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
+    {
+        NativeMethods.TablePtr->C2.hs_method_dc5f9e75((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+    }
 
 
     public void Dispose()

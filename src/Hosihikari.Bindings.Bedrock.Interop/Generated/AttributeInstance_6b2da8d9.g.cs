@@ -73,14 +73,14 @@ public sealed unsafe partial class AttributeInstance : global::System.IDisposabl
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: anonymous fields are not projected.", false)]
-    public nint __c3ab54f1
+    public nint __fbc65605
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: anonymous fields are not projected.", false)]
-    public nint __8f7f220e
+    public nint __c339c310
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
@@ -106,9 +106,10 @@ public sealed unsafe partial class AttributeInstance : global::System.IDisposabl
     public nint getModifiers() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'AttributeModifier' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool hasModifier(nint modifier) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool hasModifier(global::Hosihikari.Bindings.Bedrock.Interop.AttributeModifier modifier)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_3f28ced4((void*)__hosihikari_shim_handle, (void*)modifier.Handle) != 0;
+    }
 
     public nint mAttribute
     {
@@ -161,17 +162,17 @@ public sealed unsafe partial class AttributeInstance : global::System.IDisposabl
     public void removeModifier_73aadb54(nint modifier, nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.", false)]
     public void removeModifiers(nint context) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.", false)]
     public void tick(nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.", false)]
     public void updateModifier(nint takeOver, nint context) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.");
 
 
     // The native field type is not projected; this is the address of the field storage.

@@ -42,7 +42,7 @@ public sealed unsafe partial class RakNetGUID : global::System.IDisposable
 
     public static RakNetGUID? Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_d60532da();
+        var handle = NativeMethods.TablePtr->C3.hs_create_d60532da();
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -54,7 +54,7 @@ public sealed unsafe partial class RakNetGUID : global::System.IDisposable
 
     public static RakNetGUID? Create(ulong g, ushort systemIndex)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_223918d3(g, systemIndex);
+        var handle = NativeMethods.TablePtr->C3.hs_create_223918d3(g, systemIndex);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -70,14 +70,14 @@ public sealed unsafe partial class RakNetGUID : global::System.IDisposable
 
     public ulong g
     {
-        get => NativeMethods.TablePtr->C2.hs_get_59d9279d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_59d9279d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_59d9279d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_59d9279d((void*)__hosihikari_shim_handle, value);
     }
 
     public ushort systemIndex
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c5e8fa34((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_c5e8fa34((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c5e8fa34((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c5e8fa34((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -86,7 +86,7 @@ public sealed unsafe partial class RakNetGUID : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e389bc0b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e389bc0b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -132,9 +132,10 @@ public sealed unsafe partial class BlockVolumeTarget : global::System.IDisposabl
     public bool _placeStructure(nint arg0, nint arg1, nint arg2) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _setBlock(nint pos, nint newBlock, int arg2) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _setBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block newBlock, int arg2)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_5b40592a((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)newBlock.Handle, arg2) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _setBlockSimple(nint pos, nint block) =>

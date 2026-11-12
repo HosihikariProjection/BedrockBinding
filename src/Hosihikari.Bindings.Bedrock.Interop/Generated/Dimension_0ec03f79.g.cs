@@ -132,9 +132,16 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BlockSource((nint)__hs_handle, false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _getBrightnessDependentFogColor(nint baseColor, float brightness) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? _getBrightnessDependentFogColor(global::Hosihikari.Bindings.Bedrock.Interop.mce.Color baseColor, float brightness)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_768bba90((void*)__hosihikari_shim_handle, (void*)baseColor.Handle, brightness);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)__hs_handle);
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp? _getBrightnessRamp()
     {
@@ -318,9 +325,10 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_ac1b236a((void*)__hosihikari_shim_handle, (void*)directionalLightControls);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _shouldRenderClouds() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _shouldRenderClouds()
+    {
+        return NativeMethods.TablePtr->C1.hs_method_e3e37551((void*)__hosihikari_shim_handle) != 0;
+    }
 
     public bool _showSky()
     {

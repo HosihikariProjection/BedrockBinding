@@ -40,13 +40,17 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::tuple<std::array<SpawnCategory::Type, 8>, unsigned long long>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint _filteredSpawningCategories(nint arg0, bool arg1, bool arg2, bool arg3) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::tuple<std::array<SpawnCategory::Type, 8>, unsigned long long>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _spawnForChunk(nint arg0, nint arg1, nint arg2, nint arg3, nint arg4) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _spawnForChunk(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource arg0, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkVolumeData arg1, global::Hosihikari.Bindings.Bedrock.Interop.br.spawn.State arg2, int[] arg3, global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg4)
+    {
+        fixed (int* __hs_vectorData3 = arg3)
+        {
+            NativeMethods.TablePtr->C3.hs_method_c2f3fd0a((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)arg4.Handle, __hs_vectorData3, (nuint)(arg3?.Length ?? 0));
+        }
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemActor? _spawnItem(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack inst, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int throwTime)
     {
@@ -70,9 +74,10 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Mob((nint)__hs_handle, false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _spawnMobsForChunkGeneration(nint arg0, nint arg1, nint arg2, nint arg3) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _spawnMobsForChunkGeneration(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource arg0, global::Hosihikari.Bindings.Bedrock.Interop.Biome arg1, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos arg2, global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg3)
+    {
+        NativeMethods.TablePtr->C3.hs_method_c9416087((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)arg3.Handle);
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? _spawnProjectile(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier id, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 direction)
     {

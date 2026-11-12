@@ -5,20 +5,20 @@
 namespace Hosihikari.Bindings.Bedrock.Interop.LegacyGoalDefinition_Nested;
 
 [global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_2_sr_7c3ccafe
+public sealed partial class _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_6_sr_3e3cc3b4
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
 
-    public _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_2_sr_7c3ccafe(nint handle) : this(handle, true) { }
+    public _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_6_sr_3e3cc3b4(nint handle) : this(handle, true) { }
 
-    internal _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_2_sr_7c3ccafe(nint handle, bool ownsHandle)
+    internal _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_6_sr_3e3cc3b4(nint handle, bool ownsHandle)
     {
         __hosihikari_shim_handle = handle;
         _ownsHandle = ownsHandle;
     }
 
-    public static _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_2_sr_7c3ccafe Borrow(nint handle) => new _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_2_sr_7c3ccafe(handle, false);
+    public static _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_6_sr_3e3cc3b4 Borrow(nint handle) => new _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_6_sr_3e3cc3b4(handle, false);
 
     public nint Handle => __hosihikari_shim_handle;
 
@@ -42,7 +42,7 @@ public sealed partial class _unnamed_struct_at_C__Users_root_source_repos_hosihi
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public static _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_2_sr_7c3ccafe Create(nint arg0) =>
+    public static _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_6_sr_3e3cc3b4 Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]

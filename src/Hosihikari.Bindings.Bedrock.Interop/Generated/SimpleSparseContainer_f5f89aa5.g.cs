@@ -110,9 +110,9 @@ public sealed unsafe partial class SimpleSparseContainer : global::System.IDispo
     public void _containerContentChanged(int slot) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'ISparseContainerSetListener' has no generated wrapper.", false)]
     public nint _ctor(nint backingContainer, nint backingSetType, nint sparseContainerSetListener, nint playerSetter) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'ISparseContainerSetListener' has no generated wrapper.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public int _getContainerSize() =>
@@ -162,9 +162,9 @@ public sealed unsafe partial class SimpleSparseContainer : global::System.IDispo
         return new SimpleSparseContainer((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'ISparseContainerSetListener' has no generated wrapper.", false)]
     public static SimpleSparseContainer Create(nint backingContainer, nint backingSetType, nint sparseContainerSetListener, nint playerSetter) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'ISparseContainerSetListener' has no generated wrapper.");
 
     public static SimpleSparseContainer? Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleSparseContainer arg0)
     {

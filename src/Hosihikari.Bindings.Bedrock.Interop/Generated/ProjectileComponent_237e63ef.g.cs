@@ -96,13 +96,15 @@ public sealed unsafe partial class ProjectileComponent : global::System.IDisposa
     public nint getShooterAngle(nint shooter) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void handleMovementAndGravity(nint owner, bool skipPositionUpdate) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void handleMovementAndGravity(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, bool skipPositionUpdate)
+    {
+        NativeMethods.TablePtr->C2.hs_method_54b0259f((void*)__hosihikari_shim_handle, (void*)owner.Handle, skipPositionUpdate);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void handleMovementHoming(nint owner) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void handleMovementHoming(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
+    {
+        NativeMethods.TablePtr->C2.hs_method_adb324df((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void hurt(nint owner, nint damageSource) =>

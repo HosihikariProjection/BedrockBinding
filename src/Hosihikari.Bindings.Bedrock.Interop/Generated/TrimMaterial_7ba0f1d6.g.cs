@@ -40,13 +40,15 @@ public sealed unsafe partial class TrimMaterial : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.TrimMaterial arg0)
+    {
+        return (nint)NativeMethods.TablePtr->C4.hs_method_ed7786b1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _dtor() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C4.hs_method_eae7a70d((void*)__hosihikari_shim_handle);
+    }
 
     public static TrimMaterial? Create()
     {
@@ -60,9 +62,17 @@ public sealed unsafe partial class TrimMaterial : global::System.IDisposable
         return new TrimMaterial((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static TrimMaterial Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static TrimMaterial? Create(global::Hosihikari.Bindings.Bedrock.Interop.TrimMaterial arg0)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_4111da0f((void*)arg0.Handle);
+        if (handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+
+        return new TrimMaterial((nint)handle);
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mColor_Address

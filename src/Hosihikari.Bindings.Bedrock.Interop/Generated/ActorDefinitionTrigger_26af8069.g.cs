@@ -40,12 +40,13 @@ public sealed unsafe partial class ActorDefinitionTrigger : global::System.IDisp
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _ctor_f8057803(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger arg0)
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_f8057803((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _ctor_3fa2d84f(nint other) =>
+    public nint _ctor(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _dtor()
@@ -65,12 +66,20 @@ public sealed unsafe partial class ActorDefinitionTrigger : global::System.IDisp
         return new ActorDefinitionTrigger((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static ActorDefinitionTrigger Create_ea675b42(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static ActorDefinitionTrigger? Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger arg0)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_ea675b42((void*)arg0.Handle);
+        if (handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+
+        return new ActorDefinitionTrigger((nint)handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static ActorDefinitionTrigger Create_4bc548ba(nint other) =>
+    public static ActorDefinitionTrigger Create(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

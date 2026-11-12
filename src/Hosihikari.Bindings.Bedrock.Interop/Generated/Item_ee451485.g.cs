@@ -450,9 +450,16 @@ public sealed unsafe partial class Item : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_015c3829((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _getItemTransform(nint type, float normalizedUnitScale) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Matrix? _getItemTransform(uint type, float normalizedUnitScale)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_b400576c((void*)__hosihikari_shim_handle, type, normalizedUnitScale);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Matrix((nint)__hs_handle);
+    }
 
     public float _getKnockbackResistanceValue()
     {

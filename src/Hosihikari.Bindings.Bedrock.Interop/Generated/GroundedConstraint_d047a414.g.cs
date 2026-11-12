@@ -40,9 +40,10 @@ public sealed unsafe partial class GroundedConstraint : global::System.IDisposab
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _ctor(nint structure, int groundLevel) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate structure, int groundLevel)
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_b439eabb((void*)__hosihikari_shim_handle, (void*)structure.Handle, groundLevel);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _isSatisfied(nint target, nint structurePos, nint structureRot, nint centeringOffset) =>
@@ -60,9 +61,17 @@ public sealed unsafe partial class GroundedConstraint : global::System.IDisposab
         return new GroundedConstraint((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static GroundedConstraint Create(nint structure, int groundLevel) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static GroundedConstraint? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate structure, int groundLevel)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_b9ba1951((void*)structure.Handle, groundLevel);
+        if (handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+
+        return new GroundedConstraint((nint)handle);
+    }
 
     public static GroundedConstraint? Create(global::Hosihikari.Bindings.Bedrock.Interop.GroundedConstraint arg0)
     {

@@ -750,9 +750,10 @@ public sealed unsafe partial class VillagerV2 : global::System.IDisposable
     public nint _getInteraction(nint player, nint location, nint handSlot) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _newServerAiStep() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _newServerAiStep()
+    {
+        NativeMethods.TablePtr->C4.hs_method_4fa22a69((void*)__hosihikari_shim_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _reloadHardcoded(nint method, nint @params) =>

@@ -130,13 +130,27 @@ public sealed unsafe partial class Random : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_b3ab8f76((void*)__hosihikari_shim_handle, count);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static nint createSeedable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Random? createSeedable()
+    {
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_40d8963b();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Random((nint)__hs_handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static nint getThreadLocal() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Random? getThreadLocal()
+    {
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1698e9d9();
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Random((nint)__hs_handle, false);
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOwnedRandom_Address

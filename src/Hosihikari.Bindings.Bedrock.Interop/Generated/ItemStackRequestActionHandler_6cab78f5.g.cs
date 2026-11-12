@@ -76,9 +76,10 @@ public sealed unsafe partial class ItemStackRequestActionHandler : global::Syste
         return new ItemStackRequestActionHandler((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _addResponseSlotInfo(nint slotInfo, nint item) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _addResponseSlotInfo(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestHandlerSlotInfo slotInfo, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    {
+        NativeMethods.TablePtr->C1.hs_method_5bbf1f19((void*)__hosihikari_shim_handle, (void*)slotInfo.Handle, (void*)item.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _cacheSlotIdAssigment(nint containerRuntimeId, byte requestSlot, byte slot, nint serverNetId) =>
@@ -124,9 +125,16 @@ public sealed unsafe partial class ItemStackRequestActionHandler : global::Syste
     public nint _tryGetCurrentScreenData() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _validateRequestSlot(nint requestSlotInfo, bool isItemRequired, bool isHintSlot) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestHandlerSlotInfo? _validateRequestSlot(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestSlotInfo requestSlotInfo, bool isItemRequired, bool isHintSlot)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_57efa8d1((void*)__hosihikari_shim_handle, (void*)requestSlotInfo.Handle, isItemRequired, isHintSlot);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestHandlerSlotInfo((nint)__hs_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addStrings(nint requestId, nint strings) =>

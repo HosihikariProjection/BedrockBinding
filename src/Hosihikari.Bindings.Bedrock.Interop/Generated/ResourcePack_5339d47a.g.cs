@@ -119,9 +119,10 @@ public sealed unsafe partial class ResourcePack : global::System.IDisposable
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool hasResource(nint resourceName, int subpackIndex) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool hasResource(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView resourceName, int subpackIndex)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_92fdbfba((void*)__hosihikari_shim_handle, (void*)resourceName.Handle, subpackIndex) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool isAssetExtractionViable() =>

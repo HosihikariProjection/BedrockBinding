@@ -598,9 +598,10 @@ public sealed unsafe partial class AreaEffectCloud : global::System.IDisposable
     public float _getShadowRadius() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _normalTick() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _normalTick()
+    {
+        NativeMethods.TablePtr->C0.hs_method_aed3fd51((void*)__hosihikari_shim_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _readAdditionalSaveData(nint tag, nint dataLoadHelper) =>
@@ -635,17 +636,19 @@ public sealed unsafe partial class AreaEffectCloud : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_9bf2feec((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void addAreaEffect(nint effect) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void addAreaEffect(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance effect)
+    {
+        NativeMethods.TablePtr->C0.hs_method_768027d3((void*)__hosihikari_shim_handle, (void*)effect.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void calculateAndSetRadiusPerTick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public float getEffectiveRadius() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public float getEffectiveRadius()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_1d67d3db((void*)__hosihikari_shim_handle);
+    }
 
     public float getShadowRadius()
     {
@@ -725,13 +728,15 @@ public sealed unsafe partial class AreaEffectCloud : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_52d48988((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void setDuration(nint duration) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void setDuration(global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration duration)
+    {
+        NativeMethods.TablePtr->C0.hs_method_1f0ccb4a((void*)__hosihikari_shim_handle, (void*)duration.Handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void setInitialRadius(float radius) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void setInitialRadius(float radius)
+    {
+        NativeMethods.TablePtr->C0.hs_method_a9923e8c((void*)__hosihikari_shim_handle, radius);
+    }
 
     public void setOwner(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID ownerID)
     {

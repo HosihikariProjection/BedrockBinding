@@ -1839,9 +1839,10 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_d5605b42((void*)__hosihikari_shim_handle, (void*)output.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ClassroomSetting' is not a known bindable declaration.", false)]
-    public void fireClassroomSettingUpdated(nint classroomSetting, nint settingMode) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ClassroomSetting' is not a known bindable declaration.");
+    public void fireClassroomSettingUpdated(int classroomSetting, int settingMode)
+    {
+        NativeMethods.TablePtr->C2.hs_method_9da359e4((void*)__hosihikari_shim_handle, classroomSetting, settingMode);
+    }
 
     public void fireClubsEngagementEvent(int action, int engagementTargetType, nint target, long realmId, string clubId)
     {
@@ -2616,26 +2617,85 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EduCloud::ConflictResolutionStatus' is not a known bindable declaration.", false)]
-    public void fireEventCloudConflictCheckEdu(nint cloudCorrelationId, nint conflictStatus) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EduCloud::ConflictResolutionStatus' is not a known bindable declaration.");
+    public void fireEventCloudConflictCheckEdu(string cloudCorrelationId, int conflictStatus)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(cloudCorrelationId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(cloudCorrelationId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_270b91a0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, conflictStatus);
+        }
+    }
 
     public void fireEventCloudMyWorldsSummary(int totalWorldsCount, int placeholderCount, int needsUploadCount, int ctagMismatchCount, int conflictCount)
     {
         NativeMethods.TablePtr->C2.hs_method_7b4b41bc((void*)__hosihikari_shim_handle, totalWorldsCount, placeholderCount, needsUploadCount, ctagMismatchCount, conflictCount);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EduCloudUtils::Operation' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void fireEventCloudOperationEndedEdu(nint operation, nint cloudItemType, nint cloudCorrelationId, nint elapsedTime, nint status, nint size, nint driveItemId, nint errorCode, nint errorMessage, nint error) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EduCloudUtils::Operation' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EduCloudUtils::Operation' is not a known bindable declaration.", false)]
-    public void fireEventCloudOperationStartedEdu(nint operation, nint cloudItemType, nint cloudCorrelationId, nint size, nint driveItemId) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EduCloudUtils::Operation' is not a known bindable declaration.");
+    public void fireEventCloudOperationStartedEdu(int operation, int cloudItemType, string cloudCorrelationId, ulong size, string? driveItemId)
+    {
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(cloudCorrelationId);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(cloudCorrelationId, __hs_stringBytes2);
+        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(driveItemId ?? string.Empty);
+        scoped global::System.Span<byte> __hs_stringBytes4;
+        if (__hs_stringByteCount4 <= 256)
+        {
+            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
+        }
+        else
+        {
+            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(driveItemId ?? string.Empty, __hs_stringBytes4);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            fixed (byte* __hs_stringData4 = __hs_stringBytes4)
+            {
+                NativeMethods.TablePtr->C2.hs_method_74f9b26f((void*)__hosihikari_shim_handle, operation, cloudItemType, __hs_stringData2, (nuint)__hs_stringByteCount2, size, __hs_stringData4, (nuint)__hs_stringByteCount4, driveItemId is not null);
+            }
+        }
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EduCloudUtils::Operation' is not a known bindable declaration.", false)]
-    public void fireEventCloudSpoAuthenticationEdu(nint cloudWorldCorrelationId, nint spoTokenAcquisitionOperation, nint spoTokenAcquisitionSucceeded, nint spoTokenTimeToExpiry, nint spoTokenAge, nint spoTokenAcquiredIsNew) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EduCloudUtils::Operation' is not a known bindable declaration.");
+    public void fireEventCloudSpoAuthenticationEdu(string cloudWorldCorrelationId, int spoTokenAcquisitionOperation, bool spoTokenAcquisitionSucceeded, long? spoTokenTimeToExpiry, long? spoTokenAge, bool? spoTokenAcquiredIsNew)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(cloudWorldCorrelationId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(cloudWorldCorrelationId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_8847bc9d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, spoTokenAcquisitionOperation, spoTokenAcquisitionSucceeded, spoTokenTimeToExpiry ?? default(long), spoTokenAge ?? default(long), spoTokenAcquiredIsNew ?? default(bool), spoTokenTimeToExpiry.HasValue, spoTokenAge.HasValue, spoTokenAcquiredIsNew.HasValue);
+        }
+    }
 
     public void fireEventCodeBuilderClosed()
     {
@@ -3062,9 +3122,10 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_7a346858((void*)__hosihikari_shim_handle, (void*)data);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'DiskStatus' is not a known bindable declaration.", false)]
-    public void fireEventDiskStatus(nint status, nint errorCode, ulong freeSpace, nint remoteRemainingStorageB) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'DiskStatus' is not a known bindable declaration.");
+    public void fireEventDiskStatus(byte status, int errorCode, ulong freeSpace, long remoteRemainingStorageB)
+    {
+        NativeMethods.TablePtr->C2.hs_method_6125b6c7((void*)__hosihikari_shim_handle, status, errorCode, freeSpace, remoteRemainingStorageB);
+    }
 
     public void fireEventDisplayLoggedError(string errorMessageTemplate, string errorMessage, string errorParameters)
     {
@@ -3826,13 +3887,14 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Social::ClientReportingEvent' is not a known bindable declaration.", false)]
-    public void fireEventNPLNLifecycle(int eventType, nint multiplayerState, nint serviceState) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Social::ClientReportingEvent' is not a known bindable declaration.");
+    public void fireEventNPLNLifecycle(int eventType, int multiplayerState, int serviceState)
+    {
+        NativeMethods.TablePtr->C2.hs_method_9daf3812((void*)__hosihikari_shim_handle, eventType, multiplayerState, serviceState);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Social::ClientReportingEvent' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void fireEventNPLNRpcFailure(int rpcType, int statusCode, nint clientState, nint serviceState, nint requiredDelay) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Social::ClientReportingEvent' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public void fireEventNewContentCheckCompleted(string newContentPrefix, bool hasNewStoreContent)
     {
@@ -3858,9 +3920,10 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_1be0343e((void*)__hosihikari_shim_handle, (void*)npcOwner.Handle, isEditorWorldbuilder);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Social::PlayFabStatus' is not a known bindable declaration.", false)]
-    public void fireEventNsaUpgradeResult(nint status) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Social::PlayFabStatus' is not a known bindable declaration.");
+    public void fireEventNsaUpgradeResult(int status)
+    {
+        NativeMethods.TablePtr->C2.hs_method_6fa2aa4b((void*)__hosihikari_shim_handle, status);
+    }
 
     public void fireEventOSKErrorEncountered(string failureReason)
     {
@@ -4797,9 +4860,66 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_6b61ab91((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), damageCause);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Social::MultiplayerServiceIdentifier' is not a known bindable declaration.", false)]
-    public void fireEventPlayerJoinWorld(nint userId, nint subId, bool isLocalServer, nint isUsingTURN, nint JoinState, int attemptId, nint failReason, nint failDebugInfo, nint transportLayer, nint networkTypeOverride, bool isConnectedToApplicationLayer, bool isFilteringProfanity, nint multiplayerServiceIdentifier, nint titleMessage, nint errorMessage, nint codeword, nint partyId, bool isPartyLeader, bool isPartyDestination, bool isServerTransfer, nint reconnectionType, bool isDueToSuspend, ulong connectionDurationMs, nint connectionInfo, nint editorConnectionJoinIntent) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Social::MultiplayerServiceIdentifier' is not a known bindable declaration.");
+    public void fireEventPlayerJoinWorld(nint userId, byte subId, bool isLocalServer, bool? isUsingTURN, int JoinState, int attemptId, int failReason, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value failDebugInfo, int transportLayer, int networkTypeOverride, bool isConnectedToApplicationLayer, bool isFilteringProfanity, int multiplayerServiceIdentifier, string titleMessage, string errorMessage, string codeword, string partyId, bool isPartyLeader, bool isPartyDestination, bool isServerTransfer, byte reconnectionType, bool isDueToSuspend, ulong connectionDurationMs, global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo connectionInfo, int editorConnectionJoinIntent)
+    {
+        var __hs_stringByteCount13 = global::System.Text.Encoding.UTF8.GetByteCount(titleMessage);
+        scoped global::System.Span<byte> __hs_stringBytes13;
+        if (__hs_stringByteCount13 <= 256)
+        {
+            __hs_stringBytes13 = stackalloc byte[__hs_stringByteCount13 == 0 ? 1 : __hs_stringByteCount13];
+        }
+        else
+        {
+            __hs_stringBytes13 = new byte[__hs_stringByteCount13];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(titleMessage, __hs_stringBytes13);
+        var __hs_stringByteCount14 = global::System.Text.Encoding.UTF8.GetByteCount(errorMessage);
+        scoped global::System.Span<byte> __hs_stringBytes14;
+        if (__hs_stringByteCount14 <= 256)
+        {
+            __hs_stringBytes14 = stackalloc byte[__hs_stringByteCount14 == 0 ? 1 : __hs_stringByteCount14];
+        }
+        else
+        {
+            __hs_stringBytes14 = new byte[__hs_stringByteCount14];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(errorMessage, __hs_stringBytes14);
+        var __hs_stringByteCount15 = global::System.Text.Encoding.UTF8.GetByteCount(codeword);
+        scoped global::System.Span<byte> __hs_stringBytes15;
+        if (__hs_stringByteCount15 <= 256)
+        {
+            __hs_stringBytes15 = stackalloc byte[__hs_stringByteCount15 == 0 ? 1 : __hs_stringByteCount15];
+        }
+        else
+        {
+            __hs_stringBytes15 = new byte[__hs_stringByteCount15];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(codeword, __hs_stringBytes15);
+        var __hs_stringByteCount16 = global::System.Text.Encoding.UTF8.GetByteCount(partyId);
+        scoped global::System.Span<byte> __hs_stringBytes16;
+        if (__hs_stringByteCount16 <= 256)
+        {
+            __hs_stringBytes16 = stackalloc byte[__hs_stringByteCount16 == 0 ? 1 : __hs_stringByteCount16];
+        }
+        else
+        {
+            __hs_stringBytes16 = new byte[__hs_stringByteCount16];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(partyId, __hs_stringBytes16);
+        fixed (byte* __hs_stringData13 = __hs_stringBytes13)
+        {
+            fixed (byte* __hs_stringData14 = __hs_stringBytes14)
+            {
+                fixed (byte* __hs_stringData15 = __hs_stringBytes15)
+                {
+                    fixed (byte* __hs_stringData16 = __hs_stringBytes16)
+                    {
+                        NativeMethods.TablePtr->C2.hs_method_d87474c5((void*)__hosihikari_shim_handle, (void*)userId, subId, isLocalServer, isUsingTURN ?? default(bool), JoinState, attemptId, failReason, (void*)failDebugInfo.Handle, transportLayer, networkTypeOverride, isConnectedToApplicationLayer, isFilteringProfanity, multiplayerServiceIdentifier, __hs_stringData13, (nuint)__hs_stringByteCount13, __hs_stringData14, (nuint)__hs_stringByteCount14, __hs_stringData15, (nuint)__hs_stringByteCount15, __hs_stringData16, (nuint)__hs_stringByteCount16, isPartyLeader, isPartyDestination, isServerTransfer, reconnectionType, isDueToSuspend, connectionDurationMs, (void*)connectionInfo.Handle, editorConnectionJoinIntent, isUsingTURN.HasValue);
+                    }
+                }
+            }
+        }
+    }
 
     public void fireEventPlayerKicked(string sessionType, string kickedPlayer)
     {
@@ -6285,9 +6405,24 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Social::MultiplayerServiceIdentifier' is not a known bindable declaration.", false)]
-    public void fireEventStartWorld(nint networkType, nint ipAddress, nint friendWorldType) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Social::MultiplayerServiceIdentifier' is not a known bindable declaration.");
+    public void fireEventStartWorld(int networkType, string ipAddress, int friendWorldType)
+    {
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(ipAddress);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(ipAddress, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            NativeMethods.TablePtr->C2.hs_method_a3d02a6f((void*)__hosihikari_shim_handle, networkType, __hs_stringData1, (nuint)__hs_stringByteCount1, friendWorldType);
+        }
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void fireEventStartupPerformance(nint writer) =>
@@ -7755,9 +7890,24 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
     public void fireServerStarted(nint serverTelemetryData, nint propertiesChanged) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EduShareUriType' is not a known bindable declaration.", false)]
-    public void fireShareButtonPressed(nint location, nint shareType, nint methodType, bool includesResource) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EduShareUriType' is not a known bindable declaration.");
+    public void fireShareButtonPressed(string location, int shareType, int methodType, bool includesResource)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(location);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(location, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_c53431cf((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, shareType, methodType, includesResource);
+        }
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void fireStorageMigrationEvent(bool isSuccessful, nint migrationType, int numFilesMigrated, int numFilesTotal, double migratedMB, double totalMB, nint duration, nint failureReason, nint failureFolder) =>

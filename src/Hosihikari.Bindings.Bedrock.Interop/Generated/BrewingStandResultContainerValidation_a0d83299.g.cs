@@ -56,9 +56,10 @@ public sealed unsafe partial class BrewingStandResultContainerValidation : globa
     public int _getContainerSize(nint screenContext, nint container) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _isItemAllowedInSlot(nint arg0, nint arg1, nint item, nint arg3, bool arg4) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext arg0, int arg1, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int arg3, bool arg4)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_5801bb50((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1, (void*)item.Handle, arg3, arg4) != 0;
+    }
 
     public static BrewingStandResultContainerValidation? Create(global::Hosihikari.Bindings.Bedrock.Interop.BrewingStandResultContainerValidation arg0)
     {

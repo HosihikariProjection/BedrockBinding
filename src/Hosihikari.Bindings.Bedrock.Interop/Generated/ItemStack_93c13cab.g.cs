@@ -149,9 +149,16 @@ public sealed unsafe partial class ItemStack : global::System.IDisposable
         return new ItemStack((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint clone() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? clone()
+    {
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_18fec385((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle);
+    }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? fromTag(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
@@ -185,9 +192,10 @@ public sealed unsafe partial class ItemStack : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_eae76be1((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool matchesNetIdVariant(nint other) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool matchesNetIdVariant(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack other)
+    {
+        return NativeMethods.TablePtr->C1.hs_method_b8d46b62((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack rhs)
     {

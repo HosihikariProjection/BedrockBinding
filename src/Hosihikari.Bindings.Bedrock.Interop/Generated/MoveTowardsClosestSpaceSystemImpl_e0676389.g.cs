@@ -56,9 +56,9 @@ public sealed unsafe partial class MoveTowardsClosestSpaceSystemImpl : global::S
         return new MoveTowardsClosestSpaceSystemImpl((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const MovementInterpolatorComponent>' is not a known bindable declaration.", false)]
     public static void doTick(nint entity, nint synchedActorData, nint aabbShape, nint depenetration, nint moveInterpolator, nint stateVector, bool isClientSide, nint collisionViews, nint region) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const MovementInterpolatorComponent>' is not a known bindable declaration.");
 
     public bool mIsClientSide
     {

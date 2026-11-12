@@ -42,7 +42,7 @@ public sealed unsafe partial class ContainerManagerController : global::System.I
 
     public static ContainerManagerController? Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_50e47e2d();
+        var handle = NativeMethods.TablePtr->C1.hs_create_50e47e2d();
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -58,42 +58,42 @@ public sealed unsafe partial class ContainerManagerController : global::System.I
 
     public void _onContainerScreenAction(nint result)
     {
-        NativeMethods.TablePtr->C0.hs_method_0361bbc9((void*)__hosihikari_shim_handle, (void*)result);
+        NativeMethods.TablePtr->C1.hs_method_0361bbc9((void*)__hosihikari_shim_handle, (void*)result);
     }
 
     public void _onItemAcquired(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance stack, global::Hosihikari.Bindings.Bedrock.Interop.SlotData srcSlot)
     {
-        NativeMethods.TablePtr->C0.hs_method_a35a3224((void*)__hosihikari_shim_handle, (void*)stack.Handle, (void*)srcSlot.Handle);
+        NativeMethods.TablePtr->C1.hs_method_a35a3224((void*)__hosihikari_shim_handle, (void*)stack.Handle, (void*)srcSlot.Handle);
     }
 
     public void _onItemPlaced(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance stack, global::Hosihikari.Bindings.Bedrock.Interop.SlotData dstSlot)
     {
-        NativeMethods.TablePtr->C0.hs_method_c0bc082b((void*)__hosihikari_shim_handle, (void*)stack.Handle, (void*)dstSlot.Handle);
+        NativeMethods.TablePtr->C1.hs_method_c0bc082b((void*)__hosihikari_shim_handle, (void*)stack.Handle, (void*)dstSlot.Handle);
     }
 
     public void _onItemTransferredFrom(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance stack, global::Hosihikari.Bindings.Bedrock.Interop.SlotData srcSlot)
     {
-        NativeMethods.TablePtr->C0.hs_method_b4a9f582((void*)__hosihikari_shim_handle, (void*)stack.Handle, (void*)srcSlot.Handle);
+        NativeMethods.TablePtr->C1.hs_method_b4a9f582((void*)__hosihikari_shim_handle, (void*)stack.Handle, (void*)srcSlot.Handle);
     }
 
     public void _onItemTransferredTo(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance stack, global::Hosihikari.Bindings.Bedrock.Interop.SlotData dstSlot)
     {
-        NativeMethods.TablePtr->C0.hs_method_139d4394((void*)__hosihikari_shim_handle, (void*)stack.Handle, (void*)dstSlot.Handle);
+        NativeMethods.TablePtr->C1.hs_method_139d4394((void*)__hosihikari_shim_handle, (void*)stack.Handle, (void*)dstSlot.Handle);
     }
 
     public void _updateItemStackRequest(byte arg0, nint arg1, nint arg2)
     {
-        NativeMethods.TablePtr->C0.hs_method_a76aa3e0((void*)__hosihikari_shim_handle, arg0, (void*)arg1, (void*)arg2);
+        NativeMethods.TablePtr->C1.hs_method_a76aa3e0((void*)__hosihikari_shim_handle, arg0, (void*)arg1, (void*)arg2);
     }
 
     public void closeContainers()
     {
-        NativeMethods.TablePtr->C0.hs_method_5ccabe0e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_5ccabe0e((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString? getItemName()
     {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_171674ae((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_171674ae((void*)__hosihikari_shim_handle);
         if (__hs_handle == null)
         {
             NativeMethods.GetLastError();
@@ -104,7 +104,7 @@ public sealed unsafe partial class ContainerManagerController : global::System.I
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString? getPreviewItemName()
     {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_5a3d5f84((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5a3d5f84((void*)__hosihikari_shim_handle);
         if (__hs_handle == null)
         {
             NativeMethods.GetLastError();
@@ -115,7 +115,7 @@ public sealed unsafe partial class ContainerManagerController : global::System.I
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase? getTakeableItemStackBase(global::Hosihikari.Bindings.Bedrock.Interop.SlotData slot)
     {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_56fdbd95((void*)__hosihikari_shim_handle, (void*)slot.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_56fdbd95((void*)__hosihikari_shim_handle, (void*)slot.Handle);
         if (__hs_handle == null)
         {
             NativeMethods.GetLastError();
@@ -126,7 +126,7 @@ public sealed unsafe partial class ContainerManagerController : global::System.I
 
     public bool handleAddToStack(global::Hosihikari.Bindings.Bedrock.Interop.SlotData dstSlot, global::Hosihikari.Bindings.Bedrock.Interop.SlotData srcSlot, int type)
     {
-        return NativeMethods.TablePtr->C0.hs_method_35352ca9((void*)__hosihikari_shim_handle, (void*)dstSlot.Handle, (void*)srcSlot.Handle, type) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_35352ca9((void*)__hosihikari_shim_handle, (void*)dstSlot.Handle, (void*)srcSlot.Handle, type) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'AutoPlaceItem' is not supported.", false)]
@@ -348,7 +348,7 @@ public sealed unsafe partial class ContainerManagerController : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_7402aed2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_7402aed2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

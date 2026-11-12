@@ -86,9 +86,10 @@ public sealed unsafe partial class PickupItemsGoal : global::System.IDisposable
     public void _stop() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _tick() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _tick()
+    {
+        NativeMethods.TablePtr->C2.hs_method_529fe819((void*)__hosihikari_shim_handle);
+    }
 
     public static PickupItemsGoal? Create()
     {

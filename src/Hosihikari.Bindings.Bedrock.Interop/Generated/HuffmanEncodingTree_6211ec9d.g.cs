@@ -50,7 +50,7 @@ public sealed unsafe partial class HuffmanEncodingTree : global::System.IDisposa
 
     public static HuffmanEncodingTree? Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_e045c609();
+        var handle = NativeMethods.TablePtr->C3.hs_create_e045c609();
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -62,7 +62,7 @@ public sealed unsafe partial class HuffmanEncodingTree : global::System.IDisposa
 
     public static HuffmanEncodingTree? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_0e10e1d7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_0e10e1d7((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -79,18 +79,18 @@ public sealed unsafe partial class HuffmanEncodingTree : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9c3a19_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_7ac38e5b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7ac38e5b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkffa0a4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ab68bed1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ab68bed1((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree arg0)
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e5d21632((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e5d21632((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
         if (__hs_handle == null)
         {
             NativeMethods.GetLastError();
@@ -105,7 +105,7 @@ public sealed unsafe partial class HuffmanEncodingTree : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_6211ec9d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_6211ec9d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

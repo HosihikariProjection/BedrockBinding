@@ -138,9 +138,10 @@ public sealed unsafe partial class PortalForcer : global::System.IDisposable
     public void removeMisalignedPortalRecords(nint region, nint referenceShape, nint referenceRecord) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void removePortalRecord(nint source, nint pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void removePortalRecord(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource source, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        NativeMethods.TablePtr->C2.hs_method_8d6b23a0((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)pos.Handle);
+    }
 
     public void serialize(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {

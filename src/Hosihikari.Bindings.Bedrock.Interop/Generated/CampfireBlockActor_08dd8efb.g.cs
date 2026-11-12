@@ -140,9 +140,10 @@ public sealed unsafe partial class CampfireBlockActor : global::System.IDisposab
     public static CampfireBlockActor Create(nint pos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _finishCooking(nint region, int slot) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _finishCooking(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, int slot)
+    {
+        NativeMethods.TablePtr->C0.hs_method_ffe73387((void*)__hosihikari_shim_handle, (void*)region.Handle, slot);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'BlockActorDataPacket' has no accessible destructor.", false)]
     public nint _getUpdatePacket(nint arg0) =>

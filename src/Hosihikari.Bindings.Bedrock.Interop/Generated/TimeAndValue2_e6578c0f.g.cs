@@ -42,7 +42,7 @@ public sealed unsafe partial class TimeAndValue2 : global::System.IDisposable
 
     public static TimeAndValue2? Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_422ab487();
+        var handle = NativeMethods.TablePtr->C3.hs_create_422ab487();
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -54,7 +54,7 @@ public sealed unsafe partial class TimeAndValue2 : global::System.IDisposable
 
     public static TimeAndValue2? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BPSTracker_Nested.TimeAndValue2 arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_5d71a3eb((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_5d71a3eb((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -67,18 +67,18 @@ public sealed unsafe partial class TimeAndValue2 : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3607c9_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3efd44b3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3efd44b3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk83e56b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d6285161((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d6285161((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BPSTracker_Nested.TimeAndValue2? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BPSTracker_Nested.TimeAndValue2 arg0)
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_30baa7b3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_30baa7b3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
         if (__hs_handle == null)
         {
             NativeMethods.GetLastError();
@@ -93,7 +93,7 @@ public sealed unsafe partial class TimeAndValue2 : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e6578c0f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e6578c0f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -58,10 +58,10 @@ public sealed unsafe partial class ExtraPBRData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d76397d6((void*)__hosihikari_shim_handle);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mMERSTextureMode_Address
+    public byte mMERSTextureMode
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_07fce3d8((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_07fce3d8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_07fce3d8((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -76,10 +76,10 @@ public sealed unsafe partial class ExtraPBRData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_53ce5670((void*)__hosihikari_shim_handle);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mNormalTextureMode_Address
+    public byte mNormalTextureMode
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ebe37ca9((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_ebe37ca9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_ebe37ca9((void*)__hosihikari_shim_handle, value);
     }
 
 

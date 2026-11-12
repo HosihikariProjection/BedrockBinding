@@ -42,7 +42,7 @@ public sealed unsafe partial class ItemStackRequestPacketPayload : global::Syste
 
     public static ItemStackRequestPacketPayload? Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_3e515fcd();
+        var handle = NativeMethods.TablePtr->C2.hs_create_3e515fcd();
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -54,7 +54,7 @@ public sealed unsafe partial class ItemStackRequestPacketPayload : global::Syste
 
     public static ItemStackRequestPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b4c5e502((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_b4c5e502((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -67,7 +67,7 @@ public sealed unsafe partial class ItemStackRequestPacketPayload : global::Syste
     // The native field type is not projected; this is the address of the field storage.
     public nint mRequests_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_8d3b5c02((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8d3b5c02((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -81,7 +81,7 @@ public sealed unsafe partial class ItemStackRequestPacketPayload : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_d23ce85f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d23ce85f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

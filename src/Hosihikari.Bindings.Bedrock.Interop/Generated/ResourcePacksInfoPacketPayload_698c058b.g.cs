@@ -40,9 +40,9 @@ public sealed unsafe partial class ResourcePacksInfoPacketPayload : global::Syst
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
     public nint _ctor(bool resourcePackRequired, nint resourcePacks, bool hasAddonPacks, nint worldTemplateIdVersion, bool forceDisableVibrantVisuals) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
 
     public static ResourcePacksInfoPacketPayload? Create()
     {
@@ -56,9 +56,9 @@ public sealed unsafe partial class ResourcePacksInfoPacketPayload : global::Syst
         return new ResourcePacksInfoPacketPayload((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
     public static ResourcePacksInfoPacketPayload Create(bool resourcePackRequired, nint resourcePacks, bool hasAddonPacks, nint worldTemplateIdVersion, bool forceDisableVibrantVisuals) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
 
     public static ResourcePacksInfoPacketPayload? Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePacksInfoPacketPayload arg0)
     {

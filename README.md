@@ -4,7 +4,7 @@
 
 The **Bedrock / MCAPI** interop surface for the Hosihikari projection: a generated native-style **Interop** and a symbol-dispatched native **binding shim**.
 
-This branch targets **BDS 1.26.60.6** through the headers of LeviLamina `v26.60.2` (the 26.60 development line). The `v1.21.3` branch keeps the 1.21.3.01 surface generated from the carrier's debug symbols, and `v1.26.51` keeps the 1.26.51.1 surface.
+This branch targets **BDS 1.26.60.6** through the headers of LeviLamina `v26.60.6` (the 26.60 development line). The `v1.21.3` branch keeps the 1.21.3.01 surface generated from the carrier's debug symbols, and `v1.26.51` keeps the 1.26.51.1 surface.
 
 ## Boundary
 
@@ -44,7 +44,7 @@ Maps require named key/value types and matching hash/equality functors, which th
 
 ## Generate
 
-Regeneration needs only public inputs: a LeviLamina `v26.60.2` checkout and a generator built with LLVM 23.1. The precompiled dependencies come from the local xmake package store the LeviLamina build uses.
+Regeneration needs only public inputs: a LeviLamina `v26.60.6` checkout and a generator built with LLVM 23.1. The precompiled dependencies come from the local xmake package store the LeviLamina build uses.
 
 ```shell
 powershell -File scripts/regenerate.ps1 `
@@ -66,7 +66,7 @@ The generated shim directories contain `hosihikari_abi.h` from `BindingAbi`, so 
 
 `scripts/measure-annotation-hits.py <header-ir-dir> <bedrock_runtime_data> [--macro MCNAPI]` reports how many annotated members the data snapshot can actually resolve: it compiles one clang-cl reference per decorated name and lets prelink resolve them, which is the same lookup the game performs at load time. On `bedrockdata v26.60.6-server.8` 4 of 27,593 `MCNAPI` names resolve (0.01%) against 3,948 of 4,263 `MCAPI` names (92.6%), so the annotation is a reliable availability signal.
 
-`tests/runtime-smoke/` is a plugin script that loads the shim inside a real server, checks two static accessors, constructs a `TextPacket` and calls an instance method, and creates a system-message packet through a factory that takes a string and returns `TextPacket` by value. `scripts/run-runtime-smoke.ps1 -ServerRoot <dir>` builds everything, deploys the plugin, starts the server, and requires `result=OK`. The server itself needs PreLoader 1.16.6, `bedrock_runtime_data` from `bedrockdata v26.60.6-server.8`, and a LeviLamina built from the same `v26.60.2` carrier.
+`tests/runtime-smoke/` is a plugin script that loads the shim inside a real server, checks two static accessors, constructs a `TextPacket` and calls an instance method, and creates a system-message packet through a factory that takes a string and returns `TextPacket` by value. `scripts/run-runtime-smoke.ps1 -ServerRoot <dir>` builds everything, deploys the plugin, starts the server, and requires `result=OK`. The server itself needs PreLoader 1.16.6, `bedrock_runtime_data` from `bedrockdata v26.60.6-server.8`, and a LeviLamina built from the same `v26.60.6` carrier.
 
 ## Distribution
 

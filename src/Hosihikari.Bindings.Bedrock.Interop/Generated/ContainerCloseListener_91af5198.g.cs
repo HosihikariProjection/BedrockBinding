@@ -42,7 +42,7 @@ public sealed unsafe partial class ContainerCloseListener : global::System.IDisp
 
     public static ContainerCloseListener? Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerCloseListener arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_95666d5e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_95666d5e((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -54,7 +54,7 @@ public sealed unsafe partial class ContainerCloseListener : global::System.IDisp
 
     public void containerClosed(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
     {
-        NativeMethods.TablePtr->C0.hs_method_e2e0312f((void*)__hosihikari_shim_handle, (void*)actor.Handle);
+        NativeMethods.TablePtr->C1.hs_method_e2e0312f((void*)__hosihikari_shim_handle, (void*)actor.Handle);
     }
 
 
@@ -64,7 +64,7 @@ public sealed unsafe partial class ContainerCloseListener : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_91af5198((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_91af5198((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

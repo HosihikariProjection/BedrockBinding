@@ -68,9 +68,10 @@ public sealed unsafe partial class ItemStackNetManagerBase : global::System.IDis
     public bool _isEnabled() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _onContainerScreenClose() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _onContainerScreenClose()
+    {
+        NativeMethods.TablePtr->C1.hs_method_ae7ec0c8((void*)__hosihikari_shim_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _onContainerScreenOpen(nint screenContext) =>

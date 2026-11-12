@@ -44,9 +44,10 @@ public sealed unsafe partial class AddActorPacketPayload : global::System.IDispo
     public nint _ctor(nint e) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _dtor() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C0.hs_method_796a253b((void*)__hosihikari_shim_handle);
+    }
 
     public static AddActorPacketPayload? Create()
     {

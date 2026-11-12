@@ -76,9 +76,10 @@ public sealed unsafe partial class BeehiveBlockActor : global::System.IDisposabl
     public bool _tickOccupant(nint region, nint occupant) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void evictAll(nint region, bool angry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void evictAll(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, bool angry)
+    {
+        NativeMethods.TablePtr->C0.hs_method_9d40a0b6((void*)__hosihikari_shim_handle, (void*)region.Handle, angry);
+    }
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.ILevel level, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper dataLoadHelper)
     {

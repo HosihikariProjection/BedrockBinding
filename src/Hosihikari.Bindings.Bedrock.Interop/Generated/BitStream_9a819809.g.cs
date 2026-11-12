@@ -90,38 +90,38 @@ public sealed unsafe partial class BitStream : global::System.IDisposable
 
     public bool copyData
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ec258963((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_ec258963((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ec258963((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_ec258963((void*)__hosihikari_shim_handle, value);
     }
 
     public nint data
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c3c89e95((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_c3c89e95((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c3c89e95((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c3c89e95((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public uint numberOfBitsAllocated
     {
-        get => NativeMethods.TablePtr->C2.hs_get_46b3661a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_46b3661a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_46b3661a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_46b3661a((void*)__hosihikari_shim_handle, value);
     }
 
     public uint numberOfBitsUsed
     {
-        get => NativeMethods.TablePtr->C2.hs_get_2e5e3fac((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_2e5e3fac((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2e5e3fac((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_2e5e3fac((void*)__hosihikari_shim_handle, value);
     }
 
     public uint readOffset
     {
-        get => NativeMethods.TablePtr->C2.hs_get_b33239a6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_b33239a6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b33239a6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b33239a6((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint stackData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_27cb53df((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_27cb53df((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -130,7 +130,7 @@ public sealed unsafe partial class BitStream : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_9a819809((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_9a819809((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

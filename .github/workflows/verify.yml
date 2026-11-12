@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: LiteLDev/LeviLamina
-          ref: v26.60.2
+          ref: v26.60.6
           path: Third/LeviLamina
 
       - uses: xmake-io/github-action-setup-xmake@v1

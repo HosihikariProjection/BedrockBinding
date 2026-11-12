@@ -40,9 +40,10 @@ public sealed unsafe partial class PlayerInputTick : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _ctor(nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
+    {
+        return (nint)NativeMethods.TablePtr->C2.hs_method_9ad48f27((void*)__hosihikari_shim_handle, (void*)entity.Handle);
+    }
 
     public static PlayerInputTick? Create()
     {
@@ -56,9 +57,17 @@ public sealed unsafe partial class PlayerInputTick : global::System.IDisposable
         return new PlayerInputTick((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static PlayerInputTick Create(nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static PlayerInputTick? Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_edc1b5ec((void*)entity.Handle);
+        if (handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+
+        return new PlayerInputTick((nint)handle);
+    }
 
     public ulong mValue
     {

@@ -48,9 +48,10 @@ public sealed unsafe partial class PackInfoData : global::System.IDisposable
     public nint _ctor(nint guid, nint version, ulong packSize, nint contentKey, nint subpackName, nint contentIdentity, bool hasScripts, bool isAddonPack, bool isRayTracingCapable, nint cdnUrl) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _dtor() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C2.hs_method_cfd7a297((void*)__hosihikari_shim_handle);
+    }
 
     public static PackInfoData? Create()
     {

@@ -42,8 +42,8 @@ public sealed unsafe partial class ThrownPotionEffectSubcomponent : global::Syst
 
     public int mPotionEffect
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a350bcd6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a350bcd6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_a350bcd6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_a350bcd6((void*)__hosihikari_shim_handle, value);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -64,7 +64,7 @@ public sealed unsafe partial class ThrownPotionEffectSubcomponent : global::Syst
 
     public static ThrownPotionEffectSubcomponent? Create(global::Hosihikari.Bindings.Bedrock.Interop.ThrownPotionEffectSubcomponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_181ac266((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_181ac266((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -76,22 +76,22 @@ public sealed unsafe partial class ThrownPotionEffectSubcomponent : global::Syst
 
     public void doOnHitEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent component)
     {
-        NativeMethods.TablePtr->C3.hs_method_02da51b3((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)component.Handle);
+        NativeMethods.TablePtr->C4.hs_method_02da51b3((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)component.Handle);
     }
 
     public nint getName()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_28906cdc((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_28906cdc((void*)__hosihikari_shim_handle);
     }
 
     public void initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileOnHitSubcomponent component)
     {
-        NativeMethods.TablePtr->C3.hs_method_71149dbb((void*)__hosihikari_shim_handle, (void*)component.Handle);
+        NativeMethods.TablePtr->C4.hs_method_71149dbb((void*)__hosihikari_shim_handle, (void*)component.Handle);
     }
 
     public void writetoJSON(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value arg0)
     {
-        NativeMethods.TablePtr->C3.hs_method_869466b8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C4.hs_method_869466b8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
 
@@ -101,7 +101,7 @@ public sealed unsafe partial class ThrownPotionEffectSubcomponent : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_9f0616ec((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_9f0616ec((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -50,7 +50,7 @@ public sealed unsafe partial class RaidTriggerSystem : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0bcdc7cf((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0bcdc7cf((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

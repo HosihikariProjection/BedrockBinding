@@ -546,9 +546,10 @@ public sealed unsafe partial class PistonBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_84cbef9f((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, direction) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void tick(nint eventData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void tick(nint eventData)
+    {
+        NativeMethods.TablePtr->C2.hs_method_386435a8((void*)__hosihikari_shim_handle, (void*)eventData);
+    }
 
 
     public void Dispose()

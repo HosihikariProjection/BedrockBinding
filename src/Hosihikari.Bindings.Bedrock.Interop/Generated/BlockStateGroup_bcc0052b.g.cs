@@ -40,17 +40,27 @@ public sealed unsafe partial class BlockStateGroup : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _ctor() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public nint _ctor()
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_ecc4219c((void*)__hosihikari_shim_handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _dtor() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C0.hs_method_af61c121((void*)__hosihikari_shim_handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static BlockStateGroup Create() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static BlockStateGroup? Create()
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_2be7abcf();
+        if (handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+
+        return new BlockStateGroup((nint)handle);
+    }
 
     public static BlockStateGroup? Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockStateGroup arg0)
     {
@@ -112,13 +122,15 @@ public sealed unsafe partial class BlockStateGroup : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_4442bda6((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void registerBlockStateDefinition(nint def) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void registerBlockStateDefinition(global::Hosihikari.Bindings.Bedrock.Interop.BlockStateDefinition def)
+    {
+        NativeMethods.TablePtr->C0.hs_method_52af388f((void*)__hosihikari_shim_handle, (void*)def.Handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void registerExistingBlockState(nint state) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void registerExistingBlockState(global::Hosihikari.Bindings.Bedrock.Interop.BlockState state)
+    {
+        NativeMethods.TablePtr->C0.hs_method_9a0af9a9((void*)__hosihikari_shim_handle, (void*)state.Handle);
+    }
 
 
     public void Dispose()

@@ -61,7 +61,7 @@ public sealed unsafe partial class RecipeIngredientData : global::System.IDispos
     public ushort mStackSize
     {
         get => NativeMethods.TablePtr->C1.hs_get_ff1b562f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_ff1b562f((void*)__hosihikari_shim_handle, value);
+        set => NativeMethods.TablePtr->C2.hs_set_ff1b562f((void*)__hosihikari_shim_handle, value);
     }
 
 

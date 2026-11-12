@@ -263,9 +263,9 @@ public sealed unsafe partial class CrafterBlockActor : global::System.IDisposabl
         NativeMethods.TablePtr->C1.hs_method_d4ef3325((void*)__hosihikari_shim_handle, (void*)region.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
     public bool tryMoveItemsIntoContainer(nint region, nint items) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
 
     // The native field type is not projected; this is the address of the field storage.

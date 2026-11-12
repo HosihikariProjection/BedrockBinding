@@ -170,9 +170,10 @@ public sealed unsafe partial class MoveToPOIGoal : global::System.IDisposable
     public void _appendDebugInfo(nint str) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _canUse() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _canUse()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_07d0fe31((void*)__hosihikari_shim_handle) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint mob, nint name, nint goalId, nint poiType) =>
@@ -210,9 +211,10 @@ public sealed unsafe partial class MoveToPOIGoal : global::System.IDisposable
     public static MoveToPOIGoal Create(nint mob, nint name, nint goalId, nint poiType) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _canReachPOI(nint pos, nint radiusSqr, bool usingBoundingBox) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _canReachPOI(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, float radiusSqr, bool usingBoundingBox)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_c0fed2e4((void*)__hosihikari_shim_handle, (void*)pos.Handle, radiusSqr, usingBoundingBox) != 0;
+    }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _getOwnedPOI(int type)
     {
@@ -265,9 +267,10 @@ public sealed unsafe partial class MoveToPOIGoal : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_6f0c51fe((void*)__hosihikari_shim_handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool getPOI(nint type) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool getPOI(int type)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_79caa92a((void*)__hosihikari_shim_handle, type) != 0;
+    }
 
     public bool isValidTarget(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {

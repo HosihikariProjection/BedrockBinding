@@ -221,9 +221,10 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
     public void update(nint takeOver) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void updateEffects(nint mob) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void updateEffects(global::Hosihikari.Bindings.Bedrock.Interop.Actor mob)
+    {
+        NativeMethods.TablePtr->C2.hs_method_e68f3717((void*)__hosihikari_shim_handle, (void*)mob.Handle);
+    }
 
 
     public void Dispose()

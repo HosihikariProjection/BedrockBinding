@@ -50,7 +50,7 @@ public sealed unsafe partial class RakNetSocket2Allocator : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_763cdc0f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_763cdc0f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

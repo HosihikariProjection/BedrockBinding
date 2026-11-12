@@ -44,9 +44,10 @@ public sealed unsafe partial class MobEffect : global::System.IDisposable
     public void _applyEffects(nint target, nint durationTicks, int amplification) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _applyInstantaneousEffect(nint source, nint owner, nint target, int amplification, float scale) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _applyInstantaneousEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor? source, global::Hosihikari.Bindings.Bedrock.Interop.Actor? owner, global::Hosihikari.Bindings.Bedrock.Interop.Actor? target, int amplification, float scale)
+    {
+        NativeMethods.TablePtr->C2.hs_method_b4d955a9((void*)__hosihikari_shim_handle, (void*)(source?.Handle ?? 0), (void*)(owner?.Handle ?? 0), (void*)(target?.Handle ?? 0), amplification, scale);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(uint id, nint resourceName, nint locName, bool isHarmful, int color, int icon, nint iconName, bool drawParticles) =>
@@ -168,9 +169,11 @@ public sealed unsafe partial class MobEffect : global::System.IDisposable
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static nint getNameById(uint effectId) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static string getNameById(uint effectId)
+    {
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_20dc673d(effectId);
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void initEffects(nint baseGameVersion, nint experiments) =>

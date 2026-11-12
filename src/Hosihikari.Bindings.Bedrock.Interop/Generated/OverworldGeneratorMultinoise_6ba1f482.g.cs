@@ -366,9 +366,9 @@ public sealed unsafe partial class OverworldGeneratorMultinoise : global::System
         get => (nint)NativeMethods.TablePtr->C2.hs_get_fb6a4faf((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'BiomeSource' has no accessible destructor.", false)]
     public static nint makeBiomeSource(nint random, nint biomeRegistry, nint overrideBiome, nint baseGameVersion, nint experiments, nint overworldNoises, nint chunkBlenderFactory, nint heightRange) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'BiomeSource' has no accessible destructor.");
 
     public void propagateCombinedChunkSource(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource? chunkSource)
     {

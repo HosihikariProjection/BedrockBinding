@@ -42,7 +42,7 @@ public sealed unsafe partial class JSValue : global::System.IDisposable
 
     public static JSValue? Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_2b38d819();
+        var handle = NativeMethods.TablePtr->C2.hs_create_2b38d819();
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -54,7 +54,7 @@ public sealed unsafe partial class JSValue : global::System.IDisposable
 
     public static JSValue? Create(global::Hosihikari.Bindings.Bedrock.Interop.JSValue arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_3e8482bb((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_3e8482bb((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -67,18 +67,18 @@ public sealed unsafe partial class JSValue : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7e0535_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_506b9e1c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_506b9e1c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkcd6e28_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_835829d0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_835829d0((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.JSValue? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JSValue arg0)
     {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_35011460((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_35011460((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
         if (__hs_handle == null)
         {
             NativeMethods.GetLastError();
@@ -93,7 +93,7 @@ public sealed unsafe partial class JSValue : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_0b50c67d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0b50c67d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

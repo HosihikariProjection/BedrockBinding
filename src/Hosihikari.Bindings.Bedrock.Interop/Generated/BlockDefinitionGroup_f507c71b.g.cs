@@ -123,13 +123,14 @@ public sealed unsafe partial class BlockDefinitionGroup : global::System.IDispos
         NativeMethods.TablePtr->C0.hs_method_2cec2d1d((void*)__hosihikari_shim_handle, (void*)level.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'BlockDefinition' has no accessible destructor.", false)]
     public nint loadResource(nint upgradedJsonData, nint res, nint resourcePacklocation, nint packLoadContext) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'BlockDefinition' has no accessible destructor.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void loadResources(nint resourcePackManager, nint experiments, nint validator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void loadResources(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, global::Hosihikari.Bindings.Abi.SharedHandle? validator)
+    {
+        NativeMethods.TablePtr->C0.hs_method_1143a901((void*)__hosihikari_shim_handle, (void*)resourcePackManager.Handle, (void*)experiments.Handle, validator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockDefinitions_Address

@@ -52,9 +52,17 @@ public sealed unsafe partial class StructureTemplateFeature : global::System.IDi
         set => NativeMethods.TablePtr->C3.hs_set_ec01f337((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _place(nint context) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _place(global::Hosihikari.Bindings.Bedrock.Interop.IFeature_Nested.PlacementContext context)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_53932721((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            if (!__hs_hasValue) { return null; }
+        }
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle);
+    }
 
     public static StructureTemplateFeature? Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateFeature arg0)
     {

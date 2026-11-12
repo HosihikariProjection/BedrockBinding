@@ -153,9 +153,10 @@ public sealed unsafe partial class WindChargedMobEffect : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C4.hs_get_8270e185((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _onActorDied(nint target, int amplifier) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _onActorDied(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, int amplifier)
+    {
+        NativeMethods.TablePtr->C4.hs_method_95cbe215((void*)__hosihikari_shim_handle, (void*)target.Handle, amplifier);
+    }
 
     public static WindChargedMobEffect? Create(global::Hosihikari.Bindings.Bedrock.Interop.WindChargedMobEffect arg0)
     {

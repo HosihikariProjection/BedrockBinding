@@ -68,9 +68,10 @@ public sealed unsafe partial class InventoryTransactionManager : global::System.
         return new InventoryTransactionManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _createServerSideAction(nint oldItem, nint newItem) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _createServerSideAction(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack oldItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack newItem)
+    {
+        NativeMethods.TablePtr->C1.hs_method_bb964719((void*)__hosihikari_shim_handle, (void*)oldItem.Handle, (void*)newItem.Handle);
+    }
 
     public void addAction(global::Hosihikari.Bindings.Bedrock.Interop.InventoryAction action, bool forceBalanced)
     {

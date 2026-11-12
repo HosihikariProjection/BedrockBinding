@@ -64,9 +64,10 @@ public sealed unsafe partial class TrimPatternRegistry : global::System.IDisposa
     public nint getPatternIdByItem(nint itemId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void initializeServer(nint itemRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void initializeServer(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef itemRegistry)
+    {
+        NativeMethods.TablePtr->C4.hs_method_c354458a((void*)__hosihikari_shim_handle, (void*)itemRegistry.Handle);
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPatternIdToTemplateItemMap_Address

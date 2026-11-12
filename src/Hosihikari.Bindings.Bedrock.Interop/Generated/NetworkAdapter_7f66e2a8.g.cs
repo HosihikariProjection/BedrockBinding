@@ -50,7 +50,7 @@ public sealed unsafe partial class NetworkAdapter : global::System.IDisposable
 
     public static NetworkAdapter? Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_55650b8f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_55650b8f((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -63,30 +63,30 @@ public sealed unsafe partial class NetworkAdapter : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk10ab0a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_805650a5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_805650a5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk165a44_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_44ac563a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_44ac563a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk4ed148_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f163c7da((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f163c7da((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9967c7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_7591f48d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7591f48d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter? operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter arg0)
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4e6bd62d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4e6bd62d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
         if (__hs_handle == null)
         {
             NativeMethods.GetLastError();
@@ -101,7 +101,7 @@ public sealed unsafe partial class NetworkAdapter : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_7f66e2a8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_7f66e2a8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;
