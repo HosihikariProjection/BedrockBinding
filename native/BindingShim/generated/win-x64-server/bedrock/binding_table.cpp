@@ -1827,6 +1827,13 @@ struct hs_owned_allocation
     }
 };
 
+template <typename T>
+struct hs_typed_scope
+{
+    unsigned char* storage;
+    ~hs_typed_scope() { reinterpret_cast<T*>(storage)->~T(); }
+};
+
 template <class T, class U>
 std::vector<T> hs_make_vector(U const* data, std::size_t count)
 {
@@ -11076,12 +11083,12 @@ static void* hs_method_1a516dd7(void* hs_self, void* target, void* pos, void* ra
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), target, pos, random, treeHeight, renderParams, treeParams, canopy);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -17173,8 +17180,8 @@ static HosihikariStringView hs_method_886bdd03(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -17360,8 +17367,8 @@ static HosihikariStringView hs_method_352c25a6(void* hs_self, const char* kind_d
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, mode, scheme);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -17873,12 +17880,12 @@ static void* hs_method_20f6b704(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(4), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(4));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -17913,12 +17920,12 @@ static void* hs_method_28dd7bb6(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -26677,8 +26684,8 @@ static HosihikariSharedHandle hs_method_84f0c764(void* hs_self, void* friendlyNa
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), friendlyName);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -27524,8 +27531,8 @@ static HosihikariSharedHandle hs_method_56ecda1f(void* hs_self, void* friendlyNa
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), friendlyName);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -28412,8 +28419,8 @@ static HosihikariSharedHandle hs_method_a9185c05(void* hs_self, void* friendlyNa
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), friendlyName);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -30124,8 +30131,8 @@ static HosihikariStringView hs_method_6ba199ba(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -30252,12 +30259,12 @@ static void* hs_method_4ac2777b(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -41552,8 +41559,8 @@ static HosihikariStringView hs_method_f1ffe2a6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -42032,8 +42039,8 @@ static HosihikariStringView hs_method_c4eb8e7c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -42894,8 +42901,8 @@ static HosihikariSharedHandle hs_method_bd5c4d50(void* hs_self, void* identifier
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), identifier, position, rotation, static_cast<void*>(&hs_vec3));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -42948,8 +42955,8 @@ static HosihikariSharedHandle hs_method_e3af0d4f(void* hs_self, void* identifier
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), identifier, spawner, position, rotation);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -42979,8 +42986,8 @@ static HosihikariSharedHandle hs_method_342a8744(void* hs_self, const char* meth
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0, identifier, spawner, position, rotation);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -43009,8 +43016,8 @@ static HosihikariSharedHandle hs_method_56e65e5f(void* hs_self, void* identifier
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), identifier, spawner, position, rotation);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -43039,8 +43046,8 @@ static HosihikariSharedHandle hs_method_6ae46760(void* hs_self, void* identifier
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), identifier, from);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -43069,8 +43076,8 @@ static HosihikariSharedHandle hs_method_1f414f30(void* hs_self, void* tag, void*
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), tag, dataLoadHelper, heightRange, levelChunk);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -43565,8 +43572,8 @@ static HosihikariSharedHandle hs_method_e9d76c17(void* hs_self, std::uint8_t typ
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), type);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -43652,8 +43659,8 @@ static HosihikariSharedHandle hs_method_b58b5fa7(void* hs_self, std::uint8_t typ
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), type);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -59436,8 +59443,8 @@ static HosihikariStringView hs_method_2b2d3916(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -60102,8 +60109,8 @@ static HosihikariStringView hs_method_90f2047f(void* hs_self, void* arg0, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -64672,8 +64679,8 @@ static HosihikariSharedHandle hs_method_fbbd5a88(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), arg0);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -68722,8 +68729,8 @@ static HosihikariStringView hs_method_786aba97(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -69229,8 +69236,8 @@ static HosihikariStringView hs_method_0e3c5f33(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -70517,8 +70524,8 @@ static HosihikariStringView hs_method_7e6f5a11(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -71400,8 +71407,8 @@ static HosihikariStringView hs_method_9fcc1093(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -72569,8 +72576,8 @@ static HosihikariStringView hs_method_785150b0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -73393,8 +73400,8 @@ static HosihikariStringView hs_method_782ac720(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -73873,8 +73880,8 @@ static HosihikariStringView hs_method_0bbf84a2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -75459,8 +75466,8 @@ static HosihikariStringView hs_method_ce2e8bce(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -77669,8 +77676,8 @@ static HosihikariStringView hs_method_42b618df(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -78554,8 +78561,8 @@ static HosihikariStringView hs_method_cd3d6a8c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -104499,8 +104506,8 @@ static HosihikariStringView hs_method_57ca5a96(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -105446,8 +105453,8 @@ static HosihikariStringView hs_method_4757b792(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -105926,8 +105933,8 @@ static HosihikariStringView hs_method_8182a785(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -108167,8 +108174,8 @@ static HosihikariStringView hs_method_d72fd875(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -110406,8 +110413,8 @@ static HosihikariSharedHandle hs_method_2b34cc2e(void* hs_self, std::uint8_t con
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), containerEnumName, slot, arg2);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -110848,8 +110855,8 @@ static HosihikariStringView hs_method_98ab5a4a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -111764,8 +111771,8 @@ static HosihikariStringView hs_method_355dfba2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -111800,8 +111807,8 @@ static HosihikariStringView hs_method_a510eb61(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -111836,8 +111843,8 @@ static HosihikariStringView hs_method_88e41a79(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -111872,8 +111879,8 @@ static HosihikariStringView hs_method_2fe54cbf(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -112872,8 +112879,8 @@ static HosihikariSharedHandle hs_method_4912668b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -112950,8 +112957,8 @@ static HosihikariSharedHandle hs_method_c35bde51(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -114113,8 +114120,8 @@ static HosihikariSharedHandle hs_method_d3bb7803(void* hs_self, std::int32_t fil
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), fileAccessType, hs_arg1Storage);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -114324,8 +114331,8 @@ static HosihikariStringView hs_method_f71775c3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -114557,8 +114564,8 @@ static HosihikariStringView hs_method_f23d5ab0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -114953,8 +114960,8 @@ static HosihikariStringView hs_method_151ae883(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -114989,8 +114996,8 @@ static HosihikariStringView hs_method_c99d2975(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -115025,8 +115032,8 @@ static HosihikariStringView hs_method_4ad44961(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -115061,8 +115068,8 @@ static HosihikariSharedHandle hs_method_a2540882(void* hs_self, std::int32_t fil
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), fileSystem);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -115649,8 +115656,8 @@ static HosihikariStringView hs_method_ed867344(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -115685,8 +115692,8 @@ static HosihikariStringView hs_method_fde6037b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -115877,9 +115884,9 @@ static std::int32_t hs_method_69e6ab99(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -115944,8 +115951,8 @@ static HosihikariSharedHandle hs_method_b2043d0c(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), arg0);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -115980,8 +115987,8 @@ static HosihikariStringView hs_method_08608e2c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -116197,8 +116204,8 @@ static HosihikariStringView hs_method_b49b2610(void* hs_self, std::int32_t arg0)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -116411,9 +116418,9 @@ static std::int32_t hs_method_5bc5ac82(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -116729,8 +116736,8 @@ static HosihikariStringView hs_method_103827d4(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -118158,9 +118165,9 @@ static bool hs_method_396420c8(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<bool>(*hs_result) : bool{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -139024,8 +139031,8 @@ static HosihikariStringView hs_method_25dcb7d3(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -139060,8 +139067,8 @@ static HosihikariStringView hs_method_56a57d6e(void* hs_self, void* stack, bool 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), stack, playerIsCreative);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -144248,9 +144255,9 @@ static float hs_method_0159237a(void* hs_self, float oldValue, float newValue, v
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), oldValue, newValue, buff);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<float>(*hs_result) : float{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -147545,8 +147552,8 @@ static HosihikariStringView hs_method_b20473bd(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -148071,8 +148078,8 @@ static HosihikariStringView hs_method_522fef09(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -148613,8 +148620,8 @@ static HosihikariStringView hs_method_9594c972(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -150318,8 +150325,8 @@ static HosihikariStringView hs_method_bae264d5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -150982,8 +150989,8 @@ static HosihikariStringView hs_method_fc1a3b39(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -151462,8 +151469,8 @@ static HosihikariStringView hs_method_350aa521(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -155431,8 +155438,8 @@ static HosihikariStringView hs_method_680674f9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -165519,8 +165526,8 @@ static HosihikariStringView hs_method_0e8aaa69(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -175746,8 +175753,8 @@ static HosihikariStringView hs_method_6f59537c(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -180701,8 +180708,8 @@ static HosihikariStringView hs_method_4727baa0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -180815,8 +180822,8 @@ static HosihikariStringView hs_method_64d23df3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -187103,8 +187110,8 @@ static HosihikariStringView hs_method_54d4772a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -187166,8 +187173,8 @@ static HosihikariStringView hs_method_53172456(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -187244,8 +187251,8 @@ static HosihikariStringView hs_method_ada783b0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -187298,8 +187305,8 @@ static HosihikariStringView hs_method_a7370f01(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -187328,8 +187335,8 @@ static HosihikariStringView hs_method_c366926a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -187358,8 +187365,8 @@ static HosihikariStringView hs_method_9d8074af(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -187388,8 +187395,8 @@ static HosihikariStringView hs_method_06077f50(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -187418,8 +187425,8 @@ static HosihikariStringView hs_method_584fb290(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -187508,8 +187515,8 @@ static HosihikariStringView hs_method_eba99978(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -187565,8 +187572,8 @@ static HosihikariStringView hs_method_56346b39(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -187643,8 +187650,8 @@ static HosihikariStringView hs_method_4c7cef88(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -187673,8 +187680,8 @@ static HosihikariStringView hs_method_2ca88d19(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -188215,9 +188222,9 @@ static std::int32_t hs_method_f27207ad(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -204185,8 +204192,8 @@ static HosihikariStringView hs_method_b30adeef(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -206618,12 +206625,12 @@ static void* hs_method_94cb5887(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -209266,8 +209273,8 @@ static HosihikariStringView hs_method_47d8c124(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -210267,8 +210274,8 @@ static HosihikariStringView hs_method_6d4fd621(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -211904,8 +211911,8 @@ static HosihikariSharedHandle hs_method_3caab93c(void* hs_self, std::int32_t whi
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), which);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -211940,8 +211947,8 @@ static HosihikariSharedHandle hs_method_7dd5d349(void* hs_self, std::int32_t whi
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), which);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -217803,8 +217810,8 @@ static HosihikariStringView hs_method_ab072832(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -218681,8 +218688,8 @@ static HosihikariSharedHandle hs_method_bfafcf55(void* hs_self, std::int32_t whi
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), which);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -218712,8 +218719,8 @@ static HosihikariSharedHandle hs_method_08aadf97(void* hs_self, std::int32_t whi
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), which);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -254045,8 +254052,8 @@ static HosihikariSharedHandle hs_method_008cc3c8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -254163,8 +254170,8 @@ static HosihikariSharedHandle hs_method_206cffe4(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -254258,8 +254265,8 @@ static HosihikariSharedHandle hs_method_2e4906e0(void* hs_self, const char* name
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0, frameType, config);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -254435,8 +254442,8 @@ static HosihikariSharedHandle hs_method_ce3a295a(void* hs_self, const char* name
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0, frameType, config);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -277081,8 +277088,8 @@ static HosihikariStringView hs_method_9c049db7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -277622,8 +277629,8 @@ static HosihikariSharedHandle hs_method_c4162c9d(void* hs_self, std::uint8_t typ
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), type);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -281209,8 +281216,8 @@ static HosihikariStringView hs_method_b2df3563(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -287384,8 +287391,8 @@ static HosihikariStringView hs_method_0791aa41(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -287681,8 +287688,8 @@ static HosihikariStringView hs_method_a4426ce5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -287735,8 +287742,8 @@ static HosihikariStringView hs_method_47dedfcc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -288384,8 +288391,8 @@ static HosihikariStringView hs_method_f42498ee(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -289259,8 +289266,8 @@ static HosihikariSharedHandle hs_method_07445b26(void* nbt) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(static_cast<void*>(hs_typedStorage), nbt);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -289289,8 +289296,8 @@ static HosihikariSharedHandle hs_method_6db12f78(void* nbt, void* pos) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(static_cast<void*>(hs_typedStorage), nbt, pos);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -289488,8 +289495,8 @@ static HosihikariSharedHandle hs_method_bf1be30f(void* block, void* pos, void* l
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(static_cast<void*>(hs_typedStorage), block, pos, level, tag, dataLoadHelper);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -290542,8 +290549,8 @@ static HosihikariStringView hs_method_62f496b6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -293567,8 +293574,8 @@ static HosihikariStringView hs_method_3557cedc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -293695,12 +293702,12 @@ static void* hs_method_97ef1bf9(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -303493,8 +303500,8 @@ static HosihikariStringView hs_method_9d00f3b0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -303973,8 +303980,8 @@ static HosihikariStringView hs_method_146c87a1(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -309159,8 +309166,8 @@ static HosihikariStringView hs_method_0960c9f4(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -309442,8 +309449,8 @@ static HosihikariStringView hs_method_af8294b7(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -316098,8 +316105,8 @@ static HosihikariStringView hs_method_f64e5f48(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -317399,8 +317406,8 @@ static HosihikariStringView hs_method_55127c4a(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -319314,8 +319321,8 @@ static HosihikariStringView hs_method_44a7ea4e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -323860,9 +323867,9 @@ static HosihikariSharedHandle hs_method_c2d68012(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -326193,9 +326200,9 @@ static HosihikariSharedHandle hs_method_d9692e38(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -328366,9 +328373,9 @@ static std::int32_t hs_method_5efd1ab6(void* hs_self, void* tag, bool* hs_hasVal
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), tag);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -333633,8 +333640,8 @@ static HosihikariStringView hs_method_81335bde(void* hs_self, void* block) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), block);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -334810,8 +334817,9 @@ static void* hs_method_afdf4694(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(48), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0HashedString@@QEAA@AEBV0@@Z");
@@ -334823,7 +334831,6 @@ static void* hs_method_afdf4694(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -337078,8 +337085,8 @@ static HosihikariStringView hs_method_57bcedf8(void* hs_self, void* block) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), block);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -338630,8 +338637,9 @@ static void* hs_method_3a72889c(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(48), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0HashedString@@QEAA@AEBV0@@Z");
@@ -338643,7 +338651,6 @@ static void* hs_method_3a72889c(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -342827,9 +342834,9 @@ static std::int32_t hs_method_123ba4cd(void* hs_self, void* blockType, std::int3
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), blockType, blockData);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -343251,9 +343258,9 @@ static std::int32_t hs_method_25459013(void* hs_self, void* blockType, std::int3
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), blockType, blockData);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -343413,9 +343420,9 @@ static std::int32_t hs_method_c9484f20(void* hs_self, void* blockType, std::int3
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), blockType, arg1);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -348926,8 +348933,8 @@ static HosihikariStringView hs_method_c66873f5(void* hs_self, const char* kind_d
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, mode, scheme);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -349323,8 +349330,8 @@ static HosihikariStringView hs_method_042ac4b7(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -351480,8 +351487,8 @@ static HosihikariStringView hs_method_2e33879b(void* hs_self, void* arg0, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -354876,8 +354883,8 @@ static HosihikariStringView hs_method_33466479(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -359151,8 +359158,8 @@ static HosihikariStringView hs_method_be71771d(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -360140,8 +360147,8 @@ static HosihikariStringView hs_method_4acf91ec(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -374444,8 +374451,8 @@ static HosihikariStringView hs_method_90daebdc(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -375160,8 +375167,8 @@ static HosihikariStringView hs_method_823328dc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -380697,8 +380704,8 @@ static HosihikariStringView hs_method_bb65186c(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -383667,8 +383674,9 @@ static void* hs_method_ead2a687(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(48), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0HashedString@@QEAA@AEBV0@@Z");
@@ -383680,7 +383688,6 @@ static void* hs_method_ead2a687(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -384059,8 +384066,8 @@ static HosihikariStringView hs_method_4b7f7fcc(void* hs_self, void* arg0, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -393412,8 +393419,8 @@ static HosihikariStringView hs_method_9a2ed75b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -393677,8 +393684,8 @@ static HosihikariStringView hs_method_21b957b2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -393856,8 +393863,8 @@ static HosihikariStringView hs_method_7efa46d2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -394152,8 +394159,8 @@ static HosihikariStringView hs_method_7225b87c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -410879,8 +410886,8 @@ static HosihikariStringView hs_method_252022b3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -413641,8 +413648,8 @@ static HosihikariStringView hs_method_1c133d7e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -414982,8 +414989,8 @@ static HosihikariStringView hs_method_71ce2dab(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -416388,8 +416395,8 @@ static HosihikariStringView hs_method_b498c6fb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -438909,8 +438916,8 @@ static HosihikariStringView hs_method_713e5308(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -440199,12 +440206,12 @@ static void* hs_method_b4cc1745(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -450198,8 +450205,8 @@ static HosihikariStringView hs_method_c1ee7503(void* hs_self, void* region) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), region);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -451561,8 +451568,8 @@ static HosihikariStringView hs_method_040e649b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -452041,8 +452048,8 @@ static HosihikariStringView hs_method_250f989b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -453510,8 +453517,8 @@ static HosihikariStringView hs_method_7108acbc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -467616,12 +467623,12 @@ static void* hs_method_a5ff4eef(void* hs_self, void* target, void* pos, void* ra
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), target, pos, random, treeHeight, renderParams, treeParams, canopy);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -470530,8 +470537,8 @@ static HosihikariStringView hs_method_06b62247(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -475218,8 +475225,8 @@ static HosihikariStringView hs_method_ac94a373(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -475366,8 +475373,8 @@ static HosihikariStringView hs_method_c17686f8(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -482318,8 +482325,8 @@ static HosihikariStringView hs_method_6f3dd06f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -492498,8 +492505,8 @@ static HosihikariStringView hs_method_4dac0a0a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -494219,8 +494226,8 @@ static HosihikariSharedHandle hs_method_77f33465(void* hs_self, void* cp, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, structure);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -494393,8 +494400,8 @@ static HosihikariSharedHandle hs_method_4425caab(void* hs_self, void* cp, std::i
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, lm, readOnly);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -494567,8 +494574,8 @@ static HosihikariSharedHandle hs_method_2cffdc96(void* hs_self, void* pos) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -494597,8 +494604,8 @@ static HosihikariSharedHandle hs_method_ccfd8073(void* hs_self, void* cp, std::i
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, lm, readOnly);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -494627,8 +494634,8 @@ static HosihikariSharedHandle hs_method_561660b0(void* hs_self, void* random) tr
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), random);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -494849,8 +494856,8 @@ static HosihikariSharedHandle hs_method_e24dc081(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -495159,8 +495166,8 @@ static HosihikariSharedHandle hs_method_a5e9c391(void* hs_self, void* cp, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, structure);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -495399,8 +495406,8 @@ static HosihikariSharedHandle hs_method_b47e40ea(void* hs_self, void* cp, std::i
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, lm, readOnly);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -495549,8 +495556,8 @@ static HosihikariSharedHandle hs_method_aabe00ae(void* hs_self, void* cp) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -495615,8 +495622,8 @@ static HosihikariSharedHandle hs_method_6815bc2b(void* hs_self, void* pos) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -495651,8 +495658,8 @@ static HosihikariSharedHandle hs_method_4b3a26d5(void* hs_self, void* cp, std::i
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, lm, readOnly);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -495687,8 +495694,8 @@ static HosihikariSharedHandle hs_method_11be210a(void* hs_self, void* random) tr
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), random);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -495963,8 +495970,8 @@ static HosihikariSharedHandle hs_method_e2c41ba3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -497091,8 +497098,8 @@ static HosihikariSharedHandle hs_method_7372d501(void* hs_self, void* cp, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, structure);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -497169,8 +497176,8 @@ static HosihikariSharedHandle hs_method_2cbb5046(void* hs_self, void* pos) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -497199,8 +497206,8 @@ static HosihikariSharedHandle hs_method_770fa36f(void* hs_self, void* random) tr
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), random);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -497338,8 +497345,8 @@ static HosihikariSharedHandle hs_method_ffc075a0(void* hs_self, void* cp, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, structure);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -497374,8 +497381,8 @@ static HosihikariSharedHandle hs_method_6d86b32b(void* hs_self, void* cp, std::i
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, lm, readOnly);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -497410,8 +497417,8 @@ static HosihikariSharedHandle hs_method_a03ed472(void* hs_self, void* pos) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -497446,8 +497453,8 @@ static HosihikariSharedHandle hs_method_61a239b8(void* hs_self, void* random) tr
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), random);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -502574,8 +502581,8 @@ static HosihikariStringView hs_method_6cb052bf(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -502702,12 +502709,12 @@ static void* hs_method_d9870997(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -503939,8 +503946,8 @@ static HosihikariStringView hs_method_5f53967e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -504760,8 +504767,8 @@ static HosihikariStringView hs_method_caf52a95(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -505549,8 +505556,8 @@ static HosihikariStringView hs_method_9b1a279f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -505993,8 +506000,8 @@ static HosihikariSharedHandle hs_method_fa9d9925(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -506029,8 +506036,8 @@ static HosihikariSharedHandle hs_method_2d24f48d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -506065,8 +506072,8 @@ static HosihikariSharedHandle hs_method_541fa5f9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -506882,9 +506889,9 @@ static HosihikariStringView hs_method_5bdc7497(void* hs_self, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -510516,8 +510523,8 @@ static HosihikariStringView hs_method_fc4311ae(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -511184,8 +511191,8 @@ static HosihikariStringView hs_method_ccf9c6c2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -511664,8 +511671,8 @@ static HosihikariStringView hs_method_debe6f66(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -512394,8 +512401,8 @@ static HosihikariStringView hs_method_c8401f4f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -513374,8 +513381,8 @@ static HosihikariStringView hs_method_b1f9199d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -517907,8 +517914,8 @@ static HosihikariStringView hs_method_245a3ffa(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -521300,8 +521307,8 @@ static HosihikariStringView hs_method_78af269d(void* hs_self, void* arg0, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -526327,8 +526334,8 @@ static HosihikariSharedHandle hs_method_38fb060a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -526358,8 +526365,8 @@ static HosihikariSharedHandle hs_method_1cd78cbc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -527706,8 +527713,8 @@ static HosihikariSharedHandle hs_method_9f6d59be(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -527742,8 +527749,8 @@ static HosihikariSharedHandle hs_method_4691e3bf(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -530361,8 +530368,8 @@ static HosihikariStringView hs_method_b6f174f6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -531329,8 +531336,8 @@ static HosihikariStringView hs_method_42c8c701(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -535050,8 +535057,8 @@ static HosihikariStringView hs_method_afa34a6b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -538505,8 +538512,8 @@ static HosihikariStringView hs_method_fd75391f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -539304,8 +539311,8 @@ static HosihikariStringView hs_method_d7bf66af(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -540252,8 +540259,8 @@ static HosihikariStringView hs_method_24cf3666(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -541181,8 +541188,9 @@ static void* hs_method_aa268d85(void* hs_self, std::int32_t count, std::int32_t 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), count, aux, output, requireExactAux);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(128), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0ItemInstance@@QEAA@AEBV0@@Z");
@@ -541194,7 +541202,6 @@ static void* hs_method_aa268d85(void* hs_self, std::int32_t count, std::int32_t 
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -542015,12 +542022,12 @@ static void* hs_method_4757e87e(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -542049,12 +542056,12 @@ static void* hs_method_0a1dcb47(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -542688,12 +542695,12 @@ static void* hs_method_79198202(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -542728,12 +542735,12 @@ static void* hs_method_4a87ecfa(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -542903,8 +542910,8 @@ static HosihikariStringView hs_method_86d64dc0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -542934,8 +542941,8 @@ static HosihikariStringView hs_method_c1d08611(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -543072,12 +543079,12 @@ static void* hs_method_fdfb6c1f(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -544714,8 +544721,8 @@ static HosihikariStringView hs_method_b4679bdd(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -545221,8 +545228,8 @@ static HosihikariStringView hs_method_582e055b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -547399,8 +547406,8 @@ static HosihikariStringView hs_method_4b425553(const char* str_data, std::size_t
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(reinterpret_cast<HsString*>(hs_stringStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -547489,8 +547496,8 @@ static HosihikariStringView hs_method_1a981037(void* hs_self, void* symbol) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_arg0Storage);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -548282,8 +548289,8 @@ static HosihikariStringView hs_method_cc54b5c7(void* hs_self, void* symbol) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_arg0Storage);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -550135,8 +550142,8 @@ static HosihikariStringView hs_method_c02db9bd(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -552316,8 +552323,8 @@ static HosihikariStringView hs_method_2087bb73(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -552858,8 +552865,8 @@ static HosihikariStringView hs_method_537dc41d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -561323,8 +561330,8 @@ static HosihikariStringView hs_method_4b695ff0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -561865,8 +561872,8 @@ static HosihikariStringView hs_method_76be6071(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -562086,8 +562093,9 @@ static void* hs_method_97458604(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(24), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0CompoundTag@@QEAA@AEBV0@@Z");
@@ -562099,7 +562107,6 @@ static void* hs_method_97458604(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -563794,8 +563801,8 @@ static HosihikariStringView hs_method_aaf49bcb(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -563824,8 +563831,8 @@ static HosihikariStringView hs_method_cea0a584(void* hs_self, void* stack, bool 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), stack, playerIsCreative);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -564143,8 +564150,9 @@ static void* hs_method_928731d5(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0SoundEventIdentifier@@QEAA@AEBU0@@Z");
@@ -564156,7 +564164,6 @@ static void* hs_method_928731d5(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -564209,8 +564216,9 @@ static void* hs_method_920448ec(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0SoundEventIdentifier@@QEAA@AEBU0@@Z");
@@ -564222,7 +564230,6 @@ static void* hs_method_920448ec(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -564251,8 +564258,9 @@ static void* hs_method_aad4a860(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0SoundEventIdentifier@@QEAA@AEBU0@@Z");
@@ -564264,7 +564272,6 @@ static void* hs_method_aad4a860(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -564685,8 +564692,8 @@ static HosihikariStringView hs_method_67b4856e(void* hs_self, void* player) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), player);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -565909,8 +565916,8 @@ static HosihikariStringView hs_method_7361a5e1(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -565945,8 +565952,8 @@ static HosihikariStringView hs_method_c42f0af6(void* hs_self, void* stack, bool 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), stack, playerIsCreative);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -566281,8 +566288,9 @@ static void* hs_method_bf19ed6b(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0SoundEventIdentifier@@QEAA@AEBU0@@Z");
@@ -566294,7 +566302,6 @@ static void* hs_method_bf19ed6b(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -566359,8 +566366,9 @@ static void* hs_method_9915465f(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0SoundEventIdentifier@@QEAA@AEBU0@@Z");
@@ -566372,7 +566380,6 @@ static void* hs_method_9915465f(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -566407,8 +566414,9 @@ static void* hs_method_6b1551d4(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0SoundEventIdentifier@@QEAA@AEBU0@@Z");
@@ -566420,7 +566428,6 @@ static void* hs_method_6b1551d4(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -566943,8 +566950,8 @@ static HosihikariStringView hs_method_c2e899a5(void* hs_self, void* player) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), player);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -575158,8 +575165,8 @@ static HosihikariStringView hs_method_12d52601(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -576632,8 +576639,8 @@ static HosihikariStringView hs_method_1f8492b5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -577568,8 +577575,8 @@ static HosihikariStringView hs_method_0c8c9722(void* hs_self, bool isLittleEndia
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), isLittleEndian);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -577598,8 +577605,8 @@ static HosihikariStringView hs_method_387b6484(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -577634,8 +577641,8 @@ static HosihikariStringView hs_method_ade403b7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -578988,8 +578995,8 @@ static HosihikariStringView hs_method_f40824c1(void* hs_self, std::uint8_t inden
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), indent, snbtFormat);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -579874,8 +579881,8 @@ static HosihikariStringView hs_method_b4aa4352(void* hs_self, std::uint32_t snbt
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), snbtFormat, indent);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -582299,8 +582306,8 @@ static HosihikariStringView hs_method_af14e08a(void* hs_self, void* block) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), block);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -582866,12 +582873,12 @@ static void* hs_method_b6031e1c(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -585803,8 +585810,8 @@ static HosihikariStringView hs_method_ddd06306(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -586003,8 +586010,8 @@ static HosihikariStringView hs_method_4fbc63c6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -591243,8 +591250,8 @@ static HosihikariStringView hs_method_acc37e87(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -591723,8 +591730,8 @@ static HosihikariStringView hs_method_4a29ef0c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -595099,8 +595106,8 @@ static HosihikariSharedHandle hs_method_f9ecb533(void* hs_self, std::uint8_t col
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), collectionEnumName);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -595343,9 +595350,9 @@ static std::int32_t hs_method_179a7dc6(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -597785,8 +597792,8 @@ static HosihikariStringView hs_method_c865b9cc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -598265,8 +598272,8 @@ static HosihikariStringView hs_method_93b2c426(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -599162,8 +599169,8 @@ static HosihikariSharedHandle hs_method_ff16e8ed(void* hs_self, void* containerE
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), containerEnumName);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -599853,8 +599860,8 @@ static HosihikariSharedHandle hs_method_e868d7b8(void* hs_self, std::uint8_t con
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), containerEnumName, slot, item);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -600154,8 +600161,8 @@ static HosihikariStringView hs_method_69d00d8d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -600634,8 +600641,8 @@ static HosihikariStringView hs_method_e509a463(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -602702,8 +602709,8 @@ static HosihikariSharedHandle hs_method_e2506e28(void* containerId, void* screen
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(static_cast<void*>(hs_typedStorage), containerId, screenContext, caller);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -622510,9 +622517,9 @@ static std::uint64_t hs_method_271ce973(void* hs_self, void* filePath, bool* hs_
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint64_t>(*hs_result) : std::uint64_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -622639,9 +622646,9 @@ static std::uint64_t hs_method_02a0722a(void* hs_self, void* filePath, bool* hs_
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint64_t>(*hs_result) : std::uint64_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -623864,8 +623871,8 @@ static HosihikariSharedHandle hs_method_265e50da(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -625230,9 +625237,9 @@ static std::uint64_t hs_method_d897a61c(void* hs_self, void* path, bool* hs_hasV
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint64_t>(*hs_result) : std::uint64_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -636300,8 +636307,8 @@ static HosihikariStringView hs_method_4d93c493(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -637684,8 +637691,8 @@ static HosihikariStringView hs_method_64af2fba(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -645933,8 +645940,8 @@ static HosihikariStringView hs_method_36983570(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -648569,8 +648576,8 @@ static HosihikariStringView hs_method_7d3fa083(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -653591,8 +653598,8 @@ static HosihikariStringView hs_method_ef5f5865(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -654665,8 +654672,8 @@ static HosihikariStringView hs_method_18297184(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -665724,8 +665731,8 @@ static HosihikariStringView hs_method_a4390a23(void* hs_self, const char* myPriv
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -665795,8 +665802,8 @@ static HosihikariStringView hs_method_4d1f5375(void* hs_self, const char* privat
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1, paddingType);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -665867,8 +665874,8 @@ static HosihikariStringView hs_method_fbbfd70e(void* hs_self, const char* public
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1, paddingType, keyFormat, useSHA256);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -665995,8 +666002,8 @@ static HosihikariStringView hs_method_d7e66c3b(void* hs_self, const char* privat
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1, hash, format);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -666108,8 +666115,8 @@ static HosihikariStringView hs_method_e0ab1c54(void* hs_self, const char* myPriv
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -666169,8 +666176,8 @@ static HosihikariStringView hs_method_3bdb7556(void* hs_self, const char* privat
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1, paddingType);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -666231,8 +666238,8 @@ static HosihikariStringView hs_method_279955e0(void* hs_self, const char* public
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1, paddingType, keyFormat, useSHA256);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -666293,8 +666300,8 @@ static HosihikariStringView hs_method_4b9babb4(void* hs_self, const char* privat
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1, hash, format);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -666433,8 +666440,8 @@ static HosihikariStringView hs_method_bb70edf0(void* hs_self, const char* myPriv
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -666504,8 +666511,8 @@ static HosihikariStringView hs_method_044a4a21(void* hs_self, const char* privat
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1, paddingType);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -666576,8 +666583,8 @@ static HosihikariStringView hs_method_2dfab308(void* hs_self, const char* public
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1, paddingType, keyFormat, useSHA256);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -666736,8 +666743,8 @@ static HosihikariStringView hs_method_b2159461(void* hs_self, const char* privat
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1, hash, format);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -671545,9 +671552,9 @@ static std::int32_t hs_method_fa9dc3b0(void* hs_self, void* tag, bool* hs_hasVal
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), tag);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -672407,8 +672414,8 @@ static HosihikariSharedHandle hs_method_cc2704b4(void* hs_self, void* cp, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, structure);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -672803,8 +672810,8 @@ static HosihikariSharedHandle hs_method_0aa926ec(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -679136,8 +679143,8 @@ static HosihikariStringView hs_method_2373ca9a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -687010,8 +687017,8 @@ static HosihikariStringView hs_method_86b96d88(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -688298,8 +688305,8 @@ static HosihikariStringView hs_method_bf7ac7f3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -701207,8 +701214,8 @@ static HosihikariStringView hs_method_92ee60fe(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -701273,8 +701280,8 @@ static HosihikariStringView hs_method_b11ad45d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -701417,8 +701424,9 @@ static void* hs_method_d9787b59(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(24), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0CompoundTag@@QEAA@AEBV0@@Z");
@@ -701430,7 +701438,6 @@ static void* hs_method_d9787b59(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -706020,9 +706027,9 @@ static std::int32_t hs_method_0d6f0f01(void* hs_self, void* actor, bool* hs_hasV
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actor);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -706291,9 +706298,9 @@ static std::int32_t hs_method_426014bd(void* hs_self, void* actor, bool* hs_hasV
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actor);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -716969,8 +716976,8 @@ static HosihikariStringView hs_method_1e21d233(void* hs_self, void* stack) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), stack);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -719554,9 +719561,9 @@ static HosihikariStringView hs_method_b04b5c66(void* hs_self, void* location, bo
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), location);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -720793,9 +720800,9 @@ static HosihikariStringView hs_method_991443a4(void* hs_self, void* location, bo
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), location);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -723788,8 +723795,8 @@ static HosihikariStringView hs_method_94ae3964(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -725303,9 +725310,9 @@ static HosihikariSharedHandle hs_method_8101eb93(void* hs_self, void* dimensionT
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), *reinterpret_cast<std::uint32_t const*>(dimensionType));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -725334,9 +725341,9 @@ static HosihikariSharedHandle hs_method_d2ba4389(void* hs_self, void* dimensionT
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), *reinterpret_cast<std::uint32_t const*>(dimensionType));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -725366,9 +725373,9 @@ static HosihikariSharedHandle hs_method_f58a90a7(void* hs_self, const char* dime
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -725526,12 +725533,12 @@ static void* hs_method_92c4dd0d(void* hs_self, const char* identifier_data, std:
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(4), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(4));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -732816,8 +732823,8 @@ static HosihikariStringView hs_method_5c8080c3(void* hs_self, void* arg0, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -734323,8 +734330,8 @@ static HosihikariStringView hs_method_65034223(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -734803,8 +734810,8 @@ static HosihikariStringView hs_method_da5e4aa9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -738312,8 +738319,8 @@ static HosihikariStringView hs_method_2db7bf60(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -750733,8 +750740,8 @@ static HosihikariStringView hs_method_1deeaa4d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -751050,8 +751057,8 @@ static HosihikariStringView hs_method_7a41952e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -755792,8 +755799,8 @@ static HosihikariStringView hs_method_11a14aa3(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -767619,8 +767626,8 @@ static HosihikariStringView hs_method_a346faba(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -769947,8 +769954,8 @@ static HosihikariStringView hs_method_c86e4072(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -776817,8 +776824,8 @@ static HosihikariStringView hs_method_1537727b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -778082,8 +778089,8 @@ static HosihikariStringView hs_method_2aab7a3b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -779879,8 +779886,8 @@ static HosihikariStringView hs_method_c68ab265(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -783640,8 +783647,8 @@ static HosihikariStringView hs_method_7d03edc1(void* hs_self, void* block) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), block);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -786771,8 +786778,8 @@ static HosihikariStringView hs_method_e2cc17e0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -787592,8 +787599,8 @@ static HosihikariStringView hs_method_764fc6c5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -788516,8 +788523,8 @@ static HosihikariStringView hs_method_a6bec462(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -788552,8 +788559,8 @@ static HosihikariStringView hs_method_f55c721b(void* hs_self, void* player) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), player);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -797114,8 +797121,8 @@ static HosihikariStringView hs_method_0a761b53(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -797974,8 +797981,8 @@ static HosihikariStringView hs_method_61af2e79(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -798043,8 +798050,8 @@ static HosihikariStringView hs_method_ce2bd5bd(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -811673,8 +811680,8 @@ static HosihikariStringView hs_method_6dc12413(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -811883,8 +811890,8 @@ static HosihikariStringView hs_method_c7e0de05(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -837548,8 +837555,8 @@ static HosihikariSharedHandle hs_method_678ac3c9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -837579,8 +837586,8 @@ static HosihikariSharedHandle hs_method_77de2004(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -837615,8 +837622,8 @@ static HosihikariSharedHandle hs_method_275103f0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -837651,8 +837658,8 @@ static HosihikariSharedHandle hs_method_a543e8af(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -837687,8 +837694,8 @@ static HosihikariSharedHandle hs_method_502f6836(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -837723,8 +837730,8 @@ static HosihikariSharedHandle hs_method_2615ccb2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -845317,8 +845324,8 @@ static HosihikariStringView hs_method_84251ef9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -845445,12 +845452,12 @@ static void* hs_method_f6be9239(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -857919,8 +857926,8 @@ static HosihikariStringView hs_method_6e140806(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -859035,8 +859042,8 @@ static HosihikariStringView hs_method_650b3dcf(void* hs_self, void* fullPath, vo
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), fullPath, worldsPath);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -866302,12 +866309,12 @@ static void* hs_method_15d3f4f2(void* hs_self, void* target, void* pos, void* ra
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), target, pos, random, treeHeight, renderParams, treeParams, arg6);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -868029,8 +868036,8 @@ static HosihikariStringView hs_method_8a202655(void* hs_self, void* block) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), block);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -872299,12 +872306,12 @@ static void* hs_method_dc9b1f23(void* hs_self, void* target, void* pos, void* ra
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), target, pos, random, treeHeight, renderParams, treeParams, canopy);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -874751,12 +874758,12 @@ static void* hs_method_f43dc9f1(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -874891,12 +874898,12 @@ static void* hs_method_98819fd1(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -875332,8 +875339,8 @@ static HosihikariSharedHandle hs_method_6afad414(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -875930,9 +875937,9 @@ static HosihikariSharedHandle hs_method_f07d13bc(void* hs_self, const char* name
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -876631,8 +876638,8 @@ static HosihikariStringView hs_method_48e45b99(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -879679,8 +879686,8 @@ static HosihikariStringView hs_method_d057bcb7(void* hs_self, void* block) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), block);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -884444,8 +884451,8 @@ static HosihikariSharedHandle hs_method_5642720e(void* hs_self, const char* arg1
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), static_cast<void*>(&hs_vec0), hs_str1);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -890293,8 +890300,8 @@ static HosihikariSharedHandle hs_method_5669853b(void* hs_self, std::uint8_t typ
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), type);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -918133,8 +918140,8 @@ static HosihikariStringView hs_method_951c90eb(void* hs_self, void* arg0, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -918292,8 +918299,8 @@ static HosihikariStringView hs_method_77b8ea20(void* hs_self, void* player) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), player);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -925559,8 +925566,8 @@ static HosihikariStringView hs_method_8b2b22aa(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -925876,8 +925883,8 @@ static HosihikariStringView hs_method_10cd7dab(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -942286,8 +942293,8 @@ static HosihikariStringView hs_method_296ab77f(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -950106,8 +950113,8 @@ static HosihikariStringView hs_method_f99e49a6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -952182,8 +952189,8 @@ static HosihikariSharedHandle hs_method_c4d8371d(void* hs_self, std::uint8_t con
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), containerEnumName, slot, item);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -958911,8 +958918,8 @@ static HosihikariStringView hs_method_f9345535(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -959391,8 +959398,8 @@ static HosihikariStringView hs_method_50d2b6b0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -961855,8 +961862,8 @@ static HosihikariStringView hs_method_87a66915(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -962703,8 +962710,8 @@ static HosihikariStringView hs_method_9fdfbe9f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -963980,9 +963987,9 @@ static HosihikariStringView hs_method_f7e38c21(void* hs_self, const char* player
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0, gameplayUserManager);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -965642,12 +965649,12 @@ static void* hs_method_40ef1a71(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -984492,8 +984499,8 @@ static HosihikariStringView hs_method_60cec762(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -999548,8 +999555,8 @@ static HosihikariStringView hs_method_c3093770(void* hs_self, void* block) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), block);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1002962,12 +1002969,12 @@ static void* hs_method_77a123d0(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1008053,8 +1008060,8 @@ static HosihikariStringView hs_method_93885868(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1023449,9 +1023456,9 @@ static float hs_method_737cd9db(void* hs_self, float oldValue, float newValue, v
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), oldValue, newValue, buff);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<float>(*hs_result) : float{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -1023537,9 +1023544,9 @@ static float hs_method_e2399f83(void* hs_self, float oldValue, float newValue, v
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), oldValue, newValue, buff);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<float>(*hs_result) : float{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -1026580,9 +1026587,9 @@ static HosihikariSharedHandle hs_method_1bf4b6eb(void* hs_self, std::int32_t typ
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), type);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1035056,8 +1035063,8 @@ static HosihikariStringView hs_method_8abbc159(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1053730,8 +1053737,8 @@ static HosihikariStringView hs_method_b3aec188(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1055867,8 +1055874,8 @@ static HosihikariStringView hs_method_bf7a44d2(void* hs_self, const char* langSt
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_shared1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1055901,8 +1055908,8 @@ static HosihikariStringView hs_method_0c36e8a8(void* hs_self, const char* id_dat
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, static_cast<void*>(&hs_vec1), hs_shared2);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1056027,8 +1056034,8 @@ static HosihikariSharedHandle hs_method_2e5f407c(void* hs_self, const char* code
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1056060,8 +1056067,8 @@ static HosihikariStringView hs_method_a307bfca(void* hs_self, const char* fileNa
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1056092,8 +1056099,8 @@ static HosihikariStringView hs_method_4d2ae3d0(void* hs_self, void* manifest, co
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), manifest, hs_str1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1056124,8 +1056131,8 @@ static HosihikariStringView hs_method_1bcbe601(void* hs_self, void* manifest, co
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), manifest, hs_str1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1056428,8 +1056435,8 @@ static HosihikariStringView hs_method_e9ba0759(void* hs_self, const char* langSt
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_shared1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1056461,8 +1056468,8 @@ static HosihikariStringView hs_method_e1d5ccf9(void* hs_self, const char* id_dat
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, static_cast<void*>(&hs_vec1), hs_shared2);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1056744,8 +1056751,8 @@ static HosihikariStringView hs_method_5bd6f056(void* hs_self, const char* langSt
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_shared1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1056783,8 +1056790,8 @@ static HosihikariStringView hs_method_d71a5dfb(void* hs_self, const char* id_dat
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, static_cast<void*>(&hs_vec1), hs_shared2);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1056929,8 +1056936,8 @@ static HosihikariSharedHandle hs_method_e7edbe39(void* hs_self, const char* code
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1056967,8 +1056974,8 @@ static HosihikariStringView hs_method_7e048c03(void* hs_self, const char* fileNa
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0, hs_str1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1057004,8 +1057011,8 @@ static HosihikariStringView hs_method_fcf14519(void* hs_self, void* manifest, co
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), manifest, hs_str1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1057041,8 +1057048,8 @@ static HosihikariStringView hs_method_0cdba094(void* hs_self, void* manifest, co
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), manifest, hs_str1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1058470,8 +1058477,8 @@ static HosihikariStringView hs_method_924ce56f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1058501,8 +1058508,8 @@ static HosihikariStringView hs_method_204060ab(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1058610,8 +1058617,8 @@ static HosihikariStringView hs_method_0591b0c0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1060013,9 +1060020,9 @@ static HosihikariSharedHandle hs_method_c9127b5a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1061492,8 +1061499,8 @@ static HosihikariSharedHandle hs_method_15456ae8(void* hs_self, void* arg0, void
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), arg0, arg1, arg2);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1061523,8 +1061530,8 @@ static HosihikariSharedHandle hs_method_e10e24eb(void* hs_self, void* arg0, void
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), arg0, arg1, arg2);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1062525,9 +1062532,9 @@ static std::int32_t hs_method_a7720c81(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -1062938,8 +1062945,8 @@ static HosihikariStringView hs_method_50277ffb(void* hs_self, void* contentIdent
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), contentIdentity);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1062969,8 +1062976,8 @@ static HosihikariStringView hs_method_030df325(void* hs_self, void* contentIdent
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), contentIdentity);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1065282,8 +1065289,8 @@ static HosihikariSharedHandle hs_method_88e9fbad(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1065313,8 +1065320,8 @@ static HosihikariSharedHandle hs_method_4c889bd0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1065928,12 +1065935,12 @@ static void* hs_method_8180fe27(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1068149,8 +1068156,8 @@ static HosihikariSharedHandle hs_method_ce5ddf84(void* hs_self, void* arg0, void
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), arg0, arg1, arg2, arg3);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1068220,8 +1068227,8 @@ static HosihikariSharedHandle hs_method_7ad430ea(void* hs_self, void* arg0, void
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), arg0, arg1);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1068251,8 +1068258,8 @@ static HosihikariSharedHandle hs_method_8ab59662(void* hs_self, void* arg0, void
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), arg0, arg1, arg2, arg3);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1070073,8 +1070080,8 @@ static HosihikariSharedHandle hs_method_5ac1616c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1070104,8 +1070111,8 @@ static HosihikariSharedHandle hs_method_cd4226c6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1070135,8 +1070142,8 @@ static HosihikariSharedHandle hs_method_6cb743f2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1070166,8 +1070173,8 @@ static HosihikariSharedHandle hs_method_af8cd07f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1070272,8 +1070279,8 @@ static HosihikariSharedHandle hs_method_3847948d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1070353,8 +1070360,8 @@ static HosihikariSharedHandle hs_method_123fadb8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1070384,8 +1070391,8 @@ static HosihikariSharedHandle hs_method_79caf4b6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1070815,8 +1070822,8 @@ static HosihikariSharedHandle hs_method_0a26451b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1070846,8 +1070853,8 @@ static HosihikariSharedHandle hs_method_5ede95ce(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1070952,8 +1070959,8 @@ static HosihikariSharedHandle hs_method_c88a5ef1(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1070983,8 +1070990,8 @@ static HosihikariSharedHandle hs_method_5ed77224(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071014,8 +1071021,8 @@ static HosihikariSharedHandle hs_method_63fc13e2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071070,8 +1071077,8 @@ static HosihikariSharedHandle hs_method_5dc61990(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071101,8 +1071108,8 @@ static HosihikariSharedHandle hs_method_1ff998b8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071132,8 +1071139,8 @@ static HosihikariSharedHandle hs_method_1b9d9516(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071288,8 +1071295,8 @@ static HosihikariSharedHandle hs_method_1620e3d6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071319,8 +1071326,8 @@ static HosihikariSharedHandle hs_method_0022a541(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071553,9 +1071560,9 @@ static HosihikariSharedHandle hs_method_a0ea1380(void* hs_self, void* id) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), *reinterpret_cast<std::uint32_t const*>(id));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071713,8 +1071720,8 @@ static HosihikariSharedHandle hs_method_178c10a4(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071744,8 +1071751,8 @@ static HosihikariSharedHandle hs_method_1e5965d6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071800,8 +1071807,8 @@ static HosihikariSharedHandle hs_method_beb3e1b3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071831,8 +1071838,8 @@ static HosihikariSharedHandle hs_method_3de255bb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071862,8 +1071869,8 @@ static HosihikariSharedHandle hs_method_88edbc07(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071893,8 +1071900,8 @@ static HosihikariSharedHandle hs_method_946623ab(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1071974,8 +1071981,8 @@ static HosihikariSharedHandle hs_method_f9747498(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1072005,8 +1072012,8 @@ static HosihikariSharedHandle hs_method_23d1c3c8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1072236,8 +1072243,8 @@ static HosihikariSharedHandle hs_method_00f3a2f6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1072267,8 +1072274,8 @@ static HosihikariSharedHandle hs_method_a056baf5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1072323,8 +1072330,8 @@ static HosihikariSharedHandle hs_method_e3cf2e5c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1072354,8 +1072361,8 @@ static HosihikariSharedHandle hs_method_d573771c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1072640,8 +1072647,8 @@ static HosihikariSharedHandle hs_method_5371517f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1072671,8 +1072678,8 @@ static HosihikariSharedHandle hs_method_bdd2fe07(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1072727,8 +1072734,8 @@ static HosihikariSharedHandle hs_method_11aed320(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1072836,9 +1072843,9 @@ static HosihikariSharedHandle hs_method_f184b919(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_game_ref_handle(hs_locked);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1072893,8 +1072900,8 @@ static HosihikariSharedHandle hs_method_ea433c85(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1072924,8 +1072931,8 @@ static HosihikariStringView hs_method_d9bce445(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1073158,8 +1073165,8 @@ static HosihikariSharedHandle hs_method_b6db9219(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1073339,8 +1073346,8 @@ static HosihikariSharedHandle hs_method_09ee9c34(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1073370,8 +1073377,8 @@ static HosihikariSharedHandle hs_method_7bcff712(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1073507,9 +1073514,9 @@ static HosihikariSharedHandle hs_method_88b0c503(void* hs_self, void* dimensionT
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), *reinterpret_cast<std::uint32_t const*>(dimensionType));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1073564,8 +1073571,8 @@ static HosihikariSharedHandle hs_method_cd74e258(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1073595,8 +1073602,8 @@ static HosihikariSharedHandle hs_method_e8af11c7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1073626,8 +1073633,8 @@ static HosihikariSharedHandle hs_method_66896571(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1073657,8 +1073664,8 @@ static HosihikariSharedHandle hs_method_41d93ed4(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1073890,8 +1073897,8 @@ static HosihikariSharedHandle hs_method_9e32dd7b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1073975,8 +1073982,8 @@ static HosihikariSharedHandle hs_method_a2ae9656(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1074057,8 +1074064,8 @@ static HosihikariSharedHandle hs_method_5fa420e7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1074088,8 +1074095,8 @@ static HosihikariSharedHandle hs_method_ec97a056(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1074119,8 +1074126,8 @@ static HosihikariSharedHandle hs_method_2a4b31dc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1074175,8 +1074182,8 @@ static HosihikariSharedHandle hs_method_cbdd8331(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1074206,8 +1074213,8 @@ static HosihikariSharedHandle hs_method_9c9a1b7d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1074237,8 +1074244,8 @@ static HosihikariSharedHandle hs_method_1d59587f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1074268,8 +1074275,8 @@ static HosihikariSharedHandle hs_method_c58f53a8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1074865,8 +1074872,8 @@ static HosihikariSharedHandle hs_method_362f64ef(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1074921,8 +1074928,8 @@ static HosihikariSharedHandle hs_method_93f7d29d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1074952,8 +1074959,8 @@ static HosihikariSharedHandle hs_method_6132b5a8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075008,8 +1075015,8 @@ static HosihikariSharedHandle hs_method_a177a3d0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075159,8 +1075166,8 @@ static HosihikariSharedHandle hs_method_6ef3e987(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075240,8 +1075247,8 @@ static HosihikariSharedHandle hs_method_d7ba8059(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075271,8 +1075278,8 @@ static HosihikariSharedHandle hs_method_24b5649a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075352,9 +1075359,9 @@ static HosihikariSharedHandle hs_method_d92e7def(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075384,8 +1075391,8 @@ static HosihikariSharedHandle hs_method_26c026f0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075540,8 +1075547,8 @@ static HosihikariSharedHandle hs_method_0dd2fa33(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075621,8 +1075628,8 @@ static HosihikariSharedHandle hs_method_73471a7d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075677,8 +1075684,8 @@ static HosihikariSharedHandle hs_method_a4ff0405(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075813,9 +1075820,9 @@ static HosihikariSharedHandle hs_method_bbfe6a40(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075845,9 +1075852,9 @@ static HosihikariSharedHandle hs_method_1afd091d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075877,9 +1075884,9 @@ static HosihikariSharedHandle hs_method_82226ad3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075909,9 +1075916,9 @@ static HosihikariSharedHandle hs_method_2b4dd4e5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075941,8 +1075948,8 @@ static HosihikariSharedHandle hs_method_21716997(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1075972,8 +1075979,8 @@ static HosihikariSharedHandle hs_method_37b2bfa1(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1076053,8 +1076060,8 @@ static HosihikariSharedHandle hs_method_47673f46(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1076084,8 +1076091,8 @@ static HosihikariSharedHandle hs_method_3dfdcaa6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1077379,8 +1077386,8 @@ static HosihikariSharedHandle hs_method_b0c4db49(void* hs_self, void* entityRef)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1077418,8 +1077425,8 @@ static HosihikariSharedHandle hs_method_a5caeca5(void* hs_self, void* entityRef)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1077482,8 +1077489,8 @@ static HosihikariSharedHandle hs_method_9a2e03cc(void* hs_self, void* actor) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actor);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1077521,8 +1077528,8 @@ static HosihikariSharedHandle hs_method_31267d87(void* hs_self, void* entityRef)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1077602,8 +1077609,8 @@ static HosihikariSharedHandle hs_method_5121f713(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1078645,8 +1078652,8 @@ static HosihikariSharedHandle hs_method_a6a0799a(void* hs_self, void* entityRef,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage, lc);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1078776,8 +1078783,8 @@ static HosihikariSharedHandle hs_method_f4f5597d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1079420,8 +1079427,8 @@ static HosihikariSharedHandle hs_method_e84b7c6a(void* hs_self, void* dimension,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), dimension, chunkPos);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1079451,8 +1079458,8 @@ static HosihikariSharedHandle hs_method_ac81d017(void* hs_self, void* dimension)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), dimension);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1079482,9 +1079489,9 @@ static HosihikariSharedHandle hs_method_6deead74(void* hs_self, void* dimensionM
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), dimensionManager);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1079958,8 +1079965,8 @@ static HosihikariSharedHandle hs_method_7930f7e7(void* hs_self, const char* leve
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1079989,8 +1079996,8 @@ static HosihikariStringView hs_method_4c37e0fd(void* hs_self, void* fullPath, vo
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), fullPath, worldsPath);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1080781,8 +1080788,8 @@ static HosihikariSharedHandle hs_method_780a818c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1080812,8 +1080819,8 @@ static HosihikariSharedHandle hs_method_4cc9db77(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1080868,8 +1080875,8 @@ static HosihikariSharedHandle hs_method_c9dd247c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1089029,8 +1089036,8 @@ static HosihikariStringView hs_method_86db4e1a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1089060,8 +1089067,8 @@ static HosihikariStringView hs_method_920baafb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1089143,8 +1089150,8 @@ static HosihikariStringView hs_method_198053f1(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1089200,8 +1089207,8 @@ static HosihikariStringView hs_method_a2179a52(void* hs_self, std::uint64_t type
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), type, hs_str1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1089511,8 +1089518,8 @@ static HosihikariSharedHandle hs_method_76efc2f7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1094637,8 +1094644,8 @@ static HosihikariSharedHandle hs_method_84ac437a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1094780,8 +1094787,8 @@ static HosihikariSharedHandle hs_method_472078bf(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1094836,8 +1094843,8 @@ static HosihikariSharedHandle hs_method_6406df6b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1095060,8 +1095067,8 @@ static HosihikariSharedHandle hs_method_c05f2a2f(void* hs_self, void* idAndVersi
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), idAndVersion);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1095166,8 +1095173,8 @@ static HosihikariSharedHandle hs_method_03de8d25(void* hs_self, void* idAndVersi
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), idAndVersion, requireOwnership, selectionPolicy);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1095371,8 +1095378,8 @@ static HosihikariSharedHandle hs_method_54411d8f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1096012,9 +1096019,9 @@ static HosihikariStringView hs_method_4c97d9a3(void* hs_self, const char* path_d
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1096045,8 +1096052,8 @@ static HosihikariStringView hs_method_226d3d60(void* hs_self, const char* path_d
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1097167,8 +1097174,8 @@ static HosihikariStringView hs_method_409f466a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1097484,8 +1097491,8 @@ static HosihikariSharedHandle hs_method_3367b1e3(void* hs_self, void* structureP
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), structurePoolElement);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1098602,8 +1098609,8 @@ static HosihikariStringView hs_method_9314a418(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1098952,9 +1098959,9 @@ static HosihikariSharedHandle hs_method_cda22dd3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1098984,9 +1098991,9 @@ static HosihikariSharedHandle hs_method_5e499d60(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1099746,8 +1099753,8 @@ static HosihikariSharedHandle hs_method_a865ee98(void* hs_self, void* cp) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1100552,12 +1100559,12 @@ static void* hs_method_d033c5fc(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1100634,12 +1100641,12 @@ static void* hs_method_f4e7296b(void* hs_self, void* arg0, void* arg1, void* arg
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), arg0, arg1, arg2, arg3, arg4, arg5);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1100777,12 +1100784,12 @@ static void* hs_method_a7f64ee2(void* hs_self, void* target, void* pos, void* ra
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), target, pos, random, treeHeight, renderParams, treeParams, canopy);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1101261,8 +1101268,8 @@ static HosihikariStringView hs_method_7789deea(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1101330,8 +1101337,8 @@ static HosihikariStringView hs_method_ece568cf(void* hs_self, void* region) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), region);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1101361,8 +1101368,8 @@ static HosihikariStringView hs_method_2d58cdbb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1102321,9 +1102328,9 @@ static HosihikariSharedHandle hs_method_364199a9(void* hs_self, void* position, 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), position, maxDistFromVillageBounds, searchRadius);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1102353,9 +1102360,9 @@ static HosihikariSharedHandle hs_method_388985ba(void* hs_self, void* villageID)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), villageID);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1103074,8 +1103081,8 @@ static HosihikariSharedHandle hs_method_279549d8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1103105,8 +1103112,8 @@ static HosihikariSharedHandle hs_method_7e423733(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1121991,8 +1121998,8 @@ static HosihikariStringView hs_method_63c44630(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1122287,8 +1122294,8 @@ static HosihikariStringView hs_method_b20930fb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1122466,8 +1122473,8 @@ static HosihikariStringView hs_method_de43a8db(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1122731,8 +1122738,8 @@ static HosihikariStringView hs_method_6f572832(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1123321,8 +1123328,8 @@ static HosihikariStringView hs_method_d8cb87fd(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1123617,8 +1123624,8 @@ static HosihikariStringView hs_method_690cc5b8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1124965,8 +1124972,8 @@ static HosihikariStringView hs_method_cd9a236d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1125985,8 +1125992,8 @@ static HosihikariStringView hs_method_7e2c0f0d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1126084,8 +1126091,8 @@ static HosihikariStringView hs_method_35cb3f8a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1126196,8 +1126203,9 @@ static void* hs_method_a07470ff(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(24), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0CompoundTag@@QEAA@AEBV0@@Z");
@@ -1126209,7 +1126217,6 @@ static void* hs_method_a07470ff(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1128745,8 +1128752,8 @@ static HosihikariStringView hs_method_f6b86570(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1130531,8 +1130538,8 @@ static HosihikariStringView hs_method_4233c428(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1132343,8 +1132350,8 @@ static HosihikariStringView hs_method_60d0d1a2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1139544,8 +1139551,8 @@ static HosihikariStringView hs_method_1bf70548(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1139651,8 +1139658,8 @@ static HosihikariStringView hs_method_29abc734(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1139681,8 +1139688,8 @@ static HosihikariStringView hs_method_031bd0ae(void* hs_self, void* stack) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), stack);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1139711,8 +1139718,8 @@ static HosihikariStringView hs_method_a62297e8(void* hs_self, void* stack, bool 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), stack, playerIsCreative);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1140253,8 +1140260,9 @@ static void* hs_method_bac63ace(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0SoundEventIdentifier@@QEAA@AEBU0@@Z");
@@ -1140266,7 +1140274,6 @@ static void* hs_method_bac63ace(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1140343,8 +1140350,9 @@ static void* hs_method_19d45677(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0SoundEventIdentifier@@QEAA@AEBU0@@Z");
@@ -1140356,7 +1140364,6 @@ static void* hs_method_19d45677(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1140385,8 +1140392,9 @@ static void* hs_method_9960dd14(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0SoundEventIdentifier@@QEAA@AEBU0@@Z");
@@ -1140398,7 +1140406,6 @@ static void* hs_method_9960dd14(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1140864,8 +1140871,8 @@ static HosihikariStringView hs_method_865b8d7b(void* hs_self, void* stack) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), stack);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1140945,8 +1140952,8 @@ static HosihikariStringView hs_method_6c643c12(void* hs_self, void* player) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), player);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1142848,8 +1142855,8 @@ static HosihikariStringView hs_method_4334adb0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1143027,8 +1143034,8 @@ static HosihikariStringView hs_method_880431f6(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1143063,8 +1143070,8 @@ static HosihikariStringView hs_method_a2a7f317(void* hs_self, void* stack) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), stack);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1143099,8 +1143106,8 @@ static HosihikariStringView hs_method_d41f1387(void* hs_self, void* stack, bool 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), stack, playerIsCreative);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1143712,8 +1143719,9 @@ static void* hs_method_f03a62a1(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0SoundEventIdentifier@@QEAA@AEBU0@@Z");
@@ -1143725,7 +1143733,6 @@ static void* hs_method_f03a62a1(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1143820,8 +1143827,9 @@ static void* hs_method_c94c77ac(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0SoundEventIdentifier@@QEAA@AEBU0@@Z");
@@ -1143833,7 +1143841,6 @@ static void* hs_method_c94c77ac(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1143868,8 +1143875,9 @@ static void* hs_method_3236a313(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0SoundEventIdentifier@@QEAA@AEBU0@@Z");
@@ -1143881,7 +1143889,6 @@ static void* hs_method_3236a313(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1144461,8 +1144468,8 @@ static HosihikariStringView hs_method_fd4067e4(void* hs_self, void* stack) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), stack);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1144560,8 +1144567,8 @@ static HosihikariStringView hs_method_800c16dd(void* hs_self, void* player) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), player);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1144929,8 +1144936,8 @@ static HosihikariStringView hs_method_b340f55a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1153301,12 +1153308,12 @@ static void* hs_method_b7c425e9(void* tag, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(static_cast<void*>(hs_typedStorage), tag);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(16), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     setLastError("the optional payload copy or destructor symbol is unavailable");
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1153455,8 +1153462,8 @@ static HosihikariStringView hs_method_cf1d532a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1153485,8 +1153492,8 @@ static HosihikariStringView hs_method_7fe4139b(void* hs_self, bool removeInvalid
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), removeInvalidAux);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1153740,8 +1153747,8 @@ static HosihikariStringView hs_method_82d2f47d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1153834,8 +1153841,8 @@ static HosihikariStringView hs_method_0397b74c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1153975,8 +1153982,9 @@ static void* hs_method_54885707(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(24), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0CompoundTag@@QEAA@AEBV0@@Z");
@@ -1153988,7 +1153996,6 @@ static void* hs_method_54885707(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1154108,8 +1154115,8 @@ static HosihikariStringView hs_method_c13f72b6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1161364,8 +1161371,8 @@ static HosihikariSharedHandle hs_method_6c3f06a6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1162644,8 +1162651,8 @@ static HosihikariStringView hs_method_a7cd8ae9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1162674,8 +1162681,8 @@ static HosihikariStringView hs_method_885bfa9b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1163105,8 +1163112,8 @@ static HosihikariStringView hs_method_ee0b6bc8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1163141,8 +1163148,8 @@ static HosihikariStringView hs_method_79300bf0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1163667,8 +1163674,8 @@ static HosihikariStringView hs_method_4a375951(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1163697,8 +1163704,8 @@ static HosihikariStringView hs_method_88ceeb89(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1164218,8 +1164225,8 @@ static HosihikariStringView hs_method_42b61b08(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1164272,8 +1164279,8 @@ static HosihikariStringView hs_method_a02cfef9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1164302,8 +1164309,8 @@ static HosihikariStringView hs_method_b0c93938(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1164431,8 +1164438,8 @@ static HosihikariStringView hs_method_677e9cfd(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1164461,8 +1164468,8 @@ static HosihikariStringView hs_method_0ec8ae04(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1164545,8 +1164552,8 @@ static HosihikariStringView hs_method_976b1b6e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1165843,8 +1165850,8 @@ static HosihikariStringView hs_method_92414ce1(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1165879,8 +1165886,8 @@ static HosihikariStringView hs_method_2644d048(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1170802,8 +1170809,8 @@ static HosihikariSharedHandle hs_method_3c47bc6a(void* hs_self, void* openContai
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), openContainerId);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1175975,8 +1175982,8 @@ static HosihikariStringView hs_method_5608fc4d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1177219,8 +1177226,8 @@ static HosihikariStringView hs_method_66b4613c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1178443,8 +1178450,8 @@ static HosihikariStringView hs_method_c4693717(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1178648,8 +1178655,9 @@ static void* hs_method_1c5e589c(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(24), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0CompoundTag@@QEAA@AEBV0@@Z");
@@ -1178661,7 +1178669,6 @@ static void* hs_method_1c5e589c(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1178756,8 +1178763,8 @@ static HosihikariStringView hs_method_96fb2603(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1184410,8 +1184417,8 @@ static HosihikariStringView hs_method_b23be3b1(void* hs_self, void* root) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), root);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1184516,8 +1184523,8 @@ static HosihikariStringView hs_method_a8e28e9f(void* hs_self, void* root) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), root);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1184928,8 +1184935,8 @@ static HosihikariStringView hs_method_fb1c6970(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1185673,8 +1185680,8 @@ static HosihikariStringView hs_method_532b4aa6(void* hs_self, void* root) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), root);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1186260,8 +1186267,8 @@ static HosihikariStringView hs_method_9ba28924(void* hs_self, const char* defaul
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1187086,8 +1187093,8 @@ static HosihikariStringView hs_method_4e4e1158(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1188153,8 +1188160,8 @@ static HosihikariStringView hs_method_2c2376cf(void* hs_self, void* root) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), root);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1200416,8 +1200423,8 @@ static HosihikariStringView hs_method_a8a6e1a3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1217122,8 +1217129,8 @@ static HosihikariStringView hs_method_fdad1c89(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1220572,8 +1220579,8 @@ static HosihikariStringView hs_method_1556c26e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1235752,8 +1235759,8 @@ static HosihikariStringView hs_method_d48661f8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1239093,12 +1239100,12 @@ static void* hs_method_6de407c4(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1239975,8 +1239982,8 @@ static HosihikariStringView hs_method_b3ededfc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1240749,9 +1240756,9 @@ static HosihikariSharedHandle hs_method_fa86bb5f(void* hs_self, void* id) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), *reinterpret_cast<std::uint32_t const*>(id));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1240807,9 +1240814,9 @@ static HosihikariSharedHandle hs_method_0bfd360f(void* hs_self, void* dimensionT
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), *reinterpret_cast<std::uint32_t const*>(dimensionType));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1242956,8 +1242963,8 @@ static HosihikariSharedHandle hs_method_31c8eb23(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1242992,8 +1242999,8 @@ static HosihikariSharedHandle hs_method_420ac634(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1243028,8 +1243035,8 @@ static HosihikariSharedHandle hs_method_8186a01e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1243064,8 +1243071,8 @@ static HosihikariSharedHandle hs_method_c192a604(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1243190,8 +1243197,8 @@ static HosihikariSharedHandle hs_method_29ae1316(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1243286,8 +1243293,8 @@ static HosihikariSharedHandle hs_method_b2041838(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1243322,8 +1243329,8 @@ static HosihikariSharedHandle hs_method_f1ffe95e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1243868,8 +1243875,8 @@ static HosihikariSharedHandle hs_method_dc606894(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1243904,8 +1243911,8 @@ static HosihikariSharedHandle hs_method_1066be37(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1244030,8 +1244037,8 @@ static HosihikariSharedHandle hs_method_3a4af586(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1244066,8 +1244073,8 @@ static HosihikariSharedHandle hs_method_2d926361(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1244102,8 +1244109,8 @@ static HosihikariSharedHandle hs_method_a9cd8e01(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1244168,8 +1244175,8 @@ static HosihikariSharedHandle hs_method_6aefcca6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1244204,8 +1244211,8 @@ static HosihikariSharedHandle hs_method_f9495bd8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1244240,8 +1244247,8 @@ static HosihikariSharedHandle hs_method_b15a53a4(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1244426,8 +1244433,8 @@ static HosihikariSharedHandle hs_method_7a7a8a19(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1244462,8 +1244469,8 @@ static HosihikariSharedHandle hs_method_25625e45(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1244741,9 +1244748,9 @@ static HosihikariSharedHandle hs_method_011210df(void* hs_self, void* id) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), *reinterpret_cast<std::uint32_t const*>(id));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1244931,8 +1244938,8 @@ static HosihikariSharedHandle hs_method_9de90588(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1244967,8 +1244974,8 @@ static HosihikariSharedHandle hs_method_f682a918(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1245033,8 +1245040,8 @@ static HosihikariSharedHandle hs_method_edc6ad1d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1245069,8 +1245076,8 @@ static HosihikariSharedHandle hs_method_eaeed6cb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1245105,8 +1245112,8 @@ static HosihikariSharedHandle hs_method_208af62d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1245141,8 +1245148,8 @@ static HosihikariSharedHandle hs_method_37ad3f78(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1245237,8 +1245244,8 @@ static HosihikariSharedHandle hs_method_581647fe(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1245273,8 +1245280,8 @@ static HosihikariSharedHandle hs_method_d722dd70(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1245549,8 +1245556,8 @@ static HosihikariSharedHandle hs_method_4a8762a9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1245585,8 +1245592,8 @@ static HosihikariSharedHandle hs_method_a4f06e83(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1245651,8 +1245658,8 @@ static HosihikariSharedHandle hs_method_9748d826(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1245687,8 +1245694,8 @@ static HosihikariSharedHandle hs_method_2e9c33e3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1246028,8 +1246035,8 @@ static HosihikariSharedHandle hs_method_00f13df6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1246064,8 +1246071,8 @@ static HosihikariSharedHandle hs_method_e4deaf12(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1246130,8 +1246137,8 @@ static HosihikariSharedHandle hs_method_e993e4d7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1246259,9 +1246266,9 @@ static HosihikariSharedHandle hs_method_802102a9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_game_ref_handle(hs_locked);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1246326,8 +1246333,8 @@ static HosihikariSharedHandle hs_method_b0995470(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1246362,8 +1246369,8 @@ static HosihikariStringView hs_method_03328f05(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1246821,8 +1246828,8 @@ static HosihikariSharedHandle hs_method_39f61e0a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1246857,8 +1246864,8 @@ static HosihikariSharedHandle hs_method_becdb796(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247019,9 +1247026,9 @@ static HosihikariSharedHandle hs_method_2363956e(void* hs_self, void* dimensionT
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), *reinterpret_cast<std::uint32_t const*>(dimensionType));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247086,8 +1247093,8 @@ static HosihikariSharedHandle hs_method_f1f39641(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247122,8 +1247129,8 @@ static HosihikariSharedHandle hs_method_f03cf659(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247158,8 +1247165,8 @@ static HosihikariSharedHandle hs_method_e9f0b6c9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247194,8 +1247201,8 @@ static HosihikariSharedHandle hs_method_ea89a37a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247472,8 +1247479,8 @@ static HosihikariSharedHandle hs_method_5b7b028d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247572,8 +1247579,8 @@ static HosihikariSharedHandle hs_method_ed7e32eb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247669,8 +1247676,8 @@ static HosihikariSharedHandle hs_method_45892897(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247705,8 +1247712,8 @@ static HosihikariSharedHandle hs_method_77a2163b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247741,8 +1247748,8 @@ static HosihikariSharedHandle hs_method_a18ceec6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247807,8 +1247814,8 @@ static HosihikariSharedHandle hs_method_907691c5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247843,8 +1247850,8 @@ static HosihikariSharedHandle hs_method_fb3bc9ec(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247879,8 +1247886,8 @@ static HosihikariSharedHandle hs_method_e5aa8368(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1247915,8 +1247922,8 @@ static HosihikariSharedHandle hs_method_f47ba1e6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1248677,8 +1248684,8 @@ static HosihikariSharedHandle hs_method_f0cc2988(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1248743,8 +1248750,8 @@ static HosihikariSharedHandle hs_method_4d3d3993(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1248779,8 +1248786,8 @@ static HosihikariSharedHandle hs_method_852403c5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1248845,8 +1248852,8 @@ static HosihikariSharedHandle hs_method_d7f92ebe(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249021,8 +1249028,8 @@ static HosihikariSharedHandle hs_method_bdd9a51e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249117,8 +1249124,8 @@ static HosihikariSharedHandle hs_method_155d3033(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249153,8 +1249160,8 @@ static HosihikariSharedHandle hs_method_a007ebf8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249249,9 +1249256,9 @@ static HosihikariSharedHandle hs_method_ed4da5a6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249286,8 +1249293,8 @@ static HosihikariSharedHandle hs_method_f9486cb2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249472,8 +1249479,8 @@ static HosihikariSharedHandle hs_method_1ca8a5c7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249568,8 +1249575,8 @@ static HosihikariSharedHandle hs_method_a4aca0d8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249634,8 +1249641,8 @@ static HosihikariSharedHandle hs_method_49d12959(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249790,9 +1249797,9 @@ static HosihikariSharedHandle hs_method_59ddccb2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249827,9 +1249834,9 @@ static HosihikariSharedHandle hs_method_a39d62d2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249864,9 +1249871,9 @@ static HosihikariSharedHandle hs_method_b5c9b109(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249901,9 +1249908,9 @@ static HosihikariSharedHandle hs_method_361722a8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249938,8 +1249945,8 @@ static HosihikariSharedHandle hs_method_53cc1c27(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1249974,8 +1249981,8 @@ static HosihikariSharedHandle hs_method_fdc64f1f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1250070,8 +1250077,8 @@ static HosihikariSharedHandle hs_method_8e269a2c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1250106,8 +1250113,8 @@ static HosihikariSharedHandle hs_method_954a6ec2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1253932,8 +1253939,8 @@ static HosihikariSharedHandle hs_method_7ab4bb6e(void* hs_self, void* entityRef)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1253976,8 +1253983,8 @@ static HosihikariSharedHandle hs_method_6f28f7a4(void* hs_self, void* entityRef)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1254050,8 +1254057,8 @@ static HosihikariSharedHandle hs_method_8b27540b(void* hs_self, void* actor) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actor);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1254094,8 +1254101,8 @@ static HosihikariSharedHandle hs_method_64e42956(void* hs_self, void* entityRef)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1254190,8 +1254197,8 @@ static HosihikariSharedHandle hs_method_09bd2f16(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1255438,8 +1255445,8 @@ static HosihikariSharedHandle hs_method_6df60c9a(void* hs_self, void* entityRef,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage, lc);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1255594,8 +1255601,8 @@ static HosihikariSharedHandle hs_method_79df6ddb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1259260,8 +1259267,8 @@ static HosihikariSharedHandle hs_method_016d1e4b(void* hs_self, void* blockPos) 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), blockPos);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1262458,8 +1262465,8 @@ static HosihikariStringView hs_method_5a4c49fd(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1264066,8 +1264073,8 @@ static HosihikariSharedHandle hs_method_88f810cc(void* hs_self, void* dimension,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), dimension, chunkPos);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1264102,8 +1264109,8 @@ static HosihikariSharedHandle hs_method_f9ff6cd9(void* hs_self, void* dimension)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), dimension);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1264138,9 +1264145,9 @@ static HosihikariSharedHandle hs_method_b7f9d888(void* hs_self, void* dimensionM
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), dimensionManager);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1271154,8 +1271161,8 @@ static HosihikariStringView hs_method_e3d30c73(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1272479,8 +1272486,8 @@ static HosihikariStringView hs_method_6709366e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1272959,8 +1272966,8 @@ static HosihikariStringView hs_method_a9463ed4(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1274071,8 +1274078,8 @@ static HosihikariSharedHandle hs_method_8e53d67f(void* hs_self, const char* leve
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1274107,8 +1274114,8 @@ static HosihikariStringView hs_method_17e22142(void* hs_self, void* fullPath, vo
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), fullPath, worldsPath);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1278420,12 +1278427,12 @@ static void* hs_method_665a6a54(const char* seedInput_data, std::size_t seedInpu
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1278840,8 +1278847,8 @@ static HosihikariStringView hs_method_6748cfae(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1279320,8 +1279327,8 @@ static HosihikariStringView hs_method_54837da7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1281256,8 +1281263,8 @@ static HosihikariStringView hs_method_858221ae(void* hs_self, void* client, bool
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), client, isXboxLive);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1282721,8 +1282728,8 @@ static HosihikariStringView hs_method_4496415f(void* hs_self, void* fullPath, vo
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), fullPath, worldsPath);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1300151,8 +1300158,8 @@ static HosihikariStringView hs_method_8a5352e6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1300481,8 +1300488,8 @@ static HosihikariStringView hs_method_c6081592(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1306816,8 +1306823,8 @@ static HosihikariStringView hs_method_ecd007ff(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1307631,8 +1307638,8 @@ static HosihikariStringView hs_method_3c20f9c2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1313815,8 +1313822,8 @@ static HosihikariStringView hs_method_749d2143(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1330767,8 +1330774,8 @@ static HosihikariSharedHandle hs_method_28657ce3(void* hs_self, void* random) tr
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), random);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1330863,8 +1330870,8 @@ static HosihikariSharedHandle hs_method_9bb582e8(void* hs_self, void* cp, std::i
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, lm, readOnly);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1330929,8 +1330936,8 @@ static HosihikariSharedHandle hs_method_1b6153de(void* hs_self, void* cp) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1330965,8 +1330972,8 @@ static HosihikariSharedHandle hs_method_623399b2(void* hs_self, void* random) tr
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), random);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1337331,12 +1337338,12 @@ static void* hs_method_946672f1(void* hs_self, void* target, void* pos, void* ra
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), target, pos, random, trunkHeight, arg4, treeParams);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1337672,12 +1337679,12 @@ static void* hs_method_865c888f(void* hs_self, void* target, void* pos, void* ra
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), target, pos, random, treeHeight, renderParams, treeParams, canopy);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1338596,8 +1338603,8 @@ static HosihikariStringView hs_method_568fb09d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1340809,8 +1340816,8 @@ static HosihikariStringView hs_method_5b5b0c89(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1342573,8 +1342580,8 @@ static HosihikariStringView hs_method_13292c0f(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1349212,8 +1349219,8 @@ static HosihikariStringView hs_method_79ae442c(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1350149,12 +1350156,12 @@ static void* hs_method_47fc21b7(void* hs_self, void* target, void* pos, void* ra
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), target, pos, random, treeHeight, renderParams, treeParams, canopy);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1363243,12 +1363250,12 @@ static void* hs_method_90f3cd43(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1378602,8 +1378609,8 @@ static HosihikariSharedHandle hs_method_6fde3d4a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1378638,8 +1378645,8 @@ static HosihikariSharedHandle hs_method_006b886e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1390907,8 +1390914,8 @@ static HosihikariStringView hs_method_fb5733e9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1390943,8 +1390950,8 @@ static HosihikariStringView hs_method_24f8d4c6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1391071,8 +1391078,8 @@ static HosihikariStringView hs_method_e8d91dff(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1391138,8 +1391145,8 @@ static HosihikariStringView hs_method_522cb3b9(void* hs_self, std::uint64_t type
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), type, hs_str1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1392067,8 +1392074,8 @@ static HosihikariSharedHandle hs_method_ee8fb188(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1393093,8 +1393100,8 @@ static HosihikariSharedHandle hs_method_e2b097b9(void* hs_self, void* function) 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), function);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1393466,8 +1393473,9 @@ static void* hs_method_5b502d06(void* hs_self, void* blockType, void* pos, bool 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), blockType, pos, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1393479,7 +1393487,6 @@ static void* hs_method_5b502d06(void* hs_self, void* blockType, void* pos, bool 
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1393514,8 +1393521,9 @@ static void* hs_method_a9d2ed02(void* hs_self, void* blockType, std::int32_t x, 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), blockType, x, y, z, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1393527,7 +1393535,6 @@ static void* hs_method_a9d2ed02(void* hs_self, void* blockType, std::int32_t x, 
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1393562,8 +1393569,9 @@ static void* hs_method_51be5ff8(void* hs_self, void* mob, void* pos, bool expect
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), mob, pos, expectedReach);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1393575,7 +1393583,6 @@ static void* hs_method_51be5ff8(void* hs_self, void* mob, void* pos, bool expect
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1393610,8 +1393617,9 @@ static void* hs_method_23633379(void* hs_self, void* item, void* pos, bool* hs_h
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), item, pos);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1393623,7 +1393631,6 @@ static void* hs_method_23633379(void* hs_self, void* item, void* pos, bool* hs_h
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1393658,8 +1393665,9 @@ static void* hs_method_0fa2b942(void* hs_self, void* pos, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1393671,7 +1393679,6 @@ static void* hs_method_0fa2b942(void* hs_self, void* pos, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1393707,8 +1393714,9 @@ static void* hs_method_f1f63728(void* hs_self, void* actorIdentifier, std::int32
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, armorSlot, hs_str2, dataValue, pos, hasArmor);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1393720,7 +1393728,6 @@ static void* hs_method_f1f63728(void* hs_self, void* actorIdentifier, std::int32
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1393756,8 +1393763,9 @@ static void* hs_method_3bde7f37(void* hs_self, void* actorIdentifier, const char
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, hs_str1, pos, hasComponent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1393769,7 +1393777,6 @@ static void* hs_method_3bde7f37(void* hs_self, void* actorIdentifier, const char
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1393804,8 +1393811,9 @@ static void* hs_method_f39943c4(void* hs_self, void* actor, bool expectedPresent
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actor, expectedPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1393817,7 +1393825,6 @@ static void* hs_method_f39943c4(void* hs_self, void* actor, bool expectedPresent
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1393852,8 +1393859,9 @@ static void* hs_method_bf492012(void* hs_self, void* actor, void* pos, bool expe
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actor, pos, expectedPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1393865,7 +1393873,6 @@ static void* hs_method_bf492012(void* hs_self, void* actor, void* pos, bool expe
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1393900,8 +1393907,9 @@ static void* hs_method_6d26c3a2(void* hs_self, void* actorIdentifier, bool isPre
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1393913,7 +1393921,6 @@ static void* hs_method_6d26c3a2(void* hs_self, void* actorIdentifier, bool isPre
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1393948,8 +1393955,9 @@ static void* hs_method_14b095a9(void* hs_self, void* actorIdentifier, void* pos,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, pos, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1393961,7 +1393969,6 @@ static void* hs_method_14b095a9(void* hs_self, void* actorIdentifier, void* pos,
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1393996,8 +1394003,9 @@ static void* hs_method_06e34cba(void* hs_self, void* actorIdentifier, void* pos,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, pos, distance, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394009,7 +1394017,6 @@ static void* hs_method_06e34cba(void* hs_self, void* actorIdentifier, void* pos,
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394044,8 +1394051,9 @@ static void* hs_method_fc791b2a(void* hs_self, void* actorIdentifier, std::int32
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, x, y, z, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394057,7 +1394065,6 @@ static void* hs_method_fc791b2a(void* hs_self, void* actorIdentifier, std::int32
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394092,8 +1394099,9 @@ static void* hs_method_66399a52(void* hs_self, void* actorIdentifier, void* pos,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, pos, isTouching);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394105,7 +1394113,6 @@ static void* hs_method_66399a52(void* hs_self, void* actorIdentifier, void* pos,
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394140,8 +1394147,9 @@ static void* hs_method_c81dca6a(void* hs_self, void* pos, bool expectedWaterlogg
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, expectedWaterlogged);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394153,7 +1394161,6 @@ static void* hs_method_c81dca6a(void* hs_self, void* pos, bool expectedWaterlogg
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394188,8 +1394195,9 @@ static void* hs_method_5637f114(void* hs_self, void* itemType, void* pos, float 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), itemType, pos, searchDistance, expectedCount);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394201,7 +1394209,6 @@ static void* hs_method_5637f114(void* hs_self, void* itemType, void* pos, float 
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394236,8 +1394243,9 @@ static void* hs_method_b9ffa552(void* hs_self, void* item, void* pos, float sear
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), item, pos, searchDistance, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394249,7 +1394257,6 @@ static void* hs_method_b9ffa552(void* hs_self, void* item, void* pos, float sear
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394284,8 +1394291,9 @@ static void* hs_method_c83b9c91(void* hs_self, void* item, std::int32_t x, std::
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), item, x, y, z, searchDistance, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394297,7 +1394305,6 @@ static void* hs_method_c83b9c91(void* hs_self, void* item, std::int32_t x, std::
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394332,8 +1394339,9 @@ static void* hs_method_00f04467(void* hs_self, void* pos, std::int32_t expectedP
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, expectedPower);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394345,7 +1394353,6 @@ static void* hs_method_00f04467(void* hs_self, void* pos, std::int32_t expectedP
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394380,8 +1394387,9 @@ static void* hs_method_df5c0614(void* hs_self, void* pos, bool dropResources, bo
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, dropResources);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394393,7 +1394401,6 @@ static void* hs_method_df5c0614(void* hs_self, void* pos, bool dropResources, bo
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394428,8 +1394435,9 @@ static void* hs_method_4769a814(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394441,7 +1394449,6 @@ static void* hs_method_4769a814(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394492,8 +1394499,9 @@ static void* hs_method_37152255(void* hs_self, void* mob, std::int32_t jumpAmoun
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), mob, jumpAmount);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394505,7 +1394513,6 @@ static void* hs_method_37152255(void* hs_self, void* mob, std::int32_t jumpAmoun
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394564,8 +1394571,9 @@ static void* hs_method_3ae69321(void* hs_self, void* buttonPos, bool* hs_hasValu
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), buttonPos);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394577,7 +1394585,6 @@ static void* hs_method_3ae69321(void* hs_self, void* buttonPos, bool* hs_hasValu
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394612,8 +1394619,9 @@ static void* hs_method_caf7190b(void* hs_self, std::int32_t x, std::int32_t y, s
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), x, y, z);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394625,7 +1394633,6 @@ static void* hs_method_caf7190b(void* hs_self, std::int32_t x, std::int32_t y, s
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394661,8 +1394668,9 @@ static void* hs_method_ddb2f670(void* hs_self, const char* text_data, std::size_
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394674,7 +1394682,6 @@ static void* hs_method_ddb2f670(void* hs_self, const char* text_data, std::size_
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394709,8 +1394716,9 @@ static void* hs_method_d29a3960(void* hs_self, void* leverPos, bool* hs_hasValue
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), leverPos);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394722,7 +1394730,6 @@ static void* hs_method_d29a3960(void* hs_self, void* leverPos, bool* hs_hasValue
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394757,8 +1394764,9 @@ static void* hs_method_14bc4848(void* hs_self, std::int32_t x, std::int32_t y, s
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), x, y, z);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394770,7 +1394778,6 @@ static void* hs_method_14bc4848(void* hs_self, std::int32_t x, std::int32_t y, s
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394805,8 +1394812,9 @@ static void* hs_method_6ef66867(void* hs_self, void* pos, std::int32_t duration,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, duration);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394818,7 +1394826,6 @@ static void* hs_method_6ef66867(void* hs_self, void* pos, std::int32_t duration,
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394883,8 +1394890,9 @@ static void* hs_method_32de3790(void* hs_self, void* pos, void* block, std::int3
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, block, updateFlags);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394896,7 +1394904,6 @@ static void* hs_method_32de3790(void* hs_self, void* pos, void* block, std::int3
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1394931,8 +1394938,9 @@ static void* hs_method_4a8cfce1(void* hs_self, std::int32_t x, std::int32_t y, s
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), x, y, z, block, updateFlags);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1394944,7 +1394952,6 @@ static void* hs_method_4a8cfce1(void* hs_self, std::int32_t x, std::int32_t y, s
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1395009,8 +1395016,9 @@ static void* hs_method_8c8aba39(void* hs_self, void* pos, std::int32_t _fluidTyp
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, _fluidType);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1395022,7 +1395030,6 @@ static void* hs_method_8c8aba39(void* hs_self, void* pos, std::int32_t _fluidTyp
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1395087,8 +1395094,9 @@ static void* hs_method_9d2878b8(void* hs_self, void* actor, std::int32_t fuseLen
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actor, fuseLength);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1395100,7 +1395108,6 @@ static void* hs_method_9d2878b8(void* hs_self, void* actor, std::int32_t fuseLen
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1395135,8 +1395142,9 @@ static void* hs_method_26a2ecc2(void* hs_self, void* pos, std::int32_t fromFace,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, fromFace, direction);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1395148,7 +1395156,6 @@ static void* hs_method_26a2ecc2(void* hs_self, void* pos, std::int32_t fromFace,
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1395366,8 +1395373,9 @@ static void* hs_method_bd533a89(void* hs_self, void* pos, const char* event_data
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, hs_str1, static_cast<void*>(&hs_vec2));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1395379,7 +1395387,6 @@ static void* hs_method_bd533a89(void* hs_self, void* pos, const char* event_data
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1395414,8 +1395421,9 @@ static void* hs_method_b2f51221(void* hs_self, void* mob, void* pos, float speed
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), mob, pos, speedModifier);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1395427,7 +1395435,6 @@ static void* hs_method_b2f51221(void* hs_self, void* mob, void* pos, float speed
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1395462,8 +1395469,9 @@ static void* hs_method_151391c9(void* hs_self, void* mob, void* pos, float speed
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), mob, pos, speedModifier);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1395475,7 +1395483,6 @@ static void* hs_method_151391c9(void* hs_self, void* mob, void* pos, float speed
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1395831,12 +1395838,12 @@ static void* hs_method_00bcdbae(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1395871,12 +1395878,12 @@ static void* hs_method_6a842185(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1395944,12 +1395951,12 @@ static void* hs_method_8ac5bae4(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(24), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     setLastError("the optional payload copy or destructor symbol is unavailable");
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1396673,8 +1396680,8 @@ static HosihikariSharedHandle hs_method_781ef32b(std::int32_t id) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(static_cast<void*>(hs_typedStorage), id);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1404372,9 +1404379,9 @@ static float hs_method_5e6b7fc1(void* hs_self, void* killingDamage, bool* hs_has
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), killingDamage);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<float>(*hs_result) : float{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -1407596,8 +1407603,8 @@ static HosihikariStringView hs_method_063bfa4a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1408076,8 +1408083,8 @@ static HosihikariStringView hs_method_c2a43d87(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1409424,8 +1409431,8 @@ static HosihikariStringView hs_method_20dc673d(std::uint32_t effectId) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(reinterpret_cast<HsString*>(hs_stringStorage), effectId);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1411207,8 +1411214,8 @@ static HosihikariStringView hs_method_612b361f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1411873,8 +1411880,8 @@ static HosihikariStringView hs_method_74b8ac3c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1412353,8 +1412360,8 @@ static HosihikariStringView hs_method_d40b45a2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1414040,8 +1414047,8 @@ static HosihikariStringView hs_method_2655f2fb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1414582,8 +1414589,8 @@ static HosihikariStringView hs_method_1293009d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1421077,8 +1421084,8 @@ static HosihikariStringView hs_method_a75daccb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1421585,8 +1421592,8 @@ static HosihikariStringView hs_method_062a3416(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1422438,8 +1422445,8 @@ static HosihikariStringView hs_method_cf5edf30(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1423151,8 +1423158,8 @@ static HosihikariStringView hs_method_f32c2e5f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1423257,8 +1423264,9 @@ static void* hs_method_edcad9d9(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(96), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0MolangScriptArg@@QEAA@AEBU0@@Z");
@@ -1423270,7 +1423278,6 @@ static void* hs_method_edcad9d9(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1424426,8 +1424433,8 @@ static HosihikariStringView hs_method_52fa8554(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1424598,8 +1424605,9 @@ static void* hs_method_95aaa9c9(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(24), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0CompoundTag@@QEAA@AEBV0@@Z");
@@ -1424611,7 +1424619,6 @@ static void* hs_method_95aaa9c9(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1434352,8 +1434359,8 @@ static HosihikariStringView hs_method_1ee3c737(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1436969,8 +1436976,8 @@ static HosihikariStringView hs_method_c95f814a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1438509,8 +1438516,8 @@ static HosihikariStringView hs_method_d1d50750(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1442177,8 +1442184,8 @@ static HosihikariStringView hs_method_6df22346(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1448719,9 +1448726,9 @@ static HosihikariSharedHandle hs_method_6b878686(void* hs_self, std::int32_t typ
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), type);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1462060,12 +1462067,12 @@ static void* hs_method_4ba49e8b(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1462670,8 +1462677,8 @@ static HosihikariStringView hs_method_85148ef7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1473622,9 +1473629,9 @@ static bool hs_method_629847e8(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<bool>(*hs_result) : bool{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -1473659,9 +1473666,9 @@ static HosihikariStringView hs_method_dd69d4a7(void* hs_self, std::uint64_t arg0
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1473696,9 +1473703,9 @@ static std::uint32_t hs_method_e4071205(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint32_t>(*hs_result) : std::uint32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -1494625,12 +1494632,12 @@ static void* hs_method_74bd3a83(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1500959,8 +1500966,8 @@ static HosihikariStringView hs_method_8c2db37b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1502381,8 +1502388,8 @@ static HosihikariSharedHandle hs_method_d6b96a77(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1511898,8 +1511905,8 @@ static HosihikariStringView hs_method_04325bb0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1512695,8 +1512702,8 @@ static HosihikariSharedHandle hs_method_b9a32ba0(void* hs_self, void* cp, std::i
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, lm, readOnly);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1512773,8 +1512780,8 @@ static HosihikariSharedHandle hs_method_6756613e(void* hs_self, void* cp) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1512803,8 +1512810,8 @@ static HosihikariSharedHandle hs_method_14fb8054(void* hs_self, void* cp, std::i
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, lm, readOnly);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1512977,8 +1512984,8 @@ static HosihikariSharedHandle hs_method_0feef24a(void* hs_self, void* cp, std::i
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, lm, readOnly);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1513043,8 +1513050,8 @@ static HosihikariSharedHandle hs_method_87fb8055(void* hs_self, void* cp) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1513079,8 +1513086,8 @@ static HosihikariSharedHandle hs_method_32b9678f(void* hs_self, void* cp, std::i
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, lm, readOnly);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1514442,8 +1514449,8 @@ static HosihikariStringView hs_method_f4c07318(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1514496,8 +1514503,8 @@ static HosihikariStringView hs_method_2eac1b7f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1514630,8 +1514637,8 @@ static HosihikariStringView hs_method_ab0e4f63(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1517227,8 +1517234,8 @@ static HosihikariStringView hs_method_dad043ce(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1518152,8 +1518159,8 @@ static HosihikariStringView hs_method_05ddf63d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1518632,8 +1518639,8 @@ static HosihikariStringView hs_method_a8affd41(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1526575,8 +1526582,8 @@ static HosihikariStringView hs_method_d41dc9ce(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1528898,12 +1528905,12 @@ static void* hs_method_501b0ab1(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1529029,12 +1529036,12 @@ static void* hs_method_af617911(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1536604,8 +1536611,8 @@ static HosihikariStringView hs_method_27f1711c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1538384,8 +1538391,8 @@ static HosihikariStringView hs_method_52531f0d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1539935,9 +1539942,9 @@ static HosihikariStringView hs_method_2723f6b7(void* hs_self, const char* arg0_d
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1558902,8 +1558909,8 @@ static HosihikariStringView hs_method_a726322f(void* hs_self, void* arg0, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1558938,8 +1558945,8 @@ static HosihikariStringView hs_method_bcd49d6c(void* hs_self, void* item, bool a
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), item, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1563819,8 +1563826,8 @@ static HosihikariStringView hs_method_e2f8a1e2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1564299,8 +1564306,8 @@ static HosihikariStringView hs_method_b08e53d8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1567115,8 +1567122,8 @@ static HosihikariStringView hs_method_402dc498(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1569127,12 +1569134,12 @@ static void* hs_method_c06163f0(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1569370,12 +1569377,12 @@ static void* hs_method_4f4d6979(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1573341,8 +1573348,9 @@ static void* hs_method_1f8977d6(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(24), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0XoroshiroPositionalRandomFactory@@QEAA@AEBV0@@Z");
@@ -1573354,7 +1573362,6 @@ static void* hs_method_1f8977d6(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1574142,8 +1574149,9 @@ static void* hs_method_ad524006(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(24), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0XoroshiroPositionalRandomFactory@@QEAA@AEBV0@@Z");
@@ -1574155,7 +1574163,6 @@ static void* hs_method_ad524006(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1575435,8 +1575442,9 @@ static void* hs_method_86ead8df(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(24), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0XoroshiroPositionalRandomFactory@@QEAA@AEBV0@@Z");
@@ -1575448,7 +1575456,6 @@ static void* hs_method_86ead8df(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1580438,8 +1580445,8 @@ static HosihikariStringView hs_method_c13c6fb9(void* hs_self, void* loc) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), loc);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1580673,8 +1580680,8 @@ static HosihikariStringView hs_method_fe0446be(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1583940,8 +1583947,8 @@ static HosihikariStringView hs_method_70515697(void* hs_self, void* loc) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), loc);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1586302,8 +1586309,8 @@ static HosihikariStringView hs_method_65d5944f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1587188,8 +1587195,8 @@ static HosihikariStringView hs_method_60f9aae9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1589179,8 +1589186,8 @@ static HosihikariStringView hs_method_fb09ab50(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1600377,12 +1600384,12 @@ static void* hs_method_da36e5cb(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1615227,8 +1615234,8 @@ static HosihikariStringView hs_method_db73ebd5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1644239,8 +1644246,8 @@ static HosihikariStringView hs_method_c7a8ae02(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1647644,8 +1647651,8 @@ static HosihikariStringView hs_method_9a1d5457(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1648124,8 +1648131,8 @@ static HosihikariStringView hs_method_228f1f4d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1649597,8 +1649604,8 @@ static HosihikariStringView hs_method_7777c4da(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1652751,8 +1652758,8 @@ static HosihikariSharedHandle hs_method_078ef0a1(void* hs_self, void* mainChunkS
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), mainChunkSource);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1653083,8 +1653090,8 @@ static HosihikariStringView hs_method_92cf79fa(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1653725,8 +1653732,8 @@ static HosihikariSharedHandle hs_method_86049627(void* hs_self, void* mainChunkS
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), mainChunkSource);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1655743,8 +1655750,8 @@ static HosihikariSharedHandle hs_method_6631c27b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1655910,8 +1655917,8 @@ static HosihikariStringView hs_method_38532f44(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1656117,12 +1656124,12 @@ static void* hs_method_761079c5(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(4), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(4));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1656157,12 +1656164,12 @@ static void* hs_method_ccdc010c(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1656191,8 +1656198,8 @@ static HosihikariStringView hs_method_f06dac02(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1656368,8 +1656375,9 @@ static void* hs_method_d549a210(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(72), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0NetworkStatus@NetworkPeer@@QEAA@AEBU01@@Z");
@@ -1656381,7 +1656389,6 @@ static void* hs_method_d549a210(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1656416,8 +1656423,9 @@ static void* hs_method_f8ba02b1(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0PlayerPartyInfo@@QEAA@AEBU0@@Z");
@@ -1656429,7 +1656437,6 @@ static void* hs_method_f8ba02b1(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1656491,8 +1656498,8 @@ static HosihikariStringView hs_method_a64843d0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1656618,8 +1656625,8 @@ static HosihikariStringView hs_method_43139143(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1656966,8 +1656973,8 @@ static HosihikariStringView hs_method_d67cb6eb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1663969,8 +1663976,8 @@ static HosihikariStringView hs_method_03bf3498(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1664449,8 +1664456,8 @@ static HosihikariStringView hs_method_86b79e54(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1665779,8 +1665786,8 @@ static HosihikariStringView hs_method_7acaba08(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1666751,8 +1666758,8 @@ static HosihikariStringView hs_method_4deffa92(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1668915,9 +1668922,9 @@ static bool hs_method_9a305fed(void* hs_self, void* arg0, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<bool>(*hs_result) : bool{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -1669454,9 +1669461,9 @@ static bool hs_method_be40527f(void* hs_self, void* rule, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<bool>(*hs_result) : bool{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -1669790,12 +1669797,12 @@ static void* hs_method_e078ace2(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1669824,12 +1669831,12 @@ static void* hs_method_29666fa2(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1669957,8 +1669964,8 @@ static HosihikariStringView hs_method_4e53971c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1670061,12 +1670068,12 @@ static void* hs_method_dba22a9c(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1670368,12 +1670375,12 @@ static void* hs_method_7bc6dfc2(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1670408,12 +1670415,12 @@ static void* hs_method_70ea88d2(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1670571,8 +1670578,8 @@ static HosihikariStringView hs_method_e419ffc7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1670699,12 +1670706,12 @@ static void* hs_method_5d904afa(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1674386,8 +1674393,8 @@ static HosihikariStringView hs_method_29a5c892(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1677631,8 +1677638,8 @@ static HosihikariStringView hs_method_7f7d68b7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1678111,8 +1678118,8 @@ static HosihikariStringView hs_method_9dabe702(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1679383,8 +1679390,8 @@ static HosihikariStringView hs_method_8827a081(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1679863,8 +1679870,8 @@ static HosihikariStringView hs_method_33bf5113(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1684283,8 +1684290,8 @@ static HosihikariStringView hs_method_d4205653(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1684763,8 +1684770,8 @@ static HosihikariStringView hs_method_1c449a20(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1688916,8 +1688923,8 @@ static HosihikariStringView hs_method_0bffa4b3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1690219,8 +1690226,8 @@ static HosihikariStringView hs_method_081a2d94(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1692671,8 +1692678,8 @@ static HosihikariStringView hs_method_705701d0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1707054,8 +1707061,8 @@ static HosihikariStringView hs_method_ab6b6559(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1707907,8 +1707914,8 @@ static HosihikariStringView hs_method_c1efe71a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1710372,8 +1710379,8 @@ static HosihikariStringView hs_method_b9da7440(std::int32_t potionType, float ti
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(reinterpret_cast<HsString*>(hs_stringStorage), potionType, timeMod, effect);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1710402,8 +1710409,8 @@ static HosihikariStringView hs_method_a278b43d(void* hs_self, std::int32_t potio
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), potionType);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1712252,8 +1712259,8 @@ static HosihikariStringView hs_method_8106ccb0(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1712288,8 +1712295,8 @@ static HosihikariStringView hs_method_605b3a24(void* hs_self, void* stack, bool 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), stack, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1717202,8 +1717209,8 @@ static HosihikariStringView hs_method_024841f0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1717330,12 +1717337,12 @@ static void* hs_method_3ff0738b(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1720745,8 +1720752,8 @@ static HosihikariStringView hs_method_12b25377(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1734339,9 +1734346,9 @@ static bool hs_method_dceb271e(void* hs_self, std::uint64_t h, bool* hs_hasValue
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), h);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<bool>(*hs_result) : bool{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -1734417,9 +1734424,9 @@ static std::uint64_t hs_method_8f8963cd(void* hs_self, std::uint64_t propertyNam
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), propertyNameHash, propertyType);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint64_t>(*hs_result) : std::uint64_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -1744511,8 +1744518,8 @@ static HosihikariStringView hs_method_819f8235(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1773566,8 +1773573,8 @@ static HosihikariStringView hs_method_a5d0f11e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1773596,8 +1773603,8 @@ static HosihikariStringView hs_method_ad948e85(void* hs_self, std::int8_t portDe
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), portDelineator);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1774944,8 +1774951,8 @@ static HosihikariStringView hs_method_6a16074a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1786451,12 +1786458,12 @@ static void* hs_method_67a2f31e(void* mob, std::int32_t xzDist, std::int32_t yDi
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(static_cast<void*>(hs_typedStorage), mob, xzDist, yDist, avoidPos, blockTest, tries);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1803144,8 +1803151,8 @@ static HosihikariStringView hs_method_5136320e(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1804926,12 +1804933,12 @@ static void* hs_method_1f74e592(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1817662,8 +1817669,8 @@ static HosihikariStringView hs_method_b3cd8c68(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1821030,8 +1821037,8 @@ static HosihikariStringView hs_method_25317742(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1821510,8 +1821517,8 @@ static HosihikariStringView hs_method_a7a9da5e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1822417,8 +1822424,8 @@ static HosihikariStringView hs_method_a45721ca(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1822897,8 +1822904,8 @@ static HosihikariStringView hs_method_4321faee(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1824055,8 +1824062,8 @@ static HosihikariStringView hs_method_cb545445(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1832279,8 +1832286,8 @@ static HosihikariSharedHandle hs_method_bbe25758(void* hs_self, void* ops) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), ops);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1832310,8 +1832317,8 @@ static HosihikariSharedHandle hs_method_e2a4a57c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1832928,8 +1832935,8 @@ static HosihikariStringView hs_method_b47eb116(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1833845,8 +1833852,8 @@ static HosihikariStringView hs_method_0de057f6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1834703,8 +1834710,8 @@ static HosihikariStringView hs_method_418a4562(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1835497,8 +1835504,8 @@ static HosihikariStringView hs_method_ce529003(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1839978,8 +1839985,8 @@ static HosihikariStringView hs_method_25fe4e16(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1840954,8 +1840961,8 @@ static HosihikariStringView hs_method_7be44b1f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1841861,8 +1841868,8 @@ static HosihikariStringView hs_method_9383c2bf(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1842827,8 +1842834,8 @@ static HosihikariStringView hs_method_3f45bb1e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1845845,8 +1845852,8 @@ static HosihikariSharedHandle hs_method_21e8c1ab(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1846013,8 +1846020,8 @@ static HosihikariSharedHandle hs_method_ec1e4db3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1846079,8 +1846086,8 @@ static HosihikariSharedHandle hs_method_ee3aebfc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1846343,8 +1846350,8 @@ static HosihikariSharedHandle hs_method_5d1003a3(void* hs_self, void* idAndVersi
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), idAndVersion);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1846469,8 +1846476,8 @@ static HosihikariSharedHandle hs_method_209aa033(void* hs_self, void* idAndVersi
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), idAndVersion, requireOwnership, selectionPolicy);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1846709,8 +1846716,8 @@ static HosihikariSharedHandle hs_method_2a018094(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1847436,8 +1847443,8 @@ static HosihikariSharedHandle hs_method_341da8a8(void* hs_self, void* ops) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), ops);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1847472,8 +1847479,8 @@ static HosihikariSharedHandle hs_method_a80814f9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -1848293,8 +1848300,8 @@ static HosihikariStringView hs_method_2a85ecc9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1849352,8 +1849359,8 @@ static HosihikariStringView hs_method_675e6be9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1852796,8 +1852803,8 @@ static HosihikariStringView hs_method_01c7833c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1875060,8 +1875067,8 @@ static HosihikariStringView hs_method_a1331575(void* hs_self, void* block) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), block);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1876997,12 +1877004,12 @@ static void* hs_method_443e65bc(void* hs_self, void* region, void* pos, bool* hs
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), region, pos);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1878401,8 +1878408,8 @@ static HosihikariStringView hs_method_b3f34f8c(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1881040,8 +1881047,8 @@ static HosihikariStringView hs_method_7e7a2ba7(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1882854,12 +1882861,12 @@ static void* hs_method_41d19081(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1883478,12 +1883485,12 @@ static void* hs_method_2c5299d9(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1888026,12 +1888033,12 @@ static void* hs_method_c9ae977e(void* hs_self, void* id, void* objectiveHash, bo
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), id, objectiveHash);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(16), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(16));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1892439,8 +1892446,8 @@ static HosihikariStringView hs_method_c3d3b9e7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1892567,12 +1892574,12 @@ static void* hs_method_aacbd087(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1897725,8 +1897732,8 @@ static HosihikariStringView hs_method_ad199dc9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1899429,8 +1899436,9 @@ static void* hs_method_3d01d3fa(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -1899442,7 +1899450,6 @@ static void* hs_method_3d01d3fa(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1953907,12 +1953914,12 @@ static void* hs_method_9ff86df0(void* hs_self, const char* name_data, std::size_
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(64), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     setLastError("the optional payload copy or destructor symbol is unavailable");
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1955126,9 +1955133,9 @@ static HosihikariStringView hs_method_717de919(void* hs_self, const char* path_d
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1955220,8 +1955227,8 @@ static HosihikariStringView hs_method_78167310(void* hs_self, const char* path_d
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1961111,8 +1961118,8 @@ static HosihikariStringView hs_method_cb16d35d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1962572,12 +1962579,12 @@ static void* hs_method_ff251fd2(void* hs_self, const char* name_data, std::size_
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(64), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     setLastError("the optional payload copy or destructor symbol is unavailable");
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1962864,8 +1962871,8 @@ static HosihikariStringView hs_method_e2c01849(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1963150,12 +1963157,12 @@ static void* hs_method_4afe9039(void* hs_self, void* handle, void* name, void* e
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage, name, expectedType);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(72), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     setLastError("the optional payload copy or destructor symbol is unavailable");
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1963896,12 +1963903,12 @@ static void* hs_method_40e77682(void* hs_self, void* contextId, void* type, bool
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage, type, allowUnknownTypes);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(72), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     setLastError("the optional payload copy or destructor symbol is unavailable");
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1967205,12 +1967212,12 @@ static void* hs_method_ba98efbc(void* hs_self, void* arg0, void* arg1, bool arg2
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage, arg1, arg2);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(72), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     setLastError("the optional payload copy or destructor symbol is unavailable");
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1970218,12 +1970225,12 @@ static void* hs_method_90285a27(void* hs_self, void* handle, void* name, void* e
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage, name, expectedType);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(72), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     setLastError("the optional payload copy or destructor symbol is unavailable");
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1971130,12 +1971137,12 @@ static void* hs_method_84ae91f8(void* hs_self, void* contextId, void* type, bool
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_arg0Storage, type, allowUnknownTypes);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(72), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     setLastError("the optional payload copy or destructor symbol is unavailable");
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1980933,12 +1980940,12 @@ static void* hs_method_70e02bf7(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1989885,8 +1989892,8 @@ static HosihikariStringView hs_method_f48c2940(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1993269,8 +1993276,8 @@ static HosihikariStringView hs_method_4a88efd6(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -1994043,12 +1994050,12 @@ static void* hs_method_8b6b7664(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -1997663,8 +1997670,8 @@ static HosihikariStringView hs_method_1a6199f5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2002608,8 +2002615,8 @@ static HosihikariStringView hs_method_ce06b0c4(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2002712,12 +2002719,12 @@ static void* hs_method_d886f58b(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2003062,8 +2003069,8 @@ static HosihikariStringView hs_method_350aab54(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2003190,12 +2003197,12 @@ static void* hs_method_8c199800(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2004183,8 +2004190,8 @@ static HosihikariSharedHandle hs_method_b7ec08cb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2004219,8 +2004226,8 @@ static HosihikariSharedHandle hs_method_29c22328(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2004255,8 +2004262,8 @@ static HosihikariSharedHandle hs_method_408b7a41(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2004291,8 +2004298,8 @@ static HosihikariSharedHandle hs_method_09977dcd(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2004846,9 +2004853,9 @@ static HosihikariStringView hs_method_d22f7ead(void* hs_self, const char* player
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0, gameplayUserManager);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2012395,8 +2012402,8 @@ static HosihikariSharedHandle hs_method_da7c1290(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2012431,8 +2012438,8 @@ static HosihikariSharedHandle hs_method_dccf2490(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2012527,8 +2012534,8 @@ static HosihikariSharedHandle hs_method_a7f833cd(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2012653,8 +2012660,8 @@ static HosihikariSharedHandle hs_method_09f6c0e1(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2012689,8 +2012696,8 @@ static HosihikariSharedHandle hs_method_4d1bcd00(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2012755,9 +2012762,9 @@ static HosihikariSharedHandle hs_method_1e2125b4(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2012792,8 +2012799,8 @@ static HosihikariSharedHandle hs_method_a2d2cb6e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2013445,8 +2013452,8 @@ static HosihikariSharedHandle hs_method_f9afe9fd(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2013970,8 +2013977,8 @@ static HosihikariSharedHandle hs_method_93c7c7bb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2015919,8 +2015926,9 @@ static void* hs_method_7512fdf3(void* hs_self, void* source, void* packet, bool*
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), source, packet);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(384), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0PlayerAuthenticationInfo@@QEAA@AEBU0@@Z");
@@ -2015932,7 +2015940,6 @@ static void* hs_method_7512fdf3(void* hs_self, void* source, void* packet, bool*
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2016853,8 +2016860,9 @@ static void* hs_method_b789fa71(void* hs_self, void* source, void* packet, bool*
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), source, packet);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(384), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0PlayerAuthenticationInfo@@QEAA@AEBU0@@Z");
@@ -2016866,7 +2016874,6 @@ static void* hs_method_b789fa71(void* hs_self, void* source, void* packet, bool*
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2017011,8 +2017018,8 @@ static HosihikariSharedHandle hs_method_c728ed90(void* hs_self, void* source, vo
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), source, connectionRequest, playerInfo);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_game_ref_handle(hs_shared);
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2029006,8 +2029013,8 @@ static HosihikariSharedHandle hs_method_5c26b05d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2029036,8 +2029043,8 @@ static HosihikariStringView hs_method_bfabd54a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2029102,8 +2029109,9 @@ static void* hs_method_66babe32(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0PlayerPartyInfo@@QEAA@AEBU0@@Z");
@@ -2029115,7 +2029123,6 @@ static void* hs_method_66babe32(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2035341,8 +2035348,8 @@ static HosihikariStringView hs_method_7bb492e8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2035946,8 +2035953,8 @@ static HosihikariStringView hs_method_d67c57b5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2036454,8 +2036461,8 @@ static HosihikariStringView hs_method_fd0b0d80(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2039224,8 +2039231,8 @@ static HosihikariStringView hs_method_77b22487(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2040291,8 +2040298,8 @@ static HosihikariStringView hs_method_30b4e5dc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2040955,8 +2040962,8 @@ static HosihikariStringView hs_method_340ac67b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2041435,8 +2041442,8 @@ static HosihikariStringView hs_method_f8a46c4e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2042446,8 +2042453,8 @@ static HosihikariStringView hs_method_ca2a49e0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2043255,8 +2043262,8 @@ static HosihikariStringView hs_method_82dbf25a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2045649,8 +2045656,8 @@ static HosihikariStringView hs_method_4db440d1(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2046596,8 +2046603,8 @@ static HosihikariStringView hs_method_668ffe67(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2047390,8 +2047397,8 @@ static HosihikariStringView hs_method_9f8cfdb1(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2048059,8 +2048066,8 @@ static HosihikariStringView hs_method_d2bee544(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2048539,8 +2048546,8 @@ static HosihikariStringView hs_method_6fba61f8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2049539,8 +2049546,8 @@ static HosihikariStringView hs_method_f2bb00ef(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2050333,8 +2050340,8 @@ static HosihikariStringView hs_method_416d1506(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2052000,8 +2052007,8 @@ static HosihikariStringView hs_method_5544fe13(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2052794,8 +2052801,8 @@ static HosihikariStringView hs_method_bf762b21(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2054013,8 +2054020,8 @@ static HosihikariStringView hs_method_5a5ece22(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2054807,8 +2054814,8 @@ static HosihikariStringView hs_method_357d1bfe(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2055738,8 +2055745,8 @@ static HosihikariStringView hs_method_1748220d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2056218,8 +2056225,8 @@ static HosihikariStringView hs_method_c70be945(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2057034,8 +2057041,8 @@ static HosihikariStringView hs_method_4136484b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2057931,8 +2057938,8 @@ static HosihikariStringView hs_method_a7841402(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2058411,8 +2058418,8 @@ static HosihikariStringView hs_method_c51c2bce(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2059372,8 +2059379,8 @@ static HosihikariStringView hs_method_a554ffff(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2059852,8 +2059859,8 @@ static HosihikariStringView hs_method_5b89833b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2060521,8 +2060528,8 @@ static HosihikariStringView hs_method_c045c15c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2061001,8 +2061008,8 @@ static HosihikariStringView hs_method_744def3d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2062577,8 +2062584,8 @@ static HosihikariStringView hs_method_3c80d3e2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2098524,8 +2098531,8 @@ static HosihikariStringView hs_method_18dff4f8(void* hs_self, void* arg0, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2103066,8 +2103073,8 @@ static HosihikariStringView hs_method_3b3706bb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2103362,8 +2103369,8 @@ static HosihikariStringView hs_method_af2645c1(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2105809,8 +2105816,8 @@ static HosihikariStringView hs_method_96a5377b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2106662,8 +2106669,8 @@ static HosihikariStringView hs_method_88887cb1(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2107451,8 +2107458,8 @@ static HosihikariStringView hs_method_4cdf37b2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2114092,8 +2114099,8 @@ static HosihikariStringView hs_method_61bca58a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2115859,8 +2115866,8 @@ static HosihikariStringView hs_method_aca00b40(void* hs_self, void* stack, bool 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), stack, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2122000,8 +2122007,8 @@ static HosihikariStringView hs_method_9a52f359(void* hs_self, void* region) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), region);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2130822,8 +2130829,8 @@ static HosihikariStringView hs_method_a0dfb329(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2134077,12 +2134084,12 @@ static void* hs_method_e8c1fdd8(void* hs_self, void* target, void* pos, void* ra
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), target, pos, random, treeHeight, renderParams, treeParams, canopy);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2140338,8 +2140345,8 @@ static HosihikariSharedHandle hs_method_5711a9b4(void* hs_self, void* mainChunkS
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), mainChunkSource);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2140452,8 +2140459,8 @@ static HosihikariSharedHandle hs_method_380ce315(void* hs_self, void* mainChunkS
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), mainChunkSource);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2140664,8 +2140671,8 @@ static HosihikariStringView hs_method_0abf5ae3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2142621,8 +2142628,8 @@ static HosihikariStringView hs_method_f12425a3(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2143200,12 +2143207,12 @@ static void* hs_method_512409ce(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2149398,8 +2149405,8 @@ static HosihikariStringView hs_method_a6467f3e(void* hs_self, void* block) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), block);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2175544,8 +2175551,8 @@ static HosihikariStringView hs_method_a51429bf(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2177781,12 +2177788,12 @@ static void* hs_method_ea399c2a(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2184434,8 +2184441,8 @@ static HosihikariStringView hs_method_5d2769bf(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2190313,8 +2190320,8 @@ static HosihikariStringView hs_method_c6de00a9(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2194379,9 +2194386,9 @@ static HosihikariStringView hs_method_490495ff(void* hs_self, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2202656,9 +2202663,9 @@ static HosihikariStringView hs_method_e9a4d902(void* hs_self, const char* name_d
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2204725,8 +2204732,8 @@ static HosihikariStringView hs_method_61432709(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2206415,9 +2206422,9 @@ static std::uint64_t hs_method_9816ec36(void* hs_self, void* player, bool* hs_ha
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), player);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint64_t>(*hs_result) : std::uint64_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2210414,8 +2210421,8 @@ static HosihikariStringView hs_method_735e5ac5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2211626,8 +2211633,8 @@ static HosihikariStringView hs_method_ca72d1f1(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2212168,8 +2212175,8 @@ static HosihikariStringView hs_method_74e79d9b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2215693,8 +2215700,8 @@ static HosihikariStringView hs_method_6e8c8656(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2238650,8 +2238657,8 @@ static HosihikariStringView hs_method_dff6453e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2251455,9 +2251462,9 @@ static std::int32_t hs_method_8f418ca4(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2252657,8 +2252664,8 @@ static HosihikariStringView hs_method_d979a9df(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2258191,8 +2258198,8 @@ static HosihikariStringView hs_method_1eb3f73f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2258484,8 +2258491,8 @@ static HosihikariStringView hs_method_fd0b3057(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2265834,8 +2265841,8 @@ static HosihikariStringView hs_method_359daa2e(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2269282,8 +2269289,8 @@ static HosihikariSharedHandle hs_method_1a67363f(void* hs_self, void* structureP
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), structurePoolElement);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2271992,8 +2271999,8 @@ static HosihikariStringView hs_method_7b5bafe5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2273125,8 +2273132,8 @@ static HosihikariSharedHandle hs_method_0dc23d80(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2277105,8 +2277112,8 @@ static HosihikariStringView hs_method_dd0dc046(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2278049,8 +2278056,8 @@ static HosihikariStringView hs_method_1c60c779(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2278430,12 +2278437,12 @@ static void* hs_method_53932721(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2278673,12 +2278680,12 @@ static void* hs_method_cc52e112(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2282223,8 +2282230,8 @@ static HosihikariStringView hs_method_0188b3c6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2282730,8 +2282737,8 @@ static HosihikariStringView hs_method_2ea328e2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2284641,8 +2284648,8 @@ static HosihikariStringView hs_method_42fd6286(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2285121,8 +2285128,8 @@ static HosihikariStringView hs_method_8f5ad9ec(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2286142,8 +2286149,8 @@ static HosihikariStringView hs_method_7c0c0c94(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2291961,12 +2291968,12 @@ static void* hs_method_3ee7e51e(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2294520,8 +2294527,8 @@ static HosihikariStringView hs_method_6e016fd8(void* hs_self, void* stack, bool 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), stack, playerIsCreative);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2301574,8 +2301581,8 @@ static HosihikariStringView hs_method_7db24eb8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2306678,8 +2306685,8 @@ static HosihikariStringView hs_method_07f1c5ec(void* hs_self, std::uint32_t snbt
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), snbtFormat, indent);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2306709,8 +2306716,8 @@ static HosihikariStringView hs_method_5d5e3378(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2309031,8 +2309038,8 @@ static HosihikariStringView hs_method_a707a809(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2323906,8 +2323913,8 @@ static HosihikariStringView hs_method_85b78773(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2324122,8 +2324129,8 @@ static HosihikariStringView hs_method_19e5e9fc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2324650,8 +2324657,8 @@ static HosihikariStringView hs_method_11675051(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2324866,8 +2324873,8 @@ static HosihikariStringView hs_method_444609a7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2325098,8 +2325105,8 @@ static HosihikariStringView hs_method_2084727b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2325314,8 +2325321,8 @@ static HosihikariStringView hs_method_767acae0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2325904,8 +2325911,8 @@ static HosihikariStringView hs_method_c694d93f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2326439,8 +2326446,8 @@ static HosihikariStringView hs_method_db65055f(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2349994,8 +2350001,8 @@ static HosihikariSharedHandle hs_method_c2df79bc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2350025,8 +2350032,8 @@ static HosihikariSharedHandle hs_method_d5880b48(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_non_owner_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2350464,9 +2350471,9 @@ static HosihikariSharedHandle hs_method_68c94cfb(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2350501,9 +2350508,9 @@ static HosihikariSharedHandle hs_method_a387bf6b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2352679,8 +2352686,8 @@ static HosihikariSharedHandle hs_method_d4fbb257(void* hs_self, void* cp) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2353054,8 +2353061,8 @@ static HosihikariSharedHandle hs_method_f6fc7392(void* hs_self, void* cp) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2354030,8 +2354037,8 @@ static HosihikariStringView hs_method_999c5824(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2360569,8 +2360576,8 @@ static HosihikariStringView hs_method_0f9c8975(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2361140,8 +2361147,8 @@ static HosihikariStringView hs_method_e9288c51(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2363635,8 +2363642,8 @@ static HosihikariStringView hs_method_fddcab9e(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2376146,8 +2376153,8 @@ static HosihikariStringView hs_method_2f9447bc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2376681,8 +2376688,8 @@ static HosihikariStringView hs_method_02b2923a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2387890,8 +2387897,8 @@ static HosihikariStringView hs_method_629b500b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2404150,8 +2404157,8 @@ static HosihikariStringView hs_method_ff04ecf7(void* hs_self, void* arg0) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2411146,8 +2411153,8 @@ static HosihikariStringView hs_method_583ec393(void* hs_self, std::uint32_t snbt
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), snbtFormat, indent);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2413740,8 +2413747,8 @@ static HosihikariStringView hs_method_731ff68d(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2414813,8 +2414820,8 @@ static HosihikariStringView hs_method_2787561c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2415347,8 +2415354,8 @@ static HosihikariStringView hs_method_df1e7b26(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2416011,8 +2416018,8 @@ static HosihikariStringView hs_method_5948cd9a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2416518,8 +2416525,8 @@ static HosihikariStringView hs_method_c5c586c2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2417334,8 +2417341,8 @@ static HosihikariStringView hs_method_f0e95fe9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2418109,8 +2418116,8 @@ static HosihikariStringView hs_method_032fde15(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2418589,8 +2418596,8 @@ static HosihikariStringView hs_method_9dff2d0b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2419570,8 +2419577,8 @@ static HosihikariStringView hs_method_6ba38f50(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2421056,8 +2421063,8 @@ static HosihikariStringView hs_method_f5423f50(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2421850,8 +2421857,8 @@ static HosihikariStringView hs_method_a4e2c598(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2422738,8 +2422745,8 @@ static HosihikariStringView hs_method_a9b1aba6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2423218,8 +2423225,8 @@ static HosihikariStringView hs_method_8ba9c1ff(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2424012,8 +2424019,8 @@ static HosihikariStringView hs_method_fa510c42(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2424519,8 +2424526,8 @@ static HosihikariStringView hs_method_e516b643(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2425582,8 +2425589,8 @@ static HosihikariStringView hs_method_8aa31452(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2426573,8 +2426580,8 @@ static HosihikariStringView hs_method_40505f33(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2431144,8 +2431151,8 @@ static HosihikariStringView hs_method_d37a22a9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2431211,8 +2431218,8 @@ static HosihikariStringView hs_method_2f804ab2(void* hs_self, void* region) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), region);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2431241,8 +2431248,8 @@ static HosihikariStringView hs_method_048d1602(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2432646,8 +2432653,8 @@ static HosihikariStringView hs_method_ada0364b(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2432725,8 +2432732,8 @@ static HosihikariStringView hs_method_9efe2f3a(void* hs_self, void* region) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), region);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2432761,8 +2432768,8 @@ static HosihikariStringView hs_method_b3b7eec6(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2434522,8 +2434529,8 @@ static HosihikariStringView hs_method_7a68521f(void* dimension) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(reinterpret_cast<HsString*>(hs_stringStorage), dimension);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2438168,12 +2438175,12 @@ static void* hs_method_27ef9514(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2444037,8 +2444044,8 @@ static HosihikariStringView hs_method_14e5d345(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2444958,12 +2444965,12 @@ static void* hs_method_3b008eca(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2445297,12 +2445304,12 @@ static void* hs_method_12d51771(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2452775,9 +2452782,9 @@ static HosihikariSharedHandle hs_method_aa32468e(void* hs_self, void* position, 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), position, maxDistFromVillageBounds, searchRadius);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2452806,9 +2452813,9 @@ static HosihikariSharedHandle hs_method_62eb76c3(void* hs_self, void* pos) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2452843,9 +2452850,9 @@ static HosihikariSharedHandle hs_method_dfe8fc84(void* hs_self, void* villageID)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), villageID);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_locked = hs_shared.lock();
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_locked));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2469521,12 +2469528,12 @@ static void* hs_method_84917b8d(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2469873,8 +2469880,8 @@ static HosihikariStringView hs_method_aa5750c0(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2470031,12 +2470038,12 @@ static void* hs_method_5b85ef32(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(8), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(8));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2504049,12 +2504056,12 @@ static void* hs_method_a4e2fda7(void* hs_self, void* context, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2518355,8 +2518362,8 @@ static HosihikariStringView hs_method_2a5b367e(void* hs_self, void* block) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), block);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2527176,8 +2527183,8 @@ static HosihikariStringView hs_method_fc0d5b1b(void* hs_self, void* arg0, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), arg0, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528083,8 +2528090,8 @@ static HosihikariStringView hs_method_cff08f60(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528119,8 +2528126,8 @@ static HosihikariStringView hs_method_49883a22(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528155,8 +2528162,8 @@ static HosihikariStringView hs_method_2abb108a(void* hs_self, void* random, bool
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random, isStairsRoom);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528191,8 +2528198,8 @@ static HosihikariStringView hs_method_e8d02a86(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528227,8 +2528234,8 @@ static HosihikariStringView hs_method_0d2dedc1(void* hs_self, void* random, bool
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random, isStairsRoom);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528263,8 +2528270,8 @@ static HosihikariStringView hs_method_44c6f0ae(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528299,8 +2528306,8 @@ static HosihikariStringView hs_method_64c2b0b3(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528377,8 +2528384,8 @@ static HosihikariStringView hs_method_4c18ef8e(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528408,8 +2528415,8 @@ static HosihikariStringView hs_method_33a4c76e(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528439,8 +2528446,8 @@ static HosihikariStringView hs_method_44527453(void* hs_self, void* random, bool
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random, isStairsRoom);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528470,8 +2528477,8 @@ static HosihikariStringView hs_method_7cd18780(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528501,8 +2528508,8 @@ static HosihikariStringView hs_method_1e175668(void* hs_self, void* random, bool
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random, isStairsRoom);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528532,8 +2528539,8 @@ static HosihikariStringView hs_method_34ea0a3b(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2528563,8 +2528570,8 @@ static HosihikariStringView hs_method_8e458e78(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2529177,8 +2529184,8 @@ static HosihikariStringView hs_method_ca2495b0(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2529213,8 +2529220,8 @@ static HosihikariStringView hs_method_b43a1042(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2529249,8 +2529256,8 @@ static HosihikariStringView hs_method_5759904c(void* hs_self, void* random, bool
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random, isStairsRoom);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2529285,8 +2529292,8 @@ static HosihikariStringView hs_method_485dd159(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2529321,8 +2529328,8 @@ static HosihikariStringView hs_method_ab23ef10(void* hs_self, void* random, bool
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random, isStairsRoom);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2529357,8 +2529364,8 @@ static HosihikariStringView hs_method_86281b03(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2529393,8 +2529400,8 @@ static HosihikariStringView hs_method_9407b1fb(void* hs_self, void* random) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), random);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2531663,8 +2531670,8 @@ static HosihikariStringView hs_method_1835cc1c(void* hs_self, void* itemDescript
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), itemDescriptor, arg1);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2538229,8 +2538236,8 @@ static HosihikariSharedHandle hs_method_b4bddf87(void* hs_self, void* cp, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, structure);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2538503,8 +2538510,8 @@ static HosihikariSharedHandle hs_method_7c27f14c(void* hs_self, void* cp, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, structure);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2539825,8 +2539832,8 @@ static HosihikariSharedHandle hs_method_5bd2a03c(void* hs_self, void* cp, std::i
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp, lm, readOnly);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2539891,8 +2539898,8 @@ static HosihikariSharedHandle hs_method_36dd9c3e(void* hs_self, void* cp) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), cp);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2544626,8 +2544633,8 @@ static HosihikariStringView hs_method_0d28c989(void* hs_self, void* player) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), player);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2545978,8 +2545985,8 @@ static HosihikariStringView hs_method_c268ed9c(void* hs_self, void* item, void* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), item, userData);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2546014,8 +2546021,8 @@ static HosihikariStringView hs_method_4f0d8527(void* hs_self, void* player) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage), player);
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2558926,8 +2558933,8 @@ static HosihikariSharedHandle hs_method_53764419(void* hs_self, void* context) t
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), context);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2559884,8 +2559891,8 @@ static HosihikariSharedHandle hs_method_8a6bfae2(void* hs_self, const char* key_
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2569040,9 +2569047,9 @@ static bool hs_method_791fe588(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<bool>(*hs_result) : bool{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2569077,9 +2569084,9 @@ static HosihikariStringView hs_method_ec2e2bc3(void* hs_self, std::uint64_t arg0
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2569114,9 +2569121,9 @@ static std::uint32_t hs_method_36e64a40(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint32_t>(*hs_result) : std::uint32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2569610,9 +2569617,9 @@ static std::uint16_t hs_method_17577d73(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint16_t>(*hs_result) : std::uint16_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2570771,9 +2570778,9 @@ static bool hs_method_9c3a79f7(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<bool>(*hs_result) : bool{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2570803,9 +2570810,9 @@ static HosihikariStringView hs_method_ed1c99ce(void* hs_self, std::uint64_t maxI
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), maxInputLength);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2570835,9 +2570842,9 @@ static std::uint32_t hs_method_eab34096(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint32_t>(*hs_result) : std::uint32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2571261,9 +2571268,9 @@ static std::uint16_t hs_method_8e757e38(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint16_t>(*hs_result) : std::uint16_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2571476,9 +2571483,9 @@ static std::uint64_t hs_method_78f882b3(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint64_t>(*hs_result) : std::uint64_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2578577,8 +2578584,9 @@ static void* hs_method_4af56145(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2578590,7 +2578598,6 @@ static void* hs_method_4af56145(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2578694,8 +2578701,8 @@ static HosihikariSharedHandle hs_method_5c70337a(void* hs_self, void* function) 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), function);
     auto& hs_shared = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_sharedScope{hs_typedStorage};
     auto hs_result = hs_make_shared_handle<void>(std::move(hs_shared));
-    hs_shared.~HsTypedResult();
     return hs_result;
 }
 catch (std::exception const& hs_error)
@@ -2579331,8 +2579338,9 @@ static void* hs_method_022eb92c(void* hs_self, void* blockType, void* pos, bool 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), blockType, pos, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579344,7 +2579352,6 @@ static void* hs_method_022eb92c(void* hs_self, void* blockType, void* pos, bool 
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579374,8 +2579381,9 @@ static void* hs_method_dc87c687(void* hs_self, void* blockType, std::int32_t x, 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), blockType, x, y, z, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579387,7 +2579395,6 @@ static void* hs_method_dc87c687(void* hs_self, void* blockType, std::int32_t x, 
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579417,8 +2579424,9 @@ static void* hs_method_8a484562(void* hs_self, void* mob, void* pos, bool expect
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), mob, pos, expectedReach);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579430,7 +2579438,6 @@ static void* hs_method_8a484562(void* hs_self, void* mob, void* pos, bool expect
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579460,8 +2579467,9 @@ static void* hs_method_b0c5be38(void* hs_self, void* item, void* pos, bool* hs_h
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), item, pos);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579473,7 +2579481,6 @@ static void* hs_method_b0c5be38(void* hs_self, void* item, void* pos, bool* hs_h
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579503,8 +2579510,9 @@ static void* hs_method_742a69da(void* hs_self, void* pos, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579516,7 +2579524,6 @@ static void* hs_method_742a69da(void* hs_self, void* pos, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579547,8 +2579554,9 @@ static void* hs_method_b04821f3(void* hs_self, void* actorIdentifier, std::int32
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, armorSlot, hs_str2, dataValue, pos, hasArmor);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579560,7 +2579568,6 @@ static void* hs_method_b04821f3(void* hs_self, void* actorIdentifier, std::int32
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579591,8 +2579598,9 @@ static void* hs_method_41deaf58(void* hs_self, void* actorIdentifier, const char
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, hs_str1, pos, hasComponent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579604,7 +2579612,6 @@ static void* hs_method_41deaf58(void* hs_self, void* actorIdentifier, const char
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579634,8 +2579641,9 @@ static void* hs_method_d42d9297(void* hs_self, void* actor, bool expectedPresent
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actor, expectedPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579647,7 +2579655,6 @@ static void* hs_method_d42d9297(void* hs_self, void* actor, bool expectedPresent
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579677,8 +2579684,9 @@ static void* hs_method_ff7651f6(void* hs_self, void* actor, void* pos, bool expe
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actor, pos, expectedPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579690,7 +2579698,6 @@ static void* hs_method_ff7651f6(void* hs_self, void* actor, void* pos, bool expe
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579720,8 +2579727,9 @@ static void* hs_method_c9af77f8(void* hs_self, void* actorIdentifier, bool isPre
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579733,7 +2579741,6 @@ static void* hs_method_c9af77f8(void* hs_self, void* actorIdentifier, bool isPre
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579763,8 +2579770,9 @@ static void* hs_method_4fb238a2(void* hs_self, void* actorIdentifier, void* pos,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, pos, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579776,7 +2579784,6 @@ static void* hs_method_4fb238a2(void* hs_self, void* actorIdentifier, void* pos,
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579806,8 +2579813,9 @@ static void* hs_method_8c150280(void* hs_self, void* actorIdentifier, void* pos,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, pos, distance, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579819,7 +2579827,6 @@ static void* hs_method_8c150280(void* hs_self, void* actorIdentifier, void* pos,
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579849,8 +2579856,9 @@ static void* hs_method_d8260701(void* hs_self, void* actorIdentifier, std::int32
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, x, y, z, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579862,7 +2579870,6 @@ static void* hs_method_d8260701(void* hs_self, void* actorIdentifier, std::int32
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579892,8 +2579899,9 @@ static void* hs_method_75a13a67(void* hs_self, void* actorIdentifier, void* pos,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actorIdentifier, pos, isTouching);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579905,7 +2579913,6 @@ static void* hs_method_75a13a67(void* hs_self, void* actorIdentifier, void* pos,
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579935,8 +2579942,9 @@ static void* hs_method_5380d60f(void* hs_self, void* pos, bool expectedWaterlogg
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, expectedWaterlogged);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579948,7 +2579956,6 @@ static void* hs_method_5380d60f(void* hs_self, void* pos, bool expectedWaterlogg
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2579978,8 +2579985,9 @@ static void* hs_method_2f311065(void* hs_self, void* itemType, void* pos, float 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), itemType, pos, searchDistance, expectedCount);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2579991,7 +2579999,6 @@ static void* hs_method_2f311065(void* hs_self, void* itemType, void* pos, float 
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580021,8 +2580028,9 @@ static void* hs_method_98ae8683(void* hs_self, void* item, void* pos, float sear
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), item, pos, searchDistance, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580034,7 +2580042,6 @@ static void* hs_method_98ae8683(void* hs_self, void* item, void* pos, float sear
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580064,8 +2580071,9 @@ static void* hs_method_36d19eb2(void* hs_self, void* item, std::int32_t x, std::
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), item, x, y, z, searchDistance, isPresent);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580077,7 +2580085,6 @@ static void* hs_method_36d19eb2(void* hs_self, void* item, std::int32_t x, std::
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580107,8 +2580114,9 @@ static void* hs_method_3c7cacd8(void* hs_self, void* pos, std::int32_t expectedP
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, expectedPower);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580120,7 +2580128,6 @@ static void* hs_method_3c7cacd8(void* hs_self, void* pos, std::int32_t expectedP
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580150,8 +2580157,9 @@ static void* hs_method_f50731cb(void* hs_self, void* pos, bool dropResources, bo
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, dropResources);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580163,7 +2580171,6 @@ static void* hs_method_f50731cb(void* hs_self, void* pos, bool dropResources, bo
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580193,8 +2580200,9 @@ static void* hs_method_fe97f6cf(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580206,7 +2580214,6 @@ static void* hs_method_fe97f6cf(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580316,8 +2580323,9 @@ static void* hs_method_73af0ece(void* hs_self, void* mob, std::int32_t jumpAmoun
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), mob, jumpAmount);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580329,7 +2580337,6 @@ static void* hs_method_73af0ece(void* hs_self, void* mob, std::int32_t jumpAmoun
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580383,8 +2580390,9 @@ static void* hs_method_60df89d8(void* hs_self, void* buttonPos, bool* hs_hasValu
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), buttonPos);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580396,7 +2580404,6 @@ static void* hs_method_60df89d8(void* hs_self, void* buttonPos, bool* hs_hasValu
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580426,8 +2580433,9 @@ static void* hs_method_3c1103c1(void* hs_self, std::int32_t x, std::int32_t y, s
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), x, y, z);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580439,7 +2580447,6 @@ static void* hs_method_3c1103c1(void* hs_self, std::int32_t x, std::int32_t y, s
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580470,8 +2580477,9 @@ static void* hs_method_60d42930(void* hs_self, const char* text_data, std::size_
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), hs_str0);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580483,7 +2580491,6 @@ static void* hs_method_60d42930(void* hs_self, const char* text_data, std::size_
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580513,8 +2580520,9 @@ static void* hs_method_b24390ef(void* hs_self, void* leverPos, bool* hs_hasValue
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), leverPos);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580526,7 +2580534,6 @@ static void* hs_method_b24390ef(void* hs_self, void* leverPos, bool* hs_hasValue
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580556,8 +2580563,9 @@ static void* hs_method_e0da236f(void* hs_self, std::int32_t x, std::int32_t y, s
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), x, y, z);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580569,7 +2580577,6 @@ static void* hs_method_e0da236f(void* hs_self, std::int32_t x, std::int32_t y, s
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580599,8 +2580606,9 @@ static void* hs_method_2fd5792d(void* hs_self, void* pos, std::int32_t duration,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, duration);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580612,7 +2580620,6 @@ static void* hs_method_2fd5792d(void* hs_self, void* pos, std::int32_t duration,
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580667,8 +2580674,9 @@ static void* hs_method_d2aface4(void* hs_self, void* pos, void* block, std::int3
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, block, updateFlags);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580680,7 +2580688,6 @@ static void* hs_method_d2aface4(void* hs_self, void* pos, void* block, std::int3
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580710,8 +2580717,9 @@ static void* hs_method_4c754b76(void* hs_self, std::int32_t x, std::int32_t y, s
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), x, y, z, block, updateFlags);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580723,7 +2580731,6 @@ static void* hs_method_4c754b76(void* hs_self, std::int32_t x, std::int32_t y, s
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580778,8 +2580785,9 @@ static void* hs_method_e105d639(void* hs_self, void* pos, std::int32_t _fluidTyp
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, _fluidType);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580791,7 +2580799,6 @@ static void* hs_method_e105d639(void* hs_self, void* pos, std::int32_t _fluidTyp
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580846,8 +2580853,9 @@ static void* hs_method_e02dfcb2(void* hs_self, void* actor, std::int32_t fuseLen
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), actor, fuseLength);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580859,7 +2580867,6 @@ static void* hs_method_e02dfcb2(void* hs_self, void* actor, std::int32_t fuseLen
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2580889,8 +2580896,9 @@ static void* hs_method_0f93e01e(void* hs_self, void* pos, std::int32_t fromFace,
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, fromFace, direction);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2580902,7 +2580910,6 @@ static void* hs_method_0f93e01e(void* hs_self, void* pos, std::int32_t fromFace,
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2581085,8 +2581092,9 @@ static void* hs_method_d1b37b62(void* hs_self, void* pos, const char* event_data
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), pos, hs_str1, static_cast<void*>(&hs_vec2));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2581098,7 +2581106,6 @@ static void* hs_method_d1b37b62(void* hs_self, void* pos, const char* event_data
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2581128,8 +2581135,9 @@ static void* hs_method_60cd54ba(void* hs_self, void* mob, void* pos, float speed
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), mob, pos, speedModifier);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2581141,7 +2581149,6 @@ static void* hs_method_60cd54ba(void* hs_self, void* mob, void* pos, float speed
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2581171,8 +2581178,9 @@ static void* hs_method_c744504b(void* hs_self, void* mob, void* pos, float speed
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), mob, pos, speedModifier);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2581184,7 +2581192,6 @@ static void* hs_method_c744504b(void* hs_self, void* mob, void* pos, float speed
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2581423,12 +2581430,12 @@ static void* hs_method_398486c7(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2581458,12 +2581465,12 @@ static void* hs_method_08f09c8d(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(12), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     std::memcpy(hs_record, hs_result->data, static_cast<std::size_t>(12));
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2581521,12 +2581528,12 @@ static void* hs_method_7633d014(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(24), 4);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     setLastError("the optional payload copy or destructor symbol is unavailable");
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2583943,8 +2583950,9 @@ static void* hs_method_4359d6b1(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2583956,7 +2583964,6 @@ static void* hs_method_4359d6b1(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2584656,8 +2584663,9 @@ static void* hs_method_12f2dbf5(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2584669,7 +2584677,6 @@ static void* hs_method_12f2dbf5(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2584778,8 +2584785,9 @@ static void* hs_method_1661277c(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(280), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     static auto const hs_optionalCopy = hs_resolve(std::uintptr_t{0}, "??0GameTestError@gametest@@QEAA@AEBU01@@Z");
@@ -2584791,7 +2584799,6 @@ static void* hs_method_1661277c(void* hs_self, bool* hs_hasValue) try
     }
     reinterpret_cast<void (*)(void*, void const*)>(const_cast<void*>(hs_optionalCopy))(hs_record, hs_result->data);
     reinterpret_cast<void (*)(void*)>(const_cast<void*>(hs_optionalDtor))(hs_result->data);
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2585985,8 +2585992,8 @@ static HosihikariStringView hs_method_14e8578c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2632568,8 +2632575,8 @@ static HosihikariStringView hs_method_dc9340de(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2632711,8 +2632718,8 @@ static HosihikariStringView hs_method_b364eada(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2636970,12 +2636977,12 @@ static void* hs_method_d4b77250(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     setLastError("the optional payload copy or destructor symbol is unavailable");
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2640941,8 +2640948,8 @@ static HosihikariStringView hs_method_cb918aef(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2641319,9 +2641326,9 @@ static std::uint32_t hs_method_76aa31cf(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint32_t>(*hs_result) : std::uint32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2641911,8 +2641918,8 @@ static HosihikariStringView hs_method_a8dbe128(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2644277,8 +2644284,8 @@ static HosihikariStringView hs_method_ffc2f666(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2646533,9 +2646540,9 @@ static std::int32_t hs_method_2a77cc2d(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2646565,9 +2646572,9 @@ static std::int32_t hs_method_d578034d(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2648502,8 +2648509,8 @@ static HosihikariStringView hs_method_a6464cbc(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2648538,9 +2648545,9 @@ static std::int32_t hs_method_ce6c7d46(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2648575,9 +2648582,9 @@ static std::int32_t hs_method_55da59c6(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2648722,8 +2648729,8 @@ static HosihikariStringView hs_method_15a67831(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2649575,9 +2649582,9 @@ static std::int32_t hs_method_2da97f95(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2649642,9 +2649649,9 @@ static std::int32_t hs_method_1716060b(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2653063,9 +2653070,9 @@ static std::int32_t hs_method_60b53732(void* hs_self, std::uint32_t arg0, bool* 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage), arg0);
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2653095,9 +2653102,9 @@ static std::uint32_t hs_method_e927ffd9(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint32_t>(*hs_result) : std::uint32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2654048,8 +2654055,8 @@ static HosihikariStringView hs_method_54316cc7(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2654079,8 +2654086,8 @@ static HosihikariStringView hs_method_fcc93977(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2655828,12 +2655835,12 @@ static void* hs_method_ab9e8675(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     setLastError("the optional payload copy or destructor symbol is unavailable");
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2656028,9 +2656035,9 @@ static std::int32_t hs_method_c6bce298(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2657001,9 +2657008,9 @@ static bool hs_method_80222227(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<bool>(*hs_result) : bool{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2658346,9 +2658353,9 @@ static HosihikariStringView hs_method_8aa858f1(void* hs_self, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2658383,9 +2658390,9 @@ static HosihikariStringView hs_method_0edd2cc0(void* hs_self, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2658420,8 +2658427,8 @@ static HosihikariStringView hs_method_2a6941a8(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2659710,9 +2659717,9 @@ static bool hs_method_8b0c48b4(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<bool>(*hs_result) : bool{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2661881,12 +2661888,12 @@ static void* hs_method_ac881ea2(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
-    if (!*hs_hasValue) { hs_result.~HsTypedResult(); return nullptr; }
+    if (!*hs_hasValue) { return nullptr; }
     hs_owned_allocation hs_optionalRecordOwnership(static_cast<std::size_t>(40), 8);
     auto* const hs_record = hs_optionalRecordOwnership.pointer;
     setLastError("the optional payload copy or destructor symbol is unavailable");
-    hs_result.~HsTypedResult();
     return hs_optionalRecordOwnership.release();
 }
 catch (std::exception const& hs_error)
@@ -2662159,9 +2662166,9 @@ static HosihikariStringView hs_method_9f946cda(void* hs_self, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2662374,9 +2662381,9 @@ static std::int32_t hs_method_12f051a3(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2662992,9 +2662999,9 @@ static HosihikariStringView hs_method_8a5a1583(void* hs_self, bool* hs_hasValue)
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     g_stringResult.assign(hs_result ? hs_result->data() : "", hs_result ? hs_result->size() : 0);
-    hs_result.~HsTypedResult();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2663024,8 +2663031,8 @@ static HosihikariStringView hs_method_9f559194(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2664765,8 +2664772,8 @@ static HosihikariStringView hs_method_823f5407(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2665061,9 +2665068,9 @@ static std::uint32_t hs_method_2c485c6f(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::uint32_t>(*hs_result) : std::uint32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2665775,8 +2665782,8 @@ static HosihikariStringView hs_method_9d4843af(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2666286,8 +2666293,8 @@ static HosihikariStringView hs_method_ccc3ea56(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2666545,8 +2666552,8 @@ static HosihikariStringView hs_method_bfc27833(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
@@ -2668855,9 +2668862,9 @@ static std::int32_t hs_method_99867452(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2668912,9 +2668919,9 @@ static std::int32_t hs_method_1de00831(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2672521,9 +2672528,9 @@ static std::int32_t hs_method_1ebc61d5(void* hs_self, bool* hs_hasValue) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_typedStorage));
     auto& hs_result = *reinterpret_cast<HsTypedResult*>(hs_typedStorage);
+    hs_typed_scope<HsTypedResult> hs_resultScope{hs_typedStorage};
     *hs_hasValue = hs_result.has_value();
     auto hs_value = hs_result ? static_cast<std::int32_t>(*hs_result) : std::int32_t{};
-    hs_result.~HsTypedResult();
     return hs_value;
 }
 catch (std::exception const& hs_error)
@@ -2677158,8 +2677165,8 @@ static HosihikariStringView hs_method_a74b01aa(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, reinterpret_cast<HsString*>(hs_stringStorage));
     auto& hs_result = *reinterpret_cast<HsString*>(hs_stringStorage);
+    hs_typed_scope<HsString> hs_resultScope{hs_stringStorage};
     g_stringResult.assign(hs_result.data(), hs_result.size());
-    hs_result.~HsString();
     return HosihikariStringView{g_stringResult.data(), g_stringResult.size()};
 }
 catch (std::exception const& hs_error)
