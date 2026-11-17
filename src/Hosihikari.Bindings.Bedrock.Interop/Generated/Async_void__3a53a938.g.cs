@@ -4,7 +4,8 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading;
 
-public sealed unsafe partial class Async_void_ : global::System.IDisposable
+[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
+public sealed partial class Async_void_
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -40,35 +41,18 @@ public sealed unsafe partial class Async_void_ : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static Async_void_? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_ arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_76deb625((void*)arg0.Handle);
-        if (handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
+    public static Async_void_ Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim does not expose this member.");
 
-        return new Async_void_((nint)handle);
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
+    public nint mResult
+    {
+        get => throw new global::System.NotSupportedException("BindingShim does not expose this member.");
+        set => throw new global::System.NotSupportedException("BindingShim does not expose this member.");
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mResult_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_3969c732((void*)__hosihikari_shim_handle);
-    }
-
-
-    public void Dispose()
-    {
-        if (__hosihikari_shim_handle != 0)
-        {
-            if (_ownsHandle)
-            {
-                NativeMethods.TablePtr->C0.hs_destroy_3a53a938((void*)__hosihikari_shim_handle);
-            }
-
-            __hosihikari_shim_handle = 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
+    public void Destroy() =>
+        throw new global::System.NotSupportedException("BindingShim does not expose this member.");
 }

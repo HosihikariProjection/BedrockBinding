@@ -73,14 +73,14 @@ public sealed unsafe partial class AttributeInstance : global::System.IDisposabl
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: anonymous fields are not projected.", false)]
-    public nint __fbc65605
+    public nint __d5af8e9d
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: anonymous fields are not projected.", false)]
-    public nint __c339c310
+    public nint __d0f2839c
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");

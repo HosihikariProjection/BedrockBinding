@@ -4,7 +4,8 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.Bedrock;
 
-public sealed unsafe partial class typeid_t_void_ : global::System.IDisposable
+[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
+public sealed partial class typeid_t_void_
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -40,73 +41,38 @@ public sealed unsafe partial class typeid_t_void_ : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static nint? _getCounter()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_98e0c1f4();
-        if (__hs_handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
-        return (nint)__hs_handle;
-    }
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
+    public static nint _getCounter() =>
+        throw new global::System.NotSupportedException("BindingShim does not expose this member.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
     public bool operator_less(nint other) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim does not expose this member.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
     public nint operator_assign(nint other) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the return type needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim does not expose this member.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
     public bool operator_equal(nint other) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim does not expose this member.");
 
-    public static typeid_t_void_? Create()
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_7b4a87bf();
-        if (handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
+    public static typeid_t_void_ Create() =>
+        throw new global::System.NotSupportedException("BindingShim does not expose this member.");
 
-        return new typeid_t_void_((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
     public static typeid_t_void_ Create(nint other) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim does not expose this member.");
 
-    public static typeid_t_void_? Create(ushort value)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_736d1905(value);
-        if (handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
+    public static typeid_t_void_ Create(ushort value) =>
+        throw new global::System.NotSupportedException("BindingShim does not expose this member.");
 
-        return new typeid_t_void_((nint)handle);
-    }
-
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
     public ushort value
     {
-        get => NativeMethods.TablePtr->C0.hs_get_53ca9ac9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_53ca9ac9((void*)__hosihikari_shim_handle, value);
-    }
-
-    public void Dispose()
-    {
-        if (__hosihikari_shim_handle != 0)
-        {
-            if (_ownsHandle)
-            {
-                NativeMethods.TablePtr->C0.hs_destroy_46e34d44((void*)__hosihikari_shim_handle);
-            }
-
-            __hosihikari_shim_handle = 0;
-        }
+        get => throw new global::System.NotSupportedException("BindingShim does not expose this member.");
+        set => throw new global::System.NotSupportedException("BindingShim does not expose this member.");
     }
 }

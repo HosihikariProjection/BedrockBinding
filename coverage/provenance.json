@@ -1,18 +1,18 @@
 {
-    "generator":  "Hosihikari.Bindings.Generator 0.3.0 (IR 1.7.0)",
-    "irVersion":  "1.7.0",
-    "irManifestSha256":  "sha256:77bad848f58e6b277677d75ecc9be8f48241278b525f83b9018256a833d8c41a",
-    "coverageManifestSha256":  "sha256:4b6c0b86fbcb9bdf0022130eddbd506906581608562bd38621d53b252692378d",
-    "carrier":  "LeviLamina 11bb4f4dd2025e0924dce5bcd8f8200249d50770 (BDS 1.26.60.6)",
-    "carrierCommit":  "11bb4f4dd2025e0924dce5bcd8f8200249d50770",
-    "headers":  5169,
-    "surface":  "bedrock",
-    "configurations":  [
-                           "win-x64-server"
-                       ],
-    "mode":  "symbol-dispatch",
-    "resolution":  "pl_resolve_symbol",
-    "targetModule":  "bedrock_server",
-    "tableVersion":  1,
-    "functions":  137976
+  "generator": "Hosihikari.Bindings.Generator 0.3.0 (IR 1.7.0)",
+  "irVersion": "1.7.0",
+  "irManifestSha256": "sha256:1cf70785267c0b358d3889ae4879a2a472c45f8135ff2b88f42195a3204718ed",
+  "coverageManifestSha256": "sha256:667d7c186c277933c3444ce1ce04de8bdb902dced0baa1c053bfffec33f29b9e",
+  "carrier": "LeviLamina dacca851fe5f8b97e292496f702db3a73b118f39 (BDS 1.26.60.6)",
+  "carrierCommit": "dacca851fe5f8b97e292496f702db3a73b118f39",
+  "headers": 5169,
+  "surface": "bedrock",
+  "configurations": [
+    "win-x64-server"
+  ],
+  "mode": "symbol-dispatch",
+  "resolution": "pl_resolve_symbol",
+  "targetModule": "bedrock_server",
+  "tableVersion": 1,
+  "functions": 138033
 }

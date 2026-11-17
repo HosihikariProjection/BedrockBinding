@@ -4,7 +4,8 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.Bedrock;
 
-public sealed unsafe partial class Result_void__ActorValidationError_ : global::System.IDisposable
+[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
+public sealed partial class Result_void__ActorValidationError_
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -40,29 +41,11 @@ public sealed unsafe partial class Result_void__ActorValidationError_ : global::
         return __hs_handle;
     }
 
-    public static Result_void__ActorValidationError_? Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__ActorValidationError_ arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_fa4fe74b((void*)arg0.Handle);
-        if (handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
+    public static Result_void__ActorValidationError_ Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim does not expose this member.");
 
-        return new Result_void__ActorValidationError_((nint)handle);
-    }
-
-
-    public void Dispose()
-    {
-        if (__hosihikari_shim_handle != 0)
-        {
-            if (_ownsHandle)
-            {
-                NativeMethods.TablePtr->C0.hs_destroy_aa37cb3a((void*)__hosihikari_shim_handle);
-            }
-
-            __hosihikari_shim_handle = 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
+    public void Destroy() =>
+        throw new global::System.NotSupportedException("BindingShim does not expose this member.");
 }

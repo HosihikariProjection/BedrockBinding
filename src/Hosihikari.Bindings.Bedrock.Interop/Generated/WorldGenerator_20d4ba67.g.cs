@@ -388,12 +388,9 @@ public sealed unsafe partial class WorldGenerator : global::System.IDisposable
     public void preProcessStructures(nint dimension, nint cp, nint biomeSource) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, short[] ZXheights, bool factorInBeardsAndShavers)
+    public void prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, nint ZXheights, bool factorInBeardsAndShavers)
     {
-        fixed (short* __hs_vectorData2 = ZXheights)
-        {
-            NativeMethods.TablePtr->C4.hs_method_94a6139e((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)chunkPos.Handle, factorInBeardsAndShavers, __hs_vectorData2, (nuint)(ZXheights?.Length ?? 0));
-        }
+        NativeMethods.TablePtr->C4.hs_method_94a6139e((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)chunkPos.Handle, (void*)ZXheights, factorInBeardsAndShavers);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

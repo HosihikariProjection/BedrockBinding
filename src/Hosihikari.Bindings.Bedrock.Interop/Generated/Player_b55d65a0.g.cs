@@ -1303,9 +1303,9 @@ public sealed unsafe partial class Player : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_57d73b9c((void*)__hosihikari_shim_handle, (void*)currentTick.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Packet' has no accessible destructor.", false)]
     public nint _tryCreateAddActorPacket() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Packet' has no accessible destructor.");
 
     public void _useItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, int itemUseMethod, bool consumeItem)
     {

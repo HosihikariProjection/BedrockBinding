@@ -378,9 +378,9 @@ public sealed unsafe partial class BaseGameTestHelper : global::System.IDisposab
     public nint generateErrorWithContext(nint errorType, nint message, nint @params, nint relativePos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: reference to pointer parameter type 'BlockSource *&' is not supported.", false)]
     public nint getBlockSource(nint blockSourceResult) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: reference to pointer parameter type 'BlockSource *&' is not supported.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Dimension *>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint getDimension() =>

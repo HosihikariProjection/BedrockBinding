@@ -597,6 +597,25 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
     }
 
 
+    public void setOperator_std__basic_string_char___(string value)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(value);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(value, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C0.hs_set_ref_3b529ad6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+        }
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

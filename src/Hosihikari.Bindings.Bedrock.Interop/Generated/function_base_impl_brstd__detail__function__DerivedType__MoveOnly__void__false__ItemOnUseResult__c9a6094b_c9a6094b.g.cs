@@ -4,7 +4,8 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function;
 
-public sealed unsafe partial class function_base_impl_brstd__detail__function__DerivedType__MoveOnly__void__false__ItemOnUseResult__c9a6094b : global::System.IDisposable
+[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
+public sealed partial class function_base_impl_brstd__detail__function__DerivedType__MoveOnly__void__false__ItemOnUseResult__c9a6094b
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -40,21 +41,7 @@ public sealed unsafe partial class function_base_impl_brstd__detail__function__D
         return __hs_handle;
     }
 
-    public bool operator_bool()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_0ffc925b((void*)__hosihikari_shim_handle) != 0;
-    }
-
-    public void Dispose()
-    {
-        if (__hosihikari_shim_handle != 0)
-        {
-            if (_ownsHandle)
-            {
-                NativeMethods.TablePtr->C4.hs_destroy_c9a6094b((void*)__hosihikari_shim_handle);
-            }
-
-            __hosihikari_shim_handle = 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim does not expose this member.", false)]
+    public bool operator_bool() =>
+        throw new global::System.NotSupportedException("BindingShim does not expose this member.");
 }

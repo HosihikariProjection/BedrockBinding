@@ -542,9 +542,9 @@ public sealed unsafe partial class DoorBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_b5f893ef((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: reference to pointer parameter type 'const Block *&' is not supported.", false)]
     public static void getDoorBlocks(nint region, nint expectedDoorBlockType, nint pos, nint outLowerBlock, nint outUpperBlock) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: reference to pointer parameter type 'const Block *&' is not supported.");
 
     public bool getLiquidClipVolume(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB includeBox)
     {

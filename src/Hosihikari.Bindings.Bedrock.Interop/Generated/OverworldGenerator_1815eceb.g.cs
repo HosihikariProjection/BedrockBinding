@@ -263,12 +263,9 @@ public sealed unsafe partial class OverworldGenerator : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C2.hs_get_85bf15a1((void*)__hosihikari_shim_handle);
     }
 
-    public void prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, short[] ZXheights, bool factorInBeardsAndShavers)
+    public void prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, nint ZXheights, bool factorInBeardsAndShavers)
     {
-        fixed (short* __hs_vectorData2 = ZXheights)
-        {
-            NativeMethods.TablePtr->C2.hs_method_9e31dad0((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)chunkPos.Handle, factorInBeardsAndShavers, __hs_vectorData2, (nuint)(ZXheights?.Length ?? 0));
-        }
+        NativeMethods.TablePtr->C2.hs_method_9e31dad0((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)chunkPos.Handle, (void*)ZXheights, factorInBeardsAndShavers);
     }
 
     public bool structurePostProcessChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource neighborhoodIn)

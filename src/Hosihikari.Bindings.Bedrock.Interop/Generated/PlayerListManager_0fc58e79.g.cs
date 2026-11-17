@@ -120,9 +120,10 @@ public sealed unsafe partial class PlayerListManager : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_925fde63((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void removeByUUID(nint uuid) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void removeByUUID(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID uuid)
+    {
+        NativeMethods.TablePtr->C2.hs_method_da031f65((void*)__hosihikari_shim_handle, (void*)uuid.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void setPlayerLocationReceiver(nint playerLocationReceiver) =>

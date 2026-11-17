@@ -77,7 +77,7 @@ public sealed unsafe partial class IConstBlockSource : global::System.IDisposabl
         }
     }
 
-    public void fetchCollisionShapes(global::Hosihikari.Bindings.Bedrock.Interop.AABB[] shapes, global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, bool withUnloadedChunks, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity, global::Hosihikari.Bindings.Bedrock.Interop.AABB[] tempShapes)
+    public void fetchCollisionShapes(global::Hosihikari.Bindings.Bedrock.Interop.AABB[] shapes, global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, bool withUnloadedChunks, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity, nint tempShapes)
     {
         var __hs_vectorItems0 = shapes;
         var __hs_vectorHandles0 = new nint[__hs_vectorItems0?.Length ?? 0];
@@ -88,17 +88,7 @@ public sealed unsafe partial class IConstBlockSource : global::System.IDisposabl
         fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
         {
             var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            var __hs_vectorItems4 = tempShapes;
-            var __hs_vectorHandles4 = new nint[__hs_vectorItems4?.Length ?? 0];
-            for (var __hs_i4 = 0; __hs_i4 < __hs_vectorHandles4.Length; __hs_i4++)
-            {
-                __hs_vectorHandles4[__hs_i4] = __hs_vectorItems4![__hs_i4]?.Handle ?? 0;
-            }
-            fixed (nint* __hs_vectorHandleData4 = __hs_vectorHandles4)
-            {
-                var __hs_vectorData4 = (void**)__hs_vectorHandleData4;
-                NativeMethods.TablePtr->C1.hs_method_14d8ecd4((void*)__hosihikari_shim_handle, (void*)intersectTestBox.Handle, withUnloadedChunks, (void*)(entity?.Handle ?? 0), __hs_vectorData0, (nuint)(shapes?.Length ?? 0), __hs_vectorData4, (nuint)(tempShapes?.Length ?? 0), entity is not null);
-            }
+            NativeMethods.TablePtr->C1.hs_method_14d8ecd4((void*)__hosihikari_shim_handle, (void*)intersectTestBox.Handle, withUnloadedChunks, (void*)(entity?.Handle ?? 0), (void*)tempShapes, __hs_vectorData0, (nuint)(shapes?.Length ?? 0), entity is not null);
         }
     }
 

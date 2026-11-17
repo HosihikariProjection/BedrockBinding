@@ -77,14 +77,14 @@ public sealed unsafe partial class BoundingBox : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: anonymous fields are not projected.", false)]
-    public nint __180271fa
+    public nint __aa623674
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: anonymous fields are not projected.", false)]
-    public nint __32f73724
+    public nint __d86ec672
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");

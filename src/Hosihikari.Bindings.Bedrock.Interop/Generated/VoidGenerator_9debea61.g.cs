@@ -146,12 +146,9 @@ public sealed unsafe partial class VoidGenerator : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_70308173((void*)__hosihikari_shim_handle, (void*)lc.Handle, forceImmediateReplacementDataLoad);
     }
 
-    public void _prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, short[] ZXheights, bool factorInBeardsAndShavers)
+    public void _prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, nint ZXheights, bool factorInBeardsAndShavers)
     {
-        fixed (short* __hs_vectorData2 = ZXheights)
-        {
-            NativeMethods.TablePtr->C4.hs_method_7a13cfff((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)chunkPos.Handle, factorInBeardsAndShavers, __hs_vectorData2, (nuint)(ZXheights?.Length ?? 0));
-        }
+        NativeMethods.TablePtr->C4.hs_method_7a13cfff((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)chunkPos.Handle, (void*)ZXheights, factorInBeardsAndShavers);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -281,12 +278,9 @@ public sealed unsafe partial class VoidGenerator : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_b33a0cf6((void*)__hosihikari_shim_handle);
     }
 
-    public void prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, short[] ZXheights, bool factorInBeardsAndShavers)
+    public void prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, nint ZXheights, bool factorInBeardsAndShavers)
     {
-        fixed (short* __hs_vectorData2 = ZXheights)
-        {
-            NativeMethods.TablePtr->C4.hs_method_5ac02b5a((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)chunkPos.Handle, factorInBeardsAndShavers, __hs_vectorData2, (nuint)(ZXheights?.Length ?? 0));
-        }
+        NativeMethods.TablePtr->C4.hs_method_5ac02b5a((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)chunkPos.Handle, (void*)ZXheights, factorInBeardsAndShavers);
     }
 
     public bool structurePostProcessChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource arg0)

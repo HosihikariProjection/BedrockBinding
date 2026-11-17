@@ -199,12 +199,9 @@ public sealed unsafe partial class FlatWorldGenerator : global::System.IDisposab
         NativeMethods.TablePtr->C1.hs_method_b15ac4b4((void*)__hosihikari_shim_handle, (void*)lc.Handle, forceImmediateReplacementDataLoad);
     }
 
-    public void _prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos arg1, short[] zxHeights, bool arg3)
+    public void _prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos arg1, nint zxHeights, bool arg3)
     {
-        fixed (short* __hs_vectorData2 = zxHeights)
-        {
-            NativeMethods.TablePtr->C1.hs_method_8dfab2cd((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)arg1.Handle, arg3, __hs_vectorData2, (nuint)(zxHeights?.Length ?? 0));
-        }
+        NativeMethods.TablePtr->C1.hs_method_8dfab2cd((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)arg1.Handle, (void*)zxHeights, arg3);
     }
 
     public bool _structurePostProcessChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource arg0)
@@ -359,12 +356,9 @@ public sealed unsafe partial class FlatWorldGenerator : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C1.hs_get_d56ddf96((void*)__hosihikari_shim_handle);
     }
 
-    public void prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos arg1, short[] zxHeights, bool arg3)
+    public void prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos arg1, nint zxHeights, bool arg3)
     {
-        fixed (short* __hs_vectorData2 = zxHeights)
-        {
-            NativeMethods.TablePtr->C1.hs_method_db3eecbd((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)arg1.Handle, arg3, __hs_vectorData2, (nuint)(zxHeights?.Length ?? 0));
-        }
+        NativeMethods.TablePtr->C1.hs_method_db3eecbd((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)arg1.Handle, (void*)zxHeights, arg3);
     }
 
     public bool structurePostProcessChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource arg0)

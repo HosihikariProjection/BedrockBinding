@@ -306,12 +306,9 @@ public sealed unsafe partial class TheEndGenerator : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_44379d73((void*)__hosihikari_shim_handle, (void*)region.Handle, chunkWestBlock, chunkNorthBlock, (void*)random.Handle);
     }
 
-    public void prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, short[] ZXheights, bool factorInBeardsAndShavers)
+    public void prepareHeights(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume box, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, nint ZXheights, bool factorInBeardsAndShavers)
     {
-        fixed (short* __hs_vectorData2 = ZXheights)
-        {
-            NativeMethods.TablePtr->C3.hs_method_b2dd868d((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)chunkPos.Handle, factorInBeardsAndShavers, __hs_vectorData2, (nuint)(ZXheights?.Length ?? 0));
-        }
+        NativeMethods.TablePtr->C3.hs_method_b2dd868d((void*)__hosihikari_shim_handle, (void*)box.Handle, (void*)chunkPos.Handle, (void*)ZXheights, factorInBeardsAndShavers);
     }
 
     public bool structurePostProcessChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource neighborhoodIn)

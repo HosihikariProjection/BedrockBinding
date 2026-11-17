@@ -46,7 +46,7 @@ public sealed unsafe partial class ThrowableItemComponentLegacyFactoryData : glo
 
     public static ThrowableItemComponentLegacyFactoryData? Create(global::Hosihikari.Bindings.Bedrock.Interop.ThrowableItemComponentLegacyFactoryData arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ff45e949((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_ff45e949((void*)arg0.Handle);
         if (handle == null)
         {
             NativeMethods.GetLastError();
@@ -62,38 +62,38 @@ public sealed unsafe partial class ThrowableItemComponentLegacyFactoryData : glo
 
     public bool mDoSwing
     {
-        get => NativeMethods.TablePtr->C3.hs_get_c0351a4b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_c0351a4b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_c0351a4b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_c0351a4b((void*)__hosihikari_shim_handle, value);
     }
 
     public float mDrawDuration
     {
-        get => NativeMethods.TablePtr->C3.hs_get_f9fbdcec((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_f9fbdcec((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_f9fbdcec((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_f9fbdcec((void*)__hosihikari_shim_handle, value);
     }
 
     public float mLaunchPowerScale
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a56a879f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a56a879f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_a56a879f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_a56a879f((void*)__hosihikari_shim_handle, value);
     }
 
     public float mMaxLaunchPower
     {
-        get => NativeMethods.TablePtr->C3.hs_get_09469ebe((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_09469ebe((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_09469ebe((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_09469ebe((void*)__hosihikari_shim_handle, value);
     }
 
     public float mMinDrawDuration
     {
-        get => NativeMethods.TablePtr->C3.hs_get_80024335((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_80024335((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_80024335((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_80024335((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mScalePowerByDrawDuration
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e15192f1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_e15192f1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_e15192f1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_e15192f1((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -103,7 +103,7 @@ public sealed unsafe partial class ThrowableItemComponentLegacyFactoryData : glo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_074572b4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_074572b4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -614,9 +614,9 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
         return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: reference to pointer parameter type 'BlockSource *&' is not supported.", false)]
     public nint getBlockSource(nint blockSourceResult) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: reference to pointer parameter type 'BlockSource *&' is not supported.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Dimension *>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint getDimension() =>

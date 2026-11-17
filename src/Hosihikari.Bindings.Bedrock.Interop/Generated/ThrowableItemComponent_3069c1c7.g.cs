@@ -121,19 +121,19 @@ public sealed unsafe partial class ThrowableItemComponent : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnUseSubscription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_61cd3815((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_61cd3815((void*)__hosihikari_shim_handle);
     }
 
     public bool mScalePowerByDrawDuration
     {
-        get => NativeMethods.TablePtr->C3.hs_get_962eacd1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_962eacd1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_962eacd1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_962eacd1((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mTriggerActorUseItemEvent
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e2048299((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_e2048299((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_e2048299((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_e2048299((void*)__hosihikari_shim_handle, value);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

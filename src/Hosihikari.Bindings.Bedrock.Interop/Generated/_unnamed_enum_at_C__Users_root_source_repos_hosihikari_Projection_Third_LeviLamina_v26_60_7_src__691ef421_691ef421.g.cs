@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.ActionEvent_Nested;
 
-public enum _unnamed_enum_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_6_src__f807e71e : int
+public enum _unnamed_enum_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_7_src__691ef421 : int
 {
     MoveLeft = 1,
     MoveRight = 2,

@@ -81,14 +81,14 @@ public sealed unsafe partial class AABB : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: anonymous fields are not projected.", false)]
-    public nint __70b4961a
+    public nint __1ff97487
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: anonymous fields are not projected.", false)]
-    public nint __58337b9b
+    public nint __351635cd
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
