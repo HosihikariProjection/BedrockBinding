@@ -10,6 +10,15 @@ table so nothing is optimised away. Names longer than MASM's 247-character
 identifier limit rule out a masm probe, and clang-cl's `__asm__` label alias is
 the only route that accepts them.
 
+The rates are per snapshot, not constants: a carrier release rewrites
+annotations and the runtime data changes with it, so both numerator and
+denominator move. Re-measure whenever the carrier pin or the `bedrockdata`
+version changes, always against the pinned package, and quote that version in
+the conclusion. Measured on 2026-11-19 about `v26.60.8` / `server.16`, 45 of
+26,809 MCNAPI names resolved against 4,734 of 5,047 MCAPI — the release
+shifted several hundred names from MCNAPI to MCAPI, so an older pair of
+figures is not comparable.
+
 Usage:
     python scripts/measure-annotation-hits.py <header-ir-dir> <bedrock_runtime_data> [--macro MCNAPI]
 """
