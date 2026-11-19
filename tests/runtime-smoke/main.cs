@@ -44,6 +44,24 @@ public sealed class BedrockSmokePlugin : IPlugin
                 throw new InvalidOperationException($"unexpected enchant tag: {enchants}");
             }
 
+            // A member the carrier promoted from MCNAPI to MCAPI in v26.60.8: the symbol only
+            // exists in the runtime data that release pins, so this also proves the server is
+            // running the matching snapshot. The shim caches a failed lookup for the life of
+            // the process, so within one run a miss never recovers.
+            var playerTag = LevelStorage.LOCAL_PLAYER_TAG();
+            log.AppendLine($"levelstorage.player_tag={playerTag}");
+            if (playerTag != "~local_player")
+            {
+                throw new InvalidOperationException($"unexpected player tag: '{playerTag}'");
+            }
+
+            var consolePrefix = LevelStorage.LEGACY_CONSOLE_PLAYER_PREFIX();
+            log.AppendLine($"levelstorage.console_prefix={consolePrefix}");
+            if (consolePrefix != "legacy_console_player_")
+            {
+                throw new InvalidOperationException($"unexpected console prefix: '{consolePrefix}'");
+            }
+
             using (var packet = TextPacket.Create())
             {
                 log.AppendLine($"textpacket.isvalid={packet.isValid()}");
@@ -83,6 +101,9 @@ public sealed class BedrockSmokePlugin : IPlugin
         catch (Exception exception)
         {
             log.AppendLine("result=FAIL");
+            // Any failing call may have gone through the shim and left its reason here; log it
+            // before the exception so a miss is not mistaken for a native empty value.
+            log.AppendLine($"last_error={NativeMethods.GetLastError()}");
             log.AppendLine(exception.ToString());
             _context.Logger.LogInformation("bedrock smoke failed: {Error}", exception);
         }

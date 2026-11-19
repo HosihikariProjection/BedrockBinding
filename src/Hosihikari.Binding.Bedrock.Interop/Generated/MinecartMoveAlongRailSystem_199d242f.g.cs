@@ -40,9 +40,9 @@ public sealed unsafe partial class MinecartMoveAlongRailSystem : global::System.
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const VehicleComponent>' is not a known bindable declaration.", false)]
     public static void _calculateRailMovementSystem(nint context, nint railMovementComponent, nint snapOnRailComponent, nint stateVectorComponent, nint vehicleComponent, nint playerView, nint mod) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const VehicleComponent>' is not a known bindable declaration.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void _postRailMovementCalculateMinecartPositionSystem(nint context, nint snapOnRailComponent, nint stateVectorComponent, nint mod, nint constBlockSource) =>

@@ -98,10 +98,28 @@ $Compile = "`"$ClangCl`" /nologo /std:c++20 /EHsc /MD /O2 /utf-8 /bigobj $Define
 if ($LASTEXITCODE -ne 0) { throw "clang-cl could not compile the shim." }
 
 if ([string]::IsNullOrWhiteSpace($BedrockRuntimeData)) {
-    $Data = Get-ChildItem "$env:LOCALAPPDATA\.xmake\packages\b\bedrockdata" -Recurse -Filter bedrock_runtime_data -ErrorAction SilentlyContinue |
-        Sort-Object FullName -Descending |
+    $DataCandidates = Get-ChildItem "$env:LOCALAPPDATA\.xmake\packages\b\bedrockdata" -Recurse -Filter bedrock_runtime_data -ErrorAction SilentlyContinue
+    # The carrier pins one bedrockdata revision and it is the authority: the highest build
+    # number is not necessarily the one it targets (the 26.60 line pins a server.1x build
+    # while a conflicting higher number exists elsewhere). Match the whole version string,
+    # since the build number alone collides across lines, and fail rather than guess.
+    $CarrierLua = Join-Path $LeviLaminaRoot "xmake.lua"
+    if (-not (Test-Path $CarrierLua)) {
+        throw "$CarrierLua was not found, so the pinned bedrockdata revision is unknown; pass -BedrockRuntimeData explicitly."
+    }
+    $Match = Select-String -Path $CarrierLua -Pattern 'bedrockdata\s+(v[0-9.]+-server\.\d+)' | Select-Object -First 1
+    if (-not $Match) {
+        throw "$CarrierLua does not pin bedrockdata; pass -BedrockRuntimeData explicitly."
+    }
+    $PinnedVersion = $Match.Matches[0].Groups[1].Value
+    # The trailing separator keeps "server.1" from matching inside "server.16".
+    $PinnedPattern = [regex]::Escape($PinnedVersion) + [regex]::Escape([string][IO.Path]::DirectorySeparatorChar)
+    $Data = $DataCandidates |
+        Where-Object { $_.FullName -match $PinnedPattern } |
         Select-Object -First 1
-    if (-not $Data) { throw "bedrock_runtime_data was not found; pass -BedrockRuntimeData." }
+    if (-not $Data) {
+        throw "bedrockdata $PinnedVersion is pinned by the carrier but not installed; pass -BedrockRuntimeData explicitly."
+    }
     $BedrockRuntimeData = $Data.FullName
 } else {
     # prelink runs from the caller's directory; an explicit relative path must survive that.
@@ -128,9 +146,26 @@ $BedrockRuntimeLibrary = Join-Path $PrelinkDirectory "lib\bedrock_runtime_api.li
 # names cannot be known up front, so link, read the unresolved ones back from the linker's
 # output, and retry with an import library that supplies them. The delayed load switch keeps
 # a name the running build lacks a null thunk until it is used.
+
+# The carrier pins the fmt version too; match that pin instead of relying on the directory
+# order, which would put "9.1.0" ahead of "11.2.0" and pick arbitrarily between two legal
+# installs.
+$CarrierLuaForFmt = Join-Path $LeviLaminaRoot "xmake.lua"
+if (-not (Test-Path $CarrierLuaForFmt)) {
+    throw "$CarrierLuaForFmt was not found, so the pinned fmt version is unknown."
+}
+$FmtPinMatch = Select-String -Path $CarrierLuaForFmt -Pattern 'add_requires\("fmt\s+([0-9][^\s"]*)"\)' | Select-Object -First 1
+if (-not $FmtPinMatch) {
+    throw "$CarrierLuaForFmt does not pin fmt; the carrier headers need it."
+}
+$FmtVersion = $FmtPinMatch.Matches[0].Groups[1].Value
+# Filter the candidates the same way as the runtime data, so a package directory carrying a
+# "+sha" suffix still matches; a pin that itself names build metadata settles on its base.
+$FmtBaseVersion = ($FmtVersion -split '\+')[0]
+$FmtPinnedPattern = [regex]::Escape($FmtBaseVersion) + '(?:[+]|' + [regex]::Escape([string][IO.Path]::DirectorySeparatorChar) + ')'
 $FmtLibraries = @(Get-ChildItem (Join-Path $env:LOCALAPPDATA (".xmake" + [IO.Path]::DirectorySeparatorChar + "packages" + [IO.Path]::DirectorySeparatorChar + "f" + [IO.Path]::DirectorySeparatorChar + "fmt")) -Recurse -Filter "fmt.lib" -ErrorAction SilentlyContinue |
-    Sort-Object FullName -Descending)
-if ($FmtLibraries.Count -eq 0) { throw "fmt.lib was not found; the carrier headers need it." }
+    Where-Object { $_.FullName -match $FmtPinnedPattern })
+if ($FmtLibraries.Count -eq 0) { throw "fmt $FmtVersion is pinned by the carrier but fmt.lib is not installed." }
 
 $LinkLog = Join-Path $OutputDirectory "shim-link.log"
 function Invoke-ShimLink([string]$DirectLibrary) {

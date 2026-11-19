@@ -634,9 +634,10 @@ public sealed unsafe partial class Mob : global::System.IDisposable
         return new global::Hosihikari.Binding.Bedrock.Interop.ActorHurtResult((nint)__hs_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _baseTick() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _baseTick()
+    {
+        NativeMethods.TablePtr->C2.hs_method_fd2f6e4e((void*)__hosihikari_shim_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _blockedByShield(nint source, nint blocker) =>

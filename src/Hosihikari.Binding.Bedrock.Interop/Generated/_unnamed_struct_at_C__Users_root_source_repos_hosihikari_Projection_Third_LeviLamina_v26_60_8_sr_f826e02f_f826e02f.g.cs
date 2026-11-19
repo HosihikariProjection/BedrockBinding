@@ -5,20 +5,20 @@
 namespace Hosihikari.Binding.Bedrock.Interop.LegacyGoalDefinition_Nested;
 
 [global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_7_sr_f493fb59
+public sealed partial class _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_8_sr_f826e02f
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
 
-    public _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_7_sr_f493fb59(nint handle) : this(handle, true) { }
+    public _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_8_sr_f826e02f(nint handle) : this(handle, true) { }
 
-    internal _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_7_sr_f493fb59(nint handle, bool ownsHandle)
+    internal _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_8_sr_f826e02f(nint handle, bool ownsHandle)
     {
         __hosihikari_shim_handle = handle;
         _ownsHandle = ownsHandle;
     }
 
-    public static _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_7_sr_f493fb59 Borrow(nint handle) => new _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_7_sr_f493fb59(handle, false);
+    public static _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_8_sr_f826e02f Borrow(nint handle) => new _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_8_sr_f826e02f(handle, false);
 
     public nint Handle => __hosihikari_shim_handle;
 
@@ -42,74 +42,60 @@ public sealed partial class _unnamed_struct_at_C__Users_root_source_repos_hosihi
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public static _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_7_sr_f493fb59 Create(nint arg0) =>
+    public static _unnamed_struct_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_8_sr_f826e02f Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public float chanceToStart
+    public bool mAllowLayingFromBelow
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public nint onReachTriggers
+    public nint mEggType
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public nint onStayCompletedTriggers
+    public nint mLayEggSound
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public float speedModifier
+    public float mLaySeconds
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public float stayDuration
+    public nint mOnLayEvent
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public nint targetBlockFilter
+    public nint mTargetBlocks
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public nint targetDescriptors
+    public nint mTargetMaterialsAboveBlock
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public nint targetPositionOffset
-    {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public nint targetSelectionMethod
-    {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public int tickInterval
+    public bool mUseDefaultAnimation
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");

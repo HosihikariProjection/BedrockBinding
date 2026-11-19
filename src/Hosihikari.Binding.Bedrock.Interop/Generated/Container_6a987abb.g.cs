@@ -585,73 +585,73 @@ public sealed unsafe partial class Container : global::System.IDisposable
 
     public bool isSlotDisabled(int slot)
     {
-        return NativeMethods.TablePtr->C0.hs_method_25d52835((void*)__hosihikari_shim_handle, slot) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_25d52835((void*)__hosihikari_shim_handle, slot) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCloseListeners_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_33cd9f24((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_33cd9f24((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerOwner_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d2735d83((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d2735d83((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerRuntimeId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_0ab95fd4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_0ab95fd4((void*)__hosihikari_shim_handle);
     }
 
     public sbyte mContainerType
     {
-        get => NativeMethods.TablePtr->C0.hs_get_be3ff640((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_be3ff640((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_be3ff640((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_be3ff640((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContentChangeListeners_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_8e8f43a9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_8e8f43a9((void*)__hosihikari_shim_handle);
     }
 
     public bool mCustomName
     {
-        get => NativeMethods.TablePtr->C0.hs_get_ff36fc34((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_ff36fc34((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_ff36fc34((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_ff36fc34((void*)__hosihikari_shim_handle, value);
     }
 
     public sbyte mGameplayContainerType
     {
-        get => NativeMethods.TablePtr->C0.hs_get_7d076493((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_7d076493((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_7d076493((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_7d076493((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_cf3042d8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_cf3042d8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRemovedPublisher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_a95c1c7d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a95c1c7d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSizeChangeListeners_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d5e3b394((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d5e3b394((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTransactionContextStack_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d9e2b899((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d9e2b899((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -660,7 +660,7 @@ public sealed unsafe partial class Container : global::System.IDisposable
 
     public global::Hosihikari.Binding.Bedrock.Interop.ItemStack? operator_index_c647bc78(int index)
     {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c647bc78((void*)__hosihikari_shim_handle, index);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c647bc78((void*)__hosihikari_shim_handle, index);
         if (__hs_handle == null)
         {
             NativeMethods.GetLastError();
@@ -671,7 +671,7 @@ public sealed unsafe partial class Container : global::System.IDisposable
 
     public global::Hosihikari.Binding.Bedrock.Interop.ItemStack? operator_index_39221f08(int index)
     {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_39221f08((void*)__hosihikari_shim_handle, index);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_39221f08((void*)__hosihikari_shim_handle, index);
         if (__hs_handle == null)
         {
             NativeMethods.GetLastError();
@@ -686,7 +686,7 @@ public sealed unsafe partial class Container : global::System.IDisposable
 
     public void readAdditionalSaveData(global::Hosihikari.Binding.Bedrock.Interop.CompoundTag tag)
     {
-        NativeMethods.TablePtr->C0.hs_method_947e27d6((void*)__hosihikari_shim_handle, (void*)tag.Handle);
+        NativeMethods.TablePtr->C1.hs_method_947e27d6((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
     public void receiveContainerLifetimes(nint tracker)

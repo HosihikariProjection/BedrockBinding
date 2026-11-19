@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Binding.Bedrock.Interop.BrewingStandBlockActor_Nested;
 
-public enum _unnamed_enum_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_7_src__ed8ef32a : int
+public enum _unnamed_enum_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_8_src__d47428dc : int
 {
     Ingredient = 0,
     Potion1 = 1,

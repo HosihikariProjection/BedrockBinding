@@ -19,7 +19,7 @@ $ErrorActionPreference = "Stop"
 $StartTime = Get-Date
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 if ([string]::IsNullOrWhiteSpace($LeviLaminaRoot)) {
-    $LeviLaminaRoot = (Resolve-Path (Join-Path $RepoRoot "..\Third\LeviLamina-v26.60.7")).Path
+    $LeviLaminaRoot = (Resolve-Path (Join-Path $RepoRoot "..\Third\LeviLamina-v26.60.8")).Path
 } else {
     $LeviLaminaRoot = (Resolve-Path $LeviLaminaRoot).Path
 }

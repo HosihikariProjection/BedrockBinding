@@ -88,17 +88,18 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
     public nint _classifyDoorNode(nint data, nint testBlock, nint testPos, nint lastPathPos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _classifyNode(nint data, nint lastPathPos, nint testBlock, nint testPos, nint jumpIntoNode, nint climbIntoNode) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public int _classifyNode(global::Hosihikari.Binding.Bedrock.Interop.ActorPathingData data, global::Hosihikari.Binding.Bedrock.Interop.BlockPos lastPathPos, global::Hosihikari.Binding.Bedrock.Interop.Block testBlock, global::Hosihikari.Binding.Bedrock.Interop.BlockPos testPos, byte jumpIntoNode, byte climbIntoNode)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_108914e8((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)lastPathPos.Handle, (void*)testBlock.Handle, (void*)testPos.Handle, jumpIntoNode, climbIntoNode);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _findNearestPathableNeighbor(nint outPos, nint data, nint testPos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.", false)]
     public nint _findPath(nint data, nint from, nint to, nint size, float maxDist) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _findPath(nint actorData, float xt, float yt, float zt, float maxDist) =>
@@ -156,13 +157,14 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
     public static nint extractPathingData(nint mutableActor, nint purpose, nint targetPos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.", false)]
     public nint findPath(nint from, nint to, float maxDist) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint isFree(nint data, nint lastPathPos, nint testPos, nint size, nint jumpIntoNode, nint climbIntoNode) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public int isFree(global::Hosihikari.Binding.Bedrock.Interop.ActorPathingData data, global::Hosihikari.Binding.Bedrock.Interop.BlockPos lastPathPos, global::Hosihikari.Binding.Bedrock.Interop.BlockPos testPos, global::Hosihikari.Binding.Bedrock.Interop.BlockPos size, byte jumpIntoNode, byte climbIntoNode)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_a9e2350b((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)lastPathPos.Handle, (void*)testPos.Handle, (void*)size.Handle, jumpIntoNode, climbIntoNode);
+    }
 
     public bool mAvoidDamageBlocks
     {

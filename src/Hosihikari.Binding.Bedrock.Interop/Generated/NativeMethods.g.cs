@@ -681,6 +681,7 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_6be43175;
         public delegate* unmanaged[Cdecl]<void*, void*, void> hs_method_63ace443;
         public delegate* unmanaged[Cdecl]<void*, void*, void*, void*> hs_method_a235c88a;
+        public delegate* unmanaged[Cdecl]<void*, void> hs_method_85e85940;
         public delegate* unmanaged[Cdecl]<void*, void*, byte> hs_method_384b23f4;
         public delegate* unmanaged[Cdecl]<void*, uint, byte> hs_method_f6a31390;
         public delegate* unmanaged[Cdecl]<void*, void*, byte> hs_method_3ff7e44f;
@@ -1155,6 +1156,7 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, float, void> hs_method_64faaea1;
         public delegate* unmanaged[Cdecl]<void*, float, float, void> hs_method_44d1e4dc;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_method_81287b78;
+        public delegate* unmanaged[Cdecl]<void*, byte> hs_method_52f8c375;
         public delegate* unmanaged[Cdecl]<void*, void*, float, void*> hs_method_8010e6ce;
         public delegate* unmanaged[Cdecl]<void*, void*, bool, byte> hs_method_ad7c3676;
         public delegate* unmanaged[Cdecl]<void*, void> hs_method_37871154;
@@ -2654,6 +2656,7 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_ff3b21da;
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_f24108c5;
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_00b8ee26;
+        public delegate* unmanaged[Cdecl]<void*, void*, void> hs_method_6b73c1dc;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_create_97697ec1;
         public delegate* unmanaged[Cdecl]<void*, void*, void> hs_method_df351354;
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_02dc3448;
@@ -10713,6 +10716,7 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_77cbecdd;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_eead73a7;
         public delegate* unmanaged[Cdecl]<void*, void*, void*> hs_method_a304aed8;
+        public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_cfec3aea;
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_43f848a4;
         public delegate* unmanaged[Cdecl]<void*> hs_create_0c4d9f9f;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_create_d5869b03;
@@ -11358,6 +11362,20 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void*> hs_method_488df311;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_method_9bbc4a36;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_method_d2167366;
+        public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_6abacab3;
+        public delegate* unmanaged[Cdecl]<void*> hs_create_50fa47cd;
+        public delegate* unmanaged[Cdecl]<global::Hosihikari.Binding.Abi.SharedHandleData, void*> hs_create_cbbc6594;
+        public delegate* unmanaged[Cdecl]<void*> hs_create_bc649a4e;
+        public delegate* unmanaged[Cdecl]<global::Hosihikari.Binding.Abi.SharedHandleData, void*, void*> hs_create_901b0c4a;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_method_5c0b702f;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_9d164598;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_5381f4d9;
+        public delegate* unmanaged[Cdecl]<void*, void*, void> hs_set_5381f4d9;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_method_75c10dec;
+        public delegate* unmanaged[Cdecl]<void*, byte> hs_method_a572e05a;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_method_fd8babe8;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_method_8710c3a7;
+        public delegate* unmanaged[Cdecl]<void*, byte> hs_method_ea3f3110;
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_12cf3eec;
         public delegate* unmanaged[Cdecl]<void*> hs_create_1fd687f6;
         public delegate* unmanaged[Cdecl]<global::Hosihikari.Binding.Abi.SharedHandleData, void*> hs_create_9558ec7a;
@@ -29992,6 +30010,11 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void> hs_method_29c0622e;
         public delegate* unmanaged[Cdecl]<void*, void*, void> hs_method_db7a090d;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_method_43c2dd79;
+    }
+
+    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
+    internal struct TableChunk1
+    {
         public delegate* unmanaged[Cdecl]<void*, int, byte> hs_method_25d52835;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_33cd9f24;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_d2735d83;
@@ -30010,11 +30033,6 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, int, void*> hs_method_c647bc78;
         public delegate* unmanaged[Cdecl]<void*, int, void*> hs_method_39221f08;
         public delegate* unmanaged[Cdecl]<void*, void*, void> hs_method_947e27d6;
-    }
-
-    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
-    internal struct TableChunk1
-    {
         public delegate* unmanaged[Cdecl]<void*, void*, void> hs_method_925b5d93;
         public delegate* unmanaged[Cdecl]<void*, void> hs_method_eaa9dc71;
         public delegate* unmanaged[Cdecl]<void*, void> hs_method_c6107f0f;
@@ -53419,6 +53437,7 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, int, void*, void> hs_method_e1a01409;
         public delegate* unmanaged[Cdecl]<void*> hs_create_05811957;
         public delegate* unmanaged[Cdecl]<void*, void*, void*, void> hs_method_9ea052d0;
+        public delegate* unmanaged[Cdecl]<void*, void*, int, void> hs_method_52d5a28d;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_method_f3db7e5e;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_method_a6213d76;
         public delegate* unmanaged[Cdecl]<void*, int> hs_method_d5552917;
@@ -59996,6 +60015,11 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, int, void> hs_set_76df6f8f;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_c616211e;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_get_e0d060a7;
+    }
+
+    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
+    internal struct TableChunk2
+    {
         public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_e0d060a7;
         public delegate* unmanaged[Cdecl]<void*, int> hs_get_668207ad;
         public delegate* unmanaged[Cdecl]<void*, int, void> hs_set_668207ad;
@@ -60015,11 +60039,6 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*> hs_create_3e515fcd;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_create_b4c5e502;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_8d3b5c02;
-    }
-
-    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
-    internal struct TableChunk2
-    {
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_e5c191d0;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_create_18b7c33b;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_181a2255;
@@ -65240,6 +65259,8 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void*> hs_create_8b802a63;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_9d39d62a;
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_d35aabc7;
+        public delegate* unmanaged[Cdecl]<global::Hosihikari.Binding.Abi.StringView> hs_method_0dadd7ac;
+        public delegate* unmanaged[Cdecl]<global::Hosihikari.Binding.Abi.StringView> hs_method_a820e012;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_create_e79ca346;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_method_75d17cd2;
         public delegate* unmanaged[Cdecl]<void*, byte*, nuint, byte*, nuint, bool, byte> hs_method_e570d33f;
@@ -65257,6 +65278,7 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, byte*, nuint, uint, global::Hosihikari.Binding.Abi.StringView> hs_method_229a3ec8;
         public delegate* unmanaged[Cdecl]<void*, byte*, nuint, uint, byte> hs_method_88600724;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_method_93baa3b0;
+        public delegate* unmanaged[Cdecl]<void*, bool, global::Hosihikari.Binding.Abi.ArrayView> hs_method_337e2e86;
         public delegate* unmanaged[Cdecl]<void*, byte*, nuint, byte*, nuint, uint, global::Hosihikari.Binding.Abi.StringView*, byte> hs_method_6985c0b6;
         public delegate* unmanaged[Cdecl]<void*, void*, byte> hs_method_ef0716ef;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_method_4fe1ab37;
@@ -71593,6 +71615,7 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void*, void> hs_method_9d33c4b7;
         public delegate* unmanaged[Cdecl]<void*, void> hs_method_c0ee24e5;
         public delegate* unmanaged[Cdecl]<void*, void*, void*, void*> hs_method_58885dea;
+        public delegate* unmanaged[Cdecl]<void*, void> hs_method_fd2f6e4e;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_method_ade08ce3;
         public delegate* unmanaged[Cdecl]<void*, float, float, void*, float> hs_method_d97c8db5;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_method_0b7bdbc4;
@@ -76604,25 +76627,26 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void*, void*> hs_method_ea411edf;
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_6f3dd931;
         public delegate* unmanaged[Cdecl]<void*> hs_create_7688f390;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_create_e39ec665;
+        public delegate* unmanaged[Cdecl]<void*, void*, byte, byte> hs_method_0e149eb7;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_method_2bcf3ad5;
         public delegate* unmanaged[Cdecl]<void*, void*, int, void> hs_method_d2904e5c;
         public delegate* unmanaged[Cdecl]<void*, global::Hosihikari.Binding.Abi.SharedHandleData> hs_method_d6b96a77;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_f7cbb814;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_a312e5eb;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_48c2f5f5;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_9863dcf5;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_7ca0ca8f;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_0f64d58b;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_5c0935d7;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_cba5264f;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_d820c365;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_8d34a9b4;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_af011b78;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_36520982;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_725e8940;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_21a39315;
-        public delegate* unmanaged[Cdecl]<void*, void*, void*> hs_method_212b6eda;
+        public delegate* unmanaged[Cdecl]<void*, byte> hs_get_0cfe4514;
+        public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_0cfe4514;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_b02bfe81;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_9d7d9b7c;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_7235a0d3;
+        public delegate* unmanaged[Cdecl]<void*, byte> hs_get_48316689;
+        public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_48316689;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_fe71edef;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_47162070;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_d4ff4004;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_399b3b7b;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_71af38e3;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_945396ab;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_8adc2863;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_5b5289c1;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_af9a03c1;
         public delegate* unmanaged[Cdecl]<void*, byte*, nuint, byte*, nuint, int, int, int, bool, bool, bool, void*, void*, void> hs_method_7709367a;
         public delegate* unmanaged[Cdecl]<void*, void> hs_method_f98201b9;
         public delegate* unmanaged[Cdecl]<void*, void> hs_method_cc89f3a2;
@@ -76630,40 +76654,45 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_298ed909;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_e47f465e;
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_5da68e67;
-        public delegate* unmanaged[Cdecl]<void*> hs_create_ced94183;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_create_0c3672d2;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_abd33f12;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_9d917ac7;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_d48f6a2e;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_7ed3bade;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_fa34115e;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_2693f73a;
-        public delegate* unmanaged[Cdecl]<void*, void*, void*> hs_method_286d0fe5;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_84586283;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_0f80c24a;
+        public delegate* unmanaged[Cdecl]<void*, ulong> hs_get_8e31765a;
+        public delegate* unmanaged[Cdecl]<void*, ulong, void> hs_set_8e31765a;
+        public delegate* unmanaged[Cdecl]<void*, ushort> hs_get_23e88c0b;
+        public delegate* unmanaged[Cdecl]<void*, ushort, void> hs_set_23e88c0b;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_17931703;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_92d9b5fa;
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_cdb10e5a;
-        public delegate* unmanaged[Cdecl]<void*> hs_create_3c482dd4;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_create_b344b5d5;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_90668c8e;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_cd26f562;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_3ca8a1ad;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_524227a0;
-        public delegate* unmanaged[Cdecl]<void*, void*, void*> hs_method_80b5fe7a;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_c9d28c30;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_0610a05f;
+        public delegate* unmanaged[Cdecl]<void*, ulong> hs_get_b2b34207;
+        public delegate* unmanaged[Cdecl]<void*, ulong, void> hs_set_b2b34207;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_e65906da;
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_bed93e9c;
-        public delegate* unmanaged[Cdecl]<void*> hs_create_f1285dcf;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_create_d7d4ddb6;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_404dc420;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_cfb656a6;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_49e48b3b;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_c83af838;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_5c32cafa;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_80f69157;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_e5c197d2;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_508f5c3a;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_3457dbe7;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_4095a8d9;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_86d6fbf4;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_f54e2e12;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_015d0279;
-        public delegate* unmanaged[Cdecl]<void*, void*, void*> hs_method_f838e010;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_d48ec427;
+        public delegate* unmanaged[Cdecl]<void*, short> hs_get_0f432414;
+        public delegate* unmanaged[Cdecl]<void*, short, void> hs_set_0f432414;
+        public delegate* unmanaged[Cdecl]<void*, int> hs_get_d14f8bf4;
+        public delegate* unmanaged[Cdecl]<void*, int, void> hs_set_d14f8bf4;
+        public delegate* unmanaged[Cdecl]<void*, byte> hs_get_9f7be160;
+        public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_9f7be160;
+        public delegate* unmanaged[Cdecl]<void*, byte> hs_get_074db93e;
+        public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_074db93e;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_dcf350e3;
+        public delegate* unmanaged[Cdecl]<void*, int> hs_get_b774ab0e;
+        public delegate* unmanaged[Cdecl]<void*, int, void> hs_set_b774ab0e;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_030f4dcf;
+        public delegate* unmanaged[Cdecl]<void*, int> hs_get_55357c56;
+        public delegate* unmanaged[Cdecl]<void*, int, void> hs_set_55357c56;
+        public delegate* unmanaged[Cdecl]<void*, int> hs_get_3c8b0cc5;
+        public delegate* unmanaged[Cdecl]<void*, int, void> hs_set_3c8b0cc5;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_376e9449;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_09832e4e;
+        public delegate* unmanaged[Cdecl]<void*, byte> hs_get_7a7037cc;
+        public delegate* unmanaged[Cdecl]<void*, byte, void> hs_set_7a7037cc;
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_b85c89b4;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_get_a342ec0f;
         public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_a342ec0f;
@@ -81900,6 +81929,8 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_df20473e;
         public delegate* unmanaged[Cdecl]<void*> hs_create_e74646d2;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_create_19641432;
+        public delegate* unmanaged[Cdecl]<void*, void*, void*, void*, void*, byte, byte, int> hs_method_108914e8;
+        public delegate* unmanaged[Cdecl]<void*, void*, void*, void*, void*, byte, byte, int> hs_method_a9e2350b;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_get_80486a76;
         public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_80486a76;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_get_c3637105;
@@ -89989,6 +90020,11 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_392dcd4f;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_get_d76a305d;
         public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_d76a305d;
+    }
+
+    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
+    internal struct TableChunk3
+    {
         public delegate* unmanaged[Cdecl]<void*, byte> hs_get_5307b06f;
         public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_5307b06f;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_f62408e0;
@@ -90020,11 +90056,6 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_6660935b;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_get_952d834b;
         public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_952d834b;
-    }
-
-    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
-    internal struct TableChunk3
-    {
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_21eff4b2;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_0627ed39;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_4b04a85b;
@@ -119994,6 +120025,11 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, byte> hs_get_fe4cde64;
         public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_fe4cde64;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_get_40aa2397;
+    }
+
+    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
+    internal struct TableChunk4
+    {
         public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_40aa2397;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_f01b407d;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_get_c3bb94a3;
@@ -120025,11 +120061,6 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, int, void> hs_set_5397c5a7;
         public delegate* unmanaged[Cdecl]<void*, int> hs_get_82b098af;
         public delegate* unmanaged[Cdecl]<void*, int, void> hs_set_82b098af;
-    }
-
-    [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
-    internal struct TableChunk4
-    {
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_39c8555e;
         public delegate* unmanaged[Cdecl]<void*, int> hs_get_0118a731;
         public delegate* unmanaged[Cdecl]<void*, int, void> hs_set_0118a731;

@@ -294,9 +294,10 @@ public sealed unsafe partial class HopperBlockActor : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_9ea052d0((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)arg1.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _tick(nint region, int maxRecursion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _tick(global::Hosihikari.Binding.Bedrock.Interop.BlockSource region, int maxRecursion)
+    {
+        NativeMethods.TablePtr->C1.hs_method_52d5a28d((void*)__hosihikari_shim_handle, (void*)region.Handle, maxRecursion);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getAttachedFurnace(nint region) =>

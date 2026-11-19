@@ -92,18 +92,6 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
         return new NetherNetServerLocator((nint)handle);
     }
 
-    public static NetherNetServerLocator? Create(global::Hosihikari.Binding.Bedrock.Interop.NetherNetServerLocator arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_e39ec665((void*)arg0.Handle);
-        if (handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
-
-        return new NetherNetServerLocator((nint)handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static NetherNetServerLocator Create(nint connector, nint appPlatform, nint dispatcher, nint signalingService) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
@@ -112,9 +100,10 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
     public void _cacheDiscoveryResponseData() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool _onDiscoveryRequest(nint writer, nint area) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool _onDiscoveryRequest(global::Hosihikari.Binding.Bedrock.Interop.cereal.SchemaWriter writer, byte area)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_0e149eb7((void*)__hosihikari_shim_handle, (void*)writer.Handle, area) != 0;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _setDiscoveryRequestCallback(bool enable) =>
@@ -158,99 +147,88 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
         return global::Hosihikari.Binding.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk1ca294_Address
+    public bool mAnnouncing
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f7cbb814((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_0cfe4514((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_0cfe4514((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk330682_Address
+    public nint mAppPlatform_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a312e5eb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b02bfe81((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk36b3eb_Address
+    public nint mCachedBroadcastDiscoveryResponse_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_48c2f5f5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9d7d9b7c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk3ee0a8_Address
+    public nint mCustomServerTaskGroup_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9863dcf5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7235a0d3((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mDiscovering
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_48316689((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_48316689((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk4b5a50_Address
+    public nint mHttpDispatcher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_7ca0ca8f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_fe71edef((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk646852_Address
+    public nint mHttpProbeImpl_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_0f64d58b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_47162070((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk965302_Address
+    public nint mLanServerList_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5c0935d7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d4ff4004((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk983682_Address
+    public nint mLocatorLock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_cba5264f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_399b3b7b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk9e12a8_Address
+    public nint mNetherNetConnector_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d820c365((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_71af38e3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnka0ecad_Address
+    public nint mReflectionCtx_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8d34a9b4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_945396ab((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnke14539_Address
+    public nint mServerToAnnounce_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_af011b78((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8adc2863((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnke6202d_Address
+    public nint mSignalingStatus_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_36520982((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5b5289c1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkeab7f7_Address
+    public nint mTransportEndpointCache_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_725e8940((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkfee0d4_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_21a39315((void*)__hosihikari_shim_handle);
-    }
-
-    public global::Hosihikari.Binding.Bedrock.Interop.NetherNetServerLocator? operator_assign(global::Hosihikari.Binding.Bedrock.Interop.NetherNetServerLocator arg0)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_212b6eda((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-        if (__hs_handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
-        return new global::Hosihikari.Binding.Bedrock.Interop.NetherNetServerLocator((nint)__hs_handle, false);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_af9a03c1((void*)__hosihikari_shim_handle);
     }
 
     public void startAnnouncingServer(string playerName, string worldName, int gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore, global::Hosihikari.Binding.Bedrock.Interop.ServerSupportedAuthenticationTypes supportedAuth, global::Hosihikari.Binding.Bedrock.Interop.Social.Nonce nonce)
