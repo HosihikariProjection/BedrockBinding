@@ -1,5 +1,5 @@
 // Shared C ABI primitives for Hosihikari BindingShims.
-// Keep this header in sync with Hosihikari.Bindings.Abi (StringView, ArrayView,
+// Keep this header in sync with Hosihikari.Binding.Abi (StringView, ArrayView,
 // SharedHandleData) and bump the table version when any layout changes.
 #pragma once
 

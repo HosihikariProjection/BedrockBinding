@@ -10,7 +10,7 @@ Options:
   --surface <name>       Generated surface directory. Default: bedrock
   --shim-source <file>   Generated binding_table.cpp to compile.
   --output <file>        Output shared library.
-                         Default: artifacts/native/libHosihikari.Bindings.Bedrock.Shim.so
+                         Default: artifacts/native/libHosihikari.Binding.Bedrock.Shim.so
   --cxx <compiler>       C++ compiler. Default: g++, or the CXX environment variable.
 EOF
 }
@@ -20,7 +20,7 @@ repo_root="$(cd "$script_root/../.." && pwd)"
 configuration="linux-x64-server"
 surface="bedrock"
 shim_source=""
-output="$repo_root/artifacts/native/libHosihikari.Bindings.Bedrock.Shim.so"
+output="$repo_root/artifacts/native/libHosihikari.Binding.Bedrock.Shim.so"
 cxx="${CXX:-g++}"
 
 while [ "$#" -gt 0 ]; do
