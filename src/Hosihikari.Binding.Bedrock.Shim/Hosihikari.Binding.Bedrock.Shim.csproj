@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- A packaging-only project: it produces no managed assembly and ships the native shim
+       built by native/BindingShim/build.ps1 as a runtimes/win-x64/native asset. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <PackageId>Hosihikari.Binding.Bedrock.Shim</PackageId>
+    <Version>1.26.60-r0</Version>
+    <Authors>Hosihikari</Authors>
+    <Description>Native BindingShim for the Bedrock Dedicated Server (MCAPI) surface, resolved by symbol name through the LeviLamina preloader.</Description>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/HosihikariProjection/BedrockBinding</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>minecraft;bedrock;bds;mcapi;hosihikari;native</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../native/BindingShim/README.md" Pack="true" PackagePath="/" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(ShimDll)' != '' and Exists('$(ShimDll)')">
+    <None Include="$(ShimDll)" Pack="true" PackagePath="runtimes/win-x64/native/" Visible="false" />
+  </ItemGroup>
+
+  <Target Name="RequireShimDll" BeforeTargets="Pack" Condition="'$(ShimDll)' == '' or !Exists('$(ShimDll)')">
+    <Error Text="Pass -p:ShimDll=&lt;path to Hosihikari.Binding.Bedrock.Shim.dll&gt; (build it with native/BindingShim/build.ps1)." />
+  </Target>
+
+</Project>

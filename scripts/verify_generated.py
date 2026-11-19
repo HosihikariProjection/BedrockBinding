@@ -10,7 +10,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 COVERAGE = ROOT / "coverage"
-INTEROP = ROOT / "src" / "Hosihikari.Bindings.Bedrock.Interop" / "Generated"
+INTEROP = ROOT / "src" / "Hosihikari.Binding.Bedrock.Interop" / "Generated"
 SHIMS = ROOT / "native" / "BindingShim" / "generated"
 
 

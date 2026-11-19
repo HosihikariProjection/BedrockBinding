@@ -42,7 +42,7 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Build
-        run: dotnet build Hosihikari.Bindings.Bedrock.slnx -c Release -p:AbiProjectPath=${{ github.workspace }}/Binding.Abi/src/Hosihikari.Bindings.Abi/Hosihikari.Bindings.Abi.csproj
+        run: dotnet build Hosihikari.Binding.Bedrock.slnx -c Release -p:AbiProjectPath=${{ github.workspace }}/Binding.Abi/src/Hosihikari.Binding.Abi/Hosihikari.Binding.Abi.csproj
 
       - name: Verify generated sources
         run: python scripts/verify_generated.py
@@ -67,12 +67,12 @@ jobs:
       - name: Build native shim
         run: |
           $env:HOSIHIKARI_CLANG_CL = "${{ github.workspace }}/llvm/bin/clang-cl.exe"
-          powershell -NoProfile -ExecutionPolicy Bypass -File native/BindingShim/build.ps1 -Configuration win-x64-server -LeviLaminaRoot Third/LeviLamina -Output artifacts/native/Hosihikari.Bindings.Bedrock.Shim.dll
+          powershell -NoProfile -ExecutionPolicy Bypass -File native/BindingShim/build.ps1 -Configuration win-x64-server -LeviLaminaRoot Third/LeviLamina -Output artifacts/native/Hosihikari.Binding.Bedrock.Shim.dll
 
       - name: Pack
         run: |
-          dotnet pack src/Hosihikari.Bindings.Bedrock.Interop/Hosihikari.Bindings.Bedrock.Interop.csproj -c Release -p:AbiProjectPath=${{ github.workspace }}/Binding.Abi/src/Hosihikari.Bindings.Abi/Hosihikari.Bindings.Abi.csproj -o artifacts/pack
-          dotnet pack src/Hosihikari.Bindings.Bedrock.Shim/Hosihikari.Bindings.Bedrock.Shim.csproj -c Release -p:ShimDll=${{ github.workspace }}/artifacts/native/Hosihikari.Bindings.Bedrock.Shim.dll -o artifacts/pack
+          dotnet pack src/Hosihikari.Binding.Bedrock.Interop/Hosihikari.Binding.Bedrock.Interop.csproj -c Release -p:AbiProjectPath=${{ github.workspace }}/Binding.Abi/src/Hosihikari.Binding.Abi/Hosihikari.Binding.Abi.csproj -o artifacts/pack
+          dotnet pack src/Hosihikari.Binding.Bedrock.Shim/Hosihikari.Binding.Bedrock.Shim.csproj -c Release -p:ShimDll=${{ github.workspace }}/artifacts/native/Hosihikari.Binding.Bedrock.Shim.dll -o artifacts/pack
 
       - name: Push to NuGet
         run: dotnet nuget push artifacts/pack/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate

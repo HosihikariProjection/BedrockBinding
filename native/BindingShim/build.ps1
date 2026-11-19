@@ -2,7 +2,7 @@ param(
     [string]$Configuration = "win-x64-server",
     [string]$Surface = "bedrock",
     [string]$ShimSource = "",
-    [string]$Output = "artifacts/native/Hosihikari.Bindings.Bedrock.Shim.dll",
+    [string]$Output = "artifacts/native/Hosihikari.Binding.Bedrock.Shim.dll",
     [string]$LeviLaminaRoot = "",
     [string]$BedrockRuntimeData = "",
     [string]$PrelinkExe = "",

@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using Microsoft.Extensions.Logging;
 using Hosihikari;
-using Hosihikari.Bindings.Bedrock.Interop;
+using Hosihikari.Binding.Bedrock.Interop;
 
 // Loads the generated BindingShim inside a real BDS process and exercises the
 // name-resolved surface: static string accessors, a constructed packet, an instance
@@ -27,7 +27,7 @@ public sealed class BedrockSmokePlugin : IPlugin
         {
             NativeMethods.Load(System.IO.Path.Combine(
                 _context.PackageDirectory,
-                "Hosihikari.Bindings.Bedrock.Shim.dll"));
+                "Hosihikari.Binding.Bedrock.Shim.dll"));
             log.AppendLine("load=ok");
 
             var prefix = Block.BLOCK_DESCRIPTION_PREFIX();

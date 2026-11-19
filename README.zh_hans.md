@@ -1,4 +1,4 @@
-# Hosihikari.Bindings.Bedrock
+# Hosihikari.Binding.Bedrock
 
 [English](README.md) | [简体中文](README.zh_hans.md)
 
@@ -8,14 +8,14 @@ Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近
 
 ## 边界
 
-- `Hosihikari.Bindings.Bedrock.Interop` 由 `HosihikariProjection/BindingGenerator` 从 LeviLamina `src/mc` 与 `ll/api` 头文件树的头文件级 IR 生成。它映照 MCAPI 声明：record 保留生成的包装类型，枚举声明投影为携带头文件枚举值的 C# 枚举，单层指针与引用返回变为类型化借用包装，`optional_ref<T>` 复用该路径，不受支持的成员保留带原因的 `NotSupportedException` stub；没有可用成员的类型保留类型身份并标记 `[Obsolete]`。ABI 值类型与 shim 加载器来自 `HosihikariProjection/BindingAbi`。
+- `Hosihikari.Binding.Bedrock.Interop` 由 `HosihikariProjection/BindingGenerator` 从 LeviLamina `src/mc` 与 `ll/api` 头文件树的头文件级 IR 生成。它映照 MCAPI 声明：record 保留生成的包装类型，枚举声明投影为携带头文件枚举值的 C# 枚举，单层指针与引用返回变为类型化借用包装，`optional_ref<T>` 复用该路径，不受支持的成员保留带原因的 `NotSupportedException` stub；没有可用成员的类型保留类型身份并标记 `[Obsolete]`。ABI 值类型与 shim 加载器来自 `HosihikariProjection/BindingAbi`。
 - `native/BindingShim/` 是 C ABI 投影，自包含：不包含游戏头文件，也不链接 import library。每个成员在运行期向预加载器（`pl_resolve_symbol`）查询其修饰名；查询入口通过 `GetModuleHandleW`/`dlsym` 动态取得，因此没有预加载器的进程里垫片也能加载，只是调用返回 `symbol was not resolved`。解析结果按函数缓存，每个名称只查找一次。
 - 采用按名解析而不是链接载体导入库，是刻意的选择：BDS 只导出少量 PE 符号，链接版垫片必须依赖由第三方运行期数据包合成的导入库，而本分支只从公开头文件重生成。按名查询还让缺失符号只影响单次调用（虚成员回退到 IR 记录的 vtable 槽位），不会在加载期使整个 DLL 失败，并能服务运行期数据能映射该名字的任意载体构建。
 - 手写 Idiomatic 层延后；生成的 Interop 是当前公开的互操作面。
 
 ## 当前状态
 
-- Interop：`src/Hosihikari.Bindings.Bedrock.Interop/Generated/` 下 9,190 个生成的 C# 文件。
+- Interop：`src/Hosihikari.Binding.Bedrock.Interop/Generated/` 下 9,190 个生成的 C# 文件。
 - 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 136,358 个函数。
 - 覆盖：`win-x64-server` 配置绑定 12,144 个声明与 101,843 个成员。
 - 载体标注为 `MCNAPI`（已知但不导出）的成员保留为带原因的 stub：对锁定数据实测，27,673 个名称中仅 2 个可解析，而 4,183 个 `MCAPI` 名称中有 3,871 个可解析。
@@ -55,7 +55,7 @@ powershell -File scripts/regenerate.ps1 `
 ## 构建
 
 ```shell
-dotnet build Hosihikari.Bindings.Bedrock.slnx -c Release
+dotnet build Hosihikari.Binding.Bedrock.slnx -c Release
 powershell -File native/BindingShim/build.ps1
 ```
 
@@ -71,16 +71,16 @@ powershell -File native/BindingShim/build.ps1
 
 两个 NuGet 包共用版本 `1.26.60-r0`：
 
-- `Hosihikari.Bindings.Bedrock.Interop` —— 托管互操作；依赖 `Hosihikari.Bindings.Abi`。
-- `Hosihikari.Bindings.Bedrock.Shim` —— 原生 Windows 垫片，位于 `runtimes/win-x64/native/`。
+- `Hosihikari.Binding.Bedrock.Interop` —— 托管互操作；依赖 `Hosihikari.Binding.Abi`。
+- `Hosihikari.Binding.Bedrock.Shim` —— 原生 Windows 垫片，位于 `runtimes/win-x64/native/`。
 
 `publish.yml` 在 `v*` 标签上运行：构建并校验面、编译垫片、打包两个包，并用 `NUGET_API_KEY` secret 推送到 nuget.org。本地打包：
 
 ```shell
-powershell -File native/BindingShim/build.ps1 -Output artifacts/native/Hosihikari.Bindings.Bedrock.Shim.dll
-dotnet pack src/Hosihikari.Bindings.Bedrock.Interop/Hosihikari.Bindings.Bedrock.Interop.csproj -c Release -o artifacts/pack
-dotnet pack src/Hosihikari.Bindings.Bedrock.Shim/Hosihikari.Bindings.Bedrock.Shim.csproj -c Release `
-  -p:ShimDll=artifacts/native/Hosihikari.Bindings.Bedrock.Shim.dll -o artifacts/pack
+powershell -File native/BindingShim/build.ps1 -Output artifacts/native/Hosihikari.Binding.Bedrock.Shim.dll
+dotnet pack src/Hosihikari.Binding.Bedrock.Interop/Hosihikari.Binding.Bedrock.Interop.csproj -c Release -o artifacts/pack
+dotnet pack src/Hosihikari.Binding.Bedrock.Shim/Hosihikari.Binding.Bedrock.Shim.csproj -c Release `
+  -p:ShimDll=artifacts/native/Hosihikari.Binding.Bedrock.Shim.dll -o artifacts/pack
 dotnet nuget push artifacts/pack/*.nupkg --api-key <key> --source https://api.nuget.org/v3/index.json
 ```
 

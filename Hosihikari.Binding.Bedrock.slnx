@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Hosihikari.Binding.Bedrock.Interop/Hosihikari.Binding.Bedrock.Interop.csproj" />
+    <Project Path="src/Hosihikari.Binding.Bedrock.Shim/Hosihikari.Binding.Bedrock.Shim.csproj" />
+  </Folder>
+</Solution>
