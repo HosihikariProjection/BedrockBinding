@@ -76,27 +76,13 @@ public sealed unsafe partial class InMemorySequentialFile : global::System.IDisp
         return new InMemorySequentialFile((nint)handle);
     }
 
-    public global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status? Read(ulong n, nint result, nint scratch)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6fa1f541((void*)__hosihikari_shim_handle, n, (void*)result, (void*)scratch);
-        if (__hs_handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
-        return new global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint Read(ulong n, nint result, nint scratch) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status? Skip(ulong n)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7de68bd1((void*)__hosihikari_shim_handle, n);
-        if (__hs_handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
-        return new global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint Skip(ulong n) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk686272_Address

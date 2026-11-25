@@ -104,9 +104,30 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
     public void addTickingAreaListForDimension(nint dimensionId, nint tickingAreaList) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint addTransientScopedArea(nint dimensionId, nint name, ulong scopeKey, nint uuid, nint bounds) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Binding.Bedrock.Interop.TickingAreasManager_Nested.ScopedContext? addTransientScopedArea(global::Hosihikari.Binding.Bedrock.Interop.DimensionType dimensionId, string name, ulong scopeKey, global::Hosihikari.Binding.Bedrock.Interop.mce.UUID uuid, global::Hosihikari.Binding.Bedrock.Interop.Bounds bounds)
+    {
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_7eeaefa3((void*)__hosihikari_shim_handle, (void*)dimensionId.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, scopeKey, (void*)uuid.Handle, (void*)bounds.Handle);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Binding.Bedrock.Interop.TickingAreasManager_Nested.ScopedContext((nint)__hs_handle);
+        }
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public uint countStandaloneTickingAreas() =>
@@ -174,9 +195,20 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
     public nint removePendingAreaByPosition(nint dimensionId, nint position, nint levelStorage) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void removeScopedAreas(nint uuids) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void removeScopedAreas(global::Hosihikari.Binding.Bedrock.Interop.mce.UUID[] uuids)
+    {
+        var __hs_vectorItems0 = uuids;
+        var __hs_vectorHandles0 = new nint[__hs_vectorItems0?.Length ?? 0];
+        for (var __hs_i0 = 0; __hs_i0 < __hs_vectorHandles0.Length; __hs_i0++)
+        {
+            __hs_vectorHandles0[__hs_i0] = __hs_vectorItems0![__hs_i0]?.Handle ?? 0;
+        }
+        fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
+        {
+            var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
+            NativeMethods.TablePtr->C4.hs_method_62f0813e((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(uuids?.Length ?? 0));
+        }
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint setPendingAreaLoadModeByName(nint dimensionId, nint name, nint loadMode, nint levelStorage) =>

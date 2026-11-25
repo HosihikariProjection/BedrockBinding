@@ -44,9 +44,10 @@ public sealed unsafe partial class ConstDeserializeDataParams : global::System.I
     public nint _ctor(nint deserializeDataParams) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _dtor() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C0.hs_method_04f12982((void*)__hosihikari_shim_handle);
+    }
 
     public static ConstDeserializeDataParams? Create()
     {

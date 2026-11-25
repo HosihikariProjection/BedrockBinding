@@ -64,9 +64,9 @@ public sealed unsafe partial class ActorSkeletalAnimationPlayer : global::System
         get => (nint)NativeMethods.TablePtr->C0.hs_get_a66952bb((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: map value type 'std::vector<BoneOrientation>' is not supported.", false)]
     public void _applyToPose(nint applyContext, nint renderParams, nint destBoneOrientationMap, float blendWeight) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: map value type 'std::vector<BoneOrientation>' is not supported.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _bindParticleEffects(nint actorParticleEffectMap) =>

@@ -229,31 +229,31 @@ public sealed unsafe partial class ItemStackRequestPacket : global::System.IDisp
     public bool mIsHandled
     {
         get => NativeMethods.TablePtr->C1.hs_get_e0d060a7((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_e0d060a7((void*)__hosihikari_shim_handle, value);
+        set => NativeMethods.TablePtr->C1.hs_set_e0d060a7((void*)__hosihikari_shim_handle, value);
     }
 
     public int mPriority
     {
-        get => NativeMethods.TablePtr->C2.hs_get_668207ad((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_668207ad((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_668207ad((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_668207ad((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mReceiveTimepoint_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2fe7587e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_2fe7587e((void*)__hosihikari_shim_handle);
     }
 
     public int mReliability
     {
-        get => NativeMethods.TablePtr->C2.hs_get_9e7a5c39((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_9e7a5c39((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_9e7a5c39((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_9e7a5c39((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mSenderSubId
     {
-        get => NativeMethods.TablePtr->C2.hs_get_8b700940((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_8b700940((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_8b700940((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_8b700940((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()

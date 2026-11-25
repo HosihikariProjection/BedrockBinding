@@ -1,6 +1,6 @@
 param(
     [string]$LeviLaminaRoot = "",
-    [string]$LlvmRoot = "$env:LOCALAPPDATA\Temp\hosihikari-llvm\clang+llvm-23.1.0-x86_64-pc-windows-msvc",
+    [string]$LlvmRoot = "",
     [string]$EnttRoot = "",
     [string]$HeaderList = "",
     [string]$GeneratorRoot = "",
@@ -19,7 +19,7 @@ $ErrorActionPreference = "Stop"
 $StartTime = Get-Date
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 if ([string]::IsNullOrWhiteSpace($LeviLaminaRoot)) {
-    $LeviLaminaRoot = (Resolve-Path (Join-Path $RepoRoot "..\Third\LeviLamina-v26.60.8")).Path
+    $LeviLaminaRoot = (Resolve-Path (Join-Path $RepoRoot "..\Third\LeviLamina-v26.60.9")).Path
 } else {
     $LeviLaminaRoot = (Resolve-Path $LeviLaminaRoot).Path
 }
@@ -45,6 +45,21 @@ if (-not (Test-Path $AbiHeader)) {
 }
 
 $FrontendDriver = Join-Path $GeneratorRoot "frontend\run-levilamina-headers.ps1"
+if ([string]::IsNullOrWhiteSpace($LlvmRoot)) {
+    # A hard-coded unpack directory goes stale; the CI job passes its own root, so only the
+    # local default needs a search. Prefer the version CI pins, then any other install.
+    $Pinned = Join-Path $env:LOCALAPPDATA "Temp\hosihikari-llvm\clang+llvm-23.1.0-x86_64-pc-windows-msvc"
+    $Candidates = @(
+        $Pinned
+        (Join-Path $env:ProgramFiles "LLVM")
+        (Join-Path ${env:ProgramFiles(x86)} "LLVM")
+    ) | Where-Object { $_ -and (Test-Path (Join-Path $_ "bin\clang-cl.exe")) }
+    if (-not $Candidates) {
+        throw "no LLVM install with bin\clang-cl.exe was found; pass -LlvmRoot explicitly."
+    }
+    $LlvmRoot = $Candidates | Select-Object -First 1
+}
+$LlvmRoot = (Resolve-Path $LlvmRoot).Path
 $HeaderIr = if ([string]::IsNullOrWhiteSpace($IrDirectory)) {
     Join-Path $Output "header-ir"
 } else {

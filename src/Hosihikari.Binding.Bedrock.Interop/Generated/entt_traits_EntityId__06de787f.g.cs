@@ -5,20 +5,20 @@
 namespace Hosihikari.Binding.Bedrock.Interop.entt.@internal;
 
 [global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class entt_traits_EntityId__void_
+public sealed partial class entt_traits_EntityId_
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
 
-    public entt_traits_EntityId__void_(nint handle) : this(handle, true) { }
+    public entt_traits_EntityId_(nint handle) : this(handle, true) { }
 
-    internal entt_traits_EntityId__void_(nint handle, bool ownsHandle)
+    internal entt_traits_EntityId_(nint handle, bool ownsHandle)
     {
         __hosihikari_shim_handle = handle;
         _ownsHandle = ownsHandle;
     }
 
-    public static entt_traits_EntityId__void_ Borrow(nint handle) => new entt_traits_EntityId__void_(handle, false);
+    public static entt_traits_EntityId_ Borrow(nint handle) => new entt_traits_EntityId_(handle, false);
 
     public nint Handle => __hosihikari_shim_handle;
 

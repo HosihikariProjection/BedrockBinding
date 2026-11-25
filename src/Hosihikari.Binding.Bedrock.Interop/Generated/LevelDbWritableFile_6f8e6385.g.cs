@@ -60,38 +60,17 @@ public sealed unsafe partial class LevelDbWritableFile : global::System.IDisposa
     public nint _ctor(nint filename, nint file) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status? Append(nint slice)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_920ddb96((void*)__hosihikari_shim_handle, (void*)slice);
-        if (__hs_handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
-        return new global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint Append(nint slice) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status? Close()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b4784e56((void*)__hosihikari_shim_handle);
-        if (__hs_handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
-        return new global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint Close() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status? Flush()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7bc90827((void*)__hosihikari_shim_handle);
-        if (__hs_handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
-        return new global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint Flush() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.");
 
     public static LevelDbWritableFile? Create()
     {
@@ -121,16 +100,9 @@ public sealed unsafe partial class LevelDbWritableFile : global::System.IDisposa
     public static LevelDbWritableFile Create(nint filename, nint file) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status? Sync()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a2504b57((void*)__hosihikari_shim_handle);
-        if (__hs_handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
-        return new global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint Sync() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk289cca_Address

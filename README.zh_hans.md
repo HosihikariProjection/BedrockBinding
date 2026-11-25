@@ -15,10 +15,10 @@ Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近
 
 ## 当前状态
 
-- Interop：`src/Hosihikari.Binding.Bedrock.Interop/Generated/` 下 9,207 个生成的 C# 文件。
-- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 137,949 个函数。
-- 覆盖：`win-x64-server` 配置绑定 12,161 个声明与 101,848 个成员。
-- 载体标注为 `MCNAPI`（已知但不导出）的成员保留为带原因的 stub：对 pin 的 `bedrockdata v26.60.6-server.16` 实测，26,809 个名称中 45 个可解析（0.17%），而 5,047 个 `MCAPI` 名称中有 4,734 个可解析（93.8%）。`v26.60.8` 大规模重写了注解，数百个名称由 `MCNAPI` 改为 `MCAPI`，两个数字随之变化。
+- Interop：`src/Hosihikari.Binding.Bedrock.Interop/Generated/` 下 9,208 个生成的 C# 文件。
+- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 137,917 个函数。
+- 覆盖：`win-x64-server` 配置绑定 12,161 个声明与 101,840 个成员。
+- 载体标注为 `MCNAPI`（已知但不导出）的成员保留为带原因的 stub：对 pin 的 `bedrockdata v26.60.6-server.17` 实测，26,784 个名称中 47 个可解析（0.18%），而 5,072 个 `MCAPI` 名称中有 4,759 个可解析（93.83%）。`v26.60.8` 大规模重写了注解，`v26.60.9` 延续了这一过程，两个数字随每个载具变化。
 - `scripts/headers-26.60.txt` 列出解析的 5,169 个头文件。从这些头文件可达的声明都会发射；布局与字段偏移来自前端的 AST record layout，只要头文件能证明，record 就保留字段。
 
 shim 以 `--symbol-dispatch --resolve-by-name` 模式发射。支持的 ABI：
@@ -63,9 +63,9 @@ powershell -File native/BindingShim/build.ps1
 
 ## 运行时冒烟
 
-`scripts/measure-annotation-hits.py <头文件IR目录> <bedrock_runtime_data> [--macro MCNAPI]` 统计数据快照实际能解析多少被标注的成员：它为每个修饰名编译一条 clang-cl 引用再交给 prelink 解析，与游戏加载时的查找路径一致。在 pin 的 `bedrockdata v26.60.6-server.16` 上，26,809 个 `MCNAPI` 名称命中 45 个（0.17%），而 5,047 个 `MCAPI` 名称命中 4,734 个（93.8%），因此该标注是可靠的可用性信号，少数 `MCNAPI` 命中是值得逐个核对的例外。
+`scripts/measure-annotation-hits.py <头文件IR目录> <bedrock_runtime_data> [--macro MCNAPI]` 统计数据快照实际能解析多少被标注的成员：它为每个修饰名编译一条 clang-cl 引用再交给 prelink 解析，与游戏加载时的查找路径一致。在 pin 的 `bedrockdata v26.60.6-server.17` 上，26,784 个 `MCNAPI` 名称命中 47 个（0.18%），而 5,072 个 `MCAPI` 名称命中 4,759 个（93.83%），因此该标注是可靠的可用性信号，少数 `MCNAPI` 命中是值得逐个核对的例外。
 
-`tests/runtime-smoke/` 是一个插件脚本：在真实服务器进程内加载垫片，校验两个静态访问器，构造 `TextPacket` 并调用实例方法，再经一个接收字符串、按值返回 `TextPacket` 的工厂创建系统消息包。`scripts/run-runtime-smoke.ps1 -ServerRoot <目录>` 会构建、部署插件、启动服务器并要求 `result=OK`。服务器本身需要 PreLoader 1.16.6、从载体 pin 的 `bedrockdata` 包复制的 `bedrock_runtime_data`，以及用同一 `v26.60.8` 载体构建的 LeviLamina。快照版本有影响：`v26.60.8` 把若干成员提升为 `MCAPI`，先前的 `server.8` 数据并不携带它们，跑旧文件的服务器会在这些成员上失败。
+`tests/runtime-smoke/` 是一个插件脚本：在真实服务器进程内加载垫片，校验两个静态访问器，构造 `TextPacket` 并调用实例方法，再经一个接收字符串、按值返回 `TextPacket` 的工厂创建系统消息包。`scripts/run-runtime-smoke.ps1 -ServerRoot <目录>` 会构建、部署插件、启动服务器并要求 `result=OK`。服务器本身需要 PreLoader 1.16.6、从载体 pin 的 `bedrockdata` 包复制的 `bedrock_runtime_data`，以及用同一 `v26.60.9` 载体构建的 LeviLamina。快照版本有影响：`v26.60.9` 把若干成员提升为 `MCAPI`，先前的 `server.8` 数据并不携带它们，跑旧文件的服务器会在这些成员上失败。
 
 ## 分发
 

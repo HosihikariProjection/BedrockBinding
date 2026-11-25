@@ -63,9 +63,10 @@ public sealed unsafe partial class RailMovementUtility : global::System.IDisposa
     public static nint calculatePostRailMovementMinecartPosition(nint region, nint originalEntityPosition, nint entityPos, nint pos, int railDirection, nint posDelta) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static bool getPos(nint region, nint valueVec, nint pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static bool getPos(global::Hosihikari.Binding.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Binding.Bedrock.Interop.Vec3 valueVec, global::Hosihikari.Binding.Bedrock.Interop.Vec3 pos)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_67bfc2af((void*)region.Handle, (void*)valueVec.Handle, (void*)pos.Handle) != 0;
+    }
 
     public void Dispose()
     {

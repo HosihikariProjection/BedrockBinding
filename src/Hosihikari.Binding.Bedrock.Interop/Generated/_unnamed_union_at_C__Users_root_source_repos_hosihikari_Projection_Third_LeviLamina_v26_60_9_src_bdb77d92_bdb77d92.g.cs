@@ -5,20 +5,20 @@
 namespace Hosihikari.Binding.Bedrock.Interop.AnimationComponentID_Nested;
 
 [global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_8_src_69151661
+public sealed partial class _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_9_src_bdb77d92
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
 
-    public _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_8_src_69151661(nint handle) : this(handle, true) { }
+    public _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_9_src_bdb77d92(nint handle) : this(handle, true) { }
 
-    internal _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_8_src_69151661(nint handle, bool ownsHandle)
+    internal _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_9_src_bdb77d92(nint handle, bool ownsHandle)
     {
         __hosihikari_shim_handle = handle;
         _ownsHandle = ownsHandle;
     }
 
-    public static _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_8_src_69151661 Borrow(nint handle) => new _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_8_src_69151661(handle, false);
+    public static _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_9_src_bdb77d92 Borrow(nint handle) => new _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_9_src_bdb77d92(handle, false);
 
     public nint Handle => __hosihikari_shim_handle;
 

@@ -580,7 +580,7 @@ public sealed unsafe partial class Container : global::System.IDisposable
 
     public bool isEmpty()
     {
-        return NativeMethods.TablePtr->C0.hs_method_43c2dd79((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_43c2dd79((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isSlotDisabled(int slot)

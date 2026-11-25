@@ -65,9 +65,16 @@ public sealed unsafe partial class StructureSettings : global::System.IDisposabl
         return new StructureSettings((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint getTransformedBoundBox() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Binding.Bedrock.Interop.BoundingBox? getTransformedBoundBox()
+    {
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6f293486((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Binding.Bedrock.Interop.BoundingBox((nint)__hs_handle);
+    }
 
     public bool mAllowNonTickingPlayerAndTickingAreaChunks
     {
@@ -194,9 +201,10 @@ public sealed unsafe partial class StructureSettings : global::System.IDisposabl
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void setPivot(nint pivot) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void setPivot(global::Hosihikari.Binding.Bedrock.Interop.Vec3 pivot)
+    {
+        NativeMethods.TablePtr->C3.hs_method_b804a95b((void*)__hosihikari_shim_handle, (void*)pivot.Handle);
+    }
 
 
     public void Dispose()

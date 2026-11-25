@@ -69,9 +69,10 @@ public sealed unsafe partial class FillCommand : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_8d8182bf((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _execute(nint origin, nint output) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _execute(global::Hosihikari.Binding.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Binding.Bedrock.Interop.CommandOutput output)
+    {
+        NativeMethods.TablePtr->C1.hs_method_f3f2956e((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+    }
 
     public static FillCommand? Create(global::Hosihikari.Binding.Bedrock.Interop.FillCommand arg0)
     {

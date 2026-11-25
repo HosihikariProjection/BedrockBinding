@@ -44,13 +44,14 @@ public sealed unsafe partial class StructureAnimationData : global::System.IDisp
     public nint _ctor(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint _ctor(nint cmdArea, ulong tickQueued, nint structureName, nint structureSettings, byte structureVersion, nint placementPos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _dtor() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C3.hs_method_fbcc9400((void*)__hosihikari_shim_handle);
+    }
 
     public static StructureAnimationData? Create()
     {
@@ -80,9 +81,9 @@ public sealed unsafe partial class StructureAnimationData : global::System.IDisp
         return new StructureAnimationData((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static StructureAnimationData Create(nint cmdArea, ulong tickQueued, nint structureName, nint structureSettings, byte structureVersion, nint placementPos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint load(nint key, nint tag) =>

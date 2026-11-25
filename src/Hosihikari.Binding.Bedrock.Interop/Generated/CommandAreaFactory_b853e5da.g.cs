@@ -72,9 +72,9 @@ public sealed unsafe partial class CommandAreaFactory : global::System.IDisposab
     public nint _getNewCommandArea(nint requiredArea) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CommandArea' has no accessible destructor.", false)]
     public nint findAreaWithBuffer(nint min, nint max, int commandVersion, bool allowUnloadedChunks, bool allowPlayerChunks) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CommandArea' has no accessible destructor.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimension_Address

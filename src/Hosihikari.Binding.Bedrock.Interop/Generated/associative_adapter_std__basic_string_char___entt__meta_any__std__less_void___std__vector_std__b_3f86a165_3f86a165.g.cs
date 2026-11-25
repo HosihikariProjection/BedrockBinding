@@ -44,9 +44,16 @@ public sealed unsafe partial class associative_adapter_std__basic_string_char___
     public nint begin_a9ab1e12() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, const entt::meta_any &>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, entt::meta_any &>>' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint begin_f6551144() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, entt::meta_any &>>' requires --link-carrier or --virtual-dispatch.");
+    public global::Hosihikari.Binding.Bedrock.Interop.brstd.associative_adapter_std__basic_string_char___entt__meta_any__std__less_v_13c750f7.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_std__basic_string_char___1d0ae53b? begin_f6551144()
+    {
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f6551144((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Binding.Bedrock.Interop.brstd.associative_adapter_std__basic_string_char___entt__meta_any__std__less_v_13c750f7.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_std__basic_string_char___1d0ae53b((nint)__hs_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, const entt::meta_any &>>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint cbegin() =>
@@ -60,17 +67,45 @@ public sealed unsafe partial class associative_adapter_std__basic_string_char___
     public nint end_74c615ff() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, const entt::meta_any &>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, entt::meta_any &>>' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint end_379e6f59() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, entt::meta_any &>>' requires --link-carrier or --virtual-dispatch.");
+    public global::Hosihikari.Binding.Bedrock.Interop.brstd.associative_adapter_std__basic_string_char___entt__meta_any__std__less_v_13c750f7.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_std__basic_string_char___1d0ae53b? end_379e6f59()
+    {
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_379e6f59((void*)__hosihikari_shim_handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return new global::Hosihikari.Binding.Bedrock.Interop.brstd.associative_adapter_std__basic_string_char___entt__meta_any__std__less_v_13c750f7.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_std__basic_string_char___1d0ae53b((nint)__hs_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, const entt::meta_any &>>' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint find_d6709f64(nint key) =>
+    public nint find(nint key) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, const entt::meta_any &>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, entt::meta_any &>>' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint find_28db9e93(nint key) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, entt::meta_any &>>' requires --link-carrier or --virtual-dispatch.");
+    public global::Hosihikari.Binding.Bedrock.Interop.brstd.associative_adapter_std__basic_string_char___entt__meta_any__std__less_v_13c750f7.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_std__basic_string_char___1d0ae53b? find(string key)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(key);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(key, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_28db9e93((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            if (__hs_handle == null)
+            {
+                NativeMethods.GetLastError();
+                return null;
+            }
+            return new global::Hosihikari.Binding.Bedrock.Interop.brstd.associative_adapter_std__basic_string_char___entt__meta_any__std__less_v_13c750f7.iterator_impl_std___Vector_iterator_std___Vector_val_std___Simple_types_std__basic_string_char___1d0ae53b((nint)__hs_handle);
+        }
+    }
 
     public nint? keys()
     {

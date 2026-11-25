@@ -68,16 +68,9 @@ public sealed unsafe partial class InMemoryRandomAccessFile : global::System.IDi
         return new InMemoryRandomAccessFile((nint)handle);
     }
 
-    public global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status? Read(ulong offset, ulong n, nint result, nint scratch)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d5b43e46((void*)__hosihikari_shim_handle, offset, n, (void*)result, (void*)scratch);
-        if (__hs_handle == null)
-        {
-            NativeMethods.GetLastError();
-            return null;
-        }
-        return new global::Hosihikari.Binding.Bedrock.Interop.leveldb.Status((nint)__hs_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint Read(ulong offset, ulong n, nint result, nint scratch) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'leveldb::Status' requires --link-carrier or --virtual-dispatch.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk59aba8_Address

@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Binding.Bedrock.Interop.RakNet.RakPeer_Nested.BufferedCommandStruct_Nested;
 
-public enum _unnamed_enum_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_8_src__c8647007 : int
+public enum _unnamed_enum_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_9_src__4188e9f6 : int
 {
     Send = 0,
     CloseConnection = 1,

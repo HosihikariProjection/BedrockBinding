@@ -62,9 +62,16 @@ public sealed unsafe partial class LevelChunkPacket : global::System.IDisposable
         return new global::Hosihikari.Binding.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)__hs_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _ctor(nint payload) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public nint? _ctor(global::Hosihikari.Binding.Bedrock.Interop.LevelChunkPacketPayload payload)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1f136eec((void*)__hosihikari_shim_handle, (void*)payload.Handle);
+        if (__hs_handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+        return (nint)__hs_handle;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _disallowBatching() =>
@@ -130,9 +137,17 @@ public sealed unsafe partial class LevelChunkPacket : global::System.IDisposable
         return new LevelChunkPacket((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static LevelChunkPacket Create(nint payload) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static LevelChunkPacket? Create(global::Hosihikari.Binding.Bedrock.Interop.LevelChunkPacketPayload payload)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_75d3f45f((void*)payload.Handle);
+        if (handle == null)
+        {
+            NativeMethods.GetLastError();
+            return null;
+        }
+
+        return new LevelChunkPacket((nint)handle);
+    }
 
     public static LevelChunkPacket? Create(global::Hosihikari.Binding.Bedrock.Interop.LevelChunkPacket arg0)
     {

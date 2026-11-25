@@ -92,9 +92,10 @@ public sealed unsafe partial class SubChunk : global::System.IDisposable
     public void deserialize(nint stream, nint palette, nint subChunkPos, nint deserializationChanges) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void fetchBlocks(nint subChunkOrigin, nint volumeOrigin, short dimensionMinHeight, nint volume) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void fetchBlocks(global::Hosihikari.Binding.Bedrock.Interop.BlockPos subChunkOrigin, global::Hosihikari.Binding.Bedrock.Interop.BlockPos volumeOrigin, short dimensionMinHeight, global::Hosihikari.Binding.Bedrock.Interop.BlockVolume volume)
+    {
+        NativeMethods.TablePtr->C3.hs_method_f0faff2f((void*)__hosihikari_shim_handle, (void*)subChunkOrigin.Handle, (void*)volumeOrigin.Handle, dimensionMinHeight, (void*)volume.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void initialize(nint initBlock, bool maxSkyLight, bool maxLight, byte absoluteIndex) =>
@@ -233,9 +234,10 @@ public sealed unsafe partial class SubChunk : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_82f71ff7((void*)__hosihikari_shim_handle, (void*)stream.Handle, network);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void setBlocksToUniform(nint initBlock, bool maxSkyLight, bool fullyLit) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void setBlocksToUniform(global::Hosihikari.Binding.Bedrock.Interop.Block initBlock, bool maxSkyLight, bool fullyLit)
+    {
+        NativeMethods.TablePtr->C3.hs_method_ece21af5((void*)__hosihikari_shim_handle, (void*)initBlock.Handle, maxSkyLight, fullyLit);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void setFromBlockVolume(nint box, short height, nint scratchVolume) =>

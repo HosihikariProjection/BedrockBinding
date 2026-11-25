@@ -58,9 +58,9 @@ public sealed unsafe partial class CommandBlockName : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_72b4ecbb((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
     public nint resolveBlock(nint states, nint output) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
     public global::Hosihikari.Binding.Bedrock.Interop.CommandBlockNameResult? resolveBlock(int data)
     {
