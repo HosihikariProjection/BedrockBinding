@@ -38,7 +38,7 @@ jobs:
         run: dotnet build Hosihikari.Binding.Bedrock.slnx -c Release -p:AbiProjectPath=${{ github.workspace }}/Binding.Abi/src/Hosihikari.Binding.Abi/Hosihikari.Binding.Abi.csproj
 
       - name: Formatting
-        run: dotnet format Hosihikari.Binding.Bedrock.slnx --verify-no-changes
+        run: dotnet format Hosihikari.Binding.Bedrock.slnx --verify-no-changes --include src tests
 
       - name: Verify generated sources
         run: python3 scripts/verify_generated.py
