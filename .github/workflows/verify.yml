@@ -32,10 +32,13 @@ jobs:
 
       - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '10.0.x'
+          dotnet-version: "10.0.x"
 
       - name: Build
         run: dotnet build Hosihikari.Binding.Bedrock.slnx -c Release -p:AbiProjectPath=${{ github.workspace }}/Binding.Abi/src/Hosihikari.Binding.Abi/Hosihikari.Binding.Abi.csproj
+
+      - name: Formatting
+        run: dotnet format Hosihikari.Binding.Bedrock.slnx --verify-no-changes
 
       - name: Verify generated sources
         run: python3 scripts/verify_generated.py

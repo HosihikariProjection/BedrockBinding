@@ -53,10 +53,16 @@ def names_for(shard: pathlib.Path, macro: str) -> list[str]:
 
 def build_probe(directory: pathlib.Path, names: list[str]) -> pathlib.Path:
     source = directory / "probe.cpp"
-    lines = [f'extern "C" void f{index}() __asm__("{name}");' for index, name in enumerate(names)]
-    lines.append("extern \"C\" void* const hs_tbl[] = {"
-                 + ",".join(f"(void*)&f{index}" for index in range(len(names))) + "};")
-    lines.append("extern \"C\" int hs_probe() { return (int)sizeof(hs_tbl); }")
+    lines = [
+        f'extern "C" void f{index}() __asm__("{name}");'
+        for index, name in enumerate(names)
+    ]
+    lines.append(
+        'extern "C" void* const hs_tbl[] = {'
+        + ",".join(f"(void*)&f{index}" for index in range(len(names)))
+        + "};"
+    )
+    lines.append('extern "C" int hs_probe() { return (int)sizeof(hs_tbl); }')
     source.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     obj = directory / "probe.obj"
@@ -70,7 +76,9 @@ def build_probe(directory: pathlib.Path, names: list[str]) -> pathlib.Path:
     return obj
 
 
-def prelink_names(obj: pathlib.Path, data: pathlib.Path, output: pathlib.Path) -> set[str]:
+def prelink_names(
+    obj: pathlib.Path, data: pathlib.Path, output: pathlib.Path
+) -> set[str]:
     (output / "lib").mkdir(parents=True, exist_ok=True)
     subprocess.run(
         [str(PRELINK), "server-windows-x64", str(output), str(data), str(obj)],
@@ -99,8 +107,10 @@ def main() -> int:
         resolved = prelink_names(obj, arguments.data, directory / "out")
 
     hits = sorted(set(names) & resolved)
-    print(f"{arguments.macro}: {len(hits)} of {len(names)} resolve "
-          f"({len(hits) / len(names) * 100:.2f}%) in {arguments.data}")
+    print(
+        f"{arguments.macro}: {len(hits)} of {len(names)} resolve "
+        f"({len(hits) / len(names) * 100:.2f}%) in {arguments.data}"
+    )
     for name in hits[:20]:
         print(f"  {name}")
     return 0

@@ -60,7 +60,9 @@ def read_shim(path):
 
 def is_stub(lines, index):
     window = "\n".join(lines[max(0, index - 2) : index + 4])
-    return "NotSupportedException" in window and "Obsolete" in "\n".join(lines[max(0, index - 2) : index])
+    return "NotSupportedException" in window and "Obsolete" in "\n".join(
+        lines[max(0, index - 2) : index]
+    )
 
 
 def main():
@@ -78,7 +80,11 @@ def main():
 
     for name, (kind, symbols, usable) in functions.items():
         if kind == "external":
-            functions[name] = (kind, symbols, all(symbol not in unresolved for symbol in symbols))
+            functions[name] = (
+                kind,
+                symbols,
+                all(symbol not in unresolved for symbol in symbols),
+            )
 
     counts = {
         "members": 0,
@@ -118,7 +124,11 @@ def main():
                 counts["usable"] += 1
                 continue
 
-            missing = [token for token in tokens if not functions.get(token, ("?", [], False))[2]]
+            missing = [
+                token
+                for token in tokens
+                if not functions.get(token, ("?", [], False))[2]
+            ]
             if missing:
                 counts["blocked"] += 1
                 if len(blocked_examples) < 8:
@@ -129,8 +139,12 @@ def main():
     non_stub = counts["usable"] + counts["blocked"]
     print(f"members counted: {counts['members']}")
     print(f"  stubs:         {counts['stubs']}")
-    print(f"  non-stub:      {non_stub} (usable {counts['usable']}, blocked {counts['blocked']})")
-    print(f"  no shim call:  {counts['no_shim_call']} (compile-time constants; counted usable)")
+    print(
+        f"  non-stub:      {non_stub} (usable {counts['usable']}, blocked {counts['blocked']})"
+    )
+    print(
+        f"  no shim call:  {counts['no_shim_call']} (compile-time constants; counted usable)"
+    )
     print(
         "runtime-usable share:"
         f" {counts['usable'] / max(1, non_stub):.1%} of non-stub,"

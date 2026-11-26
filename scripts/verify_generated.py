@@ -35,9 +35,13 @@ def main() -> int:
         fail("provenance.irManifestSha256 does not match coverage summary")
     if provenance["coverageManifestSha256"] != summary["manifestSha256"]:
         fail("provenance.coverageManifestSha256 does not match coverage summary")
-    missing_configurations = set(provenance["configurations"]) - set(summary["configurations"])
+    missing_configurations = set(provenance["configurations"]) - set(
+        summary["configurations"]
+    )
     if missing_configurations:
-        fail(f"provenance configurations are not present in coverage summary: {sorted(missing_configurations)}")
+        fail(
+            f"provenance configurations are not present in coverage summary: {sorted(missing_configurations)}"
+        )
 
     if summary["declarations"]["bound"] < baseline["declarationsBound"]:
         fail("declaration bound count fell below baseline")
@@ -85,13 +89,19 @@ def main() -> int:
     expected_paths = {path.relative_to(ROOT).as_posix() for path in generated_files}
     for configuration in provenance["configurations"]:
         shim = SHIMS / configuration / "bedrock"
-        expected_paths.update(path.relative_to(ROOT).as_posix() for path in shim.iterdir() if path.is_file())
+        expected_paths.update(
+            path.relative_to(ROOT).as_posix()
+            for path in shim.iterdir()
+            if path.is_file()
+        )
     expected_paths.add("coverage/manifest.jsonl")
     expected_paths.add("coverage/summary.json")
     if set(entries) != expected_paths:
         missing = expected_paths - set(entries)
         extra = set(entries) - expected_paths
-        fail(f"generated.sha256 path set mismatch (missing={sorted(missing)}, extra={sorted(extra)})")
+        fail(
+            f"generated.sha256 path set mismatch (missing={sorted(missing)}, extra={sorted(extra)})"
+        )
 
     for relative, digest in entries.items():
         path = ROOT / relative

@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <!-- A packaging-only project: it produces no managed assembly and ships the native shim
        built by native/BindingShim/build.ps1 as a runtimes/win-x64/native asset. -->
   <PropertyGroup>
@@ -19,15 +18,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="../../native/BindingShim/README.md" Pack="true" PackagePath="/" Visible="false" />
+    <None
+      Include="../../native/BindingShim/README.md"
+      Pack="true"
+      PackagePath="/"
+      Visible="false"
+    />
   </ItemGroup>
 
   <ItemGroup Condition="'$(ShimDll)' != '' and Exists('$(ShimDll)')">
     <None Include="$(ShimDll)" Pack="true" PackagePath="runtimes/win-x64/native/" Visible="false" />
   </ItemGroup>
 
-  <Target Name="RequireShimDll" BeforeTargets="Pack" Condition="'$(ShimDll)' == '' or !Exists('$(ShimDll)')">
+  <Target
+    Name="RequireShimDll"
+    BeforeTargets="Pack"
+    Condition="'$(ShimDll)' == '' or !Exists('$(ShimDll)')"
+  >
     <Error Text="Pass -p:ShimDll=&lt;path to Hosihikari.Binding.Bedrock.Shim.dll&gt; (build it with native/BindingShim/build.ps1)." />
   </Target>
-
 </Project>

@@ -3,10 +3,7 @@
   "entry": "main.cs",
   "type": "hosihikari",
   "version": "1.0.0",
-  "dependencies": [
-    { "name": "hosihikari" },
-    { "name": "hosihikari-csharp" }
-  ],
+  "dependencies": [{ "name": "hosihikari" }, { "name": "hosihikari-csharp" }],
   "extraInfo": {
     "api_version": "2",
     "manifest_version": "1",

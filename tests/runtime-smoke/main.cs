@@ -1,9 +1,9 @@
 using System;
 using System.IO;
 using System.Text;
-using Microsoft.Extensions.Logging;
 using Hosihikari;
 using Hosihikari.Binding.Bedrock.Interop;
+using Microsoft.Extensions.Logging;
 
 // Loads the generated BindingShim inside a real BDS process and exercises the
 // name-resolved surface: static string accessors, a constructed packet, an instance
@@ -25,9 +25,12 @@ public sealed class BedrockSmokePlugin : IPlugin
 
         try
         {
-            NativeMethods.Load(System.IO.Path.Combine(
-                _context.PackageDirectory,
-                "Hosihikari.Binding.Bedrock.Shim.dll"));
+            NativeMethods.Load(
+                System.IO.Path.Combine(
+                    _context.PackageDirectory,
+                    "Hosihikari.Binding.Bedrock.Shim.dll"
+                )
+            );
             log.AppendLine("load=ok");
 
             var prefix = Block.BLOCK_DESCRIPTION_PREFIX();
@@ -59,7 +62,9 @@ public sealed class BedrockSmokePlugin : IPlugin
             log.AppendLine($"levelstorage.console_prefix={consolePrefix}");
             if (consolePrefix != "legacy_console_player_")
             {
-                throw new InvalidOperationException($"unexpected console prefix: '{consolePrefix}'");
+                throw new InvalidOperationException(
+                    $"unexpected console prefix: '{consolePrefix}'"
+                );
             }
 
             using (var packet = TextPacket.Create())
@@ -79,7 +84,9 @@ public sealed class BedrockSmokePlugin : IPlugin
                 log.AppendLine($"systemmessage.isvalid={packet.isValid()}");
                 if (!packet.isValid())
                 {
-                    throw new InvalidOperationException("the created system message packet is not valid.");
+                    throw new InvalidOperationException(
+                        "the created system message packet is not valid."
+                    );
                 }
             }
 
@@ -92,7 +99,9 @@ public sealed class BedrockSmokePlugin : IPlugin
                 log.AppendLine($"blockpos.center.isnull={center == null}");
                 if (center != null)
                 {
-                    throw new InvalidOperationException("a member without a symbol returned a non-null wrapper.");
+                    throw new InvalidOperationException(
+                        "a member without a symbol returned a non-null wrapper."
+                    );
                 }
             }
 
@@ -114,7 +123,5 @@ public sealed class BedrockSmokePlugin : IPlugin
 
     public PluginHookResult OnDisable() => PluginHookResult.Allow();
 
-    public void OnUnload()
-    {
-    }
+    public void OnUnload() { }
 }

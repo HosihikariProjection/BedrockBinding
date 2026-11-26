@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
@@ -23,11 +22,13 @@
 
   <ItemGroup>
     <ProjectReference Include="$(AbiProjectPath)" Condition="'$(AbiProjectPath)' != ''" />
-    <ProjectReference Include="../../../Binding.Abi/src/Hosihikari.Binding.Abi/Hosihikari.Binding.Abi.csproj" Condition="'$(AbiProjectPath)' == ''" />
+    <ProjectReference
+      Include="../../../Binding.Abi/src/Hosihikari.Binding.Abi/Hosihikari.Binding.Abi.csproj"
+      Condition="'$(AbiProjectPath)' == ''"
+    />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="../../README.md" Pack="true" PackagePath="/" Visible="false" />
   </ItemGroup>
-
 </Project>
