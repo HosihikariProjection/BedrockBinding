@@ -13,45 +13,53 @@
 #define HOSIHIKARI_SHIM_EXPORT __attribute__((visibility("default")))
 #endif
 
-extern "C" {
+extern "C"
+{
 
-struct HosihikariStringView {
+struct HosihikariStringView
+{
     const char* data;
     std::size_t size;
 };
 
-struct HosihikariArrayView {
+struct HosihikariArrayView
+{
     const void* data;
     std::size_t size;
 };
 
 typedef void (*HosihikariSharedRelease)(void*);
 
-struct HosihikariSharedHandle {
-    void* holder;
-    void* target;
+struct HosihikariSharedHandle
+{
+    void*                   holder;
+    void*                   target;
     HosihikariSharedRelease release;
 };
 
-struct HosihikariMapEntry {
+struct HosihikariMapEntry
+{
     std::uint64_t key;
     std::uint64_t keySize;
     std::uint64_t value;
     std::uint64_t valueSize;
 };
 
-}  // extern "C"
+} // extern "C"
 
-namespace hosihikari::abi {
+namespace hosihikari::abi
+{
 
 inline thread_local std::string g_lastError;
 
 inline void setLastError(char const* message) noexcept
 {
-    try {
+    try
+    {
         g_lastError = message ? message : "unknown native error";
     }
-    catch (...) {
+    catch (...)
+    {
     }
 }
 
@@ -60,10 +68,12 @@ inline void setLastError(char const* message) noexcept
 // native error" placeholder a null setLastError would leave behind.
 inline void clearLastError() noexcept
 {
-    try {
+    try
+    {
         g_lastError.clear();
     }
-    catch (...) {
+    catch (...)
+    {
     }
 }
 
@@ -72,4 +82,4 @@ inline char const* lastError() noexcept
     return g_lastError.c_str();
 }
 
-}  // namespace hosihikari::abi
+} // namespace hosihikari::abi
